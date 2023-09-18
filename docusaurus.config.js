@@ -41,7 +41,7 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          editUrl: 'https://github.com/Streamelements/docs/tree/main/',
+          editUrl: 'https://github.com/Streamelements/docs/tree/master/',
           routeBasePath: '/',
           showLastUpdateAuthor: false,
           showLastUpdateTime: true,
