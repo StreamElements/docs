@@ -39,7 +39,7 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          editUrl: 'https://github.com/Streamelements/docs/tree/main/packages/create-docusaurus/templates/shared/',
+          editUrl: 'https://github.com/Streamelements/docs/tree/main/',
           routeBasePath: '/',
         },
         blog: false,
