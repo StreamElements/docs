@@ -1,5 +1,0 @@
----
-id: pointsname
----
-
-# $(pointsname)
