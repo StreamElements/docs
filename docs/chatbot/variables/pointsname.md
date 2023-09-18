@@ -12,8 +12,12 @@ This variable does not take any parameters.
 
 #### Example Input
 
-> `$(pointsname)`
+```
+$(pointsname)
+```
 
 #### Example Output
 
-> `memecoins`
+```
+memecoins
+```

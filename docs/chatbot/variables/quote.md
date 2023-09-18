@@ -16,4 +16,6 @@ Takes an optional quote ID to display.
 
 #### Example Output
 
-> `#3 some dank quote`
+```
+#3 some dank quote
+```

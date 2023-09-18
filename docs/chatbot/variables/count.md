@@ -12,8 +12,12 @@ You may optionally specify the name of a counter to display. You may also option
 
 #### Example Input
 
-> `$(count example +1)`
+```
+$(count example +1)
+```
 
 #### Example Output
 
-> `420`
+```
+420
+```
