@@ -4,7 +4,7 @@ id: leagueoflegends
 
 # $(leagueoflegends)
 
-Outputs the summoner and LP of a specified League of Legends player.
+Outputs the summoner rank and LP of a specified League of Legends player.
 
 #### Parameters
 
