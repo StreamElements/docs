@@ -10,7 +10,7 @@ Outputs all available Twitch subscriber emotes
 
 This variable does not take any parameters.
 
-### Example Input
+#### Example Input
 
 ```
 Subscriber emotes: ${twitchemotes}
