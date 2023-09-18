@@ -1,0 +1,5 @@
+---
+id: pointsname
+---
+
+# $(pointsname)

@@ -1,0 +1,5 @@
+---
+id: setgame
+---
+
+# $(setgame)

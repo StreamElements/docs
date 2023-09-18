@@ -1,4 +1,5 @@
 ---
 id: channel
 ---
-# LOL
+
+# $(channel)
