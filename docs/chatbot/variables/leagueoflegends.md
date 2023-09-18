@@ -12,8 +12,12 @@ This variable takes the name and region of the player.
 
 #### Example Input
 
-> `$(leagueoflegends styler euw)`
+```
+$(leagueoflegends styler euw)
+```
 
 #### Example Output
 
-> `Current Rank: Challenger I (1229 LP)`
+```
+Current Rank: Challenger I (1229 LP)
+```

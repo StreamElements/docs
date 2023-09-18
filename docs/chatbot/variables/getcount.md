@@ -12,8 +12,12 @@ This variable takes the name of the counter to get as a parameter.
 
 #### Example Input
 
-> `$(getcount example)`
+```
+$(getcount example)
+```
 
 #### Example Output
 
-> `420`
+```
+420
+```

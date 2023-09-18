@@ -12,8 +12,12 @@ This variable takes the string to query escape as a parameter.
 
 #### Example Input
 
-> `google.com/search?q=${queryescape ${1:}}`
+```
+google.com/search?q=${queryescape ${1:}}
+```
 
 #### Example Output
 
-> `google.com/search?q=dank+memes`
+```
+google.com/search?q=dank+memes
+```

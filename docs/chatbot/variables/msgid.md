@@ -12,8 +12,12 @@ This variable does not take any parameters.
 
 #### Example Input
 
-> `$(msgid)`
+```
+$(msgid)
+```
 
 #### Example Output
 
-> `bcc9b4bc-566d-4f14-a57d-a86c1c3196f8`
+```
+bcc9b4bc-566d-4f14-a57d-a86c1c3196f8
+```

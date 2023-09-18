@@ -12,11 +12,15 @@ This variable does not take any parameters.
 
 #### Example Input
 
-> `$(1)`
+```
+$(1)
+```
 
 #### Example Output
 
-> `Hello`
+```
+Hello
+```
 
 ## $(args.emote)
 
@@ -28,11 +32,15 @@ This variable does not take any parameters.
 
 #### Example Input
 
-> `$(1.emote)`
+```
+$(1.emote)
+```
 
 #### Example Output
 
-> `Kappa`
+```
+Kappa
+```
 
 ## $(args.word)
 
@@ -44,8 +52,12 @@ This variable does not take any parameters.
 
 #### Example Input
 
-> `$(1.word)`
+```
+$(1.word)
+```
 
 #### Example Output
 
-> `Hello`
+```
+Hello
+```
