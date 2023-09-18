@@ -32,6 +32,8 @@ const config = {
     locales: ['en'],
   },
 
+  plugins: [],
+
   presets: [
     [
       'classic',
@@ -41,6 +43,8 @@ const config = {
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl: 'https://github.com/Streamelements/docs/tree/main/',
           routeBasePath: '/',
+          showLastUpdateAuthor: false,
+          showLastUpdateTime: true,
         },
         blog: false,
         theme: {
