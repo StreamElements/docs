@@ -10,7 +10,7 @@ Lists active 7TV emotes in the channel.
 
 This variable does not take any parameters.
 
-### Example Input
+#### Example Input
 ```
 $(7tvemotes)
 ```
