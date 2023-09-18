@@ -13,11 +13,11 @@ This variable does not take any parameters.
 #### Example Input
 
 ```
-$(customapi.https://api.chucknorris.io/jokes/random)
+$(customapi.https://decapi.me/youtube/latest_video?id=UCjerlCIbLPQwSnYlClkjDXg)
 ```
 
 #### Example Output
 
 ```
-Chuck Norris brushes his teeth with a mixture of iron shavings, industrial paint remover, and wood-grain alcohol.
+STREAMELEMENTS PATCH NOTES - SEPTEMBER 10, 2023 #streamelements #updates #patchnotes - https://youtu.be/-q_q37PoaM8
 ```
