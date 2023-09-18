@@ -6,8 +6,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'StreamElements',
-  tagline: 'Dinosaurs are cool',
+  title: 'StreamElements Docs',
+  tagline: 'The official documentation for StreamElements',
   favicon: 'img/favicon.png',
 
   // Set the production url of your site here
@@ -61,6 +61,10 @@ const config = {
       navbar: {
         title: 'StreamElements Docs',
       },
+      metadata: [
+        {name: 'keywords', content: 'Streaming,Chatbot,documentation,StreamElements'},
+        {name: 'twitter:card', content: 'summary_large_image'},
+      ],
       footer1: {
         style: 'dark',
         links: [
