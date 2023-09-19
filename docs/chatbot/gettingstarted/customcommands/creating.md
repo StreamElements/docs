@@ -1,3 +1,9 @@
+---
+id: creating
+tags:
+  - chatbot
+  - commands
+---
 # Creating a command
 
 ## Overview
