@@ -1,3 +1,10 @@
+---
+id: timers
+tags:
+  - chatbot
+  - timers
+---
+
 # Timers
 
 Chatbot timers are automated messages or actions that occur at specified intervals during a live stream. They serve to remind viewers about certain aspects of the stream, such as rules or upcoming events, and can also be used to automatically execute commands at regular intervals.

@@ -1,3 +1,9 @@
+---
+id: symbol
+tags:
+  - chatbot
+  - filters
+---
 # Symbol
 
 ### Description

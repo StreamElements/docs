@@ -1,3 +1,9 @@
+---
+id: caps
+tags:
+  - chatbot
+  - filters
+---
 # Caps
 
 ### Description

@@ -1,3 +1,9 @@
+---
+id: paragraph
+tags:
+  - chatbot
+  - filters
+---
 # Paragraph
 
 ### Description

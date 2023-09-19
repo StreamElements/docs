@@ -1,3 +1,9 @@
+---
+id: bannedwords
+tags:
+  - chatbot
+  - filters
+---
 # Banned words
 
 ## Overview

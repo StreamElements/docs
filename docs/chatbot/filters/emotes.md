@@ -1,3 +1,9 @@
+---
+id: emotes
+tags:
+  - chatbot
+  - filters
+---
 # Emotes
 
 ### Description
