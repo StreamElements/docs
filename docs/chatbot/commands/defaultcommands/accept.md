@@ -12,7 +12,7 @@ The `!accept` command is used to accept an invitation or request in the chat. Th
 
 ### Module
 
-- The `!accept` command is part of the [duel module](../../modules/defaultcommands).
+- The `!accept` command is part of the [duel module](../../modules/duel).
 
 ### Example Input
 

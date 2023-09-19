@@ -10,7 +10,7 @@ Cancels an ongoing duel.
 
 ### Module
 
-- The `!cancelduel` command is part of the [duel module](../../modules/defaultcommands).
+- The `!cancelduel` command is part of the [duel module](../../modules/duel).
 
 ### Arguments
 
