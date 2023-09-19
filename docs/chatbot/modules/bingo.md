@@ -15,8 +15,6 @@ The StreamElements emote bingo module is an interactive chat game. In this game,
 
 - [!bingo](/chatbot/commands/default/bingo)
 
-
-
 ### Available Emote Providers
 
 - Twitch
