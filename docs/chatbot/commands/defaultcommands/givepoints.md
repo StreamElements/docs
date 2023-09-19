@@ -4,6 +4,15 @@
 
 The `!givepoints` command transfers points from the sender to the specified user.
 
+### Module
+
+- None
+
+### Default Aliases
+
+- `!give`
+- `!transfer`
+
 #### Arguments
 
 - `username` - The username of the user to give points to.
