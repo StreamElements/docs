@@ -11,7 +11,7 @@ The `!command` command is used to manage chat commands. It has six subcommands:
 - `show`: This subcommand is used to display the details of an existing command in the chat.
 - `options`: This subcommand is used to add advanced options to an existing command in the chat.
 
-#### Alises:
+#### Alises
 
 - !cmd
 
@@ -244,7 +244,6 @@ Option | Description
 ```
 
 Multiple options can be specified by separating them with a space.
-
 
 #### Example Input
 

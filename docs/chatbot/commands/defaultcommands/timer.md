@@ -26,4 +26,3 @@ The `!timer` command is used to manage timers in the chat. It can enable or disa
 ```
 social timer has been disabled 
 ```
-
