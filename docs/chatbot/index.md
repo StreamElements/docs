@@ -5,9 +5,11 @@ sidebar_position: 1
 ---
 # Chatbot
 
-This documentation provides a comprehensive guide on how to use our Chatbot. It covers various aspects including:
-- Default Commands: A wide variety of pre-set commands that can be used out-of-the-box.
-- Custom Commands: Instructions on how to create your own commands tailored to your channel and community.
-- Spam Filters: Information on how to set up and manage spam filters.
+This documentation provides an in-depth guide on how to utilize our Chatbot. It encompasses various features including:
 
-For more detailed information, please refer to the respective sections.
+- Default Commands: An extensive range of pre-configured commands ready for immediate use.
+- Modules and Timers: A detailed overview of the different modules and timers available.
+- Custom Commands: Detailed guidelines on how to formulate your own commands specific to your channel and audience.
+- Spam Filters: Comprehensive data on how to establish and regulate spam filters.
+
+For further detailed information, please navigate to the corresponding sections.
