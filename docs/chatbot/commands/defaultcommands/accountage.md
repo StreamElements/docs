@@ -1,3 +1,9 @@
+---
+tags:
+  - chatbot
+  - default commands
+---
+
 # !accountage
 
 ### Overview

@@ -1,3 +1,9 @@
+---
+tags:
+  - chatbot
+  - duel module
+---
+
 # !accept
 
 ### Overview

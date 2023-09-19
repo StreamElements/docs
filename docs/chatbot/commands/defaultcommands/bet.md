@@ -1,3 +1,9 @@
+---
+tags:
+  - chatbot
+  - contests
+---
+
 # !bet
 
 ### Overview
