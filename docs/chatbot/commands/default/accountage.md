@@ -1,9 +1,9 @@
 ---
+id: accountage
 tags:
   - chatbot
-  - default commands
+  - commands
 ---
-
 # !accountage
 
 ### Overview

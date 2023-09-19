@@ -1,3 +1,10 @@
+---
+id: filesay
+tags:
+  - chatbot
+  - commands
+  - moderation
+---
 # !filesay
 
 ### Overview

@@ -1,3 +1,10 @@
+---
+id: ticket
+tags:
+  - chatbot
+  - commands
+  - loyalty
+---
 # !ticket
 
 ### Overview

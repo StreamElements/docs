@@ -1,3 +1,10 @@
+---
+id: wrongsong
+tags:
+  - chatbot
+  - commands
+  - songrequest
+---
 # !wrongsong
 
 ### Overview

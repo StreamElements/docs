@@ -1,3 +1,10 @@
+---
+id: roulette
+tags:
+  - chatbot
+  - commands
+  - loyalty
+---
 # !roulette
 
 The `!roulette` command is used to start a roulette game in the chat.

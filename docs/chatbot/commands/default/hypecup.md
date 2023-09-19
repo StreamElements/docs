@@ -1,3 +1,9 @@
+---
+id: hypecup
+tags:
+  - chatbot
+  - commands
+---
 # !hypecup
 
 ### Overview

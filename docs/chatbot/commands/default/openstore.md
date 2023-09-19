@@ -1,3 +1,10 @@
+---
+id: openstore
+tags:
+  - chatbot
+  - commands
+  - loyalty
+---
 # !openstore
 
 ### Overview

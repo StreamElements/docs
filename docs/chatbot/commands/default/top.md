@@ -1,3 +1,10 @@
+---
+id: top
+tags:
+  - chatbot
+  - commands
+  - loyalty
+---
 # !top
 
 ### Overview

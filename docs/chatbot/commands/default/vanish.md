@@ -1,3 +1,9 @@
+---
+id: vanish
+tags:
+  - chatbot
+  - commands
+---
 # !vanish
 
 ### Overview

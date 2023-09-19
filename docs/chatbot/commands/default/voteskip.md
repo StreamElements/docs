@@ -1,3 +1,10 @@
+---
+id: voteskip
+tags:
+  - chatbot
+  - commands
+  - mediarequest
+---
 # !voteskip
 
 ### Overview

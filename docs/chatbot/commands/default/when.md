@@ -1,3 +1,10 @@
+---
+id: when
+tags:
+  - chatbot
+  - commands
+  - songrequest
+---
 # !when
 
 ### Overview

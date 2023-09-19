@@ -1,3 +1,10 @@
+---
+id: watchtime
+tags:
+  - chatbot
+  - commands
+  - loyalty
+---
 # !watchtime
 
 ### Overview

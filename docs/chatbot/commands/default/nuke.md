@@ -1,3 +1,10 @@
+---
+id: nuke
+tags:
+  - chatbot
+  - commands
+  - moderation
+---
 # !nuke
 
 ### Overview

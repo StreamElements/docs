@@ -1,3 +1,10 @@
+---
+id: givepoints
+tags:
+  - chatbot
+  - commands
+  - loyalty
+---
 # !givepoints
 
 ### Overview

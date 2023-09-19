@@ -1,3 +1,10 @@
+---
+id: deny
+tags:
+  - chatbot
+  - commands
+  - loyalty
+---
 # !deny
 
 ### Overview

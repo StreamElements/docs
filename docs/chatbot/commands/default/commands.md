@@ -1,8 +1,9 @@
 ---
+id: commands 
 tags:
   - chatbot
   - commands
-  - twitch
+  - loyalty
 ---
 
 # !commands

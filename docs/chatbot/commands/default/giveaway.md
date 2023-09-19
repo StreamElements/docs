@@ -1,3 +1,10 @@
+---
+id: giveaway 
+tags:
+  - chatbot
+  - commands
+  - loyalty
+---
 # !giveaway
 
 ### Overview

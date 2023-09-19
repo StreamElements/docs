@@ -1,7 +1,9 @@
 ---
+id: bet
 tags:
   - chatbot
-  - contests
+  - commands
+  - loyalty
 ---
 
 # !bet

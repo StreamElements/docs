@@ -1,3 +1,10 @@
+---
+id: tip
+tags:
+  - chatbot
+  - commands
+  - tipping
+---
 # !tip
 
 ### Overview

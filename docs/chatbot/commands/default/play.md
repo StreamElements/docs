@@ -1,3 +1,10 @@
+---
+id: play
+tags:
+  - chatbot
+  - commands
+  - mediarequest
+---
 # !play
 
 The `!play` command is used to resume the media request playback. This command is particularly useful when the media playback has been paused and needs to be resumed.

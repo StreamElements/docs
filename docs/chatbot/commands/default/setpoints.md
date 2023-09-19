@@ -1,3 +1,10 @@
+---
+id: setpoints
+tags:
+  - chatbot
+  - commands
+  - loyalty
+---
 # !setpoints
 
 :::caution

@@ -1,7 +1,8 @@
 ---
+id: 8ball
 tags:
   - chatbot
-  - 8ball module
+  - commands
 ---
 
 # !8ball

@@ -1,8 +1,9 @@
 ---
+id: chatstats
 tags:
   - chatbot
-  - chatstats
-  - twitch
+  - commands
+  - loyalty
 ---
 
 # !chatstats

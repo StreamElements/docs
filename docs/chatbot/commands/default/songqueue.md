@@ -1,3 +1,10 @@
+---
+id: songqueue
+tags:
+  - chatbot
+  - commands
+  - mediarequest
+---
 # !songqueue
 
 ### Overview

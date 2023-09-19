@@ -1,3 +1,10 @@
+---
+id: redeem
+tags:
+  - chatbot
+  - commands
+  - loyalty
+---
 # !redeem
 
 ### Overview

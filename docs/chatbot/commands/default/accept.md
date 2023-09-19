@@ -1,7 +1,9 @@
 ---
+id: accept
 tags:
   - chatbot
-  - duel module
+  - commands
+  - loyalty
 ---
 
 # !accept

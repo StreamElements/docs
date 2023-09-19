@@ -1,3 +1,9 @@
+---
+id: queue
+tags:
+  - chatbot
+  - commands
+---
 # !queue
 
 ### Overview

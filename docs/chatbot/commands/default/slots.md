@@ -1,3 +1,10 @@
+---
+id: slots
+tags:
+  - chatbot
+  - commands
+  - loyalty
+---
 # !slots
 
 ### Overview

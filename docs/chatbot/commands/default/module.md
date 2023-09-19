@@ -1,3 +1,9 @@
+---
+id: module
+tags:
+  - chatbot
+  - commands
+---
 # !module
 
 ### Overview

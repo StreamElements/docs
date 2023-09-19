@@ -1,3 +1,9 @@
+---
+id: uptime
+tags:
+  - chatbot
+  - commands
+---
 # !uptime
 
 ### Overview

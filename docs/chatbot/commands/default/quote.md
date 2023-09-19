@@ -1,3 +1,9 @@
+---
+id: quote
+tags:
+  - chatbot
+  - commands
+---
 # !quote
 
 ### Overview

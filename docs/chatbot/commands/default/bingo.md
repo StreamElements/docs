@@ -1,3 +1,10 @@
+---
+id: bingo
+tags:
+  - chatbot
+  - commands
+  - loyalty
+---
 # !bingo
 
 ### Overview

@@ -1,3 +1,10 @@
+---
+id: leaderboard
+tags:
+  - chatbot
+  - commands
+  - loyalty
+---
 # !leaderboard
 
 ### Overview

@@ -1,3 +1,9 @@
+---
+id: editcounter
+tags:
+  - chatbot
+  - commands
+---
 # !editcounter
 
 ### Overview

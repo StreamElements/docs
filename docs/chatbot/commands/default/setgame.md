@@ -1,3 +1,10 @@
+---
+id: setgame
+tags:
+  - chatbot
+  - commands
+  - loyalty
+---
 # !setgame
 
 The `!setgame` command is used to change the current game being played on the stream.

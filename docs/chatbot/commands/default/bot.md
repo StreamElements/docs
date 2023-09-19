@@ -1,3 +1,9 @@
+---
+id: bot 
+tags:
+  - chatbot
+  - commands
+---
 # !bot
 
 ### Overview

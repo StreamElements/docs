@@ -1,3 +1,10 @@
+---
+id: duel
+tags:
+  - chatbot
+  - commands
+  - loyalty
+---
 # !duel
 
 ### Overview

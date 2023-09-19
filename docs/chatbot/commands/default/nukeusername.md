@@ -1,3 +1,10 @@
+---
+id: nukeusername
+tags:
+  - chatbot
+  - commands
+  - moderation
+---
 # !nukeusername
 
 ### Overview

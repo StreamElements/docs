@@ -1,3 +1,10 @@
+---
+id: raffle
+tags:
+  - chatbot
+  - commands
+  - raffle
+---
 # !raffle
 
 ### Overview

@@ -1,3 +1,10 @@
+---
+id: removesong
+tags:
+  - chatbot
+  - commands
+  - mediarequest
+---
 # !removesong
 
 ### Overview

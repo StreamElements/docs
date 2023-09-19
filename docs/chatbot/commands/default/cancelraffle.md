@@ -1,3 +1,10 @@
+---
+id: cancelraffle 
+tags:
+  - chatbot
+  - commands
+  - loyalty
+---
 # !cancelraffle
 
 Cancels an ongoing raffle.

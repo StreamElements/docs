@@ -1,3 +1,10 @@
+---
+id: permit
+tags:
+  - chatbot
+  - commands
+  - moderation
+---
 # !permit
 
 The `!permit` command is used to prevent a viewer from getting timed out. By default, the duration is 60 seconds.

@@ -1,3 +1,10 @@
+---
+id: join
+tags:
+  - chatbot
+  - commands
+  - loyalty
+---
 # !join
 
 ### Overview

@@ -1,7 +1,9 @@
 ---
+id: cancelduel 
 tags:
   - chatbot
-  - duel module
+  - commands
+  - loyalty
 ---
 
 # !cancelduel

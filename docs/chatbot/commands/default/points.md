@@ -1,3 +1,10 @@
+---
+id: points
+tags:
+  - chatbot
+  - commands
+  - loyalty
+---
 # !points
 
 ### Overview

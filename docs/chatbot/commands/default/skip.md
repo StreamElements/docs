@@ -1,3 +1,10 @@
+---
+id: skip
+tags:
+  - chatbot
+  - commands
+  - mediarequest
+---
 # !skip
 
 ### Overview

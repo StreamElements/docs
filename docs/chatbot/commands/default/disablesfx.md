@@ -1,3 +1,10 @@
+---
+id: disablesfx 
+tags:
+  - chatbot
+  - commands
+  - loyalty
+---
 # !disablesfx
 
 ### Overview

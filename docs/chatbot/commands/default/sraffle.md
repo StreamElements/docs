@@ -1,3 +1,10 @@
+---
+id: sraffle
+tags:
+  - chatbot
+  - commands
+  - loyalty
+---
 # !sraffle
 
 ### Overview

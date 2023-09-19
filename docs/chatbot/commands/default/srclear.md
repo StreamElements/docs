@@ -1,3 +1,10 @@
+---
+id: srclear
+tags:
+  - chatbot
+  - commands
+  - mediarequest
+---
 # !srclear
 
 ### Overview

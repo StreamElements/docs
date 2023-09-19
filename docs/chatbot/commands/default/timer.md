@@ -1,3 +1,9 @@
+---
+id: timer
+tags:
+  - chatbot
+  - commands
+---
 # !timer
 
 ### Overview

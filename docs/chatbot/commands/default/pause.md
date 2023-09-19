@@ -1,3 +1,10 @@
+---
+id: pause
+tags:
+  - chatbot
+  - commands
+  - mediarequest
+---
 # !pause
 
 The `!pause` command is used to pause the media request playback. This command is particularly useful when the media playback is ongoing and needs to be paused.

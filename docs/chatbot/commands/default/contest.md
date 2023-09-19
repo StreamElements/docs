@@ -1,3 +1,10 @@
+---
+id: contest
+tags:
+  - chatbot
+  - commands
+  - loyalty
+---
 # !contest
 
 ### Overview
