@@ -12,9 +12,7 @@ The StreamElements slotmachine module is an interactive chat game. In this game,
 
 ### Commands
 
- Command | Description |
- --- | --- |
- !slots **points** | Starts a game of slot machine. |
+- [!slots](/chatbot/commands/default/slots) - Starts a game of slot machine.
 
 Note:
 

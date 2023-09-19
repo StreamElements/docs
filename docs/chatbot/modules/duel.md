@@ -17,11 +17,9 @@ The winner of the duel is randomly determined by the game.
 
 ### Commands
 
- Command | Description |
- --- | --- |
- !duel username points | Challenges another user to a duel. |
- !accept | Accepts a duel challenge. |
- !deny | Declines a duel challenge. |
+- [!duel](/chatbot/commands/default/duel) - Challenges another user to a duel.
+- [!accept](/chatbot/commands/default/accept) - Accepts a duel challenge.
+- [!deny](/chatbot/commands/default/deny) - Declines a duel challenge.
 
 ### Settings
 

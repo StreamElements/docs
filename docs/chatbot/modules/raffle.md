@@ -13,9 +13,7 @@ The StreamElements raffle module is an interactive chat game. In this game, a ra
 
 ### Commands
 
- Command | Description |
- --- | --- |
- !sraffle | Starts a raffle with a single winner |
- !raffle | Starts a raffle with multiple winners |
- !join | Joins the ongoing raffle. |
- !cancelraffle | Cancels the ongoing raffle. |
+- [!sraffle](/chatbot/commands/default/sraffle) - Starts a raffle with a single winner
+- [!raffle](/chatbot/commands/default/raffle) - Starts a raffle with multiple winners
+- [!join](/chatbot/commands/default/join) - Joins the ongoing raffle.
+- [!cancelraffle](/chatbot/commands/default/cancelraffle) - Cancels the ongoing raffle.

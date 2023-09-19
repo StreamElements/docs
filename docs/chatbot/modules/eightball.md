@@ -12,9 +12,7 @@ The StreamElements 8ball module is an interactive chat feature. In this module, 
 
 ### Commands
 
-Command | Description |
---- | --- |
-!8ball question | Ask the 8ball a question. |
+- [!8ball](/chatbot/commands/default/8ball) - Ask the 8ball a question.
 
 ### Example
 

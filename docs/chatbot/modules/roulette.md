@@ -12,9 +12,7 @@ The StreamElements chatbot roulette module is an interactive chat game. In this 
 
 ### Commands
 
- Command | Description |
- --- | --- |
- !roulette **points** | Starts a game of roulette. |
+- [!roulette](/chatbot/commands/default/roulette) - Starts a game of roulette.
 
 Note:
 
