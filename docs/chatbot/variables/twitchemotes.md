@@ -1,5 +1,8 @@
 ---
 id: twitchemotes
+tags:
+  - chatbot
+  - variable
 ---
 
 # $(twitchemotes)

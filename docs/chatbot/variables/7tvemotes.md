@@ -1,5 +1,8 @@
 ---
 id: 7tvemotes
+tags:
+  - chatbot
+  - variable
 ---
 
 # $(7tvemotes)

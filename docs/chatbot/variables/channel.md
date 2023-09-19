@@ -1,5 +1,8 @@
 ---
 id: channel
+tags:
+  - chatbot
+  - variable
 ---
 
 # $(channel)

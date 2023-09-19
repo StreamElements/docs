@@ -1,5 +1,8 @@
 ---
 id: queryescape
+tags:
+  - chatbot
+  - variable
 ---
 
 # $(queryescape)

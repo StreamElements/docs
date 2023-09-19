@@ -1,5 +1,8 @@
 ---
 id: msgid
+tags:
+  - chatbot
+  - variable
 ---
 
 # $(msgid)

@@ -1,3 +1,10 @@
+---
+tags:
+  - chatbot
+  - module
+  - liveannouncement
+---
+
 # Live Announcement
 
 ### Description

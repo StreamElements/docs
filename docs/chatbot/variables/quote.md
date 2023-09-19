@@ -1,5 +1,8 @@
 ---
 id: quote
+tags:
+  - chatbot
+  - variable
 ---
 
 # $(quote)

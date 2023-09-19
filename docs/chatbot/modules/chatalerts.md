@@ -1,3 +1,10 @@
+---
+tags:
+  - chatbot
+  - module
+  - chatalerts
+---
+
 # Chat Alerts
 
 ### Description

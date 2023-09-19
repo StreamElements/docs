@@ -1,5 +1,8 @@
 ---
 id: random
+tags:
+  - chatbot
+  - variable
 ---
 
 # $(random)

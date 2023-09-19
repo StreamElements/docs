@@ -1,3 +1,10 @@
+---
+tags:
+  - chatbot
+  - module
+  - raffle
+---
+
 # Raffle
 
 ### Description

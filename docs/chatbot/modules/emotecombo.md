@@ -1,3 +1,10 @@
+---
+tags:
+  - chatbot
+  - module
+  - emotecombo
+---
+
 # Emote Combo
 
 ### Description

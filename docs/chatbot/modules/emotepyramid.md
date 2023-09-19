@@ -1,3 +1,10 @@
+---
+tags:
+  - chatbot
+  - module
+  - emotepyramid
+---
+
 # Emote Pyramid
 
 ### Description

@@ -1,5 +1,8 @@
 ---
 id: touser
+tags:
+  - chatbot
+  - variable
 ---
 
 # $(touser)

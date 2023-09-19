@@ -1,3 +1,9 @@
+---
+tags:
+  - chatbot
+  - module
+  - viewerqueue
+---
 # Viewer queue
 
 ### Description

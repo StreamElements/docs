@@ -1,5 +1,8 @@
 ---
 id: math
+tags:
+  - chatbot
+  - variable
 ---
 
 # $(math)

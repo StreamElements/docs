@@ -1,5 +1,8 @@
 ---
 id: repeat
+tags:
+  - chatbot
+  - variable
 ---
 
 # $(repeat)

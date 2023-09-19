@@ -1,5 +1,8 @@
 ---
 id: ffzemotes
+tags:
+  - chatbot
+  - variable
 ---
 
 # $(ffzemotes)

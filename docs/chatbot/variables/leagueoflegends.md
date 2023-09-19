@@ -1,5 +1,8 @@
 ---
 id: leagueoflegends
+tags:
+  - chatbot
+  - variable
 ---
 
 # $(leagueoflegends)

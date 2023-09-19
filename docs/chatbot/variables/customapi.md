@@ -1,5 +1,8 @@
 ---
 id: customapi
+tags:
+  - chatbot
+  - variable
 ---
 
 # $(customapi.url)

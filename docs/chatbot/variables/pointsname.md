@@ -1,5 +1,8 @@
 ---
 id: pointsname
+tags:
+  - chatbot
+  - variable
 ---
 
 # $(pointsname)

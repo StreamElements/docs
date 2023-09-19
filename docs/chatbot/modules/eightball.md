@@ -1,3 +1,10 @@
+---
+tags:
+  - chatbot
+  - module
+  - 8ball
+---
+
 # Eightball
 
 ### Description

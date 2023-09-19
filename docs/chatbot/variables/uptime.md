@@ -1,5 +1,8 @@
 ---
 id: uptime
+tags:
+  - chatbot
+  - variable
 ---
 
 # $(uptime)

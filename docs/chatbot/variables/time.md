@@ -1,5 +1,8 @@
 ---
 id: time
+tags:
+  - chatbot
+  - variable
 ---
 
 # $(time)

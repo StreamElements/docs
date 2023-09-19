@@ -1,5 +1,8 @@
 ---
 id: settitle
+tags:
+  - chatbot
+  - variable
 ---
 
 # $(settitle)

@@ -1,5 +1,8 @@
 ---
 id: getcount
+tags:
+  - chatbot
+  - variable
 ---
 
 # $(getcount)

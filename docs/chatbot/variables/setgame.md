@@ -1,5 +1,8 @@
 ---
 id: setgame
+tags:
+  - chatbot
+  - variable
 ---
 
 # $(setgame)

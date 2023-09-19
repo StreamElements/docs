@@ -1,3 +1,10 @@
+---
+tags:
+  - chatbot
+  - module
+  - bingo
+---
+
 # Bingo
 
 ### Description

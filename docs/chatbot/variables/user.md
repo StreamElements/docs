@@ -1,5 +1,8 @@
 ---
 id: user
+tags:
+  - chatbot
+  - variable
 ---
 
 # $(user)

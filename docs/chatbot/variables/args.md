@@ -1,5 +1,8 @@
 ---
 id: args
+tags:
+  - chatbot
+  - variable
 ---
 
 # $(args)

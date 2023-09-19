@@ -1,5 +1,8 @@
 ---
 id: pathescape
+tags:
+  - chatbot
+  - variable
 ---
 
 # $(pathescape)
