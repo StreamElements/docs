@@ -4,6 +4,10 @@
 
 The `!giveaway` command is used to get an active giveaway in the channel.
 
+### Module
+
+- None
+
 #### Arguments
 
 This command has no arguments.

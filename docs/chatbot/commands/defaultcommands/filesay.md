@@ -4,17 +4,21 @@
 
 The `!filesay` command is used to have the bot send multiple lines of text to the chat in a short period via a URL. This is especially useful for cases where streamers and/or moderators want to ban a large number of users from the chat using a pastebin file.
 
+### Module
+
+- None
+
 ### Arguments
 
 - `url` - The URL of the file to read from. This file must be a plain text file with each line being a separate message to send to the chat.
 
-#### Example Input
+### Example Input
 
 ```
 !filesay https://pastebin.com/raw/MmqTJSfH
 ```
 
-#### Example Output
+### Example Output
 
 ```
 badactor1 has been permantently banned from the chat.
