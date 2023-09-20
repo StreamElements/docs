@@ -7,8 +7,6 @@ tags:
 ---
 # !songrequest
 
-### Overview
-
 The `!songrequest` command is used to request songs for mediarequest.
 
 ### Alises

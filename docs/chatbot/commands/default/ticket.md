@@ -7,8 +7,6 @@ tags:
 ---
 # !ticket
 
-### Overview
-
 The `!ticket` command is used to buy tickets for a giveaway.
 
 ### Aliases

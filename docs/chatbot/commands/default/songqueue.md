@@ -7,8 +7,6 @@ tags:
 ---
 # !songqueue
 
-### Overview
-
 The `!songqueue` command is used to receive a link for the mediarequest queue.
 
 ### Arguments

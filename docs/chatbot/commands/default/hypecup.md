@@ -6,8 +6,6 @@ tags:
 ---
 # !hypecup
 
-### Overview
-
 The `!hypecup` command allows for clearing the hypecup overlay.
 
 #### Arguments

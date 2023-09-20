@@ -1,3 +1,7 @@
+---
+description: Chatbot modules are a set of tools designed to enhance viewer interaction and engagement in your live stream.
+---
+
 # Modules
 
 ## Introduction

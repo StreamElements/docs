@@ -7,8 +7,6 @@ tags:
 ---
 # !slots
 
-### Overview
-
 The `!slots` command is used to play a simple slot machine game. The user bets a certain amount of points and if they win, they get a multiple of their bet back.
 
 ### Arguments

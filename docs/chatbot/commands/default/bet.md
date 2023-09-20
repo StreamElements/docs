@@ -8,8 +8,6 @@ tags:
 
 # !bet
 
-### Overview
-
 The `!bet` command is used to place a bet in a running contest. This can be useful for users to participate in contests and potentially win rewards.
 
 ### Module

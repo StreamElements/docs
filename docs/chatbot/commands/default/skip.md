@@ -7,8 +7,6 @@ tags:
 ---
 # !skip
 
-### Overview
-
 The `!skip` command is used to skip the current song in the mediarequest queue. It will error if no song is currently playing.
 
 ### Arguments

@@ -7,8 +7,6 @@ tags:
 ---
 # !song
 
-### Overview
-
 The `!song` command is used to return information about the current song that is playing in mediarequest. It will error if no song is currently playing.
 
 ### Arguments

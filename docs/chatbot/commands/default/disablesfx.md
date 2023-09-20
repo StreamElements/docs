@@ -7,8 +7,6 @@ tags:
 ---
 # !disablesfx
 
-### Overview
-
 The `!disablesfx` command is used to disable all sound effect items in the loyalty stream store.
 
 ### Arguments

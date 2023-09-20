@@ -7,8 +7,6 @@ tags:
 ---
 # !nukeusername
 
-### Overview
-
 The `!nukeusername` command is used to perform a timeout, ban, or deletion on a user's activity in the chat. This command will search the user's activity for a specified string and perform the specified action on the user if the string is found. This command will error if the user is not found in the chat.
 
 ### Arguments

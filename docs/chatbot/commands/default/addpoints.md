@@ -7,8 +7,6 @@ tags:
 ---
 # !addpoints
 
-### Overview
-
 The `!addpoints` command is used to add points to a user's account. This command is typically used by moderators or the streamer themselves to reward viewers with points. The syntax for this command is `!addpoints [username] [amount]`, where `[username]` is the name of the viewer you want to give points to, and `[amount]` is the number of points you want to give.
 
 ### Arguments

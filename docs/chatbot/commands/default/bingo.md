@@ -7,8 +7,6 @@ tags:
 ---
 # !bingo
 
-### Overview
-
 The `!bingo` command is used to start a game of emote bingo in the chat. When this command is used, a single emote is randomly selected from the available platform(s). The viewers then try to match this emote in the chat.
 
 ### Module

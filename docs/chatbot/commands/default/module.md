@@ -6,8 +6,6 @@ tags:
 ---
 # !module
 
-### Overview
-
 The `!module` command is used to enable or disable chatbot modules from the chat. This command allows the user to control the functionality of different modules in the chatbot.
 
 ### Arguments

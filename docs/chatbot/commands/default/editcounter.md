@@ -6,8 +6,6 @@ tags:
 ---
 # !editcounter
 
-### Overview
-
 The `!editcounter` command is used to edit the counter of a specific event or item in the chat.
 
 ### Arguments

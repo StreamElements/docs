@@ -6,8 +6,6 @@ tags:
 ---
 # !uptime
 
-### Overview
-
 The `!uptime` command is used to check how long the streamer has been online for.
 
 ### Arguments

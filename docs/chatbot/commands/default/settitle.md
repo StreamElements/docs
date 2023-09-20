@@ -6,8 +6,6 @@ tags:
 ---
 # !settitle
 
-### Overview
-
 The `!settitle` command is used to change the title of the current stream.
 
 ### Arguments

@@ -8,8 +8,6 @@ tags:
 
 # !commands
 
-### Overview
-
 The `!commands` command is used to get a link to the creators commands page.
 
 ### Module

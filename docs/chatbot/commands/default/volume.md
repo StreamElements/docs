@@ -7,8 +7,6 @@ tags:
 ---
 # !volume
 
-### Overview
-
 The `!volume` command is used in conjunction with the mediarequest feature. It can be used to get the current volume without an argument. With an argument, it will set the volume. The argument should be a number between 0 and 100.
 
 ### Arguments

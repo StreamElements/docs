@@ -6,8 +6,6 @@ tags:
 ---
 # !bot
 
-### Overview
-
 The `!bot` command is used to manage the bot's behavior in the chat. It has three subcommands:
 
 - `mute`: This subcommand is used to mute the bot, preventing it from sending messages in the chat.

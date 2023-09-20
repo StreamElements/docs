@@ -7,8 +7,6 @@ tags:
 ---
 # !sraffle
 
-### Overview
-
 The `!sraffle` command is used to initiate a single raffle event in the chat.
 
 ### Arguments

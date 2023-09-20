@@ -7,8 +7,6 @@ tags:
 
 # Live Announcement
 
-### Description
-
 The StreamElements live announcement module is a feature that allows the chatbot to post a message in the chat when the stream goes live.
 
 **How it works:**

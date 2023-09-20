@@ -7,8 +7,6 @@ tags:
 ---
 # !enablesfx
 
-### Overview
-
 The `!enablesfx` command is used to enable all sound effect items in the loyalty stream store that were previously disabled.
 
 ### Arguments

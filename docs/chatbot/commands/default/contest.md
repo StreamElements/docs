@@ -7,8 +7,6 @@ tags:
 ---
 # !contest
 
-### Overview
-
 The `!contest` command is used to return information about the current active contest, if any.
 
 ### Module

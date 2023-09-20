@@ -8,8 +8,6 @@ tags:
 
 # !chatstats
 
-### Overview
-
 The `!chatstats` command is used to get a link to the creators chatstats page.
 
 ### Module

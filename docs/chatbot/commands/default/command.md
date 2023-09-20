@@ -6,9 +6,7 @@ tags:
 ---
 # !command
 
-### Overview
-
-The `!command` command is used to manage chat commands. It has six subcommands:
+The `!command` command is used to manage chat commands. It has six subcommands
 
 - `add`: This subcommand is used to add a new command to the chat.
 - `remove`: This subcommand is used to remove an existing command from the chat.

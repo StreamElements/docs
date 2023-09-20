@@ -7,8 +7,6 @@ tags:
 ---
 # !giveaway
 
-### Overview
-
 The `!giveaway` command is used to get an active giveaway in the channel.
 
 ### Module

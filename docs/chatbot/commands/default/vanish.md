@@ -6,8 +6,6 @@ tags:
 ---
 # !vanish
 
-### Overview
-
 The `!vanish` command is used for chatters to time themselves out for 1 second. This action clears their chat history in the process.
 
 ### Arguments

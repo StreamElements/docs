@@ -6,8 +6,6 @@ tags:
 ---
 # !queue
 
-### Overview
-
 The `!queue` command is used to manage the viewer queue during live streams. It has several subcommands:
 
 - `pick username`: This subcommand is used to manually pick a viewer from the queue.

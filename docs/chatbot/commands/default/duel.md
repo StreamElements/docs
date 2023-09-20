@@ -7,8 +7,6 @@ tags:
 ---
 # !duel
 
-### Overview
-
 The `!duel` command is used to initiate a duel with another user in the chat.
 
 ### Arguments

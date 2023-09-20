@@ -7,8 +7,6 @@ tags:
 ---
 # !raffle
 
-### Overview
-
 The `!raffle` command is used to start a raffle with multiple winners. This command is typically used by moderators or the streamer themselves to engage viewers in an interactive chat game. The syntax for this command is `!raffle`.
 
 ### Usage

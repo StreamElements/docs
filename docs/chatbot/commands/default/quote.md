@@ -6,8 +6,6 @@ tags:
 ---
 # !quote
 
-### Overview
-
 The `!quote` command is used to add, remove, and display quotes in the chat.
 
 Without any arguments, this command will display a random quote from the chat.

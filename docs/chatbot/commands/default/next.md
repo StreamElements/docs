@@ -7,8 +7,6 @@ tags:
 ---
 # !next
 
-### Overview
-
 The `!next` command is used to view the next song in the media request queue. This command will display the title and artist of the upcoming song.
 
 ### Arguments

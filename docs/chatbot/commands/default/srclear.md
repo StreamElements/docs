@@ -7,8 +7,6 @@ tags:
 ---
 # !srclear
 
-### Overview
-
 The `!srclear` command is used to clear the songrequest queue.
 
 ### Arguments

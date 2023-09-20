@@ -7,8 +7,6 @@ tags:
 ---
 # !openstore
 
-### Overview
-
 The `!openstore` command is used to enable all regular items in the loyalty stream store that were previously disabled.
 
 ### Arguments

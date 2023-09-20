@@ -7,8 +7,6 @@ tags:
 ---
 # !points
 
-### Overview
-
 The `!points` command is used to display the number of points a user has and their rank on the leaderboard.
 
 Without any arguments, this command will display the points and rank of the user who issued the command.

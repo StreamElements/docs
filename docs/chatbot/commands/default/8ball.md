@@ -7,8 +7,6 @@ tags:
 
 # !8ball
 
-### Overview
-
 The `!8ball` command is a fun chatbot command that mimics the classic magic 8-ball toy. When a user types `!8ball` followed by a question, the chatbot will respond with a random answer, similar to shaking a magic 8-ball for a fortune. It's a great way to engage your audience and add a bit of unpredictability to your chat.
 
 ### Module

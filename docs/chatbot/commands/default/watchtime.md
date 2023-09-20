@@ -7,8 +7,6 @@ tags:
 ---
 # !watchtime
 
-### Overview
-
 The `!watchtime` command is used to display the total time a user has spent watching the stream.
 
 ### Arguments

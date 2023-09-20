@@ -7,8 +7,6 @@ tags:
 ---
 # !voteskip
 
-### Overview
-
 The `!voteskip` command is used in conjunction with the mediarequest feature. If enabled by the broadcaster, it allows users to vote to skip the current media request.
 
 ### Arguments

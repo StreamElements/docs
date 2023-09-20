@@ -7,8 +7,6 @@ tags:
 ---
 # !removesong
 
-### Overview
-
 The `!removesong` command is used to remove songs from the queue. This command can be used to remove all songs added by a specific user or a single song by its URL. This command is typically used by moderators or the streamer themselves to manage the song queue during a stream. The syntax for this command is `!removesong [username|URL]`, where `[username]` is the name of the viewer whose songs you want to remove, and `[URL]` is the URL of the specific song you want to remove.
 
 ### Arguments

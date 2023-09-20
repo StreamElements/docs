@@ -8,8 +8,6 @@ tags:
 
 # !accept
 
-### Overview
-
 The `!accept` command is used to accept an invitation or request in the chat. This could be a duel request, a game invite, or any other type of request that requires user acceptance.
 
 ### Module

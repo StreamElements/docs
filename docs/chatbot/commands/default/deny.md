@@ -7,8 +7,6 @@ tags:
 ---
 # !deny
 
-### Overview
-
 The `!deny` command is used to deny a duel request.
 
 ### Module

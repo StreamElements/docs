@@ -7,8 +7,6 @@ tags:
 ---
 # !top
 
-### Overview
-
 The `!top` command is used in conjunction with the loyalty system. It allows users to see the top users on the leaderboard for points, alltime, online (watchtime), and offline (watchtime).
 
 ### Arguments

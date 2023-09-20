@@ -7,8 +7,6 @@ tags:
 ---
 # !tip
 
-### Overview
-
 The `!tip` command is used to provide a link for users to tip the streamer.
 
 ### Example Input

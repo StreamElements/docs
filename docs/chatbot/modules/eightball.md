@@ -7,8 +7,6 @@ tags:
 
 # Eightball
 
-### Description
-
 The StreamElements 8ball module is an interactive chat feature. In this module, users can ask the 8ball a question, and it will respond with a random answer. The answers can be customized in the module settings.
 
 **How the module works:**

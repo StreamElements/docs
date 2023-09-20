@@ -7,8 +7,6 @@ tags:
 ---
 # !when
 
-### Overview
-
 The `!when` command is used to see when your requested song is playing.
 
 ### Arguments

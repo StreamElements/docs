@@ -6,8 +6,6 @@ tags:
 ---
 # !followage
 
-### Overview
-
 The `!followage` command is used to check how long a user has been following the channel.
 
 ### Module

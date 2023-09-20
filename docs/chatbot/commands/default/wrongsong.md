@@ -7,8 +7,6 @@ tags:
 ---
 # !wrongsong
 
-### Overview
-
 The `!wrongsong` command is used to remove the last song you've added to the queue.
 
 ### Arguments

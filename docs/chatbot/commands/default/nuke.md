@@ -7,8 +7,6 @@ tags:
 ---
 # !nuke
 
-### Overview
-
 The `!nuke` command is used to perform a timeout, ban, or deletion on messages in the chat. This command will search the chat messages for a specified string and perform the specified action on the messages if the string is found. This command will error if the string is not found in the chat.
 
 ### Arguments

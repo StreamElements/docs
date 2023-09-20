@@ -7,8 +7,6 @@ tags:
 ---
 # !givepoints
 
-### Overview
-
 The `!givepoints` command transfers points from the sender to the specified user.
 
 ### Module

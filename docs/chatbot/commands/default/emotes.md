@@ -6,8 +6,6 @@ tags:
 ---
 # !emotes
 
-### Overview
-
 The `!emotes` command is used to display the list of available emotes in the chat.
 
 ### Usage

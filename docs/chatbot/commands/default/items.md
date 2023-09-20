@@ -7,8 +7,6 @@ tags:
 ---
 # !items
 
-### Overview
-
 The `!items` command is used to retrieve a list of items that are redeemable from the chat via the loyalty stream store. This command allows viewers to see what items they can redeem using their loyalty points.
 
 ### Arguments
