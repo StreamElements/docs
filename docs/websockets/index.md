@@ -39,11 +39,11 @@ Clients establish a WebSocket connection to: `wss://astro.streamelements.com`
 
 ```json
 {
-    "id":"04c25ba8-9162-4968-968b-9f7f5d3bc361",
-    "ts":"2023-09-20T16:43:21Z",
-    "type":"RESPONSE",
-    "nonce":"86ccb2b3-eb8d-4b3c-902d-509c3f5ca88c",
-    "data":"successfully subscribed to topic"
+    "id": "04c25ba8-9162-4968-968b-9f7f5d3bc361",
+    "ts": "2023-09-20T16:43:21Z",
+    "type": "RESPONSE",
+    "nonce": "86ccb2b3-eb8d-4b3c-902d-509c3f5ca88c",
+    "data": "successfully subscribed to topic"
 }
 ```
 
