@@ -69,18 +69,6 @@ const config = {
         respectPrefersColorScheme: true,
         defaultMode: 'dark'
       },
-      algolia: {
-        appId: 'LR94955ANU',
-        apiKey: '18f45ae472484536a2730b56d6e4822f',
-        indexName: 'streamelements_docs',
-        contextualSearch: true,
-        replaceSearchResultPathname: {
-          from: '/docs/', // or as RegExp: /\/docs\//
-          to: '/',
-        },
-        searchParameters: {},
-        searchPagePath: 'search',
-      },
       footer: {
         style: 'dark',
         links: [
