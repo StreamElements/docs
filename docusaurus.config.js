@@ -63,7 +63,7 @@ const config = {
         title: 'StreamElements Docs',
       },
       metadata: [
-        {name: 'keywords', content: 'Streaming,Chatbot,documentation,StreamElements'},
+        {name: 'keywords', content: 'Streaming,Chatbot,documentation,StreamElements,Live Streaming,Guides,Tutorials,Help,Support,FAQ,How-to,Stream Setup,Stream Tools,StreamElements Features,StreamElements Services'},
         {name: 'twitter:card', content: 'summary_large_image'},
       ],
       colorMode: {
