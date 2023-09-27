@@ -16,7 +16,7 @@ The following parameters are used in a client-to-server request:
 | `nonce` | `string` | A unique identifier for the request. Useful for identifying the corresponding response (Optional). |
 | `data.topic` | `string` | The topic to which the client wishes to subscribe. |
 | `data.token` | `string` | The token used to authenticate the request. |
-| `data.token_type` | `string` | Specifies the type of token. Valid options are `apikey` and `jwt`. |
+| `data.token_type` | `string` | Specifies the type of token. Valid options are `apikey`, `jwt` and `oauth`. |
 
 Here is an example of a client-to-server request:
 
@@ -52,7 +52,10 @@ Here is an example of a server-to-client response:
     "ts": "2023-09-20T16:43:21Z",
     "type": "response",
     "nonce": "86ccb2b3-eb8d-4b3c-902d-509c3f5ca88c",
-    "data": "successfully subscribed to topic"
+    "data": {
+      "message": "successfully subscribed to topic",
+      "topic": "channel.follow"
+    }
 }
 ```
 
