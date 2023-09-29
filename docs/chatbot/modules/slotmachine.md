@@ -7,7 +7,7 @@ tags:
 
 # Slotmachine
 
-The StreamElements slotmachine module is an interactive chat game. In this game, users can wager their points on a virtual slot machine that is based on emotes.
+The slotmachine module is an interactive chat game. In this game, users can wager their points on a virtual slot machine that is based on emotes.
 
 **How the game works:**
 

@@ -7,7 +7,7 @@ tags:
 
 # Raffle
 
-The StreamElements raffle module is an interactive chat game. In this game, a raffle is initiated by a moderator and users can join the raffle by using a specific command.
+The raffle module is an interactive chat game. In this game, a raffle is initiated by a moderator and users can join the raffle by using a specific command.
 
 **How the game works:**
 

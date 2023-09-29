@@ -7,7 +7,7 @@ tags:
 
 # Duel
 
-The StreamElements chatbot duel module is an interactive chat game. In this game, users can challenge each other to a duel.
+The duel module is an interactive chat game. In this game, users can challenge each other to a duel.
 
 **How the game works:**
 

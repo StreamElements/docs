@@ -7,7 +7,7 @@ tags:
 
 # Emote Combo
 
-The StreamElements emote combo module is an interactive chat feature. In this module, users try to send the same emote consecutively in the chat.
+The emote combo module is an interactive chat feature. In this module, users try to send the same emote consecutively in the chat.
 
 **How the module works:**
 
