@@ -6,8 +6,6 @@ tags:
 ---
 # Banned words
 
-## Overview
-
 The Banned Words filter is a tool that helps maintain the chat environment by removing messages that contain banned phrases and patterns. This filter is highly customizable and supports the creation of multiple groups, each with its own set of banned phrases.
 
 These phrases can be simple text or they can be regular expressions (regexp), providing a high degree of flexibility in defining what constitutes a banned phrase. For example, you could ban a specific word, or use a regular expression to ban any word that contains a certain sequence of characters.

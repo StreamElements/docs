@@ -9,3 +9,8 @@ For example, in the command `${uptime shroud}`, `shroud` is a variable represent
 Variables make chat commands more flexible and powerful, allowing for a wide range of interactions and functionalities.
 
 In addition to the `${}` syntax, we also support the `$()` syntax for variables. Both of these syntaxes can be used interchangeably in chat commands. For instance, the command `${uptime shroud}` can also be written as `$(uptime shroud)`.
+
+import DocCardList from '@theme/DocCardList';
+
+<DocCardList />
+

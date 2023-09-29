@@ -7,7 +7,7 @@ tags:
 
 # Roulette
 
-The StreamElements chatbot roulette module is an interactive chat game. In this game, users can wager their points in a roulette-style gamble.
+The roulette module is an interactive chat game. In this game, users can wager their points in a roulette-style gamble.
 
 **How the game works:**
 

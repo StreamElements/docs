@@ -7,7 +7,7 @@ tags:
 
 # Chat Alerts
 
-The StreamElements chat alerts module is a feature that allows the chatbot to post messages in the chat when certain events occur. These events can include, but are not limited to, receiving a tip, gaining a new follower, or being raided.
+The chatalerts module is a feature that allows the chatbot to post messages in the chat when certain events occur. These events can include, but are not limited to, receiving a tip, gaining a new follower, or being raided.
 
 **How the module works:**
 

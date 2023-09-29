@@ -7,7 +7,7 @@ tags:
 
 # Emote Pyramid
 
-The StreamElements emote pyramid module is a fun chat game. In this game, users attempt to create a pyramid of emotes in the chat.
+The emote pyramid module is a fun chat game. In this game, users attempt to create a pyramid of emotes in the chat.
 
 **How the game works:**
 

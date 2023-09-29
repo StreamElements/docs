@@ -7,7 +7,7 @@ tags:
 
 # Bingo
 
-The StreamElements emote bingo module is an interactive chat game. In this game, a bingo card is generated with a variety of emotes.
+The emote bingo module is an interactive chat game. In this game, a bingo card is generated with a variety of emotes.
 
 **How the game works:**
 
