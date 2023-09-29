@@ -8,7 +8,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'StreamElements Docs',
   tagline: 'The official documentation for StreamElements',
-  favicon: 'img/favicon.png',
+  favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
   url: 'https://docs.streamelements.com',
@@ -63,7 +63,7 @@ const config = {
         title: 'StreamElements Docs',
       },
       metadata: [
-        {name: 'keywords', content: 'Streaming,Chatbot,documentation,StreamElements,Live Streaming,Guides,Tutorials,Help,Support,FAQ,How-to,Stream Setup,Stream Tools,StreamElements Features,StreamElements Services'},
+        {name: 'keywords', content: 'Streaming,Chatbot,documentation,StreamElements,Live Streaming,Guides,Tutorials,Help,How-to,Stream Setup,Stream Tools,StreamElements Features'},
         {name: 'twitter:card', content: 'summary_large_image'},
       ],
       colorMode: {
@@ -77,9 +77,13 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Tutorial',
-                to: '/',
+                label: 'Getting Started',
+                to: '/chatbot/gettingstarted/customcommands/creating',
               },
+              {
+                label: 'Variables',
+                to: '/chatbot/variables',
+              }
             ],
           },
           {
