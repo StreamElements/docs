@@ -6,8 +6,6 @@ tags:
 ---
 # Symbol
 
-### Description
-
 The Symbol filter helps manage the use of symbols in chat messages. It checks the number and percentage of symbols in a message and compares them with the set limits. If a message violates these limits, the filter takes action according to the configured settings.
 
 ### Supported Settings

@@ -6,8 +6,6 @@ tags:
 ---
 # Paragraph
 
-### Description
-
 The Paragraph filter helps manage the length of chat messages. It checks the number of characters in a message and compares them with the set limit. If a message violates this limit, the filter takes action according to the configured settings.
 
 ### Supported Settings

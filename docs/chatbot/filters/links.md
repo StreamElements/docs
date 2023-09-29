@@ -6,8 +6,6 @@ tags:
 ---
 # Links
 
-### Description
-
 The Link filter helps manage the posting of links in chat messages. It checks if a message contains any links and compares them with the set allowlist and blocklist. If a message contains a link that is not in the allowlist or is in the blocklist, the filter takes action according to the configured settings.
 
 ### Supported Settings

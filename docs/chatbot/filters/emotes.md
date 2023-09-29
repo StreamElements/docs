@@ -6,8 +6,6 @@ tags:
 ---
 # Emotes
 
-### Description
-
 The Emote filter helps manage the use of emotes in chat messages. It checks the number of emotes in a message and compares them with the set limit. If a message violates this limit, the filter takes action according to the configured settings.
 
 ### Supported Settings
