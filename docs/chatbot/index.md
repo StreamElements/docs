@@ -5,7 +5,9 @@ sidebar_position: 1
 ---
 # Chatbot
 
-This documentation provides an in-depth guide on how to utilize our Chatbot. It encompasses various features including
+Welcome to our Chatbot documentation. Here, you will find guides and tutorials on how to make the most out of our Chatbot.
+
+This documentation covers a wide range of features and functionalities, providing you with the knowledge and tools to fully leverage our Chatbot.
 
 import DocCardList from '@theme/DocCardList';
 
