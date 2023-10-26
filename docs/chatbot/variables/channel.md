@@ -39,26 +39,6 @@ $(channel) has $(channel.viewers) viewers
 onslaught has 100 viewers
 ```
 
-## $(channel.views)
-
-Displays the channel’s total view count
-
-#### Parameters
-
-This variable does not take any parameters.
-
-#### Example Input
-
-```
-$(channel) has $(channel.views) views
-```
-
-#### Example Output
-
-```
-onslaught has 100 views
-```
-
 ## $(channel.followers)
 
 Displays the channel’s total follower count
