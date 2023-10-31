@@ -7,6 +7,10 @@ tags:
 
 # Raffle
 
+:::info
+Raffles with multiple winners scale differently based on the number of users that enter.
+:::
+
 The raffle module is an interactive chat game. In this game, a raffle is initiated by a moderator and users can join the raffle by using a specific command.
 
 **How the game works:**
