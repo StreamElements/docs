@@ -7,7 +7,7 @@ tags:
 
 # $(touser)
 
-Displays either the first word after the command $[1], or the sender’s name. This is an alias for ${1|sender}
+Displays either the first word after the command $[1], or the sender’s name. This is an alias for $(1|sender)
 
 #### Parameters
 
