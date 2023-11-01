@@ -9,7 +9,7 @@ tags:
 
 ## $(time.timezone)
 
-Displays the time in the given timezone. A list can be found here: <https://nodatime.org/TimeZones>
+Displays the time in the given timezone. A list can be found here [Timezones]([url](https://nodatime.org/TimeZones)).
 
 #### Parameters
 

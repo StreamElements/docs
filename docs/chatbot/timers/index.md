@@ -15,4 +15,4 @@ Each timer can be configured with multiple messages, which will be cycled throug
 
 The frequency of each timer can be set in minutes, determining how often it will be activated. Additionally, a minimum amount of chat lines that must be sent in the interval for the timer to be activated can be set, ensuring the timer only runs when chat activity is high enough.
 
-You can find your timers here: <https://streamelements.com/dashboard/bot/timers>
+You can find your timers here: [Dashboard](https://streamelements.com/dashboard/bot/timers)

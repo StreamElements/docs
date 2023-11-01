@@ -1,11 +1,8 @@
-// @ts-check
-// Note: type annotations allow type checking and IDEs autocompletion
+import {themes as prismThemes} from 'prism-react-renderer';
+import type {Config} from '@docusaurus/types';
+import type * as Preset from '@docusaurus/preset-classic';
 
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
-
-/** @type {import('@docusaurus/types').Config} */
-const config = {
+const config: Config = {
   title: 'StreamElements Docs',
   tagline: 'The official documentation for StreamElements',
   favicon: '/favicon.ico',
@@ -116,8 +113,8 @@ const config = {
         copyright: `Copyright © ${new Date().getFullYear()} StreamElements.`,
       },
       prism: {
-        theme: lightCodeTheme,
-        darkTheme: darkCodeTheme,
+        theme: prismThemes.github,
+        darkTheme: prismThemes.dracula,
       },
     }),
 };
