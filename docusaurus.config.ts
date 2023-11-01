@@ -64,6 +64,15 @@ const config: Config = {
       },
       { name: "twitter:card", content: "summary_large_image" },
     ],
+    headTags: [
+      {
+        tagName: 'link',
+        attributes: {
+          rel: 'preconnect',
+          href: 'https://docs.streamelements.com',
+        },
+      },
+    ],
     colorMode: {
       respectPrefersColorScheme: true,
       defaultMode: "dark",
