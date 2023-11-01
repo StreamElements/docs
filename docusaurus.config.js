@@ -63,7 +63,7 @@ const config = {
         title: 'StreamElements Docs',
       },
       metadata: [
-        {name: 'keywords', content: 'StreamElements, Commands, Timers, Variables, Twitch, YouTube, Command Variables, Chatbot Modules, Chatbot Timers, Documentation, Guides, Tutorials'},
+        {name: 'keywords', content: 'StreamElements, Commands, Timers, Variables, Twitch, YouTube, Command Variables, Chatbot Modules, Chatbot Timers, Spam Filters, Documentation, Guides, Tutorials'},
         {name: 'twitter:card', content: 'summary_large_image'},
       ],
       colorMode: {
