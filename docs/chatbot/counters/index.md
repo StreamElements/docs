@@ -22,7 +22,7 @@ Let's start by adding a new counter command for missed cannons in league of lege
 
 ---
 
-### See the current count
+### Get the current count
 
 Let's create another command to see how many cannons you've missed (Without incrementing the counter):
 
