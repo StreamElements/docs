@@ -15,8 +15,8 @@ You can manage your counters in the [StreamElements Dashboard](https://streamele
 
 Let's start by adding a new counter command for missed cannons in league of legends:
 
-1. Create a new command by typing `!cmd add cannons ${count cannons}`
-2. Now when you type `!cannons` in chat, it will increment the counter by 1.
+1. Create a new command by typing `!cmd add cannon ${count cannon}`
+2. Now when you type `!cannon` in chat, it will increment the counter by 1.
 
 ![Image](img/0.png)
 
@@ -26,7 +26,7 @@ Let's start by adding a new counter command for missed cannons in league of lege
 
 Let's create another command to see how many cannons you've missed (Without incrementing the counter):
 
-1. Create a new command by typing `!cmd add missedcannons ${getcount cannons}`
+1. Create a new command by typing `!cmd add missedcannons ${getcount cannon}`
 2. Now when you type `!missedcannons` in chat, it will show you the current count of the cannon counter.
 
 ![Image](img/1.png)
