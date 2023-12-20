@@ -7,6 +7,10 @@ tags:
 ---
 # !watchtime
 
+:::warning
+Users can accumulate watch time only when the loyalty feature is enabled.
+:::
+
 The `!watchtime` command is used to display the total time a user has spent watching the stream.
 
 ### Arguments
