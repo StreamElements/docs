@@ -20,7 +20,7 @@ This variable accepts two numbers as input. If no numbers are provided the varia
 #### Example Input
 
 ```
-${random.1-10}
+${random 1-10}
 ${random.number 1-10}
 ```
 
