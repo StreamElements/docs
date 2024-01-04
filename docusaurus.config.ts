@@ -56,6 +56,11 @@ const config: Config = {
     navbar: {
       title: "StreamElements Docs",
     },
+    algolia: {
+      appId: 'WL7E3ZBLD0',
+      apiKey: '8d7a31c978e30c62a658b21a97d88dfd',
+      indexName: 'streamelements',
+    },
     metadata: [
       {
         name: "keywords",
