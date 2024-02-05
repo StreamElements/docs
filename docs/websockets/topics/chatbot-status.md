@@ -2,7 +2,7 @@
 
 ## Description
 
-This event is triggered whenever there is a change in the chatbot's status. It sends out a `partial`` update highlighting the modified field.
+This event is triggered whenever there is a change in the chatbot's status. It sends out a `partial` update highlighting the modified field.
 
 #### Payload
 
