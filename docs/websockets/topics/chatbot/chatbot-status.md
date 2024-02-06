@@ -1,4 +1,8 @@
-# channel.chatbot.status
+# Status
+
+## Topic
+
+`channel.chatbot.status`
 
 ## Description
 

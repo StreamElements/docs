@@ -1,4 +1,8 @@
-# channel.chatbot.timeout
+# Chatbot Timeout
+
+## Topic
+
+`channel.chatbot.timeout`
 
 ## Description
 
