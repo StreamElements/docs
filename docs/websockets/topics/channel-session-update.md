@@ -18,7 +18,7 @@ This event is fired when the channel received a new activity.
     "id": "01HPPM2TQ6CCMFQGHENAPFR4ZE",
     "ts": "2024-02-15T14:52:42Z",
     "type": "message",
-    "topic": "channel.session.updates",
+    "topic": "channel.session.update",
     "data": {
         "name": "follower-goal",
         "provider": "twitch",
