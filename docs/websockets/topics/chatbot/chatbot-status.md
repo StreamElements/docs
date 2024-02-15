@@ -15,6 +15,7 @@ This event is triggered whenever there is a change in the chatbot's status. It s
     "id": "01HNX3Q5CS8D309V6DXJ3ZADEQ",
     "ts": "2024-02-05T17:05:41Z",
     "topic": "channel.chatbot.status",
+    "type":"message",
     "data": {
         "mod": true
     }
