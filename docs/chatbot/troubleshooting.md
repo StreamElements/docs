@@ -1,7 +1,3 @@
----
-id: faq
----
-
 # Troubleshooting
 
 This section aims to help you quickly resolve common issues you might encounter with the StreamElements Chatbot and answer frequently asked questions.
