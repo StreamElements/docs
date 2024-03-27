@@ -1,5 +1,5 @@
 ---
-id: setpoints
+id: level
 tags:
   - chatbot
   - commands
@@ -45,7 +45,7 @@ Note: Although `subscriber`, `VIP` and `mod` are automatically set, you can also
 !level darkoe reset
 ```
 
-### Example output 
+### Example output
 
 ```
 @styler, the level of darkoe is 100
