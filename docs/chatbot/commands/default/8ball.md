@@ -11,7 +11,7 @@ The `!8ball` command is a fun chatbot command that mimics the classic magic 8-ba
 
 ### Module
 
-- The `!8ball` command is part of the [8ball module](../../modules/bingo).
+- The `!8ball` command is part of the [8ball module](../../modules/eightball).
 
 ### Default Aliases
 
