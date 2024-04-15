@@ -3,6 +3,10 @@ id: twitchemotes
 tags:
   - chatbot
   - variable
+keywords:
+  - twitchemotes
+  - twitch emotes
+  - twitch emote
 ---
 
 # $(twitchemotes)

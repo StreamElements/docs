@@ -4,6 +4,9 @@ tags:
   - chatbot
   - commands
   - loyalty
+keywords:
+  - giveaway
+  - giveaway command
 ---
 # !giveaway
 

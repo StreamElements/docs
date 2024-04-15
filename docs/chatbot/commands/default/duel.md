@@ -4,6 +4,10 @@ tags:
   - chatbot
   - commands
   - loyalty
+keywords:
+  - duel
+  - duel command
+  - duel points
 ---
 # !duel
 

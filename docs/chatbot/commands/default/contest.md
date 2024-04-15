@@ -4,6 +4,9 @@ tags:
   - chatbot
   - commands
   - loyalty
+keywords:
+  - contest
+  - contest command
 ---
 # !contest
 

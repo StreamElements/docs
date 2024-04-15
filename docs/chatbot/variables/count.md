@@ -3,6 +3,11 @@ id: count
 tags:
   - chatbot
   - variable
+keywords:
+  - count
+  - counter
+  - death counter
+  - command counter
 ---
 
 # $(count)

@@ -3,6 +3,10 @@ id: editcounter
 tags:
   - chatbot
   - commands
+keywords:
+  - editcounter
+  - edit counter
+  - counter
 ---
 # !editcounter
 

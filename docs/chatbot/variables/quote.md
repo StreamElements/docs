@@ -3,6 +3,9 @@ id: quote
 tags:
   - chatbot
   - variable
+keywords:
+  - quotes
+  - twitch quotes
 ---
 
 # $(quote)

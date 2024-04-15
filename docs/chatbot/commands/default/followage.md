@@ -4,7 +4,10 @@ tags:
   - chatbot
   - commands
   - twitch
+keywords:
   - followage
+  - followage command
+  - followage twitch
 ---
 # !followage
 

@@ -3,6 +3,10 @@ id: ai
 tags:
   - chatbot
   - variable
+keywords:
+  - ai
+  - streamelements ai
+  - chatbot ai
 ---
 
 # $(ai)

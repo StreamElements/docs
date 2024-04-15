@@ -3,6 +3,14 @@ id: emotes
 tags:
   - chatbot
   - commands
+keywords:
+  - emotes
+  - emote
+  - bttv
+  - ffz
+  - frankerfacez
+  - 7tv
+  - twitch emotes
 ---
 # !emotes
 

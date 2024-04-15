@@ -3,6 +3,9 @@ id: vanish
 tags:
   - chatbot
   - commands
+keywords:
+  - vanish command
+  - time out command
 ---
 # !vanish
 

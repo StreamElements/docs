@@ -3,6 +3,10 @@ id: ffzemotes
 tags:
   - chatbot
   - variable
+keywords:
+  - ffz
+  - emotes
+  - frankerfacez
 ---
 
 # $(ffzemotes)

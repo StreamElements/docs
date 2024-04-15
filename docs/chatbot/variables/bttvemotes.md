@@ -3,6 +3,10 @@ id: bttvemotes
 tags:
   - chatbot
   - variable
+keywords:
+  - bttv
+  - emotes
+  - betterttv
 ---
 
 # $(bttvemotes)

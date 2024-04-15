@@ -3,6 +3,10 @@ id: 8ball
 tags:
   - chatbot
   - commands
+keywords:
+  - 8ball command
+  - 8 ball command
+  - magic 8-ball command
 ---
 
 # !8ball

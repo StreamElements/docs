@@ -3,6 +3,9 @@ id: args
 tags:
   - chatbot
   - variable
+keywords:
+  - args
+  - arguments
 ---
 
 # $(args)

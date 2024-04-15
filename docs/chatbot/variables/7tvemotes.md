@@ -3,6 +3,10 @@ id: 7tvemotes
 tags:
   - chatbot
   - variable
+keywords:
+  - 7tvemotes
+  - 7tv
+  - emotes
 ---
 
 # $(7tvemotes)
