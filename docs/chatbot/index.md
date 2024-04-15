@@ -1,5 +1,6 @@
 ---
 id: welcome
+description: "Explore our comprehensive Twitch Chatbot documentation to unlock a world of possibilities for streamer-viewer interaction, engagement, and automation."
 slug: /
 sidebar_position: 1
 ---

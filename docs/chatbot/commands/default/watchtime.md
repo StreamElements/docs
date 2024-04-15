@@ -1,10 +1,16 @@
 ---
 id: watchtime
+description: "Enhance viewer engagement on your Twitch stream with the !watchtime command, showcasing how long viewers have watched."
 tags:
   - chatbot
   - commands
-  - loyalty
+keywords:
+  - watchtime command
+  - Twitch chatbot commands
+  - enhancing viewer loyalty
+  - stream interaction
 ---
+
 # !watchtime
 
 :::warning

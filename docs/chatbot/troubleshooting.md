@@ -1,3 +1,14 @@
+---
+id: troubleshooting
+description: "Resolve common issues with the StreamElements Chatbot, including non-responsive bot, command errors, and timer issues, with our comprehensive troubleshooting guide."
+keywords:
+  - StreamElements Chatbot Troubleshooting
+  - Chatbot Not Responding
+  - Commands Not Working
+  - Timers Not Triggering
+  - Twitch Chatbot Help
+---
+
 # Troubleshooting
 
 This section aims to help you quickly resolve common issues you might encounter with the StreamElements Chatbot and answer frequently asked questions.

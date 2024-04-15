@@ -1,10 +1,17 @@
 ---
+id: chatalerts
+description: "Elevate your Twitch streaming experience by integrating Chat Alerts into your chatbot, ensuring no viewer interaction goes unnoticed."
 tags:
   - chatbot
   - module
-  - chatalerts
+  - alerts
+  - twitch
+keywords:
+  - Twitch chat alerts
+  - chatbot alerts module
+  - streamer engagement
+  - viewer interaction
 ---
-
 # Chat Alerts
 
 The chatalerts module is a feature that allows the chatbot to post messages in the chat when certain events occur. These events can include, but are not limited to:
