@@ -1,9 +1,12 @@
 ---
 id: cancelraffle 
+description: "Quickly halt any ongoing raffle on your Twitch stream with the !cancelraffle command."
 tags:
   - chatbot
   - commands
   - loyalty
+  - stream management
+  - viewer interaction
 ---
 # !cancelraffle
 

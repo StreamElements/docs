@@ -1,9 +1,13 @@
 ---
 id: accountage
+description: "Discover the age of any Twitch account with the !accountage command."
 tags:
   - chatbot
   - commands
+  - moderation
+  - user verification
 ---
+
 # !accountage
 
 The `!accountage` command is used to check the age of a user's account in the chat. This can be useful for moderators to verify the authenticity of a user or to check if a user is eligible for certain privileges based on their account age.

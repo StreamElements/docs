@@ -1,12 +1,16 @@
 ---
 id: 8ball
+description: "Invoke the whimsy of fortune-telling in your Twitch streams with the !8ball command, offering random, magic 8-ball style responses to viewer queries."
 tags:
   - chatbot
   - commands
+  - entertainment
+  - engagement
 keywords:
-  - 8ball command
-  - 8 ball command
-  - magic 8-ball command
+  - 8ball command Twitch
+  - magic 8 ball Twitch bot
+  - interactive chatbot commands
+  - viewer engagement commands
 ---
 
 # !8ball

@@ -1,9 +1,12 @@
 ---
 id: addpoints
+description: "Enhance viewer engagement and loyalty on your Twitch streams by rewarding points with the !addpoints command."
 tags:
   - chatbot
   - commands
   - loyalty
+  - viewer engagement
+  - rewards
 ---
 # !addpoints
 

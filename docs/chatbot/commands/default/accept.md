@@ -1,9 +1,10 @@
 ---
 id: accept
+description: "Quickly accept game invites, duel requests, and more with the !accept command, enhancing your Twitch chat interaction."
 tags:
   - chatbot
   - commands
-  - loyalty
+  - interaction
 ---
 
 # !accept

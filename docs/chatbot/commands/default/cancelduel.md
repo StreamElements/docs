@@ -1,9 +1,11 @@
 ---
 id: cancelduel 
+description: "Instantly halt an ongoing duel on your Twitch stream with the !cancelduel command."
 tags:
   - chatbot
   - commands
   - loyalty
+  - viewer interaction
 ---
 
 # !cancelduel

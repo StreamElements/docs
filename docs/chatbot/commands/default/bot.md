@@ -1,9 +1,13 @@
 ---
-id: bot 
+id: bot
+description: "Control your Twitch chatbot's presence in chat with the !bot command, including muting, unmuting, and parting capabilities."
 tags:
   - chatbot
   - commands
+  - moderation
+  - stream management
 ---
+
 # !bot
 
 The `!bot` command is used to manage the bot's behavior in the chat. It has three subcommands:
