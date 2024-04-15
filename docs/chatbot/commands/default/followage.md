@@ -3,6 +3,8 @@ id: followage
 tags:
   - chatbot
   - commands
+  - twitch
+  - followage
 ---
 # !followage
 
