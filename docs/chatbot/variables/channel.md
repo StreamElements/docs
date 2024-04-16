@@ -1,8 +1,11 @@
 ---
 id: channel
+description: Learn how to use channel-specific variables in your Twitch chatbot to display channel name, viewers, followers, subscribers, and more.
 tags:
   - chatbot
   - variable
+  - twitch
+  - twitch subscriber count
 ---
 
 # $(channel)
