@@ -1,3 +1,15 @@
+---
+id: counters
+description: Learn how to use counters in your Twitch streams to track game deaths, missed shots, or any other event. Perfect for engaging viewers and enhancing stream interactivity.
+keywords:
+  - Twitch chatbot counters
+  - stream counters
+  - game death counter
+  - Twitch stream enhancements
+  - interactive streaming tools
+  - viewer engagement tools
+---
+
 # Counters
 
 Counters are an easy way to keep track of certain things in your stream. They can be used to keep track of how many times you've died in a game, or how many times you've missed a cannon minion in league of legends.
