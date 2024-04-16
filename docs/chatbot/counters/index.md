@@ -6,6 +6,7 @@ keywords:
   - stream counters
   - game death counter
   - Twitch stream enhancements
+  - twitch chat counter
   - interactive streaming tools
   - viewer engagement tools
 ---
