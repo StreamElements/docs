@@ -1,12 +1,15 @@
 ---
 id: setgame
 tags:
-  - chatbot
-  - commands
-  - loyalty
+  - twitch chatbot
+  - streamer tools
+  - game management
+description: The !setgame command is used to change the current game being played on the stream.
 keywords:
-  - setgame
-  - set game
+  - how to change game on stream with StreamElements
+  - Twitch !setgame command
+  - update game category StreamElements bot
+  - StreamElements game change command
 ---
 # !setgame
 
