@@ -1,4 +1,15 @@
-# Variables
+---
+id: chatbot-variables
+description: Learn how to use variables in StreamElements chat commands to enhance interaction and functionality. This guide covers syntax and examples.
+keywords:
+  - chatbot variables
+  - StreamElements variables
+  - chat command variables
+  - dynamic chat commands
+  - chatbot placeholders
+---
+
+# Chatbot Variables
 
 ## Introduction to Variables in Chat Commands
 
