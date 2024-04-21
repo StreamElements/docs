@@ -6,6 +6,8 @@ tags:
   - game management
 description: The !setgame command is used to change the current game being played on the stream.
 keywords:
+  - setgame	
+  - setgame command	
   - how to change game on stream with StreamElements
   - Twitch !setgame command
   - update game category StreamElements bot
