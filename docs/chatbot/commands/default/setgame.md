@@ -11,13 +11,14 @@ keywords:
   - update game category StreamElements bot
   - StreamElements game change command
 ---
+
 # !setgame
 
-The `!setgame` command is used to change the current game being played on the stream.
+The `!setgame` command allows streamers to dynamically update the game category of their live stream, ensuring that viewers are always informed about the current gameplay. This command is essential for moderators.
 
 ### Arguments
 
-- `<game>` (required): The new game for the stream. Supports fuzzy searching and abbreviations like `WoW`, `OSRS` and `LOL`.
+- `<game>` (required): Specifies the new game title for the stream. This argument supports fuzzy searching, which means it can recognize and correct slight misspellings or abbreviations such as `WoW` for World of Warcraft, `OSRS` for Old School RuneScape, and `LOL` for League of Legends.
 
 ### Usage
 
