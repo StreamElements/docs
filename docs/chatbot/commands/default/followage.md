@@ -8,6 +8,7 @@ keywords:
   - followage
   - followage command
   - followage twitch
+  - how to check followage on twitch
 ---
 # !followage
 
