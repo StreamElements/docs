@@ -19,6 +19,14 @@ const config: Config = {
   organizationName: "StreamElements", // Usually your GitHub org/user name.
   projectName: "docs", // Usually your repo name.
 
+  scripts: [
+    {
+      src: "https://docs.streamelements.com/z/i.js",
+      referrerpolicy: "origin",
+    },
+  ],
+
+
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
 
