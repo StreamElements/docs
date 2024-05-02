@@ -3,6 +3,11 @@ id: leagueoflegends
 tags:
   - chatbot
   - variable
+  - League of Legends
+description: Outputs the summoner rank and LP of a specified League of Legends player
+keywords:
+  - streamelements lol rank command
+  - league of legends command
 ---
 
 # $(leagueoflegends)
