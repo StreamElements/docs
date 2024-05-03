@@ -25,5 +25,5 @@ The `!votekick` command begins a tribunal to kick a user from the chat.
 ## Example Input
 
 ```
-!votekick @username
+!votekick darkoe
 ```
