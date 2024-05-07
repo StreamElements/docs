@@ -9,11 +9,6 @@ keywords:
   - streamelements votekick module
   - votekick command
 ---
-
-:::note
-This module is currently in beta and may not currently be visible to all users.
-:::
-
 # Votekick
 
 The votekick module is a chatbot module that allows chat to vote on whether or not to kick a user from the chat. This is a great way to enhance engagement from the chat or allow users to keep the chat safer when moderators are not around without giving too much power to the wrong hands.

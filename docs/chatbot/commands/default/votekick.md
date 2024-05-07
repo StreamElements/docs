@@ -9,11 +9,6 @@ keywords:
   - streamelements votekick command
   - votekick command
 ---
-
-:::note
-This command is currently in beta and may not currently be visible to all users.
-:::
-
 # !votekick
 
 The `!votekick` command begins a tribunal to kick a user from the chat.
