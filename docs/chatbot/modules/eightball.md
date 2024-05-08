@@ -1,8 +1,16 @@
 ---
+description: "Engage your Twitch audience with the classic 8ball module, providing entertaining and customizable responses to viewer questions."
 tags:
   - chatbot
   - module
   - 8ball
+  - viewer engagement
+  - interactive
+keywords:
+  - 8ball chatbot
+  - 8ball twitch command
+  - ask eightball
+  - eightball
 ---
 
 # Eightball
