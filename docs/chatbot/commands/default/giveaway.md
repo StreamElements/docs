@@ -1,5 +1,6 @@
 ---
 id: giveaway 
+description: Learn how to use the !giveaway command in StreamElements to get information about active giveaways in a Twitch channel. Easily check current giveaways and links with this handy chat command.
 tags:
   - chatbot
   - commands
@@ -7,7 +8,12 @@ tags:
 keywords:
   - giveaway
   - giveaway command
+  - StreamElements giveaway
+  - Twitch giveaway
+  - active giveaway
+  - current giveaway
 ---
+
 # !giveaway
 
 The `!giveaway` command is used to get an active giveaway in the channel.

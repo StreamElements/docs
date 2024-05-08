@@ -1,9 +1,16 @@
 ---
 id: chatstats
+description: Learn how to use the !chatstats command in StreamElements to get a link to the creator's chat statistics page. Easily track viewer engagement and loyalty.
 tags:
   - chatbot
   - commands
   - loyalty
+  - chat statistics
+  - viewer engagement
+keywords:
+  - chatstats
+  - chat stats
+  - streamelements commands
 ---
 
 # !chatstats

@@ -1,10 +1,18 @@
 ---
 id: sraffle
+description: Learn how to use the !sraffle command in StreamElements chatbot to initiate a single raffle event in your chat. Customize win points and duration easily.
+keywords:
+  - sraffle command
+  - StreamElements chatbot
+  - raffle event
+  - loyalty points
+  - chat engagement
 tags:
   - chatbot
   - commands
   - loyalty
 ---
+
 # !sraffle
 
 The `!sraffle` command is used to initiate a single raffle event in the chat.

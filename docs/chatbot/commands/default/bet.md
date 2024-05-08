@@ -1,12 +1,17 @@
 ---
 id: bet
-description: "Engage your Twitch audience with the !bet command, allowing viewers to participate in contests and potentially win rewards."
+description: "Engage your Twitch audience with the !bet command, allowing viewers to participate in contests and potentially win rewards. Boost viewer engagement and loyalty through interactive betting games."
 tags:
   - chatbot
   - commands
   - loyalty
   - viewer engagement
   - interactive
+keywords:
+  - "Twitch chatbot"
+  - "viewer engagement" 
+  - "loyalty rewards"
+  - "interactive commands"
 ---
 
 # !bet

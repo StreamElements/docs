@@ -1,5 +1,11 @@
 ---
 id: enablesfx 
+description: Learn how to enable all previously disabled sound effect items in your StreamElements loyalty store using the !enablesfx command.
+keywords:
+  - enable sound effects
+  - enable sfx
+  - loyalty store
+  - stream commands
 tags:
   - chatbot
   - commands

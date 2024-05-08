@@ -1,10 +1,21 @@
 ---
-id: top
+id: top 
+description: Learn how to use the !top command in StreamElements chatbot to display leaderboards for points, alltime, online and offline watchtime.
+keywords:
+  - top
+  - StreamElements
+  - chatbot
+  - commands
+  - loyalty
+  - leaderboard
+  - points
+  - watchtime
 tags:
   - chatbot
   - commands
   - loyalty
 ---
+
 # !top
 
 The `!top` command is used in conjunction with the loyalty system. It allows users to see the top users on the leaderboard for points, alltime, online (watchtime), and offline (watchtime).

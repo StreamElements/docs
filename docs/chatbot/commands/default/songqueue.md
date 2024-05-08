@@ -1,5 +1,13 @@
 ---
 id: songqueue
+description: Learn how to use the !songqueue command in StreamElements to get a link to the media request queue and see upcoming song requests.
+keywords:
+  - StreamElements
+  - chatbot
+  - commands
+  - song request
+  - media request
+  - queue
 tags:
   - chatbot
   - commands

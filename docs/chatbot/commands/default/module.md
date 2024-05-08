@@ -1,9 +1,15 @@
 ---
 id: module
+description: Learn how to enable or disable chatbot modules using the !module command in StreamElements chatbot. Control the functionality of your chatbot with ease.
 tags:
   - chatbot
   - commands
+keywords:
+  - chatbot
+  - enable module
+  - disable module
 ---
+
 # !module
 
 The `!module` command is used to enable or disable chatbot modules from the chat. This command allows the user to control the functionality of different modules in the chatbot.

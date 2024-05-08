@@ -1,13 +1,25 @@
 ---
-id: cancelraffle 
-description: "Quickly halt any ongoing raffle on your Twitch stream with the !cancelraffle command."
+id: cancelraffle
+description: "The !cancelraffle command allows Twitch streamers to immediately halt any active raffle on their channel. Quickly end giveaways and contests with a single chat command."
 tags:
   - chatbot
   - commands
   - loyalty
   - stream management
   - viewer interaction
+  - twitch raffles
+  - giveaways
+  - contests
+  - cancel raffle
+  - stop raffle
+keywords:
+  - cancelraffle
+  - cancel twitch raffle
+  - stop twitch raffle
+  - end twitch giveaway
+  - halt twitch contest
 ---
+
 # !cancelraffle
 
 Cancels an ongoing raffle.

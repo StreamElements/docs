@@ -1,5 +1,6 @@
 ---
 id: contest
+description: Learn how to use the !contest command in StreamElements chatbot to get information about the current active contest and engage your viewers.
 tags:
   - chatbot
   - commands
@@ -7,6 +8,10 @@ tags:
 keywords:
   - contest
   - contest command
+  - active contest
+  - current contest
+  - viewer engagement
+  - stream contests
 ---
 # !contest
 

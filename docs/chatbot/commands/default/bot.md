@@ -1,11 +1,20 @@
 ---
 id: bot
-description: "Control your Twitch chatbot's presence in chat with the !bot command, including muting, unmuting, and parting capabilities."
+description: "Streamline your Twitch stream management with the !bot command. Mute, unmute, or make your chatbot leave the chat."
 tags:
   - chatbot
   - commands
   - moderation
   - stream management
+keywords:
+  - twitch chatbot
+  - stream management
+  - bot commands
+  - mute bot
+  - unmute bot
+  - part bot
+  - moderator tools
+  - streamer tools
 ---
 
 # !bot

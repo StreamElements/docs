@@ -1,8 +1,14 @@
 ---
 id: timer
+description: Learn how to use the !timer command to enable or disable timers in your StreamElements chatbot. Easily manage your chat timers with this simple command.
 tags:
   - chatbot
   - commands
+keywords:
+  - timer command
+  - enable timer
+  - disable timer
+  - manage timers
 ---
 
 # !timer

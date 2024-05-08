@@ -1,9 +1,16 @@
 ---
 id: setpoints
+description: Learn how to use the !setpoints command to set the loyalty points of a user in your Twitch chat. Easily manage and customize user points with this handy command.
 tags:
   - chatbot
   - commands
   - loyalty
+keywords:
+  - setpoints command
+  - set user points
+  - loyalty points
+  - twitch chatbot
+  - stream elements
 ---
 # !setpoints
 

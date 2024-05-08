@@ -1,5 +1,6 @@
 ---
-id: emotes 
+id: emotes
+description: Learn how to use the !emotes command in StreamElements chatbot to display available emotes from Twitch, BTTV, FFZ, and 7TV and reload the emote list.
 tags:
   - chatbot
   - commands
@@ -8,9 +9,13 @@ keywords:
   - emote
   - bttv
   - ffz
-  - frankerfacez
+  - frankerfacez 
   - 7tv
   - twitch emotes
+  - chat emotes
+  - display emotes
+  - reload emotes
+  - update emotes
 ---
 # !emotes
 

@@ -8,6 +8,7 @@ keywords:
   - emote usage
   - chat interaction
 ---
+
 # !emotecount
 
 The `!emotecount` command displays the usage frequency of specific emotes within the chat.

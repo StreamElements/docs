@@ -1,5 +1,6 @@
 ---
 id: duel
+description: Learn how to use the !duel command in StreamElements chatbot to challenge other users to a points duel and win or lose loyalty points.
 tags:
   - chatbot
   - commands
@@ -8,6 +9,7 @@ keywords:
   - duel
   - duel command
   - duel points
+  - loyalty points
 ---
 # !duel
 

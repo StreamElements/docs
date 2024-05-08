@@ -1,10 +1,25 @@
 ---
 id: nukeusername
+description: Learn how to use the !nukeusername command in StreamElements chatbot to moderate user activity by performing timeouts, bans, or deletions based on matched strings or regex patterns.
 tags:
   - chatbot
   - commands
   - moderation
+  - user activity
+  - timeout
+  - ban
+  - delete
+  - regex
+keywords:
+  - nukeusername
+  - chatbot command
+  - user activity moderation
+  - timeout user
+  - ban user
+  - delete user messages
+  - regex matching
 ---
+
 # !nukeusername
 
 The `!nukeusername` command is used to perform a timeout, ban, or deletion on a user's activity in the chat. This command will search the user's activity for a specified string and perform the specified action on the user if the string is found. This command will error if the user is not found in the chat.

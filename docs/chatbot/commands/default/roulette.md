@@ -1,10 +1,20 @@
 ---
 id: roulette
+description: Learn how to use the !roulette command in StreamElements chatbot to start a roulette game and bet points in your Twitch chat.
+keywords:
+  - roulette
+  - chatbot
+  - commands
+  - loyalty
+  - points
+  - betting
+  - gambling
 tags:
   - chatbot
   - commands
   - loyalty
 ---
+
 # !roulette
 
 The `!roulette` command is used to start a roulette game in the chat.

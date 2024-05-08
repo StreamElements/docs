@@ -1,10 +1,17 @@
 ---
-id: permit
+id: permit 
+description: Learn how to use the !permit command in StreamElements chatbot to prevent viewers from getting timed out for a specified duration.
+keywords:
+  - permit command
+  - prevent timeout
+  - moderation commands
+  - chatbot commands
 tags:
   - chatbot
   - commands
   - moderation
 ---
+
 # !permit
 
 The `!permit` command is used to prevent a viewer from getting timed out. By default, the duration is 60 seconds.

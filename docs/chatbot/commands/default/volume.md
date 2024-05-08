@@ -1,9 +1,16 @@
 ---
 id: mediarequest
+description: "Learn how to use the !volume command in StreamElements to control the volume of media requests in your Twitch or YouTube chat. Easily set or check the current volume level."
 tags:
   - chatbot
   - commands
   - loyalty
+  - media request
+  - volume control
+keywords:
+  - "!volume command"
+  - "media request volume"
+  - "set volume level"
 ---
 # !volume
 

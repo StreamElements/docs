@@ -1,9 +1,17 @@
 ---
 id: level
+description: Learn how to use the !level command in StreamElements chatbot to show or set a user's level. Customize user levels for subscribers, VIPs, mods and more.
+keywords:
+  - StreamElements
+  - chatbot
+  - commands
+  - level
+  - user levels
 tags:
   - chatbot
   - commands
 ---
+
 # !level
 
 The `!level` command is used to show/set a level of a user.

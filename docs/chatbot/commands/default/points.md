@@ -1,5 +1,14 @@
 ---
 id: points
+description: Learn how to use the !points command in StreamElements chatbot to display user points and leaderboard rank. Easily check your own or other users' loyalty points.
+keywords:
+  - StreamElements
+  - chatbot
+  - commands
+  - loyalty
+  - points
+  - leaderboard
+  - rank
 tags:
   - chatbot
   - commands

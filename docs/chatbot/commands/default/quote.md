@@ -1,9 +1,18 @@
 ---
 id: quote
+description: Learn how to use the !quote command in StreamElements chatbot to add, remove, and display memorable quotes from your Twitch chat. Engage your community by saving and sharing their best moments.
+keywords:
+  - quote command
+  - add quote
+  - remove quote
+  - display quotes
+  - memorable moments
+  - chat engagement
 tags:
   - chatbot
   - commands
 ---
+
 # !quote
 
 The `!quote` command is used to add, remove, and display quotes in the chat.

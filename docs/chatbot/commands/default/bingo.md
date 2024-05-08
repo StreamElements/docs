@@ -1,12 +1,21 @@
 ---
 id: bingo
-description: "Elevate your Twitch stream's interactivity with the !bingo command, engaging viewers in a fun game of emote bingo for loyalty rewards."
+description: "Boost your Twitch stream's engagement and interactivity with the !bingo command. This fun chatbot feature allows viewers to play emote bingo, guessing randomly selected emotes for loyalty points and rewards."
 tags:
   - chatbot
   - commands
   - loyalty
   - viewer engagement
   - interactive
+  - twitch
+  - streaming
+  - emotes
+  - bttv
+  - ffz
+  - 7tv
+  - games
+  - rewards
+  - chat games
 ---
 
 # !bingo

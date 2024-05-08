@@ -1,9 +1,18 @@
 ---
 id: settitle
+description: Learn how to use the !settitle command in StreamElements chatbot to easily change the title of your current Twitch stream. Keep your viewers informed about what you're streaming.
+keywords:
+  - settitle
+  - set title
+  - change stream title
+  - update stream title
+  - chatbot commands
+  - StreamElements  
 tags:
   - chatbot
   - commands
 ---
+
 # !settitle
 
 The `!settitle` command is used to change the title of the current stream.

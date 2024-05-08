@@ -7,6 +7,10 @@ tags:
   - loyalty
   - viewer engagement
   - rewards
+keywords:
+  - addpoints command
+  - reward viewers with points
+  - loyalty program
 ---
 # !addpoints
 

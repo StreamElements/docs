@@ -1,9 +1,14 @@
 ---
 id: wrongsong
+description: "Easily manage your song request queue on Twitch by removing the last song you added with the !wrongsong command."
 tags:
   - chatbot
   - commands
   - songrequest
+keywords:
+  - wrongsong command
+  - remove last song
+  - song request queue management
 ---
 # !wrongsong
 

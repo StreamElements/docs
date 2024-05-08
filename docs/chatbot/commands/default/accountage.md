@@ -2,10 +2,16 @@
 id: accountage
 description: "Discover the age of any Twitch account with the !accountage command."
 tags:
-  - chatbot
-  - commands
-  - moderation
-  - user verification
+- chatbot
+- commands
+- moderation
+- user verification
+keywords:
+- accountage
+- account age
+- Twitch account
+- user verification
+- moderation
 ---
 
 # !accountage

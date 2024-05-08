@@ -1,10 +1,18 @@
 ---
 id: raffle
+description: Learn how to use the !raffle command in StreamElements to start a raffle with multiple winners and engage your viewers in an interactive chat game.
+keywords:
+  - raffle
+  - chat game
+  - viewer engagement
+  - multiple winners
+  - StreamElements command
 tags:
   - chatbot
   - commands
   - raffle
 ---
+
 # !raffle
 
 The `!raffle` command is used to start a raffle with multiple winners. This command is typically used by moderators or the streamer themselves to engage viewers in an interactive chat game. The syntax for this command is `!raffle`.

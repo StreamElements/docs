@@ -1,9 +1,22 @@
 ---
 id: filesay
+description: Learn how to use the !filesay command to send multiple lines of text to the chat from a URL, useful for banning large numbers of users. Streamers and moderators can easily moderate their chat using this powerful command.
 tags:
   - chatbot
   - commands
   - moderation
+  - banning users
+  - chat management
+  - streaming
+keywords:
+  - filesay
+  - chatbot command
+  - moderation
+  - banning users
+  - chat management
+  - streaming
+  - twitch
+  - youtube
 ---
 # !filesay
 

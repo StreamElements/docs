@@ -1,10 +1,20 @@
 ---
-id: ticket
+id: ticket 
+description: Learn how to use the !ticket command in StreamElements chatbot to buy tickets for giveaways. Easily enter raffles and win prizes!
+keywords:
+  - StreamElements
+  - chatbot
+  - commands
+  - ticket
+  - giveaways
+  - raffles
+  - loyalty
 tags:
   - chatbot
   - commands
   - loyalty
 ---
+
 # !ticket
 
 The `!ticket` command is used to buy tickets for a giveaway.

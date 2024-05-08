@@ -1,5 +1,6 @@
 ---
-id: followage 
+id: followage
+description: Learn how to use the !followage command in StreamElements chatbot to check how long a user has been following a Twitch channel. Easily see follower duration with this handy command.
 tags:
   - chatbot
   - commands
@@ -10,6 +11,7 @@ keywords:
   - followage twitch
   - how to check followage on twitch
 ---
+
 # !followage
 
 The `!followage` command is used to check how long a user has been following the channel.

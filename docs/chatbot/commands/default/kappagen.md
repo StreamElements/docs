@@ -1,5 +1,11 @@
 ---
 id: kappagen
+description: Learn how to use the !kappagen command to trigger an emote explosion on your Kappagen widget in StreamElements chatbot.
+keywords:
+  - kappagen
+  - emote explosion
+  - chatbot command
+  - visual effects
 tags:
   - chatbot
   - commands

@@ -1,9 +1,17 @@
 ---
 id: givepoints
+description: Learn how to use the !givepoints command in StreamElements chatbot to transfer loyalty points from one user to another.
 tags:
   - chatbot
   - commands
   - loyalty
+  - points
+  - transfer
+  - givepoints
+keywords:
+  - givepoints command
+  - transfer points streamelements
+  - loyalty points
 ---
 # !givepoints
 

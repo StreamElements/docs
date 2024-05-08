@@ -1,5 +1,6 @@
 ---
 id: editcounter
+description: Learn how to use the !editcounter command in StreamElements chatbot to edit the value of a specific counter. Easily increment, decrement or set the counter to a desired number.
 tags:
   - chatbot
   - commands
@@ -7,7 +8,14 @@ keywords:
   - editcounter
   - edit counter
   - counter
+  - increment counter
+  - decrement counter 
+  - set counter value
+  - stream elements
+  - chatbot
+  - commands
 ---
+
 # !editcounter
 
 The `!editcounter` command is used to edit the counter of a specific event or item in the chat.

@@ -1,10 +1,18 @@
 ---
 id: songrequest
+description: Learn how to use the !songrequest command to request songs for mediarequest in your StreamElements chatbot. Easily queue up YouTube videos, playlists or search for songs.
+keywords:
+  - songrequest
+  - song request
+  - mediarequest
+  - chatbot commands
+  - StreamElements
 tags:
   - chatbot
   - commands
   - mediarequest
 ---
+
 # !songrequest
 
 The `!songrequest` command is used to request songs for mediarequest.

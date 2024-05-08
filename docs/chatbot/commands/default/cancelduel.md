@@ -1,11 +1,21 @@
 ---
-id: cancelduel 
-description: "Instantly halt an ongoing duel on your Twitch stream with the !cancelduel command."
+id: cancelduel
+description: "The !cancelduel command allows moderators to instantly halt an ongoing duel on your Twitch stream, enhancing viewer interaction and engagement. Easily manage duels with this essential chatbot command."
 tags:
   - chatbot
   - commands
   - loyalty
   - viewer interaction
+  - duel
+  - cancel duel
+  - moderator
+keywords:
+  - cancelduel
+  - cancel duel
+  - stop duel
+  - halt duel 
+  - twitch duel
+  - chatbot duel
 ---
 
 # !cancelduel

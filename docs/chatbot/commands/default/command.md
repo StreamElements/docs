@@ -1,8 +1,19 @@
 ---
 id: command 
+description: Learn how to use the !command chat command to easily add, remove, edit, alias, show and add options to commands in your StreamElements chatbot.
 tags:
   - chatbot
   - commands
+keywords:
+  - streamelements
+  - chatbot
+  - commands
+  - add command
+  - remove command 
+  - edit command
+  - alias command
+  - show command
+  - command options
 ---
 # !command
 

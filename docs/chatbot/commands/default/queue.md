@@ -1,9 +1,17 @@
 ---
 id: queue
+description: Learn how to use the !queue command to manage viewer queues during live streams with the StreamElements chatbot. Easily pick, remove, list, and control the queue.
+keywords:
+  - StreamElements
+  - chatbot
+  - queue
+  - live stream
+  - viewer management
 tags:
   - chatbot
   - commands
 ---
+
 # !queue
 
 The `!queue` command is used to manage the viewer queue during live streams. It has several subcommands:

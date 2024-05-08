@@ -1,10 +1,17 @@
 ---
 id: skip
+description: Learn how to use the !skip command in StreamElements chatbot to skip the current song in the mediarequest queue.
+keywords:
+  - skip command
+  - skip song
+  - mediarequest
+  - chatbot commands
 tags:
   - chatbot
   - commands
   - mediarequest
 ---
+
 # !skip
 
 The `!skip` command is used to skip the current song in the mediarequest queue. It will error if no song is currently playing.
