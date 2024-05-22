@@ -5,7 +5,7 @@ tags:
   - variable
 ---
 
-# $(customapi.url)
+# $(customapi)
 
 Makes a request to a specified URL and the response is returned.
 
@@ -16,7 +16,7 @@ This variable does not take any parameters.
 #### Example Input
 
 ```
-$(customapi.https://decapi.me/youtube/latest_video?id=UCjerlCIbLPQwSnYlClkjDXg)
+$(customapi https://decapi.me/youtube/latest_video?id=UCjerlCIbLPQwSnYlClkjDXg)
 ```
 
 #### Example Output
