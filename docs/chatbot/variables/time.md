@@ -18,7 +18,7 @@ This variable accepts a timezone as input. If no timezone is provided the variab
 #### Example Input
 
 ```
-${time.CET}
+${time.America/New_York}
 ```
 
 #### Example Output
