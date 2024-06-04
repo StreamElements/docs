@@ -27,10 +27,13 @@ This variable takes two parameters:
 1. Region
 2. Riot ID/Summoner Name
 
+**NOTE:** If your Riot ID contains one or more spaces, you will need to wrap it in quotes.
+
 #### Example Input
 
 ```
 $(leagueoflegends styler#euw euw)
+$(leagueoflegends "styler#euw" euw)
 ```
 
 #### Example Output
