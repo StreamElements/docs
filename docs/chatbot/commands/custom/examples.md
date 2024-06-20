@@ -69,7 +69,7 @@ Welcome to the stream styler and styler2!
 
 ### Using Variables
 
-Chat commands support variables in a dynamic way. Variables are placeholders that can be used in chat commands to represent a specific value or piece of information. When a command is triggered, these variables are replaced with the actual values they represent. See [Variables](../../Variables)
+Chat commands support variables in a dynamic way. Variables are placeholders that can be used in chat commands to represent a specific value or piece of information. When a command is triggered, these variables are replaced with the actual values they represent. See [Variables](../../variables)
 
 ```
 !command add shoutout Check out ${1}, they are playing ${game ${1}} at https://twitch.tv/${channel ${1}}
