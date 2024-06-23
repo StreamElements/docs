@@ -35,4 +35,3 @@ These arguments allow you to control alert behavior in real-time.
 ```
 StreamElements: @Styler, Successfully skipped alert
 ```
-
