@@ -5,7 +5,7 @@ tags:
   - variable
 ---
 
-# $(math)
+# $(cm)
 
 Outputs the result of a math.js expression.
 
@@ -16,9 +16,10 @@ This variable takes a math.js expression as a parameter. You can also use math.j
 #### Example Input
 
 ```
-${math 2 + 2}
-${math round(10/3)}
-${math random(1,10)}
+${user tem 22cm de pika}
+${user tem 10 cm de pika}
+${user tem 12 cm de pika}
+${user tem 15 cm de pika}
 ```
 
 #### Example Output
