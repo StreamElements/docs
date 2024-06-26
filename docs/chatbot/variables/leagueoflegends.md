@@ -29,6 +29,26 @@ This variable takes two parameters:
 
 **NOTE:** If your Riot ID contains one or more spaces, you will need to wrap it in quotes.
 
+#### Supported Regions
+
+- `br` (Brazil)
+- `eune` (Europe Nordic & East)
+- `euw` (Europe West)
+- `jp` (Japan)
+- `kr` (Republic of Korea)
+- `lan` (Latin America North)
+- `las` (Latin America South)
+- `na` (North America)
+- `oce` (Oceania)
+- `pbe` (Public Beta Environment)
+- `ph` (Philippines)
+- `ru` (Russia)
+- `sg` (Singapore)
+- `th` (Thailand)
+- `tw` (Taiwan)
+- `tr` (Turkey)
+- `vn` (Vietnam)
+
 #### Example Input
 
 ```
