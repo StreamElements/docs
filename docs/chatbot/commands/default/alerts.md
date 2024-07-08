@@ -1,37 +1,52 @@
 ---
 id: alerts
-description: "Streamline your live stream experience with the !alerts command. Instantly control alert playback, volume, and timing for a smoother broadcast."
-tags:
-  - chatbot
-  - commands
-  - alerts
+sidebar_label: "!alerts"
+description: "Control and manage stream alerts in real-time using the !alerts command"
 keywords:
-  - twitch alerts
-  - stream alerts
-  - alert management
-  - live stream control
+- twitch alerts
+- stream alerts
+- alert management
+- live stream control
 ---
 
 # !alerts
 
-The `!alerts` command empowers streamers and moderators to dynamically manage stream alerts.
+## Overview
 
-### Arguments
+The `!alerts` command allows streamers and moderators to dynamically manage stream alerts during a live broadcast. This powerful tool helps create a smoother viewing experience by controlling alert playback, volume, and timing on the fly.
 
-- `mute/unmute`: Toggles alert sounds on or off.
-- `skip`: Skips the currently playing alert.
-- `pause/unpause`: Pauses or resumes alert playback.
+## Usage
 
-These arguments allow you to control alert behavior in real-time.
+```
+!alerts <action>
+```
 
-### Example input
+## Examples
 
+1. Mute all alert sounds:
+```
+!alerts mute
+```
+
+2. Skip the currently playing alert:
 ```
 !alerts skip
 ```
 
-### Example Output
+## Parameters
 
-```
-StreamElements: @Styler, Successfully skipped alert
-```
+- `mute`: Turns off alert sounds
+- `unmute`: Turns on alert sounds
+- `skip`: Skips the currently playing alert
+- `pause`: Pauses alert playback
+- `unpause`: Resumes alert playback
+
+## Configuration
+
+The `!alerts` command is available by default for streamers and moderators. To customize access permissions:
+
+1. Go to your StreamElements dashboard
+2. Navigate to the Chatbot section
+3. Find the `!alerts` command in the command list
+4. Adjust the user level permissions as needed
+
