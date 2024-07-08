@@ -1,28 +1,54 @@
 ---
 id: accept
-description: "Quickly accept game invites, duel requests, and more with the !accept command, enhancing your Twitch chat interaction."
-tags:
-  - chatbot
-  - commands
-  - interaction
+sidebar_label: "!accept"
+description: "Use the !accept command to quickly respond to duel requests in your Twitch chat."
+keywords:
+- accept
+- command
+- duel
+- invite
+- Twitch
+- StreamElements
+- chatbot
 ---
 
 # !accept
 
-The `!accept` command is used to accept an invitation or request in the chat. This could be a duel request, a game invite, or any other type of request that requires user acceptance.
+## Overview
 
-### Module
+The `!accept` command allows users to accept duel requests in the Twitch chat.
 
-- The `!accept` command is part of the [duel module](../../modules/duel).
+## Usage
 
-### Example Input
+To use the `!accept` command, simply type it in the chat when you want to accept a pending request or invitation.
 
 ```
 !accept
 ```
 
-### Example Output
+## Examples
 
+### Example 1: Accepting a Duel
+
+User A challenges User B to a duel:
 ```
-test won the Duel vs styler PogChamp test won 10 points.
+UserA: !duel UserB 10
 ```
+
+User B accepts the duel:
+```
+UserB: !accept
+```
+
+Chatbot response:
+```
+UserB won the Duel vs UserA PogChamp UserB won 10 points.
+```
+
+## Related Commands
+
+- [`!duel`](duel.md): Initiate a duel with another user
+
+## Configuration
+
+The `!accept` command is part of the [duel module](../../modules/duel). Make sure this module is enabled in your StreamElements chatbot settings to use the command.
