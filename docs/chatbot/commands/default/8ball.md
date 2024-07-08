@@ -1,40 +1,58 @@
 ---
 id: 8ball
-description: "Invoke the whimsy of fortune-telling in your Twitch streams with the !8ball command, offering random, magic 8-ball style responses to viewer queries."
-tags:
-  - chatbot
-  - commands
-  - entertainment
-  - engagement
+sidebar_label: "!8ball"
+description: Use the !8ball command to add fortune-telling fun to your streams
 keywords:
-  - 8ball command Twitch
-  - magic 8 ball Twitch bot
-  - interactive chatbot commands
-  - viewer engagement commands
+- 8ball command
+- magic 8 ball chatbot
+- interactive stream commands
+- viewer engagement tools
 ---
 
 # !8ball
 
-The `!8ball` command is a fun chatbot command that mimics the classic magic 8-ball toy. When a user types `!8ball` followed by a question, the chatbot will respond with a random answer, similar to shaking a magic 8-ball for a fortune. It's a great way to engage your audience and add a bit of unpredictability to your chat.
+## Overview
 
-### Module
+The `!8ball` command simulates a magic 8-ball toy, providing random responses to viewer questions. This interactive feature engages your audience and adds an element of unpredictability to your chat.
 
-- The `!8ball` command is part of the [8ball module](../../modules/eightball).
+## Usage
 
-### Default Aliases
+Type `!8ball` followed by a question in the chat. The chatbot will respond with a random fortune-like answer.
+
+```
+!8ball <question>
+```
+
+## Examples
+
+1. Asking a yes/no question:
+   ```
+   Viewer: !8ball Will I win my next game?
+   Chatbot: It is decidedly so.
+   ```
+
+2. Asking an open-ended question:
+   ```
+   Viewer: !8ball What should I have for dinner?
+   Chatbot: Cannot predict now.
+   ```
+
+## Parameters
+
+This command doesn't require any specific parameters. The question following `!8ball` is optional and doesn't affect the randomized response.
+
+## Configuration
+
+The `!8ball` command is part of the 8ball module. Ensure this module is enabled in your StreamElements chatbot settings.
+
+## Aliases
+
+The following aliases can be used interchangeably with `!8ball`:
 
 - `!eightball`
 - `!69ball`
 - `!420ball`
 
-### Example Input
+## Customization
 
-```
-!8ball 
-```
-
-### Example Output
-
-```
-StreamElements: It is certain.
-```
+You can customize the `!8ball` responses by modifying the 8ball module settings in your StreamElements dashboard. This allows you to add, remove, or edit the possible answers the chatbot can give.
