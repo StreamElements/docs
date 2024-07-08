@@ -1,44 +1,58 @@
 ---
 id: contest
-description: Learn how to use the !contest command in StreamElements chatbot to get information about the current active contest and engage your viewers.
-tags:
-  - chatbot
-  - commands
-  - loyalty
+sidebar_label: "!contest"
+description: "Learn how to use the !contest command in StreamElements chatbot to get information about active contests and engage your viewers."
 keywords:
-  - contest
-  - contest command
-  - active contest
-  - current contest
-  - viewer engagement
-  - stream contests
+- contest
+- chatbot command
+- active contest
+- viewer engagement
+- stream contests
+- StreamElements
 ---
+
 # !contest
 
-The `!contest` command is used to return information about the current active contest, if any.
+## Overview
 
-### Module
+The `!contest` command is a powerful tool in the StreamElements chatbot that allows streamers and viewers to quickly get information about the currently active contest. This command is part of the Contest module and helps increase viewer engagement by providing easy access to ongoing contest details.
 
-- Contest
+## Usage
 
-### Arguments
-
-- None
-
-#### Example Input
+To use the `!contest` command, simply type it in the chat:
 
 ```
 !contest
 ```
 
-#### Example Output
+This command doesn't require any additional arguments or parameters.
+
+## Examples
+
+### Example 1: Active Contest
+
+When there's an active contest running:
 
 ```
-@Styler, the current contest is "Will I win the next game?". You can !bet for win, lose. Betting ends in 4 mins 55 secs 
+User: !contest
+Chatbot: @User, the current contest is "Will I win the next game?". You can !bet for win, lose. Betting ends in 4 mins 55 secs
 ```
 
-#### Example Error
+### Example 2: No Active Contest
+
+When there's no active contest:
 
 ```
-@Styler, there is no active contest. 
+User: !contest
+Chatbot: @User, there is no active contest.
 ```
+
+## Customization
+
+While the `!contest` command itself cannot be customized, you can customize the contest settings, such as:
+
+- Contest duration
+- Betting options
+- Minimum and maximum bet amounts
+
+These settings can be adjusted in the StreamElements dashboard under the Loyalty settings.
