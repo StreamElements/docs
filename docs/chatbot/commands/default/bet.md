@@ -1,47 +1,77 @@
 ---
 id: bet
-description: "Engage your Twitch audience with the !bet command, allowing viewers to participate in contests and potentially win rewards. Boost viewer engagement and loyalty through interactive betting games."
-tags:
-  - chatbot
-  - commands
-  - loyalty
-  - viewer engagement
-  - interactive
+sidebar_label: "!bet"
+description: "Learn how to use the !bet command in StreamElements Chatbot to engage your Twitch audience with interactive betting contests."
 keywords:
-  - "Twitch chatbot"
-  - "viewer engagement" 
-  - "loyalty rewards"
-  - "interactive commands"
+- Twitch chatbot
+- viewer engagement
+- loyalty rewards
+- interactive commands
+- betting system
 ---
 
 # !bet
 
-The `!bet` command is used to place a bet in a running contest. This can be useful for users to participate in contests and potentially win rewards.
+## Overview
 
-### Module
+The `!bet` command allows viewers to participate in interactive betting contests, enhancing engagement and potentially earning rewards. This feature is an excellent way to boost viewer loyalty and create exciting moments during your streams.
 
-- None
+## Usage
 
-### Arguments
-
-- `option` (required): The option you want to bet on.
-- `points` (required): The amount of points you want to bet.
-
-Note:
-
-- Points can be expressed in several ways:
-  - As a percentage of the user's total points. For example, `!bet 50%` will wager 50% of the user's points.
-  - Using `k` to represent thousands. For example, `!bet 5k` will wager 5000 points.
-  - Using `m` to represent millions. For example, `!bet 1m` will wager 1,000,000 points.
-
-### Example Input
+To place a bet, viewers use the following syntax:
 
 ```
-!bet win 10 
+!bet <option> <points>
 ```
 
-### Example Output
+## Parameters
 
-```
-@Styler, you have bet 10 nammers on Win. 
-```
+- `<option>`: The betting option the viewer wants to choose (required).
+- `<points>`: The number of points to wager (required).
+
+**Note:** Points can be expressed in several ways:
+- As a percentage of the user's total points (e.g., `50%`)
+- Using `k` to represent thousands (e.g., `5k` for 5,000)
+- Using `m` to represent millions (e.g., `1m` for 1,000,000)
+
+## Examples
+
+1. Betting 10 points on the "win" option:
+   ```
+   !bet win 10
+   ```
+   Output:
+   ```
+   @Styler, you have bet 10 nammers on Win.
+   ```
+
+2. Betting 50% of available points on the "lose" option:
+   ```
+   !bet lose 50%
+   ```
+   Output:
+   ```
+   @Viewer123, you have bet 500 nammers on Lose.
+   ```
+
+3. Betting 5,000 points using the "k" abbreviation:
+   ```
+   !bet draw 5k
+   ```
+   Output:
+   ```
+   @StreamFan, you have bet 5000 nammers on Draw.
+   ```
+
+## Related Commands
+
+- `!points`: Check your current point balance
+- `!givepoints`: Transfer points to another user (if enabled)
+
+## Configuration
+
+Streamers and moderators can configure betting options, point limits, and other settings through the StreamElements dashboard. Refer to the StreamElements documentation for detailed configuration instructions.
+
+## Customization
+
+The betting system can be customized to fit your stream's theme. Consider renaming "points" to match your channel's currency (e.g., "coins," "gems," or "bucks") for a more personalized experience.
