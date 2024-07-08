@@ -1,41 +1,56 @@
 ---
 id: duel
-description: Learn how to use the !duel command in StreamElements chatbot to challenge other users to a points duel and win or lose loyalty points.
-tags:
-  - chatbot
-  - commands
-  - loyalty
+sidebar_label: "!duel"
+description: "Learn how to use the !duel command in StreamElements chatbot to challenge other users to a points duel."
 keywords:
-  - duel
-  - duel command
-  - duel points
-  - loyalty points
+- duel
+- chatbot
+- command
+- loyalty points
+- StreamElements
 ---
+
 # !duel
 
-The `!duel` command is used to initiate a duel with another user in the chat.
+## Overview
 
-### Arguments
+The `!duel` command allows users to challenge each other to a duel, wagering their loyalty points. It's an engaging way to interact with viewers and add excitement to your stream.
 
-- `username`: The username of the user you want to challenge to a duel.
-- `points`: The number of points you want to wager in the duel.
+## Usage
 
-#### Example Input
-
-```
-!duel darkoe 1000
-```
-
-#### Example Output
+To initiate a duel, use the following syntax:
 
 ```
-@darkoe, @Styler wants to duel you for 10 points, you can !accept or !deny within 2 minutes 
+!duel <username> <points>
 ```
 
-#### Example Error
+## Examples
 
-```
-@Styler, you can't duel yourself Kappa 
+1. Challenging a user to a duel for 1000 points:
+   ```
+   !duel darkoe 1000
+   ```
+   Output:
+   ```
+   @darkoe, @Styler wants to duel you for 1000 points, you can !accept or !deny within 2 minutes
+   ```
 
-@Styler, you only have 5 points LUL 
-```
+2. Attempting to duel yourself:
+   ```
+   !duel Styler 500
+   ```
+   Output:
+   ```
+   @Styler, you can't duel yourself Kappa
+   ```
+
+## Parameters
+
+- `<username>`: The name of the user you want to challenge to a duel.
+- `<points>`: The number of loyalty points you want to wager in the duel.
+
+## Related Commands
+
+- [`!accept`](accept.md): Used by the challenged user to accept a duel.
+- [`!deny`](deny.md): Used by the challenged user to decline a duel.
+- [`!points`](points.md): Check your current loyalty points balance.
