@@ -1,279 +1,182 @@
 ---
-id: command 
-description: Learn how to use the !command chat command to easily add, remove, edit, alias, show and add options to commands in your StreamElements chatbot.
-tags:
-  - chatbot
-  - commands
+id: command
+sidebar_label: "!command"
+description: "Manage chat commands with the !command feature in StreamElements chatbot"
 keywords:
-  - streamelements
-  - chatbot
-  - commands
-  - add command
-  - remove command 
-  - edit command
-  - alias command
-  - show command
-  - command options
+- streamelements
+- chatbot
+- commands
+- add command
+- remove command
+- edit command
+- alias command
+- show command
+- command options
 ---
+
 # !command
 
-The `!command` command is used to manage chat commands. It has six subcommands
+## Overview
 
-- `add`: This subcommand is used to add a new command to the chat.
-- `remove`: This subcommand is used to remove an existing command from the chat.
-- `edit`: This subcommand is used to edit an existing command in the chat.
-- `alias`: This subcommand is used to create an alias for an existing command in the chat.
-- `show`: This subcommand is used to display the details of an existing command in the chat.
-- `options`: This subcommand is used to add advanced options to an existing command in the chat.
+The `!command` feature allows you to manage chat commands for your StreamElements chatbot. It provides several subcommands to add, remove, edit, alias, show, and configure options for commands.
 
-#### Alises
+## Usage
 
-- !cmd
+The general syntax for using `!command` is:
 
-### !command add
+```
+!command <subcommand> [arguments]
+```
 
-#### Overview
+## Subcommands
 
-The `!command add` subcommand is used to add a new command to the chat. This command will error if the command already exists.
+### add
 
-#### aliases
+Adds a new command to the chat.
 
-- \+
-
-#### Arguments
-
-- `command` (required): The name of the command to add.
-- `response` (required): The response of the command to add.
-
-#### Usage
-
+**Usage:**
 ```
 !command add <command> <response>
 ```
 
-#### Example Input
-
+**Example:**
 ```
-!command add test This is a test command.
-```
-
-#### Example Output
-
-```
-@Styler, successfully added command test123123. 
+!command add !test This is a test command.
 ```
 
-### !command remove
+**Output:**
+```
+@User, successfully added command test.
+```
 
-#### Overview
+### remove
 
-The `!command remove` subcommand is used to remove an existing command from the chat. This command will error if the command does not exist.
+Removes an existing command from the chat.
 
-#### aliases
-
-- \-
-- remove
-- delete
-- del
-- rem
-
-#### Arguments
-
-- `command` (required): The name of the command to remove.
-
-#### Usage
-
+**Usage:**
 ```
 !command remove <command>
 ```
 
-#### Example Input
-
+**Example:**
 ```
-!command remove test
-```
-
-#### Example Output
-
-```
-@Styler, successfully removed command test123123.
+!command remove !test
 ```
 
-#### Example Error
-
+**Output:**
 ```
-@Styler, no command with trigger test. found :/ 
-```
-
-### !command edit
-
-#### Overview
-
-The `!command edit` subcommand is used to edit an existing command in the chat. This command will error if the command does not exist.
-
-#### aliases
-
-- edit
-- update
-
-#### Arguments
-
-- `command` (required): The name of the command to edit.
-- `response` (required): The new response of the command.
-
-#### Usage
-
-```
-!command edit <command> <response>
+@User, successfully removed command test.
 ```
 
-#### Example Input
+### edit
 
-```
-!command edit test This is a new response.
-```
+Edits an existing command in the chat.
 
-#### Example Output
-
+**Usage:**
 ```
-@Styler, successfully updated command test. 
+!command edit <command> <new_response>
 ```
 
-#### Example Error
-
+**Example:**
 ```
-@Styler, no command with trigger test_xd found :/ 
+!command edit !test This is an updated test command.
 ```
 
-### !command alias
+**Output:**
+```
+@User, successfully updated command test.
+```
 
-#### Overview
+### alias
 
-The `!command alias` subcommand is used to see the aliases of a command in the chat. This command will error if the command does not exist.
+Shows the aliases of a command in the chat.
 
-#### aliases
-
-- alias
-- aliases
-
-#### Arguments
-
-- `command` (required): The name of the command to see the aliases of.
-
-#### Usage
-
+**Usage:**
 ```
 !command alias <command>
 ```
 
-#### Example Input
-
+**Example:**
 ```
-!command alias test
-```
-
-#### Example Output
-
-```
-@Styler, aliases for command test: 1, 2, 3, 4, 5, 6. 
+!command alias !test
 ```
 
-#### Example Error
-
+**Output:**
 ```
-@Styler, no command with trigger test found :/ 
+@User, aliases for command test: 1, 2, 3, 4, 5, 6.
 ```
 
-### !command show
+### show
 
-#### Overview
+Displays the details of an existing command in the chat.
 
-The `!command show` subcommand is used to see the details of a command in the chat. This command will error if the command does not exist.
-
-#### aliases
-
-- show
-- debug
-
-#### Arguments
-
-- `command` (required): The name of the command to see the details of.
-
-#### Usage
-
+**Usage:**
 ```
 !command show <command>
 ```
 
-#### Example Input
-
+**Example:**
 ```
-!command show test
-```
-
-#### Example Output
-
-```
-@Styler, command test: ${channel} This is a test command. ${settitle ${1:}}
+!command show !test
 ```
 
-#### Example Error
-
+**Output:**
 ```
-@Styler, no command with trigger test found :/ 
+@User, command test: ${channel} This is a test command. ${settitle ${1:}}
 ```
 
-### !command options
+### options
 
-#### Overview
+Adds advanced options to an existing command in the chat.
 
-The `!command options` subcommand is used to add advanced options to an existing command in the chat. This command will error if the command does not exist.
-
-#### aliases
-
-- options
-- option
-- opt
-- opts
-- o
-- 🔧
-
-#### Arguments
-
-Option | Description
---- | ---
-`cd` | Cooldown time for the command
-`usercd` | Cooldown time for the user
-`cost` | Cost of the command
-`level` | User level required to use the command
-`type` | Type of the command
-`trigger` | Trigger for the command
-`count` | Count of the command usage
-`enable` | Enable the command
-`disable` | Disable the command
-
-#### Usage
-
+**Usage:**
 ```
 !command options <command> <option> <value>
 ```
 
-Multiple options can be specified by separating them with a space.
-
-#### Example Input
-
+**Example:**
 ```
-!command options test -cd 10 -cost 100 -type whisper
+!command options !test -cd 10 -cost 100 -type whisper
 ```
 
-#### Example Output
+**Output:**
+```
+@User, successfully updated command test.
+```
 
-```
-@Styler, successfully updated command test. 
-```
+## Parameters
 
-#### Example Error
+The following options are available for the `options` subcommand:
 
-```
-@Styler, Valid flags: -cd (number) -usercd (number) -cost (number) -level (number) -type (say, whisper or reply) -count (number) -enable -disable 
-```
+| Option | Description |
+|--------|-------------|
+| `cd` | Cooldown time for the command |
+| `usercd` | Cooldown time for the user |
+| `cost` | Cost of the command |
+| `level` | User level required to use the command |
+| `type` | Type of the command (say, whisper, or reply) |
+| `trigger` | Trigger for the command |
+| `count` | Count of the command usage |
+| `enable` | Enable the command |
+| `disable` | Disable the command |
+
+## Aliases
+
+The `!command` feature has the following alias:
+- `!cmd`
+
+Additionally, some subcommands have their own aliases:
+
+- `add`: `+`
+- `remove`: `-`, `remove`, `delete`, `del`, `rem`
+- `edit`: `edit`, `update`
+- `alias`: `alias`, `aliases`
+- `show`: `show`, `debug`
+- `options`: `options`, `option`, `opt`, `opts`, `o`, `🔧`
+
+## Customization
+
+You can customize commands using various StreamElements variables and functions. For example:
+
+- `${channel}`: Inserts the channel name
+- `${settitle ${1:}}`: Allows setting a title with an optional parameter
