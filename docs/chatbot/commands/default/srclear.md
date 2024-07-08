@@ -1,36 +1,55 @@
 ---
 id: srclear
-description: Learn how to use the !srclear command to clear the songrequest queue in your StreamElements chatbot. Easily manage your mediarequest settings.
+sidebar_label: "!srclear"
+description: "Learn how to use the !srclear command to manage your StreamElements chatbot's songrequest queue. Clear song requests quickly and easily."
 keywords:
-  - srclear
-  - songrequest
-  - clear queue
-  - streamelements
-  - chatbot
-  - commands
-  - mediarequest
-tags:
-  - chatbot
-  - commands
-  - mediarequest
+- srclear
+- songrequest
+- clear queue
+- streamelements
+- chatbot
+- commands
+- mediarequest
 ---
 
 # !srclear
 
-The `!srclear` command is used to clear the songrequest queue.
+## Overview
 
-### Arguments
+The `!srclear` command is used to clear the entire songrequest queue in your StreamElements chatbot. This command is particularly useful for streamers and moderators who want to reset or manage the list of requested songs during a stream.
 
-- None
+## Usage
 
-### Example Input
+To use the `!srclear` command, simply type it in the chat:
 
 ```
 !srclear
 ```
 
-### Example Output
+This command does not require any additional arguments or parameters.
 
+## Examples
+
+### Example 1: Clearing the queue
+
+**Input:**
 ```
-songrequest queue has been cleared! 
+!srclear
 ```
+
+**Output:**
+```
+Songrequest queue has been cleared!
+```
+
+## Related Commands
+
+- [`!songrequest`](songrequest.md): Used to request a song
+- [`!wrongsong`](wrongsong.md): Allows users to remove their most recent song request
+- [`!skip`](skip.md): Skips the currently playing song in the queue
+
+## Aliases
+
+- `!clearsr`
+- `!clearsongs`
+- `!resetqueue`
