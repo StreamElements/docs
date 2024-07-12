@@ -1,86 +1,84 @@
 ---
 id: quote
-description: Learn how to use the !quote command in StreamElements chatbot to add, remove, and display memorable quotes from your Twitch chat. Engage your community by saving and sharing their best moments.
+sidebar_label: "!quote"
+description: "Learn how to use the !quote command in StreamElements chatbot to manage and display memorable quotes from your Twitch chat."
 keywords:
-  - quote command
-  - add quote
-  - remove quote
-  - display quotes
-  - memorable moments
-  - chat engagement
-tags:
-  - chatbot
-  - commands
+- quote command
+- add quote
+- remove quote
+- display quotes
+- chat engagement
+- StreamElements
+- Twitch
 ---
 
 # !quote
 
-The `!quote` command is used to add, remove, and display quotes in the chat.
+## Overview
 
-Without any arguments, this command will display a random quote from the chat.
+The `!quote` command allows streamers and moderators to manage a collection of memorable quotes from their Twitch chat. This feature helps engage your community by saving and sharing their best moments.
 
----
+## Usage
 
-### !quote add
-
-#### Overview
-
-The `!quote add` subcommand is used to add a quote to the chat. This command will error if the quote already exists.
-
-#### aliases
-
-- \+
-
-#### Arguments
-
-- `quote` (required): The quote to add to the chat.
-
-#### Usage
+The basic syntax for the `!quote` command is:
 
 ```
-!quote add <quote>
+!quote [subcommand] [arguments]
 ```
 
-#### Example Input
+When used without any subcommands, `!quote` displays a random quote from the collection.
 
-```
-!quote add This is a test quote.
-```
+## Examples
 
-#### Example Output
+1. Display a random quote:
+   ```
+   !quote
+   ```
 
-```
-@Styler, successfully added quote 1. 
-```
+2. Add a new quote:
+   ```
+   !quote add This is a memorable moment from the stream!
+   ```
 
-### !quote remove
+3. Remove a quote:
+   ```
+   !quote remove 1
+   ```
 
-#### Overview
+## Parameters
 
-The `!quote remove` subcommand is used to remove an existing quote from the chat. This command will error if the quote does not exist.
+The `!quote` command has two main subcommands:
 
-#### aliases
+1. `add`: Adds a new quote to the collection.
+2. `remove`: Removes an existing quote from the collection.
 
-- \-
+### Add Subcommand
 
-#### Arguments
+- **Syntax**: `!quote add <quote_text>`
+- **Description**: Adds a new quote to the collection.
+- **Example**:
+  ```
+  !quote add That was an amazing play!
+  ```
+- **Output**:
+  ```
+  @Username, successfully added quote 1.
+  ```
 
-- `id` (required): The quote to remove from the chat.
+### Remove Subcommand
 
-#### Usage
+- **Syntax**: `!quote remove <quote_id>`
+- **Description**: Removes an existing quote from the collection using its ID.
+- **Example**:
+  ```
+  !quote remove 1
+  ```
+- **Output**:
+  ```
+  @Username, successfully removed quote 1.
+  ```
 
-```
-!quote remove <id>
-```
+## Aliases
 
-#### Example Input
-
-```
-!quote remove 1
-```
-
-#### Example Output
-
-```
-@Styler, successfully removed quote 1. 
-```
+- `!quote add` alias: `!quote +`
+- `!quote remove` alias: `!quote -`
