@@ -1,32 +1,53 @@
 ---
 id: tip
-description: Learn how to use the !tip command in StreamElements chatbot to provide a link for viewers to tip the streamer.
-tags:
-  - chatbot
-  - commands
-  - tipping
-  - donations
-  - streamer support
+sidebar_label: "!tip"
+description: "Learn how to use the !tip command in StreamElements chatbot to provide a tipping link for viewers"
 keywords:
-  - tip command
-  - tipping command
-  - tip streamer
-  - support streamer
-  - donation link
+- tip command
+- tipping
+- donations
+- streamer support
+- chatbot
 ---
 
 # !tip
 
-The `!tip` command is used to provide a link for users to tip the streamer.
+## Overview
 
-### Example Input
+The `!tip` command provides a convenient way for viewers to access the streamer's tipping link directly in chat. When used, it generates a message containing a URL where viewers can make monetary contributions to support the streamer.
+
+## Usage
+
+To use the `!tip` command, simply type it in the chat:
 
 ```
 !tip
 ```
 
-### Example Output
+## Examples
 
+### Example 1: Basic Usage
+
+**Input:**
 ```
-You can Tip to styler using this link https://streamelements.com/styler/tip 
+!tip
+```
+
+**Output:**
+```
+You can Tip to styler using this link https://streamelements.com/styler/tip
+```
+
+### Example 2: Moderator Assisting a Viewer
+
+**Input:**
+```
+Viewer: How can I donate to the streamer?
+Moderator: You can use the !tip command to get the donation link. Like this:
+!tip
+```
+
+**Output:**
+```
+You can Tip to styler using this link https://streamelements.com/styler/tip
 ```
