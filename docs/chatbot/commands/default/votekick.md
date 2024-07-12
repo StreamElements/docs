@@ -1,27 +1,59 @@
 ---
 id: votekick
-tags:
-  - chatbot
-  - commands
-  - votekick
-description: Begins a tribunal for chat to decide if a user should be kicked from the chat
+sidebar_label: "!votekick"
+description: "Initiate a community vote to temporarily remove a user from chat"
 keywords:
-  - streamelements votekick command
-  - votekick command
+- streamelements votekick command
+- chat moderation
+- community voting
+- temporary ban
 ---
 
 # !votekick
 
-The `!votekick` command begins a tribunal to kick a user from the chat.
+## Overview
 
-## Arguments
+The `!votekick` command initiates a community vote to temporarily remove a user from the chat. This feature allows viewers to participate in chat moderation by voting on whether a potentially disruptive user should be kicked.
 
-- `<user>` - The user to kick from the chat.
-- `[duration]` - The duration of the vote in seconds. Overrides the modules configured duration.
-
-## Example Input
+## Usage
 
 ```
-!votekick darkoe
-!votekick darkoe 5m
+!votekick <username> [duration]
 ```
+
+## Examples
+
+1. Start a votekick for user "chatty_person" with the default duration:
+```
+!votekick chatty_person
+```
+
+2. Start a votekick for user "noisy_viewer" with a custom duration of 5 minutes:
+```
+!votekick noisy_viewer 5m
+```
+
+## Parameters
+
+- `<username>`: The name of the user to be potentially kicked (required)
+- `[duration]`: The length of time for the voting period (optional)
+  - If not specified, uses the default duration set in the module configuration
+  - Can be specified in seconds (s), minutes (m), or hours (h)
+
+## Configuration
+
+Moderators can configure the following settings for the `!votekick` command through the StreamElements dashboard [bot modules page](https://streamelements.com/dashboard/bot/modules/votekick):
+
+- Vote Duration: Set the default duration for the voting period
+- Minimum Votes: Specify the minimum number of votes required for a valid votekick
+- Vote Threshold: Define the percentage of positive votes needed for the votekick to pass
+- Timeout Duration: Set how long the user will be timed out if the vote passes
+- Cooldown: Establish a cooldown period between votekick attempts
+
+To modify these settings:
+
+1. Log in to your StreamElements dashboard
+2. Navigate to Bot > Modules
+3. Find and click on the "Votekick" module
+4. Adjust the settings as needed
+5. Save your changes
