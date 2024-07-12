@@ -1,6 +1,6 @@
 ---
 id: user
-sidebar_label: "User Variables"
+sidebar_label: "$(user)"
 description: "Comprehensive guide to StreamElements Chatbot user variables for streamers and moderators"
 keywords:
 - streamelements
