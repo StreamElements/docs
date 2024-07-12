@@ -1,36 +1,65 @@
 ---
 id: nuke
-description: Learn how to use the !nuke command in StreamElements chatbot to timeout, ban or delete messages containing a specified string. Moderate your chat effectively with this powerful command.
-tags:
-  - chatbot
-  - commands
-  - moderation
+sidebar_label: "!nuke"
+description: "Learn how to use the !nuke command in StreamElements chatbot to moderate your chat by timing out, banning, or deleting messages containing specific content."
 keywords:
-  - nuke command
-  - timeout
-  - ban
-  - delete messages
-  - moderate chat
+- nuke command
+- chat moderation
+- timeout users
+- ban users
+- delete messages
+- StreamElements chatbot
 ---
 
 # !nuke
 
-The `!nuke` command is used to perform a timeout, ban, or deletion on messages in the chat. This command will search the chat messages for a specified string and perform the specified action on the messages if the string is found. This command will error if the string is not found in the chat.
+## Overview
 
-### Arguments
+The `!nuke` command is a powerful moderation tool in the StreamElements chatbot that allows moderators to quickly remove multiple messages containing specific content from the chat. It can perform timeouts, bans, or message deletions based on a specified string or regular expression.
 
-- `lookback in seconds`: This is the time window in the past in which to search for the messages.
-- `timeout in seconds, 'ban' or 'delete'`: This is the action to perform on the messages. It can be a timeout for a specified number of seconds, a ban, or a deletion of the messages.
-- `match string, for regex, wrap in slashes /abc/`: This is the string to match in the messages. If a regular expression is used, it should be wrapped in slashes.
-
-#### Example Input
+## Usage
 
 ```
-!nuke 60 60 /test/
+!nuke <lookback_time> <action> <match_string>
 ```
 
-#### Example Output
+## Parameters
+
+- `<lookback_time>`: The time window (in seconds) to search for matching messages.
+- `<action>`: The moderation action to perform. Can be:
+  - A number (for timeout duration in seconds)
+  - `ban` (to ban users)
+  - `delete` (to delete messages)
+- `<match_string>`: The text to search for in messages. For regex patterns, wrap in slashes (e.g., `/pattern/`).
+
+## Examples
+
+1. Timeout users for 60 seconds who sent messages containing "spam" in the last 2 minutes:
 
 ```
-Nuking 2 chatters ☢ ️ ☢ ️ ☢ ️ This will take about 1 secs ☢ ️ ☢ ️ ☢ ️
+!nuke 120 60 spam
 ```
+
+2. Ban users who sent messages matching the regex pattern "test\d+" in the last 5 minutes:
+
+```
+!nuke 300 ban /test\d+/
+```
+
+3. Delete all messages containing "giveaway" from the last 30 seconds:
+
+```
+!nuke 30 delete giveaway
+```
+
+## Related Commands
+
+- [`!nukeusername`](nukeusername.md): Nuke users based on username.
+
+## Configuration
+
+The `!nuke` command is available by default to moderators and the broadcaster. To change permissions, modify the command settings in your StreamElements dashboard.
+
+## Aliases
+
+There are no default aliases for the `!nuke` command. However, you can create custom aliases in your StreamElements dashboard if desired.

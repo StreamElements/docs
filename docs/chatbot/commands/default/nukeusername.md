@@ -1,43 +1,58 @@
 ---
 id: nukeusername
-description: Learn how to use the !nukeusername command in StreamElements chatbot to moderate user activity by performing timeouts, bans, or deletions based on matched strings or regex patterns.
-tags:
-  - chatbot
-  - commands
-  - moderation
-  - user activity
-  - timeout
-  - ban
-  - delete
-  - regex
+sidebar_label: "!nukeusername"
+description: "Learn how to use the !nukeusername command in StreamElements chatbot to moderate user activity by performing timeouts, bans, or deletions based on matched strings or patterns."
 keywords:
-  - nukeusername
-  - chatbot command
-  - user activity moderation
-  - timeout user
-  - ban user
-  - delete user messages
-  - regex matching
+- nukeusername
+- chatbot command
+- user activity moderation
+- timeout user
+- ban user
+- delete user messages
+- regex matching
 ---
 
 # !nukeusername
 
-The `!nukeusername` command is used to perform a timeout, ban, or deletion on a user's activity in the chat. This command will search the user's activity for a specified string and perform the specified action on the user if the string is found. This command will error if the user is not found in the chat.
+## Overview
 
-### Arguments
+The `!nukeusername` command is a powerful moderation tool in StreamElements chatbot. It allows moderators to search a user's recent chat activity for specific content and take action if a match is found. Actions can include timeouts, bans, or message deletions.
 
-- `lookback in seconds`: This is the time window in the past in which to search for the user's activity.
-- `timeout in seconds, 'ban' or 'delete'`: This is the action to perform on the user. It can be a timeout for a specified number of seconds, a ban, or a deletion of the user's activity.
-- `match string, for regex, wrap in slashes /abc/`: This is the string to match in the user's activity. If a regular expression is used, it should be wrapped in slashes.
-
-#### Example Input
+## Usage
 
 ```
-!nukeusername 60 60 /test/
+!nukeusername <lookback_seconds> <action> <match_pattern>
 ```
 
-#### Example Output
+## Parameters
 
-```
-Nuking 2 chatters ☢ ️ ☢ ️ ☢ ️ This will take about 1 secs ☢ ️ ☢ ️ ☢ ️ 
-```
+- `<lookback_seconds>`: The time window (in seconds) to search for the user's activity.
+- `<action>`: The action to perform on the user. Can be:
+  - A number (for timeout duration in seconds)
+  - `'ban'` (to ban the user)
+  - `'delete'` (to delete the user's messages)
+- `<match_pattern>`: The string or pattern to match in the user's messages. For regex patterns, wrap in slashes (e.g., `/pattern/`).
+
+## Examples
+
+1. Timeout a user for 60 seconds if they've said "test" in the last minute:
+   ```
+   !nukeusername 60 60 test
+   ```
+
+2. Ban a user if they've used a regex pattern in the last 2 minutes:
+   ```
+   !nukeusername 120 ban /\d{3}-\d{3}-\d{4}/
+   ```
+
+## Related Commands
+
+- [`!nuke`](nuke.md): Nuke users based on message content
+
+## Configuration
+
+The `!nukeusername` command is available to moderators and the broadcaster by default. Custom permissions can be set up in the StreamElements dashboard.
+
+## Aliases
+
+There are no default aliases for this command. Custom aliases can be created in the StreamElements dashboard.
