@@ -1,37 +1,67 @@
 ---
-id: next 
-description: Learn how to use the !next command to view the upcoming song in the media request queue on your StreamElements chatbot. Easily see what's playing next!
+id: next
+sidebar_label: "!next"
+description: "Learn how to use the !next command to view the upcoming song in the StreamElements media request queue"
 keywords:
-  - next command
-  - upcoming song
-  - media request
-  - song queue  
-tags:
-  - chatbot
-  - commands
-  - mediarequest
+- next command
+- upcoming song
+- media request
+- song queue
+- StreamElements
+- chatbot
 ---
 
 # !next
 
-The `!next` command is used to view the next song in the media request queue. This command will display the title and artist of the upcoming song.
+## Overview
 
-### Arguments
+The `!next` command allows viewers and moderators to check the next song in the StreamElements media request queue. It provides information about the upcoming track, including its title, artist, duration, and requester.
 
-- This command does not require any arguments.
+## Usage
 
-### Aliases
-
-- nextsong
-- whatisthenextsonghomie
-
-#### Example Input
+To use the `!next` command, simply type it in the chat:
 
 ```
 !next
 ```
 
-#### Example Output
+## Examples
 
+### Example 1: Checking the next song
+
+**Input:**
 ```
-next song: MrSuicideSheep - WE WON ZULUL [2m3s] requested by LordFluffyButt https://youtu.be/9OG-Qr1qAe4```
+!next
+```
+
+**Output:**
+```
+Next song: MrSuicideSheep - WE WON ZULUL [2m3s] requested by LordFluffyButt https://youtu.be/9OG-Qr1qAe4
+```
+
+### Example 2: No songs in queue
+
+**Input:**
+```
+!next
+```
+
+**Output:**
+```
+There are no songs currently in the queue.
+```
+
+## Parameters
+
+The `!next` command does not require any parameters.
+
+## Related Commands
+
+- [`!song`](song.md): Displays information about the currently playing song
+- [`!songqueue`](songqueue.md): Shows the entire media request queue
+
+## Aliases
+
+The `!next` command has the following aliases:
+
+- `!nextsong`
