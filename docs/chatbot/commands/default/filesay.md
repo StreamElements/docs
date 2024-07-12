@@ -1,55 +1,75 @@
 ---
 id: filesay
-description: Learn how to use the !filesay command to send multiple lines of text to the chat from a URL, useful for banning large numbers of users. Streamers and moderators can easily moderate their chat using this powerful command.
-tags:
-  - chatbot
-  - commands
-  - moderation
-  - banning users
-  - chat management
-  - streaming
+sidebar_label: "!filesay"
+description: "Learn how to use the !filesay command to send multiple lines of text to chat from a URL, useful for bulk moderation actions like banning users."
 keywords:
-  - filesay
-  - chatbot command
-  - moderation
-  - banning users
-  - chat management
-  - streaming
-  - twitch
-  - youtube
+- filesay
+- chatbot command
+- moderation
+- banning users
+- chat management
+- streaming
+- twitch
+- youtube
 ---
+
 # !filesay
 
-The `!filesay` command is used to have the bot send multiple lines of text to the chat in a short period via a URL. This is especially useful for cases where streamers and/or moderators want to ban a large number of users from the chat using a pastebin file.
+## Overview
 
-### Module
+The `!filesay` command allows streamers and moderators to send multiple lines of text to chat from a URL. This powerful tool is particularly useful for bulk moderation actions, such as banning a large number of users simultaneously.
 
-- None
-
-### Arguments
-
-- `url` - The URL of the file to read from. This file must be a plain text file with each line being a separate message to send to the chat.
-
-### Example Input
+## Usage
 
 ```
-!filesay https://pastebin.com/raw/MmqTJSfH
+!filesay <url>
 ```
 
-### Example Output
+Replace `<url>` with the web address of a plain text file containing the messages you want to send to chat. Each line in the file will be sent as a separate message.
+
+## Examples
+
+### Example 1: Banning multiple users
 
 ```
-badactor1 has been permantently banned from the chat.
-badactor2 has been permantently banned from the chat.
-badactor3 has been permantently banned from the chat.
-badactor4 has been permantently banned from the chat.
-badactor5 has been permantently banned from the chat.
+!filesay https://pastebin.com/raw/123
 ```
 
-#### Example Error
+Output:
+```
+badactor1 has been permanently banned from the chat.
+badactor2 has been permanently banned from the chat.
+badactor3 has been permanently banned from the chat.
+badactor4 has been permanently banned from the chat.
+badactor5 has been permanently banned from the chat.
+```
+
+### Example 2: Sending multiple announcements
 
 ```
-@Adeithe, usage: !filesay https://link.to/raw/text/file
-
-@Adeithe, running this command will take more than 5 minutes, please use a file no longer than 1500 lines.
+!filesay https://example.com/announcements.txt
 ```
+
+Output:
+```
+Welcome to the stream, everyone!
+Today's schedule: Gaming from 2-4 PM, Q&A from 4-5 PM
+Don't forget to follow and subscribe for more content!
+```
+
+## Parameters
+
+- `url`: The web address of a plain text file containing the messages to be sent to chat. Each line in the file will be treated as a separate message.
+
+## Related Commands
+
+- [`!nuke`](nuke.md)
+- [`!nukeusername`](nukeusername.md)
+
+## Configuration
+
+No additional configuration is required to use the `!filesay` command.
+
+## Aliases
+
+There are no aliases for the `!filesay` command.

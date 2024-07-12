@@ -1,54 +1,71 @@
 ---
 id: givepoints
-description: Learn how to use the !givepoints command in StreamElements chatbot to transfer loyalty points from one user to another.
-tags:
-  - chatbot
-  - commands
-  - loyalty
-  - points
-  - transfer
-  - givepoints
+sidebar_label: "!givepoints"
+description: "Learn how to use the !givepoints command in StreamElements chatbot to transfer loyalty points between users."
 keywords:
-  - givepoints command
-  - transfer points streamelements
-  - loyalty points
+- givepoints command
+- transfer points streamelements
+- loyalty points
+- chatbot commands
+- stream currency
 ---
+
 # !givepoints
 
-The `!givepoints` command transfers points from the sender to the specified user.
+## Overview
 
-### Module
+The `!givepoints` command allows users to transfer their loyalty points to another user in the chat. This feature is useful for rewarding viewers, running community events, or sharing points with friends.
 
-- None
+## Usage
 
-### Default Aliases
+To use the `!givepoints` command, type it in chat followed by the recipient's username and the amount of points you want to transfer.
 
+Syntax: `!givepoints <username> <amount>`
+
+## Examples
+
+1. Giving 1000 points to a user named "viewer123":
+   ```
+   !givepoints viewer123 1000
+   ```
+
+2. Transferring 500 points to a moderator named "mod_expert":
+   ```
+   !givepoints mod_expert 500
+   ```
+
+## Parameters
+
+- `<username>`: The name of the user who will receive the points. Must be a valid username in the chat.
+- `<amount>`: The number of points to transfer. Must be a positive integer and cannot exceed the sender's current point balance.
+
+## Related Commands
+
+- [`!points`](points.md): Check your current point balance
+- [`!top`](top.md): View the leaderboard of users with the most points
+
+## Aliases
+
+The `!givepoints` command can also be used with the following aliases:
 - `!give`
 - `!transfer`
 
-#### Arguments
+## Error Handling
 
-- `username` - The username of the user to give points to.
-- `amount` - The amount of points to give to the user.
+The command includes built-in error handling for common issues:
 
-#### Example Input
+1. Invalid username:
+   ```
+   @Sender, That doesn't look like a valid username Keepo
+   ```
 
-```
-!givepoints styler 10000
-```
+2. Insufficient points:
+   ```
+   @Sender, You only have 420 points.
+   ```
 
-#### Example Output
+3. User not found in database:
+   ```
+   @Sender, I couldn't find that user in the database :/
+   ```
 
-```
-Adeithe gave 10000 points to styler PogChamp
-```
-
-#### Example Errors
-
-```
-@Adeithe, That doesnt look like a valid username Keepo
-
-@Adeithe, You only have 420 points.
-
-@Adeithe, I couldn't find that user in the database :/
-```

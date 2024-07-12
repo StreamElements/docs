@@ -1,34 +1,47 @@
 ---
 id: closestore
-description: Learn how to use the !closestore command to disable all regular items in your StreamElements loyalty store that were previously enabled.
+sidebar_label: "!closestore"
+description: "Learn how to use the !closestore command to disable all regular items in your StreamElements loyalty store"
 keywords:
-  - closestore
-  - disable store items
-  - loyalty store
-  - stream store
-  - streamelements chatbot
-tags:
-  - chatbot
-  - commands
-  - loyalty
+- closestore
+- disable store items
+- loyalty store
+- stream store
+- streamelements chatbot
 ---
 
 # !closestore
 
-The `!closestore` command is used to disable all regular items in the loyalty stream store that were previously enabled.
+## Overview
 
-### Arguments
+The `!closestore` command is used to quickly disable all regular items in your StreamElements loyalty store that were previously enabled. This can be useful when you want to temporarily close your store or make significant changes to your item offerings.
 
-- None
+## Usage
 
-#### Example Input
+To use the `!closestore` command, simply type it in your stream chat:
 
 ```
 !closestore
 ```
 
-#### Example Output
+This command does not require any additional arguments or parameters.
 
+## Examples
+
+### Example 1: Closing the store
+
+**Input:**
 ```
-@Styler, successfully updated 10 items. 
+!closestore
 ```
+
+**Output:**
+```
+@Streamer, successfully updated 10 items.
+```
+
+## Related Commands
+
+- [`!openstore`](openstore.md): Re-enables all regular items in the loyalty store that were previously disabled.
+- [`!disablesfx`](disablesfx.md): Disables all sound effect items in the loyalty store.
+- [`!enablesfx`](enablesfx.md): Enables all sound effect items in the loyalty store.

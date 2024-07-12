@@ -1,41 +1,52 @@
 ---
-id: giveaway 
-description: Learn how to use the !giveaway command in StreamElements to get information about active giveaways in a Twitch channel. Easily check current giveaways and links with this handy chat command.
-tags:
-  - chatbot
-  - commands
-  - loyalty
+id: giveaway
+sidebar_label: "!giveaway"
+description: "Learn how to use the !giveaway command in StreamElements to check active giveaways in a Twitch channel."
 keywords:
-  - giveaway
-  - giveaway command
-  - StreamElements giveaway
-  - Twitch giveaway
-  - active giveaway
-  - current giveaway
+- giveaway
+- StreamElements giveaway
+- Twitch giveaway
+- active giveaway
+- current giveaway
+- chatbot command
 ---
 
 # !giveaway
 
-The `!giveaway` command is used to get an active giveaway in the channel.
+## Overview
 
-### Module
+The `!giveaway` command allows viewers to check if there's an active giveaway in the channel. It provides information about the current giveaway, including its name and a link to participate.
 
-- None
+## Usage
 
-#### Arguments
+To use the command, simply type `!giveaway` in the chat.
 
-This command has no arguments.
+## Examples
 
-#### Example Input
+Here are two examples of how the `!giveaway` command works:
 
-```
-!giveaway
-```
-
-#### Example Output
+1. When there's an active giveaway:
 
 ```
-@Adeithe, Current giveaway: "Door Giveaway" https://streamelements.com/styler/giveaway/650981afb4e7658a15d6448b
-
-@Adeithe, There is currently no giveaway running!
+User: !giveaway
+Chatbot: @User, Current giveaway: "Door Giveaway" https://streamelements.com/styler/giveaway/650981afb4e7658a15d6448b
 ```
+
+2. When there's no active giveaway:
+
+```
+User: !giveaway
+Chatbot: @User, There is currently no giveaway running!
+```
+
+## Parameters
+
+This command doesn't accept any parameters.
+
+## Related Commands
+
+- [`!ticket`](ticket.md) - Use this command to enter an active giveaway
+
+## Configuration
+
+Streamers can set up giveaways through the StreamElements dashboard. The `!giveaway` command will automatically reflect the current giveaway status without additional configuration.

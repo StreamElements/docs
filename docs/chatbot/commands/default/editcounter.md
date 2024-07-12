@@ -1,58 +1,55 @@
 ---
 id: editcounter
-description: Learn how to use the !editcounter command in StreamElements chatbot to edit the value of a specific counter. Easily increment, decrement or set the counter to a desired number.
-tags:
-  - chatbot
-  - commands
+sidebar_label: "!editcounter"
+description: "Learn how to use the !editcounter command in StreamElements chatbot to modify counter values in your stream chat."
 keywords:
-  - editcounter
-  - edit counter
-  - counter
-  - increment counter
-  - decrement counter 
-  - set counter value
-  - stream elements
-  - chatbot
-  - commands
+- editcounter
+- counter
+- increment
+- decrement
+- set value
+- StreamElements
+- chatbot
+- commands
 ---
 
 # !editcounter
 
-The `!editcounter` command is used to edit the counter of a specific event or item in the chat.
+## Overview
 
-### Arguments
+The `!editcounter` command allows you to modify the value of a specific counter in your StreamElements chatbot. This command is useful for tracking various events or items during your stream.
 
-- `id`: The name of the counter you want to edit.
-- `value`: The new value you want to set for the counter. You can use `+` or `-` to add or subtract from the current value. (If not specified, it will set the counter to the value)
-
-### Usage
+## Usage
 
 ```
-!editcounter <id> <value>
+!editcounter <counter_id> <value>
 ```
 
-### Example Input
+## Parameters
 
-```
-!editcounter social 1000
+- `counter_id`: The name or identifier of the counter you want to edit.
+- `value`: The new value for the counter. You can use:
+  - A positive or negative number to set an absolute value
+  - `+` followed by a number to increment the counter
+  - `-` followed by a number to decrement the counter
 
-!editcounter social -10
+## Examples
 
-!editcounter social +10
-```
+1. Set a counter to a specific value:
+   ```
+   !editcounter social 1000
+   ```
+   Output: `@Username changed the social counter from 500 to 1000`
 
-### Example Output
+2. Increment a counter:
+   ```
+   !editcounter viewers +10
+   ```
+   Output: `@Username changed the viewers counter from 50 to 60`
 
-```
-@Styler changed the test counter from 10 to 10
+3. Decrement a counter:
+   ```
+   !editcounter points -5
+   ```
+   Output: `@Username changed the points counter from 20 to 15`
 
-@Styler changed the test counter from 10 to 0 
-
-@Styler changed the test counter from 10 to 20 
-```
-
-#### Example Error
-
-```
-@Styler, usage: !editcounter <id> +1/-1/123 
-```
