@@ -1,28 +1,78 @@
 ---
 id: queue
-description: Learn how to use the !queue command to manage viewer queues during live streams with the StreamElements chatbot. Easily pick, remove, list, and control the queue.
+sidebar_label: "!queue"
+description: "Learn how to manage viewer queues during live streams using the !queue command in StreamElements chatbot."
 keywords:
-  - StreamElements
-  - chatbot
-  - queue
-  - live stream
-  - viewer management
-tags:
-  - chatbot
-  - commands
+- StreamElements
+- chatbot
+- queue
+- live stream
+- viewer management
+- moderation
 ---
 
 # !queue
 
-The `!queue` command is used to manage the viewer queue during live streams. It has several subcommands:
+## Overview
 
-- `pick username`: This subcommand is used to manually pick a viewer from the queue.
-- `pick random`: This subcommand is used to randomly pick a viewer from the queue.
-- `remove username`: This subcommand is used to remove a viewer from the queue.
-- `list`: This subcommand is used to display a full list of the queue.
-- `position`: This subcommand is used to display a viewer's position in the queue.
-- `close`: This subcommand is used to close the queue.
-- `pause`: This subcommand is used to stop viewers from entering the queue.
-- `unpause`: This subcommand is used to re-open the queue.
+The `!queue` command is a powerful tool for managing viewer queues during live streams. It allows streamers and moderators to control who joins the queue, pick participants, and manage the overall queue state.
 
-Each subcommand should be used as `!queue <subcommand>`.
+## Usage
+
+The basic syntax for the `!queue` command is:
+
+```
+!queue <subcommand> [parameters]
+```
+
+## Examples
+
+1. Randomly select a viewer from the queue:
+   ```
+   !queue pick random
+   ```
+
+2. Remove a specific viewer from the queue:
+   ```
+   !queue remove JohnDoe123
+   ```
+
+## Parameters
+
+The `!queue` command uses various subcommands as parameters:
+
+- `pick`: Select a viewer from the queue
+  - `username`: Manually select a specific viewer
+  - `random`: Randomly select a viewer
+- `remove <username>`: Remove a specific viewer from the queue
+- `list`: Display the full list of viewers in the queue
+- `position`: Show a viewer's position in the queue
+- `close`: Close the queue to new entries
+- `pause`: Temporarily stop viewers from joining the queue
+- `unpause`: Re-open the queue for viewers to join
+
+## Usage
+
+Here's a detailed explanation of each subcommand:
+
+1. **Picking viewers**
+   - To manually pick a viewer: `!queue pick *username*`
+   - To randomly pick a viewer: `!queue pick random`
+
+2. **Managing the queue**
+   - To remove a viewer: `!queue remove *username*`
+   - To view the full queue: `!queue list`
+   - To check a viewer's position: `!queue position`
+
+3. **Controlling queue state**
+   - To close the queue: `!queue close`
+   - To pause new entries: `!queue pause`
+   - To resume accepting entries: `!queue unpause`
+
+## Customization
+
+Streamers can customize the `!queue` command behavior through the StreamElements dashboard. Options may include:
+
+- Setting queue size limits
+- Customizing messages for queue actions
+- Restricting queue access to specific user roles
