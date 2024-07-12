@@ -1,46 +1,50 @@
 ---
 id: settitle
-description: Learn how to use the !settitle command in StreamElements chatbot to easily change the title of your current Twitch stream. Keep your viewers informed about what you're streaming.
+sidebar_label: "!settitle"
+description: "Learn how to use the !settitle command in StreamElements chatbot to change your Twitch stream title quickly and easily."
 keywords:
-  - settitle
-  - set title
-  - change stream title
-  - update stream title
-  - chatbot commands
-  - StreamElements  
-tags:
-  - chatbot
-  - commands
+- settitle
+- set title
+- change stream title
+- update stream title
+- chatbot commands
+- StreamElements
+- Twitch
 ---
 
 # !settitle
 
-The `!settitle` command is used to change the title of the current stream.
+## Overview
 
-### Arguments
+The `!settitle` command allows streamers and moderators to change the title of the current Twitch stream directly from chat. This command helps keep viewers informed about the stream's content without leaving the streaming software.
 
-- `<title>` (required): The new title for the stream.
-
-### Usage
+## Usage
 
 ```
-!settings <title> 
+!settitle <new_title>
 ```
 
-### Example Input
+Replace `<new_title>` with the desired title for your stream.
+
+## Examples
+
+1. Changing the stream title to a game name:
 
 ```
-!settitle Overclocked icecream machine 
+!settitle Playing Overwatch 2 with viewers!
 ```
 
-### Example Output
+2. Updating the title for a variety stream:
 
 ```
-@Styler changed the title to "Overclocked icecream machine"! 
+!settitle Monday Variety: Minecraft, Fall Guys, and more!
 ```
 
-### Example Error
+## Parameters
 
-```
-usage: !settitle Overclocked icecream machine 
-```
+- `<new_title>` (required): The new title for the stream. This can be any text up to Twitch's character limit for stream titles.
+
+## Related Commands
+
+- [`!setgame`](setgame.md): Changes the current game/category of the stream
+- [`!uptime`](uptime.md): Displays how long the stream has been live
