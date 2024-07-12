@@ -1,32 +1,50 @@
 ---
 id: module
-description: Learn how to enable or disable chatbot modules using the !module command in StreamElements chatbot. Control the functionality of your chatbot with ease.
-tags:
-  - chatbot
-  - commands
+sidebar_label: "!module"
+description: "Learn how to enable or disable chatbot modules using the !module command in StreamElements chatbot. Control your chatbot's functionality with ease."
 keywords:
-  - chatbot
-  - enable module
-  - disable module
+- chatbot
+- module
+- enable
+- disable
+- StreamElements
+- command
 ---
 
 # !module
 
-The `!module` command is used to enable or disable chatbot modules from the chat. This command allows the user to control the functionality of different modules in the chatbot.
+## Overview
 
-### Arguments
+The `!module` command allows streamers and moderators to enable or disable specific chatbot modules directly from the chat. This powerful tool helps you control the functionality of your StreamElements chatbot in real-time, tailoring its features to your stream's needs.
 
-- `module name`: This is the name of the module to be enabled or disabled.
-- `'enable' or 'disable'`: This is the action to be performed on the module. It can either be 'enable' to turn on the module or 'disable' to turn off the module.
+## Usage
 
-### Example Input
+To use the `!module` command, type it in chat followed by the module name and the desired action (enable or disable).
 
-```
-!module roulette enable/disable 
-```
+Syntax: `!module <module_name> <action>`
 
-### Example Output
+## Examples
 
-```
-@Styler, successfully disabled module roulette. 
-```
+1. Disabling the roulette module:
+   ```
+   !module roulette disable
+   ```
+
+2. Enabling the quotes module:
+   ```
+   !module quotes enable
+   ```
+
+## Parameters
+
+- `<module_name>`: The name of the module you want to enable or disable (e.g., roulette, quotes, giveaway).
+- `<action>`: The action to perform on the module. Use either `enable` to turn on the module or `disable` to turn it off.
+
+## Related Commands
+
+- [`!commands`](commands.md): Lists all available chatbot commands
+- [`!permit`](permit.md): Grants temporary permission for users to post links
+
+## Configuration
+
+The `!module` command is available by default to the broadcaster and moderators. You can adjust command permissions in the StreamElements dashboard under the Chatbot > Commands section.
