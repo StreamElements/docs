@@ -1,31 +1,43 @@
 ---
-id: uptime 
-tags:
-  - chatbot
-  - commands
-description: Learn how to use the !uptime command in StreamElements to check how long a streamer has been live. Easily track stream duration with this simple chatbot command.
+id: uptime
+sidebar_label: "!uptime"
+description: "Learn how to use the !uptime command in StreamElements to check stream duration."
 keywords:
-  - streamelements uptime command
-  - uptime command twitch
-  - chatbot uptime
+- streamelements uptime command
+- uptime command twitch
+- chatbot uptime
+- stream duration
+- live streaming time
 ---
 
 # !uptime
 
-The `!uptime` command is used to check how long the streamer has been online for.
+## Overview
 
-### Arguments
+The `!uptime` command allows viewers and moderators to check how long the current stream has been live. It's a simple yet useful tool for tracking stream duration and engaging with the community.
 
-- None
+## Usage
 
-### Example Input
+To use the `!uptime` command, simply type it in the chat:
 
 ```
 !uptime
 ```
 
-### Example Output
+The chatbot will respond with the current stream duration.
 
-```
-@Styler has been live for 1 hour, 2 minutes, and 3 seconds
-```
+## Examples
+
+   **Input:**
+   ```
+   !uptime
+   ```
+   **Output:**
+   ```
+   @Streamer has been live for 5 minutes and 30 seconds
+   ```
+
+## Parameters
+
+The `!uptime` command doesn't require any parameters. It works as-is when typed in chat.
+
