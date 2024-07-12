@@ -1,43 +1,73 @@
 ---
 id: points
-description: Learn how to use the !points command in StreamElements chatbot to display user points and leaderboard rank. Easily check your own or other users' loyalty points.
+sidebar_label: "!points"
+description: "Learn how to use the !points command in StreamElements chatbot to check user loyalty points and leaderboard rank."
 keywords:
-  - StreamElements
-  - chatbot
-  - commands
-  - loyalty
-  - points
-  - leaderboard
-  - rank
-tags:
-  - chatbot
-  - commands
-  - loyalty
+- StreamElements
+- chatbot
+- commands
+- loyalty
+- points
+- leaderboard
+- rank
 ---
+
 # !points
 
-The `!points` command is used to display the number of points a user has and their rank on the leaderboard.
+## Overview
 
-Without any arguments, this command will display the points and rank of the user who issued the command.
+The `!points` command allows users to check their loyalty points and leaderboard rank in the StreamElements chatbot system. This command can be used by viewers to see their own points or to check the points of other users in the chat.
 
-### Arguments
+## Usage
 
-- `username` (optional): The username of the user whose points and rank you want to display.
-  - If no username is provided, the command will display the points and rank of the user who issued the command.
-  - It will default to the user who issued the command if the username is not found.
+To use the `!points` command, type it in the chat followed by an optional username:
 
-#### Example Input
+```
+!points [username]
+```
+
+If no username is provided, the command will display the points and rank of the user who issued the command.
+
+## Examples
+
+### Checking your own points
 
 ```
 !points
+```
 
+**Output:**
+```
+YourUsername has 2643 nammers and is rank 22658/22671 on the leaderboard.
+```
+
+### Checking another user's points
+
+```
 !points adeithe
 ```
 
-#### Example Output
-
+**Output:**
 ```
-styler has 2643 nammers and is rank 22658/22671 on the leaderboard. 
-
-adeithe has 0 nammers and is rank 22669/22671 on the leaderboard. 
+adeithe has 0 nammers and is rank 22669/22671 on the leaderboard.
 ```
+
+## Parameters
+
+- `username` (optional): The username of the user whose points and rank you want to display.
+  - If omitted, the command will show the points of the user who issued the command.
+  - If the specified username is not found, it will default to the user who issued the command.
+
+## Related Commands
+
+- [`!top`](top.md): Displays the top users on the points leaderboard
+- [`!givepoints`](givepoints.md): Allows users to give points to other users (if enabled)
+- [`!roulette`](roulette.md): Lets users gamble their points (if enabled)
+
+## Customization
+
+Streamers can customize various aspects of the points system, including:
+
+- The name of the currency (e.g., "nammers" in the example)
+- The rate at which viewers earn points
+- Special bonuses for subscribers
