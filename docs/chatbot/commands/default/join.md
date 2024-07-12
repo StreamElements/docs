@@ -1,40 +1,35 @@
 ---
-id: join 
-description: Learn how to use the !join command in StreamElements chatbot to enter raffles and giveaways on Twitch and YouTube streams.
+id: join
+sidebar_label: "!join"
+description: "Learn how to use the !join command in StreamElements chatbot to enter raffles and giveaways on Twitch and YouTube streams."
 keywords:
-  - join
-  - raffle
-  - giveaway
-  - loyalty points
-  - chatbot commands
-tags:
-  - chatbot
-  - commands
-  - loyalty
+- join
+- raffle
+- giveaway
+- loyalty points
+- chatbot commands
+- StreamElements
 ---
 
 # !join
 
-The `!join` command is used to enter a `raffle`. This command is typically used by viewers to enter a raffle that was started by a moderator or the streamer themselves. The syntax for this command is `!join`.
+## Overview
 
-### Arguments
+The `!join` command allows viewers to enter raffles or giveaways started by the streamer or moderators. It's a simple way for viewers to participate in stream events using their loyalty points.
 
-- `points` (optional): The number of points the viewer wants to spend to enter the raffle. If no points are specified, the viewer will spend the default amount of points.
+## Usage
 
-### Usage
-
-```
-!join <points>
-```
-
-### Example Input
+To use the `!join` command, type it in chat.
 
 ```
-!join 100
+!join 
 ```
 
-### Example Output
+## Parameters
 
-```
-N/A
-```
+The `!join` command doesn't require any parameters. It works as-is when typed in chat.
+
+## Related Commands
+
+- [`!raffle`](raffle.md): Used by moderators or the streamer to start a raffle
+- [`!points`](points.md): Check your current loyalty points balance
