@@ -1,44 +1,62 @@
 ---
 id: setpoints
-description: Learn how to use the !setpoints command to set the loyalty points of a user in your Twitch chat. Easily manage and customize user points with this handy command.
-tags:
-  - chatbot
-  - commands
-  - loyalty
+sidebar_label: "!setpoints"
+description: "Learn how to use the !setpoints command to set loyalty points for users in your Twitch chat using StreamElements chatbot."
 keywords:
-  - setpoints command
-  - set user points
-  - loyalty points
-  - twitch chatbot
-  - stream elements
+- setpoints command
+- set user points
+- loyalty points
+- twitch chatbot
+- streamelements
+- channel points
 ---
+
 # !setpoints
 
+## Overview
+
+The `!setpoints` command allows streamers and moderators to set a specific number of loyalty points for a user in the chat. This command is useful for managing loyalty programs, rewarding viewers, or correcting point balances.
+
 :::caution
-This command will overwrite the current points of the user.
+Using this command will overwrite the user's current point balance.
 :::
 
-The `!setpoints` command is used to set the points of a user in the chat.
-
-### Arguments
-
-- `<username>` (required): The username of the person whose points you want to set.
-- `<points>` (required): The new amount of points for the user.
-
-### Usage
-
-````
-!setpoints <username> <points> 
-````
-
-### Example Input
+## Usage
 
 ```
-!setpoints darkoe 1000
+!setpoints <username> <points>
 ```
 
-### Example Output
+## Parameters
 
-```
-@Styler, set darkoe nammers to 1000! 
-```
+- `<username>`: The username of the viewer whose points you want to set.
+- `<points>`: The new amount of points to assign to the user.
+
+## Examples
+
+1. Setting a user's points to 1000:
+   ```
+   !setpoints darkoe 1000
+   ```
+   Output:
+   ```
+   @Streamer, set darkoe's points to 1000!
+   ```
+
+2. Resetting a user's points to 0:
+   ```
+   !setpoints viewer123 0
+   ```
+   Output:
+   ```
+   @Streamer, set viewer123's points to 0!
+   ```
+
+## Related Commands
+
+- [`!addpoints`](addpoints.md): Add points to a user's balance without overwriting
+- [`!points`](points.md): Check a user's current point balance
+
+## Configuration
+
+The `!setpoints` command is typically restricted to the streamer and moderators. Ensure you have the proper permissions set up in your StreamElements chatbot configuration.
