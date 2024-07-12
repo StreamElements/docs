@@ -1,54 +1,59 @@
 ---
-id: ticket 
-description: Learn how to use the !ticket command in StreamElements chatbot to buy tickets for giveaways. Easily enter raffles and win prizes!
+id: ticket
+sidebar_label: "!ticket"
+description: "Learn how to use the !ticket command in StreamElements chatbot to purchase tickets for giveaways and participate in raffles."
 keywords:
-  - StreamElements
-  - chatbot
-  - commands
-  - ticket
-  - giveaways
-  - raffles
-  - loyalty
-tags:
-  - chatbot
-  - commands
-  - loyalty
+- StreamElements
+- chatbot
+- commands
+- ticket
+- giveaways
+- raffles
+- loyalty
 ---
 
 # !ticket
 
-The `!ticket` command is used to buy tickets for a giveaway.
+## Overview
 
-### Aliases
+The `!ticket` command allows viewers to purchase tickets for ongoing giveaways in a stream. This command is part of the StreamElements chatbot loyalty system and enables viewers to participate in raffles and win prizes.
 
-- `!enter`
+## Usage
 
-### Usage
-
-```
-!enter <tickets>
-```
-
-#### Arguments
-
-- `tickets` (optional): The amount of tickets to buy. If not specified, 1 ticket will be bought.
-
-#### Example Input
+To use the `!ticket` command, type it in the chat followed by the number of tickets you want to purchase. If no number is specified, it defaults to buying one ticket.
 
 ```
-a giveaway has started "Door Giveaway" PogChamp say !ticket 10 to buy 10 tickets. A ticket costs 20 nammers 
-
-!enter 5
+!ticket <number_of_tickets>
 ```
 
-#### Example Output
+## Examples
 
-```
-@Styler, you successfully bought 1 ticket! 
-```
+1. Buying a single ticket:
+   ```
+   !ticket
+   ```
+   Output: `@Username, you successfully bought 1 ticket!`
 
-#### Example Error
+2. Buying multiple tickets:
+   ```
+   !ticket 5
+   ```
+   Output: `@Username, you successfully bought 5 tickets!`
 
-```
-@Styler, failed to enter giveaway: too many tickets 
-```
+## Parameters
+
+- `<number_of_tickets>` (optional): The number of tickets you want to purchase. If not specified, defaults to 1.
+
+## Related Commands
+
+- [`!giveaway`](giveaway.md): Used by moderators to start or manage giveaways
+- [`!points`](points.md): Check your current loyalty points balance
+
+## Aliases
+
+- `!enter`: Can be used interchangeably with `!ticket`
+
+## Configuration
+
+Streamers can configure the cost of tickets and the maximum number of tickets a viewer can purchase. This is typically done through the StreamElements dashboard.
+
