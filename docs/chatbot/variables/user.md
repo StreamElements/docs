@@ -1,266 +1,172 @@
 ---
 id: user
-tags:
-  - chatbot
-  - variable
+sidebar_label: "User Variables"
+description: "Comprehensive guide to StreamElements Chatbot user variables for streamers and moderators"
+keywords:
+- streamelements
+- chatbot
+- user variables
+- streamer tools
+- chat commands
 ---
 
-# $(user)
+# User Variables
 
-Displays the user’s display name
+## Overview
 
-#### Parameters
+User variables in the StreamElements Chatbot allow you to access and display various user-related information in your chat messages and commands. These variables provide data such as usernames, loyalty points, ranks, and activity timestamps.
 
-This variable accepts a username as input. If no username is provided, the variable will default to the user who triggered the command.
+## Usage
 
-#### Example Input
+To use a user variable, include it in your chat message or command response using the `$()` syntax. For example, `$(user)` will display the user's display name.
 
+**Important Distinction:** 
+- `$(user)` behaves similarly to [$(sender)](sender.md) when used without arguments, referring to the user who triggered the command.
+- However, `$(user)` can accept an optional username argument to retrieve information about any user, not just the command sender.
+
+## Examples
+
+Here are practical examples of using user variables:
+
+1. Greeting the command sender with their points:
+```
+Welcome, $(user)! You have $(user.points) points.
+```
+
+2. Checking points for a specific user:
+```
+$(user adeithe) has $(user.points adeithe) points.
+```
+
+3. Comparing the sender's rank with another user's:
+```
+$(sender) is rank $(user.points_rank) and $(user.points_rank adeithe) on the leaderboard.
+```
+
+4. Checking when a user was last seen in chat:
+```
+$(user styler) was last seen $(user.lastseen styler) ago.
+```
+
+## Available User Variables
+
+### $(user)
+
+Displays the user's display name.
+
+**Example:**
 ```
 Current user: $(user)
 ```
+**Output:** `Current user: Styler`
 
-#### Example Output
+### $(user.name)
 
-```
-Current user: styler
-```
+Displays the user's display name in lowercase letters.
 
-## $(user.name)
-
-Displays the user’s display name in lowercase letters
-
-#### Parameters
-
-This variable accepts a username as input. If no username is provided, the variable will default to the user who triggered the command.
-
-#### Example Input
-
+**Example:**
 ```
 Current user: $(user.name)
 ```
+**Output:** `Current user: styler`
 
-#### Example Output
+### $(user.points)
 
-```
-Current user: styler
-```
+Displays the user's loyalty currency owned.
 
-## $(user.points)
-
-Displays the user’s loyalty currency owned
-
-#### Parameters
-
-This variable accepts a username as input. If no username is provided, the variable will default to the user who triggered the command.
-
-#### Example Input
-
+**Example:**
 ```
 $(user) has $(user.points) points
 ```
+**Output:** `Styler has 100 points`
 
-#### Example Output
+### $(user.points_rank)
 
-```
-styler has 100 points
-```
+Displays the user's rank on the loyalty currency leaderboard.
 
-## $(user.points_rank)
-
-Displays the user’s rank on the loyalty currency leaderboard
-
-#### Parameters
-
-This variable accepts a username as input. If no username is provided, the variable will default to the user who triggered the command.
-
-#### Example Input
-
+**Example:**
 ```
 $(user) is rank $(user.points_rank) on the leaderboard
 ```
+**Output:** `Styler is rank 5/283 on the leaderboard`
 
-#### Example Output
+### $(user.points_alltime_rank)
 
+Displays the user's rank on the all-time loyalty currency leaderboard.
+
+**Example:**
 ```
-styler is rank 5/283 on the leaderboard
+$(user) is rank $(user.points_alltime_rank) on the all-time leaderboard
 ```
+**Output:** `Styler is rank 5/283 on the all-time leaderboard`
 
-## $(user.points_alltime_rank)
+### $(user.level)
 
-Displays the user’s rank on the alltime loyalty currency leaderboard
+Displays the user's access level.
 
-#### Parameters
-
-This variable accepts a username as input. If no username is provided, the variable will default to the user who triggered the command.
-
-#### Example Input
-
-```
-$(user) is rank $(user.points_alltime_rank) on the alltime leaderboard
-```
-
-#### Example Output
-
-```
-styler is rank 5/283 on the alltime leaderboard
-```
-
-## $(user.level)
-
-Displays the user’s access level
-
-#### Parameters
-
-This variable accepts a username as input. If no username is provided, the variable will default to the user who triggered the command.
-
-#### Example Input
-
+**Example:**
 ```
 $(user) is level $(user.level)
 ```
+**Output:** `Styler is level 2000`
 
-#### Example Output
+### $(user.lastmessage)
 
-```
-styler is level 2000
-```
+Displays the user's last typed message in the chat.
 
-## $(user.lastmessage)
-
-Displays the user’s last typed message in the chat
-
-#### Parameters
-
-This variable accepts a username as input. If no username is provided, the variable will default to the user who triggered the command.
-
-#### Example Input
-
+**Example:**
 ```
 $(user) last typed: $(user.lastmessage)
 ```
+**Output:** `Styler last typed: !points`
 
-#### Example Output
+### $(user.lastseen)
 
-```
-styler last typed: !points
-```
+Displays the time that a user was most recently seen in the viewer list or chat.
 
-## $(user.lastseen)
-
-Displays the time that a user was most recently seen in viewer list or chat
-
-#### Parameters
-
-This variable accepts a username as input. If no username is provided, the variable will default to the user who triggered the command.
-
-#### Example Input
-
+**Example:**
 ```
 $(user) was last seen $(user.lastseen) ago
 ```
+**Output:** `Styler was last seen 13m 15s ago`
 
-#### Example Output
+### $(user.lastactive)
 
-```
-styler was last seen 13m 15s ago
-```
+Displays the time that a user most recently typed a message in the chat.
 
-## $(user.lastactive)
-
-Displays the time that a user most recently typed a message in the chat
-
-#### Parameters
-
-This variable accepts a username as input. If no username is provided, the variable will default to the user who triggered the command.
-
-#### Example Input
-
+**Example:**
 ```
 $(user) was last active $(user.lastactive) ago
 ```
+**Output:** `Styler was last active 13m 15s ago`
 
-#### Example Output
+### $(user.time_online)
 
-```
-styler was last active 13m 15s ago
-```
+Displays the total time a user has spent watching the stream.
 
-## $(user.time_online)
-
-Displays the total time a user has been in the chat while stream is offline
-
-#### Parameters
-
-This variable accepts a username as input. If no username is provided, the variable will default to the user who triggered the command.
-
-#### Example Input
-
-```
-$(user) has been in the chat for $(user.time_online)
-```
-
-#### Example Output
-
-```
-styler has been in the chat for 27m 16s
-```
-
-## $(user.time_online)
-
-Displays the user’s display name
-
-#### Parameters
-
-Displays the total time a user has spent watching the stream
-
-#### Example Input
-
+**Example:**
 ```
 $(user) has been watching the stream for $(user.time_online)
 ```
+**Output:** `Styler has been watching the stream for 27m 16s`
 
-#### Example Output
+### $(user.time_online_rank)
 
-```
-styler has been watching the stream for 27m 16s
-```
+Displays the user's rank on the leaderboard for online time watched.
 
-## $(user.time_online_rank)
-
-Displays the user’s rank on the leaderboard for online time watched
-
-#### Parameters
-
-This variable accepts a username as input. If no username is provided, the variable will default to the user who triggered the command.
-
-#### Example Input
-
+**Example:**
 ```
 $(user) is rank $(user.time_online_rank) on the online leaderboard
 ```
+**Output:** `Styler is rank 5/283 on the online leaderboard`
 
-#### Example Output
+### $(user.time_offline_rank)
 
-```
-styler is rank 5/283 on the online leaderboard
-```
+Displays the user's rank on the leaderboard for offline time watched.
 
-## $(user.time_offline_rank)
-
-Displays the user’s rank on the leaderboard for offline time watched
-
-#### Parameters
-
-This variable accepts a username as input. If no username is provided, the variable will default to the user who triggered the command.
-
-#### Example Input
-
+**Example:**
 ```
 $(user) is rank $(user.time_offline_rank) on the offline leaderboard
 ```
+**Output:** `Styler is rank 5/283 on the offline leaderboard`
 
-#### Example Output
-
-```
-styler is rank 5/283 on the offline leaderboard
-```
