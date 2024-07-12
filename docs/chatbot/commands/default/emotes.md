@@ -1,53 +1,78 @@
 ---
 id: emotes
-description: Learn how to use the !emotes command in StreamElements chatbot to display available emotes from Twitch, BTTV, FFZ, and 7TV and reload the emote list.
-tags:
-  - chatbot
-  - commands
+sidebar_label: "!emotes"
+description: "Learn how to use the !emotes command in StreamElements chatbot to display and manage available emotes from various platforms."
 keywords:
-  - emotes
-  - emote
-  - bttv
-  - ffz
-  - frankerfacez 
-  - 7tv
-  - twitch emotes
-  - chat emotes
-  - display emotes
-  - reload emotes
-  - update emotes
+- emotes
+- chatbot
+- twitch
+- bttv
+- ffz
+- 7tv
+- streamelements
 ---
+
 # !emotes
 
-The `!emotes` command is used to display the list of available emotes in the chat as well as reload them to update the list.
+## Overview
 
-### Usage
+The `!emotes` command allows streamers and moderators to display and manage available emotes in the chat. It supports emotes from multiple platforms, including Twitch, BTTV (BetterTTV), FFZ (FrankerFaceZ), and 7TV. This command helps viewers see available emotes and enables moderators to update the emote list.
+
+## Usage
 
 ```
 !emotes <platform>
-
 !emotes reload
 ```
 
-#### Available Platforms
+## Examples
 
-- `twitch`
-- `bttv`
-- `ffz`
-- `7tv`
+1. Display 7TV emotes:
+   ```
+   !emotes 7tv
+   ```
+   Output:
+   ```
+   Active 7TV emotes in chat: GIGACHAD JUSSY Joel JoelPride Joeler Joelest OMEGALUL donowall mamamia modCheck peepoLeave
+   ```
 
-### Example Input
+2. Reload all emotes:
+   ```
+   !emotes reload
+   ```
+   Output:
+   ```
+   @styler, successfully updated emotes :)
+   ```
 
-```
-!emotes 7tv
+## Parameters
 
-!emotes reload
-```
+- `<platform>`: The platform to display emotes for. Available options are:
+  - `twitch`: Display Twitch emotes
+  - `bttv`: Display BetterTTV emotes
+  - `ffz`: Display FrankerFaceZ emotes
+  - `7tv`: Display 7TV emotes
 
-### Example Output
+- `reload`: Updates the emote list for all platforms
 
-```
-Active 7TV emotes in chat: GIGACHAD JUSSY Joel JoelPride Joeler Joelest OMEGALUL donowall mamamia modCheck peepoLeave
+## Related Commands
 
-@styler, successfully updated emotes :)
-```
+- `!emotecount`: Counts the number of emotes in the chat
+
+## Configuration
+
+The `!emotes` command typically doesn't require additional configuration. However, ensure that your StreamElements chatbot is properly connected to your Twitch channel and has the necessary permissions to manage emotes.
+
+## Aliases
+
+There are no known aliases for the `!emotes` command.
+
+## Customization
+
+While the `!emotes` command itself cannot be customized, you can enhance your emote experience by:
+
+1. Adding custom emotes to your channel through Twitch's interface
+2. Enabling BTTV, FFZ, and 7TV integrations for your channel
+3. Creating custom commands that use specific emotes for engagement
+
+Remember to keep your emote list updated regularly to provide the best experience for your viewers.
