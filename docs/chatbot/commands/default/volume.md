@@ -1,37 +1,64 @@
 ---
-id: mediarequest
-description: "Learn how to use the !volume command in StreamElements to control the volume of media requests in your Twitch or YouTube chat. Easily set or check the current volume level."
-tags:
-  - chatbot
-  - commands
-  - loyalty
-  - media request
-  - volume control
+id: volume
+sidebar_label: "!volume"
+description: "Learn how to use the !volume command in StreamElements to control and check the volume of media requests in your Twitch or YouTube chat."
 keywords:
-  - "!volume command"
-  - "media request volume"
-  - "set volume level"
+- volume control
+- media request
+- StreamElements command
+- chat command
+- audio settings
 ---
+
 # !volume
 
-The `!volume` command is used in conjunction with the mediarequest feature. It can be used to get the current volume without an argument. With an argument, it will set the volume. The argument should be a number between 0 and 100.
+## Overview
 
-### Arguments
+The `!volume` command is used to control and check the volume level for media requests in your stream. This command allows you to adjust the volume of requested media content, ensuring a balanced audio experience for your viewers.
 
-- `volume` (optional), The desired volume level. If no volume level is provided, the command will return the current volume level.
+## Usage
 
-### Example Input
+The `!volume` command can be used in two ways:
 
-```
-!volume 
+1. To check the current volume level:
+   ```
+   !volume
+   ```
 
-!volume 10 
-```
+2. To set a new volume level:
+   ```
+   !volume <level>
+   ```
 
-### Example Output
+## Examples
 
-```
-Current volume is 50%
+1. Checking the current volume:
+   ```
+   !volume
+   ```
+   Output:
+   ```
+   Current volume is 50%
+   ```
 
-Styler set the songrequest volume to 10 
-```
+2. Setting a new volume level:
+   ```
+   !volume 75
+   ```
+   Output:
+   ```
+   Styler set the songrequest volume to 75
+   ```
+
+## Parameters
+
+- `<level>` (optional): A number between 0 and 100 representing the desired volume level. If not provided, the command will return the current volume level.
+
+## Related Commands
+
+- [`!songrequest`](songrequest.md): Used to request songs or media content.
+- [`!skip`](skip.md): Skips the currently playing media request.
+
+## Configuration
+
+The `!volume` command is typically available to moderators and the broadcaster by default. You can customize permissions in your StreamElements dashboard.
