@@ -62,4 +62,3 @@ Streamers can configure the `!roulette` command in their StreamElements dashboar
 - Setting minimum and maximum bet amounts
 - Adjusting win probabilities
 - Customizing response messages
-
