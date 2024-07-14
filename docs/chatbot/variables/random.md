@@ -1,91 +1,128 @@
 ---
 id: random
-tags:
-  - chatbot
-  - variable
+sidebar_label: "$(random)"
+description: "Learn how to use StreamElements' random variables to generate random numbers, emotes, chatters, and items in your stream chat."
+keywords:
+- streamelements
+- chatbot
+- random
+- variables
+- streaming
 ---
 
-# $(random)
+# Random Variables
 
-Allows you to generate random output from a list of options.
+## Overview
 
-## $(random) or $(random.number)
+StreamElements offers powerful random variables that enable you to generate dynamic, randomized content in your Twitch stream chat. These variables are essential tools for creating engaging interactions, mini-games, and surprise elements that keep your audience entertained and involved.
 
-Displays a random number generated from X to Y.
+## Examples
+
+Here are some examples of how you can use random variables:
+
+```
+Congratulations, $(random.chatter)! You've won a prize!
+The magic number is ${random 1-100}!
+```
+
+## Parameters
+
+Some random variables accept parameters to customize their output. Parameters are specified within the variable brackets.
+
+## Random Variables
+
+### $(random) or $(random.number)
+
+#### Overview
+
+Generates a random number between two specified values.
+
+#### Usage
+
+```
+$(random X-Y)
+```
+or
+```
+$(random.number X-Y)
+```
+
+Where `X` is the lower bound and `Y` is the upper bound.
+
+#### Examples
+
+```
+The dice roll is: ${random 1-6}
+Your lucky number is: $(random.number 1-100)
+```
 
 #### Parameters
 
-This variable accepts two numbers as input. If no numbers are provided the variable will error.
+- `X`: Lower bound (inclusive)
+- `Y`: Upper bound (inclusive)
 
-#### Example Input
+### $(random.emote)
+
+#### Overview
+
+Displays a random emote from the available emotes in the channel.
+
+#### Usage
 
 ```
-${random 1-10}
-${random.number 1-10}
+$(random.emote)
 ```
 
-#### Example Output
+#### Examples
 
 ```
-7
+Here's a random emote: $(random.emote)
+Let's celebrate with $(random.emote)!
 ```
 
-## $(random.emote)
+### $(random.chatter)
 
-Displays a random emote from a list of emotes.
+#### Overview
+
+Selects a random chatter from the current active chatters in the stream.
+
+#### Usage
+
+```
+$(random.chatter)
+```
+
+#### Examples
+
+```
+Congratulations, $(random.chatter)! You've been selected!
+Our spotlight viewer is: $(random.chatter)
+```
+
+### $(random.pick)
+
+#### Overview
+
+Selects a random item from a provided list of options.
+
+#### Usage
+
+```
+$(random.pick 'item1' 'item2' 'item3' ...)
+```
+
+#### Examples
+
+```
+Today's special is: ${random.pick 'pizza' 'pasta' 'salad'}
+The next game we'll play is: $(random.pick 'Fortnite' 'Minecraft' 'Among Us')
+```
 
 #### Parameters
 
-This variable accepts no arguments.
+- A list of items enclosed in single quotes and separated by spaces
 
-#### Example Input
+## Related Variables
 
-```
-${random.emote}
-```
-
-#### Example Output
-
-```
-Kappa
-```
-
-## $(random.chatter)
-
-Displays a random chatter from a list of chatters.
-
-#### Parameters
-
-This variable accepts no arguments.
-
-#### Example Input
-
-```
-${random.chatter}
-```
-
-#### Example Output
-
-```
-XDBot
-```
-
-## $(random.pick)
-
-Displays a random item from a list of items.
-
-#### Parameters
-
-This variable accepts a list of items as input. If no items are provided the variable will error.
-
-#### Example Input
-
-```
-${random.pick '1' '2' 'rare pepe'}
-```
-
-#### Example Output
-
-```
-rare pepe
-```
+- [$(customapi)](customapi): Fetch content from a URL, which can be used to create more complex random selections
+- [$(math)](math): Perform mathematical operations and return the result
