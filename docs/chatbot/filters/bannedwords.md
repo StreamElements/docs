@@ -2,6 +2,10 @@
 id: bannedwords
 sidebar_label: "Banned Words"
 description: "Learn how to use the Banned Words filter in StreamElements Chatbot to automatically remove unwanted messages from your stream chat."
+tags:
+- chatbot
+- moderation
+- filters
 keywords:
 - chatbot
 - filters

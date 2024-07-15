@@ -2,6 +2,10 @@
 id: links
 sidebar_label: "Links"
 description: "Manage and control links in chat messages with StreamElements Chatbot's Link Filter feature. Learn how to configure allowlists, blocklists, and timeout settings."
+tags:
+- chatbot
+- moderation
+- filters
 keywords:
 - StreamElements
 - chatbot

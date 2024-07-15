@@ -2,6 +2,10 @@
 id: caps
 sidebar_label: "Caps"
 description: "Learn how to use the Caps filter to manage excessive capital letters in chat messages on StreamElements"
+tags:
+- chatbot
+- moderation
+- filters
 keywords:
 - StreamElements
 - chatbot

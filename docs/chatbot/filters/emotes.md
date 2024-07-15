@@ -2,6 +2,10 @@
 id: emotes
 sidebar_label: "Emotes"
 description: "Learn how to manage emote usage in your stream chat with the StreamElements Emote Filter. Set limits, customize timeout messages, and exclude user groups."
+tags:
+- chatbot
+- moderation
+- filters
 keywords:
 - emote filter
 - chat moderation

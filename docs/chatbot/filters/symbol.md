@@ -2,6 +2,10 @@
 id: symbol
 sidebar_label: "Symbol"
 description: "Learn how to use the Symbol filter in StreamElements Chatbot to manage symbol usage in chat messages. Configure limits, timeout durations, and customize messages for effective moderation."
+tags:
+- chatbot
+- moderation
+- filters
 keywords:
 - StreamElements
 - chatbot
