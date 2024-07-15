@@ -1,10 +1,16 @@
 ---
 id: symbol
-tags:
-  - chatbot
-  - filters
+sidebar_label: "Symbol"
+description: "Learn how to use the Symbol filter in StreamElements Chatbot to manage symbol usage in chat messages. Configure limits, timeout durations, and customize messages for effective moderation."
+keywords:
+- StreamElements
+- chatbot
+- symbol filter
+- chat moderation
+- timeout settings
 ---
-# Symbol
+
+# Symbol Filter
 
 The Symbol filter helps manage the use of symbols in chat messages. It checks the number and percentage of symbols in a message and compares them with the set limits. If a message violates these limits, the filter takes action according to the configured settings.
 

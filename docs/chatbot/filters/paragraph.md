@@ -1,10 +1,17 @@
 ---
 id: paragraph
-tags:
-  - chatbot
-  - filters
+sidebar_label: "Paragraph"
+description: "Learn how to use the Paragraph filter to manage message length in your Twitch chat using StreamElements Chatbot. Configure character limits, timeout durations, and custom messages."
+keywords:
+- StreamElements
+- chatbot
+- Twitch
+- paragraph filter
+- message length
+- chat moderation
 ---
-# Paragraph
+
+# Paragraph Filter
 
 The Paragraph filter helps manage the length of chat messages. It checks the number of characters in a message and compares them with the set limit. If a message violates this limit, the filter takes action according to the configured settings.
 

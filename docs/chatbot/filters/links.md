@@ -1,10 +1,17 @@
 ---
 id: links
-tags:
-  - chatbot
-  - filters
+sidebar_label: "Links"
+description: "Manage and control links in chat messages with StreamElements Chatbot's Link Filter feature. Learn how to configure allowlists, blocklists, and timeout settings."
+keywords:
+- StreamElements
+- chatbot
+- link filter
+- moderation
+- allowlist
+- blocklist
 ---
-# Links
+
+# Link Filter
 
 The Link filter helps manage the posting of links in chat messages. It checks if a message contains any links and compares them with the set allowlist and blocklist. If a message contains a link that is not in the allowlist or is in the blocklist, the filter takes action according to the configured settings.
 

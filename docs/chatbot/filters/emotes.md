@@ -1,10 +1,16 @@
 ---
 id: emotes
-tags:
-  - chatbot
-  - filters
+sidebar_label: "Emotes"
+description: "Learn how to manage emote usage in your stream chat with the StreamElements Emote Filter. Set limits, customize timeout messages, and exclude user groups."
+keywords:
+- emote filter
+- chat moderation
+- StreamElements
+- emote limit
+- timeout settings
 ---
-# Emotes
+
+# Emote Filter
 
 The Emote filter helps manage the use of emotes in chat messages. It checks the number of emotes in a message and compares them with the set limit. If a message violates this limit, the filter takes action according to the configured settings.
 

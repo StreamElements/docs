@@ -1,10 +1,16 @@
 ---
 id: bannedwords
-tags:
-  - chatbot
-  - filters
+sidebar_label: "Banned Words"
+description: "Learn how to use the Banned Words filter in StreamElements Chatbot to automatically remove unwanted messages from your stream chat."
+keywords:
+- chatbot
+- filters
+- moderation
+- banned words
+- chat management
 ---
-# Banned words
+
+# Banned Words Filter
 
 The Banned Words filter is a tool that helps maintain the chat environment by removing messages that contain banned phrases and patterns. This filter is highly customizable and supports the creation of multiple groups, each with its own set of banned phrases.
 
