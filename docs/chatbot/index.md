@@ -1,14 +1,29 @@
 ---
 id: welcome
-description: "Explore our comprehensive Twitch Chatbot documentation to unlock a world of possibilities for streamer-viewer interaction, engagement, and automation."
+sidebar_label: "Chatbot"
+description: "Comprehensive guide to StreamElements Chatbot: Learn how to enhance viewer engagement, automate tasks, and create interactive streams with our powerful Twitch chatbot."
+tags:
+- chatbot
+- streamelements
+- twitch
+keywords:
+- twitch chatbot
+- stream engagement
+- chatbot commands
+- streamelements bot
 slug: /
 sidebar_position: 1
 ---
-# Chatbot
 
-Welcome to our Chatbot documentation. Here, you will find guides and tutorials on how to make the most out of our Chatbot.
+# StreamElements Chatbot
 
-This documentation covers a wide range of features and functionalities, providing you with the knowledge and tools to fully leverage our Chatbot.
+## Overview
+
+Welcome to the StreamElements Chatbot documentation. This comprehensive guide will help you harness the full potential of our powerful Twitch chatbot, designed to enhance viewer engagement, automate tasks, and create more interactive streams.
+
+## Usage
+
+The StreamElements Chatbot is a versatile tool that can be customized to fit your streaming needs. From basic commands to complex automated responses, our chatbot can handle a wide range of tasks to improve your stream's interactivity and efficiency.
 
 import DocCardList from '@theme/DocCardList';
 
