@@ -1,32 +1,55 @@
 ---
-description: "Engage your Twitch audience with the classic 8ball module, providing entertaining and customizable responses to viewer questions."
-tags:
-  - chatbot
-  - module
-  - 8ball
-  - viewer engagement
-  - interactive
+id: eightball
+sidebar_label: "8ball"
+description: "Learn how to use the 8ball module in StreamElements Chatbot to engage your Twitch audience with customizable, random responses to viewer questions."
 keywords:
-  - 8ball chatbot
-  - 8ball twitch command
-  - ask eightball
-  - eightball
+- 8ball chatbot
+- 8ball twitch command
+- ask eightball
+- eightball StreamElements
+- viewer engagement
+- interactive chat module
 ---
 
-# Eightball
+# 8ball Module
 
-The 8ball module is an interactive chat feature. In this module, users can ask the 8ball a question, and it will respond with a random answer. The answers can be customized in the module settings.
+## Overview
 
-**How the module works:**
+The 8ball module is an interactive chat feature that simulates the classic Magic 8 Ball toy. It allows viewers to ask questions and receive random, customizable responses, enhancing engagement and entertainment in your Twitch chat.
 
-1. A user sends a message in chat with the command to ask the 8ball a question. The command is typically formatted as "!8ball [question]".
-2. The 8ball responds with a random answer from the list of possible answers.
-3. The list of possible answers can be customized in the module settings.
+## Usage
 
-### Commands
+To use the 8ball module, viewers type `!8ball` followed by their question in the chat. The chatbot will then respond with a random answer from a predefined list.
 
-- [!8ball](/chatbot/commands/default/8ball) - Ask the 8ball a question.
+**Syntax:** `!8ball <question>`
 
-### Example
+## Examples
 
-![8ball Example](img/8ball.png)
+1. Viewer: `!8ball Will I win my next game?`
+   Chatbot: `The 8ball says: It is certain.`
+
+2. Viewer: `!8ball Should I order pizza tonight?`
+   Chatbot: `The 8ball says: Ask again later.`
+
+## Parameters
+
+The 8ball command does not have any additional parameters. The question asked by the viewer is optional and does not affect the randomized response.
+
+## Configuration
+
+Streamers and moderators can customize the 8ball responses in the StreamElements dashboard:
+
+1. Navigate to the Chatbot section
+2. Find the 8ball module in the list of available modules
+3. Click on "Edit" to access the module settings
+4. Modify the list of possible responses
+5. Save your changes
+
+## Aliases
+
+By default, there are no aliases for the 8ball command. However, streamers can create custom aliases in the StreamElements dashboard if desired.
+
+## FAQ
+
+**Q: Can I add my own custom responses to the 8ball?**
+A: Yes, you can customize the list of possible responses in the module settings of your StreamElements dashboard.

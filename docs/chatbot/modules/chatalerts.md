@@ -1,54 +1,69 @@
 ---
 id: chatalerts
-description: "Elevate your Twitch streaming experience by integrating Chat Alerts into your chatbot, ensuring no viewer interaction goes unnoticed."
-tags:
-  - chatbot
-  - module
-  - alerts
-  - twitch
+sidebar_label: "Chat Alerts"
+description: "Learn how to use StreamElements' Chat Alerts module to enhance viewer engagement and automate event notifications in your Twitch stream."
 keywords:
-  - Twitch chat alerts
-  - chatbot alerts module
-  - streamer engagement
-  - viewer interaction
+- Twitch chat alerts
+- StreamElements chatbot
+- stream event notifications
+- viewer engagement
+- automated chat messages
 ---
-# Chat Alerts
 
-The chatalerts module is a feature that allows the chatbot to post messages in the chat when certain events occur. These events can include, but are not limited to:
+# Chat Alerts Module
 
-- Receiving a tip
-- Gaining a new follower
-- Being raided
-- Ad breaks
-- New subscribers
-- Cheers
-- Loyalty redemptions
+## Overview
+
+The Chat Alerts module is a powerful feature of the StreamElements chatbot that automatically posts messages in your Twitch chat when specific events occur. This helps streamers acknowledge viewer actions, enhance engagement, and keep the community informed about important stream events.
+
+## Usage
+
+Chat Alerts are triggered automatically when configured events happen during your stream. No manual commands are required to activate them.
+
+## Examples
+
+1. Follower Alert:
+   ```
+   New follower hype! Welcome to the stream, @NewFollower123! Thanks for joining our community!
+   ```
+
+2. Subscription Alert:
+   ```
+   @Subscriber456 just subscribed for 3 months! Thank you for your continued support!
+   ```
+
+## Parameters
+
+Chat Alerts can be customized for various events. Here are some of the key parameters:
+
+- **Event Type**: The specific action that triggers the alert (e.g., follow, subscription, raid)
+- **Message**: The text that appears in chat when the event occurs
+- **Cooldown**: Optional delay between alerts to prevent spam
+- **Minimum Threshold**: Optional minimum value for events like donations or bit cheers
+
+## Configuration
+
+To set up Chat Alerts:
+
+1. Access your StreamElements dashboard
+2. Navigate to the Chatbot section
+3. Find the Chat Alerts module
+4. Enable the alerts you want to use
+5. Customize the message and parameters for each alert type
+
+## Event Types
+
+Chat Alerts can be configured for various events, including:
+
+- Followers
+- Tips/Donations
+- Ad Breaks
+- Subscriptions
+- Cheers (Bits)
+- Loyalty Point Redemptions
 - Raids
-- Hypetrains
+- Hype Trains
 - Polls
-- Charity events
+- Charity Events
 
-**How the module works:**
-
-1. The module is activated when a specified event occurs.
-2. Upon activation, the chatbot posts a predefined message in the chat to alert the streamer and the viewers of the event.
-3. The message can be customized to include specific details about the event, such as the name of the new follower, the amount of the tip, or the details of the poll.
-
-This module helps to acknowledge and appreciate the actions of the viewers, enhancing the interaction between the streamer and the viewers.
-
-### Event Descriptions
-
-- **Followers**: Alerts when a user follows the channel.
-- **Tips**: Alerts when a user tips the streamer.
-- **Ad Breaks**: Alerts when an ad break starts.
-- **Subscribers**: Alerts when a user subscribes to the channel.
-- **Cheers**: Alerts when a user sends bits to the channel.
-- **Loyalty Redemptions**: Alerts when a user redeems loyalty points through StreamElements.
-- **Raids**: Alerts when another streamer raids the channel.
-- **Hypetrains**: Alerts when a hypetrain event starts on the channel.
-- **Polls**: Alerts when a poll is started.
-- **Charity**: Alerts when a charity event is happening or a donation is made to a charity through the channel.
-
-### Commands
-
-- None
+Each event type can have its own customized message and trigger conditions.

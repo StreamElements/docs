@@ -1,48 +1,72 @@
 ---
-tags:
-  - chatbot
-  - module
-  - raffle
+id: raffle
+sidebar_label: "Raffle Module"
+description: "Learn how to use the StreamElements Chatbot Raffle module for interactive viewer engagement. Includes commands, usage, and multi-winner scaling."
+keywords:
+- streamelements
+- chatbot
+- raffle
+- viewer engagement
+- stream interaction
 ---
 
-# Raffle
+# Raffle Module
 
-:::info
-Raffles with multiple winners scale differently based on the number of users that enter.
+## Overview
 
-See [Multi-Winner Raffles](./raffle#multi-winner-raffles) for more information.
-:::
+The Raffle module is an interactive chat game that allows streamers to engage their audience. Moderators can initiate a raffle, and viewers can join for a chance to win. This feature is great for giveaways, selecting participants for games, or simply adding fun interaction to your stream.
 
-The raffle module is an interactive chat game. In this game, a raffle is initiated by a moderator and users can join the raffle by using a specific command.
+## Usage
 
-**How the game works:**
+1. A moderator starts the raffle using `!raffle` or `!sraffle`.
+2. Viewers join the raffle by typing `!join` in chat.
+3. After a set time, the raffle ends, and winner(s) are randomly selected.
+4. The winner(s) are announced in chat.
 
-1. The game begins when a moderator initiates the command `!raffle/sraffle`.
-2. The chat users can join the raffle by using the command `!join`.
-3. After a specified time, the raffle ends and a winner is randomly chosen from the participants.
-4. The winner is announced in the chat.
+## Examples
 
-### Commands
+Single-winner raffle:
+```
+Moderator: !sraffle
+Bot: A raffle has started! Type !join to enter.
+Viewer1: !join
+Viewer2: !join
+Bot: The raffle has ended. The winner is Viewer2!
+```
 
-- [!sraffle](/chatbot/commands/default/sraffle) - Starts a raffle with a single winner
-- [!raffle](/chatbot/commands/default/raffle) - Starts a raffle with multiple winners
-- [!join](/chatbot/commands/default/join) - Joins the ongoing raffle.
-- [!cancelraffle](/chatbot/commands/default/cancelraffle) - Cancels the ongoing raffle.
+Multi-winner raffle:
+```
+Moderator: !raffle
+Bot: A multi-winner raffle has started! Type !join to enter.
+[Multiple viewers join]
+Bot: The raffle has ended. The winners are Viewer3, Viewer7, and Viewer12!
+```
 
-### Multi-Winner Raffles
+## Parameters
 
-When running a raffle with multiple winners, the number of winners is determined by the number of users that join the raffle. The number of winners is calculated as follows:
+- `!raffle [duration]`: Start a multi-winner raffle. Optional duration in seconds (default is 60).
+- `!sraffle [duration]`: Start a single-winner raffle. Optional duration in seconds (default is 60).
 
-- Number of Users > 200
-  - Number of Winners = Number of Users / 20
-- Number of Users > 50
-  - Number of Winners = Number of Users / 8
-- Number of Users > 20
-  - Number of Winners = Number of Users / 5
-- Number of Users > 10
-  - Number of Winners = Number of Users / 4
-- If only a single user joined the raffle, that user will win.
-- All other cases
-  - Number of Winners = Number of Users / 2
+## Related Commands
 
-**NOTE:** If the number of winners is not a whole number, the number will be rounded down.
+- [`!join`](../commands/default/join.md): Used by viewers to enter an ongoing raffle.
+- [`!cancelraffle`](../commands/default/cancelraffle.md): Cancels the current raffle (moderators only).
+
+
+## FAQ
+
+**Q: How are winners determined in multi-winner raffles?**
+A: The number of winners scales based on the number of participants:
+
+- Over 200 participants: 1 winner per 20 entrants
+- 51-200 participants: 1 winner per 8 entrants
+- 21-50 participants: 1 winner per 5 entrants
+- 11-20 participants: 1 winner per 4 entrants
+- 2-10 participants: Half the participants win (rounded down)
+- 1 participant: That participant wins
+
+**Q: Can I customize the raffle duration?**
+A: Yes, you can specify the duration in seconds when starting a raffle, e.g., `!raffle 120` for a 2-minute raffle.
+
+**Q: How do I prevent the same person from winning multiple times?**
+A: The Raffle module automatically ensures that each participant can only win once per raffle.

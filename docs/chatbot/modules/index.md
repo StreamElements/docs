@@ -1,16 +1,29 @@
 ---
-description: Chatbot modules are a set of tools designed to enhance viewer interaction and engagement in your live stream.
-tags:
-  - chatbot modules
-  - viewer interaction
-  - live stream engagement
-  - streaming tools
+id: modules
+sidebar_label: "Chatbot Modules"
+description: "Comprehensive guide to StreamElements Chatbot Modules: Enhance viewer interaction and engagement in your live stream with customizable tools for queue management, announcements, games, and more."
+keywords:
+- chatbot modules
+- viewer interaction
+- live stream engagement
+- streaming tools
+- StreamElements
+- queue management
+- stream announcements
+- chatbot games
 ---
 
 # Chatbot Modules
 
-Chatbot modules are a set of tools designed to enhance viewer interaction and engagement in your live stream. They provide a variety of functionalities such as managing viewer queues, making live announcements, playing games like eightball and slotmachine, and triggering emotecombo reactions. Each module can be customized to fit the unique needs of your stream.
+## Overview
 
+Chatbot modules are a set of powerful tools designed to enhance viewer interaction and engagement in your live stream. These modules provide a wide range of functionalities that can be customized to fit the unique needs of your stream and community.
+
+## Usage
+
+To use chatbot modules, you need to enable and configure them in your StreamElements dashboard. Once set up, you can trigger them using specific commands in your stream chat.
+
+## Available Modules
 
 import DocCardList from '@theme/DocCardList';
 
