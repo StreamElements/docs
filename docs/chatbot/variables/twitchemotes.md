@@ -11,7 +11,7 @@ keywords:
 
 # $(twitchemotes)
 
-Outputs all available Twitch subscriber emotes
+
 
 #### Parameters
 
@@ -26,5 +26,5 @@ Subscriber emotes: ${twitchemotes}
 #### Example Output
 
 ```
-Subscriber emotes: stylerXD, stylerRIP
+Subscriber emotes: bennyl9Lurkboy
 ```
