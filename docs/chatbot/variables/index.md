@@ -11,6 +11,10 @@ keywords:
 
 # Chatbot Variables
 
+:::info New Variable
+We've added a new AI variable! Check out the [$(ai) Variable](variables/ai) documentation to learn how to integrate AI-generated responses into your chat commands.
+:::
+
 ## Introduction to Variables in Chat Commands
 
 Chat commands support variables in a dynamic way. Variables are placeholders that can be used in chat commands to represent a specific value or piece of information. When a command is triggered, these variables are replaced with the actual values they represent.
