@@ -1,7 +1,10 @@
 ---
 id: count
 sidebar_label: "$(count)"
-description: "Learn how to use the $(count) variable in StreamElements Chatbot to display and manipulate command counters for your stream."
+description: "Learn how to use the $(count) variable in StreamElements Chatbot to create and manage custom counters for your stream."
+tags:
+- variables
+- counters
 keywords:
 - count
 - counter
@@ -12,11 +15,12 @@ keywords:
 - variable
 ---
 
+
 # $(count) Variable
 
 ## Overview
 
-The `$(count)` variable is a powerful tool in the StreamElements Chatbot that allows you to display and manipulate counters for various purposes in your stream. It's commonly used for tracking deaths in games, counting command usage, or keeping score of any recurring event.
+The `$(count)` variable is a versatile tool in the StreamElements Chatbot that allows you to create, display, and manipulate custom counters for various purposes in your stream. It's commonly used for tracking deaths in games, counting command usage, or keeping score of any recurring event.
 
 ## Usage
 
@@ -27,6 +31,7 @@ $(count [counter_name] [optional_modifier])
 ```
 
 Where:
+
 - `[counter_name]` is an optional name for your counter (default is the command name)
 - `[optional_modifier]` can be used to set or modify the counter value
 
@@ -56,11 +61,12 @@ Where:
 
 ## Configuration
 
-Counters are automatically created when first used and persist across stream sessions. You can manage counters in the StreamElements dashboard under the "Botting" section.
+Counters are automatically created when first used and persist across stream sessions. You can manage counters in the StreamElements dashboard under the Chatbot section.
 
 ## FAQ
 
 **Q: Can I have multiple counters?**
+
 A: Yes, you can create multiple counters by using different names (e.g., `$(count deaths)`, `$(count wins)`).
 
 **Q: How do I reset a counter?**

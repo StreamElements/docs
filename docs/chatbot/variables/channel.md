@@ -1,123 +1,130 @@
 ---
 id: channel
-description: Learn how to use channel-specific variables in your Twitch chatbot to display channel name, viewers, followers, subscribers, and more.
+sidebar_label: "$(channel)"
+description: "Learn how to use channel-specific variables in your StreamElements chatbot to display channel information on Twitch streams."
 tags:
-  - chatbot
-  - variable
-  - twitch
-  - twitch subscriber count
+- chatbot
+- variable
+- twitch
+- channel information
+keywords:
+- StreamElements chatbot
+- Twitch channel variables
+- stream viewer count
+- follower count
+- subscriber count
 ---
 
-# $(channel)
+# Channel Variables
 
-Displays the name of the channel
+## Overview
 
-#### Parameters
+Channel variables allow you to display dynamic information about your Twitch channel in chat messages or overlays. These variables provide real-time data such as channel name, viewer count, follower count, and subscriber information.
 
-This variable does not take any parameters.
+## Usage
 
-#### Example Output
+To use a channel variable, simply include it in your chatbot command. The variable will be replaced with the corresponding value when the message is sent.
 
-```
-styler
-```
+## Examples
 
-## $(channel.viewers)
-
-Displays the channel’s current viewer count
-
-#### Parameters
-
-This variable does not take any parameters.
-
-#### Example Input
+Here are some examples of how to use channel variables:
 
 ```
-$(channel) has $(channel.viewers) viewers
+Welcome to $(channel)! We currently have $(channel.viewers) viewers.
 ```
 
-#### Example Output
-
 ```
-onslaught has 100 viewers
+Thanks for watching! $(channel.display_name) has $(channel.followers) followers and $(channel.subs) subscribers.
 ```
 
-## $(channel.followers)
+## Available Variables
 
-Displays the channel’s total follower count
+### $(channel)
 
-#### Parameters
+Displays the name of the channel.
 
-This variable does not take any parameters.
-
-#### Example Input
-
+**Example:**
 ```
-$(channel) has $(channel.followers) followers
+Welcome to $(channel)!
 ```
-
-#### Example Output
-
+**Output:**
 ```
-onslaught has 100 followers
+Welcome to styler!
 ```
 
-## $(channel.subs)
+### $(channel.viewers)
 
-Displays the channel’s total subscriber count
+Displays the channel's current viewer count.
 
-#### Parameters
-
-This variable does not take any parameters.
-
-#### Example Input
-
+**Example:**
 ```
-$(channel) has $(channel.subs) subscribers
+We have $(channel.viewers) viewers right now!
 ```
-
-#### Example Output
-
+**Output:**
 ```
-onslaught has 100 subscribers
+We have 100 viewers right now!
 ```
 
-## $(channel.subpoints)
+### $(channel.followers)
 
-Displays the channel’s total subscriber points
+Displays the channel's total follower count.
 
-#### Parameters
-
-This variable does not take any parameters.
-
-#### Example Input
-
+**Example:**
 ```
-$(channel) has $(channel.subpoints) subscriber points
+Thanks to our $(channel.followers) followers!
 ```
-
-#### Example Output
-
+**Output:**
 ```
-onslaught has 100 subscriber points
+Thanks to our 5000 followers!
 ```
 
-## $(channel.display_name)
+### $(channel.subs)
 
-Displays the display name of the channel
+Displays the channel's total subscriber count.
 
-#### Parameters
-
-This variable does not take any parameters.
-
-#### Example Input
-
+**Example:**
 ```
-$(channel) $(channel.display_name)
+We've reached $(channel.subs) subscribers!
+```
+**Output:**
+```
+We've reached 500 subscribers!
 ```
 
-#### Example Output
+### $(channel.subpoints)
 
+Displays the channel's total subscriber points.
+
+**Example:**
 ```
-onslaught OnSlAuGhT
+Current sub points: $(channel.subpoints)
 ```
+**Output:**
+```
+Current sub points: 750
+```
+
+### $(channel.display_name)
+
+Displays the display name of the channel, which may differ from the channel name in capitalization.
+
+**Example:**
+```
+Welcome to $(channel.display_name)'s stream!
+```
+**Output:**
+```
+Welcome to OnSlAuGhT's stream!
+```
+
+## Related Variables
+
+- [$(user)](user): Displays information about the user who triggered the command
+- [$(touser)](touser): Refers to the target user in commands that mention other users
+
+## FAQ
+
+**Q: How often are these variables updated?**
+
+A: Channel variables are updated in real-time, reflecting the most current information available from Twitch.
+
