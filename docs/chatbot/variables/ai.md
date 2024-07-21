@@ -2,12 +2,16 @@
 id: ai
 sidebar_label: "$(ai)"
 description: "Learn how to use the StreamElements AI chatbot variable to generate dynamic responses in your stream chat."
-keywords:
+tags:
+- chatbot
 - ai
+- variables
+keywords:
 - streamelements ai
 - chatbot ai
 - twitch bot
 - stream bot
+- ai variable
 ---
 
 # $(ai) Variable

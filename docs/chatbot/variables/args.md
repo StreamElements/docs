@@ -1,87 +1,81 @@
 ---
 id: args
+sidebar_label: "$(args)"
+description: "Learn how to use the $(args) variable in StreamElements chatbot commands for dynamic, user-input-based responses."
 tags:
   - chatbot
   - variable
 keywords:
   - args
   - arguments
+  - chatbot commands
+  - user input
+  - dynamic responses
 ---
 
-# $(args)
+# $(args) Variable
+
+## Overview
 
 The `$(args)` variable is a powerful feature in StreamElements chatbot commands that allows you to access and manipulate arguments passed by users. This enables dynamic responses based on user input, enhancing the interactivity of your chatbot.
 
-## Basic Usage
+## Usage
 
-### Syntax
+The basic syntax for using the `$(args)` variable is:
 
 ```
 $(args)
 ```
 
-### Description
+You can access specific arguments using numeric indices, starting from 1:
 
-The `$(args)` variable represents all arguments passed to a command. You can access specific arguments using numeric indices, starting from 1.
+```
+$(1), $(2), $(3), etc.
+```
 
-### Examples
+## Examples
 
-1. Accessing the first argument:
+1. Greeting a user:
    ```
    Command: !greet $(1)
    User input: !greet World
    Output: Hello, World!
    ```
 
-2. Using multiple arguments:
+2. Introducing a user:
    ```
    Command: !introduce $(1) is $(2) years old
    User input: !introduce Alice 25
    Output: Alice is 25 years old
    ```
 
-## Advanced Features
+## Parameters
 
-### $(args.emote)
+The `$(args)` variable has two special variants:
 
-This variant outputs an argument only if it is a valid emote.
+1. `$(n.emote)`: Outputs an argument only if it is a valid emote.
+   ```
+   Command: !emote $(1.emote)
+   User input: !emote Kappa
+   Output: Kappa
+   ```
 
-#### Syntax
+2. `$(n.word)`: Outputs an argument only if it does not contain symbols.
+   ```
+   Command: !word $(1.word)
+   User input: !word Hello
+   Output: Hello
+   ```
 
-```
-$(n.emote)
-```
-Where `n` is the argument index.
+Where `n` is the argument index in both cases.
 
-#### Example
+## Related Variables
 
-```
-Command: !emote $(1.emote)
-User input: !emote Kappa
-Output: Kappa
+- [$(user)](user): Represents the username of the person using the command
+- [$(channel)](channel): Represents the channel name where the command is used
 
-User input: !emote Hello
-Output: [No output, as "Hello" is not an emote]
-```
+## FAQ
 
-### $(args.word)
+**Q: What happens if I try to access an argument that wasn't provided?**
 
-This variant outputs an argument only if it does not contain symbols.
-
-#### Syntax
-
-```
-$(n.word)
-```
-Where `n` is the argument index.
-
-#### Example
-
-```
-Command: !word $(1.word)
-User input: !word Hello
-Output: Hello
-
-User input: !word Hello!
-Output: [No output, as "Hello!" contains a symbol]
-```
+A: If you try to access an argument that wasn't provided (e.g., `$(2)` when only one argument was given), the output will be blank.

@@ -1,6 +1,6 @@
 ---
 id: 7tvemotes
-sidebar_label: "7TV Emotes"
+sidebar_label: "$(7tvemotes)"
 description: "Lists active 7TV emotes in a Twitch channel. Learn how to use the $(7tvemotes) variable in StreamElements Chatbot commands."
 tags:
 - chatbot
