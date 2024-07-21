@@ -71,7 +71,7 @@ $(customapi https://api.example.com/data?param1=value1&param2=value2)
 
 **Q: Can I use `$(customapi)` to make POST requests?**
 
-A: No, `$(customapi)` only supports GET requests.
+A: No, `$(customapi)` only supports GET requests. Additionally, only HTTP 200 status will return a response. Any other HTTP status will result in a "Unable to make request" response.
 
 **Q: How can I handle JSON responses?**
 
