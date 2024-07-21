@@ -1,270 +1,169 @@
 ---
 id: sender
+sidebar_label: "$(sender)"
+description: "Comprehensive guide to the StreamElements Chatbot $(sender) variable for streamers and moderators"
 tags:
   - chatbot
   - variable
+  - sender
+keywords:
+  - streamelements
+  - chatbot
+  - sender variable
+  - streamer tools
+  - chat commands
 ---
 
-# $(sender)
+# $(sender) Variable
 
-Displays the message sender’s display name
+## Overview
+
+The `$(sender)` variable in StreamElements Chatbot always refers to the user who triggered the command or message. It provides access to various user-related information such as username, loyalty points, ranks, and activity timestamps.
+
+:::tip Key Point
+`$(sender)` always refers to the command trigger and doesn't accept arguments. If you need to query information about other users, use the [`$(user)`](user.md) variable instead.
+:::
 
 ## Aliases
 
-`$(source)` can also be used.
+`$(source)` can also be used as an alias for `$(sender)`.
 
-#### Parameters
+## Usage
 
-This variable does not take any parameters.
+To use the `$(sender)` variable, include it in your chat message or command response using the `$()` syntax. For example, `$(sender)` will display the command trigger's display name.
 
-#### Example Input
+## Available sender Variables
 
+### $(sender)
+
+Displays the message sender's display name.
+
+**Example:**
 ```
 Current user: $(sender)
 ```
+**Output:** `Current user: Styler`
 
-#### Example Output
+### $(sender.name)
 
-```
-Current user: styler
-```
+Displays the sender's display name in lowercase letters.
 
-## $(sender.name)
-
-Displays the user’s display name in lowercase letters
-
-#### Parameters
-
-This variable does not take any parameters.
-
-#### Example Input
-
+**Example:**
 ```
 Current user: $(sender.name)
 ```
+**Output:** `Current user: styler`
 
-#### Example Output
+### $(sender.points)
 
-```
-Current user: styler
-```
+Displays the sender's loyalty currency owned.
 
-## $(sender.points)
-
-Displays the user’s loyalty currency owned
-
-#### Parameters
-
-This variable does not take any parameters.
-
-#### Example Input
-
+**Example:**
 ```
 $(sender) has $(sender.points) points
 ```
+**Output:** `Styler has 100 points`
 
-#### Example Output
+### $(sender.points_rank)
 
-```
-styler has 100 points
-```
+Displays the sender's rank on the loyalty currency leaderboard.
 
-## $(sender.points_rank)
-
-Displays the user’s rank on the loyalty currency leaderboard
-
-#### Parameters
-
-This variable does not take any parameters.
-
-#### Example Input
-
+**Example:**
 ```
 $(sender) is rank $(sender.points_rank) on the leaderboard
 ```
+**Output:** `Styler is rank 5/283 on the leaderboard`
 
-#### Example Output
+### $(sender.points_alltime_rank)
 
+Displays the sender's rank on the all-time loyalty currency leaderboard.
+
+**Example:**
 ```
-styler is rank 5/283 on the leaderboard
+$(sender) is rank $(sender.points_alltime_rank) on the all-time leaderboard
 ```
+**Output:** `Styler is rank 5/283 on the all-time leaderboard`
 
-## $(sender.points_alltime_rank)
+### $(sender.level)
 
-Displays the user’s rank on the alltime loyalty currency leaderboard
+Displays the sender's access level.
 
-#### Parameters
-
-This variable does not take any parameters.
-
-#### Example Input
-
-```
-$(sender) is rank $(sender.points_alltime_rank) on the alltime leaderboard
-```
-
-#### Example Output
-
-```
-styler is rank 5/283 on the alltime leaderboard
-```
-
-## $(sender.level)
-
-Displays the user’s access level
-
-#### Parameters
-
-This variable does not take any parameters.
-
-#### Example Input
-
+**Example:**
 ```
 $(sender) is level $(sender.level)
 ```
+**Output:** `Styler is level 2000`
 
-#### Example Output
+### $(sender.lastmessage)
 
-```
-styler is level 2000
-```
+Displays the sender's last typed message in the chat.
 
-## $(sender.lastmessage)
-
-Displays the user’s last typed message in the chat
-
-#### Parameters
-
-This variable does not take any parameters.
-
-#### Example Input
-
+**Example:**
 ```
 $(sender) last typed: $(sender.lastmessage)
 ```
+**Output:** `Styler last typed: !points`
 
-#### Example Output
+### $(sender.lastseen)
 
-```
-styler last typed: !points
-```
+Displays the time that the sender was most recently seen in the viewer list or chat.
 
-## $(sender.lastseen)
-
-Displays the time that a user was most recently seen in viewer list or chat
-
-#### Parameters
-
-This variable does not take any parameters.
-
-#### Example Input
-
+**Example:**
 ```
 $(sender) was last seen $(sender.lastseen) ago
 ```
+**Output:** `Styler was last seen 13m 15s ago`
 
-#### Example Output
+### $(sender.lastactive)
 
-```
-styler was last seen 13m 15s ago
-```
+Displays the time that the sender most recently typed a message in the chat.
 
-## $(sender.lastactive)
-
-Displays the time that a user most recently typed a message in the chat
-
-#### Parameters
-
-This variable does not take any parameters.
-
-#### Example Input
-
+**Example:**
 ```
 $(sender) was last active $(sender.lastactive) ago
 ```
+**Output:** `Styler was last active 13m 15s ago`
 
-#### Example Output
+### $(sender.time_online)
 
-```
-styler was last active 13m 15s ago
-```
+Displays the total time the sender has spent watching the stream.
 
-## $(sender.time_online)
-
-Displays the total time a user has been in the chat while stream is offline
-
-#### Parameters
-
-This variable does not take any parameters.
-
-#### Example Input
-
-```
-$(sender) has been in the chat for $(sender.time_online)
-```
-
-#### Example Output
-
-```
-styler has been in the chat for 27m 16s
-```
-
-## $(sender.time_online)
-
-Displays the user’s display name
-
-#### Parameters
-
-Displays the total time a user has spent watching the stream
-
-#### Example Input
-
+**Example:**
 ```
 $(sender) has been watching the stream for $(sender.time_online)
 ```
+**Output:** `Styler has been watching the stream for 27m 16s`
 
-#### Example Output
+### $(sender.time_online_rank)
 
-```
-styler has been watching the stream for 27m 16s
-```
+Displays the sender's rank on the leaderboard for online time watched.
 
-## $(sender.time_online_rank)
-
-Displays the user’s rank on the leaderboard for online time watched
-
-#### Parameters
-
-This variable does not take any parameters.
-
-#### Example Input
-
+**Example:**
 ```
 $(sender) is rank $(sender.time_online_rank) on the online leaderboard
 ```
+**Output:** `Styler is rank 5/283 on the online leaderboard`
 
-#### Example Output
+### $(sender.time_offline_rank)
 
-```
-styler is rank 5/283 on the online leaderboard
-```
+Displays the sender's rank on the leaderboard for offline time watched.
 
-## $(sender.time_offline_rank)
-
-Displays the user’s rank on the leaderboard for offline time watched
-
-#### Parameters
-
-This variable does not take any parameters.
-
-#### Example Input
-
+**Example:**
 ```
 $(sender) is rank $(sender.time_offline_rank) on the offline leaderboard
 ```
+**Output:** `Styler is rank 5/283 on the offline leaderboard`
 
-#### Example Output
+## Best Practices
 
-```
-styler is rank 5/283 on the offline leaderboard
-```
+1. Use `$(sender)` when you only need information about the command trigger.
+2. If you need to reference other users or allow flexible user queries, use the [`$(user)`](user.md) variable instead.
+
+## Troubleshooting
+
+- If a variable returns unexpected results, ensure you're using the correct syntax and that the user exists in your channel's database.
+- Remember that `$(sender)` variables don't accept arguments. If you need to query other users, use `$(user)` instead.
+
+## Related Documentation
+
+- For querying information about any user, see the [`$(user)` variable documentation](user.md).
