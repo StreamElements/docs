@@ -1,35 +1,56 @@
 ---
 id: leagueoflegends
+sidebar_label: "$(leagueoflegends)"
+description: "Get a League of Legends player's rank and LP using StreamElements Chatbot. Supports Riot IDs and multiple regions."
 tags:
   - chatbot
   - variable
   - League of Legends
-description: Outputs the summoner rank and LP of a specified League of Legends player
 keywords:
   - streamelements lol rank command
   - league of legends command
+  - riot id rank lookup
+  - summoner rank checker
 ---
 
-# $(leagueoflegends)
+# $(leagueoflegends) Variable
 
-Outputs the summoner rank and LP of a specified League of Legends player.
+## Overview
+
+The `$(leagueoflegends)` variable allows you to retrieve and display the current rank and LP (League Points) of a specified League of Legends player using the StreamElements Chatbot.
+
+## Usage
+
+To use this variable, you need to provide two parameters: the region and the player's Riot ID or Summoner Name.
+
+```
+$(leagueoflegends <region> <Riot ID/Summoner Name>)
+```
 
 :::info Riot IDs
-League of legends is transitioning to Riot IDs. This means that you will need to use your Riot ID instead of your summoner name.
-
-During the transition period, you can use either your Riot ID or your summoner name. After the transition period, you will only be able to use your Riot ID.
+League of Legends is transitioning to Riot IDs. During the transition, you can use either Riot IDs or Summoner Names. After the transition, only Riot IDs will be supported.
 :::
 
-#### Parameters
+**Note:** If the Riot ID contains spaces, wrap it in quotes.
 
-This variable takes two parameters:
+## Examples
 
-1. Region
-2. Riot ID/Summoner Name
+```
+$(leagueoflegends euw styler#euw)
+$(leagueoflegends na "Doublelift#na1")
+```
 
-**NOTE:** If your Riot ID contains one or more spaces, you will need to wrap it in quotes.
+Example output:
+```
+Current Rank: Challenger I (1229 LP)
+```
 
-#### Supported Regions
+## Parameters
+
+1. **Region**: The server region of the player (e.g., `euw`, `na`)
+2. **Riot ID/Summoner Name**: The player's unique identifier
+
+## Supported Regions
 
 - `br` (Brazil)
 - `eune` (Europe Nordic & East)
@@ -49,15 +70,8 @@ This variable takes two parameters:
 - `tr` (Turkey)
 - `vn` (Vietnam)
 
-#### Example Input
+## FAQ
 
-```
-$(leagueoflegends styler#euw euw)
-$(leagueoflegends "styler#euw" euw)
-```
+**Q: Why isn't the rank updating immediately?**
 
-#### Example Output
-
-```
-Current Rank: Challenger I (1229 LP)
-```
+A: Rank data may have a slight delay due to API caching. It typically updates within a few minutes after a player's ranked game.

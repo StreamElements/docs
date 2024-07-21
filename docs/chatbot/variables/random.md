@@ -1,24 +1,32 @@
 ---
 id: random
 sidebar_label: "$(random)"
-description: "Learn how to use StreamElements' random variables to generate random numbers, emotes, chatters, and items in your stream chat."
+description: "Learn how to use StreamElements' random variables to generate dynamic content in your stream chat, including numbers, emotes, and chatters."
+tags:
+- variables
+- customization
+- engagement
 keywords:
 - streamelements
 - chatbot
-- random
-- variables
-- streaming
+- random variables
+- stream chat
+- viewer interaction
 ---
 
 # Random Variables
 
 ## Overview
 
-StreamElements offers powerful random variables that enable you to generate dynamic, randomized content in your Twitch stream chat. These variables are essential tools for creating engaging interactions, mini-games, and surprise elements that keep your audience entertained and involved.
+StreamElements offers a set of powerful random variables that allow you to generate dynamic, randomized content in your stream chat. These variables are essential tools for creating engaging interactions, mini-games, and surprise elements that keep your audience entertained and involved.
+
+## Usage
+
+Random variables can be used in any chat message or command. To use a random variable, simply include it in your message using the following syntax: `$(variable_name)` or `${variable_name}`.
 
 ## Examples
 
-Here are some examples of how you can use random variables:
+Here are two practical examples of how you can use random variables:
 
 ```
 Congratulations, $(random.chatter)! You've won a prize!
@@ -122,7 +130,17 @@ The next game we'll play is: $(random.pick 'Fortnite' 'Minecraft' 'Among Us')
 
 - A list of items enclosed in single quotes and separated by spaces
 
-## Related Variables
+## Related Commands
 
 - [$(customapi)](customapi): Fetch content from a URL, which can be used to create more complex random selections
 - [$(math)](math): Perform mathematical operations and return the result
+
+## FAQ
+
+**Q: Can I use random variables in custom commands?**
+
+A: Yes, random variables can be used in any custom command or chat message.
+
+**Q: Are the random numbers generated truly random?**
+
+A: The random numbers are pseudorandom, which means they are generated using an algorithm. this is sufficiently random.

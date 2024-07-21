@@ -1,26 +1,29 @@
 ---
 id: pointsname
-title: $(pointsname) Variable
-sidebar_label: $(pointsname)
-description: Learn how to use the $(pointsname) variable in StreamElements Chatbot
+sidebar_label: "$(pointsname)"
+description: "Learn how to use the $(pointsname) variable in StreamElements Chatbot to display your custom loyalty points name in chat messages and commands."
+tags:
+- variables
+- loyalty points
 keywords:
 - chatbot
 - variable
 - loyalty points
 - currency name
+- StreamElements
 ---
 
-## $(pointsname)
+# $(pointsname) Variable
 
-### Description
+## Overview
 
-The `$(pointsname)` variable displays the current name of your stream's loyalty currency. It's a dynamic way to reference your custom points system in chat messages or commands.
+The `$(pointsname)` variable is a dynamic way to display the current name of your stream's loyalty currency in chat messages or commands. It automatically updates to reflect your custom points system name, providing a flexible solution for referencing your loyalty program.
 
-### Usage
+## Usage
 
-Insert `$(pointsname)` into your chat message or command where you want the loyalty currency name to appear. The chatbot automatically replaces it with your actual loyalty points name.
+Insert `$(pointsname)` into your chat messages or commands where you want the loyalty currency name to appear. The chatbot will automatically replace it with your actual loyalty points name.
 
-### Examples
+## Examples
 
 1. Informing viewers about earning points:
 
@@ -44,12 +47,20 @@ Output (for a user with 500 points):
 Your current memecoins balance is 500.
 ```
 
-### Parameters
+## Parameters
 
 This variable doesn't accept any parameters.
 
-### Related Commands/Variables
+## Related Commands/Variables
 
 - [`$(user.points)`](user.md#userpoints): Displays the user's current loyalty points balance
 - [`!addpoints`](../commands/default/addpoints.md): Adds points to a user's balance (mod/broadcaster only)
 - [`!setpoints`](../commands/default/setpoints.md): Sets a user's points to a specific value (mod/broadcaster only)
+
+## FAQ
+
+**Q: How do I change my loyalty points name?**
+A: You can change your loyalty points name in the StreamElements dashboard under the Loyalty tab. The `$(pointsname)` variable will automatically update to reflect the new name.
+
+**Q: Can I use $(pointsname) in custom commands?**
+A: Yes, you can use `$(pointsname)` in any custom command or chat message where you want to display your loyalty points name.
