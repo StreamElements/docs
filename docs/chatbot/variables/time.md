@@ -57,7 +57,7 @@ A list of valid IANA timezones can be found at [Nodatime Timezones](https://noda
 
 2. Display UTC time:
    ```
-   The current UTC time is $(time.utc)
+   The current UTC time is $(time.UTC)
    ```
 
 ## $(time.until)
