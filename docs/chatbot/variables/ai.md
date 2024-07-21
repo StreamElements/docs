@@ -62,6 +62,18 @@ The `$(ai)` variable accepts a single parameter:
 
 - `query`: The input text for the AI to generate a response. This parameter is required.
 
+## Default Context
+
+The AI variable comes with some default context that it's always aware of:
+
+1. **Channel Emotes**: The AI knows about the custom emotes available in your channel. It can reference and use these emotes in its responses when appropriate.
+
+2. **Sender's Name**: The AI is aware of the name of the user who triggered the command. This allows for personalized responses without explicitly including the user's name in the query.
+
+3. **Current Date**: The AI knows the current date, allowing it to provide timely responses or reference current events when relevant.
+
+This default context enables the AI to generate more relevant and personalized responses without requiring you to explicitly include this information in every query.
+
 ## Configuration
 
 ### Ratelimits
