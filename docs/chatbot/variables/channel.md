@@ -210,7 +210,7 @@ We've been live for: 3 hours 27 minutes
 
 ## Best Practices
 
-1. Use channel variables to provide real-time information about your stream in chat commands and overlays.
+1. Use channel variables to provide real-time information about your stream in chat commands.
 2. Combine multiple variables to create comprehensive stream status messages.
 3. Always provide clear examples and explanations when creating custom commands using these variables.
 
