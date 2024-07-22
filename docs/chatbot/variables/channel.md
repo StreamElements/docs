@@ -22,7 +22,7 @@ The `$(channel)` variables in StreamElements Chatbot allow you to access and dis
 
 ## Usage
 
-To use a channel variable, include it in your chatbot command or overlay text using the `$()` syntax. The variable will be automatically replaced with the corresponding value when the message is sent or the overlay is displayed.
+To use a channel variable, include it in your chatbot command using the `$()` syntax. The variable will be automatically replaced with the corresponding value when the message is sent.
 
 ## Available $(channel) Variables
 
