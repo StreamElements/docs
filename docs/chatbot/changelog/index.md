@@ -15,6 +15,8 @@ keywords:
 sidebar_position: 10
 ---
 
+# Changelog
+
 <!-- 
     Categories:
     - 🆕 New Features
@@ -24,8 +26,6 @@ sidebar_position: 10
     - 🔄 Deprecated
     - 🚀 Updates
  -->
-
-# Chatbot Changelog
 
 ## 24 July 2024
 
