@@ -27,6 +27,15 @@ sidebar_position: 10
     - 🚀 Updates
  -->
 
+## 25 July 2024
+
+### 🛞 Improvements
+
+- Enhanced loyalty system for more dynamic point and watchtime distribution:
+  - For partner channels: Points and watchtime now awarded at intervals between 1-10 minutes
+  - For non-partner channels: Points and watchtime now awarded at intervals between 5-10 minutes
+  - This replaces the previous fixed 10-minute interval for all channels
+
 ## 24 July 2024
 
 ### 📚 Documentation
