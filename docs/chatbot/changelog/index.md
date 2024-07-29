@@ -27,6 +27,12 @@ sidebar_position: 10
     - 🚀 Updates
  -->
 
+## 29 July 2024
+
+### 🛞 Improvements
+
+- Fixed an issue with [Link Protection](../filters/links.md) which could flag emote combinations as links on YouTube
+
 ## 25 July 2024
 
 ### 🛞 Improvements
