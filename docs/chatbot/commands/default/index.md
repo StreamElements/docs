@@ -9,8 +9,8 @@ tags:
 keywords:
 - default commands
 - streamelements chatbot
-- chat moderation
 - stream management
+- streamelements commands
 ---
 
 # Default Commands
