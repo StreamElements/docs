@@ -1,20 +1,22 @@
 ---
-id: custom commands
-description: Learn how to create Custom Commands
+id: custom-commands
+sidebar_label: "Custom Commands"
+description: "Learn how to create, manage, and optimize custom chatbot commands for your StreamElements-powered Twitch stream."
 tags:
   - chatbot
   - custom commands
+  - stream engagement
 keywords:
-  - streamelements
-  - chatbot
-  - commands
-  - custom commands
-  - add command
-  - create command
-  - remove command
-  - delete command
-  - edit command
+  - StreamElements custom commands
+  - Twitch chatbot commands
+  - create custom commands
+  - manage chat commands
+  - personalized stream interactions
+  - chatbot customization
+  - StreamElements bot
+  - Twitch stream engagement
 ---
+
 # Custom Commands
 
 In addition to the default commands, you can also create your own custom commands. Custom commands allow you to create commands that are tailored to your channel and your community. You can use custom commands to create unique interactions and functionalities that are not possible with the default commands.
