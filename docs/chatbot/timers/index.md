@@ -1,8 +1,21 @@
 ---
 id: timers
+sidebar_label: "Timers"
+description: "Learn how to set up and optimize automated messages using StreamElements Chatbot Timers for enhanced stream engagement."
 tags:
   - chatbot
   - timers
+  - stream automation
+  - viewer engagement
+keywords:
+  - StreamElements timers
+  - automated chat messages
+  - stream reminders
+  - chat engagement
+  - Twitch bot timers
+  - YouTube live chat automation
+  - streamer tools
+  - chat management
 ---
 
 # Chatbot Timers
