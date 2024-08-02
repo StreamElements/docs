@@ -1,6 +1,6 @@
 ---
 id: counters
-description: Learn how to use counters in your Twitch streams to track game deaths, missed shots, or any other event. Perfect for engaging viewers and enhancing stream interactivity.
+description: Learn how to use counters in your Twitch streams to track game deaths, missed shots, or any other event.
 keywords:
   - Twitch chatbot counters
   - stream counters
@@ -31,7 +31,7 @@ Let's start by adding a new counter command for missed cannons in league of lege
 1. Create a new command by typing `!cmd add cannon ${count cannon}`
 2. Now when you type `!cannon` in chat, it will increment the counter by 1.
 
-![Image](img/0.png)
+![Image](img/0.png 'Add counter command')
 
 ---
 
@@ -42,4 +42,4 @@ Let's create another command to see how many cannons you've missed (Without incr
 1. Create a new command by typing `!cmd add missedcannons ${getcount cannon}`
 2. Now when you type `!missedcannons` in chat, it will show you the current count of the cannon counter.
 
-![Image](img/1.png)
+![Image](img/1.png 'Get the current count')
