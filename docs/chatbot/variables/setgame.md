@@ -12,6 +12,7 @@ keywords:
   - game category
   - stream title
   - Twitch
+  - setgame
 ---
 
 # $(setgame)

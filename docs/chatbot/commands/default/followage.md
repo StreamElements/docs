@@ -9,6 +9,7 @@ keywords:
 - check followage
 - follower duration
 - twitch followers
+- how to check followage on twitch
 ---
 
 # !followage

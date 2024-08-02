@@ -8,7 +8,7 @@ keywords:
   - Twitch stream enhancements
   - twitch chat counter
   - interactive streaming tools
-  - viewer engagement tools
+  - streamelements counter command
 ---
 
 # Counters

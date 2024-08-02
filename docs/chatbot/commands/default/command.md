@@ -12,6 +12,7 @@ keywords:
 - alias command
 - show command
 - command options
+- streamelements add command
 ---
 
 # !command

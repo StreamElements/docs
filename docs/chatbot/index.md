@@ -8,9 +8,8 @@ tags:
 - twitch
 keywords:
 - twitch chatbot
-- stream engagement
-- chatbot commands
 - streamelements bot
+- streamelements commands
 slug: /
 sidebar_position: 1
 ---
