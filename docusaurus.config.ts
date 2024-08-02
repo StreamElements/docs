@@ -100,7 +100,7 @@ const config: Config = {
           items: [
             {
               label: "Getting Started",
-              to: "/chatbot/gettingstarted/customcommands/creating",
+              to: "/chatbot/gettingstarted/commands",
             },
             {
               label: "Variables",

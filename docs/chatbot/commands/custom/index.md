@@ -27,7 +27,7 @@ There are 2 ways to manage a custom commands:
 
 ### Using the Dashboard to manage custom commands
 
-See [Creating a command](../../gettingstarted/customcommands/creating.md) in `Getting Started`
+See [Creating a command](../../gettingstarted/commands.md) in `Getting Started`
 
 ### Using chat to manage Custom Commands
 #### Creating a Custom Command in chat
