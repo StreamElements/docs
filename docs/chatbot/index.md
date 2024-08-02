@@ -1,15 +1,25 @@
 ---
 id: welcome
 sidebar_label: "Chatbot"
-description: "Comprehensive guide to StreamElements Chatbot: Learn how to enhance viewer engagement, automate tasks, and create interactive streams with our powerful Twitch chatbot."
+description: "Master the StreamElements Chatbot: Boost engagement, automate tasks, and create interactive streams with our powerful Twitch and YouTube Live chatbot."
 tags:
 - chatbot
 - streamelements
 - twitch
+- youtube
+- stream automation
+- viewer engagement
 keywords:
-- twitch chatbot
-- streamelements bot
-- streamelements commands
+- StreamElements Chatbot
+- Twitch bot
+- YouTube Live bot
+- stream automation
+- viewer interaction
+- custom commands
+- chat moderation
+- loyalty points
+- stream alerts
+- chatbot features
 slug: /
 sidebar_position: 1
 ---
