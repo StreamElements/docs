@@ -1,13 +1,27 @@
 ---
-id: chatalerts
+id: chat-alerts
 sidebar_label: "Chat Alerts"
-description: "Learn how to use StreamElements' Chat Alerts module to enhance viewer engagement and automate event notifications in your Twitch stream."
+description: "Boost viewer engagement with StreamElements' Chat Alerts module. Automate Twitch notifications and create dynamic chat experiences for your stream."
 keywords:
 - Twitch chat alerts
 - StreamElements chatbot
 - stream event notifications
-- viewer engagement
+- viewer engagement tools
 - automated chat messages
+- follower alerts Twitch
+- subscription notifications StreamElements
+- donation announcements chatbot
+- raid alerts Twitch
+- bits cheer messages
+- Twitch stream automation
+- chat interaction tools
+- real-time stream alerts
+- StreamElements chat notifications
+- Twitch community engagement
+tags:
+- chatbot
+- alerts
+- engagement
 ---
 
 # Chat Alerts Module

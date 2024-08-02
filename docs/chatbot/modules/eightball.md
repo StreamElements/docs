@@ -1,14 +1,18 @@
 ---
 id: eightball
 sidebar_label: "8ball"
-description: "Learn how to use the 8ball module in StreamElements Chatbot to engage your Twitch audience with customizable, random responses to viewer questions."
+description: "Enhance Twitch engagement with StreamElements 8ball. Learn to set up and use this interactive chat command for fun, randomized responses to viewer questions."
 keywords:
-- 8ball chatbot
-- 8ball twitch command
-- ask eightball
-- eightball StreamElements
-- viewer engagement
-- interactive chat module
+- Magic 8 Ball Twitch
+- StreamElements 8ball
+- Twitch chat engagement
+- Interactive chat commands
+- Chatbot responses
+- Random answer generator
+- Viewer interaction
+- Twitch chatbot
+- 8ball integration
+- Audience engagement
 ---
 
 # 8ball Module

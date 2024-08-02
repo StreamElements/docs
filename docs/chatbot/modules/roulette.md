@@ -1,14 +1,23 @@
 ---
 id: roulette
 sidebar_label: "Roulette"
-description: "Learn how to use the StreamElements Chatbot Roulette module for an interactive chat game where users can wager their points."
+description: "Boost viewer engagement with StreamElements Roulette. Learn to set up and use this exciting chat game for wagering and winning points on Twitch streams."
 keywords:
-- streamelements
-- chatbot
-- roulette
-- chat game
-- points
-- wager
+- StreamElements roulette
+- Twitch chat game
+- viewer engagement
+- stream points
+- chatbot commands
+- interactive streaming
+- gambling simulator
+- StreamElements bot
+- Twitch chat interaction
+- point wagering system
+- roulette game for Twitch
+- StreamElements modules
+- chat-based gambling
+- Twitch stream interaction
+- point system for streams
 ---
 
 # Roulette Module

@@ -1,13 +1,20 @@
 ---
 id: duel
 sidebar_label: "Duel"
-description: "Learn how to use the Duel module in StreamElements Chatbot. Engage viewers with interactive duels, set wager limits, and manage cooldowns."
+description: "Boost Twitch viewer engagement with StreamElements Chatbot Duel Module. Learn to set up and use this interactive chat game."
 keywords:
-- streamelements
+- streamelements duel
+- twitch chat game
+- viewer engagement
+- chatbot commands
+- stream interaction
+- point wagering
+- audience retention
+- interactive streaming
+tags:
 - chatbot
-- duel
-- interactive
-- chat game
+- engagement
+- game
 ---
 
 # Duel Module

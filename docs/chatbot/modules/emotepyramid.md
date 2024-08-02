@@ -1,13 +1,16 @@
 ---
 id: emotepyramid
 sidebar_label: "Emote Pyramid"
-description: "Learn how to use and manage the Emote Pyramid chat game in StreamElements Chatbot. Engage your viewers with this fun and interactive emote-based challenge."
+description: "Master the Emote Pyramid chat game for StreamElements Chatbot. Boost viewer engagement with this fun, interactive challenge. Learn rules and examples."
 keywords:
 - emote pyramid
 - chat game
-- StreamElements
-- chatbot
+- StreamElements chatbot
 - viewer engagement
+- interactive stream challenge
+- Twitch chat game
+- emote-based game
+- community interaction
 ---
 
 # Emote Pyramid Module

@@ -1,12 +1,18 @@
 ---
 id: liveannouncement
 sidebar_label: "Live Announcement"
-description: "Automatically announce when a stream goes live using StreamElements Chatbot's Live Announcement module"
+description: "Learn how to set up and use StreamElements Chatbot's Live Announcement module to automatically notify viewers when your stream goes live."
 keywords:
-- chatbot
-- live announcement
+- StreamElements live announcement
 - stream notification
-- StreamElements
+- Twitch live alert
+- YouTube live notification
+- automatic stream announcement
+- chatbot live notification
+- stream start alert
+- live streaming tools
+- viewer engagement
+- StreamElements chatbot features
 ---
 
 # Live Announcement Module

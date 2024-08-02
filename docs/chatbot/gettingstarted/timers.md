@@ -1,8 +1,21 @@
 ---
 id: timers
+sidebar_label: "Timers"
+description: "Learn how to set up and manage automated chat messages with StreamElements Chatbot Timers. Boost engagement and streamline your Twitch stream with timed announcements, reminders, and more."
+keywords:
+  - StreamElements timers
+  - Twitch chat automation
+  - automated chat messages
+  - Twitch stream engagement
+  - chatbot timers
+  - timed announcements
+  - StreamElements chatbot
+  - Twitch streaming tools
 tags:
   - chatbot
   - timers
+  - automation
+  - engagement
 ---
 
 # Getting Started with Timers

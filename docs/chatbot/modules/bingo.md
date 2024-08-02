@@ -1,17 +1,28 @@
 ---
-id: bingo
-sidebar_label: "Bingo"
-description: "Learn how to use the Emote Bingo module in StreamElements Chatbot for interactive chat games with Twitch, BTTV, FFZ, and 7TV emotes."
+id: emote-bingo
+sidebar_label: "Emote Bingo"
+description: "Boost viewer engagement with StreamElements' Emote Bingo. Create interactive Twitch chat games using emotes from Twitch, BTTV, FFZ, and 7TV."
 keywords:
+- StreamElements Emote Bingo
+- Twitch chat games
+- interactive stream engagement
+- BTTV emote game
+- FFZ bingo module
+- 7TV chat interaction
+- Twitch emote challenges
+- StreamElements chatbot features
+- viewer participation games
+- emote-based stream activities
+- Twitch streamer tools
+- chat engagement strategies
+- interactive streaming content
+- emote recognition game
+- StreamElements bot commands
+tags:
 - chatbot
-- module
-- bingo
-- emote
-- game
-- Twitch
-- BTTV
-- FFZ
-- 7TV
+- engagement
+- games
+- emotes
 ---
 
 # Bingo Module

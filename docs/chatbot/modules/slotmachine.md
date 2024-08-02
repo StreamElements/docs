@@ -1,15 +1,18 @@
 ---
 id: slotmachine
 sidebar_label: "Slotmachine"
-description: "Learn how to use the Slotmachine module in StreamElements Chatbot for an engaging chat game where viewers can wager points on a virtual slot machine."
+description: "Set up and customize the StreamElements Chatbot Slotmachine module. Engage viewers with a virtual slot machine game for wagering points."
 keywords:
-- chatbot
-- module
-- slotmachine
-- StreamElements
-- chat game
-- points
-- gambling
+- StreamElements Chatbot Slotmachine
+- Twitch chat game
+- virtual gambling for streams
+- viewer engagement tools
+- stream interaction games
+- points system for Twitch
+- customizable chat games
+- Twitch slot machine
+- StreamElements modules
+- chat-based gambling simulator
 ---
 
 # Slotmachine Module

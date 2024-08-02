@@ -1,12 +1,18 @@
 ---
 id: votekick
 sidebar_label: "!votekick"
-description: "Initiate a community vote to temporarily remove a user from chat"
+description: "Learn how to use StreamElements' !votekick command for community-driven chat moderation and temporary user removal"
 keywords:
-- streamelements votekick command
-- chat moderation
-- community voting
-- temporary ban
+- StreamElements votekick command
+- Twitch chat moderation
+- community-driven moderation
+- temporary chat ban
+- viewer engagement
+- stream interaction
+- chat management
+- StreamElements bot commands
+- Twitch streaming tools
+- chat voting system
 ---
 
 # !votekick

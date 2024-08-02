@@ -1,13 +1,18 @@
 ---
 id: viewerqueue
 sidebar_label: "Viewer Queue"
-description: "Learn how to use the StreamElements Viewer Queue module to manage viewer interactions during live streams."
+description: "Master the StreamElements Viewer Queue module to efficiently manage viewer interactions, boost engagement, and streamline your live streams."
 keywords:
-- chatbot
-- module
-- viewer queue
-- stream management
-- viewer interaction
+- StreamElements viewer queue
+- live stream interaction management
+- viewer engagement tools
+- stream queue system
+- Twitch viewer queue
+- YouTube live queue
+- interactive streaming
+- audience participation
+- streamer queue management
+- viewer selection tool
 ---
 
 # Viewer Queue Module

@@ -1,13 +1,18 @@
 ---
 id: emotecombo
 sidebar_label: "Emote Combo"
-description: "Learn how to use the Emote Combo feature in StreamElements Chatbot to engage viewers with interactive emote chains in chat."
+description: "Learn how to use StreamElements Chatbot's Emote Combo feature to create interactive emote chains in your stream chat."
 keywords:
 - emote combo
 - chatbot
 - StreamElements
 - interactive chat
-- viewer engagement
+- emote chains
+- stream interaction
+- chat games
+- Twitch emotes
+- chat features
+- streamer tools
 ---
 
 # Emote Combo Module

@@ -1,10 +1,24 @@
 ---
-id: creating
+id: commands
+sidebar_label: "Commands"
+description: "Learn how to create and customize chatbot commands for your Twitch stream using StreamElements. Enhance viewer engagement with interactive commands."
+keywords:
+  - StreamElements custom commands
+  - Twitch chatbot commands
+  - create chatbot commands
+  - StreamElements bot setup
+  - Twitch stream interaction
+  - custom chat commands
+  - StreamElements tutorial
+  - chatbot configuration
 tags:
   - chatbot
   - commands
+  - customization
+  - engagement
 ---
-# Creating a command
+
+# Getting Started with Commands
 
 ## Overview
 
@@ -15,7 +29,7 @@ Commands are the main way users will interact with the bot in your chat. They ca
 1. From the [bot command dashboard](https://streamelements.com/dashboard/bot/commands), navigate to the "Custom Commands" tab.
 2. Click the "Add New Command" button to open the command creation tool.
 
-![Step 1](img/step_1.png)
+![Step 1](img/step_1.png "Step 1")
 
 ## Step 2 - Basic settings
 
@@ -29,7 +43,7 @@ Commands are the main way users will interact with the bot in your chat. They ca
   - "Whisper" will send the response as a whisper to the user who triggered the command.
 3. Add your desired response. For a list of all available variables, see the [variables documentation](../../variables).
 
-![Step 2](img/step_2.png)
+![Step 2](img/step_2.png "Step 2")
 
 ## Step 3 - Advanced settings
 
@@ -37,4 +51,4 @@ Commands are the main way users will interact with the bot in your chat. They ca
 1. Optional: Add one or more command aliases to allow users to trigger the same command using alternate names.
 2. Click the "Activate Command" button to save your new command.
 
-![Step 3](img/step_3.png)
+![Step 3](img/step_3.png "Step 3")

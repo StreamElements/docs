@@ -1,13 +1,16 @@
 ---
 id: raffle
-sidebar_label: "Raffle Module"
-description: "Learn how to use the StreamElements Chatbot Raffle module for interactive viewer engagement. Includes commands, usage, and multi-winner scaling."
+sidebar_label: "Raffle"
+description: "Boost viewer engagement with StreamElements Chatbot Raffle module. Learn commands, usage, and multi-winner scaling for interactive stream giveaways."
 keywords:
-- streamelements
-- chatbot
-- raffle
+- StreamElements raffle
+- Twitch giveaway
 - viewer engagement
 - stream interaction
+- chatbot commands
+- multi-winner raffle
+- interactive stream games
+- StreamElements modules
 ---
 
 # Raffle Module
@@ -51,7 +54,6 @@ Bot: The raffle has ended. The winners are Viewer3, Viewer7, and Viewer12!
 
 - [`!join`](../commands/default/join.md): Used by viewers to enter an ongoing raffle.
 - [`!cancelraffle`](../commands/default/cancelraffle.md): Cancels the current raffle (moderators only).
-
 
 ## FAQ
 

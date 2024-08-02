@@ -1,20 +1,25 @@
 ---
 id: votekick
 sidebar_label: "Votekick"
-description: "Comprehensive guide to the StreamElements Votekick module, allowing chat to vote on kicking users for enhanced engagement and moderation"
+description: "Master the StreamElements Votekick module: Empower your Twitch community with interactive chat moderation and boost viewer engagement through democratic voting"
 keywords:
-- streamelements votekick module
-- chat moderation
-- viewer engagement
-- twitch polls
+- StreamElements votekick
+- Twitch chat moderation
+- interactive viewer engagement
+- community-driven moderation
+- Twitch polls integration
 - chat voting system
+- StreamElements chatbot
+- Twitch stream management
+- audience participation tools
+- temporary user removal
 ---
 
 # Votekick Module
 
 ## Overview
 
-The Votekick module is a powerful chatbot feature that enables viewers to vote on whether to temporarily remove a user from the chat. 
+The Votekick module is a powerful chatbot feature that enables viewers to vote on whether to temporarily remove a user from the chat.
 
 ## Usage
 
@@ -58,4 +63,3 @@ Customize the Votekick module behavior through the following settings:
 | Kick Duration | Set how long the user is removed from chat | 10 to 1,209,600 seconds |
 | Yea Keyword | Set the keyword for a "yes" vote | Recommended: Twitch emote |
 | Nay Keyword | Set the keyword for a "no" vote | Recommended: Twitch emote |
-
