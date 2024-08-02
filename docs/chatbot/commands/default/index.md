@@ -1,16 +1,23 @@
 ---
 id: default-commands
 sidebar_label: "Default Commands"
-description: "A comprehensive guide to StreamElements Chatbot's default commands, including usage, examples, and configuration options."
+description: "Master StreamElements Chatbot's default commands: Usage, examples, and configuration for enhanced stream management and viewer engagement."
 tags:
 - chatbot
 - commands
 - streamelements
+- twitch
+- youtube
 keywords:
 - default commands
 - streamelements chatbot
 - stream management
 - streamelements commands
+- twitch bot commands
+- youtube live chat commands
+- chatbot automation
+- streamer tools
+- viewer interaction
 ---
 
 # Default Commands
