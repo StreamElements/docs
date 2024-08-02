@@ -70,12 +70,14 @@ const config: Config = {
       indexName: 'streamelements',
     },
     metadata: [
-      {
-        name: "keywords",
-        content:
-          "StreamElements, Commands, Timers, Variables, Twitch, YouTube, Command Variables, Chatbot Modules, Chatbot Timers, Spam Filters, Documentation, Guides, Tutorials",
-      },
-      { name: "twitter:card", content: "summary_large_image" },
+      {name: "og:type", content: "website"},
+      {name: "keywords", content: "StreamElements, Twitch chatbot, YouTube chatbot, stream commands, chat timers, chatbot variables, custom commands, chat moderation, loyalty points, stream overlay, viewer engagement, live streaming tools, broadcaster dashboard, bot configuration, stream analytics"},
+      {name: "twitter:card", content: "summary_large_image"},
+      {name: "twitter:site", content: "@StreamElements"},
+      {name: "twitter:title", content: "StreamElements Documentation | Chatbot, Commands, & Stream Tools"},
+      {name: "twitter:creator", content: "@StreamElements"},
+      {name: "twitter:description", content: "The official documentation for StreamElements"},
+      {name: "robots", content: "max-image-preview:large" }
     ],
     headTags: [
       {
