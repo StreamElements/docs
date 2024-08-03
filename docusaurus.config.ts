@@ -113,7 +113,7 @@ const config: Config = {
           items: [
             {
               label: "Twitch",
-              href: "https://twitch.tv/StreamElements",
+              href: "https://www.twitch.tv/streamelements",
             },
             {
               label: "Discord",
