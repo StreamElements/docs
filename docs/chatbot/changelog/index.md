@@ -27,6 +27,17 @@ sidebar_position: 10
     - 🚀 Updates
  -->
 
+## 6 August 2024
+
+### 🆕 New Features
+
+- Added support for Twitch Warnings in spam filters and banned words
+- Introduced a new dropdown menu for customizable moderation actions:
+  - Warn and delete message
+  - Timeout user
+  - Ban user
+  - Delete message only
+
 ## 29 July 2024
 
 ### 🛞 Improvements
