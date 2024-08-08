@@ -31,7 +31,7 @@ sidebar_position: 10
 
 ### 🆕 New Features
 
-- Added support for Teamfight Tatics
+- Added new variable: [`$(teamfighttactics)`](./variables/teamfighttactics)
 
 ### 🛞 Improvements
 
