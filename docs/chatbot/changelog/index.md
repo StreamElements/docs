@@ -27,6 +27,16 @@ sidebar_position: 10
     - 🚀 Updates
  -->
 
+## 8 August 2024
+
+### 🆕 New Features
+
+- Added support for Teamfight Tatics
+
+### 🛞 Improvements
+
+- Fixed an issue which caused some [Viewer Queue](./modules/viewerqueue) commands to send multiple responses
+
 ## 6 August 2024
 
 ### 🆕 New Features
