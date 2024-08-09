@@ -1,11 +1,11 @@
 ---
 id: teamfighttactics
 sidebar_label: "$(teamfighttactics)"
-description: "Get a Teamfight Tatics player's rank and LP using StreamElements Chatbot. Supports Riot IDs and multiple regions."
+description: "Get a Teamfight Tactics player's rank and LP using StreamElements Chatbot. Supports Riot IDs and multiple regions."
 tags:
   - chatbot
   - variable
-  - Teamfight Tatics
+  - Teamfight Tactics
 keywords:
   - streamelements tft rank command
   - teamfighttactics command
@@ -17,7 +17,7 @@ keywords:
 
 ## Overview
 
-The `$(teamfighttactics)` variable allows you to retrieve and display the current rank and LP (League Points) of a specified Teamfight Tatics player using the StreamElements Chatbot.
+The `$(teamfighttactics)` variable allows you to retrieve and display the current rank and LP (League Points) of a specified Teamfight Tactics player using the StreamElements Chatbot.
 
 ## Usage
 
