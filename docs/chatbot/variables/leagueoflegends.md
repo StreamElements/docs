@@ -24,7 +24,7 @@ The `$(leagueoflegends)` variable allows you to retrieve and display the current
 To use this variable, you need to provide two parameters: the region and the player's Riot ID or Summoner Name.
 
 ```
-$(leagueoflegends <region> <Riot ID/Summoner Name>)
+$(leagueoflegends <Riot ID/Summoner Name> <region>)
 ```
 
 :::info Riot IDs
@@ -36,8 +36,8 @@ League of Legends is transitioning to Riot IDs. During the transition, you can u
 ## Examples
 
 ```
-$(leagueoflegends euw styler#euw)
-$(leagueoflegends na "Doublelift#na1")
+$(leagueoflegends styler#euw euw)
+$(leagueoflegends "Doublelift#na1" na)
 ```
 
 Example output:
