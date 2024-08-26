@@ -70,7 +70,7 @@ The Viewer Queue module can be configured in the StreamElements dashboard. Strea
 ## FAQ
 
 **Q: Can viewers join the queue multiple times?**
-A: By default, viewers can only join the queue once. This setting can be adjusted in the module configuration.
+A: Viewers can only join the queue once.
 
 **Q: How long does a queue last?**
 A: The queue remains active until it's manually closed or cleared by a moderator, or until the stream ends.
