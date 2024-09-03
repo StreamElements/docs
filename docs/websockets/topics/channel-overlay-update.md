@@ -25,14 +25,14 @@ The `channel.kvstore.update` topic provides real-time updates when changes occur
 ```json
 
 {
-    "id":"01J6VM2EHSDBTTQZK5C2B6W0NF",
+    "id": "01J6VM2EHSDBTTQZK5C2B6W0NF",
     "ts": "2024-02-15T14:52:42Z",
-    "type":"message",
-    "topic":"channel.kvstore.update",
-    "room":"577c0455f9a31ea72a36b2b3",
-    "data":{
-        "key":"alerts.paused",
-        "value":true
+    "type": "message",
+    "topic": "channel.kvstore.update",
+    "room": "577c0455f9a31ea72a36b2b3",
+    "data": {
+        "key": "alerts.paused",
+        "value": true
     }
 }
 ```
