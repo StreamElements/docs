@@ -1,18 +1,43 @@
+---
+id: getting-started
+title: Getting Started
+sidebar_label: Getting Started
+description: Create an overlay with StreamElements - Custom widgets, alerts, and more for Twitch and YouTube Live.
+tags:
+  - overlays
+  - streamelements
+  - custom widgets
+  - alerts
+  - stream design
+keywords:
+  - StreamElements Overlays
+  - Custom stream widgets
+  - Twitch overlays
+  - YouTube Live overlays
+  - Stream alerts
+  - Overlay editor
+  - Stream design tools
+sidebar_position: 1
+---
+
 # Getting Started
 
-Before Starting explains how to create a Custom Widget or Custom Code AlertBox, using StreamElements' the Overlay Editor UI.
+This guide explains how to create a Custom Widget or Custom Code AlertBox using StreamElements' Overlay Editor UI.
 
-We will start by creating an Overlay first and then the widgets, an AlertBox and a Custom Widget, which you'll be able edit.
+We'll start by creating an Overlay, then add widgets like an AlertBox and a Custom Widget, which you can edit.
 
 ## Creating an Overlay
 
-Navigate to the [Overlays](https://streamelements.com/dashboard/overlays) section and click the **NEW OVERLAY** button.
+1. Navigate to the [Overlays](https://streamelements.com/dashboard/overlays) section.
+2. Click the **NEW OVERLAY** button.
 
-  ![img/new-overlay-button.png](img/new-overlay-button.png)
+![New Overlay button](img/new-overlay-button.png)
 
-Next you'll neeed to pick your resolution and click the **START** button.
+3. Choose your resolution and click the **START** button.
 
-> Overlay size: Usually it should match your stream's resolution, or be smaller than it  - if you'd like to do the repositioning in your broadcasting software.
+:::tip
+Overlay size: Usually it should match your stream's resolution, or be smaller if you'd like to do the repositioning in your broadcasting software.
+:::
 
 ## AlertBox
 
@@ -20,29 +45,34 @@ The AlertBox is a native widget that displays live events from the queue in a po
 
 To create an AlertBox:
 
-1. Click the **+** button in overlay editor
-  ![img/new-widget-plus-button.png](img/new-widget-plus-button.png)
+1. Click the **+** button in the overlay editor.
 
-2. Select **AlertBox** in the **ALERTS** section
-  ![img/new-widget-alert-box.png](img/new-widget-alert-box.png)
+![New widget plus button](img/new-widget-plus-button.png)
 
-### Enabling Custom code for AlertBox
+2. Select **AlertBox** in the **ALERTS** section.
 
-You can enable custom code for AlertBox by toggling the "Enable custom CSS" option for alert type you want to use.
-For example open options for AlertBox, go to "Followers" tab and enable custom code as on screenshot below
+![New widget alert box](img/new-widget-alert-box.png)
 
-![img/alert-box-css-editor.gif](img/alert-box-css-editor.gif)
+### Enabling Custom Code for AlertBox
 
+To enable custom code for AlertBox:
+
+1. Open options for AlertBox.
+2. Go to the "Followers" tab.
+3. Toggle the "Enable custom CSS" option for the alert type you want to use.
+
+![Alert box CSS editor](img/alert-box-css-editor.gif)
 
 ## Custom Widget
-The Custom Widget is a native widget that you can use to display any content you want.
-It is a good way to display your own content in overlay. It can consume local events (like tips, follows etc.) as well
-as remote events read from a websocket or from a REST API.
+
+The Custom Widget is a native widget that you can use to display any content you want. It's ideal for displaying your own content in the overlay and can consume local events (like tips, follows, etc.) as well as remote events read from a websocket or REST API.
 
 To create a Custom Widget:
 
-1. Click the **+** button in overlay editor
-  ![img/new-widget-plus-button.png](img/new-widget-plus-button.png)
+1. Click the **+** button in the overlay editor.
 
-2. Select **Custom Widget** in the **STATIC/CUSTOM** section
-  ![img/new-widget-custom-code.png](img/new-widget-custom-code.png)
+![New widget plus button](img/new-widget-plus-button.png)
+
+2. Select **Custom Widget** in the **STATIC/CUSTOM** section.
+
+![New widget custom code](img/new-widget-custom-code.png)
