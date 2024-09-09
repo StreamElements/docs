@@ -20,8 +20,6 @@ keywords:
 sidebar_position: 1
 ---
 
-import ReactPlayer from "react-player"
-
 # Getting Started
 
 This guide explains how to create a Custom Widget or Custom Code AlertBox using StreamElements' Overlay Editor UI.
@@ -63,7 +61,9 @@ To enable custom code for AlertBox:
 2. Go to the "Followers" tab.
 3. Toggle the "Enable custom CSS" option for the alert type you want to use.
 
-<ReactPlayer controls url="/video/alertbox-css-editor.mp4" />
+<video controls width="100%">
+  <source src="/video/alertbox-css-editor.mp4" />
+</video>
 
 ## Custom Widget
 
