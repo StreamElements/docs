@@ -61,7 +61,9 @@ To enable custom code for AlertBox:
 2. Go to the "Followers" tab.
 3. Toggle the "Enable custom CSS" option for the alert type you want to use.
 
-![Alert box CSS editor](img/alert-box-css-editor.gif)
+<video controls width="100%">
+  <source src="/video/alertbox-css-editor.mp4" />
+</video>
 
 ## Custom Widget
 
