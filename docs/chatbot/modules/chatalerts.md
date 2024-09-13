@@ -52,7 +52,6 @@ Chat Alerts can be customized for various events. Here are some of the key param
 
 - **Event Type**: The specific action that triggers the alert (e.g., follow, subscription, raid)
 - **Message**: The text that appears in chat when the event occurs
-- **Cooldown**: Optional delay between alerts to prevent spam
 - **Minimum Threshold**: Optional minimum value for events like donations or bit cheers
 
 ## Configuration
