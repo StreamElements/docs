@@ -25,7 +25,7 @@ The `!nuke` command is a powerful moderation tool in the StreamElements chatbot 
 
 ## Parameters
 
-- `<lookback_time>`: The time window (in seconds) to search for matching messages.
+- `<lookback_time>`: The time window (in seconds) to search for matching messages. The maximum lookback is 300 seconds.
 - `<action>`: The moderation action to perform. Can be:
   - A number (for timeout duration in seconds)
   - `ban` (to ban users)
