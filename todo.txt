@@ -6,5 +6,5 @@ WebSocket Documentation Files:
 - [x] channel-session-update.md
 - [x] chatbot/modules-emotecombo.md
 - [x] chatbot/modules-pyramid.md
-- [ ] chatbot/chatbot-status.md
+- [x] chatbot/chatbot-status.md
 - [x] chatbot/timeout.md
