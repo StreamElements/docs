@@ -1,6 +1,6 @@
 WebSocket Documentation Files:
 - [x] channel-overlay-action.md
-- [ ] channel-stream-status.md
+- [x] channel-stream-status.md
 - [ ] channel-activities.md
 - [ ] channel-kvstore-update.md (renamed from channel-overlay-update.md)
 - [ ] channel-session-update.md
