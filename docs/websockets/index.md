@@ -102,6 +102,10 @@ Here is an example of a server-to-client response containing an error:
 }
 ```
 
+### Required Scopes
+
+Each topic requires specific scopes for access. These are documented in the individual topic pages.
+
 ### Topics
 
 Information on available topics will be released in the near future.

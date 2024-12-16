@@ -1,17 +1,35 @@
 ---
-sidebar_position: 2
+id: channel-session-update
+sidebar_label: "Channel Session Update"
+description: "Real-time updates for channel session changes via WebSocket"
+tags:
+- websocket
+- channel
+- session
+- events
+keywords:
+- StreamElements
+- WebSocket
+- channel session
+- real-time updates
+- session data
 ---
-# Overlay Session Update
 
-## Topic
+# Channel Session Update
 
-`channel.session.update`
+## Overview
 
-## Description
+The `channel.session.update` topic provides real-time updates when changes occur in a channel's session data. This includes updates to session-specific information like goals, counters, and other session-tracked metrics.
 
-This event is fired when the channel received a new activity.
+## Authentication
 
-#### Payload
+Required scope: `channel:read`
+
+## Status
+
+- `stable` - Production ready
+
+## Payload
 
 ```json
 {
@@ -29,3 +47,15 @@ This event is fired when the channel received a new activity.
     }
 }
 ```
+
+## Session Data Types
+
+The following session data types are supported:
+- `follower-goal` - Progress towards follower goals
+- `subscriber-goal` - Progress towards subscriber goals
+- `tip-goal` - Progress towards donation/tip goals
+- `session-data` - General session statistics and counters
+
+## Error Handling
+
+This topic follows the standard error codes as defined in the WebSocket documentation.

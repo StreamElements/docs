@@ -3,7 +3,7 @@ id: channel-stream-status
 sidebar_label: "Channel Stream Status"
 description: "Real-time updates about a channel's live streaming status through WebSocket events"
 tags:
-- websockets
+- websocket
 - streaming
 - channel status
 keywords:
@@ -16,12 +16,17 @@ keywords:
 # Channel Stream Status
 
 ## Overview
-The `channel.stream.status` topic provides real-time updates about whether a channel is currently live streaming or offline.
+The `channel.stream.status` topic provides real-time updates about whether a channel is currently live streaming or offline. Subscribe to this topic to receive updates whenever a channel's streaming status changes.
 
-## Usage
-Subscribe to this topic to receive updates whenever a channel's streaming status changes.
+## Authentication
 
-#### Payload
+Required scope: `channel:read`
+
+## Status
+
+- `stable` - Production ready
+
+## Payload
 
 ```json
 {
@@ -34,3 +39,7 @@ Subscribe to this topic to receive updates whenever a channel's streaming status
     }
 }
 ```
+
+## Error Handling
+
+This topic follows the standard error codes as defined in the WebSocket documentation.
