@@ -7,4 +7,4 @@ WebSocket Documentation Files:
 - [x] chatbot/modules-emotecombo.md
 - [x] chatbot/modules-pyramid.md
 - [ ] chatbot/chatbot-status.md
-- [ ] chatbot/timeout.md
+- [x] chatbot/timeout.md
