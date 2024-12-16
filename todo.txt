@@ -3,7 +3,7 @@ WebSocket Documentation Files:
 - [x] channel-stream-status.md
 - [x] channel-activities.md
 - [x] channel-kvstore-update.md (renamed from channel-overlay-update.md)
-- [ ] channel-session-update.md
+- [x] channel-session-update.md
 - [ ] chatbot/modules-emotecombo.md
 - [ ] chatbot/modules-pyramid.md
 - [ ] chatbot/chatbot-status.md
