@@ -4,7 +4,7 @@ WebSocket Documentation Files:
 - [x] channel-activities.md
 - [x] channel-kvstore-update.md (renamed from channel-overlay-update.md)
 - [x] channel-session-update.md
-- [ ] chatbot/modules-emotecombo.md
+- [x] chatbot/modules-emotecombo.md
 - [ ] chatbot/modules-pyramid.md
 - [ ] chatbot/chatbot-status.md
 - [ ] chatbot/timeout.md
