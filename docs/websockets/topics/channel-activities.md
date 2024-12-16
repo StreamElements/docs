@@ -56,16 +56,6 @@ Required scope: `activities:read`
 }
 ```
 
-## Activity Types
-
-The following activity types are supported:
-- `follow` - When a user follows the channel
-- `subscription` - When a user subscribes to the channel
-- `donation` - When a user donates to the channel
-- `cheer` - When a user cheers with bits
-- `host` - When another channel hosts this channel
-- `raid` - When another channel raids this channel
-
 ## Error Handling
 
 This topic follows the standard error codes as defined in the WebSocket documentation.
