@@ -1,18 +1,35 @@
 ---
-sidebar_position: 1
+id: channel-activities
+sidebar_label: "Channel Activities"
+description: "Real-time updates for channel activities via WebSocket"
+tags:
+- websocket
+- channel
+- activities
+- events
+keywords:
+- StreamElements
+- WebSocket
+- channel activities
+- events
+- real-time updates
 ---
 
-# Activites
+# Channel Activities
 
-## Topic
+## Overview
 
-`channel.activities`
+The `channel.activities` topic provides real-time updates when new activities occur on a channel. Activities can include follows, subscriptions, donations, and other engagement events.
 
-## Description
+## Authentication
 
-This event is fired when the channel received a new activity.
+Required scope: `activities:read`
 
-#### Payload
+## Status
+
+- `stable` - Production ready
+
+## Payload
 
 ```json
 {
@@ -38,3 +55,17 @@ This event is fired when the channel received a new activity.
     }
 }
 ```
+
+## Activity Types
+
+The following activity types are supported:
+- `follow` - When a user follows the channel
+- `subscription` - When a user subscribes to the channel
+- `donation` - When a user donates to the channel
+- `cheer` - When a user cheers with bits
+- `host` - When another channel hosts this channel
+- `raid` - When another channel raids this channel
+
+## Error Handling
+
+This topic follows the standard error codes as defined in the WebSocket documentation.
