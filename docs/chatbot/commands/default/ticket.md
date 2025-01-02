@@ -18,6 +18,8 @@ keywords:
 
 The `!ticket` command allows viewers to purchase tickets for ongoing giveaways in a stream. This command is part of the StreamElements chatbot loyalty system and enables viewers to participate in raffles and win prizes.
 
+By default, the `!ticket` command will not reply to the user in order to prevent spam. To enable replies, check the box labeled "Send confirmation when buying tickets in chat" when starting a giveaway from the StreamElements dashboard.
+
 ## Usage
 
 To use the `!ticket` command, type it in the chat followed by the number of tickets you want to purchase. If no number is specified, it defaults to buying one ticket.
