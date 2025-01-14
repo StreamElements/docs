@@ -32,6 +32,10 @@ Each timer can be configured with multiple messages, which will be cycled throug
 
 The frequency of each timer can be set in minutes, determining how often it will be activated. Additionally, a minimum amount of chat lines that must be sent in the interval for the timer to be activated can be set, ensuring the timer only runs when chat activity is high enough.
 
+#### Chat lines
+
+The minimum number of chat messages that must be sent before a timer can be executed. This allows you to prevent timers from spamming the chat when there is less chatroom activity.
+
 #### Conditions (new)
 
 Timers can now be configured with specific conditions. This allows a timer to be activated only when a particular condition is fulfilled. For instance, a timer can be set to run exclusively when the stream is categorized under "Just Chatting", or if the stream title includes a specific keyword.
