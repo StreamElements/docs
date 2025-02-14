@@ -49,8 +49,8 @@ When used without any subcommands, `!quote` displays a random quote from the col
 
 The `!quote` command has two main subcommands:
 
-1. `add`: Adds a new quote to the collection.
-2. `remove`: Removes an existing quote from the collection.
+1. `add`: Adds a new quote to the collection reserved for Moderator/Broadcaster roles.
+2. `remove`: Removes an existing quote from the collection for Moderator/Broadcaster roles.
 
 ### Add Subcommand
 
