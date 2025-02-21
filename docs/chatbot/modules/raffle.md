@@ -47,8 +47,8 @@ Bot: The raffle has ended. The winners are Viewer3, Viewer7, and Viewer12!
 
 ## Parameters
 
-- `!raffle [duration]`: Start a multi-winner raffle. Optional duration in seconds (default is 60).
-- `!sraffle [duration]`: Start a single-winner raffle. Optional duration in seconds (default is 60).
+- `!raffle [points] [duration]`: Start a multi-winner raffle. Optional points and duration in seconds (default is 5000 points and 60 seconds).
+- `!sraffle [points] [duration]`: Start a single-winner raffle. Optional points and duration in seconds (default is 5000 points and 60 seconds).
 
 ## Related Commands
 
@@ -68,7 +68,7 @@ A: The number of winners scales based on the number of participants:
 - 1 participant: That participant wins
 
 **Q: Can I customize the raffle duration?**
-A: Yes, you can specify the duration in seconds when starting a raffle, e.g., `!raffle 120` for a 2-minute raffle.
+A: Yes, you can specify the duration in seconds when starting a raffle, e.g., `!raffle 5000 120` for a 5000 point raffle that runs for 2 minutes.
 
 **Q: How do I prevent the same person from winning multiple times?**
 A: The Raffle module automatically ensures that each participant can only win once per raffle.
