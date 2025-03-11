@@ -25,7 +25,7 @@ You can create custom variables, so end user doesn't have to interact with code,
 
 This data can be also called by `{{variableName}}` or `{variableName}` within HTML/CSS/JS code (however for better readibility we suggest using those calls only in HTML/CSS).
 
-At this point we support all of HTML5 input types (except of file - use library inputs such as `video-input` instead), as well as a handful of custom inputs: `colorpicker`, `audio-input`, `sound-input`, `video-input`, `googleFont`, `dropdown`, and `slider`.
+At this point we support most of HTML5 input types (except of file - use library inputs such as `video-input` instead), as well as a handful of custom inputs: `colorpicker`, `audio-input`, `sound-input`, `video-input`, `googleFont`, `dropdown`, and `slider`.
 
 There are some reserved field names (all future reserved words will start with `widget`):
 * `widgetName` - Used to set the display name of the widget
@@ -111,6 +111,28 @@ There are some reserved field names (all future reserved words will start with `
 Fields of type `image-input`, `video-input`, `sound-input` may use additional parameter `"multiple":true` which allows end user to provide multiple media files within single field. Output will result in array of urls.
 
 If you want to group some fields into a collapsible menu in the left panel, you can add to them the same parameter `"group": "Some group name"`.
+
+#### Local font
+
+You can use a local font installed on your computer. 
+```json
+{
+  "customFont": {
+    "label": "Custom Font Name",
+    "type": "text",
+    "value": "Comic Sans MS"
+  }
+}
+```
+And add it to your CSS
+```css
+* {
+  font-family: {{customFont}};
+}
+```
+
+OBS: Restart the browser if you have just installed the font.
+
 
 #### Input on left panel construction
 Input field on left panel will look like:

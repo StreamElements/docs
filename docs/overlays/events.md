@@ -18,26 +18,40 @@ sidebar_position: 3
 
 # Events
 
-Widget receives few types of native events during lifetime.
+Widget receives few types of native events during lifetime. They are:
+- **onWidgetLoad** - Triggers when the widget is loaded or refreshed.
 
-## On Widget load
+- **onEventReceived** - Triggers on every event like a chat message, new tip, new follower, subscriber, etc.
+
+- **onSessionUpdate** - Similar to `onEventReceived`, but it handles session events, like latest subscriber, goals, etc. Does not include chat messages.
+
+Example: 
+
+```javascript
+window.addEventListener('onWidgetLoad', function (obj) {
+  console.log(obj); // You can check obj value in the browser console.
+});
+```
+
+
+## On Widget Load
 
 Event received upon widget is loaded. Contains information about fieldData (fields values), channel information (including apiKey) and session data.
 ```javascript
 window.addEventListener('onWidgetLoad', function (obj) {
-    //fancy stuff here
+  //fancy stuff here
 });
 ```
 
 In this scope `obj` has every information you could need to use. For better readibility, Let’s assign it:
 ```javascript
 window.addEventListener('onWidgetLoad', function (obj) {
-    let data=obj["detail"]["session"]["data"];
-    let recents=obj["detail"]["recents"];
-    let currency=obj["detail"]["currency"];
-    let channelName=obj["detail"]["channel"]["username"];
-    let apiToken=obj["detail"]["channel"]["apiToken"];
-    let fieldData=obj["detail"]["fieldData"];
+  let data = obj["detail"]["session"]["data"];
+  let recents = obj["detail"]["recents"];
+  let currency = obj["detail"]["currency"];
+  let channelName = obj["detail"]["channel"]["username"];
+  let apiToken = obj["detail"]["channel"]["apiToken"];
+  let fieldData = obj["detail"]["fieldData"];
 });
 ```
 
@@ -145,7 +159,7 @@ window.addEventListener('onWidgetLoad', function (obj) {
 * `data["cheer-alltime-top-donation"]`  - An array of top cheer all time
   * `data["cheer-alltime-top-donation"]["name"]` - Username
   * `data["cheer-alltime-top-donation"]["amount"]` - Cheer amount
-* `data["cheer-session-top-donator"]` - Aan array of top cheerer since session start
+* `data["cheer-session-top-donator"]` - An array of top cheerer since session start
   * `data["cheer-session-top-donator"]["name"]` - Username
   * `data["cheer-session-top-donator"]["amount"]` - Sum of the cheer amounts
 * `data["cheer-weekly-top-donator"]` - An array of top cheerer in past week
@@ -158,70 +172,21 @@ window.addEventListener('onWidgetLoad', function (obj) {
   * `data["cheer-alltime-top-donator"]["name"]` - Username
   * `data["cheer-alltime-top-donator"]["amount"]` - Sum of the cheer amounts
 
-#### Facebook
-* `data["fan-latest"]["name"]` - Name of latest fan
-* `data["fan-session"]["count"]` - Fans since session start
-* `data["fan-week"]["count"]` - Fans this week
-* `data["fan-month"]["count"]` - Fans this month
-* `data["fan-total"]["count"]` - Total count of fans
-* `data["fan-latest"]`    - An array containing latest fan event
-* `data["follower-latest"]["name"]` - Name of latest follower
-* `data["follower-session"]["count"]` - Followers since session start
-* `data["follower-week"]["count"]` - Followers this week
-* `data["follower-month"]["count"]` - Followers this month
-* `data["follower-goal"]["amount"]` - Followers goal
-* `data["follower-total"]["count"]` - Total count of followers
-* `data["share-goal"]["amount"]` - Amount of  share goal
-* `data["share-session"]["count"]` - Shares since session start
-* `data["share-week"]["count"]` - Shares this week
-* `data["share-month"]["count"]` - Shares this month
-* `data["share-total"]["count"]` - Total count of shares
-* `data["share-latest"]`    - An array containing latest share event
-  * `data["share-latest"]["name"]` - Username
-  * `data["share-latest"]["amount"]` - amount
-* `data["share-recent"]`    - An array of latest share events with each element structure as in `share-latest`
-* `data["stars-goal"]["amount"]` - Amount of  stars goal
-* `data["stars-session"]["count"]` - Stars since session start
-* `data["stars-week"]["count"]` - Stars this week
-* `data["stars-month"]["count"]` - Stars this month
-* `data["stars-total"]["count"]` - Total count of stars
-* `data["stars-latest"]`    - An array containing latest stars event
-  * `data["stars-latest"]["name"]` - Username
-  * `data["stars-latest"]["amount"]` - amount
-* `data["stars-recent"]`    - An array of latest stars events with each element structure as in `stars-latest`
-* `data["supporter-goal"]["amount"]` - Amount of  supporter goal
-* `data["supporter-session"]["count"]` - Supporters since session start
-* `data["supporter-week"]["count"]` - Supporters this week
-* `data["supporter-month"]["count"]` - Supporters this month
-* `data["supporter-total"]["count"]` - Total count of supporters
-* `data["supporter-latest"]`    - An array containing latest supporter event
-  * `data["supporter-latest"]["name"]` - Username
-  * `data["supporter-latest"]["amount"]` - Amount
-* `data["supporter-recent"]`    - An array of latest supporter events with each element structure as in `supporter-latest`
-* `data["videolike-goal"]["amount"]` - Amount of videolike goal
-* `data["videolike-session"]["count"]` - Videolikes since session start
-* `data["videolike-week"]["count"]` - Videolikes this week
-* `data["videolike-month"]["count"]` - Videolikes this month
-* `data["videolike-total"]["count"]` - Total count of videolikes
-* `data["videolike-latest"]`    - An array containing latest videolike event
-  * `data["videolike-latest"]["name"]` - Username
-  * `data["videolike-latest"]["amount"]` - Amount
-* `data["videolike-recent"]`    - An array of latest videolike events with each element structure as in `videolike-latest`
-
 #### YouTube
-* `data["sponsor-goal"]["amount"]` - Amount of  sponsor goal
-* `data["sponsor-session"]["count"]` - Sponsors since session start
-* `data["sponsor-week"]["count"]` - Sponsors this week
-* `data["sponsor-month"]["count"]` - Sponsors this month
-* `data["sponsor-total"]["count"]` - Total count of sponsors
-* `data["sponsor-latest"]`    - An array containing latest sponsor event
+OBS: Youtube member is used to be called sponsor, that's the reason the key is called "sponsor"
+* `data["sponsor-goal"]["amount"]` - Amount of members goal
+* `data["sponsor-session"]["count"]` - Members since session start
+* `data["sponsor-week"]["count"]` - Members this week
+* `data["sponsor-month"]["count"]` - Members this month
+* `data["sponsor-total"]["count"]` - Total count of members
+* `data["sponsor-latest"]`    - An array containing latest member event
   * `data["sponsor-latest"]["name"]` - Username
   * `data["sponsor-latest"]["amount"]` - amount
-* `data["sponsor-recent"]`    - An array of latest sponsor events with each element structure as in `sponsor-latest`
-* `data["sponsor-gifted-latest"]`- An Array of a gifted sponsors 
+* `data["sponsor-recent"]`    - An array of latest member events with each element structure as in `sponsor-latest`
+* `data["sponsor-gifted-latest"]`- An Array of a gifted members 
   * `data["sponsor-gifted-latest"]["name"]`- Username getting the gift
-  * `data["sponsor-gifted-latest"]["amount"]` - Amount of sponsor gifts
-  * `data["sponsor-gifted-latest"]["tier"]` - Tier of sponsor gifts
+  * `data["sponsor-gifted-latest"]["amount"]` - Amount of member gifts
+  * `data["sponsor-gifted-latest"]["tier"]` - Tier of member gifts
   * `data["sponsor-gifted-latest"]["message"]`  - Message from gifter
   * `data["sponsor-gifted-latest"]["sender"]` - username giving the gift
 * `data["subscriber-latest"]["name"]` - Name of latest subscriber
@@ -314,8 +279,8 @@ The last element of `obj` is currency, which contains:
 * `symbol` - currency symbol (for example “$”)
 
 
-## On event:
-Live event for alerts, chat messages etc.
+## On Event Received:
+Live event for alerts, chat messages, SE_API store updates, etc.
 ```javascript
 window.addEventListener('onEventReceived', function (obj) {
     // fancy stuff here
@@ -335,7 +300,7 @@ In the example above you have obj forwarded to that function, which has two inte
     * `event:skip` - User clicked "skip alert" button in activity feed
     * `alertService:toggleSound` - User clicked "mute/unmute alerts" button in activity feed
     * `bot:counter` - Update of bot counter
-    * `kvstore:update` - Update of [SE_API](#se-api) store value.
+    * `kvstore:update` - Update of [SE_API](custom-widget.md#se_api) store value.
     * `widget-button` - User clicked custom field button in widget properties
 
 * `obj.detail.event`: Will provide you information about event details. It contains few keys. For `-latest` events it is:
@@ -356,20 +321,24 @@ So expanding our sample code above you can have
 
 ```javascript
 window.addEventListener('onEventReceived', function (obj) {
-    const listener = obj.detail.listener;
-    const data = obj["detail"]["event"];
-    // Assigned new const value, for easier handling. You can do it with .property or ["property"]. 
-    // I personally recommend using [""] as some of keys can have "-" within, so you won't be able
-    // to call them (JS will try to do math operation on it).
-    // jQuery is included by default, so you can use following
-    $("#usernameContainer").html(data["name"]);
-    $("#actionContainer").html(listener);
-    //You can use vanilla JS as well
-    document.getElementById("amount").innerHTML=data["amount"]
+  const listener = obj.detail.listener;
+  const data = obj["detail"]["event"];
+  // Assigned new const value, for easier handling. You can do it with .property or ["property"]. 
+  // I personally recommend using [""] as some of keys can have "-" within,
+  // so you won't be able to call them (JS will try to do math operation on it).
+
+  // jQuery is included by default, so you can use following
+  $("#usernameContainer").html(data["name"]);
+  $("#actionContainer").html(listener);
+
+  // You can use vanilla JS as well
+  document.getElementById("amount").innerHTML = data["amount"]
 });
 ```
-### Message
+### Chat Message
 For message events, there is an additional object that's accessible at `obj.detail.event.data`, which looks like this:
+
+#### Twitch: 
 ```json
 {
   "time": 1552400352142,
@@ -424,6 +393,54 @@ For message events, there is an additional object that's accessible at `obj.deta
 Every emote displayed on chat is within array of objects `emotes` with start/end index of `text` you can replace with image
 NOTE: if you are creating chat widget, remember to store `msgId` and `userId` of each message (for example `<div class="message" data-msgId="${msgId}" data-userId="${userId}"></div>`) for message deletion events handling.
 
+
+#### Youtube:
+```json
+{
+  "kind": "youtube#liveChatMessage",
+  "etag": "joNqfOov4YhUTK1ly5QnEw2O_04",
+  "id": "LCC.EhwKGkNQakd1YS0tZ293REZWa1AxZ0FkMFU0VzNn",
+  "snippet": {
+    "type": "textMessageEvent",
+    "liveChatId": "KicKGFVDT2p0eVFPaTNNUjhYT3lzMFdOZmtKZxILMXFObko0UHU5bTA",
+    "authorChannelId": "noRfodywm2MXfIUCp9nm2MX",
+    "publishedAt": "2025-03-11T16:51:20.385245+00:00",
+    "hasDisplayContent": true,
+    "displayMessage": ":face-blue-smiling: Testing message",
+    "textMessageDetails": {
+      "messageText": ":face-blue-smiling: Testing message"
+    }
+  },
+  "authorDetails": {
+    "channelId": "noRfodywm2MXfIUCp9nm2MX",
+    "channelUrl": "http://www.youtube.com/channel/noRfodywm2MXfIUCp9nm2MX",
+    "displayName": "userName",
+    "profileImageUrl": "https://yt3.ggpht.com/MkVId1UPvXogOyUqSyaFRZD2eFHqNaThFYO4-YNWAA4sQGvCPdoZKDkN5qgPUQ9BRiajmtcU=s88-c-k-c0x00ffffff-no-rj",
+    "isVerified": false,
+    "isChatOwner": false,
+    "isChatSponsor": false,
+    "isChatModerator": true
+  },
+  "msgId": "LCC.EhwKGkNQakd1YS0tZ293REZWa1AxZ0FkMFU0VzNn",
+  "userId": "noRfodywm2MXfIUCp9nm2MX",
+  "nick": "username",
+  "badges": [
+  ],
+  "displayName": "userName",
+  "isAction": false,
+  "time": 1741711893915,
+  "tags": [
+  ],
+  "displayColor": null,
+  "channel": "noRfodywm2MXfIUCp9nm2MX",
+  "text": ":face-blue-smiling: Testing message",
+  "emotes": [
+  ],
+  "avatar": "https://yt3.ggpht.com/MkVId1UPvXogOyUqSyaFRZD2eFHqNaThFYO4-YNWAA4sQGvCPdoZKDkN5qgPUQ9BRiajmtcU=s88-c-k-c0x00ffffff-no-rj"
+}
+```
+
+
 ### Message deletion
 When user message is removed by channel moderator there is an event emited either:
 - `delete-message` - with msgId of message to be removed
@@ -439,7 +456,7 @@ window.addEventListener('onEventReceived', function (obj) {
     const data = obj.detail.event;
 
     if (listener === 'bot:counter' && data.counter === counter) {
-        document.getElementById("mycounter").innerHTML=data.value;
+        document.getElementById("mycounter").innerHTML = data.value;
     }
 });
 ```
@@ -448,24 +465,23 @@ window.addEventListener('onEventReceived', function (obj) {
 Contains two elements - field name (`field`) and value (`value`). Example below will send simplified event to test your chat widget
 ```javascript
 window.addEventListener('onEventReceived', function (obj) {
-    const data = obj.detail.event;
-        if (data.listener === 'widget-button') {
-            if (data.field==='chat' && data.value==='First Message'){
-                const emulated = new CustomEvent("onEventReceived", {
-                        detail: {
-                            "listener": "message",
-                            event: {
-                                data: {
-                                    text: "Example message!",
-                                    displayName: "StreamElements"
-                                }
-                            }
-                        }
-                    
-                });
-                window.dispatchEvent(emulated);
+  const data = obj.detail.event;
+  if (data.listener === 'widget-button') {
+    if (data.field === 'chat' && data.value === 'First Message') {
+      const emulated = new CustomEvent("onEventReceived", {
+        detail: {
+          "listener": "message",
+          event: {
+            data: {
+              text: "Example message!",
+              displayName: "StreamElements"
             }
+          }
         }
+      });
+      window.dispatchEvent(emulated);
+    }
+  }
 });
 ```
 
@@ -476,15 +492,18 @@ window.addEventListener('onSessionUpdate', function (obj) {
     //fancy stuff here
 });
 ```
-This event is triggered every time a session data is updated (new tip/cheer/follower), basically most of the scenarios can be covered by `onEventReceived`, but `onSessionUpdate` provides a lot of more data you can use. The biggest advantage of using this is that you can check if top donator (not donation) changed.
-> Note: Due to complexity of object in `onSessionUpdate` a `onEventReceived` event listener  will be the best way to use for most of scenarios (easier to implement and better performance).
+This event is triggered every time a session data is updated (new tip/cheer/follower), basically most of the scenarios can be covered by `onEventReceived`, but `onSessionUpdate` provides a lot of more data you can use. The biggest advantage of using this is that you can check if top donator (not donation) changed. Also it is the recommended option for goal widgets.
+> Note: Due to complexity of object in `onSessionUpdate`, a `onEventReceived` event listener will be the best way to use for most of scenarios (easier to implement and better performance).
 
 Example:
 ```javascript
 window.addEventListener('onSessionUpdate', function (obj) {
-    const data = obj.detail.session;
-     $("#top-donator").text(data["tip-session-top-donator"]["name"]+" - "+data["tip-session-top-donator"]["amount"]);
-      $("#top-cheerer").text(data["cheer-session-top-donator"]["name"]+" - " +data["cheer-session-top-donator"]["amount"]);
+  const data = obj.detail.session;
+  const tipTopDonator = data["tip-session-top-donator"];
+  const cheerTopDonator = data["cheer-session-top-donator"];
+
+  document.getElementById("top-donator").innerHTML = `${tipTopDonator["name"]} - ${tipTopDonator["amount"]}`;
+  document.getElementById("top-cheerer").innerHTML = `${cheerTopDonator["name"]} - ${cheerTopDonator["amount"]}`;
 });
 ```
 `data` is the same as in `onWidgetLoad` so every property is listed in section above.
