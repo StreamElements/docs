@@ -427,7 +427,7 @@ class Program
 ## Related Commands
 
 - See the [Websockets](../index.md) documentation for more information on the Astro Websocket Gateway
-- Check the available [Topics](../topics/index.md) for subscription
+- Check the available [Topics](./topics) for subscription
 
 ## FAQ
 
