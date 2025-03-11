@@ -338,7 +338,7 @@ window.addEventListener('onEventReceived', function (obj) {
 ### Chat Message
 For message events, there is an additional object that's accessible at `obj.detail.event.data`, which looks like this:
 
-Twitch: 
+#### Twitch: 
 ```json
 {
   "time": 1552400352142,
@@ -394,9 +394,50 @@ Every emote displayed on chat is within array of objects `emotes` with start/end
 NOTE: if you are creating chat widget, remember to store `msgId` and `userId` of each message (for example `<div class="message" data-msgId="${msgId}" data-userId="${userId}"></div>`) for message deletion events handling.
 
 
-Youtube:
+#### Youtube:
 ```json
-**PENDING**
+{
+  "kind": "youtube#liveChatMessage",
+  "etag": "joNqfOov4YhUTK1ly5QnEw2O_04",
+  "id": "LCC.EhwKGkNQakd1YS0tZ293REZWa1AxZ0FkMFU0VzNn",
+  "snippet": {
+    "type": "textMessageEvent",
+    "liveChatId": "KicKGFVDT2p0eVFPaTNNUjhYT3lzMFdOZmtKZxILMXFObko0UHU5bTA",
+    "authorChannelId": "noRfodywm2MXfIUCp9nm2MX",
+    "publishedAt": "2025-03-11T16:51:20.385245+00:00",
+    "hasDisplayContent": true,
+    "displayMessage": ":face-blue-smiling: Testing message",
+    "textMessageDetails": {
+      "messageText": ":face-blue-smiling: Testing message"
+    }
+  },
+  "authorDetails": {
+    "channelId": "noRfodywm2MXfIUCp9nm2MX",
+    "channelUrl": "http://www.youtube.com/channel/noRfodywm2MXfIUCp9nm2MX",
+    "displayName": "userName",
+    "profileImageUrl": "https://yt3.ggpht.com/MkVId1UPvXogOyUqSyaFRZD2eFHqNaThFYO4-YNWAA4sQGvCPdoZKDkN5qgPUQ9BRiajmtcU=s88-c-k-c0x00ffffff-no-rj",
+    "isVerified": false,
+    "isChatOwner": false,
+    "isChatSponsor": false,
+    "isChatModerator": true
+  },
+  "msgId": "LCC.EhwKGkNQakd1YS0tZ293REZWa1AxZ0FkMFU0VzNn",
+  "userId": "noRfodywm2MXfIUCp9nm2MX",
+  "nick": "username",
+  "badges": [
+  ],
+  "displayName": "userName",
+  "isAction": false,
+  "time": 1741711893915,
+  "tags": [
+  ],
+  "displayColor": null,
+  "channel": "noRfodywm2MXfIUCp9nm2MX",
+  "text": ":face-blue-smiling: Testing message",
+  "emotes": [
+  ],
+  "avatar": "https://yt3.ggpht.com/MkVId1UPvXogOyUqSyaFRZD2eFHqNaThFYO4-YNWAA4sQGvCPdoZKDkN5qgPUQ9BRiajmtcU=s88-c-k-c0x00ffffff-no-rj"
+}
 ```
 
 
