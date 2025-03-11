@@ -1,7 +1,7 @@
 ---
 id: custom-widget
-title: Custom Widget
-sidebar_label: Custom Widget
+title: Custom Widget & SE_API
+sidebar_label: Custom Widget & SE_API
 description: Learn how to use the Custom Widget, the most powerful tool in StreamElements Overlay Editor, with HTML, CSS, JavaScript, and API access.
 tags:
 - custom widget
@@ -15,6 +15,7 @@ keywords:
 - SE API
 - Widget customization
 - Stream overlay development
+- SE_API
 sidebar_position: 2
 ---
 
@@ -23,7 +24,7 @@ sidebar_position: 2
 This is the most powerful tool in SE Overlay editor. You can do a lot of things within this widget using HTML/CSS/JavaScript and accessing variables
 
 **Note:**
-> You cannot access `document.cookie` nor `IndexedDB` via it (security reasons), so you need to keep your data elsewhere (accessible via HTTP API) or [SE_API](#se-api) store.
+> You cannot access `document.cookie` nor `IndexedDB` via it (security reasons), so you need to keep your data elsewhere (accessible via HTTP API) or [SE_API](#se_api) store.
 
 ## Before Starting
 
@@ -35,59 +36,160 @@ This article requires you to have an Overlay created with a Custom Widget added 
 
 The Custom Code Editor is a powerful tool that allows you to write custom code in the Overlay Editor. For more information about the Custom Code Editor, please refer to the [Widget Structure](widget-structure.md) article.
 
-## SE API
+## SE_API 
 
-A global object is provided to access basic API functionality. The overlay's API token is also provided (via the `onWidgetLoad` event below) for more direct REST API calls to be used as authorization header.
+SE_API is a set of functions that provide access to various personalized features for custom widgets. You can check the ones available below:
 
-```javascript
-SE_API.store.set('keyName', obj); // stores an object into our database under this keyName (multiple widgets using the same keyName will share the same data. keyName can be an alphanumeric string only).
-SE_API.store.get('keyName').then(obj => {
-    // obj is the object stored in the db, must be a simple object
-});
-SE_API.counters.get('counterName').then(counter => {
-    // counter is of the format { counter, value }
-});
+- **.store** - A key-value store where objects can be saved globally in a permanent way. The stored data is accessible to other custom widgets under the same account.
 
-SE_API.sanitize({ message: "Hello SomeVulgarWorld"}).then(sanityResult => {
-/*
-    sanityResult={
-        "result":{
-            "message":"Hello Kreygasm" //Message after validation
-        },
-        "skip":false // Should it be skipped according to rules 
-    }
-*/  
-});
+- **.cheerFilter** - Removes cheer emotes from a message.
 
-SE_API.cheerFilter(message).then(cheerResult => {
-	// cheerResult = "message but without any cheers in it";
-});
+- **.counters** - Retrieves the value of a specific counter.
 
-SE_API.setField('key', 'value'); // Sets the fieldData[key] = value. This does not save, so should be used with Editor Mode so the user can save.
-SE_API.getOverlayStatus(); // { isEditorMode: true/false, muted: true/false }
+- **.getOverlayStatus** - Gets the status of the overlay.
+
+- **.resumeQueue** - Resumes the queue immediately.
+
+- **.sanitize** - Sanitizes a message by removing bad words.
+
+- **.setField** - Sets a value for `fieldData[key]`. This does not save the value and works only in the Overlay Editor.
+
+
+
+### store.set 
+
+Stores an object in the database under the specified keyName (`keyName` can be any alphanumeric string).
+
+**Note 1**: Setting a value will completely overwrite any existing data stored under the same key. Ensure you send the full object, as partial updates are not supported.
+
+**Note 2**: Keys cannot be removed once created. You can update their values as often as needed, but deletion is not possible so far.
+
+```js
+const object = { "item1":"value1", "item2":"value2" }
+
+SE_API.store.set("keyName", object);
 ```
 
-`SE_API.store.set` method emits an event received by every Custom Widget. Example payload:
+It emits an `onEventReceived` event for every custom widget. Example payload:
 
 ```json
 {
-	"detail": {
-		"listener": "kvstore:update",
-		"event": {
-			"data": {
-				"key": "customWidget.keyName",
-				"value": {
-					"array": [
-						33,
-						"foobar"
-					],
-					"date": "2021-03-15T08:46:10.919Z",
-					"test": 15
-				}
-			}
-		}
-	}
+  "detail": {
+    "listener": "kvstore:update",
+    "event": {
+      "data": {
+        "key": "customWidget.keyName",
+        "value": {
+          "item1": "value1",
+          "item2": "value2"
+        }
+      }
+    }
+  }
 }
+```
+
+
+### .store.get
+
+Retrieves the contents stored under the specified "keyName" key. 
+The returned obj is the full object stored in the database.
+
+```js
+SE_API.store.get('keyName').then(obj => {
+  console.log(obj);
+  /*
+  The result would look like below:
+  {
+   "item1": "value1",
+   "item2": "value2"
+  }
+  */
+});
+```
+
+### .counters.get
+
+Gets the value of a counter. Your counters can be found at https://streamelements.com/dashboard/bot/counters
+
+For example, if you have a counter named "test" with a value of "15":
+
+```js
+SE_API.counters.get('test').then(counter => {
+  console.log(counter);  
+  /*
+  The result would look like below:  
+  {
+    "id": "test",
+    "count":15
+  }
+  */
+});
+```
+
+
+### .sanitize
+Sanitizes a message by filtering vulgar words.
+
+For example, if the word "vulgarWord" is marked as a bad word (configured in Tipping Settings) and the filter is set to "Replace bad words with emotes":
+
+```js
+const vulgarSentence = "This is a sentence with vulgarWord";
+
+SE_API.sanitize({ message: vulgarSentence }).then(sanityResult => {
+  console.log(sanityResult);
+  /*
+  The result would look like this:
+  {
+    "skip": false, // Indicates whether the message should be skipped according to the rules.
+    "result":{
+      "message":"This is a sentence with 4Head" // Message after filtering
+    }    
+  }
+  */  
+});
+```
+
+
+### .cheerFilter
+Clears cheer emotes from message.
+
+```js
+const message = "shamrock100 This is a cheer message cheer100 cheer100 cheerwhal100"
+
+SE_API.cheerFilter(message).then(cheerResult => {
+  console.log(cheerResult);
+  
+  /*
+  The result would look like below:
+  This is a cheer message
+  */
+});
+```
+
+### .getOverlayStatus
+
+Gets overlay Status.
+```js
+SE_API.getOverlayStatus().then(status => {
+  console.log(status);
+  
+  /*
+  Result would look like below:
+  {
+    "isEditorMode":true,
+    "muted":false
+  }
+  */
+});
+```
+
+### .setField
+Sets a value for `fieldData[key]`.
+It works only in the Overlay Editor itself and does not save the value.
+The third parameter is an optional boolean that indicates whether the overlay should be reloaded after the value is set. The default is true.
+```js
+SE_API.setField('key', 'value', false);
 ```
 
 ### resumeQueue method and widgetDuration property
