@@ -35,7 +35,7 @@ There are no additional parameters or arguments required.
 !vanish
 ```
 
-**Output:**
+**Output (only visible to moderators):**
 ```
 streamelements timed out darkoe for 1s: "darkoe vanishes in a puff of smoke."
 ```
