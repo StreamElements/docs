@@ -13,6 +13,8 @@ keywords:
 - javascript websocket
 - python websocket
 - node.js websocket
+- channel session update
+- channel session reset
 ---
 
 # Websocket Client Examples
@@ -66,6 +68,24 @@ websocket.addEventListener('message', (event) => {
     if (message.topic === 'channel.follow') {
       // Handle follow event
       console.log('New follower:', message.data);
+    } else if (message.topic === 'channel.session.update') {
+      // Handle session update event
+      console.log('Session update - Key:', message.data.key);
+      console.log('Session update - Data:', message.data.data);
+      
+      // Example: Handle latest follower update
+      if (message.data.key === 'latest_follower') {
+        console.log('Latest follower updated:', message.data.data.name);
+        // Update UI or trigger actions based on this event
+      }
+    } else if (message.topic === 'channel.session.reset') {
+      // Handle session reset event
+      console.log('Session reset - Full session data:', message.data.session);
+      
+      // Process reset session data
+      const session = message.data.session;
+      console.log('Current follower count:', session.follower_count);
+      console.log('Latest follower:', session.latest_follower?.name);
     }
   }
 });
@@ -147,6 +167,24 @@ ws.on('message', (data) => {
     if (message.topic === 'channel.follow') {
       // Handle follow event
       console.log('New follower:', message.data);
+    } else if (message.topic === 'channel.session.update') {
+      // Handle session update event
+      console.log('Session update - Key:', message.data.key);
+      console.log('Session update - Data:', message.data.data);
+      
+      // Example: Handle latest follower update
+      if (message.data.key === 'latest_follower') {
+        console.log('Latest follower updated:', message.data.data.name);
+        // Update UI or trigger actions based on this event
+      }
+    } else if (message.topic === 'channel.session.reset') {
+      // Handle session reset event
+      console.log('Session reset - Full session data:', message.data.session);
+      
+      // Process reset session data
+      const session = message.data.session;
+      console.log('Current follower count:', session.follower_count);
+      console.log('Latest follower:', session.latest_follower?.name);
     }
   }
 });
@@ -230,6 +268,22 @@ async def connect_to_streamelements():
                     if message.get("topic") == "channel.follow":
                         # Handle follow event
                         print(f"New follower: {message.get('data')}")
+                    elif message.get("topic") == "channel.session.update":
+                        # Handle session update event
+                        print(f"Session update - Key: {message.get('data').get('key')}")
+                        print(f"Session update - Data: {message.get('data').get('data')}")
+                        
+                        # Example: Handle latest follower update
+                        if message.get("data").get("key") == "latest_follower":
+                            print(f"Latest follower updated: {message.get('data').get('data').get('name')}")
+                    elif message.get("topic") == "channel.session.reset":
+                        # Handle session reset event
+                        print(f"Session reset - Full session data: {message.get('data').get('session')}")
+                        
+                        # Process reset session data
+                        session = message.get("data").get("session")
+                        print(f"Current follower count: {session.get('follower_count')}")
+                        print(f"Latest follower: {session.get('latest_follower')}")
             except websockets.exceptions.ConnectionClosed:
                 print("Connection closed")
                 break
@@ -357,6 +411,29 @@ class StreamElementsClient
                             {
                                 // Handle follow event
                                 Console.WriteLine("New follower event received");
+                            }
+                            else if (topic == "channel.session.update")
+                            {
+                                // Handle session update event
+                                Console.WriteLine("Session update event received");
+                                
+                                // Example: Handle latest follower update
+                                JsonElement data = root.GetProperty("data");
+                                if (data.TryGetProperty("key", out JsonElement key) && key.GetString() == "latest_follower")
+                                {
+                                    Console.WriteLine("Latest follower updated");
+                                    // Update UI or trigger actions based on this event
+                                }
+                            }
+                            else if (topic == "channel.session.reset")
+                            {
+                                // Handle session reset event
+                                Console.WriteLine("Session reset event received");
+                                
+                                // Process reset session data
+                                JsonElement session = root.GetProperty("session");
+                                Console.WriteLine($"Current follower count: {session.GetProperty("follower_count").GetInt32()}");
+                                Console.WriteLine($"Latest follower: {session.GetProperty("latest_follower")?.GetString()}");
                             }
                         }
                     }
@@ -500,4 +577,143 @@ websocket.addEventListener('message', (event) => {
     }, 5000);
   }
 });
+```
+
+## Go
+
+### Usage
+
+This example uses the `github.com/gorilla/websocket` package to implement a websocket client in Go.
+
+### Examples
+
+```go
+// StreamElements Websocket Client - Go Example
+package main
+
+import (
+	"log"
+	"net/url"
+
+	"github.com/gorilla/websocket"
+)
+
+func main() {
+	u := url.URL{Scheme: "wss", Host: "astro.streamelements.com", Path: "/"}
+	log.Printf("Connecting to %s", u.String())
+
+	conn, _, err := websocket.DefaultDialer.Dial(u.String(), nil)
+	if err != nil {
+		log.Fatal("Error connecting:", err)
+	}
+	defer conn.Close()
+
+	log.Println("Connected to StreamElements Astro")
+
+	// Subscribe to a topic
+	subscribeMessage := map[string]interface{}{
+		"type": "subscribe",
+		"nonce": crypto.RandomUUID(),
+		"data": map[string]interface{}{
+			"topic": "channel.follow",
+			"room": "channelId123", // Optional: defaults to authenticated channel if not specified
+			"token": "YOUR_JWT_TOKEN",
+			"token_type": "jwt"
+		},
+	}
+
+	if err := conn.WriteJSON(subscribeMessage); err != nil {
+		log.Println("Error subscribing:", err)
+		return
+	}
+
+	// Start a goroutine to read messages from the websocket
+	done := make(chan struct{})
+	go func() {
+		defer close(done)
+		for {
+			var msg Message
+			err := conn.ReadJSON(&msg)
+			if err != nil {
+				log.Println("Error reading message:", err)
+				return
+			}
+
+			log.Printf("Received message: %+v", msg)
+
+			// Handle different message types
+			switch msg.Type {
+			case "response":
+				log.Println("Received response:", msg)
+			case "message":
+				log.Println("Received notification:", msg)
+				// Process the notification based on the topic
+				if msg.Topic == "channel.follow" {
+					log.Println("New follower:", msg.Data)
+				} else if msg.Topic == "channel.session.update" {
+					// Handle session update event
+					data, ok := msg.Data.(map[string]interface{})
+					if !ok {
+						log.Println("Error parsing data for session update")
+						continue
+					}
+
+					key, ok := data["key"].(string)
+					if !ok {
+						log.Println("Error parsing key for session update")
+						continue
+					}
+
+					log.Printf("Session update - Key: %s", key)
+					
+					// Example: Handle latest follower update
+					if key == "latest_follower" {
+						if eventData, ok := data["data"].(map[string]interface{}); ok {
+							if name, ok := eventData["name"].(string); ok {
+								log.Printf("Latest follower updated: %s", name)
+							}
+						}
+					}
+				} else if msg.Topic == "channel.session.reset" {
+					// Handle session reset event
+					data, ok := msg.Data.(map[string]interface{})
+					if !ok {
+						log.Println("Error parsing data for session reset")
+						continue
+					}
+
+					if session, ok := data["session"].(map[string]interface{}); ok {
+						log.Println("Session reset - Full session data received")
+						
+						// Process reset session data
+						if followerCount, ok := session["follower_count"].(float64); ok {
+							log.Printf("Current follower count: %d", int(followerCount))
+						}
+						
+						if latestFollower, ok := session["latest_follower"].(map[string]interface{}); ok {
+							if name, ok := latestFollower["name"].(string); ok {
+								log.Printf("Latest follower: %s", name)
+							}
+						}
+					}
+				}
+			}
+		}
+	}()
+
+	// Example of unsubscribing from a topic
+	unsubscribeMessage := map[string]interface{}{
+		"type": "unsubscribe",
+		"nonce": crypto.RandomUUID(),
+		"data": map[string]interface{}{
+			"topic": "channel.follow",
+			"token": "YOUR_JWT_TOKEN",
+			"token_type": "jwt"
+		},
+	}
+
+	if err := conn.WriteJSON(unsubscribeMessage); err != nil {
+		log.Println("Error unsubscribing:", err)
+	}
+}
 ``` 

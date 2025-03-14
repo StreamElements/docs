@@ -120,13 +120,9 @@ Here is an example of a server-to-client response containing an error:
 }
 ```
 
-### Topics
+## Available Topics
 
-Information on available topics will be released in the near future.
-
-| <!--              | Topic      | Required Scope                     | You are notified when |
-| ----------------- | ---------- | ---------------------------------- |
-| `chatbot.timeout` | `bot:read` | When the chatbot times someone out | -->                   |
+For a complete list of available topics and their detailed descriptions, see the [Topics](./topics/index.md) page.
 
 ## Code Examples
 
