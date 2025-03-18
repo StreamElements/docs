@@ -44,3 +44,4 @@ This section provides documentation for the various topics available for subscri
 | [Timeout](./chatbot/timeout.md)                | Receive notifications when the chatbot times out a user       |
 | [Emote Combo](./chatbot/modules-emotecombo.md) | Receive notifications when emote combo triggers are activated |
 | [Pyramid](./chatbot/modules-pyramid.md)        | Receive notifications when chat pyramids are detected         |
+| [Counters](./chatbot/counters.md)              | Receive notifications when chatbot counter values change      |
