@@ -1,5 +1,5 @@
 ---
-id: chatbot-counters
+id: counters
 sidebar_label: "Counters"
 description: "Real-time updates for StreamElements chatbot counter values via the Astro Websocket Gateway"
 tags:
