@@ -63,7 +63,7 @@ export default function ExampleChatInteraction({
       {outputMessage && (
         <TwitchChatMessage
           username={outputUsername}
-          message={outputMessage}
+          message={outputMessage} // Pass the original outputMessage
           userColor={outputUserColor}
           badges={outputBadges}
           isBot={true} // Explicitly bot output

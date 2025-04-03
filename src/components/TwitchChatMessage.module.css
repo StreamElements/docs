@@ -4,12 +4,12 @@
   padding: 4px 10px;
   margin-bottom: 2px;
   line-height: 1.4;
-  word-wrap: break-word;
+  word-wrap: break-word; /* Keep this for older browser compatibility */
   font-family: Roobert, "Helvetica Neue", Helvetica, Arial, sans-serif; /* Common Twitch font */
   font-size: 0.9rem;
   display: flex; /* Use flexbox for alignment */
   align-items: center; /* Changed from baseline to center */
-  flex-wrap: nowrap; /* Prevent wrapping to new lines */
+  flex-wrap: wrap; /* Allow wrapping for mobile */
 }
 
 .userMessage {
@@ -54,4 +54,5 @@
 .messageContent {
   /* Style for the actual message text */
   margin-left: 0.25em;
+  overflow-wrap: break-word; /* Ensure long words wrap */
 } 

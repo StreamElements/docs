@@ -61,7 +61,6 @@ export default function TwitchChatMessage({
 
   return (
     <div className={messageClasses}>
-      <span className={styles.timestamp}>{new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>
       <span className={styles.badgesContainer}>
         {renderBadges()}
       </span>
