@@ -3,43 +3,55 @@
  * custom Prism syntax highlighting languages out of the box.
  */
 
-import siteConfig from '@generated/docusaurus.config';
-
-export default function prismIncludeLanguages(PrismObject) {
-  const {
-    themeConfig: { prism },
-  } = siteConfig;
-  
-  const { additionalLanguages } = prism;
-  
-  // Load language definitions from prismjs
-  additionalLanguages.forEach((lang) => {
-    if (lang !== 'command') { // Skip our custom language, we'll define it below
-      try {
-        require(`prismjs/components/prism-${lang}`);
-      } catch (e) {
-        console.warn(`Failed to load Prism language: ${lang}`);
-      }
-    }
-  });
-  
-  // Define our custom secommand language directly here
-  PrismObject.languages.command = {
+export default function prismIncludeLanguages(PrismObject) {  
+  PrismObject.languages.streamelements = {
+    // Main command (e.g., !points, !addpoints)
     'command': {
-      pattern: /^!\w+/,
+      pattern: /^![\w-]+/m,
       greedy: true,
       alias: 'function'
     },
+    // Subcommands (e.g., add, remove in !points add)
+    'subcommand': {
+      pattern: /(?<=^![\w-]+ )(add|remove|set|enable|disable|list|help|info|start|stop|create|delete|edit|show|hide)/m,
+      greedy: true,
+      alias: 'keyword'
+    },
+    // Required parameters (e.g., <username>)
     'parameter': {
-      pattern: /<[\w-]+>/g,
+      pattern: /<[\w\s._-]+>/g,
       greedy: true,
       alias: 'variable'
     },
+    // Optional parameters (e.g., [amount])
     'option': {
-      pattern: /\[[\w-]+\]/g,
+      pattern: /\[[\w\s._-]+\]/g,
       greedy: true,
       alias: 'property'
     },
-    'punctuation': /[<>[\]]/
+    // Flag arguments (e.g., --silent or -s)
+    'flag': {
+      pattern: /--?[\w-]+/g,
+      greedy: true,
+      alias: 'selector'
+    },
+    // Numbers
+    'number': {
+      pattern: /\b\d+\b/g,
+      greedy: true
+    },
+    // Variable references (e.g., ${user} or $(user))
+    'variable': {
+      pattern: /\$(?:\{[^}]+\}|\([^)]+\))/g,
+      greedy: true,
+      alias: 'attr-value'
+    },
+    // Special keywords like true/false/all
+    'keyword': {
+      pattern: /\b(true|false|all|none|random|first|last)\b/gi,
+      greedy: true
+    },
+    // Punctuation
+    'punctuation': /[<>[\]{}()=|,]/
   };
 } 

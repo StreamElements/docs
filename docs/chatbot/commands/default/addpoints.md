@@ -33,7 +33,7 @@ The `!addpoints` command empowers streamers and moderators to manually add point
 
 To add points to a viewer, use the following syntax in your chat:
 
-```command
+```streamelements
 !addpoints <username> <amount>
 ```
 

@@ -22,40 +22,66 @@ import PlatformBadges from '@site/src/components/PlatformBadges';
 
 ## Overview
 
-This page demonstrates how complex commands are displayed with our custom syntax highlighting.
+This page demonstrates how complex commands are displayed with our enhanced syntax highlighting.
 
 ## Command Syntax Examples
 
-### Simple Command With Required Parameters
+### Basic Command With Parameters
 
-```secommand
-!command <parameter1> <parameter2>
+```streamelements
+!addpoints <username> <amount>
+```
+
+### Command With Subcommands
+
+```streamelements
+!points add <username> <amount>
+!points remove <username> <amount>
 ```
 
 ### Command With Optional Parameters
 
-```secommand
-!command <required> [optional]
+```streamelements
+!giveaway start <prize> [winners] [duration]
 ```
 
-### Command With Multiple Options
+### Command With Flags
 
-```secommand
-!points [add/remove/set] <username> <amount>
+```streamelements
+!poll create <question> --duration 60 --options "Yes" "No" "Maybe"
 ```
 
-### Complex Command Structure
+### Command With Variables
 
-```secommand
-!giveaway start <prize> <duration> [winners] [requirements]
+```streamelements
+!shoutout <username> ${channel.game} has been streaming for $(channel.uptime)
 ```
 
-## How It Works
+### Command With Variable Formats
 
-Our custom syntax highlighting makes it easy to distinguish:
+Both variable formats are supported:
 
-- The command name (orange)
-- Required parameters (blue, within `<>`)
-- Optional parameters (purple, within `[]`)
+```streamelements
+!winner The winner is ${user.name} (aka $(user.displayName)) with $(pointsName): ${user.points}!
+```
 
-This makes it easier for users to understand command structure at a glance. 
+### Command With Special Keywords and Numbers
+
+```streamelements
+!raffle start <prize> --winners 3 --allow-subscribers true --entries all
+```
+
+## Color Coding Key
+
+Our enhanced syntax highlighting makes commands easier to understand with color coding:
+
+- **Commands** (orange): The primary command name (e.g., `!points`)
+- **Subcommands** (light orange): Secondary commands (e.g., `add` in `!points add`)
+- **Required parameters** (blue): Mandatory inputs in `<angle brackets>`
+- **Optional parameters** (purple): Optional inputs in `[square brackets]`
+- **Flags** (teal): Command flags like `--duration`
+- **Numbers** (red): Numeric values
+- **Variables** (green): Dynamic values like `${channel.uptime}` or `$(user.name)`
+- **Keywords** (gold): Special keywords like `true`, `false`, `all`
+
+This visual distinction helps users quickly understand command structure and required inputs. 
