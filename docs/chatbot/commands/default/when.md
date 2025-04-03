@@ -39,12 +39,12 @@ To use the `!when` command, simply type it in the chat without any additional ar
 <ExampleChatInteraction
   inputPersona="viewer"
   inputMessage="!when"
-  outputMessage="\"The Coral Song\" is at #1 in the queue and is playing right now"
+  outputMessage='"The Coral Song" is at #1 in the queue and is playing right now'
 />
 
 ### Checking a song further down the queue
 <ExampleChatInteraction
   inputPersona="viewer"
   inputMessage="!when"
-  outputMessage="\"Never Gonna Give You Up\" is at #4 in the queue and will play in approximately 12 minutes"
+  outputMessage='"Never Gonna Give You Up" is at #4 in the queue and will play in approximately 12 minutes'
 />

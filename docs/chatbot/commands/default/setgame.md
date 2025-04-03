@@ -52,7 +52,7 @@ Setting the game category to "Fortnite":
   inputPersona="moderator"
   inputUsernameOverride="ModUser"
   inputMessage="!setgame Fortnite"
-  outputMessage="@ModUser changed the game to \"Fortnite\"!"
+  outputMessage='@ModUser changed the game to "Fortnite"!'
 />
 
 Setting the category using a common abbreviation:
@@ -61,7 +61,7 @@ Setting the category using a common abbreviation:
   inputPersona="moderator"
   inputUsernameOverride="ModUser"
   inputMessage="!setgame OSRS"
-  outputMessage="@ModUser changed the game to \"Old School RuneScape\"!"
+  outputMessage='@ModUser changed the game to "Old School RuneScape"!'
 />
 
 ## Related Commands

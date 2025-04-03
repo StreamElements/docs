@@ -52,7 +52,7 @@ Changing the stream title:
   inputPersona="moderator"
   inputUsernameOverride="ModUser"
   inputMessage="!settitle Chill vibes and community games!"
-  outputMessage="@ModUser changed the title to \"Chill vibes and community games!\""
+  outputMessage='@ModUser changed the title to "Chill vibes and community games!"'
 />
 
 ## Related Commands

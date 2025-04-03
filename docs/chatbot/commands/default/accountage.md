@@ -52,7 +52,7 @@ If no username is provided, the command will check the account age of the user w
 ### Check your own account age
 <ExampleChatInteraction
   inputPersona="viewer"
-  inputUsernameOverride="YourUsername" // Placeholder for the actual user
+  inputUsernameOverride="YourUsername"
   inputMessage="!accountage"
   outputMessage="@YourUsername, your account was created 3 years 5 months 12 days 4 hours ago."
 />

@@ -48,7 +48,7 @@ When a giveaway named "Awesome Prize" is active:
 <ExampleChatInteraction
   inputPersona="viewer"
   inputMessage="!giveaway"
-  outputMessage="@ViewerName, Current giveaway: \"Awesome Prize\" https://streamelements.com/[ChannelName]/giveaway/[GiveawayID]"
+  outputMessage='@ViewerName, Current giveaway: "Awesome Prize" https://streamelements.com/[ChannelName]/giveaway/[GiveawayID]'
 />
 
 When no giveaway is active:

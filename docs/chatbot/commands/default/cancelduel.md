@@ -21,7 +21,7 @@ import PlatformBadges from '@site/src/components/PlatformBadges';
 import ExampleChatInteraction from '@site/src/components/ExampleChatInteraction';
 
 # !cancelduel
-<PlatformBadges supported={[ \'Twitch\', \'YouTube\' ]} />
+<PlatformBadges supported={[ 'Twitch', 'YouTube' ]} />
 
 ## Overview
 

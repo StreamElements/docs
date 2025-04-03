@@ -38,7 +38,7 @@ To use the `!skip` command, simply type it in the chat:
 
 ### Successful Skip
 <ExampleChatInteraction
-  inputPersona="moderator" // Or streamer
+  inputPersona="moderator" 
   inputUsernameOverride="User"
   inputMessage="!skip"
   outputMessage="@User, skipped song: Drake, 21 Savage - Rich Flex (Audio)"
@@ -46,7 +46,7 @@ To use the `!skip` command, simply type it in the chat:
 
 ### Error When No Song is Playing
 <ExampleChatInteraction
-  inputPersona="moderator" // Or streamer
+  inputPersona="broadcaster" 
   inputUsernameOverride="User"
   inputMessage="!skip"
   outputMessage="@User, no song is currently playing."

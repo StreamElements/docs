@@ -51,7 +51,7 @@ Start a raffle with default settings:
   inputPersona="moderator"
   inputUsernameOverride="ModUser"
   inputMessage="!sraffle"
-  outputMessage="PogChamp A Raffle has begun for [Default Points] points PogChamp It will end in [Default Duration] seconds. Enter by typing "!join" OpieOP"
+  outputMessage='PogChamp A Raffle has begun for [Default Points] points PogChamp It will end in [Default Duration] seconds. Enter by typing "!join" OpieOP'
 />
 
 Create a raffle for 500 points lasting 100 seconds:
@@ -60,7 +60,7 @@ Create a raffle for 500 points lasting 100 seconds:
   inputPersona="moderator"
   inputUsernameOverride="ModUser"
   inputMessage="!sraffle 500 100"
-  outputMessage="PogChamp A Raffle has begun for 500 points PogChamp It will end in 100 seconds. Enter by typing "!join" OpieOP"
+  outputMessage='PogChamp A Raffle has begun for 500 points PogChamp It will end in 100 seconds. Enter by typing "!join" OpieOP'
 />
 
 Remember, viewers must type `!join` to participate in the raffle. The winner will be randomly selected and announced when the raffle ends.

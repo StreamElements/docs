@@ -49,7 +49,7 @@ When a contest/poll is active:
 <ExampleChatInteraction
   inputPersona="viewer"
   inputMessage="!contest"
-  outputMessage="@ViewerName, the current contest is \"Will I win the next game?\". You can !bet for win, lose. Betting ends in 4 mins 55 secs"
+  outputMessage='@ViewerName, the current contest is "Will I win the next game?". You can !bet for win, lose. Betting ends in 4 mins 55 secs'
 />
 
 When no contest/poll is active:

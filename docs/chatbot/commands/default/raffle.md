@@ -53,7 +53,7 @@ Start a raffle with a 1000 point pot lasting 120 seconds:
   inputPersona="moderator"
   inputUsernameOverride="ModUser"
   inputMessage="!raffle 1000 120"
-  outputMessage="The Multi-Raffle for 1000 points will end in 120 Seconds. Enter by typing \"!join\""
+  outputMessage='The Multi-Raffle for 1000 points will end in 120 Seconds. Enter by typing "!join"'
 />
 
 ## Related Commands

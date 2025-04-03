@@ -54,7 +54,7 @@ Where `<bet>` is the number of loyalty points the user wants to wager.
   inputPersona="viewer"
   inputUsernameOverride="Styler"
   inputMessage="!slots 500"
-  outputMessage="@Styler you got Kappa | Kappa | Kappa and won 1500 points PogChamp" // Assuming a 3x payout for win
+  outputMessage="@Styler you got Kappa | Kappa | Kappa and won 1500 points PogChamp" 
 />
 
 ## Parameters

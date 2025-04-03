@@ -40,7 +40,7 @@ To transfer points, a viewer uses the following syntax:
 | Parameter              | Required | Description                                                                | Example     |
 | :--------------------- | :------- | :------------------------------------------------------------------------- | :---------- |
 | `<recipient_username>` | Required | The username of the viewer to receive the points.                          | `CoolViewer`|
-| `<amount>`             | Required | The number of points to transfer. Must be positive and <= sender's balance. | `500`       |
+| `<amount>`             | Required | The number of points to transfer. Must be positive and &lt;= sender's balance. | `500`       |
 
 - **Aliases**: `!give`, `!transfer`
 - **Permissions**: Typically available to all viewers, but may be restricted by streamer settings.
