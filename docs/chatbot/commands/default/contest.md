@@ -1,7 +1,14 @@
 ---
 id: contest
+title: Using the !contest Command for Contest Info
 sidebar_label: "!contest"
-description: "Learn how to use the !contest command in StreamElements chatbot to get information about active contests and engage your viewers."
+description: "Learn how the StreamElements !contest command allows viewers to get information about currently active contests/polls."
+tags:
+  - chatbot
+  - commands
+  - contest
+  - betting
+  - polls
 keywords:
 - contest
 - chatbot command
@@ -9,43 +16,51 @@ keywords:
 - viewer engagement
 - stream contests
 - StreamElements
+- contest info
+- poll info
 ---
 
-# !contest
+import PlatformBadges from '@site/src/components/PlatformBadges';
+import ExampleChatInteraction from '@site/src/components/ExampleChatInteraction';
+
+<PlatformBadges supported={["Twitch", "YouTube"]} />
 
 ## Overview
 
-The `!contest` command is a powerful tool in the StreamElements chatbot that allows streamers and viewers to quickly get information about the currently active contest. This command is part of the Contest module and helps increase viewer engagement by providing easy access to ongoing contest details.
+The `!contest` command displays information about the currently active contest or poll running via the StreamElements Contest module. This allows viewers to see the contest question, options, and remaining time.
 
-## Usage
+## Usage / Syntax
 
-To use the `!contest` command, simply type it in the chat:
+To check for an active contest, type:
 
 ```
 !contest
 ```
 
-This command doesn't require any additional arguments or parameters.
+## Parameters / Configuration / Options
+
+- **Parameters**: This command does not take any parameters.
+- **Configuration**: Requires the Contest module to be enabled and an active contest/poll to be running. Contest settings (duration, options, betting configuration) are managed in the StreamElements dashboard (Bot -> Modules -> Contests).
 
 ## Examples
 
-### Example 1: Active Contest
+When a contest/poll is active:
 
-When there's an active contest running:
+<ExampleChatInteraction
+  inputPersona="viewer"
+  inputMessage="!contest"
+  outputMessage="@ViewerName, the current contest is \"Will I win the next game?\". You can !bet for win, lose. Betting ends in 4 mins 55 secs"
+/>
 
-```
-User: !contest
-Chatbot: @User, the current contest is "Will I win the next game?". You can !bet for win, lose. Betting ends in 4 mins 55 secs
-```
+When no contest/poll is active:
 
-### Example 2: No Active Contest
+<ExampleChatInteraction
+  inputPersona="viewer"
+  inputMessage="!contest"
+  outputMessage="@ViewerName, there is no active contest."
+/>
 
-When there's no active contest:
-
-```
-User: !contest
-Chatbot: @User, there is no active contest.
-```
+*Note: The exact bot response depends on the active contest configuration.*
 
 ## Customization
 

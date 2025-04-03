@@ -1,18 +1,28 @@
 ---
 id: points
+title: Using the !points Command to Check Loyalty Points and Rank
 sidebar_label: "!points"
-description: "Learn how to use the !points command in StreamElements chatbot to check user loyalty points and leaderboard rank."
+description: "Learn how to use the !points command in StreamElements chatbot to check user loyalty points and leaderboard rank, helping viewers track their engagement rewards."
+tags:
+  - chatbot
+  - commands
+  - loyalty
+  - points
 keywords:
-- StreamElements
-- chatbot
-- commands
-- loyalty
-- points
-- leaderboard
-- rank
+  - StreamElements
+  - chatbot
+  - commands
+  - loyalty
+  - points
+  - leaderboard
+  - rank
 ---
 
+import ExampleChatInteraction from '@site/src/components/ExampleChatInteraction';
+import PlatformBadges from '@site/src/components/PlatformBadges';
+
 # !points
+<PlatformBadges supported={[ 'Twitch', 'YouTube' ]} />
 
 ## Overview
 
@@ -28,46 +38,22 @@ To use the `!points` command, type it in the chat followed by an optional userna
 
 If no username is provided, the command will display the points and rank of the user who issued the command.
 
-## Examples
-
-### Checking your own points
-
-```
-!points
-```
-
-**Output:**
-```
-YourUsername has 2643 nammers and is rank 22658/22671 on the leaderboard.
-```
-
-### Checking another user's points
-
-```
-!points adeithe
-```
-
-**Output:**
-```
-adeithe has 0 nammers and is rank 22669/22671 on the leaderboard.
-```
-
 ## Parameters
 
-- `username` (optional): The username of the user whose points and rank you want to display.
-  - If omitted, the command will show the points of the user who issued the command.
-  - If the specified username is not found, it will default to the user who issued the command.
+| Parameter    | Required | Description                                                                                                                     | Example   |
+| :----------- | :------- | :------------------------------------------------------------------------------------------------------------------------------ | :-------- |
+| `[username]` | No       | The username of the user whose points and rank you want to display. If omitted or not found, shows the command issuer's points. | `adeithe` |
 
-## Related Commands
+## Examples
 
-- [`!top`](top.md): Displays the top users on the points leaderboard
-- [`!givepoints`](givepoints.md): Allows users to give points to other users (if enabled)
-- [`!roulette`](roulette.md): Lets users gamble their points (if enabled)
+<ExampleChatInteraction
+  inputPersona="viewer"
+  inputMessage="!points"
+  outputMessage="YourUsername has 2643 nammers and is rank 22658/22671 on the leaderboard."
+/>
 
-## Customization
-
-Streamers can customize various aspects of the points system, including:
-
-- The name of the currency (e.g., "nammers" in the example)
-- The rate at which viewers earn points
-- Special bonuses for subscribers
+<ExampleChatInteraction
+  inputPersona="viewer"
+  inputMessage="!points adeithe"
+  outputMessage="adeithe has 0 nammers and is rank 22669/22671 on the leaderboard."
+/>

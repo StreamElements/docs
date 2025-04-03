@@ -1,0 +1,125 @@
+---
+description: Style guide for writing documentation pages, based on the addpoints.md example.
+globs: optional/path/pattern/**/*
+alwaysApply: false
+---
+# Rule Title
+
+Main content explaining the rule with markdown formatting.
+
+1. Step-by-step instructions
+2. Code examples
+3. Guidelines
+
+Example:
+```go
+// Good example
+func goodExample() {
+  // Implementation following guidelines
+}
+
+// Bad example
+func badExample() {
+  // Implementation not following guidelines
+}
+```
+
+Rule Name: doc-style-guide.mdc
+Description: Style guide for writing documentation pages, based on the addpoints.md example.
+# Documentation Style Guide
+
+Follow these guidelines when creating or updating documentation pages (`.md` files) within the `docs/` directory to maintain consistency, improve user experience, and enhance search engine visibility (SEO), following Docusaurus best practices.
+
+## 1. Frontmatter
+
+Every documentation page must start with a YAML frontmatter block (`---`). Include the following fields:
+
+-   `id`: A unique identifier for the page, often matching the filename (without extension) or the primary subject (e.g., `command-name`). Lowercase. Used internally by Docusaurus.
+-   `title`: The main title of the page, displayed prominently in the browser tab and often used as the default H1 heading. Make it descriptive and include primary keywords naturally (e.g., "Using the !addpoints Command"). **Crucial for SEO.**
+-   `sidebar_label`: The short label displayed in the navigation sidebar. Often a concise version of the `title` (e.g., `!addpoints`).
+-   `description`: A brief (1-2 sentences, ideally ~150 characters) description of the page's content. Used for the `<meta name="description">` tag, which appears in search engine results. Focus on the purpose and benefits, incorporating keywords naturally. **Crucial for SEO.**
+-   `tags`: (Optional) A list of relevant lowercase category tags (e.g., `chatbot`, `loyalty`). Useful for organizing content and potentially for filtering features.
+-   `keywords`: (Optional) A list of specific lowercase keywords relevant to the page content. Used for the `<meta name="keywords">` tag. While less critical for modern search engines, it can still provide context.
+
+**Example:**
+
+```yaml
+---
+id: addpoints
+title: Using the !addpoints Command for Loyalty Points
+sidebar_label: "!addpoints"
+description: "Learn how to manually add loyalty points to viewers using the StreamElements !addpoints chatbot command. Manage your community rewards effectively."
+tags:
+  - chatbot
+  - loyalty
+  - commands
+keywords:
+  - addpoints command
+  - streamelements chatbot
+  - loyalty program
+  - manage points
+  - viewer rewards
+---
+```
+
+## 2. Imports
+
+If using custom components (like `PlatformBadges` or `ExampleChatInteraction`), place imports directly after the frontmatter block, before any markdown content.
+
+**Example:**
+
+```jsx
+import PlatformBadges from '@site/src/components/PlatformBadges';
+import ExampleChatInteraction from '@site/src/components/ExampleChatInteraction';
+```
+
+## 3. Page Structure and Content
+
+Structure your documentation logically using Markdown headings. Docusaurus automatically uses the page `title` or the first H1 heading (`#`) as the main page title.
+
+1.  `# H1 Title (Optional if 'title' frontmatter is set)`: The main title of the page. If you set the `title` in frontmatter, Docusaurus typically uses that, and you can start your content directly with an H2 or other elements.
+2.  *(Optional Component)* `<PlatformBadges />`: If applicable, indicate supported platforms immediately after the title/frontmatter.
+3.  `## Overview`: A brief explanation of the feature or command. Clearly state the purpose and benefit upfront.
+4.  `## Usage / Syntax`: How to use the feature/command.
+    -   Use code blocks (```) for syntax examples.
+    -   Use `<code>` for inline mentions of commands, parameters, or filenames.
+    -   Use **bold** for importantUI elements.
+5.  `## Parameters / Configuration / Options`: Detail any requirements.
+    -   Use Markdown tables for parameter lists (`Parameter`, `Required`, `Description`, `Example`).
+    -   If there are no parameters supported, skip this section (do not include it at all).
+6.  `## Examples`: Provide clear, practical examples.
+    -   Use `<ExampleChatInteraction />` for chat command examples where applicable.
+7.  DO NOT ADD "related articles".
+
+**Content Best Practices:**
+
+-   **Headings:** Use descriptive headings (H2 `##`, H3 `###`, etc.) that incorporate relevant keywords naturally. Headings help structure the content for readers and search engines.
+-   **Readability:** Write clearly and concisely. Use shorter sentences and paragraphs. Employ bullet points or numbered lists for steps or features.
+-   **Internal Linking:** Link to other relevant documentation pages using relative Markdown links (`[link text](mdc:relative/path/to/other-doc.md)`). This improves navigation and helps search engines understand the site structure. **Good for SEO.**
+
+## 4. Component Usage
+
+-   **`PlatformBadges`**: Use near the top to show platform compatibility.
+    ```jsx
+    <PlatformBadges supported={[ 'Twitch', 'YouTube' ]} />
+    ```
+-   **`ExampleChatInteraction`**: Use within the `## Examples` section to demonstrate request/response interactions.
+    ```jsx
+    <ExampleChatInteraction
+      inputPersona="moderator" // or "viewer", "broadcaster"
+      inputUsernameOverride="ModUser" // Optional override
+      inputMessage="!command arg1"
+      outputMessage="Bot response message..." // Optional bot response
+    />
+    ```
+
+## 5. Formatting
+
+-   **Code:** Use backticks (`) for inline code like `variable_name`, `!command`, `<parameter>`, or filenames. Use triple backticks (```) with language identifiers (e.g., ```bash, ```yaml) for multi-line code blocks.
+-   **Emphasis:** Use **bold** (`**text**`) for emphasis on UI elements, important notes, or required actions. Avoid overuse.
+-   **Links:** Use standard Markdown links `[link text](mdc:relative/path/to/file.md)` for internal documentation. Use full URLs for external links.
+-   **Tables:** Use Markdown tables for structured data. Ensure clear headers.
+-   **Images:** If including images, use descriptive filenames and provide meaningful **alt text** using Markdown image syntax (`![Alt text describing the image](mdc:path/to/image.png)`). Alt text is crucial for accessibility and SEO.
+-   **Links to other docs:** Should look like this: - [Introduction to Chatbot Commands](mdc:chatbot/commands/index.md)
+
+By following these guidelines, we can ensure the documentation is consistent, easy to read, maintainable, and optimized for both users and search engines within the Docusaurus framework.

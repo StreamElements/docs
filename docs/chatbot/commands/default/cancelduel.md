@@ -1,7 +1,13 @@
 ---
 id: cancelduel
+title: Using the !cancelduel Command to Halt Ongoing Duels
 sidebar_label: "!cancelduel"
 description: "Learn how to use the !cancelduel command to instantly halt ongoing duels in your Twitch stream, enhancing viewer interaction management."
+tags:
+  - chatbot
+  - commands
+  - moderation
+  - engagement
 keywords:
 - cancelduel
 - cancel duel
@@ -11,8 +17,11 @@ keywords:
 - chatbot duel
 - moderator command
 ---
+import PlatformBadges from '@site/src/components/PlatformBadges';
+import ExampleChatInteraction from '@site/src/components/ExampleChatInteraction';
 
 # !cancelduel
+<PlatformBadges supported={[ \'Twitch\', \'YouTube\' ]} />
 
 ## Overview
 
@@ -32,41 +41,28 @@ This command doesn't require any additional arguments.
 
 ### Example 1: Canceling a duel
 
-Moderator input:
-```
-!cancelduel
-```
-
-Chatbot output:
-```
-@styler, darkoe denied your duel :(
-```
+<ExampleChatInteraction
+  inputPersona="moderator"
+  inputMessage="!cancelduel"
+  outputMessage="@styler, darkoe denied your duel :("
+/>
 
 ### Example 2: Canceling when no duel is active
 
-Moderator input:
-```
-!cancelduel
-```
-
-Chatbot output:
-```
-There is no active duel to cancel.
-```
-
-## Related Commands
-
-- `!duel`: Initiates a duel between two viewers
-- `!acceptduel`: Allows a challenged viewer to accept a duel
+<ExampleChatInteraction
+  inputPersona="moderator"
+  inputMessage="!cancelduel"
+  outputMessage="There is no active duel to cancel."
+/>
 
 ## Configuration
 
-The `!cancelduel` command is part of the [duel module](../../modules/duel). Ensure that this module is enabled in your StreamElements chatbot settings to use this command.
+The `!cancelduel` command is part of the [duel module](mdc:chatbot/modules/duel.md). Ensure that this module is enabled in your StreamElements chatbot settings to use this command.
 
-## Aliases
+### Aliases
 
 There are no default aliases for this command. However, you can create custom aliases in your StreamElements dashboard if desired.
 
-## Customization
+### Customization
 
 You can customize the response message for a canceled duel in your StreamElements dashboard. This allows you to tailor the message to fit your stream's tone and style.

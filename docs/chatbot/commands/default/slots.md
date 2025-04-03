@@ -1,7 +1,14 @@
 ---
 id: slots
+title: Using the !slots Command for a Chat Mini-Game
 sidebar_label: "!slots"
 description: "Learn how to use the !slots command in StreamElements chatbot to play a fun slot machine mini-game and win loyalty points in your Twitch chat."
+tags:
+  - chatbot
+  - commands
+  - loyalty
+  - engagement
+  - games
 keywords:
 - slots
 - slot machine
@@ -12,8 +19,11 @@ keywords:
 - StreamElements
 - Twitch
 ---
+import PlatformBadges from '@site/src/components/PlatformBadges';
+import ExampleChatInteraction from '@site/src/components/ExampleChatInteraction';
 
 # !slots
+<PlatformBadges supported={[ 'Twitch', 'YouTube' ]} />
 
 ## Overview
 
@@ -31,51 +41,24 @@ Where `<bet>` is the number of loyalty points the user wants to wager.
 
 ## Examples
 
-Here are two examples of how to use the `!slots` command:
+### Betting points (and losing)
+<ExampleChatInteraction
+  inputPersona="viewer"
+  inputUsernameOverride="Styler"
+  inputMessage="!slots 100"
+  outputMessage="@Styler you got Kappa | Kappa | Keepo and lost your 100 points LUL"
+/>
 
-1. Betting 100 points:
-   ```
-   !slots 100
-   ```
-
-2. Betting 500 points:
-   ```
-   !slots 500
-   ```
+### Betting points (and winning)
+<ExampleChatInteraction
+  inputPersona="viewer"
+  inputUsernameOverride="Styler"
+  inputMessage="!slots 500"
+  outputMessage="@Styler you got Kappa | Kappa | Kappa and won 1500 points PogChamp" // Assuming a 3x payout for win
+/>
 
 ## Parameters
 
-The `!slots` command has one required parameter:
-
-- `bet`: The amount of loyalty points the user wants to bet. This must be a positive integer.
-
-## Example Output
-
-When a user plays the slot machine, they'll receive a response indicating the result. For example:
-
-```
-@Styler you got Kappa | Kappa | Keepo and lost your 100 points LUL
-```
-
-Or, in case of a win:
-
-```
-@Styler you got Kappa | Kappa | Kappa and won 300 points PogChamp
-```
-
-## Related Commands
-
-- [`!points`](points.md): Check your current loyalty points balance
-- [`!roulette`](roulette.md): Another game of chance using loyalty points
-
-## Configuration
-
-Streamers can configure various aspects of the `!slots` command in the StreamElements dashboard, such as:
-
-- Minimum bet amounts
-- Emotes to use for the slot machine symbols
-- Cooldown time between uses
-
-## Customization
-
-You can customize the slot machine symbols and output messages to fit your channel's theme. Access these options in the StreamElements dashboard under the Chatbot section.
+| Parameter | Required | Description                                             | Example |
+| :-------- | :------- | :------------------------------------------------------ | :------ |
+| `bet`     | Yes      | The amount of loyalty points to bet (positive integer). | `100`   |

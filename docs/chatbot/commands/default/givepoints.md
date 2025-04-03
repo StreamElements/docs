@@ -1,43 +1,70 @@
 ---
 id: givepoints
+title: Using the !givepoints Command to Transfer Points
 sidebar_label: "!givepoints"
-description: "Learn how to use the !givepoints command in StreamElements chatbot to transfer loyalty points between users."
+description: "Learn how viewers can use the StreamElements !givepoints command to transfer their loyalty points to other users in chat."
+tags:
+  - chatbot
+  - commands
+  - loyalty
+  - points
+  - transfer
 keywords:
 - givepoints command
 - transfer points streamelements
 - loyalty points
 - chatbot commands
 - stream currency
+- share points
 ---
 
-# !givepoints
+import PlatformBadges from '@site/src/components/PlatformBadges';
+import ExampleChatInteraction from '@site/src/components/ExampleChatInteraction';
+
+<PlatformBadges supported={["Twitch", "YouTube"]} />
 
 ## Overview
 
-The `!givepoints` command allows users to transfer their loyalty points to another user in the chat. This feature is useful for rewarding viewers, running community events, or sharing points with friends.
+The `!givepoints` command allows viewers to transfer a portion of their own loyalty points to another viewer in the chat. This is useful for gifting, rewarding, or community interactions.
 
-## Usage
+## Usage / Syntax
 
-To use the `!givepoints` command, type it in chat followed by the recipient's username and the amount of points you want to transfer.
+To transfer points, a viewer uses the following syntax:
 
-Syntax: `!givepoints <username> <amount>`
+```
+!givepoints <recipient_username> <amount>
+```
+
+## Parameters / Configuration / Options
+
+| Parameter              | Required | Description                                                                | Example     |
+| :--------------------- | :------- | :------------------------------------------------------------------------- | :---------- |
+| `<recipient_username>` | Required | The username of the viewer to receive the points.                          | `CoolViewer`|
+| `<amount>`             | Required | The number of points to transfer. Must be positive and <= sender's balance. | `500`       |
+
+- **Aliases**: `!give`, `!transfer`
+- **Permissions**: Typically available to all viewers, but may be restricted by streamer settings.
+- **Error Messages**: The bot will provide feedback if the recipient username is invalid, the sender lacks sufficient points, or the recipient isn't recognized.
 
 ## Examples
 
-1. Giving 1000 points to a user named "viewer123":
-   ```
-   !givepoints viewer123 1000
-   ```
+Transferring 500 points from SenderUser to CoolViewer:
 
-2. Transferring 500 points to a moderator named "mod_expert":
-   ```
-   !givepoints mod_expert 500
-   ```
+<ExampleChatInteraction
+  inputPersona="viewer"
+  inputUsernameOverride="SenderUser"
+  inputMessage="!givepoints CoolViewer 500"
+  outputMessage="@SenderUser transferred 500 points to CoolViewer!"
+/>
 
-## Parameters
+Attempting to transfer points with insufficient balance:
 
-- `<username>`: The name of the user who will receive the points. Must be a valid username in the chat.
-- `<amount>`: The number of points to transfer. Must be a positive integer and cannot exceed the sender's current point balance.
+<ExampleChatInteraction
+  inputPersona="viewer"
+  inputUsernameOverride="SenderUser"
+  inputMessage="!givepoints CoolViewer 10000"
+  outputMessage="@SenderUser, You only have 500 points."
+/>
 
 ## Related Commands
 

@@ -1,7 +1,14 @@
 ---
 id: settitle
+title: Using the !settitle Command to Update Twitch Title
 sidebar_label: "!settitle"
-description: "Learn how to use the !settitle command in StreamElements chatbot to change your Twitch stream title quickly and easily."
+description: "Learn how moderators use the StreamElements !settitle command to change the Twitch stream title directly from chat."
+tags:
+  - chatbot
+  - commands
+  - moderation
+  - twitch
+  - stream management
 keywords:
 - settitle
 - set title
@@ -12,39 +19,43 @@ keywords:
 - Twitch
 ---
 
-# !settitle
+import PlatformBadges from '@site/src/components/PlatformBadges';
+import ExampleChatInteraction from '@site/src/components/ExampleChatInteraction';
+
+<PlatformBadges supported={["Twitch"]} />
 
 ## Overview
 
-The `!settitle` command allows streamers and moderators to change the title of the current Twitch stream directly from chat. This command helps keep viewers informed about the stream's content without leaving the streaming software.
+The `!settitle` command allows the broadcaster or moderators to update the stream's title directly from Twitch chat. This command interacts with the Twitch API to change the title displayed on the channel.
 
-## Usage
+## Usage / Syntax
+
+To update the stream title, use the following syntax:
 
 ```
-!settitle <new_title>
+!settitle <new_stream_title>
 ```
 
-Replace `<new_title>` with the desired title for your stream.
+## Parameters / Configuration / Options
+
+| Parameter            | Required | Description                                                  | Example                             |
+| :------------------- | :------- | :----------------------------------------------------------- | :---------------------------------- |
+| `<new_stream_title>` | Required | The full text for the new stream title (up to Twitch limits). | `Playing Elden Ring - First Playthrough` |
+
+- **Permissions**: This command is typically restricted to moderators and the broadcaster.
 
 ## Examples
 
-1. Changing the stream title to a game name:
+Changing the stream title:
 
-```
-!settitle Playing Overwatch 2 with viewers!
-```
-
-2. Updating the title for a variety stream:
-
-```
-!settitle Monday Variety: Minecraft, Fall Guys, and more!
-```
-
-## Parameters
-
-- `<new_title>` (required): The new title for the stream. This can be any text up to Twitch's character limit for stream titles.
+<ExampleChatInteraction
+  inputPersona="moderator"
+  inputUsernameOverride="ModUser"
+  inputMessage="!settitle Chill vibes and community games!"
+  outputMessage="@ModUser changed the title to \"Chill vibes and community games!\""
+/>
 
 ## Related Commands
 
 - [`!setgame`](setgame.md): Changes the current game/category of the stream
-- [`!uptime`](uptime.md): Displays how long the stream has been live
+- [`

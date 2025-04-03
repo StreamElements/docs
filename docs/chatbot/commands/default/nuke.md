@@ -1,7 +1,14 @@
 ---
 id: nuke
+title: Using the !nuke Command for Phrase-Based Moderation
 sidebar_label: "!nuke"
-description: "Learn how to use the !nuke command in StreamElements chatbot to moderate your chat by timing out, banning, or deleting messages containing specific content."
+description: "Learn how moderators use the StreamElements !nuke command to timeout, ban, or delete messages containing specific phrases or regex patterns."
+tags:
+  - chatbot
+  - commands
+  - moderation
+  - nuke
+  - twitch
 keywords:
 - nuke command
 - chat moderation
@@ -9,48 +16,69 @@ keywords:
 - ban users
 - delete messages
 - StreamElements chatbot
+- phrase moderation
+- regex moderation
 ---
 
-# !nuke
+import PlatformBadges from '@site/src/components/PlatformBadges';
+import ExampleChatInteraction from '@site/src/components/ExampleChatInteraction';
+
+<PlatformBadges supported={["Twitch"]} />
 
 ## Overview
 
-The `!nuke` command is a powerful moderation tool in the StreamElements chatbot that allows moderators to quickly remove multiple messages containing specific content from the chat. It can perform timeouts, bans, or message deletions based on a specified string or regular expression.
+The `!nuke` command is a powerful moderation tool allowing moderators to swiftly act upon multiple chat messages (and the users who sent them) based on matching text content or a regular expression. It scans recent chat history and applies a specified action (timeout, ban, delete).
 
-## Usage
+## Usage / Syntax
+
+Execute a nuke based on message content:
 
 ```
-!nuke <lookback_time> <action> <match_string>
+!nuke <lookback_seconds> <action> <match_string_or_regex>
 ```
 
-## Parameters
+## Parameters / Configuration / Options
 
-- `<lookback_time>`: The time window (in seconds) to search for matching messages. The maximum lookback is 300 seconds.
-- `<action>`: The moderation action to perform. Can be:
-  - A number (for timeout duration in seconds)
-  - `ban` (to ban users)
-  - `delete` (to delete messages)
-- `<match_string>`: The text to search for in messages. For regex patterns, wrap in slashes (e.g., `/pattern/`).
+| Parameter                 | Required | Description                                                                                                | Example         |
+| :------------------------ | :------- | :--------------------------------------------------------------------------------------------------------- | :-------------- |
+| `<lookback_seconds>`      | Required | How many seconds of chat history to scan (max `300`).                                                       | `120`           |
+| `<action>`                | Required | The moderation action: `<timeout_seconds>` (e.g., `60`), `ban`, or `delete`.                               | `60` or `ban`   |
+| `<match_string_or_regex>` | Required | The exact text phrase or a regular expression (enclosed in `/`, e.g., `/spam\d+/`) to match in messages. | `bad phrase`    |
+
+- **Regex**: For regular expression matching, enclose the pattern in forward slashes (e.g., `!nuke 60 ban /regex[pP]attern/`).
+- **Permissions**: This command is typically restricted to moderators and the broadcaster.
+- **Aliases**: No default aliases, but custom ones can be created.
 
 ## Examples
 
-1. Timeout users for 60 seconds who sent messages containing "spam" in the last 2 minutes:
+Timeout users for 60s who sent "bad phrase" in the last 120s:
 
-```
-!nuke 120 60 spam
-```
+<ExampleChatInteraction
+  inputPersona="moderator"
+  inputUsernameOverride="ModUser"
+  inputMessage="!nuke 120 60 bad phrase"
+  outputMessage="@ModUser initiated a nuke. Checking messages from the last 120s... Nuked X users."
+/>
 
-2. Ban users who sent messages matching the regex pattern "test\d+" in the last 5 minutes:
+Ban users who sent messages matching `/spam\d+/` in the last 300s:
 
-```
-!nuke 300 ban /test\d+/
-```
+<ExampleChatInteraction
+  inputPersona="moderator"
+  inputUsernameOverride="ModUser"
+  inputMessage="!nuke 300 ban /spam\d+/"
+  outputMessage="@ModUser initiated a nuke. Checking messages from the last 300s... Nuked Y users."
+/>
 
-3. Delete all messages containing "giveaway" from the last 30 seconds:
+Delete messages containing "discord link" from the last 30s:
 
-```
-!nuke 30 delete giveaway
-```
+<ExampleChatInteraction
+  inputPersona="moderator"
+  inputUsernameOverride="ModUser"
+  inputMessage="!nuke 30 delete discord link"
+  outputMessage="@ModUser initiated a nuke. Checking messages from the last 30s... Nuked Z messages."
+/>
+
+*Note: Exact bot responses may vary slightly.*
 
 ## Related Commands
 

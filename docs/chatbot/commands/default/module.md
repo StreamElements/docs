@@ -1,7 +1,14 @@
 ---
 id: module
+title: Using the !module Command to Enable/Disable Modules
 sidebar_label: "!module"
-description: "Learn how to enable or disable chatbot modules using the !module command in StreamElements chatbot. Control your chatbot's functionality with ease."
+description: "Learn how moderators use the StreamElements !module command to enable or disable chatbot modules (like Roulette, Raffles) directly from chat."
+tags:
+  - chatbot
+  - commands
+  - moderation
+  - modules
+  - configuration
 keywords:
 - chatbot
 - module
@@ -9,36 +16,56 @@ keywords:
 - disable
 - StreamElements
 - command
+- manage modules
 ---
 
-# !module
+import PlatformBadges from '@site/src/components/PlatformBadges';
+import ExampleChatInteraction from '@site/src/components/ExampleChatInteraction';
+
+<PlatformBadges supported={["Twitch", "YouTube"]} />
 
 ## Overview
 
-The `!module` command allows streamers and moderators to enable or disable specific chatbot modules directly from the chat. This powerful tool helps you control the functionality of your StreamElements chatbot in real-time, tailoring its features to your stream's needs.
+The `!module` command allows moderators and the broadcaster to enable or disable specific StreamElements chatbot modules (e.g., Roulette, Raffles, Duel) directly from chat. This provides quick control over features without needing the dashboard.
 
-## Usage
+## Usage / Syntax
 
-To use the `!module` command, type it in chat followed by the module name and the desired action (enable or disable).
+Enable or disable a module using the following syntax:
 
-Syntax: `!module <module_name> <action>`
+```
+!module <module_name> <enable|disable>
+```
+
+## Parameters / Configuration / Options
+
+| Parameter       | Required | Description                                                     | Example    |
+| :-------------- | :------- | :-------------------------------------------------------------- | :--------- |
+| `<module_name>` | Required | The internal name of the module (e.g., `roulette`, `raffles`). | `roulette` |
+| `<action>`      | Required | Either `enable` or `disable`.                                   | `disable`  |
+
+- **Permissions**: This command is typically restricted to moderators and the broadcaster.
 
 ## Examples
 
-1. Disabling the roulette module:
-   ```
-   !module roulette disable
-   ```
+Disabling the Roulette module:
 
-2. Enabling the quotes module:
-   ```
-   !module quotes enable
-   ```
+<ExampleChatInteraction
+  inputPersona="moderator"
+  inputUsernameOverride="ModUser"
+  inputMessage="!module roulette disable"
+  outputMessage="Roulette module disabled!"
+/>
 
-## Parameters
+Enabling the Raffles module:
 
-- `<module_name>`: The name of the module you want to enable or disable (e.g., roulette, quotes, giveaway).
-- `<action>`: The action to perform on the module. Use either `enable` to turn on the module or `disable` to turn it off.
+<ExampleChatInteraction
+  inputPersona="moderator"
+  inputUsernameOverride="ModUser"
+  inputMessage="!module raffles enable"
+  outputMessage="Raffles module enabled!"
+/>
+
+*Note: Exact module names and response messages may vary slightly.*
 
 ## Related Commands
 

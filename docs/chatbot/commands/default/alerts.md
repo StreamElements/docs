@@ -1,15 +1,23 @@
 ---
 id: alerts
+title: Using the !alerts Command to Control Stream Alerts
 sidebar_label: "!alerts"
 description: "Control and manage stream alerts in real-time using the !alerts command"
+tags:
+  - chatbot
+  - commands
+  - stream management
 keywords:
 - twitch alerts
 - stream alerts
 - alert management
 - live stream control
 ---
+import PlatformBadges from '@site/src/components/PlatformBadges';
+import ExampleChatInteraction from '@site/src/components/ExampleChatInteraction';
 
 # !alerts
+<PlatformBadges supported={[ 'Twitch', 'YouTube' ]} />
 
 ## Overview
 
@@ -21,25 +29,26 @@ The `!alerts` command allows streamers and moderators to dynamically manage stre
 !alerts <action>
 ```
 
-## Examples
-
-1. Mute all alert sounds:
-```
-!alerts mute
-```
-
-2. Skip the currently playing alert:
-```
-!alerts skip
-```
-
-## Parameters
-
+The command requires one of the following actions:
 - `mute`: Turns off alert sounds
 - `unmute`: Turns on alert sounds
 - `skip`: Skips the currently playing alert
 - `pause`: Pauses alert playback
 - `unpause`: Resumes alert playback
+
+## Examples
+
+### Mute all alert sounds
+<ExampleChatInteraction
+  inputPersona="moderator"
+  inputMessage="!alerts mute"
+/>
+
+### Skip the currently playing alert
+<ExampleChatInteraction
+  inputPersona="moderator"
+  inputMessage="!alerts skip"
+/>
 
 ## Configuration
 

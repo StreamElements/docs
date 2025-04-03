@@ -1,62 +1,65 @@
 ---
 id: hypecup
+title: Using the !hypecup Command to Manage HypeCup Overlay
 sidebar_label: "!hypecup"
-description: "Learn how to use the !hypecup command in StreamElements chatbot to manage the HypeCup overlay on your Twitch stream."
+description: "Learn how moderators use the StreamElements !hypecup command (specifically !hypecup clear) to clear the HypeCup overlay on stream."
+tags:
+  - chatbot
+  - commands
+  - moderation
+  - overlay
+  - hypecup
 keywords:
 - hypecup command
 - clear hypecup overlay
 - streamelements chatbot
 - twitch stream commands
 - stream overlay management
+- overlay control
 ---
 
-# !hypecup
+import PlatformBadges from '@site/src/components/PlatformBadges';
+import ExampleChatInteraction from '@site/src/components/ExampleChatInteraction';
+
+<PlatformBadges supported={["Twitch"]} />
 
 ## Overview
 
-The `!hypecup` command is used to manage the HypeCup overlay on your Twitch stream. It allows you to clear the overlay when needed, providing better control over your stream's visual elements.
+The `!hypecup` command interacts with the StreamElements HypeCup overlay. Currently, its primary function is to clear the overlay via the `clear` subcommand.
 
-## Usage
+## Usage / Syntax
 
-To use the `!hypecup` command, type it in chat followed by the `clear` parameter:
+To clear the HypeCup overlay, use the following syntax:
 
 ```
 !hypecup clear
 ```
 
+## Parameters / Configuration / Options
+
+| Parameter | Required | Description                        |
+| :-------- | :------- | :--------------------------------- |
+| `clear`   | Required | Signals the command to clear the overlay. |
+
+- **Configuration**: Requires the HypeCup overlay to be added to your active StreamElements overlay scene.
+- **Permissions**: This command is typically restricted to moderators and the broadcaster.
+
 ## Examples
 
-Here are two examples of how to use the `!hypecup` command:
+Clearing the HypeCup overlay:
 
-1. Clearing the HypeCup overlay:
-   ```
-   !hypecup clear
-   ```
-   
-   Output:
-   ```
-   @YourUsername, Successfully cleared HypeCup.
-   ```
+<ExampleChatInteraction
+  inputPersona="moderator"
+  inputUsernameOverride="ModUser"
+  inputMessage="!hypecup clear"
+  outputMessage="@[ModUser], Successfully cleared HypeCup."
+/>
 
-2. Attempting to use the command without the `clear` parameter:
-   ```
-   !hypecup
-   ```
-   
-   Output:
-   ```
-   @YourUsername, Usage: !hypecup clear
-   ```
+Using the command incorrectly (missing `clear`):
 
-## Parameters
-
-The `!hypecup` command has one parameter:
-
-- `clear`: Clears the HypeCup overlay from the stream.
-
-## Configuration
-
-The `!hypecup` command is typically pre-configured in StreamElements. However, you may need to ensure that:
-
-1. The command is enabled in your StreamElements chatbot settings.
-2. The HypeCup overlay is properly set up in your StreamElements overlay manager.
+<ExampleChatInteraction
+  inputPersona="moderator"
+  inputUsernameOverride="ModUser"
+  inputMessage="!hypecup"
+  outputMessage="@[ModUser], Usage: !hypecup clear"
+/>

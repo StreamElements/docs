@@ -1,7 +1,14 @@
 ---
 id: followage
+title: Using the !followage Command to Check Follow Duration
 sidebar_label: "!followage"
-description: "Learn how to use the !followage command in StreamElements chatbot to check how long a user has been following a Twitch channel."
+description: "Learn how the StreamElements !followage command allows users to check how long they or another user have been following a Twitch channel."
+tags:
+  - chatbot
+  - commands
+  - twitch
+  - followers
+  - utility
 keywords:
 - followage
 - followage command
@@ -10,58 +17,69 @@ keywords:
 - follower duration
 - twitch followers
 - how to check followage on twitch
+- streamelements
 ---
 
-# !followage
+import PlatformBadges from '@site/src/components/PlatformBadges';
+import ExampleChatInteraction from '@site/src/components/ExampleChatInteraction';
+
+<PlatformBadges supported={["Twitch"]} />
 
 ## Overview
 
-The `!followage` command allows users to check how long a specific user has been following a Twitch channel. This command is useful for both streamers and viewers to quickly see the duration of a user's follow status.
+The `!followage` command checks the Twitch API to determine how long a specified user has been following a specified channel. It provides the duration in years, months, days, and hours.
 
-## Usage
+## Usage / Syntax
 
-To use the `!followage` command, type it in the chat followed by optional parameters:
+Check follow duration using the following syntax:
 
 ```
-!followage [username] [channel]
+!followage [target_username] [target_channel]
 ```
 
-If no parameters are provided, the command will check the followage of the user who sent the command in the current channel.
+## Parameters / Configuration / Options
 
-## Parameters
+| Parameter           | Required | Description                                                                                   | Example      |
+| :------------------ | :------- | :-------------------------------------------------------------------------------------------- | :----------- |
+| `[target_username]` | Optional | The user whose follow duration you want to check. Defaults to the user typing the command.    | `OtherViewer`|
+| `[target_channel]`  | Optional | The Twitch channel name to check the follow against. Defaults to the current channel.       | `StreamerName`|
 
-- `username` (optional): The username of the user to check the followage of. If not provided, defaults to the user who sent the command.
-- `channel` (optional): The channel to check the followage in. If not provided, defaults to the current channel.
+- **Permissions**: Typically available to all viewers.
 
 ## Examples
 
-1. Check your own followage in the current channel:
-   ```
-   !followage
-   ```
+Check your own follow age in the current channel:
 
-2. Check another user's followage in the current channel:
-   ```
-   !followage styler
-   ```
+<ExampleChatInteraction
+  inputPersona="viewer"
+  inputUsernameOverride="ViewerA"
+  inputMessage="!followage"
+  outputMessage="@ViewerA, ViewerA has been following CurrentChannel for 1 year 2 months 3 days 4 hours"
+/>
 
-3. Check a user's followage in a specific channel:
-   ```
-   !followage styler darkoe
-   ```
+Check another user's follow age in the current channel:
 
-## Example Output
+<ExampleChatInteraction
+  inputPersona="viewer"
+  inputUsernameOverride="ViewerA"
+  inputMessage="!followage ViewerB"
+  outputMessage="@ViewerA, ViewerB has been following CurrentChannel for 6 months 10 days 1 hour"
+/>
 
-For a user who is following the channel:
-```
-@Adeithe, styler has been following darkoe for 7 years 6 months 20 days 12 hours
-```
+Check another user's follow age in a different channel:
 
-For a user who is not following the channel:
-```
-@Adeithe, styler is not following darkoe
-```
+<ExampleChatInteraction
+  inputPersona="viewer"
+  inputUsernameOverride="ViewerA"
+  inputMessage="!followage ViewerB StreamerName"
+  outputMessage="@ViewerA, ViewerB has been following StreamerName for 2 years 0 months 5 days 12 hours"
+/>
 
-## Related Commands
+When the user is not following:
 
-- [`!uptime`](uptime.md): Check how long the current stream has been live
+<ExampleChatInteraction
+  inputPersona="viewer"
+  inputUsernameOverride="ViewerA"
+  inputMessage="!followage NonFollower StreamerName"
+  outputMessage="@ViewerA, NonFollower is not following StreamerName"
+/>

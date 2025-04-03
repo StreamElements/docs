@@ -1,7 +1,14 @@
 ---
 id: giveaway
+title: Using the !giveaway Command for Giveaway Info
 sidebar_label: "!giveaway"
-description: "Learn how to use the !giveaway command in StreamElements to check active giveaways in a Twitch channel."
+description: "Learn how the StreamElements !giveaway command allows viewers to check for active giveaways and get a link to enter."
+tags:
+  - chatbot
+  - commands
+  - loyalty
+  - giveaway
+  - raffle
 keywords:
 - giveaway
 - StreamElements giveaway
@@ -9,44 +16,49 @@ keywords:
 - active giveaway
 - current giveaway
 - chatbot command
+- enter giveaway
 ---
 
-# !giveaway
+import PlatformBadges from '@site/src/components/PlatformBadges';
+import ExampleChatInteraction from '@site/src/components/ExampleChatInteraction';
+
+<PlatformBadges supported={["Twitch", "YouTube"]} />
 
 ## Overview
 
-The `!giveaway` command allows viewers to check if there's an active giveaway in the channel. It provides information about the current giveaway, including its name and a link to participate.
+The `!giveaway` command allows viewers to check if a giveaway is currently active in the channel (configured via the StreamElements dashboard) and provides a link to the giveaway page if one is running. Viewers typically enter giveaways using the [`!ticket`](mdc:ticket.md) command.
 
-## Usage
+## Usage / Syntax
 
-To use the command, simply type `!giveaway` in the chat.
+To check for an active giveaway, type:
+
+```
+!giveaway
+```
+
+## Parameters / Configuration / Options
+
+- **Parameters**: This command does not take any parameters.
+- **Configuration**: Requires a giveaway to be created and active via the StreamElements dashboard (Loyalty -> Stream Store -> Giveaways).
 
 ## Examples
 
-Here are two examples of how the `!giveaway` command works:
+When a giveaway named "Awesome Prize" is active:
 
-1. When there's an active giveaway:
+<ExampleChatInteraction
+  inputPersona="viewer"
+  inputMessage="!giveaway"
+  outputMessage="@ViewerName, Current giveaway: \"Awesome Prize\" https://streamelements.com/[ChannelName]/giveaway/[GiveawayID]"
+/>
 
-```
-User: !giveaway
-Chatbot: @User, Current giveaway: "Door Giveaway" https://streamelements.com/styler/giveaway/650981afb4e7658a15d6448b
-```
+When no giveaway is active:
 
-2. When there's no active giveaway:
-
-```
-User: !giveaway
-Chatbot: @User, There is currently no giveaway running!
-```
-
-## Parameters
-
-This command doesn't accept any parameters.
+<ExampleChatInteraction
+  inputPersona="viewer"
+  inputMessage="!giveaway"
+  outputMessage="@ViewerName, There is currently no giveaway running!"
+/>
 
 ## Related Commands
 
 - [`!ticket`](ticket.md) - Use this command to enter an active giveaway
-
-## Configuration
-
-Streamers can set up giveaways through the StreamElements dashboard. The `!giveaway` command will automatically reflect the current giveaway status without additional configuration.

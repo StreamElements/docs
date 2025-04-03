@@ -1,7 +1,12 @@
 ---
 id: bot
+title: Using the !bot Command to Control StreamElements Chatbot
 sidebar_label: "!bot"
 description: "Manage your StreamElements chatbot with the !bot command. Control bot behavior, including muting, unmuting, and removing the bot from chat."
+tags:
+  - chatbot
+  - commands
+  - moderation
 keywords:
 - streamelements chatbot
 - twitch bot management
@@ -11,8 +16,11 @@ keywords:
 - remove bot from chat
 - stream moderation
 ---
+import PlatformBadges from '@site/src/components/PlatformBadges';
+import ExampleChatInteraction from '@site/src/components/ExampleChatInteraction';
 
 # !bot
+<PlatformBadges supported={[ 'Twitch', 'YouTube' ]} />
 
 ## Overview
 
@@ -34,46 +42,33 @@ The `!bot` command requires one of the following subcommands:
 
 ### Muting the bot
 
-```
-!bot mute
-```
-
-This command will silence the bot, preventing it from sending any messages in the chat.
+<ExampleChatInteraction
+  inputPersona="moderator" 
+  inputMessage="!bot mute"
+/>
 
 ### Unmuting the bot
 
-```
-!bot unmute
-```
-
-This command will allow the bot to resume sending messages in the chat.
+<ExampleChatInteraction
+  inputPersona="moderator" 
+  inputMessage="!bot unmute"
+/>
 
 ### Removing the bot from chat
 
-```
-!bot part
-```
-
-This command will make the bot leave the chat entirely.
-
-## Parameters
-
-The `!bot` command does not have any additional parameters beyond the required subcommand.
-
-## Related Commands
-
-- [`!commands`](commands.md): Lists all available bot commands
-- [`!command`](command.md): Adds a new custom command to the bot
-- [`!timer`](timer.md): View and manage timers
+<ExampleChatInteraction
+  inputPersona="moderator" 
+  inputMessage="!bot part"
+/>
 
 ## Configuration
 
 The `!bot` command is available by default and does not require additional configuration. However, you may need to set up proper permissions to restrict its usage to moderators and the streamer.
 
-## Aliases
+### Aliases
 
 There are no default aliases for the `!bot` command.
 
-## Customization
+### Customization
 
 While the core functionality of the `!bot` command cannot be customized, you can create custom commands that complement its features using the StreamElements custom command system.

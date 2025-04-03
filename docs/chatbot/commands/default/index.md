@@ -1,5 +1,6 @@
 ---
 id: default-commands
+title: Default Commands
 sidebar_label: "Default Commands"
 description: "Master StreamElements Chatbot's default commands: Usage, examples, and configuration for enhanced stream management and viewer engagement."
 tags:

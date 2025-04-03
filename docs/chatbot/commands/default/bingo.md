@@ -1,7 +1,15 @@
 ---
 id: bingo
+title: Using the !bingo Command for Emote Bingo Game
 sidebar_label: "!bingo"
-description: "Engage viewers with an interactive emote bingo game using the !bingo command"
+description: "Learn how moderators use the StreamElements !bingo command to start an interactive emote guessing game for loyalty points."
+tags:
+  - chatbot
+  - commands
+  - games
+  - bingo
+  - emotes
+  - loyalty
 keywords:
 - chatbot
 - commands
@@ -11,52 +19,62 @@ keywords:
 - twitch
 - streaming
 - loyalty points
+- chat game
 ---
 
-# !bingo
+import PlatformBadges from '@site/src/components/PlatformBadges';
+import ExampleChatInteraction from '@site/src/components/ExampleChatInteraction';
+
+<PlatformBadges supported={["Twitch", "YouTube"]} />
 
 ## Overview
 
-The `!bingo` command starts an interactive emote bingo game in your chat. It randomly selects an emote from a specified platform, and viewers try to guess the correct emote to win loyalty points.
+The `!bingo` command starts an interactive emote guessing game in chat. The bot displays a blurred emote from the chosen platform(s), and viewers guess the emote name to win the specified loyalty points. This requires the Bingo module to be enabled.
 
-## Usage
+## Usage / Syntax
+
+Start an emote bingo game:
 
 ```
-!bingo <platform> <points>
+!bingo <platform> <points_reward>
 ```
+
+## Parameters / Configuration / Options
+
+| Parameter         | Required | Description                                                                                   | Example |
+| :---------------- | :------- | :-------------------------------------------------------------------------------------------- | :------ |
+| `<platform>`      | Required | Emote source: `twitch`, `bttv`, `ffz`, `7tv`, or `all`.                                        | `all`   |
+| `<points_reward>` | Required | The amount of loyalty points awarded to the first viewer who correctly guesses the emote. | `100`   |
+
+- **Configuration**: Requires the Bingo module and Loyalty system to be enabled in the StreamElements dashboard.
+- **Permissions**: Typically restricted to moderators and the broadcaster.
 
 ## Examples
 
-1. Start a bingo game using Twitch emotes with a 100-point reward:
-   ```
-   !bingo twitch 100
-   ```
+Start a bingo game using Twitch emotes with a 100 point reward:
 
-2. Start a bingo game using all supported platforms with a 250-point reward:
-   ```
-   !bingo all 250
-   ```
+<ExampleChatInteraction
+  inputPersona="moderator"
+  inputUsernameOverride="ModUser"
+  inputMessage="!bingo twitch 100"
+  outputMessage="@ModUser started an emote bingo for 100 points! Guess the blurred Twitch emote!"
+/>
 
-## Parameters
+Start a bingo game using emotes from all platforms with a 250 point reward:
 
-- `<platform>` (required): The platform(s) to use for emotes. Options:
-  - `twitch`: Twitch emotes
-  - `bttv`: BetterTTV emotes
-  - `ffz`: FrankerFaceZ emotes
-  - `7tv`: 7TV emotes
-  - `all`: All supported platforms
-- `<points>` (required): The number of loyalty points to reward the winner
+<ExampleChatInteraction
+  inputPersona="moderator"
+  inputUsernameOverride="ModUser"
+  inputMessage="!bingo all 250"
+  outputMessage="@ModUser started an emote bingo for 250 points! Guess the blurred emote (from any platform)!"
+/>
+
+*Note: The bot will also show the blurred image (not represented here) and announce the winner when guessed.*
 
 ## Related Commands
 
 - `!points`: Check a user's current loyalty points balance
 - `!rewards`: View available loyalty point rewards
-
-## Configuration
-
-To use the `!bingo` command, ensure that:
-1. The Bingo module is enabled in your StreamElements chatbot settings
-2. You have set up a loyalty points system for your channel
 
 ## Customization
 

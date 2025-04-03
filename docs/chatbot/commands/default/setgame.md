@@ -1,62 +1,70 @@
 ---
 id: setgame
+title: Using the !setgame Command to Update Twitch Category
 sidebar_label: "!setgame"
-description: "Learn how to use the !setgame command to update your stream's game category on Twitch using StreamElements chatbot."
+description: "Learn how moderators use the StreamElements !setgame command to update the stream's game category directly from Twitch chat."
+tags:
+  - chatbot
+  - commands
+  - moderation
+  - twitch
+  - stream management
 keywords:
 - setgame
 - Twitch game category
 - StreamElements bot
 - update stream game
 - change game on Twitch
+- stream category
 ---
 
-# !setgame
+import PlatformBadges from '@site/src/components/PlatformBadges';
+import ExampleChatInteraction from '@site/src/components/ExampleChatInteraction';
+
+<PlatformBadges supported={["Twitch"]} />
 
 ## Overview
 
-The `!setgame` command allows streamers and moderators to update the current game category of a Twitch stream in real-time. This feature ensures that viewers always have accurate information about the content being streamed.
+The `!setgame` command allows the broadcaster or moderators to update the stream's current game category directly from Twitch chat. This command interacts with the Twitch API to change the category displayed on the channel.
 
-## Usage
+## Usage / Syntax
+
+To update the game category, use the following syntax:
 
 ```
-!setgame <game>
+!setgame <game_name>
 ```
 
-Replace `<game>` with the title of the game you want to set for your stream.
+## Parameters / Configuration / Options
+
+| Parameter     | Required | Description                                                                                                | Example        |
+| :------------ | :------- | :--------------------------------------------------------------------------------------------------------- | :------------- |
+| `<game_name>` | Required | The name of the game category to set. Twitch's API uses fuzzy matching, so exact spelling isn't always required. | `Just Chatting` |
+
+- **Permissions**: This command is typically restricted to moderators and the broadcaster.
+- **Aliases**: No default aliases, but custom ones can be created.
 
 ## Examples
 
-### Example 1: Setting a specific game
+Setting the game category to "Fortnite":
 
-```
-!setgame Fortnite
-```
+<ExampleChatInteraction
+  inputPersona="moderator"
+  inputUsernameOverride="ModUser"
+  inputMessage="!setgame Fortnite"
+  outputMessage="@ModUser changed the game to \"Fortnite\"!"
+/>
 
-**Output:**
-```
-@Streamer changed the game to "Fortnite"!
-```
+Setting the category using a common abbreviation:
 
-### Example 2: Using an abbreviation
-
-```
-!setgame OSRS
-```
-
-**Output:**
-```
-@Moderator changed the game to "Old School RuneScape"!
-```
-
-## Parameters
-
-- `<game>` (required): The title of the game you want to set for your stream. This parameter supports fuzzy searching, allowing for slight misspellings or common abbreviations.
+<ExampleChatInteraction
+  inputPersona="moderator"
+  inputUsernameOverride="ModUser"
+  inputMessage="!setgame OSRS"
+  outputMessage="@ModUser changed the game to \"Old School RuneScape\"!"
+/>
 
 ## Related Commands
 
 - [`!settitle`](settitle.md): Updates the stream title
 - [`!uptime`](uptime.md): Displays how long the stream has been live
-
-## Aliases
-
-By default, there are no aliases for the `!setgame` command. However, you can create custom aliases in your StreamElements dashboard if desired.

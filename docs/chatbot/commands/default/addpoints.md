@@ -1,5 +1,6 @@
 ---
 id: addpoints
+title: Using the !addpoints Command for Loyalty Points
 sidebar_label: "!addpoints"
 description: "Manually add loyalty points to viewers using the !addpoints command in the StreamElements Chatbot. Reward participation and manage your loyalty system."
 tags:
@@ -18,12 +19,11 @@ keywords:
   - loyalty points
 ---
 
-# !addpoints Command
-
 import PlatformBadges from '@site/src/components/PlatformBadges';
-import ExampleChatInteraction from '@site/src/components/ExampleChatInteraction'; // Import the new component
+import ExampleChatInteraction from '@site/src/components/ExampleChatInteraction';
 
-<PlatformBadges supported={[ 'Twitch' ]} />
+# !addpoints
+<PlatformBadges supported={[ 'Twitch', 'YouTube' ]} />
 
 ## Overview
 
@@ -42,37 +42,18 @@ To add points to a viewer, use the following syntax in your chat:
 
 **Important:** Only moderators and the streamer can use this command by default.
 
-## Examples
-
-Here's how the command and the bot's response look in chat:
-
-1.  **A moderator adding 1000 points to `StreamFan123`:**
-
-    <ExampleChatInteraction
-      inputPersona="broadcaster"
-      inputUsernameOverride="Styler"
-      inputMessage="!addpoints StreamFan123 1000"
-      outputMessage="@Styler, added 1000 points to StreamFan123. They now have 5961 points."
-    />
-
 ## Parameters
 
-| Parameter  | Required | Description                                        |
-| :--------- | :------- | :------------------------------------------------- |
-| `username` | Yes      | The exact username of the viewer receiving points. |
-| `amount`   | Yes      | The number of points (positive integer) to award.  |
+| Parameter  | Required | Description                                        | Example       |
+| :--------- | :------- | :------------------------------------------------- | :------------ |
+| `username` | Yes      | The exact username of the viewer receiving points. | `StreamFan123`|
+| `amount`   | Yes      | The number of points (positive integer) to award.  | `1000`        |
 
-## Related Commands
+## Examples
 
-- [`!points`](points.md): Allows viewers to check their own point balance.
-- [`!givepoints`](givepoints.md): Enables viewers to transfer points to other viewers (if enabled).
-
-## Configuration
-
-The `!addpoints` command relies on the StreamElements loyalty system being active.
-
-1.  Navigate to your **StreamElements Dashboard**.
-2.  Go to **Loyalty** -> **Loyalty Settings**.
-3.  Ensure the **Enable Loyalty System** toggle is switched **on**.
-4.  Go to **Chatbot** -> **Chat Commands**.
-5.  Ensure `!addpoints` is present in your **Default Commands** list and is **enabled**. You can customize its permission level here if needed (e.g., Moderator+).
+<ExampleChatInteraction
+  inputPersona="broadcaster"
+  inputUsernameOverride="Styler"
+  inputMessage="!addpoints StreamFan123 1000"
+  outputMessage="@Styler, added 1000 points to StreamFan123. They now have 5961 points."
+/>

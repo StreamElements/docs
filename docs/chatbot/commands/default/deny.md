@@ -1,56 +1,66 @@
 ---
 id: deny
+title: Using the !deny Command to Reject Duels
 sidebar_label: "!deny"
-description: "Learn how to use the !deny command in StreamElements chatbot to reject duel requests in Twitch chat"
+description: "Learn how viewers use the StreamElements !deny command to reject incoming duel requests from other chat members."
+tags:
+  - chatbot
+  - commands
+  - games
+  - duel
+  - loyalty
 keywords:
 - deny command
 - reject duel
 - decline duel request
 - StreamElements chatbot
 - Twitch chat commands
+- chat games
 ---
 
-# !deny
+import PlatformBadges from '@site/src/components/PlatformBadges';
+import ExampleChatInteraction from '@site/src/components/ExampleChatInteraction';
+
+<PlatformBadges supported={["Twitch", "YouTube"]} />
 
 ## Overview
 
-The `!deny` command allows users to reject an incoming duel request in Twitch chat. This command is part of the Duel module in StreamElements chatbot and helps manage interactions between viewers.
+The `!deny` command allows a viewer who has received a duel request (via the [`!duel`](mdc:duel.md) command) to reject it. This is part of the Duel chat game module.
 
-## Usage
+## Usage / Syntax
 
-To deny a duel request, simply type `!deny` in the chat when you have an active duel request.
+To reject a pending duel request, the recipient types:
+
+```
+!deny
+```
+
+## Parameters / Configuration / Options
+
+- **Parameters**: This command does not take any parameters.
+- **Configuration**: Requires the Duel module to be enabled and an active duel request pending for the user typing the command.
+- **Aliases**: No default aliases, but custom ones can be created.
 
 ## Examples
 
-Here are two examples of how the `!deny` command works:
+Rejecting an incoming duel request from "ChallengerUser":
 
-1. Rejecting a duel request:
+<ExampleChatInteraction
+  inputPersona="viewer"
+  inputUsernameOverride="TargetUser"
+  inputMessage="!deny"
+  outputMessage="@TargetUser, you have denied the duel request from ChallengerUser."
+/>
 
-```
-Viewer: !deny
-Chatbot: @Viewer, you have denied the duel request from Challenger.
-```
+Trying to use `!deny` when no duel request is pending:
 
-2. Using `!deny` without an active request:
-
-```
-Viewer: !deny
-Chatbot: @Viewer, you don't have any pending duel requests to deny.
-```
-
-## Parameters
-
-The `!deny` command does not require any additional parameters.
+<ExampleChatInteraction
+  inputPersona="viewer"
+  inputMessage="!deny"
+  outputMessage="@ViewerName, you don't have any pending duel requests to deny."
+/>
 
 ## Related Commands
 
 - [`!duel`](duel.md): Initiates a duel request with another viewer
 - [`!accept`](accept.md): Accepts an incoming duel request
-
-## Configuration
-
-The `!deny` command is part of the Duel module. Ensure that the Duel module is enabled in your StreamElements chatbot settings to use this command.
-
-## Aliases
-
-By default, there are no aliases for the `!deny` command. However, moderators can create custom aliases if needed.
