@@ -54,3 +54,42 @@ code {
   margin-top: -0.5em; /* Adjust this value to fine-tune vertical spacing */
   margin-bottom: 1em; /* Ensure some space before the Overview section */
 }
+
+/* Custom styles for StreamElements command syntax highlighting */
+.token.command {
+  color: #ff8c00; /* Command color - orange */
+  font-weight: bold;
+}
+
+[data-theme='dark'] .token.command {
+  color: #ffa500; /* Slightly brighter for dark mode */
+}
+
+.token.parameter {
+  color: #1e90ff; /* Parameter color - blue */
+  font-style: italic;
+}
+
+[data-theme='dark'] .token.parameter {
+  color: #00bfff; /* Slightly brighter for dark mode */
+}
+
+.token.option {
+  color: #9370db; /* Option color - purple */
+}
+
+[data-theme='dark'] .token.option {
+  color: #b39ddb; /* Slightly brighter for dark mode */
+}
+
+/* Style for code blocks using the secommand language */
+pre[class*="language-secommand"] {
+  background-color: #f5f5f5;
+  border-left: 3px solid #ff8c00;
+  border-radius: 0 4px 4px 0;
+}
+
+[data-theme='dark'] pre[class*="language-secommand"] {
+  background-color: #2d333b;
+  border-left: 3px solid #ffa500;
+}

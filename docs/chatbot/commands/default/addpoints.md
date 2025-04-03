@@ -21,7 +21,7 @@ keywords:
 # !addpoints Command
 
 import PlatformBadges from '@site/src/components/PlatformBadges';
-import ExampleChatInteraction from '@site/src/components/ExampleChatInteraction'; // Import the new component
+import ExampleChatInteraction from '@site/src/components/ExampleChatInteraction';
 
 <PlatformBadges supported={[ 'Twitch' ]} />
 
@@ -33,7 +33,7 @@ The `!addpoints` command empowers streamers and moderators to manually add point
 
 To add points to a viewer, use the following syntax in your chat:
 
-```
+```command
 !addpoints <username> <amount>
 ```
 
