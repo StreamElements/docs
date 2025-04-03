@@ -1,0 +1,57 @@
+/* src/components/TwitchChatMessage.module.css */
+
+.chatMessage {
+  padding: 4px 10px;
+  margin-bottom: 2px;
+  line-height: 1.4;
+  word-wrap: break-word;
+  font-family: Roobert, "Helvetica Neue", Helvetica, Arial, sans-serif; /* Common Twitch font */
+  font-size: 0.9rem;
+  display: flex; /* Use flexbox for alignment */
+  align-items: center; /* Changed from baseline to center */
+  flex-wrap: nowrap; /* Prevent wrapping to new lines */
+}
+
+.userMessage {
+  /* Specific styles for user messages if needed */
+}
+
+.botMessage {
+  /* Slightly different background or style for bot messages */
+  background-color: var(--ifm-color-emphasis-100); /* Use Docusaurus theme color */
+  border-left: 3px solid var(--ifm-color-primary);
+  padding-left: 7px; /* Adjust padding because of border */
+}
+
+.timestamp {
+  color: var(--ifm-color-content-secondary);
+  font-size: 0.8em;
+  margin-right: 6px;
+  white-space: nowrap; /* Prevent timestamp from wrapping */
+}
+
+.badgesContainer {
+  margin-right: 3px;
+  display: inline-flex; /* Keep badges inline */
+  align-items: center; /* Vertically center badges */
+  height: 1.1em; /* Match typical badge height */
+}
+
+.badge {
+  display: inline-block;
+  width: 1.1em;
+  height: 1.1em;
+  margin-right: 3px;
+  line-height: 1.1em;
+}
+
+.username {
+  font-weight: bold;
+  margin-right: 5px;
+  white-space: nowrap; /* Prevent username from wrapping */
+}
+
+.messageContent {
+  /* Style for the actual message text */
+  margin-left: 0.25em;
+} 

@@ -1,0 +1,25 @@
+/* src/components/ExampleChatInteraction.module.css */
+
+.interactionWrapper {
+  margin-bottom: 1rem; /* Keep space below the block */
+  border: 1px solid var(--ifm-color-emphasis-300); /* Subtle border */
+  border-radius: var(--ifm-global-radius); /* Use Docusaurus radius */
+  padding: 1rem 0 0.5rem 0; /* Increased top padding to make space for label */
+  background-color: var(--ifm-background-color); /* Match page background or use slightly different */
+  position: relative; /* Needed for absolute positioning of the label */
+  /* Optional: Add a subtle shadow */
+  /* box-shadow: var(--ifm-global-shadow-lw); */ 
+} 
+
+.chatLabel {
+  position: absolute;
+  top: 0; /* Align to the very top */
+  right: 10px; /* Changed from left to right */
+  transform: translateY(-50%); /* Move label up half its height to center on border */
+  background-color: var(--ifm-background-color); /* Match background to overlap border cleanly */
+  padding: 0 6px; /* Horizontal padding around the text */
+  font-size: 0.7rem; /* Small font size */
+  font-weight: 500;
+  color: var(--ifm-color-content-secondary); /* Subtle text color */
+  border-radius: 3px; /* Slight rounding */
+} 
