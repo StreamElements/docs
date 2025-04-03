@@ -25,3 +25,32 @@ code {
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+/* Additions for platform badges */
+.platform-badge {
+  padding: 0.1em 0.4em; /* Adjust padding */
+  font-size: 0.75em;   /* Adjust font size */
+  margin-left: 5px;   /* Add some space */
+  vertical-align: middle; /* Align nicely with the title */
+  border-radius: 4px; /* Slightly rounded corners */
+  font-weight: 600; /* Make text slightly bolder */
+}
+
+/* Platform-specific colors */
+.platform-badge.twitch {
+  background-color: #9146FF; 
+  color: white;
+}
+.platform-badge.kick {
+   background-color: #53FC18;
+   color: black;
+}
+.platform-badge.youtube {
+   background-color: #FF0000;
+   color: white;
+}
+
+.platform-badge-container {
+  margin-top: -0.5em; /* Adjust this value to fine-tune vertical spacing */
+  margin-bottom: 1em; /* Ensure some space before the Overview section */
+}
