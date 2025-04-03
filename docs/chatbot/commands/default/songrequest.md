@@ -1,7 +1,14 @@
 ---
 id: songrequest
+title: Using the !songrequest Command to Add Media
 sidebar_label: "!songrequest"
 description: "Learn how to use the !songrequest command to add songs to your StreamElements mediarequest queue."
+tags:
+  - chatbot
+  - commands
+  - media
+  - song request
+  - engagement
 keywords:
 - songrequest
 - song request
@@ -11,8 +18,11 @@ keywords:
 - music streaming
 - YouTube integration
 ---
+import PlatformBadges from '@site/src/components/PlatformBadges';
+import ExampleChatInteraction from '@site/src/components/ExampleChatInteraction';
 
 # !songrequest
+<PlatformBadges supported={[ 'Twitch', 'YouTube' ]} />
 
 ## Overview
 
@@ -21,59 +31,29 @@ The `!songrequest` command allows viewers to add songs to the streamer's mediare
 ## Usage
 
 ```
-!songrequest <song|url|search>
+!songrequest <identifier>
 ```
 
 ## Examples
 
-1. Request a song by search term:
-   ```
-   !songrequest league of legends theme
-   ```
+### Request a song by search term
+<ExampleChatInteraction
+  inputPersona="viewer"
+  inputUsernameOverride="Viewer"
+  inputMessage="!songrequest league of legends theme"
+  outputMessage='@Viewer, added "Legends Never Die | Worlds 2017 - League of Legends" to the queue at #2 (playing ~in 3 mins 5 secs) https://youtu.be/r6zIGXun57U'
+/>
 
-2. Request a song by YouTube URL:
-   ```
-   !songrequest https://www.youtube.com/watch?v=dQw4w9WgXcQ
-   ```
+### Request a song by YouTube URL
+<ExampleChatInteraction
+  inputPersona="viewer"
+  inputUsernameOverride="Viewer"
+  inputMessage="!songrequest https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+  outputMessage='@Viewer, added "Rick Astley - Never Gonna Give You Up (Official Music Video)" to the queue at #3 (playing ~in 6 mins 20 secs) https://youtu.be/dQw4w9WgXcQ'
+/>
 
 ## Parameters
 
-- `<song|url|search>` (required): The song to request. This can be:
-  - A YouTube video URL
-  - A YouTube playlist URL
-  - A search term
-
-## Related Commands
-
-- [`!songqueue`](./songqueue.md): View the current mediarequest queue
-- [`!skip`](./skip.md): Skip the currently playing song (moderator only)
-- [`!volume`](./volume.md): Adjust the volume of the media player (moderator only)
-
-## Aliases
-
-- `!sr`: A shorter alias for `!songrequest`
-
-## Configuration
-
-Streamers can configure various aspects of the `!songrequest` command in their StreamElements dashboard:
-
-- Set a maximum song duration
-- Limit the number of requests per user
-- Enable or disable playlist requests
-- Set up a song blacklist
-
-## Example Output
-
-When a song is successfully added to the queue, the chatbot will respond with a message similar to this:
-
-```
-@Viewer, added "Song Title" to the queue at #2 (playing ~in 3 mins 5 secs) https://youtu.be/VIDEO_ID
-```
-
-This response includes:
-
-- The requester's name
-- The song title
-- The position in the queue
-- Estimated time until the song plays
-- A link to the YouTube video
+| Parameter      | Required | Description                                                                  | Example                                          |
+| :------------- | :------- | :--------------------------------------------------------------------------- | :----------------------------------------------- |
+| `<identifier>` | Yes      | The song to request. Can be a YouTube URL (video/playlist) or search term. | `league of legends theme` or `youtu.be/dQw4w9WgXcQ` |

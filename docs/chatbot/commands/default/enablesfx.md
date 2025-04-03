@@ -1,7 +1,15 @@
 ---
 id: enablesfx
+title: Using the !enablesfx Command to Enable Sound Effects
 sidebar_label: "!enablesfx"
-description: "Learn how to enable all previously disabled sound effect items in your StreamElements loyalty store using the !enablesfx command."
+description: "Learn how moderators use the StreamElements !enablesfx command to quickly enable all previously disabled sound effect items in the loyalty store."
+tags:
+  - chatbot
+  - commands
+  - loyalty
+  - store
+  - sound effects
+  - moderation
 keywords:
 - enable sound effects
 - enable sfx
@@ -9,53 +17,52 @@ keywords:
 - stream commands
 - chatbot
 - StreamElements
+- sfx
 ---
 
-# !enablesfx
+import PlatformBadges from '@site/src/components/PlatformBadges';
+import ExampleChatInteraction from '@site/src/components/ExampleChatInteraction';
+
+<PlatformBadges supported={["Twitch", "YouTube"]} />
 
 ## Overview
 
-The `!enablesfx` command is used to enable all sound effect items in the StreamElements loyalty store that were previously disabled. This command is particularly useful for streamers who want to quickly reactivate multiple sound effect items without having to enable them individually.
+The `!enablesfx` command allows moderators or the broadcaster to enable all items designated as "Sound effect" within the StreamElements Loyalty Store that were previously disabled (e.g., using `!disablesfx`). This provides a quick way to reactivate sound redemptions.
 
-## Usage
+## Usage / Syntax
 
-To use the `!enablesfx` command, simply type it in the chat:
+To enable all previously disabled sound effect store items, execute:
 
 ```
 !enablesfx
 ```
 
-This command doesn't require any additional parameters or arguments.
+## Parameters / Configuration / Options
+
+- **Parameters**: This command does not take any parameters.
+- **Permissions**: Typically restricted to moderators and the broadcaster.
 
 ## Examples
 
-### Example 1: Enabling Sound Effects
+Enabling previously disabled sound effect items:
 
-**Input:**
-```
-!enablesfx
-```
+<ExampleChatInteraction
+  inputPersona="moderator"
+  inputUsernameOverride="ModUser"
+  inputMessage="!enablesfx"
+  outputMessage="@[ModUser], successfully updated X items."
+/>
 
-**Output:**
-```
-@Styler, successfully updated 1 items.
-```
+When no sound effect items needed enabling (none were disabled):
 
-In this example, the command successfully enabled one previously disabled sound effect item in the loyalty store.
+<ExampleChatInteraction
+  inputPersona="moderator"
+  inputUsernameOverride="ModUser"
+  inputMessage="!enablesfx"
+  outputMessage="@[ModUser], no disabled sound effect items found in the loyalty store."
+/>
 
-### Example 2: No Disabled Sound Effects
-
-**Input:**
-```
-!enablesfx
-```
-
-**Output:**
-```
-@Styler, no disabled sound effect items found in the loyalty store.
-```
-
-In this scenario, the command was used, but there were no disabled sound effect items to enable.
+*Note: The number of updated items (X) depends on how many sound effect items were currently disabled.*
 
 ## Related Commands
 

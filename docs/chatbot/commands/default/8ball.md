@@ -1,15 +1,26 @@
 ---
 id: 8ball
+title: Using the !8ball Command for Fortune-Telling Fun
 sidebar_label: "!8ball"
-description: Use the !8ball command to add fortune-telling fun to your streams
+description: "Engage your audience with the !8ball command that provides random fortune-telling responses to viewer questions, adding interactive fun to your streams."
+tags:
+  - chatbot
+  - commands
+  - interactive
+  - engagement
 keywords:
-- 8ball command
-- magic 8 ball chatbot
-- interactive stream commands
-- viewer engagement tools
+  - 8ball command
+  - magic 8 ball chatbot
+  - interactive stream commands
+  - viewer engagement tools
+  - fortune telling bot
 ---
 
+import ExampleChatInteraction from '@site/src/components/ExampleChatInteraction';
+import PlatformBadges from '@site/src/components/PlatformBadges';
+
 # !8ball
+<PlatformBadges supported={[ 'Twitch', 'YouTube' ]} />
 
 ## Overview
 
@@ -17,42 +28,28 @@ The `!8ball` command simulates a magic 8-ball toy, providing random responses to
 
 ## Usage
 
-Type `!8ball` followed by a question in the chat. The chatbot will respond with a random fortune-like answer.
+Type `!8ball` followed by an optional question in the chat. While the question doesn't influence the random answer, including one provides context for the interaction.
 
 ```
-!8ball <question>
+!8ball [question]
 ```
-
-## Examples
-
-1. Asking a yes/no question:
-   ```
-   Viewer: !8ball Will I win my next game?
-   Chatbot: It is decidedly so.
-   ```
-
-2. Asking an open-ended question:
-   ```
-   Viewer: !8ball What should I have for dinner?
-   Chatbot: Cannot predict now.
-   ```
 
 ## Parameters
 
-This command doesn't require any specific parameters. The question following `!8ball` is optional and doesn't affect the randomized response.
+| Parameter   | Required | Description                                                        | Example                  |
+| :---------- | :------- | :----------------------------------------------------------------- | :----------------------- |
+| `[question]`| No       | The optional question to ask the magic 8-ball.                    | `Will I win my next game?` |
 
-## Configuration
+## Examples
 
-The `!8ball` command is part of the 8ball module. Ensure this module is enabled in your StreamElements chatbot settings.
+<ExampleChatInteraction
+  inputPersona="viewer"
+  inputMessage="!8ball Will I win my next game?"
+  outputMessage="It is decidedly so."
+/>
 
-## Aliases
-
-The following aliases can be used interchangeably with `!8ball`:
-
-- `!eightball`
-- `!69ball`
-- `!420ball`
-
-## Customization
-
-You can customize the `!8ball` responses by modifying the 8ball module settings in your StreamElements dashboard. This allows you to add, remove, or edit the possible answers the chatbot can give.
+<ExampleChatInteraction
+  inputPersona="viewer"
+  inputMessage="!8ball What should I have for dinner?"
+  outputMessage="Cannot predict now."
+/>

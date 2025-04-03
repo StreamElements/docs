@@ -1,44 +1,57 @@
 ---
 id: closestore
+title: Using the !closestore Command to Disable Store Items
 sidebar_label: "!closestore"
-description: "Learn how to use the !closestore command to disable all regular items in your StreamElements loyalty store"
+description: "Learn how moderators use the StreamElements !closestore command to quickly disable all regular items in the loyalty store."
+tags:
+  - chatbot
+  - commands
+  - loyalty
+  - store
+  - moderation
 keywords:
 - closestore
 - disable store items
 - loyalty store
 - stream store
 - streamelements chatbot
+- close store
 ---
 
-# !closestore
+import PlatformBadges from '@site/src/components/PlatformBadges';
+import ExampleChatInteraction from '@site/src/components/ExampleChatInteraction';
+
+<PlatformBadges supported={["Twitch", "YouTube"]} />
 
 ## Overview
 
-The `!closestore` command is used to quickly disable all regular items in your StreamElements loyalty store that were previously enabled. This can be useful when you want to temporarily close your store or make significant changes to your item offerings.
+The `!closestore` command allows moderators or the broadcaster to disable all regular items (excluding sound effects) in the StreamElements Loyalty Store simultaneously. This is useful for temporarily closing the store. Use [`!openstore`](mdc:openstore.md) to re-enable them.
 
-## Usage
+## Usage / Syntax
 
-To use the `!closestore` command, simply type it in your stream chat:
+To disable all enabled regular store items, execute:
 
 ```
 !closestore
 ```
 
-This command does not require any additional arguments or parameters.
+## Parameters / Configuration / Options
+
+- **Parameters**: This command does not take any parameters.
+- **Permissions**: Typically restricted to moderators and the broadcaster.
 
 ## Examples
 
-### Example 1: Closing the store
+Disabling all enabled regular store items:
 
-**Input:**
-```
-!closestore
-```
+<ExampleChatInteraction
+  inputPersona="moderator"
+  inputUsernameOverride="ModUser"
+  inputMessage="!closestore"
+  outputMessage="@[ModUser], successfully updated X items."
+/>
 
-**Output:**
-```
-@Streamer, successfully updated 10 items.
-```
+*Note: The number of updated items (X) depends on how many regular items were currently enabled.*
 
 ## Related Commands
 

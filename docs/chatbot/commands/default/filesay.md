@@ -1,7 +1,13 @@
 ---
 id: filesay
+title: Using the !filesay Command for Bulk Chat Messages
 sidebar_label: "!filesay"
-description: "Learn how to use the !filesay command to send multiple lines of text to chat from a URL, useful for bulk moderation actions like banning users."
+description: "Learn how moderators use the StreamElements !filesay command to send multiple lines from a text file URL to chat, often for bulk bans or messages."
+tags:
+  - chatbot
+  - commands
+  - moderation
+  - bulk actions
 keywords:
 - filesay
 - chatbot command
@@ -11,65 +17,51 @@ keywords:
 - streaming
 - twitch
 - youtube
+- bulk ban
+- bulk message
 ---
 
-# !filesay
+import PlatformBadges from '@site/src/components/PlatformBadges';
+import ExampleChatInteraction from '@site/src/components/ExampleChatInteraction';
+
+<PlatformBadges supported={["Twitch", "YouTube"]} />
 
 ## Overview
 
-The `!filesay` command allows streamers and moderators to send multiple lines of text to chat from a URL. This powerful tool is particularly useful for bulk moderation actions, such as banning a large number of users simultaneously.
+The `!filesay` command instructs the chatbot to fetch the content of a plain text file from a given URL and send each line of that file as a separate message in chat. This is commonly used by moderators for executing bulk actions, like banning a list of known bots or spam accounts by having each line be a `/ban username` command.
 
-## Usage
+## Usage / Syntax
+
+Execute commands or send messages from a file URL:
 
 ```
-!filesay <url>
+!filesay <url_to_text_file>
 ```
 
-Replace `<url>` with the web address of a plain text file containing the messages you want to send to chat. Each line in the file will be sent as a separate message.
+## Parameters / Configuration / Options
+
+| Parameter            | Required | Description                                                              | Example                               |
+| :------------------- | :------- | :----------------------------------------------------------------------- | :------------------------------------ |
+| `<url_to_text_file>` | Required | The direct URL to a plain text (`.txt`) file accessible by the bot. | `https://pastebin.com/raw/abcdef12` |
+
+- **File Format**: The file at the URL must be plain text, with each chat message/command on a separate line.
+- **Permissions**: This command is typically restricted to moderators and the broadcaster due to its potential for mass actions.
+- **Aliases**: No default aliases.
 
 ## Examples
 
-### Example 1: Banning multiple users
+Executing a bulk ban list from a Pastebin raw link (each line in the file is `/ban username`):
 
-```
-!filesay https://pastebin.com/raw/123
-```
+<ExampleChatInteraction
+  inputPersona="moderator"
+  inputUsernameOverride="ModUser"
+  inputMessage="!filesay https://pastebin.com/raw/abcdef12"
+  outputMessage="(Bot sends multiple messages to chat, e.g., '/ban BotUser1', '/ban BotUser2', etc., resulting in ban confirmations)"
+/>
 
-Output:
-```
-badactor1 has been permanently banned from the chat.
-badactor2 has been permanently banned from the chat.
-badactor3 has been permanently banned from the chat.
-badactor4 has been permanently banned from the chat.
-badactor5 has been permanently banned from the chat.
-```
-
-### Example 2: Sending multiple announcements
-
-```
-!filesay https://example.com/announcements.txt
-```
-
-Output:
-```
-Welcome to the stream, everyone!
-Today's schedule: Gaming from 2-4 PM, Q&A from 4-5 PM
-Don't forget to follow and subscribe for more content!
-```
-
-## Parameters
-
-- `url`: The web address of a plain text file containing the messages to be sent to chat. Each line in the file will be treated as a separate message.
+*Note: The bot executes each line from the file as if it were typed directly into chat by the user who invoked `!filesay`.*
 
 ## Related Commands
 
 - [`!nuke`](nuke.md)
 - [`!nukeusername`](nukeusername.md)
-
-## Configuration
-
-No additional configuration is required to use the `!filesay` command.
-
-## Aliases
-
-There are no aliases for the `!filesay` command.

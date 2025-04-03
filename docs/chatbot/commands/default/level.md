@@ -1,7 +1,14 @@
 ---
 id: level
+title: Using the !level Command for User Access Levels
 sidebar_label: "!level"
-description: "Learn how to use the !level command in StreamElements chatbot to view and set user levels for chat moderation and customization."
+description: "Learn how moderators use the StreamElements !level command to view, set, and reset user access levels for command permissions."
+tags:
+  - chatbot
+  - commands
+  - moderation
+  - permissions
+  - user levels
 keywords:
 - StreamElements
 - chatbot
@@ -10,62 +17,83 @@ keywords:
 - user levels
 - moderation
 - customization
+- permissions
+- access control
 ---
 
-# !level
+import PlatformBadges from '@site/src/components/PlatformBadges';
+import ExampleChatInteraction from '@site/src/components/ExampleChatInteraction';
+
+<PlatformBadges supported={["Twitch", "YouTube"]} />
 
 ## Overview
 
-The `!level` command allows streamers and moderators to view and set user levels in the chat. User levels can be used to customize permissions, create special commands, or manage chat moderation more effectively.
+The `!level` command allows moderators and the broadcaster to view or modify a user's access level within the StreamElements chatbot system. These levels determine which commands a user can execute, based on the permission settings of each command.
 
-## Usage
+## Usage / Syntax
 
-```
-!level <username>
-!level <username> <value>
-!level <username> reset
-```
+The command has three forms:
+
+1.  **Check a user's level:**
+    ```
+    !level <username>
+    ```
+2.  **Set a user's level:**
+    ```
+    !level <username> <level_value>
+    ```
+3.  **Reset a user's level to default (100):**
+    ```
+    !level <username> reset
+    ```
+
+## Parameters / Configuration / Options
+
+| Parameter       | Required | Description                                                                               | Example      |
+| :-------------- | :------- | :---------------------------------------------------------------------------------------- | :----------- |
+| `<username>`    | Required | The username of the viewer whose level is being checked, set, or reset.                   | `ViewerName` |
+| `<level_value>` | Optional | The numerical level to assign (see below). Required only when *setting* a level.        | `500`        |
+| `reset`         | Optional | The keyword `reset`. Required only when *resetting* a level to the default (`100`). | `reset`      |
+
+-   **Standard Level Values**:
+    -   `100`: Viewer (Default)
+    -   `250`: Subscriber (Auto-assigned on Twitch if linked)
+    -   `300`: Regular (Manually assigned or via `!regular` command)
+    -   `400`: VIP (Auto-assigned on Twitch if linked)
+    -   `500`: Moderator (Auto-assigned)
+    -   `1000`: Super Moderator (Manually assigned)
+-   **Note**: Auto-assigned levels (Sub, VIP, Mod) can be manually overridden with `!level`, but this is generally not recommended unless you have a specific reason (e.g., giving mod perks to a non-mod).
+-   **Permissions**: This command is typically restricted to moderators (`500`) and the broadcaster.
+-   **Error Messages**: The bot will indicate incorrect usage (e.g., `usage !level USER 500/reset`) or list valid levels if an invalid value is provided.
 
 ## Examples
 
-1. Check a user's level:
-   ```
-   !level darkoe
-   ```
-   Output: `@styler, the level of darkoe is 100`
+Check a user's current level:
 
-2. Set a user's level:
-   ```
-   !level darkoe 500
-   ```
-   Output: `@styler, successfully set darkoe's level to 500, you can reset it with !level darkoe reset`
+<ExampleChatInteraction
+  inputPersona="moderator"
+  inputUsernameOverride="ModUser"
+  inputMessage="!level ViewerName"
+  outputMessage="@[ModUser], the level of ViewerName is 100"
+/>
 
-3. Reset a user's level:
-   ```
-   !level darkoe reset
-   ```
-   Output: `@styler, successfully reset darkoe's level to 100 Kappa`
+Set a user's level to Moderator (500):
 
-## Parameters
+<ExampleChatInteraction
+  inputPersona="moderator"
+  inputUsernameOverride="ModUser"
+  inputMessage="!level AnotherViewer 500"
+  outputMessage="@[ModUser], successfully set AnotherViewer's level to 500, you can reset it with !level AnotherViewer reset"
+/>
 
-- `<username>` (required): The username of the person whose level you want to check or set.
-- `<value>` (optional): The level value to set for the user.
-- `reset` (optional): Resets the user's level to the default value of 100.
+Reset a user's level back to the default (Viewer/100):
 
-## User Level Values
-
-- `100`: Normal user (default value)
-- `250`: Subscriber (automatically set for subscribers)
-- `300`: Regular
-- `400`: VIP (automatically set for VIPs)
-- `500`: Moderator (automatically set for moderators)
-- `1000`: Supermod
-
-**Note:** Although subscriber, VIP, and moderator levels are automatically set, you can manually assign these levels to specific users. This is useful for creating commands accessible only to subscribers while allowing specific non-subscribers to use them.
-
-## Configuration
-
-The `!level` command doesn't require additional configuration. User levels are automatically assigned based on their roles in the chat (subscriber, VIP, moderator). However, you can manually set or change levels using the command.
+<ExampleChatInteraction
+  inputPersona="moderator"
+  inputUsernameOverride="ModUser"
+  inputMessage="!level AnotherViewer reset"
+  outputMessage="@[ModUser], successfully reset AnotherViewer's level to 100 Kappa"
+/>
 
 ## Customization
 
@@ -78,14 +106,3 @@ You can use user levels to create custom commands or features in your stream. Fo
 ## Related Commands
 
 - [`!permit`](permit.md): Temporarily allow a user to post links (often used in conjunction with user levels)
-
-## Error Messages
-
-If the command is used incorrectly, you may see these error messages:
-
-```
-@styler, usage !level USER 500/reset
-@styler, valid levels are: 100 (pleb), 250 (sub), 300 (regular), 400 (VIP), 500 (mod), 1000 (supermod)
-```
-
-These messages help guide users to correct usage of the `!level` command.

@@ -1,7 +1,16 @@
 ---
 id: emotes
+title: Using the !emotes Command to List/Reload Emotes
 sidebar_label: "!emotes"
-description: "Learn how to use the !emotes command in StreamElements chatbot to display and manage available emotes from various platforms."
+description: "Learn how the StreamElements !emotes command displays available channel emotes (Twitch, BTTV, FFZ, 7TV) or reloads the emote cache."
+tags:
+  - chatbot
+  - commands
+  - emotes
+  - help
+  - bttv
+  - ffz
+  - 7tv
 keywords:
 - emotes
 - chatbot
@@ -10,62 +19,65 @@ keywords:
 - ffz
 - 7tv
 - streamelements
+- list emotes
+- reload emotes
 ---
 
-# !emotes
+import PlatformBadges from '@site/src/components/PlatformBadges';
+import ExampleChatInteraction from '@site/src/components/ExampleChatInteraction';
+
+<PlatformBadges supported={["Twitch", "YouTube"]} />
 
 ## Overview
 
-The `!emotes` command allows streamers and moderators to display and manage available emotes in the chat. It supports emotes from multiple platforms, including Twitch, BTTV (BetterTTV), FFZ (FrankerFaceZ), and 7TV. This command helps viewers see available emotes and enables moderators to update the emote list.
+The `!emotes` command serves two purposes: it can list the available emotes from a specific platform (Twitch, BTTV, FFZ, 7TV) currently active in the channel, or it can trigger a reload of the bot's emote cache.
 
-## Usage
+## Usage / Syntax
 
-```
-!emotes <platform>
-!emotes reload
-```
+The command has two forms:
+
+1.  **List emotes for a platform:**
+    ```
+    !emotes <platform>
+    ```
+2.  **Reload the emote cache:**
+    ```
+    !emotes reload
+    ```
+
+## Parameters / Configuration / Options
+
+| Parameter    | Required (One Of) | Description                                                                                                     | Example |
+| :----------- | :---------------- | :-------------------------------------------------------------------------------------------------------------- | :------ |
+| `<platform>` | Yes               | Which platform's emotes to list: `twitch`, `bttv`, `ffz`, or `7tv`.                                             | `7tv`   |
+| `reload`     | Yes               | The keyword `reload` to refresh the bot's knowledge of available emotes (e.g., after adding/removing emotes). | `reload`|
+
+- **Permissions**: Listing emotes (`!emotes <platform>`) is typically available to viewers. Reloading (`!emotes reload`) is usually restricted to moderators and the broadcaster.
+- **Configuration**: For platform-specific emotes (BTTV, FFZ, 7TV) to be listed, the respective service must be enabled and configured for the channel.
+- **Aliases**: No default aliases.
 
 ## Examples
 
-1. Display 7TV emotes:
-   ```
-   !emotes 7tv
-   ```
-   Output:
-   ```
-   Active 7TV emotes in chat: GIGACHAD JUSSY Joel JoelPride Joeler Joelest OMEGALUL donowall mamamia modCheck peepoLeave
-   ```
+List available 7TV emotes for the channel:
 
-2. Reload all emotes:
-   ```
-   !emotes reload
-   ```
-   Output:
-   ```
-   @styler, successfully updated emotes :)
-   ```
+<ExampleChatInteraction
+  inputPersona="viewer"
+  inputMessage="!emotes 7tv"
+  outputMessage="Active 7TV emotes in chat: GIGACHAD JUSSY Joel JoelPride Joeler Joelest OMEGALUL donowall mamamia modCheck peepoLeave"
+/>
 
-## Parameters
+Reload the bot's emote cache:
 
-- `<platform>`: The platform to display emotes for. Available options are:
-  - `twitch`: Display Twitch emotes
-  - `bttv`: Display BetterTTV emotes
-  - `ffz`: Display FrankerFaceZ emotes
-  - `7tv`: Display 7TV emotes
-
-- `reload`: Updates the emote list for all platforms
+<ExampleChatInteraction
+  inputPersona="moderator"
+  inputUsernameOverride="ModUser"
+  inputMessage="!emotes reload"
+  outputMessage="@ModUser, successfully updated emotes :)"
+/>
 
 ## Related Commands
 
 - `!emotecount`: Counts the number of emotes in the chat
-
-## Configuration
-
-The `!emotes` command typically doesn't require additional configuration. However, ensure that your StreamElements chatbot is properly connected to your Twitch channel and has the necessary permissions to manage emotes.
-
-## Aliases
-
-There are no known aliases for the `!emotes` command.
 
 ## Customization
 

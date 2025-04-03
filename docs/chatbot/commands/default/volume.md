@@ -1,7 +1,14 @@
 ---
 id: volume
+title: Using the !volume Command for Media Requests
 sidebar_label: "!volume"
 description: "Learn how to use the !volume command in StreamElements to control and check the volume of media requests in your Twitch or YouTube chat."
+tags:
+  - chatbot
+  - commands
+  - songrequest
+  - media
+  - audio
 keywords:
 - volume control
 - media request
@@ -10,55 +17,57 @@ keywords:
 - audio settings
 ---
 
-# !volume
+import PlatformBadges from '@site/src/components/PlatformBadges';
+import ExampleChatInteraction from '@site/src/components/ExampleChatInteraction';
+
+<PlatformBadges supported={["Twitch", "YouTube"]} />
 
 ## Overview
 
-The `!volume` command is used to control and check the volume level for media requests in your stream. This command allows you to adjust the volume of requested media content, ensuring a balanced audio experience for your viewers.
+The `!volume` command is used to control and check the volume level for media requests (like song requests) played through the StreamElements Media Request system. This allows moderators or the broadcaster to adjust the playback volume.
 
-## Usage
+## Usage / Syntax
 
-The `!volume` command can be used in two ways:
+The command can be used in two ways:
 
-1. To check the current volume level:
-   ```
-   !volume
-   ```
+1.  **Check current volume:**
+    ```
+    !volume
+    ```
+2.  **Set new volume:**
+    ```
+    !volume <level>
+    ```
 
-2. To set a new volume level:
-   ```
-   !volume <level>
-   ```
+## Parameters / Configuration / Options
+
+| Parameter | Required | Description                                                                  | Example |
+| :-------- | :------- | :--------------------------------------------------------------------------- | :------ |
+| `<level>` | Optional | A number between `0` and `100` for the desired volume. If omitted, shows current volume. | `75`    |
+
+- **Permissions**: This command is typically restricted to moderators and the broadcaster by default. Permissions can be managed in the StreamElements dashboard under Chatbot -> User Management -> Command Permissions.
 
 ## Examples
 
-1. Checking the current volume:
-   ```
-   !volume
-   ```
-   Output:
-   ```
-   Current volume is 50%
-   ```
+Checking the current volume:
 
-2. Setting a new volume level:
-   ```
-   !volume 75
-   ```
-   Output:
-   ```
-   Styler set the songrequest volume to 75
-   ```
+<ExampleChatInteraction
+  inputPersona="moderator"
+  inputUsernameOverride="ModUser"
+  inputMessage="!volume"
+  outputMessage="Current volume is 50%"
+/>
 
-## Parameters
+Setting a new volume level:
 
-- `<level>` (optional): A number between 0 and 100 representing the desired volume level. If not provided, the command will return the current volume level.
+<ExampleChatInteraction
+  inputPersona="moderator"
+  inputUsernameOverride="ModUser"
+  inputMessage="!volume 75"
+  outputMessage="[ModeratorName] set the songrequest volume to 75"
+/>
 
 ## Related Commands
 
 - [`!songrequest`](songrequest.md): Used to request songs or media content.
 - [`!skip`](skip.md): Skips the currently playing media request.
-
-## Configuration
-
-The `!volume` command is typically available to moderators and the broadcaster by default. You can customize permissions in your StreamElements dashboard.

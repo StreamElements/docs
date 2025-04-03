@@ -1,7 +1,14 @@
 ---
 id: items
+title: Using the !items Command to List Store Items
 sidebar_label: "!items"
-description: "Learn how to use the !items command in StreamElements to view redeemable rewards in the chat loyalty store."
+description: "Learn how viewers use the StreamElements !items command to see available redeemable rewards in the loyalty store directly in chat."
+tags:
+  - chatbot
+  - commands
+  - loyalty
+  - store
+  - points
 keywords:
 - StreamElements
 - chatbot
@@ -10,39 +17,42 @@ keywords:
 - rewards
 - items
 - store
+- list items
 ---
 
-# !items
+import PlatformBadges from '@site/src/components/PlatformBadges';
+import ExampleChatInteraction from '@site/src/components/ExampleChatInteraction';
+
+<PlatformBadges supported={["Twitch", "YouTube"]} />
 
 ## Overview
 
-The `!items` command allows viewers to retrieve a list of redeemable rewards from the StreamElements chat loyalty store. This command helps viewers see what items they can redeem using their accumulated loyalty points.
+The `!items` command allows viewers to see a list of currently available items for redemption in the StreamElements Loyalty Store, along with a link to the store page.
 
-## Usage
+## Usage / Syntax
 
-To use the `!items` command, simply type it in the chat:
+Viewers can list available store items by typing:
 
 ```
 !items
 ```
+
+## Parameters / Configuration / Options
+
+- **Parameters**: This command does not take any parameters.
+- **Configuration**: Requires the Loyalty system and Stream Store to be enabled and configured with items in the StreamElements dashboard.
 
 ## Examples
 
-### Example 1: Viewing available items
+Viewing available store items:
 
-**Input:**
-```
-!items
-```
+<ExampleChatInteraction
+  inputPersona="viewer"
+  inputMessage="!items"
+  outputMessage="Available items are: Sound Alert, VIP for a Day, Skip Song Request, Custom Emote | Store Link: https://streamelements.com/[ChannelName]/store"
+/>
 
-**Output:**
-```
-Available items are: 123123123, 321, item, yoavokay, item, dantheman https://streamelements.com/styler/store 
-```
-
-## Parameters
-
-The `!items` command does not require any parameters.
+*Note: The exact list of items and the format depend on the store configuration.*
 
 ## Related Commands
 

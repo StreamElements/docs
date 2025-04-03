@@ -1,56 +1,65 @@
 ---
 id: permit
+title: Using the !permit Command to Allow Links
 sidebar_label: "!permit"
-description: "Learn how to use the !permit command in StreamElements chatbot to temporarily prevent viewers from getting timed out"
+description: "Learn how to use the !permit command in StreamElements chatbot to temporarily allow viewers to post links without getting timed out."
+tags:
+  - chatbot
+  - commands
+  - moderation
+  - link protection
 keywords:
 - permit command
 - prevent timeout
 - moderation commands
 - chatbot commands
 - StreamElements
+- allow links
 ---
 
-# !permit
+import PlatformBadges from '@site/src/components/PlatformBadges';
+import ExampleChatInteraction from '@site/src/components/ExampleChatInteraction';
+
+<PlatformBadges supported={["Twitch", "YouTube"]} />
 
 ## Overview
 
-The `!permit` command is a moderation tool used in StreamElements chatbot to temporarily prevent a specific viewer from being timed out. This command is useful when you want to allow a viewer to post links or other content that might normally trigger an automatic timeout.
+The `!permit` command is a moderation tool that temporarily allows a specific viewer to post links or engage in other behavior that might normally trigger an automatic timeout by the bot's link or spam filters. This is useful for granting temporary exceptions.
 
-## Usage
+## Usage / Syntax
+
+To permit a viewer, use the following syntax:
 
 ```
-!permit <username> [duration]
+!permit <username> [duration_seconds]
 ```
 
-## Parameters
+## Parameters / Configuration / Options
 
-- `<username>`: The name of the viewer to be exempted from timeouts.
-- `[duration]` (optional): The number of seconds the permit should last. If not specified, the default is 60 seconds.
+| Parameter            | Required | Description                                                             | Example |
+| :------------------- | :------- | :---------------------------------------------------------------------- | :------ |
+| `<username>`         | Required | The username of the viewer to grant the permit to.                      | `ViewerName` |
+| `[duration_seconds]` | Optional | The duration of the permit in seconds. Defaults to `60` if omitted. | `120`   |
+
+- **Permissions**: This command is typically restricted to moderators and the broadcaster.
+- **Aliases**: No default aliases, but custom ones can be created.
 
 ## Examples
 
-1. Permit a user for the default duration:
-   ```
-   !permit darkoe
-   ```
-   Output:
-   ```
-   @Darkoe, you will not get timed out for the next 60 seconds.
-   ```
+Permit a user for the default duration (60 seconds):
 
-2. Permit a user for a custom duration:
-   ```
-   !permit darkoe 120
-   ```
-   Output:
-   ```
-   @darkoe, you will not get timed out for the next 120 seconds.
-   ```
+<ExampleChatInteraction
+  inputPersona="moderator"
+  inputUsernameOverride="ModUser"
+  inputMessage="!permit ViewerName"
+  outputMessage="@ViewerName, you will not get timed out for the next 60 seconds."
+/>
 
-## Configuration
+Permit a user for a custom duration (120 seconds):
 
-The `!permit` command is available by default in StreamElements chatbot. Moderators and the broadcaster can use this command without additional configuration.
-
-## Aliases
-
-There are no default aliases for the `!permit` command. However, you can create custom aliases in your StreamElements dashboard if desired.
+<ExampleChatInteraction
+  inputPersona="moderator"
+  inputUsernameOverride="ModUser"
+  inputMessage="!permit AnotherViewer 120"
+  outputMessage="@AnotherViewer, you will not get timed out for the next 120 seconds."
+/>

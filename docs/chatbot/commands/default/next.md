@@ -1,7 +1,14 @@
 ---
 id: next
+title: Using the !next Command for Upcoming Song Info
 sidebar_label: "!next"
-description: "Learn how to use the !next command to view the upcoming song in the StreamElements media request queue"
+description: "Learn how the StreamElements !next command allows viewers to see the next song in the media request queue."
+tags:
+  - chatbot
+  - commands
+  - songrequest
+  - media
+  - queue
 keywords:
 - next command
 - upcoming song
@@ -9,59 +16,51 @@ keywords:
 - song queue
 - StreamElements
 - chatbot
+- next song
 ---
 
-# !next
+import PlatformBadges from '@site/src/components/PlatformBadges';
+import ExampleChatInteraction from '@site/src/components/ExampleChatInteraction';
+
+<PlatformBadges supported={["Twitch", "YouTube"]} />
 
 ## Overview
 
-The `!next` command allows viewers and moderators to check the next song in the StreamElements media request queue. It provides information about the upcoming track, including its title, artist, duration, and requester.
+The `!next` command allows viewers and moderators to see details about the next song scheduled to play in the StreamElements Media Request queue (if one exists).
 
-## Usage
+## Usage / Syntax
 
-To use the `!next` command, simply type it in the chat:
+To see the next song, simply type:
 
 ```
 !next
 ```
+
+## Parameters / Configuration / Options
+
+- **Parameters**: This command does not take any parameters.
+- **Permissions**: Typically available to all viewers.
+- **Aliases**: `!nextsong`
 
 ## Examples
 
-### Example 1: Checking the next song
+Checking the next song in the queue:
 
-**Input:**
-```
-!next
-```
+<ExampleChatInteraction
+  inputPersona="viewer"
+  inputMessage="!next"
+  outputMessage="Next song: Artist - Song Title [Duration] requested by RequesterName [Link]"
+/>
 
-**Output:**
-```
-Next song: MrSuicideSheep - WE WON ZULUL [2m3s] requested by LordFluffyButt https://youtu.be/9OG-Qr1qAe4
-```
+When no songs are in the queue:
 
-### Example 2: No songs in queue
-
-**Input:**
-```
-!next
-```
-
-**Output:**
-```
-There are no songs currently in the queue.
-```
-
-## Parameters
-
-The `!next` command does not require any parameters.
+<ExampleChatInteraction
+  inputPersona="viewer"
+  inputMessage="!next"
+  outputMessage="There are no songs currently in the queue."
+/>
 
 ## Related Commands
 
 - [`!song`](song.md): Displays information about the currently playing song
 - [`!songqueue`](songqueue.md): Shows the entire media request queue
-
-## Aliases
-
-The `!next` command has the following aliases:
-
-- `!nextsong`

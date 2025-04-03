@@ -1,42 +1,44 @@
 ---
 id: vanish
+title: Using the !vanish Command to Hide User Messages
 sidebar_label: "!vanish"
-description: "Learn how to use the !vanish command in StreamElements to temporarily time yourself out and clear your chat history."
+description: "Learn how to use the !vanish command to temporarily hide all your recent messages in chat, helping maintain a clean stream experience."
+tags:
+  - chatbot
+  - commands
+  - moderation
+  - chat-tools
 keywords:
-- vanish command
-- time out command
-- clear chat history
-- StreamElements
-- chatbot
+  - vanish command
+  - hide messages
+  - streamelements commands
+  - chat moderation
+  - clean chat
 ---
 
+import ExampleChatInteraction from '@site/src/components/ExampleChatInteraction';
+import PlatformBadges from '@site/src/components/PlatformBadges';
+
 # !vanish
+<PlatformBadges supported={[ 'Twitch', 'YouTube' ]} />
 
 ## Overview
 
-The `!vanish` command allows chatters to temporarily time themselves out for 1 second, effectively clearing their chat history in the process. This can be useful for viewers who want to quickly remove their recent messages from the chat.
+The `!vanish` command allows users to temporarily hide all of their recent messages in the chat. This is useful for viewers who want to correct a mistake or remove potentially disruptive messages before moderators need to intervene.
 
 ## Usage
 
-To use the `!vanish` command, simply type it in the chat:
+To use the `!vanish` command, simply type it in chat:
 
 ```
 !vanish
 ```
-
-There are no additional parameters or arguments required.
 
 ## Examples
 
-### Example 1: Basic usage
-
-**Input:**
-```
-!vanish
-```
-
-**Output (only visible to moderators):**
-```
-streamelements timed out darkoe for 1s: "darkoe vanishes in a puff of smoke."
-```
+<ExampleChatInteraction
+  inputPersona="viewer"
+  inputMessage="!vanish"
+  outputMessage="All of Viewer's recent messages have been removed from chat."
+/>
 

@@ -1,7 +1,13 @@
 ---
 id: chatstats
+title: Using the !chatstats Command for Chat Stats Link
 sidebar_label: "!chatstats"
-description: "Learn how to use the !chatstats command in StreamElements to view chat statistics and track viewer engagement."
+description: "Learn how the StreamElements !chatstats command provides a link to the channel's public chat statistics page."
+tags:
+  - chatbot
+  - commands
+  - stats
+  - utility
 keywords:
 - chatstats
 - chat statistics
@@ -9,42 +15,39 @@ keywords:
 - viewer engagement
 - loyalty
 - chatbot commands
+- channel stats
 ---
 
-# !chatstats
+import PlatformBadges from '@site/src/components/PlatformBadges';
+import ExampleChatInteraction from '@site/src/components/ExampleChatInteraction';
+
+<PlatformBadges supported={["Twitch", "YouTube"]} />
 
 ## Overview
 
-The `!chatstats` command provides a link to the streamer's chat statistics page. This feature allows streamers, moderators, and viewers to easily access information about chat activity and viewer engagement.
+The `!chatstats` command provides a direct link to the channel's public StreamElements chat statistics page. This page typically shows data on chat activity, top chatters, emote usage, and more.
 
-## Usage
+## Usage / Syntax
 
-To use the `!chatstats` command, simply type it in the chat:
+To display the link to the chat stats page, type:
 
 ```
 !chatstats
 ```
 
-The chatbot will respond with a link to the streamer's chat statistics page.
+## Parameters / Configuration / Options
+
+- **Parameters**: This command does not take any parameters.
 
 ## Examples
 
-### Example 1: Viewer requesting chat stats
+Displaying the link to the chat statistics page:
 
-**Input:**
-```
-Viewer123: !chatstats
-```
-
-**Output:**
-```
-Chatbot: https://stats.streamelements.com/c/channelname PogChamp
-```
-
-
-## Parameters
-
-The `!chatstats` command does not require any additional parameters.
+<ExampleChatInteraction
+  inputPersona="viewer"
+  inputMessage="!chatstats"
+  outputMessage="https://stats.streamelements.com/c/[channelname] PogChamp"
+/>
 
 ## Related Commands
 

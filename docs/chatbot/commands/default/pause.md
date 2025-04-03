@@ -1,7 +1,14 @@
 ---
 id: pause
+title: Using the !pause Command for Media Playback
 sidebar_label: "!pause"
-description: "Learn how to pause media playback in your Twitch chat using the !pause command. Control your media requests easily with this simple StreamElements chatbot command."
+description: "Learn how to pause media playback (song requests) in your chat using the StreamElements !pause command."
+tags:
+  - chatbot
+  - commands
+  - songrequest
+  - media
+  - moderation
 keywords:
 - pause command
 - media request
@@ -11,47 +18,36 @@ keywords:
 - songrequest
 ---
 
-# !pause
+import PlatformBadges from '@site/src/components/PlatformBadges';
+import ExampleChatInteraction from '@site/src/components/ExampleChatInteraction';
+
+<PlatformBadges supported={["Twitch", "YouTube"]} />
 
 ## Overview
 
-The `!pause` command is used to temporarily stop the playback of media requests in your Twitch chat. This command is particularly useful when you need to interrupt ongoing media playback without completely stopping or clearing the queue.
+The `!pause` command temporarily stops the playback of the current media request (e.g., songrequest) via the StreamElements Media Request system. This is useful for interrupting playback without clearing the queue. Use the [`!play`](mdc:play.md) command to resume.
 
-## Usage
+## Usage / Syntax
 
-To pause media playback, simply type the command in your Twitch chat:
+To pause media playback, execute the command:
 
 ```
 !pause
 ```
+
+- **Parameters**: This command does not take any parameters.
+- **Permissions**: Typically restricted to moderators and the broadcaster by default. Permissions can be managed in the StreamElements dashboard.
 
 ## Examples
 
-### Example 1: Basic Usage
+Pausing the current media request:
 
-**Input:**
-```
-!pause
-```
-
-**Output:**
-```
-Styler, songrequest is now paused!
-```
-
-### Example 2: Resuming Playback
-
-After pausing, you can resume playback using the `!play` command:
-
-**Input:**
-```
-!play
-```
-
-**Output:**
-```
-Styler, songrequest playback resumed!
-```
+<ExampleChatInteraction
+  inputPersona="moderator"
+  inputUsernameOverride="ModUser"
+  inputMessage="!pause"
+  outputMessage="[ModeratorName], songrequest is now paused!"
+/>
 
 ## Related Commands
 

@@ -1,42 +1,60 @@
 ---
 id: kappagen
+title: Using the !kappagen Command for Emote Explosions
 sidebar_label: "!kappagen"
-description: "Learn how to use the !kappagen command to trigger emote explosions in your StreamElements chatbot."
+description: "Learn how to use the StreamElements !kappagen command to trigger emote explosions via the Kappagen overlay widget."
+tags:
+  - chatbot
+  - commands
+  - overlay
+  - emotes
+  - fun
+  - kappagen
 keywords:
 - kappagen
 - emote explosion
 - chatbot command
 - visual effects
 - stream overlay
+- kappagen widget
 ---
 
-# !kappagen
+import PlatformBadges from '@site/src/components/PlatformBadges';
+import ExampleChatInteraction from '@site/src/components/ExampleChatInteraction';
+
+<PlatformBadges supported={["Twitch", "YouTube"]} />
 
 ## Overview
 
-The `!kappagen` command is a powerful tool that triggers an emote explosion on your stream overlay using the Kappagen widget. This command creates a visually stunning effect of emotes bursting across the screen, adding excitement and engagement to your stream.
+The `!kappagen` command triggers an emote explosion effect on the stream via the StreamElements Kappagen overlay widget. This adds a visual burst of emotes to the screen.
 
-## Usage
+## Usage / Syntax
 
-To use the `!kappagen` command, simply type it in the chat:
+To trigger the effect, simply execute the command:
 
 ```
 !kappagen
 ```
 
-This command doesn't require any additional arguments or parameters.
+## Parameters / Configuration / Options
+
+- **Parameters**: This command does not take any parameters.
+- **Configuration**:
+    - Requires the Kappagen widget to be added to your active StreamElements overlay scene.
+    - The command must be enabled in Chatbot -> Chat Commands -> Default Commands.
+    - Kappagen widget settings (emotes used, intensity, duration, cooldown, permissions) are configured within the overlay editor.
+- **Permissions**: Configurable within the Kappagen widget settings (often defaults to Everyone or Subs/Mods).
+- **Aliases**: No default aliases, but custom ones can be created.
 
 ## Examples
 
-### Example 1: Basic Usage
+Triggering an emote explosion (results appear visually on stream, not in chat):
 
-**Input:**
-```
-!kappagen
-```
-
-**Output:**
-No text output in chat. An emote explosion will appear on the stream overlay.
+<ExampleChatInteraction
+  inputPersona="viewer"
+  inputMessage="!kappagen"
+  outputMessage="(No chat output - Visual effect on overlay)"
+/>
 
 ## Configuration
 

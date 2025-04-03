@@ -1,58 +1,67 @@
 ---
 id: cancelraffle
+title: Using the !cancelraffle Command to Cancel Raffles
 sidebar_label: "!cancelraffle"
-description: "Immediately cancel an active raffle on your Twitch channel using the !cancelraffle command."
+description: "Learn how moderators use the StreamElements !cancelraffle command to immediately cancel an active raffle."
+tags:
+  - chatbot
+  - commands
+  - moderation
+  - raffle
+  - loyalty
 keywords:
 - cancelraffle
 - cancel twitch raffle
 - stop twitch raffle
 - end twitch giveaway
 - halt twitch contest
+- cancel giveaway
 ---
 
-# !cancelraffle
+import PlatformBadges from '@site/src/components/PlatformBadges';
+import ExampleChatInteraction from '@site/src/components/ExampleChatInteraction';
+
+<PlatformBadges supported={["Twitch", "YouTube"]} />
 
 ## Overview
 
-The `!cancelraffle` command allows Twitch streamers to immediately halt any active raffle on their channel. This command is useful for quickly ending raffles.
+The `!cancelraffle` command allows moderators or the broadcaster to immediately stop an active raffle (started with [`!raffle`](mdc:raffle.md) or [`!sraffle`](mdc:sraffle.md)) before it completes.
 
-## Usage
+## Usage / Syntax
 
-To cancel an ongoing raffle, simply type the command in your Twitch chat:
+To cancel the currently active raffle:
 
 ```
 !cancelraffle
 ```
+
+## Parameters / Configuration / Options
+
+- **Parameters**: This command does not take any parameters.
+- **Configuration**: Requires the Raffle module to be enabled and a raffle to be currently active.
+- **Permissions**: Typically restricted to moderators and the broadcaster.
+- **Aliases**: No default aliases, but custom ones can be created.
+- **Customization**: The bot response message can be customized in the module settings.
 
 ## Examples
 
-### Example 1: Canceling a raffle
+Canceling an active raffle:
 
-Streamer input:
-```
-!cancelraffle
-```
+<ExampleChatInteraction
+  inputPersona="moderator"
+  inputUsernameOverride="ModUser"
+  inputMessage="!cancelraffle"
+  outputMessage="The raffle was canceled!"
+/>
 
-Chatbot output:
-```
-The raffle was canceled!
-```
+Attempting to cancel when no raffle is active:
 
-### Example 2: Attempting to cancel when no raffle is active
-
-Streamer input:
-```
-!cancelraffle
-```
-
-Chatbot output:
-```
-There is no active raffle to cancel.
-```
-
-## Parameters
-
-This command does not require any parameters.
+<ExampleChatInteraction
+  inputPersona="moderator"
+  inputUsernameOverride="ModUser"
+  inputMessage="!cancelraffle"
+  outputMessage="There is no active raffle to cancel."
+/>
 
 ## Related Commands
 

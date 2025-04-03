@@ -1,7 +1,14 @@
 ---
 id: join
+title: Using the !join Command to Enter Raffles/Giveaways
 sidebar_label: "!join"
-description: "Learn how to use the !join command in StreamElements chatbot to enter raffles and giveaways on Twitch and YouTube streams."
+description: "Learn how viewers use the StreamElements !join command to enter active raffles or giveaways on Twitch and YouTube streams."
+tags:
+  - chatbot
+  - commands
+  - loyalty
+  - raffle
+  - giveaway
 keywords:
 - join
 - raffle
@@ -9,25 +16,42 @@ keywords:
 - loyalty points
 - chatbot commands
 - StreamElements
+- enter raffle
 ---
 
-# !join
+import PlatformBadges from '@site/src/components/PlatformBadges';
+import ExampleChatInteraction from '@site/src/components/ExampleChatInteraction';
+
+<PlatformBadges supported={["Twitch", "YouTube"]} />
 
 ## Overview
 
-The `!join` command allows viewers to enter raffles or giveaways started by the streamer or moderators. It's a simple way for viewers to participate in stream events using their loyalty points.
+The `!join` command allows viewers to enter currently active raffles or giveaways initiated by commands like [`!raffle`](mdc:raffle.md) or [`!giveaway`](mdc:giveaway.md).
 
-## Usage
+## Usage / Syntax
 
-To use the `!join` command, type it in chat.
+To enter an active event, viewers simply type:
 
 ```
-!join 
+!join
 ```
 
-## Parameters
+## Parameters / Configuration / Options
 
-The `!join` command doesn't require any parameters. It works as-is when typed in chat.
+- **Parameters**: This command does not take any parameters.
+- **Configuration**: Requires an active raffle or giveaway to be running (started via the relevant module command or dashboard).
+
+## Examples
+
+A viewer joining an active raffle:
+
+<ExampleChatInteraction
+  inputPersona="viewer"
+  inputMessage="!join"
+  outputMessage="@ViewerName has joined the raffle!"
+/>
+
+*Note: The exact bot response may vary based on the raffle/giveaway configuration.*
 
 ## Related Commands
 

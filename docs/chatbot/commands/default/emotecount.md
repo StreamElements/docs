@@ -1,62 +1,76 @@
 ---
 id: emotecount
+title: Using the !emotecount Command for Emote Usage Stats
 sidebar_label: "!emotecount"
-description: "Use the !emotecount command to display the usage frequency of specific emotes in your Twitch chat."
+description: "Learn how the StreamElements !emotecount command displays the usage frequency of a specific emote in chat."
+tags:
+  - chatbot
+  - commands
+  - emotes
+  - stats
+  - fun
 keywords:
 - emotecount
 - emote usage
 - chat interaction
 - Twitch emotes
 - StreamElements chatbot
+- emote stats
 ---
 
-# !emotecount
+import PlatformBadges from '@site/src/components/PlatformBadges';
+import ExampleChatInteraction from '@site/src/components/ExampleChatInteraction';
+
+<PlatformBadges supported={["Twitch", "YouTube"]} />
 
 ## Overview
 
-The `!emotecount` command allows streamers and viewers to check how many times a specific emote has been used in the chat. This feature can be useful for tracking popular emotes, running emote-based contests, or simply adding a fun interactive element to your stream.
+The `!emotecount` command allows viewers to check how many times a specific emote has been used in the chat since tracking began. This requires the Emote Counter module to be enabled.
 
-## Usage
+## Usage / Syntax
 
-To use the `!emotecount` command, type it in chat followed by the name of the emote you want to check:
+Check the usage count for an emote:
 
 ```
 !emotecount <emote_name>
 ```
 
-Replace *emote_name* with the actual name of the emote you're interested in.
+## Parameters / Configuration / Options
+
+| Parameter      | Required | Description                                             | Example |
+| :------------- | :------- | :------------------------------------------------------ | :------ |
+| `<emote_name>` | Required | The exact name of the emote (case-sensitive usually). | `Kappa` |
+
+- **Permissions**: Typically available to all viewers.
+- **Error Messages**: The bot will respond if the emote is not found or if there's an issue retrieving the count.
 
 ## Examples
 
-Here are two practical examples of using the `!emotecount` command:
+Checking the usage count for "Kappa":
 
-1. Checking the usage of a popular Twitch emote:
+<ExampleChatInteraction
+  inputPersona="viewer"
+  inputMessage="!emotecount Kappa"
+  outputMessage="@ViewerName The emote Kappa has been used 3742 times! PogChamp"
+/>
 
-   ```
-   !emotecount Kappa
-   ```
+Checking the usage count for a custom emote "myChannelPog":
 
-   Possible response:
-   ```
-   @User The emote Kappa has been used 3742 times! PogChamp
-   ```
+<ExampleChatInteraction
+  inputPersona="viewer"
+  inputMessage="!emotecount myChannelPog"
+  outputMessage="@ViewerName The emote myChannelPog has been used 156 times! PogChamp"
+/>
 
-2. Checking the usage of a custom channel emote:
+Checking an unknown emote:
 
-   ```
-   !emotecount MyAwesomeEmote
-   ```
+<ExampleChatInteraction
+  inputPersona="viewer"
+  inputMessage="!emotecount UnknownEmote"
+  outputMessage="@ViewerName The emote UnknownEmote was not found. NotLikeThis"
+/>
 
-   Possible response:
-   ```
-   @User The emote MyAwesomeEmote has been used 156 times! PogChamp
-   ```
-
-## Parameters
-
-The `!emotecount` command takes one parameter:
-
-- `emote_name`: The name of the emote you want to check. This can be a global Twitch emote, a channel-specific emote, or an emote from a third-party service that your channel uses.
+*Note: The exact response messages might be customizable.*
 
 ## Related Commands
 

@@ -1,47 +1,56 @@
 ---
 id: leaderboard
+title: Using the !leaderboard Command for Loyalty Leaderboard Link
 sidebar_label: "!leaderboard"
-description: "Display the loyalty points leaderboard in your Twitch chat using the !leaderboard command. Engage viewers by showcasing top point earners."
+description: "Learn how the StreamElements !leaderboard command provides a direct link to the channel's loyalty points leaderboard page."
+tags:
+  - chatbot
+  - commands
+  - loyalty
+  - points
+  - leaderboard
 keywords:
 - leaderboard command
 - loyalty points
 - twitch chatbot
+- youtube chatbot
 - viewer engagement
 - streamelements
 - chat commands
+- points leaderboard
 ---
 
-# !leaderboard
+import PlatformBadges from '@site/src/components/PlatformBadges';
+import ExampleChatInteraction from '@site/src/components/ExampleChatInteraction';
+
+<PlatformBadges supported={["Twitch", "YouTube"]} />
 
 ## Overview
 
-The `!leaderboard` command displays a link to the loyalty points leaderboard in your Twitch chat. This feature allows viewers to quickly access and compare their loyalty point standings, fostering engagement and friendly competition within your community.
+The `!leaderboard` command posts a direct link to the channel's StreamElements loyalty points leaderboard page in the chat. This allows viewers to easily check the full rankings.
 
-## Usage
+## Usage / Syntax
 
-To use the `!leaderboard` command, simply type it in the chat:
+To display the leaderboard link, simply type:
 
 ```
 !leaderboard
 ```
+
+## Parameters / Configuration / Options
+
+- **Parameters**: This command does not take any parameters.
+- **Configuration**: Requires the Loyalty system to be enabled in the StreamElements dashboard.
 
 ## Examples
 
-### Example 1: Basic Usage
+Displaying the link to the leaderboard:
 
-**Input:**
-```
-!leaderboard
-```
-
-**Output:**
-```
-Check out the nammers Leaderboard here: https://streamelements.com/styler/leaderboard
-```
-
-## Parameters
-
-The `!leaderboard` command does not accept any parameters.
+<ExampleChatInteraction
+  inputPersona="viewer"
+  inputMessage="!leaderboard"
+  outputMessage="Check out the [ChannelName] Leaderboard here: https://streamelements.com/[ChannelName]/leaderboard"
+/>
 
 ## Related Commands
 

@@ -1,7 +1,15 @@
 ---
 id: roulette
+title: Using the !roulette Command for Point Betting
 sidebar_label: "!roulette"
-description: "Learn how to use the !roulette command in StreamElements chatbot to start a roulette game and bet points in your Twitch chat."
+description: "Learn how viewers use the StreamElements !roulette command to play a game of chance, betting loyalty points for potential winnings."
+tags:
+  - chatbot
+  - commands
+  - loyalty
+  - points
+  - games
+  - betting
 keywords:
 - roulette
 - chatbot
@@ -10,55 +18,66 @@ keywords:
 - points
 - betting
 - gambling
+- chat game
 ---
 
-# !roulette
+import PlatformBadges from '@site/src/components/PlatformBadges';
+import ExampleChatInteraction from '@site/src/components/ExampleChatInteraction';
+
+<PlatformBadges supported={["Twitch", "YouTube"]} />
 
 ## Overview
 
-The `!roulette` command allows viewers to participate in a roulette game, betting their channel points for a chance to win more. This command is part of the StreamElements chatbot's loyalty system and can add an exciting, interactive element to your stream.
+The `!roulette` command allows viewers to play a simple game of chance, betting their loyalty points. Depending on the outcome (and the streamer's configuration), they can win or lose points. This requires the Roulette module to be enabled.
 
-## Usage
+## Usage / Syntax
+
+Viewers use the following syntax to play:
 
 ```
-!roulette <bet>
+!roulette <bet_amount>
 ```
 
-The `<bet>` parameter is required and represents the number of points the user wants to wager.
+## Parameters / Configuration / Options
+
+| Parameter      | Required | Description                                                                                                                                  | Example |
+| :------------- | :------- | :------------------------------------------------------------------------------------------------------------------------------------------- | :------ |
+| `<bet_amount>` | Required | The amount of loyalty points to bet. Can be a number (`100`), percentage (`10%`), use `k` for thousands (`10k`), or `m` for millions (`1m`). | `100`   |
+
+- **Configuration**: Streamers configure the Roulette module in the StreamElements dashboard (Bot -> Modules -> Roulette), setting options like:
+    - Minimum/maximum bet amounts.
+    - Win/loss chances and payout multipliers.
+    - Cooldown periods.
+    - Custom response messages.
 
 ## Examples
 
-Here are some practical examples of how to use the `!roulette` command:
+Betting 100 points:
 
-```
-!roulette 100
-!roulette 10k
-!roulette 1m
-!roulette 10%
-```
+<ExampleChatInteraction
+  inputPersona="viewer"
+  inputMessage="!roulette 100"
+  outputMessage="ViewerName won 100 points in roulette and now has 1100 points! LUL"
+  />
 
-Example output:
+Betting 10% of current points:
 
-```
-Styler won 10 points in roulette and now has 2683 points! LUL
-```
+<ExampleChatInteraction
+  inputPersona="viewer"
+  inputMessage="!roulette 10%"
+  outputMessage="ViewerName lost 50 points in roulette and now has 450 points. FeelsBadMan"
+/>
 
-## Parameters
+Betting 5,000 points using 'k':
 
-- `<bet>` (required): The amount of points to bet. This can be expressed in several ways:
-  - As a whole number (e.g., `100`)
-  - As a percentage of the user's total points (e.g., `50%`)
-  - Using `k` to represent thousands (e.g., `5k` for 5,000)
-  - Using `m` to represent millions (e.g., `1m` for 1,000,000)
+<ExampleChatInteraction
+  inputPersona="viewer"
+  inputMessage="!roulette 5k"
+  outputMessage="ViewerName won 5000 points in roulette and now has 25000 points! PogChamp"
+/>
+
+*Note: Win/loss messages and outcomes depend on module configuration.*
 
 ## Related Commands
 
 - [`!points`](points.md): Check your current point balance
-
-## Configuration
-
-Streamers can configure the `!roulette` command in their StreamElements dashboard. Options may include:
-
-- Setting minimum and maximum bet amounts
-- Adjusting win probabilities
-- Customizing response messages
