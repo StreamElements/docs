@@ -23,7 +23,7 @@ The `$(leagueoflegends)` variable allows you to retrieve and display the current
 
 To use this variable, you need to provide two parameters: the region and the player's Riot ID or Summoner Name.
 
-```
+```streamelements
 $(leagueoflegends <Riot ID/Summoner Name> <region>)
 ```
 

@@ -23,13 +23,13 @@ The `$(args)` variable is a powerful feature in StreamElements chatbot commands 
 
 The basic syntax for using the `$(args)` variable is:
 
-```
+```streamelements
 $(args)
 ```
 
 You can access specific arguments using numeric indices, starting from 1:
 
-```
+```streamelements
 $(1), $(2), $(3), etc.
 ```
 

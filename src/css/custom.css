@@ -54,3 +54,86 @@ code {
   margin-top: -0.5em; /* Adjust this value to fine-tune vertical spacing */
   margin-bottom: 1em; /* Ensure some space before the Overview section */
 }
+
+/* Custom styles for StreamElements command syntax highlighting */
+.token.command {
+  color: #ff8c00; /* Command color - orange */
+  font-weight: bold;
+}
+
+[data-theme='dark'] .token.command {
+  color: #ffa500; /* Slightly brighter for dark mode */
+}
+
+.token.subcommand {
+  color: #e67e22; /* Subcommand color - lighter orange */
+  font-weight: 600;
+}
+
+[data-theme='dark'] .token.subcommand {
+  color: #ffb347; /* Slightly brighter for dark mode */
+}
+
+.token.parameter {
+  color: #1e90ff; /* Parameter color - blue */
+  font-style: italic;
+}
+
+[data-theme='dark'] .token.parameter {
+  color: #00bfff; /* Slightly brighter for dark mode */
+}
+
+.token.option {
+  color: #9370db; /* Option color - purple */
+}
+
+[data-theme='dark'] .token.option {
+  color: #b39ddb; /* Slightly brighter for dark mode */
+}
+
+.token.flag {
+  color: #20b2aa; /* Flag color - teal */
+}
+
+[data-theme='dark'] .token.flag {
+  color: #40e0d0; /* Slightly brighter for dark mode */
+}
+
+.token.number {
+  color: #ff6b6b; /* Numbers - red */
+  font-weight: 600;
+}
+
+[data-theme='dark'] .token.number {
+  color: #ff7f7f; /* Slightly brighter for dark mode */
+}
+
+.token.variable {
+  color: #3cb371; /* Variables - green */
+}
+
+[data-theme='dark'] .token.variable {
+  color: #7fff00; /* Slightly brighter for dark mode */
+}
+
+.token.keyword {
+  color: #daa520; /* Keywords - gold */
+  font-weight: 600;
+}
+
+[data-theme='dark'] .token.keyword {
+  color: #ffd700; /* Slightly brighter for dark mode */
+}
+
+/* Style for code blocks using the streamelements language */
+pre[class*="language-streamelements"] {
+  background-color: #f5f5f5;
+  border-left: 3px solid #ff8c00;
+  border-radius: 0 4px 4px 0;
+  margin-bottom: 1.5em;
+}
+
+[data-theme='dark'] pre[class*="language-streamelements"] {
+  background-color: #2d333b;
+  border-left: 3px solid #ffa500;
+}
