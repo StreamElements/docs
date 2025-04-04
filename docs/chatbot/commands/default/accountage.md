@@ -22,6 +22,8 @@ keywords:
 import PlatformBadges from '@site/src/components/PlatformBadges';
 import ExampleChatInteraction from '@site/src/components/ExampleChatInteraction';
 
+# !accountage
+
 <PlatformBadges supported={[ 'Twitch' ]} />
 
 ## Overview
@@ -33,12 +35,12 @@ The `!accountage` command allows users to check the creation date (age) of a Twi
 To use the command, type `!accountage` followed by an optional username. If no username is provided, it checks the account age of the user running the command.
 
 ```streamelements
-!accountage <*username*>
+!accountage <username>
 ```
 
 ## Parameters / Configuration / Options
 
--   `<*username*>` (Optional): The Twitch username of the account you want to check. If omitted, the command checks the account age of the user who issued the command.
+-   `<username>` (Optional): The Twitch username of the account you want to check. If omitted, the command checks the account age of the user who issued the command.
 
 This command requires a connection to Twitch to fetch the account creation date.
 
