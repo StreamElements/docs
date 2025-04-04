@@ -1,52 +1,75 @@
 ---
 id: alerts
 sidebar_label: "!alerts"
-description: "Control and manage stream alerts in real-time using the !alerts command"
+description: "Control StreamElements overlay alerts (mute, skip, pause) in real-time directly from chat using the !alerts command. Essential for stream management."
+tags:
+  - chatbot
+  - commands
+  - moderation
+  - alerts
+  - overlay
+  - default
 keywords:
-- twitch alerts
-- stream alerts
-- alert management
-- live stream control
+  - alerts command
+  - stream alerts
+  - alert management
+  - live stream control
+  - streamelements chatbot
+  - mute alerts
+  - skip alerts
+  - pause alerts
 ---
+
+import PlatformBadges from '@site/src/components/PlatformBadges';
+import ExampleChatInteraction from '@site/src/components/ExampleChatInteraction';
 
 # !alerts
 
+<PlatformBadges supported={[ 'Twitch', 'YouTube', 'Trovo', 'Kick' ]} />
+
 ## Overview
 
-The `!alerts` command allows streamers and moderators to dynamically manage stream alerts during a live broadcast. This powerful tool helps create a smoother viewing experience by controlling alert playback, volume, and timing on the fly.
+The `!alerts` command allows streamers and moderators to dynamically manage StreamElements overlay alerts during a live broadcast. This tool helps control alert playback directly from chat for actions like muting, skipping, or pausing.
 
-## Usage
+## Usage / Syntax
 
-```
+```streamelements
 !alerts <action>
 ```
 
+**Important:** By default, only users with **Moderator** permission level or higher can use this command.
+
+## Parameters / Configuration / Options
+
+-   `<action>` (Required): The action to perform on the alerts. Valid actions are:
+    *   `mute`: Turns off alert sounds.
+    *   `unmute`: Turns alert sounds back on.
+    *   `skip`: Skips the currently playing alert.
+    *   `pause`: Pauses the alert queue; currently playing alerts will finish.
+    *   `unpause`: Resumes the alert queue.
+
+**Configuration:**
+
+*   This command controls alerts within your StreamElements overlays. Ensure your overlays are active.
+*   The command's permission level can be adjusted under **Chatbot** -> **Chat Commands** -> **Default Commands**.
+
 ## Examples
 
-1. Mute all alert sounds:
-```
-!alerts mute
-```
+<ExampleChatInteraction
+  inputPersona="moderator"
+  inputMessage="!alerts mute"
+  outputMessage=" @Styler, Successfully muted alerts"
+/>
 
-2. Skip the currently playing alert:
-```
-!alerts skip
-```
+<ExampleChatInteraction
+  inputPersona="broadcaster"
+  inputMessage="!alerts skip"
+  outputMessage=" @Styler, Successfully skipped alerts"
+/>
 
-## Parameters
-
-- `mute`: Turns off alert sounds
-- `unmute`: Turns on alert sounds
-- `skip`: Skips the currently playing alert
-- `pause`: Pauses alert playback
-- `unpause`: Resumes alert playback
-
-## Configuration
-
-The `!alerts` command is available by default for streamers and moderators. To customize access permissions:
-
-1. Go to your StreamElements dashboard
-2. Navigate to the Chatbot section
-3. Find the `!alerts` command in the command list
-4. Adjust the user level permissions as needed
+<ExampleChatInteraction
+  inputPersona="moderator"
+  inputMessage="!alerts pause"
+  outputMessage=" @Styler, Successfully paused alerts"
+/>
 
