@@ -45,6 +45,10 @@ code {
    background-color: #53FC18;
    color: black;
 }
+.platform-badge.trovo {
+   background-color: #64d376;
+   color: black;
+}
 .platform-badge.youtube {
    background-color: #FF0000;
    color: white;
