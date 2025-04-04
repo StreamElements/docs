@@ -6,6 +6,7 @@ const platformClasses = {
   twitch: 'twitch',
   kick: 'kick',
   youtube: 'youtube',
+  trovo: 'trovo',
 };
 
 export default function PlatformBadges({ supported }) {

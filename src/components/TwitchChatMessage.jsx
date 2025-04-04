@@ -61,9 +61,12 @@ export default function TwitchChatMessage({
 
   return (
     <div className={messageClasses}>
-      <span className={styles.badgesContainer}>
-        {renderBadges()}
-      </span>
+      {/* Conditionally render the badges container */}
+      {badges && badges.length > 0 && (
+        <span className={styles.badgesContainer}>
+          {renderBadges()}
+        </span>
+      )}
       <span className={styles.username} style={{ color: userColor }}>
         {username}:
       </span>
