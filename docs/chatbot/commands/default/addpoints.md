@@ -1,13 +1,14 @@
 ---
 id: addpoints
 sidebar_label: "!addpoints"
-description: "Manually add loyalty points to viewers using the !addpoints command in the StreamElements Chatbot. Reward participation and manage your loyalty system."
+description: "Learn how moderators can manually add loyalty points to viewers using the StreamElements !addpoints chatbot command. Manage your community rewards."
 tags:
   - chatbot
   - loyalty
   - commands
   - points
   - moderation
+  - default
 keywords:
   - addpoints command
   - StreamElements Chatbot
@@ -16,12 +17,13 @@ keywords:
   - stream engagement
   - moderation tools
   - loyalty points
+  - manage points
 ---
-
-# !addpoints Command
 
 import PlatformBadges from '@site/src/components/PlatformBadges';
 import ExampleChatInteraction from '@site/src/components/ExampleChatInteraction';
+
+# !addpoints
 
 <PlatformBadges supported={[ 'Twitch' ]} />
 
@@ -29,7 +31,7 @@ import ExampleChatInteraction from '@site/src/components/ExampleChatInteraction'
 
 The `!addpoints` command empowers streamers and moderators to manually add points to a specific viewer's balance within the StreamElements loyalty system. This is useful for rewarding viewers for actions outside the standard point triggers, correcting point balances, or running special promotions.
 
-## Usage
+## Usage / Syntax
 
 To add points to a viewer, use the following syntax in your chat:
 
@@ -37,42 +39,31 @@ To add points to a viewer, use the following syntax in your chat:
 !addpoints <username> <amount>
 ```
 
-- Replace `<username>` with the target viewer's exact username.
-- Replace `<amount>` with the **positive whole number** of points you wish to add.
+**Important:** By default, only users with **Moderator** permission level or higher can use this command.
 
-**Important:** Only moderators and the streamer can use this command by default.
+## Parameters / Configuration / Options
+
+| Parameter    | Required | Description                                        |
+| :----------- | :------- | :------------------------------------------------- |
+| `<username>` | Yes      | The exact username of the viewer receiving points. |
+| `<amount>`   | Yes      | The number of points (positive integer) to award.  |
+
+**Configuration:**
+
+*   The `!addpoints` command requires the **Loyalty system** to be active. Enable it in your **StreamElements Dashboard** under **Loyalty** -> **Loyalty Settings**.
+*   The command's permission level can be adjusted under **Chatbot** -> **Chat Commands** -> **Default Commands**.
 
 ## Examples
 
-Here's how the command and the bot's response look in chat:
+<ExampleChatInteraction
+  inputPersona="broadcaster"
+  inputMessage="!addpoints StreamFan123 1000"
+  outputMessage="@YourChannel, added 1000 points to StreamFan123. They now have 5961 points."
+/>
 
-1.  **A moderator adding 1000 points to `StreamFan123`:**
-
-    <ExampleChatInteraction
-      inputPersona="broadcaster"
-      inputUsernameOverride="Styler"
-      inputMessage="!addpoints StreamFan123 1000"
-      outputMessage="@Styler, added 1000 points to StreamFan123. They now have 5961 points."
-    />
-
-## Parameters
-
-| Parameter  | Required | Description                                        |
-| :--------- | :------- | :------------------------------------------------- |
-| `username` | Yes      | The exact username of the viewer receiving points. |
-| `amount`   | Yes      | The number of points (positive integer) to award.  |
-
-## Related Commands
-
-- [`!points`](points.md): Allows viewers to check their own point balance.
-- [`!givepoints`](givepoints.md): Enables viewers to transfer points to other viewers (if enabled).
-
-## Configuration
-
-The `!addpoints` command relies on the StreamElements loyalty system being active.
-
-1.  Navigate to your **StreamElements Dashboard**.
-2.  Go to **Loyalty** -> **Loyalty Settings**.
-3.  Ensure the **Enable Loyalty System** toggle is switched **on**.
-4.  Go to **Chatbot** -> **Chat Commands**.
-5.  Ensure `!addpoints` is present in your **Default Commands** list and is **enabled**. You can customize its permission level here if needed (e.g., Moderator+).
+<ExampleChatInteraction
+  inputPersona="moderator"
+  inputUsernameOverride="ModUser99"
+  inputMessage="!addpoints LoyalViewer 50"
+  outputMessage="@ModUser99, added 50 points to LoyalViewer. They now have 1280 points."
+/>
