@@ -1,77 +1,74 @@
 ---
 id: bet
 sidebar_label: "!bet"
-description: "Learn how to use the !bet command in StreamElements Chatbot to engage your Twitch audience with interactive betting contests."
+description: "Allow viewers to participate in stream betting contests using their loyalty points with the StreamElements chatbot !bet command."
+tags:
+  - chatbot
+  - commands
+  - loyalty
+  - game
+  - betting
+  - default
 keywords:
-- Twitch chatbot
-- viewer engagement
-- loyalty rewards
-- interactive commands
-- betting system
+  - bet command
+  - Twitch chatbot
+  - viewer engagement
+  - loyalty rewards
+  - interactive commands
+  - betting system
+  - streamelements chatbot
+  - loyalty points
 ---
+
+import PlatformBadges from '@site/src/components/PlatformBadges';
+import ExampleChatInteraction from '@site/src/components/ExampleChatInteraction';
 
 # !bet
 
+<PlatformBadges supported={[ 'Twitch' ]} />
+
 ## Overview
 
-The `!bet` command allows viewers to participate in interactive betting contests, enhancing engagement and potentially earning rewards. This feature is an excellent way to boost viewer loyalty and create exciting moments during your streams.
+The `!bet` command allows viewers to use their loyalty points to bet on the outcome of a contest or event defined by the streamer. This command is used **while a bet is active**, which is initiated through the StreamElements dashboard or via chatbot commands like `!contest`.
 
-## Usage
+## Usage / Syntax
 
-To place a bet, viewers use the following syntax:
+To place a bet while a betting contest is open, viewers use the following syntax:
 
-```
+```streamelements
 !bet <option> <points>
 ```
 
-## Parameters
+## Parameters / Configuration / Options
 
-- `<option>`: The betting option the viewer wants to choose (required).
-- `<points>`: The number of points to wager (required).
+| Parameter  | Required | Description                                                                                                                                           |
+| :--------- | :------- | :---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `<option>` | Yes      | The specific betting option the viewer wants to choose (defined by the streamer when starting the bet).                                               |
+| `<points>` | Yes      | The number of loyalty points to wager. This can be a specific number, a percentage (`50%`), or use `k` for thousands (`5k`), `m` for millions (`1m`). |
 
-**Note:** Points can be expressed in several ways:
-- As a percentage of the user's total points (e.g., `50%`)
-- Using `k` to represent thousands (e.g., `5k` for 5,000)
-- Using `m` to represent millions (e.g., `1m` for 1,000,000)
+**Configuration:**
+
+*   Betting contests are managed via the **Betting module** in the StreamElements dashboard or through commands like `!contest`. Streamers define the options, duration, and other settings there.
+*   Viewers need sufficient loyalty points to place a bet.
 
 ## Examples
 
-1. Betting 10 points on the "win" option:
-   ```
-   !bet win 10
-   ```
-   Output:
-   ```
-   @Styler, you have bet 10 nammers on Win.
-   ```
+<ExampleChatInteraction
+  inputPersona="viewer"
+  inputMessage="!bet win 100"
+  outputMessage="@Viewer1, you have bet 100 points on Win."
+/>
 
-2. Betting 50% of available points on the "lose" option:
-   ```
-   !bet lose 50%
-   ```
-   Output:
-   ```
-   @Viewer123, you have bet 500 nammers on Lose.
-   ```
+<ExampleChatInteraction
+  inputPersona="viewer"
+  inputUsernameOverride="HighRoller"
+  inputMessage="!bet lose 5k"
+  outputMessage="@HighRoller, you have bet 5000 points on Lose."
+/>
 
-3. Betting 5,000 points using the "k" abbreviation:
-   ```
-   !bet draw 5k
-   ```
-   Output:
-   ```
-   @StreamFan, you have bet 5000 nammers on Draw.
-   ```
-
-## Related Commands
-
-- `!points`: Check your current point balance
-- `!givepoints`: Transfer points to another user (if enabled)
-
-## Configuration
-
-Streamers and moderators can configure betting options, point limits, and other settings through the StreamElements dashboard. Refer to the StreamElements documentation for detailed configuration instructions.
-
-## Customization
-
-The betting system can be customized to fit your stream's theme. Consider renaming "points" to match your channel's currency (e.g., "coins," "gems," or "bucks") for a more personalized experience.
+<ExampleChatInteraction
+  inputPersona="viewer"
+  inputUsernameOverride="PercentBetta"
+  inputMessage="!bet optionA 25%"
+  outputMessage="@PercentBetta, you have bet 750 points on optionA."
+/>
