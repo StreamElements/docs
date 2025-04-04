@@ -1,54 +1,77 @@
 ---
 id: accept
 sidebar_label: "!accept"
-description: "Use the !accept command to quickly respond to duel requests in your Twitch chat."
+description: "Use the !accept command to accept pending duel challenges initiated with the !duel command in StreamElements chatbot."
+tags:
+  - chatbot
+  - commands
+  - duel
+  - game
+  - default
 keywords:
-- accept
-- command
-- duel
-- invite
-- Twitch
-- StreamElements
-- chatbot
+  - accept command
+  - duel command
+  - chatbot games
+  - streamelements chatbot
+  - accept challenge
 ---
+
+import PlatformBadges from '@site/src/components/PlatformBadges';
+import MultiChatInteraction from '@site/src/components/MultiChatInteraction';
 
 # !accept
 
+<PlatformBadges supported={[ 'Twitch' ]} />
+
 ## Overview
 
-The `!accept` command allows users to accept duel requests in the Twitch chat.
+The `!accept` command allows users to accept pending duel requests initiated by the [`!duel`](duel.md) command.
 
-## Usage
+## Usage / Syntax
 
-To use the `!accept` command, simply type it in the chat when you want to accept a pending request or invitation.
+To use the `!accept` command, simply type it in the chat when you have a pending duel request.
 
-```
+```streamelements
 !accept
 ```
 
+## Parameters / Configuration / Options
+
+This command does not take any parameters.
+
+The `!accept` command is part of the **Duel module**. This module must be enabled in your StreamElements chatbot settings for the command to function.
+
 ## Examples
 
-### Example 1: Accepting a Duel
-
-User A challenges User B to a duel:
-```
-UserA: !duel UserB 10
-```
-
-User B accepts the duel:
-```
-UserB: !accept
-```
-
-Chatbot response:
-```
-UserB won the Duel vs UserA PogChamp UserB won 10 points.
-```
+<MultiChatInteraction
+    messages={[
+        {
+            username: "Challenger",
+            message: "!duel TargetUser 100"
+        },
+        {
+            username: 'StreamElements',
+            message: '@TargetUser, @Challenger wants to duel you for 10 points, you can !accept or !deny within 2 minutes',
+            userColor: '#5B99FF',
+            badges: ['partner', 'moderator'],
+            isBot: true
+        },
+        {
+            username: "TargetUser",
+            message: "!accept"
+        },
+        { 
+            username: 'StreamElements',
+            message: 'TargetUser won the Duel vs Challenger PogChamp',
+            userColor: '#5B99FF',
+            badges: ['partner', 'moderator'],
+            isBot: true
+        }
+    ]}
+/>
 
 ## Related Commands
 
-- [`!duel`](duel.md): Initiate a duel with another user
-
-## Configuration
-
-The `!accept` command is part of the [duel module](../../modules/duel). Make sure this module is enabled in your StreamElements chatbot settings to use the command.
+- [`!duel`](duel.md): Initiate a duel with another user.
+- [`!cancelduel`](cancelduel.md): Cancel an outgoing duel request.
+- [`!deny`](deny.md): Deny an incoming duel request.
