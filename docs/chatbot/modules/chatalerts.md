@@ -1,5 +1,5 @@
 ---
-id: chat-alerts
+id: chatalerts
 sidebar_label: "Chat Alerts"
 description: "Boost viewer engagement with StreamElements' Chat Alerts module. Automate Twitch notifications and create dynamic chat experiences for your stream."
 keywords:
