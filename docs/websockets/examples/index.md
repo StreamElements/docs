@@ -321,7 +321,7 @@ This example uses the `System.Net.WebSockets` namespace to implement a websocket
 
 ### Examples
 
-```csharp
+```cs
 // StreamElements Websocket Client - C# Example
 using System;
 using System.Net.WebSockets;
