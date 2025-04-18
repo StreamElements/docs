@@ -1,0 +1,72 @@
+---
+id: bet
+sidebar_label: "!bet"
+description: "Allow viewers to participate in stream betting contests using their loyalty points with the StreamElements chatbot !bet command."
+tags:
+  - chatbot
+  - commands
+  - loyalty
+  - game
+  - betting
+  - default
+keywords:
+  - bet command
+  - Twitch chatbot
+  - viewer engagement
+  - loyalty rewards
+  - interactive commands
+  - betting system
+  - streamelements chatbot
+  - loyalty points
+---
+
+import PlatformBadges from '@site/src/components/PlatformBadges';
+import ChatExample from '@site/src/components/ChatExample';
+
+# !bet
+
+<PlatformBadges supported={[ 'Twitch' ]} />
+
+## Overview
+
+The `!bet` command allows viewers to use their loyalty points to bet on the outcome of a contest or event defined by the streamer. This command is used **while a bet is active**, which is initiated through the StreamElements dashboard or via chatbot commands like [`!contest`](contest.mdx).
+
+## Usage
+
+To place a bet while a betting contest is open, viewers use the following syntax:
+
+```streamelements
+!bet <option> <points>
+```
+
+## Examples
+
+<ChatExample messages={[
+  { persona: 'user', message: '!bet win 100' },
+  { persona: 'bot', message: '@ViewerName, you have bet 100 points on Win.' }
+]} />
+
+<ChatExample messages={[
+  { persona: 'user', usernameOverride: 'HighRoller', message: '!bet lose 5k' },
+  { persona: 'bot', message: '@HighRoller, you have bet 5000 points on Lose.' }
+]} />
+
+<ChatExample messages={[
+  { persona: 'user', usernameOverride: 'PercentBetta', message: '!bet optionA 25%' },
+  { persona: 'bot', message: '@PercentBetta, you have bet 750 points on optionA.' }
+]} />
+
+## Parameters
+
+*   `<option>` (Required): The specific betting option the viewer wants to choose (defined by the streamer when starting the bet).
+*   `<points>` (Required): The number of loyalty points to wager. This can be a specific number, a percentage (`50%`), or use `k` for thousands (`5k`), `m` for millions (`1m`).
+
+## Configuration
+
+*   Betting contests are managed via the **Betting module** in the StreamElements dashboard or through commands like [`!contest`](contest.mdx). Streamers define the options, duration, and other settings there.
+*   Viewers need sufficient loyalty points to place a bet.
+
+## Related Commands
+
+*   [`!contest`](contest.mdx): Starts a betting contest (requires Moderator permissions).
+*   [`!points`](points.mdx): Checks a user's current loyalty point balance.
