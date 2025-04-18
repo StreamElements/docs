@@ -1,0 +1,83 @@
+---
+id: bingo
+sidebar_label: "!bingo"
+description: "Engage viewers with an interactive emote bingo game using the !bingo command in StreamElements chatbot. Award loyalty points for guessing emotes."
+tags:
+  - chatbot
+  - commands
+  - fun
+  - game
+  - loyalty
+  - emotes
+  - default
+keywords:
+  - bingo command
+  - emote bingo
+  - chatbot games
+  - streamelements chatbot
+  - viewer engagement
+  - twitch emotes
+  - bttv emotes
+  - ffz emotes
+  - 7tv emotes
+  - loyalty points
+---
+
+import PlatformBadges from '@site/src/components/PlatformBadges';
+import ChatExample from '@site/src/components/ChatExample';
+
+# !bingo
+
+<PlatformBadges supported={[ 'Twitch' ]} />
+
+## Overview
+
+The `!bingo` command starts an interactive emote bingo game in your chat. It randomly selects an emote from a specified platform (Twitch, BTTV, FFZ, 7TV), and viewers try to guess the correct emote to win loyalty points.
+
+## Usage
+
+Use this command to start a new bingo game.
+
+```streamelements
+!bingo <platform> <points>
+```
+
+**Important:** By default, only users with **Moderator** permission level or higher can use this command to start a game.
+
+## Examples
+
+<ChatExample messages={[
+  { persona: 'moderator', message: '!bingo twitch 100' },
+  { persona: 'bot', message: 'Bingo started! Guess the Twitch emote to win 100 points!' },
+  { persona: 'user', usernameOverride: 'viewer1', message: 'Kappa' },
+  { persona: 'user', usernameOverride: 'viewer2', message: 'LUL' },
+  { persona: 'user', usernameOverride: 'viewer3', message: 'PogChamp' },
+  { persona: 'bot', message: 'Congratulations viewer3! You guessed the correct emote PogChamp and won 100 points!' }
+]} />
+
+<ChatExample messages={[
+  { persona: 'broadcaster', message: '!bingo all 250' },
+  { persona: 'bot', message: 'Bingo started! Guess the emote (Twitch, BTTV, FFZ, 7TV) to win 250 points!' }
+]} />
+
+## Parameters
+
+*   `<platform>` (Required): The platform(s) to use for emotes. Valid options:
+    *   `twitch`: Twitch global and channel emotes.
+    *   `bttv`: BetterTTV emotes.
+    *   `ffz`: FrankerFaceZ emotes.
+    *   `7tv`: 7TV emotes.
+    *   `all`: Includes emotes from all supported platforms.
+*   `<points>` (Required): The number of loyalty points to reward the winner.
+
+## Configuration
+
+*   Ensure the **Bingo module** is enabled in your StreamElements dashboard under `Chatbot` -> `Modules`.
+*   A **Loyalty system** must be active. Enable it under `Loyalty` -> `Loyalty Settings`.
+*   The command's permission level can be adjusted under `Chatbot` -> `Chat Commands` -> `Default Commands`.
+*   You can customize the bingo game by adjusting the reward amount and using different emote platforms to vary the game's difficulty.
+
+## Related Commands
+
+*   [`!points`](points.mdx): Check a user's current loyalty points balance.
+*   [`!top`](top.mdx): See the leaderboard for points or watch time.
