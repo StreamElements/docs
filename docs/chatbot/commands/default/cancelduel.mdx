@@ -1,0 +1,80 @@
+---
+id: cancelduel
+sidebar_label: "!cancelduel"
+description: "Learn how to use the !cancelduel command in StreamElements chatbot to stop an outgoing duel request you initiated."
+tags:
+  - chatbot
+  - commands
+  - duel
+  - game
+  - default
+keywords:
+  - cancelduel command
+  - cancel duel
+  - stop duel
+  - chatbot duel
+  - streamelements chatbot
+---
+
+import PlatformBadges from '@site/src/components/PlatformBadges';
+import ChatExample from '@site/src/components/ChatExample';
+
+# !cancelduel
+
+<PlatformBadges supported={[ 'Twitch' ]} />
+
+## Overview
+
+The `!cancelduel` command allows a user to cancel an **outgoing** duel request they initiated with the [`!duel`](duel.mdx) command *before* the challenged user accepts or denies it.
+
+## Usage
+
+To cancel your pending outgoing duel request, simply type the command in chat:
+
+```streamelements
+!cancelduel
+```
+
+## Examples
+
+<ChatExample
+    messages={[
+        {
+            username: "Challenger",
+            message: "!duel TargetUser 100"
+        },
+        {
+            username: 'StreamElements',
+            message: '@TargetUser, @Challenger wants to duel you for 10 points, you can !accept or !deny within 2 minutes',
+            userColor: '#5B99FF',
+            badges: ['partner', 'moderator'],
+            isBot: true
+        },
+        {
+            username: "Challenger",
+            message: "!cancelduel" // Challenger changes their mind
+        },
+        {
+            username: 'StreamElements',
+            message: '@Challenger, Duel request cancelled.',
+            userColor: '#5B99FF',
+            badges: ['partner', 'moderator'],
+            isBot: true
+        }
+    ]}
+/>
+
+<ChatExample messages={[
+  { persona: 'user', message: '!cancelduel' },
+  { persona: 'bot', message: '@UserName, You do not have any pending outgoing duel requests.' }
+]} />
+
+## Configuration
+
+The `!cancelduel` command is part of the **Duel module**. This module must be enabled in your StreamElements chatbot settings under `Chatbot` -> `Modules` for the command to function.
+
+## Related Commands
+
+*   [`!duel`](duel.mdx): Initiate a duel with another user.
+*   [`!accept`](accept.mdx): Accept an incoming duel request.
+*   [`!deny`](deny.mdx): Deny an incoming duel request.
