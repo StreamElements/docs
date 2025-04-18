@@ -1,0 +1,44 @@
+/* src/components/ChatExample.module.css */
+
+.interactionWrapper {
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: var(--ifm-global-radius);
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  background-color: var(--ifm-background-color); /* Adapt to theme */
+  position: relative;
+  overflow: hidden; /* Ensures label stays within bounds */
+}
+
+/* Style for the "example chat" label */
+.chatLabel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: var(--ifm-color-emphasis-200);
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.65rem;
+  font-weight: bold;
+  padding: 0.1rem 0.5rem;
+  border-bottom-left-radius: var(--ifm-global-radius);
+  border-top-right-radius: var(--ifm-global-radius); /* Match wrapper radius exactly */
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  user-select: none; /* Prevent text selection */
+  z-index: 1; /* Ensure label is above messages if needed */
+}
+
+/* Add some space below the label for the first message */
+/* Estimate label height (~0.65rem font + 0.2rem padding + buffer) */
+/* .interactionWrapper > :global(.twitchChatMessageWrapper):first-child { */
+/*  margin-top: 1rem; */
+/* } */
+
+/* Ensure messages stack correctly */
+.interactionWrapper > :global(.twitchChatMessageWrapper) {
+  margin-bottom: 0.3rem; /* Space between messages */
+}
+
+.interactionWrapper > :global(.twitchChatMessageWrapper):last-child {
+  margin-bottom: 0; /* No space after the last message */
+} 
