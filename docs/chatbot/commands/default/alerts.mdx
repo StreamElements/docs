@@ -21,7 +21,7 @@ keywords:
 ---
 
 import PlatformBadges from '@site/src/components/PlatformBadges';
-import ExampleChatInteraction from '@site/src/components/ExampleChatInteraction';
+import ChatExample from '@site/src/components/ChatExample';
 
 # !alerts
 
@@ -31,7 +31,9 @@ import ExampleChatInteraction from '@site/src/components/ExampleChatInteraction'
 
 The `!alerts` command allows streamers and moderators to dynamically manage StreamElements overlay alerts during a live broadcast. This tool helps control alert playback directly from chat for actions like muting, skipping, or pausing.
 
-## Usage / Syntax
+## Usage
+
+To manage overlay alerts, use the `!alerts` command followed by the desired action.
 
 ```streamelements
 !alerts <action>
@@ -39,37 +41,34 @@ The `!alerts` command allows streamers and moderators to dynamically manage Stre
 
 **Important:** By default, only users with **Moderator** permission level or higher can use this command.
 
-## Parameters / Configuration / Options
+## Examples
 
--   `<action>` (Required): The action to perform on the alerts. Valid actions are:
+<ChatExample messages={[
+  { persona: 'moderator', message: '!alerts mute' },
+  { persona: 'bot', message: 'Successfully muted alerts' }
+]} />
+
+<ChatExample messages={[
+  { persona: 'broadcaster', message: '!alerts skip' },
+  { persona: 'bot', message: 'Successfully skipped alerts' }
+]} />
+
+<ChatExample messages={[
+  { persona: 'moderator', message: '!alerts pause' },
+  { persona: 'bot', message: 'Successfully paused alerts' }
+]} />
+
+## Parameters
+
+*   `<action>` (Required): The action to perform on the alerts. Valid actions are:
     *   `mute`: Turns off alert sounds.
     *   `unmute`: Turns alert sounds back on.
     *   `skip`: Skips the currently playing alert.
     *   `pause`: Pauses the alert queue; currently playing alerts will finish.
     *   `unpause`: Resumes the alert queue.
 
-**Configuration:**
+## Configuration
 
 *   This command controls alerts within your StreamElements overlays. Ensure your overlays are active.
-*   The command's permission level can be adjusted under **Chatbot** -> **Chat Commands** -> **Default Commands**.
-
-## Examples
-
-<ExampleChatInteraction
-  inputPersona="moderator"
-  inputMessage="!alerts mute"
-  outputMessage=" @Styler, Successfully muted alerts"
-/>
-
-<ExampleChatInteraction
-  inputPersona="broadcaster"
-  inputMessage="!alerts skip"
-  outputMessage=" @Styler, Successfully skipped alerts"
-/>
-
-<ExampleChatInteraction
-  inputPersona="moderator"
-  inputMessage="!alerts pause"
-  outputMessage=" @Styler, Successfully paused alerts"
-/>
+*   The command's permission level can be adjusted under `Chatbot` -> `Chat Commands` -> `Default Commands`.
 
