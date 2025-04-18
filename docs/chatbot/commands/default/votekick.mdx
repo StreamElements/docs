@@ -1,0 +1,77 @@
+---
+id: votekick
+sidebar_label: "!votekick"
+description: "Use the !votekick command in StreamElements chatbot to initiate a community vote to temporarily kick a user from chat."
+tags:
+  - chatbot
+  - commands
+  - moderation
+  - community
+  - default
+keywords:
+  - StreamElements votekick command
+  - Twitch chat moderation
+  - community-driven moderation
+  - temporary chat ban
+  - viewer engagement
+  - stream interaction
+  - chat management
+  - StreamElements bot commands
+  - Twitch streaming tools
+  - chat voting system
+---
+
+import PlatformBadges from '@site/src/components/PlatformBadges';
+import ChatExample from '@site/src/components/ChatExample';
+
+# !votekick
+
+<PlatformBadges supported={[ 'Twitch' ]} />
+
+## Overview
+
+The `!votekick` command initiates a community vote to temporarily remove (timeout) a user from the chat. This allows viewers to participate in moderation by collectively deciding if a user should be kicked for a period.
+
+**Important:** By default, only users with **Moderator** permission level or higher can use this command to *start* a vote.
+
+## Usage
+
+To start a vote to kick a user:
+
+```streamelements
+!votekick <username> [duration]
+```
+
+## Examples
+
+**Start a votekick for "DisruptiveUser" with the default vote duration:**
+<ChatExample messages={[
+  { persona: 'moderator', message: '!votekick DisruptiveUser' },
+  { persona: 'bot', message: 'Vote started to kick DisruptiveUser! Type !yes or !no to vote. (Vote ends in 60s)' } // Output varies based on settings
+]} />
+
+**Start a votekick for "RuleBreaker" with a 2-minute vote duration:**
+<ChatExample messages={[
+  { persona: 'moderator', message: '!votekick RuleBreaker 2m' },
+  { persona: 'bot', message: 'Vote started to kick RuleBreaker! Type !yes or !no to vote. (Vote ends in 120s)' } // Output varies based on settings
+]} />
+
+## Parameters
+
+*   `<username>` (Required): The exact username of the user to potentially kick.
+*   `[duration]` (Optional): The length of time the *voting period* should last. 
+    *   If not specified, uses the default duration set in the module configuration.
+    *   Can be specified in seconds (`s`), minutes (`m`), or hours (`h`) (e.g., `90s`, `3m`).
+    *   Note: This is the duration for voting, *not* the kick/timeout duration if the vote passes.
+
+## Configuration
+
+*   Requires the **Votekick module** to be enabled (`Chatbot` -> `Modules`).
+*   Moderators configure settings in the **Votekick module** on the Dashboard:
+    *   Enable/disable the module.
+    *   Set the default **Vote Duration**.
+    *   Set the required **Minimum Votes** for the vote to be considered valid.
+    *   Define the **Vote Threshold** (percentage of `!yes` votes needed to pass).
+    *   Set the **Timeout Duration** (how long the user is kicked if the vote passes).
+    *   Establish **Cooldowns** (global and per-user for starting votes).
+
