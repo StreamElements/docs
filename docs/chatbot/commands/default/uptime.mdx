@@ -1,0 +1,54 @@
+---
+id: uptime
+sidebar_label: "!uptime"
+description: "Use the !uptime command in StreamElements chatbot to check the current stream's duration."
+tags:
+  - chatbot
+  - commands
+  - utility
+  - default
+keywords:
+  - streamelements uptime command
+  - uptime command twitch
+  - chatbot uptime
+  - stream duration
+  - live streaming time
+---
+
+import PlatformBadges from '@site/src/components/PlatformBadges';
+import ChatExample from '@site/src/components/ChatExample';
+
+# !uptime
+
+<PlatformBadges supported={[ 'Twitch', 'YouTube', 'Trovo', 'Kick' ]} />
+
+## Overview
+
+The `!uptime` command allows viewers and moderators to check how long the current stream has been live. It's a simple yet useful tool for tracking stream duration.
+
+## Usage
+
+To check the stream duration, simply type the command in the chat:
+
+```streamelements
+!uptime
+```
+
+## Examples
+
+<ChatExample messages={[
+  { persona: 'user', message: '!uptime' },
+  { persona: 'bot', message: '@StreamerName has been live for 2 hours 35 minutes and 10 seconds' } // Format may vary
+]} />
+
+## Configuration
+
+*   This command relies on the bot having access to the stream's start time information.
+*   The response format can often be customized in the default command settings (`Chatbot` -> `Chat Commands` -> `Default Commands` -> `!uptime`).
+
+## Related Commands
+
+*   [`!followage`](followage.mdx): Checks how long a user has followed (Twitch).
+*   [`!watchtime`](watchtime.mdx): Checks a user's accumulated watch time.
+*   [`!accountage`](accountage.mdx): Checks when a user account was created.
+
