@@ -17,17 +17,17 @@ keywords:
 ---
 
 import PlatformBadges from '@site/src/components/PlatformBadges';
-import MultiChatInteraction from '@site/src/components/MultiChatInteraction';
+import ChatExample from '@site/src/components/ChatExample';
 
-# !accept
+# !accept Command
 
 <PlatformBadges supported={[ 'Twitch' ]} />
 
 ## Overview
 
-The `!accept` command allows users to accept pending duel requests initiated by the [`!duel`](duel.md) command.
+The `!accept` command allows users to accept pending duel requests initiated by the [`!duel`](duel.mdx) command.
 
-## Usage / Syntax
+## Usage
 
 To use the `!accept` command, simply type it in the chat when you have a pending duel request.
 
@@ -35,15 +35,9 @@ To use the `!accept` command, simply type it in the chat when you have a pending
 !accept
 ```
 
-## Parameters / Configuration / Options
-
-This command does not take any parameters.
-
-The `!accept` command is part of the **Duel module**. This module must be enabled in your StreamElements chatbot settings for the command to function.
-
 ## Examples
 
-<MultiChatInteraction
+<ChatExample
     messages={[
         {
             username: "Challenger",
@@ -60,7 +54,7 @@ The `!accept` command is part of the **Duel module**. This module must be enable
             username: "TargetUser",
             message: "!accept"
         },
-        { 
+        {
             username: 'StreamElements',
             message: 'TargetUser won the Duel vs Challenger PogChamp',
             userColor: '#5B99FF',
@@ -70,8 +64,16 @@ The `!accept` command is part of the **Duel module**. This module must be enable
     ]}
 />
 
+## Parameters
+
+This command does not take any parameters.
+
+## Configuration
+
+The `!accept` command is part of the **Duel module**. This module must be enabled in your StreamElements chatbot settings under `Chatbot` -> `Modules` for the command to function.
+
 ## Related Commands
 
-- [`!duel`](duel.md): Initiate a duel with another user.
-- [`!cancelduel`](cancelduel.md): Cancel an outgoing duel request.
-- [`!deny`](deny.md): Deny an incoming duel request.
+*   [`!duel`](duel.mdx): Initiate a duel with another user.
+*   [`!cancelduel`](cancelduel.mdx): Cancel an outgoing duel request.
+*   [`!deny`](deny.mdx): Deny an incoming duel request.
