@@ -1,0 +1,111 @@
+---
+id: bot
+sidebar_label: "!bot"
+description: "Manage your StreamElements chatbot with the !bot command. Control bot behavior, including muting, unmuting, and removing the bot from chat."
+tags:
+  - chatbot
+  - commands
+  - moderation
+  - utility
+  - default
+keywords:
+  - bot command
+  - streamelements chatbot
+  - twitch bot management
+  - bot commands
+  - mute bot
+  - unmute bot
+  - remove bot from chat
+  - stream moderation
+---
+
+import PlatformBadges from '@site/src/components/PlatformBadges';
+import ChatExample from '@site/src/components/ChatExample';
+import Admonition from '@theme/Admonition';
+
+# !bot
+
+<PlatformBadges supported={[ 'Twitch', 'YouTube', 'Trovo', 'Kick' ]} />
+
+## Overview
+
+The `!bot` command allows streamers and moderators to control the behavior of the StreamElements chatbot during a stream. This command provides essential functions for managing the bot's presence and activity in the chat via several subcommands.
+
+## Usage
+
+The `!bot` command uses the following general structure:
+
+```streamelements
+!bot <subcommand>
+```
+
+<Admonition type="important" title="Permissions">
+  By default, only users with **Moderator** permission level or higher can use the `!bot` command and its subcommands. The command's permission level can be adjusted under `Chatbot` -> `Chat Commands` -> `Default Commands`.
+</Admonition>
+
+## Subcommands
+
+This section details the available subcommands for `!bot`.
+
+### mute
+
+Temporarily prevents the bot from sending *any* messages (including commands and timers) in the chat.
+
+**Syntax**
+```streamelements
+!bot mute
+```
+
+**Example**
+<ChatExample messages={[
+  { persona: 'moderator', message: '!bot mute' },
+  { persona: 'bot', message: '@Moderator, I have been muted.' }
+]} />
+
+### unmute
+
+Allows the bot to resume sending messages in the chat after being muted.
+
+**Syntax**
+```streamelements
+!bot unmute
+```
+
+**Example**
+<ChatExample messages={[
+  { persona: 'broadcaster', message: '!bot unmute' },
+  { persona: 'bot', message: '@Broadcaster, I have been unmuted.' }
+]} />
+
+### part
+
+Makes the bot leave the chat channel entirely. The bot will need to be invited back manually via the StreamElements dashboard if you wish for it to return.
+
+**Syntax**
+```streamelements
+!bot part
+```
+
+**Example**
+<ChatExample messages={[
+  { persona: 'broadcaster', message: '!bot part' },
+  { persona: 'system', message: 'StreamElements has left the channel.' }
+]} />
+
+## Related Commands
+
+*   [`!commands`](commands.mdx): Lists all available bot commands.
+*   [`!command`](command.mdx): Manages custom commands.
+*   [`!module`](module.mdx): Enables or disables chatbot modules.
+
+## Aliases
+
+There are no default aliases for the `!bot` command or its subcommands.
+
+## FAQ
+
+*   **How do I get the bot back after using `!bot part`?**
+    You need to go to your StreamElements dashboard, navigate to the Chatbot settings, and click the button to make the bot join your channel again.
+
+*   **Does `!bot mute` stop timers?**
+    Yes, muting the bot prevents it from sending timer messages as well as command responses.
