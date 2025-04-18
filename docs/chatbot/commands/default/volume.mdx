@@ -1,0 +1,74 @@
+---
+id: volume
+sidebar_label: "!volume"
+description: "Use the !volume command in StreamElements chatbot to check or set the volume for the media request player."
+tags:
+  - chatbot
+  - commands
+  - moderation
+  - media request
+  - song request
+  - default
+keywords:
+  - volume command
+  - volume control
+  - media request volume
+  - song request volume
+  - chatbot command
+  - audio settings
+  - streamelements
+---
+
+import PlatformBadges from '@site/src/components/PlatformBadges';
+import ChatExample from '@site/src/components/ChatExample';
+
+# !volume
+
+<PlatformBadges supported={[ 'Twitch', 'YouTube', 'Trovo', 'Kick' ]} />
+
+## Overview
+
+The `!volume` command allows moderators to check or adjust the volume level of the StreamElements media request player.
+
+**Important:** By default, only users with **Moderator** permission level or higher can use this command.
+
+## Usage
+
+**To check the current volume:**
+
+```streamelements
+!volume
+```
+
+**To set a new volume level:**
+
+```streamelements
+!volume <level>
+```
+
+## Examples
+
+<ChatExample messages={[
+  { persona: 'moderator', message: '!volume' },
+  { persona: 'bot', message: 'Current volume is 50%' }
+]} />
+
+<ChatExample messages={[
+  { persona: 'broadcaster', message: '!volume 75' },
+  { persona: 'bot', message: '@Broadcaster set the songrequest volume to 75%' } // Output may vary slightly
+]} />
+
+## Parameters
+
+*   `<level>` (Optional): A number between `0` and `100` representing the desired volume percentage. If omitted, the command displays the current volume.
+
+## Configuration
+
+*   Requires the **Media Request** module to be enabled.
+*   The command's permission level can be adjusted under `Chatbot` -> `Chat Commands` -> `Default Commands`.
+
+## Related Commands
+
+*   [`!songrequest`](songrequest.mdx): Used to request songs or media content.
+*   [`!skip`](skip.mdx): Skips the currently playing media request.
+*   [`!play`](play.mdx) / [`!pause`](pause.mdx): Controls media playback.
