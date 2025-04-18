@@ -1,0 +1,76 @@
+---
+id: wrongsong
+sidebar_label: "!wrongsong"
+description: "Remove the last song you added to the StreamElements media request queue using the !wrongsong command."
+tags:
+  - chatbot
+  - commands
+  - media request
+  - song request
+  - utility
+  - default
+keywords:
+  - wrongsong command
+  - remove last song
+  - song request queue
+  - media request
+  - StreamElements chatbot
+---
+
+import PlatformBadges from '@site/src/components/PlatformBadges';
+import ChatExample from '@site/src/components/ChatExample';
+
+# !wrongsong
+
+<PlatformBadges supported={[ 'Twitch' ]} />
+
+## Overview
+
+The `!wrongsong` command allows viewers to remove the **last song they added** to the StreamElements media request queue. This is useful if you accidentally requested the wrong song or simply changed your mind.
+
+## Usage
+
+To remove your last song request, simply type the command in chat:
+
+```streamelements
+!wrongsong
+```
+
+## Examples
+
+<ChatExample messages={[
+  { persona: 'user', message: '!wrongsong' },
+  { persona: 'bot', message: '@ViewerName Removed your last song from the queue: Bohemian Rhapsody by Queen' } // Output varies
+]} />
+
+<ChatExample messages={[
+  { persona: 'user', message: '!wrongsong' },
+  { persona: 'bot', message: "@ViewerName You haven't requested any songs recently." } // Output varies
+]} />
+
+## Parameters
+
+The `!wrongsong` command does not require any parameters.
+
+## Configuration
+
+*   Requires the **Media Request** module to be enabled.
+*   The command affects only the song requested by the user issuing the command.
+*   Streamers can customize the response messages in the StreamElements dashboard under `Chatbot` -> `Chat Commands` -> `Default Commands`.
+
+## Related Commands
+
+*   [`!songrequest`](songrequest.mdx): Used to add a song to the request queue.
+*   [`!when`](when.mdx): Checks the status of your last requested song.
+*   [`!songqueue`](songqueue.mdx): Provides a link to the full queue.
+*   [`!song`](song.mdx): Displays information about the currently playing song.
+*   [`!next`](next.mdx): Shows the next song in the queue.
+
+## Aliases
+
+Common default aliases may include:
+
+*   `!ws`
+*   `!removelast`
+
+Streamers can configure additional aliases in the StreamElements dashboard.
