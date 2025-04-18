@@ -20,9 +20,9 @@ keywords:
 ---
 
 import PlatformBadges from '@site/src/components/PlatformBadges';
-import ExampleChatInteraction from '@site/src/components/ExampleChatInteraction';
+import ChatExample from '@site/src/components/ChatExample';
 
-# !accountage
+# !accountage Command
 
 <PlatformBadges supported={[ 'Twitch' ]} />
 
@@ -30,35 +30,33 @@ import ExampleChatInteraction from '@site/src/components/ExampleChatInteraction'
 
 The `!accountage` command allows users to check the creation date (age) of a Twitch account. This tool is particularly useful for moderators to verify user authenticity or determine eligibility for certain privileges based on account age.
 
-## Usage / Syntax
+## Usage
 
 To use the command, type `!accountage` followed by an optional username. If no username is provided, it checks the account age of the user running the command.
 
 ```streamelements
-!accountage <username>
+!accountage [username]
 ```
-
-## Parameters / Configuration / Options
-
--   `<username>` (Optional): The Twitch username of the account you want to check. If omitted, the command checks the account age of the user who issued the command.
-
-This command requires a connection to Twitch to fetch the account creation date.
 
 ## Examples
 
-<ExampleChatInteraction
-  inputPersona="moderator"
-  inputUsernameOverride="ModUser"
-  inputMessage="!accountage StreamElements"
-  outputMessage="@ModUser, StreamElements was created 10 years 2 months 28 days 7 hours ago."
-/>
+<ChatExample messages={[
+  { persona: 'moderator', usernameOverride: 'ModUser', message: '!accountage StreamElements' },
+  { persona: 'bot', message: '@ModUser, StreamElements was created 10 years 2 months 28 days 7 hours ago.' }
+]} />
 
-<ExampleChatInteraction
-  inputPersona="viewer"
-  inputUsernameOverride="ViewerBob"
-  inputMessage="!accountage"
-  outputMessage="@ViewerBob, your account was created 3 years 5 months 12 days 4 hours ago."
-/>
+<ChatExample messages={[
+  { persona: 'user', usernameOverride: 'ViewerBob', message: '!accountage' },
+  { persona: 'bot', message: '@ViewerBob, your account was created 3 years 5 months 12 days 4 hours ago.' }
+]} />
+
+## Parameters
+
+*   `[username]` (Optional): The Twitch username of the account you want to check. If omitted, the command checks the account age of the user who issued the command.
+
+## Configuration
+
+This command requires a connection to Twitch to fetch the account creation date. Ensure your StreamElements bot account is properly linked to Twitch.
 
 ## Aliases
 
@@ -71,5 +69,5 @@ These aliases can be used interchangeably with the main command.
 
 ## Related Commands
 
-- [`!followage`](followage.md): Checks how long a user has been following the channel
+*   [`!followage`](followage.mdx): Checks how long a user has been following the channel.
 
