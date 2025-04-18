@@ -1,0 +1,54 @@
+---
+id: tip
+sidebar_label: "!tip"
+description: "Use the !tip command in StreamElements chatbot to provide viewers with a link to your StreamElements tipping page."
+tags:
+  - chatbot
+  - commands
+  - utility
+  - monetization
+  - default
+keywords:
+  - tip command
+  - tipping
+  - donations
+  - streamer support
+  - chatbot
+  - streamelements
+---
+
+import PlatformBadges from '@site/src/components/PlatformBadges';
+import ChatExample from '@site/src/components/ChatExample';
+
+# !tip
+
+<PlatformBadges supported={[ 'Twitch', 'YouTube', 'Trovo', 'Kick' ]} />
+
+## Overview
+
+The `!tip` command provides a convenient way for viewers to access the streamer's tipping link directly in chat. When used, it generates a message containing a URL where viewers can make monetary contributions to support the streamer via StreamElements.
+
+## Usage
+
+To display the tipping link, simply type the command in chat:
+
+```streamelements
+!tip
+```
+
+## Examples
+
+<ChatExample messages={[
+  { persona: 'user', message: '!tip' },
+  { persona: 'bot', message: 'You can Tip to StreamerName using this link https://streamelements.com/StreamerName/tip' }
+]} />
+
+## Configuration
+
+*   The tipping page must be set up in your **StreamElements Dashboard** under `Revenue` -> `Tipping Settings`.
+*   The command is usually enabled by default.
+*   You can customize the command's response message under `Chatbot` -> `Chat Commands` -> `Default Commands` -> `!tip`.
+
+## Related Commands
+
+*   While not a direct command, setting up `Alerts` for tips in your overlays complements this command.
