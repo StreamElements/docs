@@ -1,0 +1,66 @@
+---
+id: timer
+sidebar_label: "!timer"
+description: "Use the !timer command in StreamElements chatbot to enable or disable specific chat timers directly from chat."
+tags:
+  - chatbot
+  - commands
+  - moderation
+  - utility
+  - timers
+  - default
+keywords:
+  - timer command
+  - enable timer
+  - disable timer
+  - manage timers
+  - StreamElements chatbot
+---
+
+import PlatformBadges from '@site/src/components/PlatformBadges';
+import ChatExample from '@site/src/components/ChatExample';
+
+# !timer
+
+<PlatformBadges supported={[ 'Twitch', 'YouTube', 'Trovo', 'Kick' ]} />
+
+## Overview
+
+The `!timer` command allows moderators to enable or disable specific chat timers directly from the chat interface. Timers are messages automatically posted by the bot at set intervals.
+
+**Important:** By default, only users with **Moderator** permission level or higher can use this command.
+
+## Usage
+
+To enable or disable a timer:
+
+```streamelements
+!timer <enable | disable> <timer_id_or_name>
+```
+
+## Examples
+
+<ChatExample messages={[
+  { persona: 'moderator', message: '!timer enable socialMediaTimer' },
+  { persona: 'bot', message: '@Moderator, timer socialMediaTimer has been enabled.' } // Output may vary slightly
+]} />
+
+<ChatExample messages={[
+  { persona: 'broadcaster', message: '!timer disable upcomingEvent' },
+  { persona: 'bot', message: '@Broadcaster, timer upcomingEvent has been disabled.' } // Output may vary slightly
+]} />
+
+## Parameters
+
+*   `<enable | disable>` (Required): The action to perform. `enable` turns the timer on, `disable` turns it off.
+*   `<timer_id_or_name>` (Required): The ID or exact Name of the timer as configured in the StreamElements Dashboard.
+
+## Configuration
+
+*   Timers must be created and configured in the **StreamElements Dashboard** under `Chatbot` -> `Timers`.
+*   You can find the Timer ID or set a specific Name in the timer's settings on the Dashboard.
+*   The command's permission level can be adjusted under `Chatbot` -> `Chat Commands` -> `Default Commands`.
+
+## Related Commands
+
+*   [`!command`](command.mdx): Manages custom commands, which can sometimes serve similar purposes to simple timers.
