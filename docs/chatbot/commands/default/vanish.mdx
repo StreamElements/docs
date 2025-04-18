@@ -1,0 +1,50 @@
+---
+id: vanish
+sidebar_label: "!vanish"
+description: "Use the !vanish command in StreamElements chatbot to time yourself out for 1 second, effectively clearing your visible messages."
+tags:
+  - chatbot
+  - commands
+  - utility
+  - chat
+  - default
+keywords:
+  - vanish command
+  - time out command
+  - clear chat history
+  - StreamElements
+  - chatbot
+---
+
+import PlatformBadges from '@site/src/components/PlatformBadges';
+import ChatExample from '@site/src/components/ChatExample';
+
+# !vanish
+
+<PlatformBadges supported={[ 'Twitch' ]} />
+
+## Overview
+
+The `!vanish` command allows chatters to temporarily time themselves out for 1 second. On platforms like Twitch, this has the effect of clearing their recent messages from the chat window for other users.
+
+## Usage
+
+To use the `!vanish` command, simply type it in the chat:
+
+```streamelements
+!vanish
+```
+
+## Examples
+
+<ChatExample messages={[
+  { persona: 'user', message: '!vanish' },
+  { persona: 'bot', message: 'StreamElements timed out [User] for 1 second.' }
+]} />
+
+## Configuration
+
+*   This command is typically enabled by default.
+*   Its functionality relies on the bot having timeout permissions (usually inherent).
+*   The command can be enabled/disabled or have its permissions changed in the `Chatbot` -> `Chat Commands` -> `Default Commands` section of the StreamElements dashboard.
+
