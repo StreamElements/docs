@@ -1,0 +1,203 @@
+---
+id: command
+sidebar_label: "!command"
+description: "Manage StreamElements chatbot custom commands directly from chat using the !command (!cmd) functions: add, remove, edit, alias, show, options."
+tags:
+  - chatbot
+  - commands
+  - moderation
+  - utility
+  - custom commands
+  - default
+keywords:
+  - command command
+  - cmd command
+  - streamelements chatbot
+  - custom commands
+  - add command
+  - remove command
+  - edit command
+  - alias command
+  - show command
+  - command options
+  - manage chatbot commands
+---
+
+import PlatformBadges from '@site/src/components/PlatformBadges';
+import ChatExample from '@site/src/components/ChatExample';
+
+# !command
+
+<PlatformBadges supported={[ 'Twitch', 'YouTube', 'Trovo', 'Kick' ]} />
+
+## Overview
+
+The `!command` (aliased as `!cmd`) command suite allows streamers and moderators with the appropriate permissions to manage custom chat commands directly from the chat interface. It provides subcommands to add, remove, edit, view aliases, show details, and configure advanced options for any custom command.
+
+:::important[Permissions]
+By default, only users with **Moderator** permission level or higher can use the `!command` subcommands.
+:::
+
+## Usage
+
+The general syntax follows this pattern:
+
+```streamelements
+!command <subcommand> [arguments...]
+```
+
+Or using the alias:
+
+```streamelements
+!cmd <subcommand> [arguments...]
+```
+
+Replace `<subcommand>` with one of the functions listed below and `[arguments...]` with the required parameters for that specific subcommand.
+
+## Subcommands
+
+Here are the available subcommands for `!command`:
+
+### add
+
+Creates a new custom command.
+
+**Syntax:**
+```streamelements
+!command add !*command_name* *response_text*
+```
+
+**Example:**
+<ChatExample messages={[
+  { persona: 'moderator', message: '!command add !socials Follow me on Twitter @MyHandle!' },
+  { persona: 'bot', message: '@Moderator, successfully added command !socials.' }
+]} />
+
+### remove
+
+Deletes an existing custom command.
+
+**Syntax:**
+```streamelements
+!command remove !*command_name*
+```
+
+**Example:**
+<ChatExample messages={[
+  { persona: 'moderator', message: '!command remove !socials' },
+  { persona: 'bot', message: '@Moderator, successfully removed command !socials.' }
+]} />
+
+### edit
+
+Changes the response text of an existing custom command.
+
+**Syntax:**
+```streamelements
+!command edit !*command_name* *new_response_text*
+```
+
+**Example:**
+<ChatExample messages={[
+  { persona: 'moderator', message: '!command edit !socials Check out my links: example.com/links' },
+  { persona: 'bot', message: '@Moderator, successfully updated command !socials.' }
+]} />
+
+### alias
+
+Shows the aliases associated with a specific command.
+
+:::info Note
+Aliases themselves can only be created or managed through the StreamElements Dashboard, not via chat commands.
+:::
+
+**Syntax:**
+```streamelements
+!command alias !*command_name*
+```
+
+**Example:**
+<ChatExample messages={[
+  { persona: 'moderator', message: '!command alias !socials' },
+  { persona: 'bot', message: '@Moderator, Command !socials has aliases: !links, !connect' }
+]} />
+
+### show
+
+Displays the full response text and configuration details (level, cost, cooldowns) of a command.
+
+**Syntax:**
+```streamelements
+!command show !*command_name*
+```
+
+**Example:**
+<ChatExample messages={[
+  { persona: 'moderator', message: '!command show !socials' },
+  { persona: 'bot', message: '@Moderator, Command !socials: Check out my links: example.com/links (Level: Everyone, Cost: 0, Cooldown: 5s, User Cooldown: 15s)' }
+]} />
+
+### options
+
+Configures advanced settings like cooldowns, cost, permission level, response type, enabled status, and usage count for a command. See the [Parameters](#parameters-for-options-subcommand) section below for details on the available options.
+
+**Syntax:**
+```streamelements
+!command options !*command_name* *option1* *value1* [*option2*] [*value2*] ...
+```
+*Note: Replace `option1`, `value1`, etc., with the specific parameter flags and values listed in the Parameters section below. You can specify multiple options.* 
+
+**Example (setting multiple options):**
+<ChatExample messages={[
+  { persona: 'moderator', message: '!command options !socials -cd 10 -usercd 30 -cost 50 -level moderator' },
+  { persona: 'bot', message: '@Moderator, successfully updated command !socials.' }
+]} />
+
+## Parameters (for `options` subcommand)
+
+When using the `!command options` subcommand, you specify settings using flags followed by their values. You can set multiple options in a single message. These parameters allow fine-grained control over a command's behavior:
+
+| Parameter        | Description                                                                                                                             | Accepted Values                                                            | Example Usage                             |
+| :--------------- | :-------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------- | :---------------------------------------- |
+| `-cd`            | Sets the **global command cooldown** (minimum time between *any* use of the command).                                                     | `<seconds>` (e.g., `10`)                                                     | `-cd 10`                                  |
+| `-usercd`        | Sets the **user-specific cooldown** (minimum time the *same user* must wait before using the command again).                            | `<seconds>` (e.g., `30`)                                                     | `-usercd 30`                              |
+| `-cost`          | Sets the **loyalty points cost**. Requires the StreamElements [Loyalty System](https://docs.streamelements.com/docs/loyalty/overview) active. | `<points>` (e.g., `50`)                                                      | `-cost 50`                                |
+| `-level`         | Sets the **minimum user permission level** required.                                                                                   | `everyone`, `subscriber`, `regular`, `moderator`, `supermoderator`, `broadcaster` | `-level moderator`                        |
+| `-type`          | Sets **how the bot responds**. Platform support for `reply` and `whisper` may vary.                                                     | `say` (default), `reply`, `whisper`                                        | `-type whisper`                           |
+| `-enable`        | Enables the command.                                                                                                                    | N/A                                                                        | `-enable`                                 |
+| `-disable`       | Disables the command, preventing anyone from using it.                                                                                 | N/A                                                                        | `-disable`                                |
+| `-count`         | **Manually sets the command's usage counter**, useful for resetting or adjusting the value used by [`$(count)`](../../variables/count.md).     | `<number>` (e.g., `0`)                                                       | `-count 0`                                |
+
+## Aliases
+
+*   **`!command`:** `!cmd`
+*   **`remove`:** `delete`, `del`, `rem`
+*   **`edit`:** `update`
+*   **`alias`:** `aliases`
+*   **`show`:** `debug`
+*   **`options`:** `option`, `opt`, `opts`, `o`, `🔧`
+
+## Related Commands and Variables
+
+*   [`!commands`](commands.mdx): Lists available commands.
+*   [`$(count)`](../../variables/count.md): Variable to display the usage count of a command.
+*   [`$(user)`](../../variables/user.md): Variable representing the user executing the command.
+*   [`$(channel)`](../../variables/channel.md): Variable representing the channel name.
+*   See the full list of [Chatbot Variables](../../variables).
+
+## FAQ
+
+*   **What's the difference between global cooldown (`-cd`) and user cooldown (`-usercd`)?**
+    Global cooldown (`-cd`) applies to *everyone* – once the command is used, no one can use it again until the cooldown expires. User cooldown (`-usercd`) applies only to the *individual user* – they have to wait, but other users can still use the command if the global cooldown has passed.
+
+*   **How do I reset a command's usage counter?**
+    Use the `options` subcommand with the `-count` parameter: `!command options !<command_name> -count 0`
+
+*   **Can I make a command respond with a whisper instead of a public message?**
+    Yes, use the `options` subcommand with the `-type` parameter: `!command options !<command_name> -type whisper`. Note that whisper functionality depends on the chat platform.
+
+*   **Why can't I add or edit command aliases using the `!command` system?**
+    Alias management (creating, deleting, editing aliases for commands) is currently only available through the Command page on your StreamElements Dashboard.
+
+*   **I'm a moderator, but `!command add` isn't working. Why?**
+    Double-check that the `!command` default command itself hasn't been disabled or had its permission level changed from the default (Moderator). You can check its settings in the `Default Commands` section of your StreamElements Dashboard.
