@@ -1,0 +1,88 @@
+---
+id: emotes
+sidebar_label: "!emotes"
+description: "Use the !emotes command in StreamElements chatbot to list available emotes from Twitch, BTTV, FFZ, or 7TV, or to reload the entire emote cache."
+tags:
+  - chatbot
+  - commands
+  - utility
+  - emotes
+  - default
+keywords:
+  - emotes command
+  - list emotes
+  - reload emotes
+  - twitch emotes
+  - bttv emotes
+  - ffz emotes
+  - 7tv emotes
+  - streamelements chatbot
+---
+
+import PlatformBadges from '@site/src/components/PlatformBadges';
+import ChatExample from '@site/src/components/ChatExample';
+import Admonition from '@theme/Admonition';
+
+# !emotes
+
+<PlatformBadges supported={[ 'Twitch', 'YouTube', 'Trovo', 'Kick' ]} />
+
+## Overview
+
+The `!emotes` command serves two primary functions:
+
+1.  **List Platform Emotes:** When followed by a platform name (`twitch`, `bttv`, `ffz`, `7tv`), it lists the active emotes from that specific provider directly in chat.
+2.  **Reload Emote Cache (Moderator+):** Using the `reload` keyword, moderators can refresh the bot's internal cache of emotes for **all** platforms (Twitch, BTTV, FFZ, 7TV) simultaneously.
+
+## Usage
+
+**To list active emotes for a specific platform:**
+
+```streamelements
+!emotes <platform>
+```
+*   `<platform>`: Required. The platform whose emotes you want to list. Valid options: `twitch`, `bttv`, `ffz`, `7tv`.
+
+**To reload the emote cache:**
+
+```streamelements
+!emotes reload
+```
+*   This refreshes the bot's internal cache of available emotes for **all** platforms (Twitch, BTTV, FFZ, 7TV).
+*   It is useful if new emotes have been added or changed and aren't showing up correctly.
+<Admonition type="important" title="Permissions">
+  Using `!emotes reload` requires **Moderator** permission level or higher by default. This can be adjusted in the StreamElements Dashboard under `Chatbot` -> `Chat Commands` -> `Default Commands`.
+</Admonition>
+
+## Examples
+
+**Listing active FFZ emotes:**
+<ChatExample messages={[
+  { persona: 'user', message: '!emotes ffz' },
+  { persona: 'bot', message: 'Active FrankerFaceZ emotes in chat: monkaS FeelsOkayMan PepeHands ZULUL' }
+]} />
+
+**Listing active BTTV emotes:**
+<ChatExample messages={[
+  { persona: 'user', message: '!emotes bttv' },
+  { persona: 'bot', message: 'Active BetterTTV emotes in chat: Pog LULW monkaW Clap' }
+]} />
+
+**Reloading all emote caches (Moderator+):**
+<ChatExample messages={[
+  { persona: 'moderator', message: '!emotes reload' },
+  { persona: 'bot', message: '@Moderator, successfully updated emotes :)' }
+]} />
+
+## Configuration
+
+*   The `reload` function will refresh caches for Twitch and any enabled third-party integrations.
+*   The bot needs appropriate permissions (usually just being present in chat) to fetch Twitch emotes.
+
+## Related Commands
+
+*   [`!emotecount`](emotecount.mdx): Checks how many times a specific emote has been used in chat.
+
+## Aliases
+
+There are no known aliases for the `!emotes` command.
