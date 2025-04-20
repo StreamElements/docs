@@ -30,7 +30,7 @@ In addition to the default commands, you can also create your own custom command
 There are 2 ways to manage a custom commands:
 
 1. Through the creator dashboard
-2. Directly in chat with the [!command](../default/command.md) command
+2. Directly in chat with the [!command](../default/command.mdx) command
 
 ### Using the Dashboard to manage custom commands
 
@@ -75,7 +75,7 @@ The general Syntax is the following:
 !command options <command name> <-option> <value>
 ```
 
-For specifics read the documentation for the [!command](../default/command.md) command
+For specifics read the documentation for the [!command](../default/command.mdx) command
 
 ## Examples
 
