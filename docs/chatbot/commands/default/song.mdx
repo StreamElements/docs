@@ -1,0 +1,64 @@
+---
+id: song
+sidebar_label: "!song"
+description: "Use the !song command in StreamElements chatbot to get information about the currently playing song from the media request queue."
+tags:
+  - chatbot
+  - commands
+  - media request
+  - song request
+  - utility
+  - default
+keywords:
+  - StreamElements
+  - chatbot
+  - commands
+  - media request
+  - song
+  - currently playing
+  - music
+---
+
+import PlatformBadges from '@site/src/components/PlatformBadges';
+import ChatExample from '@site/src/components/ChatExample';
+
+# !song
+
+<PlatformBadges supported={[ 'Twitch' ]} />
+
+## Overview
+
+The `!song` command allows viewers to retrieve information about the currently playing song in the StreamElements media request queue. This command is useful for viewers who want to know the title, artist, and requester of the current song.
+
+## Usage
+
+To use the `!song` command, simply type it in the chat:
+
+```streamelements
+!song
+```
+
+## Examples
+
+<ChatExample messages={[
+  { persona: 'user', message: '!song' },
+  { persona: 'bot', message: '@User, current song: DrakeVEVO - Drake, 21 Savage - Rich Flex (Audio), requested by styler https://youtu.be/I4DjHHVHWAE' }
+]} />
+
+<ChatExample messages={[
+  { persona: 'user', message: '!song' },
+  { persona: 'bot', message: '@User, No song is currently playing.' }
+]} />
+
+## Configuration
+
+*   This command requires the **Media Request** module to be enabled and configured in your StreamElements Dashboard (`Chatbot` -> `Modules`).
+*   The information displayed depends on the media source (e.g., YouTube, Spotify) and the data available for the requested track.
+
+## Related Commands
+
+*   [`!songrequest`](songrequest.mdx): Used to add songs to the media request queue.
+*   [`!skip`](skip.mdx): (Moderator+) Used to skip the current song.
+*   [`!next`](next.mdx): Shows details about the *next* song in the queue.
+*   [`!songqueue`](songqueue.mdx): Shows the upcoming songs in the media request queue.
+*   [`!play`](play.mdx) / [`!pause`](pause.mdx): (Moderator+) Controls playback.
