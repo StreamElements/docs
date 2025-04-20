@@ -1,0 +1,66 @@
+---
+id: srclear
+sidebar_label: "!srclear"
+description: "Use the !srclear command in StreamElements chatbot to clear the entire song/media request queue. Useful for moderation."
+tags:
+  - chatbot
+  - commands
+  - moderation
+  - media request
+  - song request
+  - default
+keywords:
+  - srclear
+  - clearsr
+  - songrequest
+  - clear queue
+  - streamelements
+  - chatbot
+  - commands
+  - mediarequest
+---
+
+import PlatformBadges from '@site/src/components/PlatformBadges';
+import ChatExample from '@site/src/components/ChatExample';
+
+# !srclear
+
+<PlatformBadges supported={[ 'Twitch', 'YouTube', 'Trovo', 'Kick' ]} />
+
+## Overview
+
+The `!srclear` command is used to clear the **entire** media request queue in your StreamElements chatbot. This command is particularly useful for streamers and moderators who want to reset the list of requested songs or videos during a stream.
+
+**Important:** By default, only users with **Moderator** permission level or higher can use this command.
+
+## Usage
+
+To clear the queue, simply type the command in chat:
+
+```streamelements
+!srclear
+```
+
+## Examples
+
+<ChatExample messages={[
+  { persona: 'moderator', message: '!srclear' },
+  { persona: 'bot', message: '@Moderator, Songrequest queue has been cleared!' }
+]} />
+
+## Configuration
+
+*   The command's permission level can be adjusted under `Chatbot` -> `Chat Commands` -> `Default Commands`.
+
+## Related Commands
+
+*   [`!songrequest`](songrequest.mdx): Used to request a song.
+*   [`!removesong`](removesong.mdx): Removes a specific song or all songs by a user.
+*   [`!wrongsong`](wrongsong.mdx): Allows users to remove their most recent song request.
+*   [`!skip`](skip.mdx): Skips the currently playing song in the queue.
+
+## Aliases
+
+*   `!clearsr`
+*   `!clearsongs`
+*   `!resetqueue`
