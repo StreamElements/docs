@@ -52,8 +52,9 @@ Bot: The raffle has ended. The winners are Viewer3, Viewer7, and Viewer12!
 
 ## Related Commands
 
-- [`!join`](../commands/default/join.md): Used by viewers to enter an ongoing raffle.
-- [`!cancelraffle`](../commands/default/cancelraffle.md): Cancels the current raffle (moderators only).
+- [`!raffle`](../commands/default/raffle.mdx): Initiates the raffle process.
+- [`!join`](../commands/default/join.mdx): Used by viewers to enter an ongoing raffle.
+- [`!cancelraffle`](../commands/default/cancelraffle.mdx): Cancels the current raffle (moderators only).
 
 ## FAQ
 

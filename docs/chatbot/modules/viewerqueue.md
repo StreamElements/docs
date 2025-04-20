@@ -51,12 +51,12 @@ The Viewer Queue module doesn't have specific parameters, but it uses various co
 
 ## Related Commands
 
-- [`!queue`](../commands/default/queue.md): The main command for viewers to join the queue.
-- [`!queue open`](../commands/default/queue.md): Opens the queue for viewers to join (mod only).
-- [`!queue close`](../commands/default/queue.md): Closes the queue, preventing new entries (mod only).
-- [`!queue clear`](../commands/default/queue.md): Clears all entries from the queue (mod only).
-- [`!queue next`](../commands/default/queue.md): Selects the next viewer from the queue (mod only).
-- [`!queue list`](../commands/default/queue.md): Displays the current queue (mod only).
+- [`!queue`](../commands/default/queue.mdx): The main command for viewers to join the queue.
+- [`!queue open`](../commands/default/queue.mdx): Opens the queue for viewers to join (mod only).
+- [`!queue close`](../commands/default/queue.mdx): Closes the queue, preventing new entries (mod only).
+- [`!queue clear`](../commands/default/queue.mdx): Clears all entries from the queue (mod only).
+- [`!queue next`](../commands/default/queue.mdx): Selects the next viewer from the queue (mod only).
+- [`!queue list`](../commands/default/queue.mdx): Displays the current queue (mod only).
 
 ## Configuration
 

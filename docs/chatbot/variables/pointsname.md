@@ -54,8 +54,8 @@ This variable doesn't accept any parameters.
 ## Related Commands/Variables
 
 - [`$(user.points)`](user.md#userpoints): Displays the user's current loyalty points balance
-- [`!addpoints`](../commands/default/addpoints.md): Adds points to a user's balance (mod/broadcaster only)
-- [`!setpoints`](../commands/default/setpoints.md): Sets a user's points to a specific value (mod/broadcaster only)
+- [`!addpoints`](../commands/default/addpoints.mdx): Adds points to a user's balance (mod/broadcaster only)
+- [`!setpoints`](../commands/default/setpoints.mdx): Sets a user's points to a specific value (mod/broadcaster only)
 
 ## FAQ
 

@@ -58,7 +58,8 @@ The module then randomly determines the outcome of the roulette spin. If the use
 
 ## Related Commands
 
-- [`!points`](../commands/default/points.md) - Check your current point balance
+- [`!roulette`](../commands/default/roulette.mdx): Initiates the roulette game.
+- [`!points`](../commands/default/points.mdx) - Check your current point balance
 
 ## Configuration
 

@@ -47,7 +47,8 @@ To start a game, viewers use the `!slots` command followed by the number of poin
 
 ## Related Commands
 
-- [`!points`](../commands/default/points.md): Check your current point balance
+- [`!slot`](../commands/default/slot.mdx): Initiates the slot machine game.
+- [`!points`](../commands/default/points.mdx): Check your current point balance
 
 ## Configuration
 
@@ -55,3 +56,5 @@ Streamers can customize the following aspects of the Slotmachine module:
 
 - Emotes used in the slot machine
 - Minimum wager amount
+
+## FAQ
