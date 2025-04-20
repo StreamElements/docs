@@ -1,0 +1,55 @@
+---
+id: commands
+sidebar_label: "!commands"
+description: "Learn how to use the !commands command in StreamElements chatbot to display a link to the creator's public commands list page."
+tags:
+  - chatbot
+  - commands
+  - utility
+  - default
+keywords:
+  - commands command
+  - StreamElements
+  - chatbot
+  - custom commands
+  - commands list
+  - streamer commands
+  - Twitch commands
+  - YouTube commands
+---
+
+import PlatformBadges from '@site/src/components/PlatformBadges';
+import ChatExample from '@site/src/components/ChatExample';
+
+# !commands
+
+<PlatformBadges supported={[ 'Twitch', 'YouTube', 'Trovo', 'Kick' ]} />
+
+## Overview
+
+The `!commands` command provides viewers with a link to the streamer's public StreamElements commands page. This page lists all enabled default and custom commands for the channel, making it easy for viewers to discover available interactions.
+
+## Usage
+
+To get the link to the commands page, simply type the command in chat:
+
+```streamelements
+!commands
+```
+
+## Examples
+
+<ChatExample messages={[
+  { persona: 'user', message: '!commands' },
+  { persona: 'bot', message: 'You can find a list of all Commands here https://streamelements.com/styler/commands' }
+]} />
+
+## Configuration
+
+*   This command is enabled by default.
+*   The public commands page only shows commands that are currently enabled.
+*   The list updates automatically based on your command settings in the StreamElements dashboard.
+
+## Related Commands
+
+*   [`!command`](command.mdx): Used by moderators/streamers to manage custom commands directly via chat.
