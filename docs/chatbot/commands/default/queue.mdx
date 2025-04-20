@@ -1,0 +1,175 @@
+---
+id: queue
+sidebar_label: "!queue"
+description: "Use the !queue command in StreamElements chatbot to manage viewer queues for activities like playing games with the streamer."
+tags:
+  - chatbot
+  - commands
+  - moderation
+  - utility
+  - queue
+  - default
+keywords:
+  - queue command
+  - viewer queue
+  - play with viewers
+  - manage queue
+  - join queue
+  - pick user
+  - streamelements chatbot
+---
+
+import PlatformBadges from '@site/src/components/PlatformBadges';
+import ChatExample from '@site/src/components/ChatExample';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# !queue
+
+<PlatformBadges supported={[ 'Twitch', 'YouTube', 'Trovo', 'Kick' ]} />
+
+## Overview
+
+The `!queue` command suite helps manage a viewer queue, often used for activities like playing games with the streamer. It allows viewers to join, check their position, and moderators to manage the queue (open, close, pick, remove).
+
+**Important:** Most subcommands (`open`, `close`, `pause`, `unpause`, `pick`, `remove`) typically require **Moderator** permission level or higher.
+
+## Usage
+
+The general syntax follows this pattern:
+
+```streamelements
+!queue <subcommand> [arguments...]
+```
+
+## Examples
+
+Here's a breakdown of common subcommands:
+
+### `join`
+
+Allows a viewer to enter the open queue.
+
+*   **Syntax:** `!queue join`
+*   **Example:**
+    <ChatExample messages={[
+      { persona: 'user', message: '!queue join' },
+      { persona: 'bot', message: '@User, you have been added to the queue in position #5.' }
+    ]} />
+
+### `leave`
+
+Allows a viewer to remove themselves from the queue.
+
+*   **Syntax:** `!queue leave`
+*   **Example:**
+    <ChatExample messages={[
+      { persona: 'user', message: '!queue leave' },
+      { persona: 'bot', message: '@User, you have been removed from the queue.' }
+    ]} />
+
+### `position`
+
+Checks the command user's current position in the queue.
+
+*   **Syntax:** `!queue position`
+*   **Example:**
+    <ChatExample messages={[
+      { persona: 'user', message: '!queue position' },
+      { persona: 'bot', message: '@User, you are currently position #3 in the queue.' }
+    ]} />
+
+### `list`
+
+Provides a link to view the full queue.
+
+*   **Syntax:** `!queue list`
+*   **Example:**
+    <ChatExample messages={[
+      { persona: 'user', message: '!queue list' },
+      { persona: 'bot', message: 'View the queue here: https://streamelements.com/YOUR_CHANNEL/queue' }
+    ]} />
+
+### `open` (Moderator+)
+
+Opens the queue, allowing viewers to join.
+
+*   **Syntax:** `!queue open`
+*   **Example:**
+    <ChatExample messages={[
+      { persona: 'moderator', message: '!queue open' },
+      { persona: 'bot', message: '@Moderator, The queue is now open! Viewers can type !queue join to enter.' }
+    ]} />
+
+### `close` (Moderator+)
+
+Closes the queue, preventing new viewers from joining.
+
+*   **Syntax:** `!queue close`
+*   **Example:**
+    <ChatExample messages={[
+      { persona: 'moderator', message: '!queue close' },
+      { persona: 'bot', message: '@Moderator, The queue is now closed.' }
+    ]} />
+
+### `pause` (Moderator+)
+
+Temporarily stops viewers from joining the queue (similar to close, but implies temporary).
+
+*   **Syntax:** `!queue pause`
+*   **Example:**
+    <ChatExample messages={[
+      { persona: 'moderator', message: '!queue pause' },
+      { persona: 'bot', message: '@Moderator, The queue is paused.' }
+    ]} />
+
+### `unpause` (Moderator+)
+
+Resumes allowing viewers to join the paused queue.
+
+*   **Syntax:** `!queue unpause`
+*   **Example:**
+    <ChatExample messages={[
+      { persona: 'moderator', message: '!queue unpause' },
+      { persona: 'bot', message: '@Moderator, The queue is no longer paused.' }
+    ]} />
+
+### `pick [random | <username>]` (Moderator+)
+
+Selects the next participant from the queue.
+
+*   **Syntax:** 
+    *   `!queue pick random` (Selects randomly)
+    *   `!queue pick <username>` (Selects a specific user)
+    *   `!queue pick` (Often defaults to picking the user at position #1)
+*   **Example (random):**
+    <ChatExample messages={[
+      { persona: 'moderator', message: '!queue pick random' },
+      { persona: 'bot', message: '@LuckyViewer has been randomly selected from the queue!' }
+    ]} />
+*   **Example (specific):**
+    <ChatExample messages={[
+      { persona: 'moderator', message: '!queue pick SpecificUser' },
+      { persona: 'bot', message: '@SpecificUser has been picked from the queue!' }
+    ]} />
+
+### `remove <username>` (Moderator+)
+
+Removes a specific user from the queue.
+
+*   **Syntax:** `!queue remove <username>`
+*   **Example:**
+    <ChatExample messages={[
+      { persona: 'moderator', message: '!queue remove ProblemUser' },
+      { persona: 'bot', message: '@Moderator, ProblemUser has been removed from the queue.' }
+    ]} />
+
+## Configuration
+
+*   The **Queue module** must be enabled in your StreamElements Dashboard under `Chatbot` -> `Modules`.
+*   Queue settings (like max size, subscriber luck, messages) are configured within the module settings on the Dashboard.
+*   Permission levels for subcommands can be adjusted under `Chatbot` -> `Chat Commands` -> `Default Commands`.
+
+## Related Commands
+
+*   This command is self-contained for queue management.
