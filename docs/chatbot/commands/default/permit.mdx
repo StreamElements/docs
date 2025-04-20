@@ -1,0 +1,68 @@
+---
+id: permit
+sidebar_label: "!permit"
+description: "Use the !permit command in StreamElements chatbot to temporarily allow a specific user to post links in chat without being timed out."
+tags:
+  - chatbot
+  - commands
+  - moderation
+  - utility
+  - default
+keywords:
+  - permit command
+  - allow links
+  - link permission
+  - prevent timeout
+  - chat moderation
+  - streamelements chatbot
+---
+
+import PlatformBadges from '@site/src/components/PlatformBadges';
+import ChatExample from '@site/src/components/ChatExample';
+
+# !permit
+
+<PlatformBadges supported={[ 'Twitch', 'YouTube', 'Trovo', 'Kick' ]} />
+
+## Overview
+
+The `!permit` command temporarily exempts a specified user from the bot's automatic link filtering/timeout system. This allows them to post links for a short duration without being punished.
+
+## Usage
+
+To grant temporary link permission:
+
+```streamelements
+!permit <username> [duration_seconds]
+```
+
+**Important:** By default, only users with **Moderator** permission level or higher can use this command.
+
+## Examples
+
+**Permit a user for the default 60 seconds:**
+<ChatExample messages={[
+  { persona: 'moderator', message: '!permit HelpfulViewer' },
+  { persona: 'bot', message: '@HelpfulViewer, you have been permitted to post links for 60 seconds.' }
+]} />
+
+**Permit a user for 120 seconds:**
+<ChatExample messages={[
+  { persona: 'broadcaster', message: '!permit TrustedFriend 120' },
+  { persona: 'bot', message: '@TrustedFriend, you have been permitted to post links for 120 seconds.' }
+]} />
+
+## Parameters
+
+*   `<username>` (Required): The exact username of the viewer to permit.
+*   `[duration_seconds]` (Optional): The duration (in seconds) the permit should last. Defaults to 60 seconds if not specified.
+
+## Configuration
+
+*   This command relies on the **Link Protection** filter being enabled within the `Chatbot` -> `Spam Filters` section of the StreamElements Dashboard.
+*   The default permit duration (if not specified in the command) can be configured in the Link Protection filter settings.
+*   The command's permission level can be adjusted under `Chatbot` -> `Chat Commands` -> `Default Commands`.
+
+## Related Commands
+
+*   [`!level`](level.mdx): Used to view or set a user's permanent permission level, which can also control link permissions.
