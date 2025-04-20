@@ -35,7 +35,7 @@ To use the `!tip` command, simply type it in the chat:
 
 **Output:**
 ```
-You can Tip to styler using this link https://streamelements.com/styler/tip
+You can Tip to styler using this link [https://streamelements.com/darksoul547324/tip]
 ```
 
 ### Example 2: Moderator Assisting a Viewer
@@ -49,5 +49,5 @@ Moderator: You can use the !tip command to get the donation link. Like this:
 
 **Output:**
 ```
-You can Tip to styler using this link https://streamelements.com/styler/tip
+You can Tip to styler using this link https://streamelements.com/darksoul547324/tip
 ```
