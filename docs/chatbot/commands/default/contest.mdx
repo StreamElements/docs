@@ -1,0 +1,62 @@
+---
+id: contest
+sidebar_label: "!contest"
+description: "Learn how to use the !contest command in StreamElements chatbot to check the status and details of the currently active betting contest."
+tags:
+  - chatbot
+  - commands
+  - loyalty
+  - game
+  - betting
+  - default
+keywords:
+  - contest command
+  - chatbot command
+  - active contest
+  - viewer engagement
+  - stream contests
+  - betting system
+  - streamelements chatbot
+---
+
+import PlatformBadges from '@site/src/components/PlatformBadges';
+import ChatExample from '@site/src/components/ChatExample';
+
+# !contest
+
+<PlatformBadges supported={[ 'Twitch' ]} />
+
+## Overview
+
+The `!contest` command allows anyone in chat to quickly check the status and details of the currently active **betting contest**. It displays the contest question, the available betting options, and the remaining time to place bets.
+
+**Note:** This command *checks* the status of an active contest. To *start* a new betting contest, moderators must use the **StreamElements Dashboard**.
+
+## Usage
+
+To check the active contest details, simply type the command in chat:
+
+```streamelements
+!contest
+```
+
+## Examples
+
+<ChatExample messages={[
+  { persona: 'user', message: '!contest' },
+  { persona: 'bot', message: '@User, the current contest is "Will I clutch this round?". You can !bet for yes, no. Betting ends in 3 mins 15 secs' }
+]} />
+
+<ChatExample messages={[
+  { persona: 'user', message: '!contest' },
+  { persona: 'bot', message: '@User, there is no active contest.' }
+]} />
+
+## Configuration
+
+*   The `!contest` command requires the **Betting module** to be active. Enable and configure it in your **StreamElements Dashboard** under `Chatbot` -> `Modules`.
+*   The command response reflects the settings of the currently active contest (question, options, duration) configured by the streamer/moderator via the dashboard.
+
+## Related Commands
+
+*   [`!bet`](bet.mdx): Used by viewers to place bets on the active contest.
