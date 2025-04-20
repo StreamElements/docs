@@ -1,0 +1,52 @@
+---
+id: chatstats
+sidebar_label: "!chatstats"
+description: "Learn how to use the !chatstats command in StreamElements chatbot to view a link to the channel's detailed chat statistics page."
+tags:
+  - chatbot
+  - commands
+  - utility
+  - stats
+  - default
+keywords:
+  - chatstats command
+  - chat statistics
+  - streamelements
+  - viewer engagement
+  - chatbot commands
+  - stream stats
+---
+
+import PlatformBadges from '@site/src/components/PlatformBadges';
+import ChatExample from '@site/src/components/ChatExample';
+
+# !chatstats
+
+<PlatformBadges supported={[ 'Twitch', 'YouTube', 'Trovo', 'Kick' ]} />
+
+## Overview
+
+The `!chatstats` command provides a direct link to the streamer's detailed chat statistics page on StreamElements. This allows anyone in chat to easily access information about chat activity, top chatters, command usage, and more.
+
+## Usage
+
+To get the link to the chat statistics page, simply type the command in chat:
+
+```streamelements
+!chatstats
+```
+
+## Examples
+
+<ChatExample messages={[
+  { persona: 'user', message: '!chatstats' },
+  { persona: 'bot', message: 'Chat stats can be found here: https://stats.streamelements.com/c/YOUR_CHANNEL_NAME PogChamp' }
+]} />
+
+## Related Commands
+
+*   [`!top`](top.mdx): Displays the top chatters or point leaders directly in chat.
+*   [`!uptime`](uptime.mdx): Shows how long the current stream has been live.
+*   [`!followage`](followage.mdx): Tells a user how long they've been following the channel (Twitch only).
+*   [`!watchtime`](watchtime.mdx): Shows how long a user has been watching the stream (requires Loyalty module).
+
