@@ -1,0 +1,67 @@
+---
+id: settitle
+sidebar_label: "!settitle"
+description: "Learn how moderators can use the !settitle command in StreamElements chatbot to change the Twitch stream title quickly and easily."
+tags:
+  - chatbot
+  - commands
+  - moderation
+  - utility
+  - twitch
+  - default
+keywords:
+  - settitle
+  - set title
+  - change stream title
+  - update stream title
+  - chatbot commands
+  - StreamElements
+  - Twitch
+---
+
+import PlatformBadges from '@site/src/components/PlatformBadges';
+import ChatExample from '@site/src/components/ChatExample';
+
+# !settitle
+
+<PlatformBadges supported={[ 'Twitch' ]} />
+
+## Overview
+
+The `!settitle` command allows streamers and moderators to change the title of the current Twitch stream directly from chat. This command helps keep viewers informed about the stream's content without leaving the streaming software.
+
+**Important:** By default, only users with **Moderator** permission level or higher can use this command.
+
+## Usage
+
+To set the stream title:
+
+```streamelements
+!settitle <new_title>
+```
+
+## Examples
+
+<ChatExample messages={[
+  { persona: 'moderator', message: '!settitle Playing Overwatch 2 with viewers!' },
+  { persona: 'bot', message: '@Moderator changed the title to "Playing Overwatch 2 with viewers!"' }
+]} />
+
+<ChatExample messages={[
+  { persona: 'broadcaster', message: '!settitle Monday Variety: Minecraft, Fall Guys, and more!' },
+  { persona: 'bot', message: '@Broadcaster changed the title to "Monday Variety: Minecraft, Fall Guys, and more!"' }
+]} />
+
+## Parameters
+
+*   `<new_title>` (Required): The new title for the stream. This can be any text up to Twitch's character limit for stream titles.
+
+## Configuration
+
+*   This command requires the StreamElements bot to have permission to modify channel information (typically granted during initial bot setup).
+*   The command's permission level can be adjusted under `Chatbot` -> `Chat Commands` -> `Default Commands`.
+
+## Related Commands
+
+*   [`!setgame`](setgame.mdx): Changes the current game/category of the stream.
+*   [`!uptime`](uptime.mdx): Displays how long the stream has been live.
