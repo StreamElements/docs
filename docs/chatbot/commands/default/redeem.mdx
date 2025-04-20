@@ -1,0 +1,75 @@
+---
+id: redeem
+sidebar_label: "!redeem"
+description: "Use the !redeem command in StreamElements chatbot to allow viewers to redeem items from your loyalty store using their points."
+tags:
+  - chatbot
+  - commands
+  - loyalty
+  - store
+  - default
+keywords:
+  - redeem command
+  - redeem item
+  - loyalty points
+  - stream store
+  - viewer rewards
+  - chatbot commands
+  - streamelements chatbot
+---
+
+import PlatformBadges from '@site/src/components/PlatformBadges';
+import ChatExample from '@site/src/components/ChatExample';
+
+# !redeem
+
+<PlatformBadges supported={[ 'Twitch', 'YouTube', 'Trovo', 'Kick' ]} />
+
+## Overview
+
+The `!redeem` command allows viewers to exchange their loyalty points for items listed in the channel's StreamElements **Stream Store**.
+
+## Usage
+
+To redeem an item:
+
+```streamelements
+!redeem <item_name>
+```
+
+## Examples
+
+**Redeeming a sound effect named "Air Horn":**
+<ChatExample messages={[
+  { persona: 'user', message: '!redeem Air Horn' },
+  { persona: 'bot', message: '@User successfully redeemed Air Horn for 100 points!' } // Output varies based on item settings
+]} />
+
+**Trying to redeem an item the user can't afford:**
+<ChatExample messages={[
+  { persona: 'user', message: '!redeem Expensive Item' },
+  { persona: 'bot', message: '@User, you do not have enough points to redeem Expensive Item (Cost: 5000).' }
+]} />
+
+**Trying to redeem a disabled or non-existent item:**
+<ChatExample messages={[
+  { persona: 'user', message: '!redeem Old Item' },
+  { persona: 'bot', message: '@User, item \"Old Item\" not found or is not available.' }
+]} />
+
+## Parameters
+
+*   `<item_name>` (Required): The exact name of the store item to redeem (case-sensitive). Find item names on the store page (link via `!items` command).
+
+## Configuration
+
+*   Requires the **Stream Store** and **Loyalty System** to be active and configured (`Chatbot` -> `Modules` and `Loyalty` -> `Loyalty Settings` / `Stream Store`).
+*   Items must be created in the Stream Store with names, costs, cooldowns, etc.
+*   Items must be enabled to be redeemable.
+
+## Related Commands
+
+*   [`!items`](items.mdx): Provides a link to the store page listing available items.
+*   [`!points`](points.mdx): Checks the user's current point balance.
+*   [`!closestore`](closestore.mdx) / [`!openstore`](openstore.mdx): (Moderator+) Enable/disable regular store items.
+*   [`!disablesfx`](disablesfx.mdx) / [`!enablesfx`](enablesfx.mdx): (Moderator+) Enable/disable SFX store items.
