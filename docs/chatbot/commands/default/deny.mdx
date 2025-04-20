@@ -1,0 +1,85 @@
+---
+id: deny
+sidebar_label: "!deny"
+description: "Learn how to use the !deny command in StreamElements chatbot to reject incoming duel requests initiated with the !duel command."
+tags:
+  - chatbot
+  - commands
+  - duel
+  - game
+  - default
+keywords:
+  - deny command
+  - reject duel
+  - decline duel request
+  - StreamElements chatbot
+  - Twitch chat commands
+  - duel game
+---
+
+import PlatformBadges from '@site/src/components/PlatformBadges';
+import ChatExample from '@site/src/components/ChatExample';
+
+# !deny
+
+<PlatformBadges supported={[ 'Twitch' ]} />
+
+## Overview
+
+The `!deny` command allows a user to reject an **incoming** duel request initiated by another user with the [`!duel`](duel.mdx) command.
+
+## Usage
+
+To reject a pending incoming duel request, type the command in chat:
+
+```streamelements
+!deny
+```
+
+## Examples
+
+<ChatExample
+    messages={[
+        {
+            username: "Challenger",
+            message: "!duel TargetUser 100"
+        },
+        {
+            username: 'StreamElements',
+            message: '@TargetUser, @Challenger wants to duel you for 10 points, you can !accept or !deny within 2 minutes',
+            userColor: '#5B99FF',
+            badges: ['partner', 'moderator'],
+            isBot: true
+        },
+        {
+            username: "TargetUser",
+            message: "!deny" // TargetUser declines the duel
+        },
+        {
+            username: 'StreamElements',
+            message: '@TargetUser denied the duel request from @Challenger.',
+            userColor: '#5B99FF',
+            badges: ['partner', 'moderator'],
+            isBot: true
+        }
+    ]}
+/>
+
+<ChatExample messages={[
+  { persona: 'user', message: '!deny' },
+  { persona: 'bot', message: '@UserName, You do not have any pending incoming duel requests to deny.' }
+]} />
+
+## Configuration
+
+The `!deny` command is part of the **Duel module**. This module must be enabled in your StreamElements chatbot settings under `Chatbot` -> `Modules` for the command to function.
+
+## Related Commands
+
+*   [`!duel`](duel.mdx): Initiate a duel with another user.
+*   [`!accept`](accept.mdx): Accept an incoming duel request.
+*   [`!cancelduel`](cancelduel.mdx): Cancel an *outgoing* duel request you initiated.
+
+## Aliases
+
+By default, there are no aliases for the `!deny` command. However, moderators can create custom aliases if needed.
