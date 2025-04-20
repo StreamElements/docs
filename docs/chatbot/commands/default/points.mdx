@@ -1,0 +1,67 @@
+---
+id: points
+sidebar_label: "!points"
+description: "Use the !points command in StreamElements chatbot to check your own or another user's loyalty points balance and leaderboard rank."
+tags:
+  - chatbot
+  - commands
+  - loyalty
+  - utility
+  - default
+keywords:
+  - points command
+  - check points
+  - loyalty points
+  - leaderboard rank
+  - stream currency
+  - streamelements chatbot
+---
+
+import PlatformBadges from '@site/src/components/PlatformBadges';
+import ChatExample from '@site/src/components/ChatExample';
+
+# !points
+
+<PlatformBadges supported={[ 'Twitch' ]} />
+
+## Overview
+
+The `!points` command allows anyone in chat to check the loyalty point balance and leaderboard rank of themselves or another specified user.
+
+## Usage
+
+To check points and rank:
+
+```streamelements
+!points [username]
+```
+
+## Examples
+
+**Checking your own points:**
+<ChatExample messages={[
+  { persona: 'user', usernameOverride: 'Viewer1', message: '!points' },
+  { persona: 'bot', message: '@Viewer1, you have 5280 ChannelPoints and are rank #15 on the leaderboard.' }
+]} />
+
+**Checking another user's points:**
+<ChatExample messages={[
+  { persona: 'user', message: '!points StreamElements' },
+  { persona: 'bot', message: '@StreamElements has 99999 ChannelPoints and is rank #1 on the leaderboard.' }
+]} />
+
+## Parameters
+
+*   `[username]` (Optional): The exact username of the user whose points you want to check. If omitted, it defaults to the user running the command.
+
+## Configuration
+
+*   This command requires the **Loyalty system** to be active. Enable and configure it in your **StreamElements Dashboard** under `Loyalty` -> `Loyalty Settings`.
+*   The name of the loyalty points currency (e.g., "ChannelPoints" in the example) is customizable in the Loyalty Settings.
+
+## Related Commands
+
+*   [`!top`](top.mdx): Shows the top users on the leaderboard directly in chat.
+*   [`!leaderboard`](leaderboard.mdx): Provides a link to the full leaderboard page.
+*   [`!givepoints`](givepoints.mdx): Allows users to transfer points to each other.
+*   [`!addpoints`](addpoints.mdx) / [`!setpoints`](setpoints.mdx): (Moderator+) Commands to modify user points.
