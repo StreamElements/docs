@@ -1,0 +1,81 @@
+---
+id: filesay
+sidebar_label: "!filesay"
+description: "Use the !filesay command in StreamElements chatbot to send multiple lines of text from a URL to chat, ideal for bulk commands like bans."
+tags:
+  - chatbot
+  - commands
+  - moderation
+  - utility
+  - default
+keywords:
+  - filesay command
+  - chatbot command
+  - bulk commands
+  - moderation tools
+  - ban multiple users
+  - chat management
+  - streamelements chatbot
+---
+
+import PlatformBadges from '@site/src/components/PlatformBadges';
+import ChatExample from '@site/src/components/ChatExample';
+
+# !filesay
+
+<PlatformBadges supported={[ 'Twitch', 'YouTube', 'Trovo', 'Kick' ]} />
+
+## Overview
+
+The `!filesay` command allows streamers and moderators to execute multiple commands or messages stored in a text file hosted at a public URL. Each line in the text file is sent as a separate command/message to the chat. This is extremely useful for performing bulk actions, such as banning multiple users listed in a file.
+
+## Usage
+
+To execute the commands/messages from a file URL:
+
+```streamelements
+!filesay <url>
+```
+
+**Important:**
+*   By default, only users with **Super Moderator** permission level or higher can use this command.
+*   The URL must point to a **raw text file** (e.g., a Pastebin raw link, a GitHub raw file link).
+*   Each line in the file will be executed as if typed directly into chat. Ensure the commands are valid (e.g., `!ban username`).
+*   There might be rate limits on how many lines can be processed quickly.
+
+## Examples
+
+**Example File (`https://pastebin.com/raw/examplebans`):**
+```text
+/ban BotUser1 Spamming
+/ban TrollAccount2 Being disruptive
+/timeout AnotherUser 600 Repeat offences
+```
+
+**Using the command:**
+<ChatExample messages={[
+  { persona: 'broadcaster', message: '!filesay https://pastebin.com/raw/examplebans' },
+  // Bot output will vary based on the file contents and success of each command
+  { persona: 'bot', message: 'Executing 3 lines from URL...' },
+  { persona: 'bot', message: 'BotUser1 has been permanently banned from the chat.' },
+  { persona: 'bot', message: 'TrollAccount2 has been permanently banned from the chat.' },
+  { persona: 'bot', message: 'AnotherUser has been timed out for 600 seconds.' }
+]} />
+
+## Parameters
+
+*   `<url>` (Required): The direct URL to a plain text file where each line contains a command or message to be sent.
+
+## Configuration
+
+*   No specific module needs to be enabled, but the command relies on the bot having the necessary permissions to execute the commands listed within the file (e.g., ban permissions).
+*   The command's permission level can be adjusted under `Chatbot` -> `Chat Commands` -> `Default Commands`.
+
+## Related Commands
+
+*   [`!nuke`](nuke.mdx): Times out all users who recently chatted based on a specific phrase.
+*   [`!nukeusername`](nukeusername.mdx): Times out all users whose usernames match a pattern.
+
+## Aliases
+
+There are no aliases for the `!filesay` command.
