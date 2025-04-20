@@ -1,0 +1,66 @@
+---
+id: enablesfx
+sidebar_label: "!enablesfx"
+description: "Learn how to use the !enablesfx command in StreamElements chatbot to quickly re-enable all sound effect (SFX) items in your loyalty store."
+tags:
+  - chatbot
+  - commands
+  - moderation
+  - loyalty
+  - store
+  - sound effects
+  - default
+keywords:
+  - enablesfx command
+  - enable sound effects
+  - enable sfx
+  - loyalty store
+  - stream store
+  - streamelements chatbot
+  - store management
+---
+
+import PlatformBadges from '@site/src/components/PlatformBadges';
+import ChatExample from '@site/src/components/ChatExample';
+
+# !enablesfx
+
+<PlatformBadges supported={[ 'Twitch', 'YouTube', 'Trovo', 'Kick' ]} />
+
+## Overview
+
+The `!enablesfx` command allows streamers and moderators to quickly re-enable all **sound effect** (SFX) items in the StreamElements loyalty store that were previously disabled (e.g., using `!disablesfx`).
+
+## Usage
+
+To enable all SFX store items, use the following command in chat:
+
+```streamelements
+!enablesfx
+```
+
+**Important:** By default, only users with **Moderator** permission level or higher can use this command.
+
+## Examples
+
+<ChatExample messages={[
+  { persona: 'moderator', message: '!enablesfx' },
+  { persona: 'bot', message: '@Moderator, successfully updated 5 items. (SFX store opened)' } // Assuming 5 SFX items were previously disabled
+]} />
+
+<ChatExample messages={[
+  { persona: 'broadcaster', message: '!enablesfx' },
+  { persona: 'bot', message: '@Broadcaster, No disabled SFX store items found.' } // If no SFX items were disabled
+]} />
+
+## Configuration
+
+*   The `!enablesfx` command requires the **Stream Store** module to be active and configured with SFX items. Manage this in your **StreamElements Dashboard** under `Loyalty` -> `Stream Store`.
+*   The command's permission level can be adjusted under `Chatbot` -> `Chat Commands` -> `Default Commands`.
+
+## Related Commands
+
+*   [`!disablesfx`](disablesfx.mdx): Disables all sound effect (SFX) items in the loyalty store.
+*   [`!closestore`](closestore.mdx): Disables all *regular* (non-SFX) items in the loyalty store.
+*   [`!openstore`](openstore.mdx): Enables all *regular* (non-SFX) items in the loyalty store.
+*   [`!redeem`](redeem.mdx): Allows viewers to redeem store items.
