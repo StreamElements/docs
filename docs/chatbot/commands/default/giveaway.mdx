@@ -1,0 +1,63 @@
+---
+id: giveaway
+sidebar_label: "!giveaway"
+description: "Learn how to use the !giveaway command in StreamElements chatbot to check the status and link for the currently active channel giveaway."
+tags:
+  - chatbot
+  - commands
+  - loyalty
+  - giveaway
+  - utility
+  - default
+keywords:
+  - giveaway command
+  - check giveaway
+  - active giveaway
+  - current giveaway
+  - stream giveaway
+  - chatbot command
+  - streamelements chatbot
+---
+
+import PlatformBadges from '@site/src/components/PlatformBadges';
+import ChatExample from '@site/src/components/ChatExample';
+
+# !giveaway
+
+<PlatformBadges supported={[ 'Twitch' ]} />
+
+## Overview
+
+The `!giveaway` command allows anyone in chat to check the status of the currently active channel giveaway. If a giveaway is running, the command provides its name and a direct link for viewers to enter.
+
+**Note:** This command *checks* the status of an active giveaway. To *start* or manage giveaways, use the StreamElements Dashboard Giveaway Module.
+
+## Usage
+
+To check the active giveaway details, simply type the command in chat:
+
+```streamelements
+!giveaway
+```
+
+## Examples
+
+<ChatExample messages={[
+  { persona: 'user', message: '!giveaway' },
+  { persona: 'bot', message: '@User, Current giveaway: "Epic New Game Key!" https://streamelements.com/YOUR_CHANNEL/giveaway/GIVEAWAY_ID' }
+]} />
+
+<ChatExample messages={[
+  { persona: 'user', message: '!giveaway' },
+  { persona: 'bot', message: '@User, There is currently no giveaway running!' }
+]} />
+
+## Configuration
+
+*   The `!giveaway` command requires a giveaway to be running. Manage giveaways in your **StreamElements Dashboard** under `Loyalty` -> `Giveaways`.
+*   The command response reflects the settings of the currently active giveaway (name, entry requirements) configured by the streamer/moderator.
+
+## Related Commands
+
+*   [`!ticket`](ticket.mdx): Used by viewers to enter the active giveaway (if it requires loyalty points).
+*   [`!raffle`](raffle.mdx) / [`!sraffle`](sraffle.mdx): Commands for different types of raffle/giveaway systems.
