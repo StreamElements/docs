@@ -1,0 +1,61 @@
+---
+id: hypecup
+sidebar_label: "!hypecup"
+description: "Use the !hypecup command in StreamElements chatbot to clear the HypeCup overlay contribution list on your Twitch stream."
+tags:
+  - chatbot
+  - commands
+  - moderation
+  - overlay
+  - hypecup
+  - default
+keywords:
+  - hypecup command
+  - clear hypecup overlay
+  - streamelements chatbot
+  - twitch stream commands
+  - stream overlay management
+  - hype cup
+---
+
+import PlatformBadges from '@site/src/components/PlatformBadges';
+import ChatExample from '@site/src/components/ChatExample';
+
+# !hypecup
+
+<PlatformBadges supported={[ 'Twitch' ]} />
+
+## Overview
+
+The `!hypecup` command allows streamers and moderators to clear the list of contributors displayed in the StreamElements HypeCup overlay widget.
+
+## Usage
+
+To clear the HypeCup overlay, use the following command in chat:
+
+```streamelements
+!hypecup clear
+```
+
+**Important:** By default, only users with **Moderator** permission level or higher can use this command.
+
+## Examples
+
+<ChatExample messages={[
+  { persona: 'moderator', message: '!hypecup clear' },
+  { persona: 'bot', message: '@Moderator, Successfully cleared HypeCup.' }
+]} />
+
+<ChatExample messages={[
+  { persona: 'broadcaster', message: '!hypecup' }, // Missing the 'clear' parameter
+  { persona: 'bot', message: '@Broadcaster, Usage: !hypecup clear' }
+]} />
+
+## Parameters
+
+*   `clear` (Required): This is the only valid parameter and triggers the action to clear the HypeCup overlay list.
+
+## Configuration
+
+*   This command interacts with the **HypeCup widget** in your StreamElements overlays. Ensure the widget is added to an active overlay.
+*   The command's permission level can be adjusted under `Chatbot` -> `Chat Commands` -> `Default Commands`.
