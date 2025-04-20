@@ -1,0 +1,92 @@
+---
+id: duel
+sidebar_label: "!duel"
+description: "Learn how to use the !duel command in StreamElements chatbot to challenge other users to a points duel in Twitch chat."
+tags:
+  - chatbot
+  - commands
+  - duel
+  - game
+  - loyalty
+  - default
+keywords:
+  - duel command
+  - chatbot duel
+  - points duel
+  - loyalty points game
+  - StreamElements chatbot
+  - Twitch chat game
+---
+
+import PlatformBadges from '@site/src/components/PlatformBadges';
+import ChatExample from '@site/src/components/ChatExample';
+
+# !duel
+
+<PlatformBadges supported={[ 'Twitch' ]} />
+
+## Overview
+
+The `!duel` command allows users to challenge another user in chat to a duel, wagering their loyalty points. The challenged user then has a limited time to respond using [`!accept`](accept.mdx) or [`!deny`](deny.mdx).
+
+## Usage
+
+To initiate a duel challenge, use the following syntax:
+
+```streamelements
+!duel <username> <points>
+```
+
+## Examples
+
+<ChatExample
+    messages={[
+        {
+            username: "Challenger",
+            message: "!duel TargetUser 100"
+        },
+        {
+            username: 'StreamElements',
+            message: '@TargetUser, @Challenger wants to duel you for 100 points, you can !accept or !deny within 2 minutes',
+            userColor: '#5B99FF',
+            badges: ['partner', 'moderator'],
+            isBot: true
+        }
+    ]}
+/>
+
+<ChatExample messages={[
+  { persona: 'user', message: '!duel SelfUser 50' },
+  { persona: 'bot', message: '@SelfUser, you cannot duel yourself Kappa' }
+]} />
+
+<ChatExample messages={[
+  { persona: 'user', message: '!duel AnotherUser 10000' }, // User doesn't have enough points
+  { persona: 'bot', message: '@User, you do not have enough points to duel for 10000.' }
+]} />
+
+## Parameters
+
+*   `<username>` (Required): The exact username of the user you want to challenge.
+*   `<points>` (Required): The number of loyalty points you want to wager. You must have at least this many points.
+
+## Configuration
+
+The `!duel` command requires the **Duel module** to be active. You can enable and configure it in your **StreamElements Dashboard** under `Chatbot` -> `Modules`.
+
+Within the Duel module settings, you can customize:
+
+*   **Maximum amount**: The highest number of points users can wager in a single duel.
+*   **User cooldown**: How long (in seconds) an individual user must wait before initiating another duel after participating in one.
+*   **Global cooldown**: How long (in seconds) everyone must wait after a duel finishes before *anyone* can start a new one.
+*   **Win message**: The chat message displayed when a user wins the duel.
+    *   Available variables: `{winner}`, `{loser}`
+*   **Points won message**: The chat message displayed when points are awarded after a duel.
+    *   Available variables: `{winner}`, `{loser}`, `{points}`, `{pointsname}`
+
+## Related Commands
+
+*   [`!accept`](accept.mdx): Used by the challenged user to accept a duel.
+*   [`!deny`](deny.mdx): Used by the challenged user to decline a duel.
+*   [`!cancelduel`](cancelduel.mdx): Used by the challenger to cancel their *outgoing* duel request.
+*   [`!points`](points.mdx): Check your current loyalty points balance.
