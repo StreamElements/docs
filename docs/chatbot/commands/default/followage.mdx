@@ -1,0 +1,68 @@
+---
+id: followage
+sidebar_label: "!followage"
+description: "Learn how to use the !followage command in StreamElements chatbot to check how long a user has been following a Twitch channel."
+tags:
+  - chatbot
+  - commands
+  - utility
+  - twitch
+  - default
+keywords:
+  - followage command
+  - follow age
+  - follow duration
+  - check followage
+  - twitch followers
+  - streamelements chatbot
+---
+
+import PlatformBadges from '@site/src/components/PlatformBadges';
+import ChatExample from '@site/src/components/ChatExample';
+
+# !followage
+
+<PlatformBadges supported={[ 'Twitch' ]} />
+
+## Overview
+
+The `!followage` command allows anyone in chat to check how long a specified Twitch user has been following a specified Twitch channel. If no user or channel is specified, it defaults to checking the command user's follow duration for the current channel.
+
+## Usage
+
+Use the command with optional parameters:
+
+```streamelements
+!followage [username] [channel_name]
+```
+
+## Examples
+
+**Check your own follow age:**
+<ChatExample messages={[
+  { persona: 'user', usernameOverride: 'Viewer1', message: '!followage' },
+  { persona: 'bot', message: '@Viewer1, You have been following CurrentChannel for 1 year 3 months 5 days 2 hours.' }
+]} />
+
+**Check another user's follow age in the current channel:**
+<ChatExample messages={[
+  { persona: 'user', message: '!followage StreamElements' },
+  { persona: 'bot', message: '@User, StreamElements has been following CurrentChannel for 6 years 1 month 10 days 4 hours.' }
+]} />
+
+**Check another user's follow age for a different channel:**
+<ChatExample messages={[
+  { persona: 'user', message: '!followage StreamElements AnotherChannel' },
+  { persona: 'bot', message: '@User, StreamElements is not following AnotherChannel.' } // Or shows duration if they are following
+]} />
+
+## Parameters
+
+*   `[username]` (Optional): The Twitch username to check the follow age for. Defaults to the user running the command.
+*   `[channel_name]` (Optional): The Twitch channel name to check the follow relationship against. Defaults to the current channel where the command is used.
+
+## Related Commands
+
+*   [`!accountage`](accountage.mdx): Checks when a Twitch account was created.
+*   [`!uptime`](uptime.mdx): Shows how long the current stream has been live.
+*   [`!watchtime`](watchtime.mdx): Shows how long a user has watched the current channel (requires Loyalty module).
