@@ -1,0 +1,73 @@
+---
+id: emotecount
+sidebar_label: "!emotecount"
+description: "Use the !emotecount command in StreamElements chatbot to display the usage frequency of a specific emote in your chat."
+tags:
+  - chatbot
+  - commands
+  - utility
+  - emotes
+  - stats
+  - default
+keywords:
+  - emotecount command
+  - emote usage
+  - emote stats
+  - chat interaction
+  - Twitch emotes
+  - StreamElements chatbot
+---
+
+import PlatformBadges from '@site/src/components/PlatformBadges';
+import ChatExample from '@site/src/components/ChatExample';
+
+# !emotecount
+
+<PlatformBadges supported={[ 'Twitch', 'YouTube', 'Trovo', 'Kick' ]} />
+
+## Overview
+
+The `!emotecount` command allows anyone in chat to check how many times a specific emote has been used in the channel's chat history (since tracking began).
+
+## Usage
+
+To check the count for a specific emote, use the following syntax:
+
+```streamelements
+!emotecount <emote_name>
+```
+
+## Examples
+
+<ChatExample messages={[
+  { persona: 'user', message: '!emotecount Kappa' },
+  { persona: 'bot', message: '@User, The emote Kappa has been used 15731 times! PogChamp' }
+]} />
+
+<ChatExample messages={[
+  { persona: 'user', message: '!emotecount channelCoolEmote' }, // Assuming 'channelCoolEmote' is a channel emote
+  { persona: 'bot', message: '@User, The emote channelCoolEmote has been used 452 times! PogChamp' }
+]} />
+
+<ChatExample messages={[
+  { persona: 'user', message: '!emotecount NonExistentEmote' },
+  { persona: 'bot', message: '@User, The emote NonExistentEmote was not found. NotLikeThis' }
+]} />
+
+## Parameters
+
+*   `<emote_name>` (Required): The exact name of the emote you want to check (case-sensitive). This can be a global emote, channel emote, or third-party emote (BTTV, FFZ, 7TV) if enabled.
+
+## Configuration
+
+*   Emote usage tracking is handled automatically by StreamElements when the bot is active in the channel.
+*   The accuracy depends on when the bot joined and started tracking messages.
+
+## Related Commands
+
+*   [`!emotes`](emotes.mdx): Provides a link to view the channel's available third-party emotes (BTTV, FFZ, 7TV).
+
+## FAQ
+
+*   **Why is the count different from what I expected?**
+    The count reflects usage only since StreamElements started tracking messages in this channel. It might not include historical usage before the bot was added or if there were periods the bot was inactive.
