@@ -1,0 +1,58 @@
+---
+id: closestore
+sidebar_label: "!closestore"
+description: "Learn how to use the !closestore command in StreamElements chatbot to quickly disable all regular (non-SFX) items in your loyalty store."
+tags:
+  - chatbot
+  - commands
+  - moderation
+  - loyalty
+  - store
+  - default
+keywords:
+  - closestore command
+  - disable store items
+  - loyalty store
+  - stream store
+  - streamelements chatbot
+  - store management
+---
+
+import PlatformBadges from '@site/src/components/PlatformBadges';
+import ChatExample from '@site/src/components/ChatExample';
+
+# !closestore
+
+<PlatformBadges supported={[ 'Twitch' ]} />
+
+## Overview
+
+The `!closestore` command allows streamers and moderators to quickly disable all **regular** (non-sound effect) items in the StreamElements loyalty store. This is useful for temporarily preventing viewers from redeeming items while making updates or during specific stream segments.
+
+## Usage
+
+To disable all regular store items, use the following command in chat:
+
+```streamelements
+!closestore
+```
+
+**Important:** By default, only users with **Moderator** permission level or higher can use this command.
+
+## Examples
+
+<ChatExample messages={[
+  { persona: 'moderator', message: '!closestore' },
+  { persona: 'bot', message: '@Moderator, successfully updated 15 items.' }
+]} />
+
+## Configuration
+
+*   The command's permission level can be adjusted under `Chatbot` -> `Chat Commands` -> `Default Commands`.
+
+## Related Commands
+
+*   [`!openstore`](openstore.mdx): Re-enables all regular items in the loyalty store.
+*   [`!disablesfx`](disablesfx.mdx): Disables only sound effect (SFX) items in the loyalty store.
+*   [`!enablesfx`](enablesfx.mdx): Enables only sound effect (SFX) items in the loyalty store.
+*   [`!redeem`](redeem.mdx): Allows viewers to redeem store items.
