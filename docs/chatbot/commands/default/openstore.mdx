@@ -1,0 +1,64 @@
+---
+id: openstore
+sidebar_label: "!openstore"
+description: "Learn how to use the !openstore command in StreamElements chatbot to quickly re-enable all regular (non-SFX) items in your loyalty store."
+tags:
+  - chatbot
+  - commands
+  - moderation
+  - loyalty
+  - store
+  - default
+keywords:
+  - openstore command
+  - enable store items
+  - loyalty store
+  - stream store
+  - streamelements chatbot
+  - store management
+---
+
+import PlatformBadges from '@site/src/components/PlatformBadges';
+import ChatExample from '@site/src/components/ChatExample';
+
+# !openstore
+
+<PlatformBadges supported={[ 'Twitch' ]} />
+
+## Overview
+
+The `!openstore` command allows streamers and moderators to quickly re-enable all **regular** (non-sound effect) items in the StreamElements loyalty store that were previously disabled (e.g., using `!closestore`).
+
+## Usage
+
+To enable all regular store items, use the following command in chat:
+
+```streamelements
+!openstore
+```
+
+**Important:** By default, only users with **Moderator** permission level or higher can use this command.
+
+## Examples
+
+<ChatExample messages={[
+  { persona: 'moderator', message: '!openstore' },
+  { persona: 'bot', message: '@Moderator, successfully updated 15 items. (Store opened)' } // Assuming 15 items were disabled
+]} />
+
+<ChatExample messages={[
+  { persona: 'broadcaster', message: '!openstore' },
+  { persona: 'bot', message: '@Broadcaster, No disabled regular store items found.' } // If no regular items were disabled
+]} />
+
+## Configuration
+
+*   The command's permission level can be adjusted under `Chatbot` -> `Chat Commands` -> `Default Commands`.
+
+## Related Commands
+
+*   [`!closestore`](closestore.mdx): Disables all *regular* (non-SFX) items in the loyalty store.
+*   [`!disablesfx`](disablesfx.mdx): Disables only sound effect (SFX) items in the loyalty store.
+*   [`!enablesfx`](enablesfx.mdx): Enables only sound effect (SFX) items in the loyalty store.
+*   [`!redeem`](redeem.mdx): Allows viewers to redeem store items.
+*   [`!items`](items.mdx): Provides a link to the store page.
