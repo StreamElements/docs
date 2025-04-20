@@ -1,0 +1,81 @@
+---
+id: nuke
+sidebar_label: "!nuke"
+description: "Use the !nuke command in StreamElements chatbot to moderate chat by timing out, banning, or deleting recent messages matching specific text or regex."
+tags:
+  - chatbot
+  - commands
+  - moderation
+  - utility
+  - nuke
+  - default
+keywords:
+  - nuke command
+  - chat moderation
+  - timeout users
+  - ban users
+  - delete messages
+  - regex moderation
+  - StreamElements chatbot
+---
+
+import PlatformBadges from '@site/src/components/PlatformBadges';
+import ChatExample from '@site/src/components/ChatExample';
+
+# !nuke
+
+<PlatformBadges supported={[ 'Twitch', 'YouTube', 'Trovo', 'Kick' ]} />
+
+## Overview
+
+The `!nuke` command is a powerful moderation tool allowing moderators to perform bulk actions (timeout, ban, delete) on users whose recent messages contain specific text or match a regular expression.
+
+**Warning:** This is a powerful command. Use it with caution, especially with broad match strings or regex.
+
+**Important:** By default, only users with **Super Moderator** permission level or higher can use this command.
+
+## Usage
+
+```streamelements
+!nuke <lookback_seconds> <action> <match_text_or_regex>
+```
+
+## Examples
+
+**Timeout users saying "spam spam" in the last 60 seconds for 120 seconds:**
+<ChatExample messages={[
+  { persona: 'moderator', message: '!nuke 60 120 spam spam' },
+  { persona: 'bot', message: '@Moderator, Nuked 3 messages matching "spam spam".' } // Output indicates messages found
+]} />
+
+**Ban users whose messages matched a regex pattern in the last 5 minutes:**
+<ChatExample messages={[
+  { persona: 'broadcaster', message: '!nuke 300 ban /badsite\.(com|net)/i' },
+  { persona: 'bot', message: '@Broadcaster, Nuked 1 messages matching "/badsite\.(com|net)/i".' }
+]} />
+
+**Delete messages containing "selling stuff" in the last 30 seconds (Twitch only):**
+<ChatExample messages={[
+  { persona: 'moderator', message: '!nuke 30 delete selling stuff' },
+  { persona: 'bot', message: '@Moderator, Nuked 2 messages matching "selling stuff".' }
+]} />
+
+## Parameters
+
+*   `<lookback_seconds>` (Required): The duration (in seconds, max 300) to scan previous messages.
+*   `<action>` (Required): The moderation action:
+    *   Number (e.g., `60`): Timeout duration in seconds.
+    *   `ban`: Permanently ban the users.
+    *   `delete`: Delete the matching messages (Twitch only, requires Mod status for the bot).
+*   `<match_text_or_regex>` (Required): The text to search for. 
+    *   For plain text matching: `some bad phrase`
+    *   For regular expression matching: Wrap the pattern in forward slashes, e.g., `/badword\d+/i` (the `i` makes it case-insensitive).
+
+## Configuration
+
+*   The command's permission level can be adjusted under `Chatbot` -> `Chat Commands` -> `Default Commands`. It's highly recommended to keep this restricted.
+
+## Related Commands
+
+*   [`!nukeusername`](nukeusername.mdx): Performs similar actions but matches against usernames instead of message content.
+*   [`!filesay`](filesay.mdx): Executes commands line-by-line from a text file URL, useful for banning specific lists of users.
