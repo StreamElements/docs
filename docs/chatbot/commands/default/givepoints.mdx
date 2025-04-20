@@ -1,0 +1,79 @@
+---
+id: givepoints
+sidebar_label: "!givepoints"
+description: "Learn how viewers can use the !givepoints command in StreamElements chatbot to transfer their loyalty points to another user."
+tags:
+  - chatbot
+  - commands
+  - loyalty
+  - utility
+  - default
+keywords:
+  - givepoints command
+  - give points
+  - transfer points
+  - loyalty points
+  - chatbot commands
+  - stream currency
+  - streamelements chatbot
+---
+
+import PlatformBadges from '@site/src/components/PlatformBadges';
+import ChatExample from '@site/src/components/ChatExample';
+
+# !givepoints
+
+<PlatformBadges supported={[ 'Twitch', 'YouTube', 'Trovo', 'Kick' ]} />
+
+## Overview
+
+The `!givepoints` command allows viewers to transfer their loyalty points to another user in the chat. This enables community interactions like gifting points or pooling resources.
+
+## Usage
+
+To transfer points to another user:
+
+```streamelements
+!givepoints <username> <amount>
+```
+
+## Examples
+
+<ChatExample messages={[
+  { persona: 'user', usernameOverride: 'GenerousViewer', message: '!givepoints LuckyFriend 500' },
+  { persona: 'bot', message: '@GenerousViewer -> gave 500 points to @LuckyFriend' }
+]} />
+
+<ChatExample messages={[
+  { persona: 'user', usernameOverride: 'PoorViewer', message: '!givepoints RichPal 10000' },
+  { persona: 'bot', message: '@PoorViewer, You only have 500 points.' }
+]} />
+
+<ChatExample messages={[
+  { persona: 'user', usernameOverride: 'Viewer', message: '!givepoints NonExistentUser 10' },
+  { persona: 'bot', message: '@Viewer, I couldn\'t find that user in the database :/' }
+]} />
+
+## Parameters
+
+*   `<username>` (Required): The exact username of the recipient.
+*   `<amount>` (Required): The number of points to transfer. Must be a positive integer, and the sender must have sufficient points.
+
+## Configuration
+
+*   The `!givepoints` command requires the **Loyalty system** to be active. Enable it in your **StreamElements Dashboard** under `Loyalty` -> `Loyalty Settings`.
+*   The ability for users to give points can be enabled/disabled within the Loyalty Settings.
+*   Streamers can set a minimum user level required to use the command and a cooldown period in the command's settings under `Chatbot` -> `Chat Commands` -> `Default Commands`.
+
+## Related Commands
+
+*   [`!points`](points.mdx): Check your own or another user's point balance.
+*   [`!addpoints`](addpoints.mdx): (Moderator+) Manually add points to a user.
+*   [`!setpoints`](setpoints.mdx): (Moderator+) Set a user's points to a specific value.
+*   [`!top`](top.mdx): View the leaderboard for points.
+
+## Aliases
+
+*   `!give`
+*   `!transfer`
+
