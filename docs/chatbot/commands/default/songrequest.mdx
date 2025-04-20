@@ -1,0 +1,92 @@
+---
+id: songrequest
+sidebar_label: "!songrequest / !sr"
+description: "Use the !songrequest (!sr) command in StreamElements chatbot to allow viewers to add YouTube songs/videos to the media request queue."
+tags:
+  - chatbot
+  - commands
+  - media request
+  - song request
+  - utility
+  - default
+keywords:
+  - songrequest
+  - song request
+  - sr command
+  - mediarequest
+  - chatbot commands
+  - StreamElements
+  - music streaming
+  - YouTube integration
+---
+
+import PlatformBadges from '@site/src/components/PlatformBadges';
+import ChatExample from '@site/src/components/ChatExample';
+
+# !songrequest
+
+<PlatformBadges supported={[ 'Twitch', 'YouTube', 'Trovo', 'Kick' ]} />
+
+## Overview
+
+The `!songrequest` command (aliased as `!sr`) allows viewers to add songs or videos to the streamer's media request queue. This command primarily integrates with YouTube, enabling users to request media using search terms or direct URLs.
+
+## Usage
+
+To request media:
+
+```streamelements
+!songrequest <search_term_or_url>
+```
+
+Or using the alias:
+
+```streamelements
+!sr <search_term_or_url>
+```
+
+## Examples
+
+<ChatExample messages={[
+  { persona: 'user', message: '!songrequest epic sax guy' },
+  { persona: 'bot', message: '@User, added "Epic Sax Guy 10 Hours" to the queue at #2 (playing ~in 3 mins 5 secs) https://youtu.be/kxopViU98Xo' } // Output varies
+]} />
+
+<ChatExample messages={[
+  { persona: 'user', message: '!sr https://www.youtube.com/watch?v=dQw4w9WgXcQ' },
+  { persona: 'bot', message: '@User, added "Rick Astley - Never Gonna Give You Up" to the queue at #3 (playing ~in 7 mins 15 secs) https://youtu.be/dQw4w9WgXcQ' } // Output varies
+]} />
+
+## Parameters
+
+*   `<search_term_or_url>` (Required): The media to request. This can be:
+    *   A YouTube video URL.
+    *   A YouTube playlist URL (if enabled in settings).
+    *   A search term (the bot will typically pick the first result).
+
+## Configuration
+
+*   Requires the **Media Request** module to be enabled and configured (`Chatbot` -> `Modules`).
+*   Streamers can configure various settings in the Media Request module:
+    *   Enable/disable the feature.
+    *   Link a Spotify account (optional, for different functionality).
+    *   Set request limits (per user, per stream).
+    *   Define user level restrictions for requesting.
+    *   Set maximum song/video duration.
+    *   Enable/disable playlist requests.
+    *   Set up a song blacklist (by keyword or specific URL).
+    *   Configure point costs or subscriber-only access.
+
+## Related Commands
+
+*   [`!songqueue`](./songqueue.mdx): View the current media request queue.
+*   [`!song`](./song.mdx): Displays information about the currently playing song.
+*   [`!next`](./next.mdx): Displays information about the next song in the queue.
+*   [`!wrongsong`](./wrongsong.mdx): Allows users to remove their most recent song request.
+*   [`!skip`](./skip.mdx): (Moderator+) Skips the currently playing song.
+*   [`!volume`](./volume.mdx): (Moderator+) Adjusts the volume of the media player.
+*   [`!removesong`](./removesong.mdx): (Moderator+) Removes a specific song or all songs by a user.
+
+## Aliases
+
+*   `!sr`
