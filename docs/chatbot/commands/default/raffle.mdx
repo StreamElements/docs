@@ -10,6 +10,8 @@ keywords:
 - StreamElements command
 ---
 
+import ChatExample from '@site/src/components/ChatExample';
+
 # !raffle
 
 ## Overview
@@ -18,30 +20,26 @@ The `!raffle` command allows streamers and moderators to create interactive raff
 
 ## Usage
 
-```
+```streamelements
 !raffle <amount> <duration>
 ```
+* `<amount>`: Required. The total reward (pot) for the raffle, distributed among winners.
+* `<duration>`: Required. The duration of the raffle in seconds.
 
 ## Examples
 
-1. Start a raffle with a 100 point reward that lasts for 60 seconds:
-   ```
-   !raffle 100 60
-   ```
-   Output:
-   ```
-   The Multi-Raffle for 100 points will end in 60 Seconds. Enter by typing "!join"
-   ```
+**Start a raffle with a 100 point reward lasting 60 seconds:**
+<ChatExample messages={[
+  { persona: 'moderator', message: '!raffle 100 60' },
+  { persona: 'bot', message: 'The Multi-Raffle for 100 points will end in 60 Seconds. Enter by typing "!join"' }
+]} />
 
-2. Create a longer raffle with a larger reward:
-   ```
-   !raffle 500 180
-   ```
-   Output:
-   ```
-   The Multi-Raffle for 500 points will end in 180 Seconds. Enter by typing "!join"
+**Create a longer raffle with a larger reward:**
+<ChatExample messages={[
+  { persona: 'moderator', message: '!raffle 500 180' },
+  { persona: 'bot', message: 'The Multi-Raffle for 500 points will end in 180 Seconds. Enter by typing "!join"' }
+]} />
 
-   ```
 
 ## Parameters
 
