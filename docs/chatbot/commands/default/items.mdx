@@ -1,0 +1,56 @@
+---
+id: items
+sidebar_label: "!items"
+description: "Use the !items command in StreamElements chatbot to get a link to the channel's loyalty store page, listing redeemable items."
+tags:
+  - chatbot
+  - commands
+  - loyalty
+  - store
+  - utility
+  - default
+keywords:
+  - items command
+  - StreamElements store
+  - loyalty store
+  - redeem items
+  - channel points rewards
+  - streamelements chatbot
+---
+
+import PlatformBadges from '@site/src/components/PlatformBadges';
+import ChatExample from '@site/src/components/ChatExample';
+
+# !items
+
+<PlatformBadges supported={[ 'Twitch', 'YouTube', 'Trovo', 'Kick' ]} />
+
+## Overview
+
+The `!items` command provides viewers with a direct link to the channel's StreamElements loyalty store page. This page displays all currently available items that can be redeemed using loyalty points.
+
+## Usage
+
+To get the link to the store page, simply type the command in chat:
+
+```streamelements
+!items
+```
+
+## Examples
+
+<ChatExample messages={[
+  { persona: 'user', message: '!items' },
+  { persona: 'bot', message: 'Check out the available items here: https://streamelements.com/YOUR_CHANNEL_NAME/store' }
+]} />
+
+## Configuration
+
+*   The linked store page only shows items that are currently enabled and redeemable.
+
+## Related Commands
+
+*   [`!points`](points.mdx): Check your current loyalty point balance.
+*   [`!redeem`](redeem.mdx): Allows viewers to redeem a specific store item directly via chat.
+*   [`!closestore`](closestore.mdx) / [`!openstore`](openstore.mdx): (Moderator+) Commands to enable/disable regular store items.
+*   [`!disablesfx`](disablesfx.mdx) / [`!enablesfx`](enablesfx.mdx): (Moderator+) Commands to enable/disable sound effect store items.
