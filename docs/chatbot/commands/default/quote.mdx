@@ -1,0 +1,104 @@
+---
+id: quote
+sidebar_label: "!quote"
+description: "Use the !quote command in StreamElements chatbot to display random saved quotes or manage the quote list (add/remove) via subcommands."
+tags:
+  - chatbot
+  - commands
+  - fun
+  - utility
+  - quotes
+  - default
+keywords:
+  - quote command
+  - add quote
+  - remove quote
+  - display quotes
+  - random quote
+  - chat engagement
+  - StreamElements chatbot
+---
+
+import PlatformBadges from '@site/src/components/PlatformBadges';
+import ChatExample from '@site/src/components/ChatExample';
+
+# !quote
+
+<PlatformBadges supported={[ 'Twitch', 'YouTube', 'Trovo', 'Kick' ]} />
+
+## Overview
+
+The `!quote` command interacts with the channel's quote system. Viewers can use it to display a random saved quote. Moderators and the broadcaster can use subcommands to add new quotes or remove existing ones.
+
+## Usage
+
+**To display a random quote:**
+
+```streamelements
+!quote
+```
+
+**To display a specific quote by ID:**
+
+```streamelements
+!quote <quote_id>
+```
+
+**To add a quote (Moderator+):**
+
+```streamelements
+!quote add <quote_text>
+```
+
+**To remove a quote (Moderator+):**
+
+```streamelements
+!quote remove <quote_id>
+```
+
+**Important:** Adding (`add`) and removing (`remove`) quotes typically requires **Moderator** permission level or higher.
+
+## Examples
+
+**Displaying a random quote:**
+<ChatExample messages={[
+  { persona: 'user', message: '!quote' },
+  { persona: 'bot', message: 'Quote #42: "This is peak gameplay!" - Added by Moderator1 (Jan 15, 2024)' }
+]} />
+
+**Displaying a specific quote:**
+<ChatExample messages={[
+  { persona: 'user', message: '!quote 10' },
+  { persona: 'bot', message: 'Quote #10: "I can\'t believe that worked!" - Added by Broadcaster (Dec 25, 2023)' }
+]} />
+
+**Adding a new quote (Moderator+):**
+<ChatExample messages={[
+  { persona: 'moderator', message: '!quote add Never give up!' },
+  { persona: 'bot', message: '@Moderator, successfully added quote #51.' }
+]} />
+
+**Removing a quote (Moderator+):**
+<ChatExample messages={[
+  { persona: 'moderator', message: '!quote remove 51' },
+  { persona: 'bot', message: '@Moderator, successfully removed quote #51.' }
+]} />
+
+## Parameters
+
+*   `<quote_id>` (Optional): The specific ID number of the quote to display or remove.
+*   `add <quote_text>` (Moderator+): The subcommand `add` followed by the text of the quote to save.
+*   `remove <quote_id>` (Moderator+): The subcommand `remove` followed by the ID of the quote to delete.
+
+## Configuration
+
+*   The permission levels for adding and removing quotes can be adjusted under `Chatbot` -> `Chat Commands` -> `Default Commands`.
+
+## Related Variables
+
+*   `$(quote <id>)`: Variable to display a specific quote by ID.
+
+## Aliases
+
+*   `!quote add`: `!quote +`
+*   `!quote remove`: `!quote -`
