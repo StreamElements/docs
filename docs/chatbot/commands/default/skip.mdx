@@ -1,0 +1,69 @@
+---
+id: skip
+sidebar_label: "!skip"
+description: "Learn how moderators can use the !skip command in StreamElements chatbot to skip the current song in the media request queue."
+tags:
+  - chatbot
+  - commands
+  - moderation
+  - media request
+  - song request
+  - default
+keywords:
+  - skip command
+  - skip song
+  - mediarequest
+  - chatbot commands
+  - StreamElements
+---
+
+import PlatformBadges from '@site/src/components/PlatformBadges';
+import ChatExample from '@site/src/components/ChatExample';
+
+# !skip
+
+<PlatformBadges supported={[ 'Twitch', 'YouTube', 'Trovo', 'Kick' ]} />
+
+## Overview
+
+The `!skip` command is used to skip the currently playing song in the StreamElements media request queue. This command is useful for streamers and moderators who want to quickly move to the next song in the queue.
+
+**Important:** By default, only users with **Moderator** permission level or higher can use this command.
+
+## Usage
+
+To use the `!skip` command, simply type it in the chat:
+
+```streamelements
+!skip
+```
+
+## Examples
+
+<ChatExample messages={[
+  { persona: 'moderator', message: '!skip' },
+  { persona: 'bot', message: '@Moderator, skipped song: Drake, 21 Savage - Rich Flex (Audio)' }
+]} />
+
+<ChatExample messages={[
+  { persona: 'user', message: '!skip' }, // User tries to skip (assuming default permissions)
+  { persona: 'bot', message: '@User, you do not have permission to use that command.' } // Or "no song is currently playing."
+]} />
+
+## Configuration
+
+*   The command's permission level can be adjusted under `Chatbot` -> `Chat Commands` -> `Default Commands`.
+
+## Related Commands
+
+*   [`!song`](song.mdx): Displays information about the currently playing song.
+*   [`!next`](next.mdx): Displays information about the next song in the queue.
+*   [`!songqueue`](songqueue.mdx): Shows the current media request queue.
+*   [`!songrequest`](songrequest.mdx): Adds a song to the media request queue.
+*   [`!removesong`](removesong.mdx): Removes a song from the queue.
+*   [`!play`](play.mdx) / [`!pause`](pause.mdx): Controls playback.
+
+## Aliases
+
+*   `!nextsong`
+*   `!ns`
