@@ -1,0 +1,63 @@
+---
+id: songqueue
+sidebar_label: "!songqueue"
+description: "Use the !songqueue command in StreamElements chatbot to get a link to the current media request queue page."
+tags:
+  - chatbot
+  - commands
+  - media request
+  - song request
+  - utility
+  - default
+keywords:
+  - StreamElements
+  - chatbot
+  - commands
+  - song request
+  - media request
+  - queue
+  - music
+  - streaming
+---
+
+import PlatformBadges from '@site/src/components/PlatformBadges';
+import ChatExample from '@site/src/components/ChatExample';
+
+# !songqueue
+
+<PlatformBadges supported={[ 'Twitch', 'YouTube', 'Trovo', 'Kick' ]} />
+
+## Overview
+
+The `!songqueue` command provides viewers with a direct link to the channel's public StreamElements media request queue page. This allows them to see upcoming songs or videos without needing access to the streamer's dashboard.
+
+## Usage
+
+Type `!songqueue` in the chat to receive a link to the media request queue page:
+
+```streamelements
+!songqueue
+```
+
+## Examples
+
+<ChatExample messages={[
+  { persona: 'user', message: '!songqueue' },
+  { persona: 'bot', message: 'You can see the current song request queue here: https://streamelements.com/YOUR_CHANNEL/mediarequest' }
+]} />
+
+## Configuration
+
+*   The linked page shows requests that are currently in the queue.
+
+## Related Commands
+
+*   [`!songrequest`](songrequest.mdx) / `!sr`: Used to request a song or media to be added to the queue.
+*   [`!wrongsong`](wrongsong.mdx): Allows users to remove their most recent song request from the queue.
+*   [`!song`](song.mdx): Displays information about the currently playing song or media.
+*   [`!next`](next.mdx): Displays information about the next song in the queue.
+
+## Aliases
+
+*   `!sq`
+*   `!requests`
