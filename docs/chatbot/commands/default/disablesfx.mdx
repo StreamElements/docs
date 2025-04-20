@@ -1,0 +1,61 @@
+---
+id: disablesfx
+sidebar_label: "!disablesfx"
+description: "Learn how to use the !disablesfx command in StreamElements chatbot to quickly disable all sound effect (SFX) items in your loyalty store."
+tags:
+  - chatbot
+  - commands
+  - moderation
+  - loyalty
+  - store
+  - sound effects
+  - default
+keywords:
+  - disablesfx command
+  - disable sound effects
+  - sfx
+  - loyalty store
+  - stream store
+  - streamelements chatbot
+  - store management
+---
+
+import PlatformBadges from '@site/src/components/PlatformBadges';
+import ChatExample from '@site/src/components/ChatExample';
+
+# !disablesfx
+
+<PlatformBadges supported={[ 'Twitch', 'YouTube', 'Trovo', 'Kick' ]} />
+
+## Overview
+
+The `!disablesfx` command allows streamers and moderators to quickly disable all **sound effect** (SFX) items in the StreamElements loyalty store. This is useful for temporarily preventing viewers from redeeming SFX during specific stream segments or when managing audio.
+
+## Usage
+
+To disable all SFX store items, use the following command in chat:
+
+```streamelements
+!disablesfx
+```
+
+**Important:** By default, only users with **Moderator** permission level or higher can use this command.
+
+## Examples
+
+<ChatExample messages={[
+  { persona: 'moderator', message: '!disablesfx' },
+  { persona: 'bot', message: '@Moderator, successfully updated 5 items.' }
+]} />
+
+## Configuration
+
+*   The `!disablesfx` command requires the **Stream Store** module to be active and configured with SFX items. Manage this in your **StreamElements Dashboard** under `Loyalty` -> `Stream Store`.
+*   The command's permission level can be adjusted under `Chatbot` -> `Chat Commands` -> `Default Commands`.
+
+## Related Commands
+
+*   [`!enablesfx`](enablesfx.mdx): Re-enables all sound effect (SFX) items in the loyalty store.
+*   [`!closestore`](closestore.mdx): Disables all *regular* (non-SFX) items in the loyalty store.
+*   [`!openstore`](openstore.mdx): Enables all *regular* (non-SFX) items in the loyalty store.
+*   [`!redeem`](redeem.mdx): Allows viewers to redeem store items.
