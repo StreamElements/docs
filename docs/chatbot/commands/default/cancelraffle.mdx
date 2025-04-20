@@ -1,0 +1,66 @@
+---
+id: cancelraffle
+sidebar_label: "!cancelraffle"
+description: "Immediately cancel an active raffle on your channel using the StreamElements chatbot !cancelraffle command."
+tags:
+  - chatbot
+  - commands
+  - moderation
+  - raffle
+  - giveaway
+  - default
+keywords:
+  - cancelraffle command
+  - cancel raffle
+  - stop raffle
+  - end giveaway
+  - halt contest
+  - streamelements chatbot
+---
+
+import PlatformBadges from '@site/src/components/PlatformBadges';
+import ChatExample from '@site/src/components/ChatExample';
+
+# !cancelraffle
+
+<PlatformBadges supported={[ 'Twitch', 'YouTube', 'Trovo', 'Kick' ]} />
+
+## Overview
+
+The `!cancelraffle` command allows streamers and moderators to immediately halt any active raffle or giveaway initiated by [`!raffle`](raffle.mdx) or [`!sraffle`](sraffle.mdx) on their channel.
+
+## Usage
+
+To cancel an ongoing raffle, use the following command in chat:
+
+```streamelements
+!cancelraffle
+```
+
+**Important:** By default, only users with **Moderator** permission level or higher can use this command.
+
+## Examples
+
+<ChatExample messages={[
+  { persona: 'moderator', message: '!cancelraffle' },
+  { persona: 'bot', message: 'The raffle was canceled!' }
+]} />
+
+<ChatExample messages={[
+  { persona: 'broadcaster', message: '!cancelraffle' },
+  { persona: 'bot', message: 'There is no active raffle to cancel.' }
+]} />
+
+## Configuration
+
+*   The `!cancelraffle` command requires the **Raffle module** to be active. Enable it in your **StreamElements Dashboard** under `Chatbot` -> `Modules`.
+*   The command's permission level can be adjusted under `Chatbot` -> `Chat Commands` -> `Default Commands`.
+
+## Related Commands
+
+*   [`!raffle`](raffle.mdx): Starts a new raffle where users can enter multiple times (using points).
+*   [`!sraffle`](sraffle.mdx): Starts a new raffle where each user can only enter once (using keywords).
+
+## Aliases
+
+There are no default aliases for this command. However, you can create custom aliases in your StreamElements dashboard if desired.
