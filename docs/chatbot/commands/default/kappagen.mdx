@@ -1,0 +1,56 @@
+---
+id: kappagen
+sidebar_label: "!kappagen"
+description: "Use the !kappagen command in StreamElements chatbot to trigger a visual emote explosion on the stream overlay via the Kappagen widget."
+tags:
+  - chatbot
+  - commands
+  - overlay
+  - fun
+  - emotes
+  - default
+keywords:
+  - kappagen command
+  - emote explosion
+  - chatbot command
+  - visual effects
+  - stream overlay
+  - streamelements chatbot
+---
+
+import PlatformBadges from '@site/src/components/PlatformBadges';
+import ChatExample from '@site/src/components/ChatExample';
+
+# !kappagen
+
+<PlatformBadges supported={[ 'Twitch' ]} />
+
+## Overview
+
+The `!kappagen` command triggers a visual explosion of emotes on the stream overlay using the **StreamElements Kappagen widget**. This adds a fun, dynamic visual effect to the broadcast.
+
+## Usage
+
+To trigger the emote explosion:
+
+```streamelements
+!kappagen
+```
+
+## Examples
+
+<ChatExample messages={[
+  { persona: 'user', message: '!kappagen' }
+  // No chat output from the bot. A visual effect occurs on the overlay.
+]} />
+
+## Configuration
+
+*   The **Kappagen widget** must be added to an active StreamElements overlay.
+*   The `!kappagen` command must be enabled in your StreamElements Dashboard under `Chatbot` -> `Chat Commands` -> `Default Commands`.
+*   You can customize the Kappagen widget settings (emotes used, intensity, duration, cooldown, cost, permissions) within the overlay editor and the command settings.
+
+## Related Commands
+
+*   [`!emotes`](emotes.mdx): Provides a link to the channel's available emotes.
+*   [`!alerts`](alerts.mdx): Manages other overlay alert functions.
