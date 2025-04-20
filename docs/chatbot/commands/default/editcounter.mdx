@@ -1,0 +1,78 @@
+---
+id: editcounter
+sidebar_label: "!editcounter"
+description: "Learn how to use the !editcounter command in StreamElements chatbot to set, increment, or decrement custom counter values directly from chat."
+tags:
+  - chatbot
+  - commands
+  - moderation
+  - utility
+  - counter
+  - default
+keywords:
+  - editcounter command
+  - counter command
+  - increment counter
+  - decrement counter
+  - set counter value
+  - stream counter
+  - StreamElements chatbot
+---
+
+import PlatformBadges from '@site/src/components/PlatformBadges';
+import ChatExample from '@site/src/components/ChatExample';
+
+# !editcounter
+
+<PlatformBadges supported={[ 'Twitch', 'YouTube', 'Trovo', 'Kick' ]} />
+
+## Overview
+
+The `!editcounter` command allows streamers and moderators to modify the value of a pre-defined custom counter directly from chat. Counters are useful for tracking things like deaths in a game, wins, specific events, or any other metric you want to display or reference.
+
+**Note:** Counters must first be created in the StreamElements Dashboard under `Chatbot` -> `Counters`.
+
+## Usage
+
+To modify a counter, use the following syntax:
+
+```streamelements
+!editcounter <counter_name> <value>
+```
+
+**Important:** By default, only users with **Moderator** permission level or higher can use this command.
+
+## Examples
+
+<ChatExample messages={[
+  { persona: 'moderator', message: '!editcounter deaths +1' }, // Incrementing 'deaths' counter
+  { persona: 'bot', message: '@Moderator, changed the deaths counter from 5 to 6.' }
+]} />
+
+<ChatExample messages={[
+  { persona: 'broadcaster', message: '!editcounter wins 10' }, // Setting 'wins' counter
+  { persona: 'bot', message: '@Broadcaster, changed the wins counter from 9 to 10.' }
+]} />
+
+<ChatExample messages={[
+  { persona: 'moderator', message: '!editcounter donations -5' }, // Decrementing 'donations' counter
+  { persona: 'bot', message: '@Moderator, changed the donations counter from 100 to 95.' }
+]} />
+
+## Parameters
+
+*   `<counter_name>` (Required): The exact name of the counter you created in the Dashboard (case-sensitive).
+*   `<value>` (Required): The value to apply. It can be:
+    *   A number (e.g., `15`): Sets the counter to this exact value.
+    *   `+number` (e.g., `+1`): Increments the counter by this amount.
+    *   `-number` (e.g., `-3`): Decrements the counter by this amount.
+
+## Configuration
+
+*   Counters must be created in the **StreamElements Dashboard** under `Chatbot` -> `Counters` before they can be edited via this command.
+*   The command's permission level can be adjusted under `Chatbot` -> `Chat Commands` -> `Default Commands`.
+
+## Related Variables
+
+*   `$(count <counter_name>)`: This variable displays the current value of the specified counter. It can be used in other commands or titles. Example: `!deathcount - Current deaths: $(count deaths)`
+
