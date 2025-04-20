@@ -1,0 +1,56 @@
+---
+id: leaderboard
+sidebar_label: "!leaderboard"
+description: "Use the !leaderboard command in StreamElements chatbot to get a link to the channel's loyalty points or watch time leaderboard page."
+tags:
+  - chatbot
+  - commands
+  - loyalty
+  - utility
+  - default
+keywords:
+  - leaderboard command
+  - loyalty points leaderboard
+  - watch time leaderboard
+  - top viewers
+  - streamelements chatbot
+  - chat commands
+---
+
+import PlatformBadges from '@site/src/components/PlatformBadges';
+import ChatExample from '@site/src/components/ChatExample';
+
+# !leaderboard
+
+<PlatformBadges supported={[ 'Twitch', 'YouTube', 'Trovo', 'Kick' ]} />
+
+## Overview
+
+The `!leaderboard` command provides viewers with a direct link to the channel's public StreamElements leaderboard page. This page ranks viewers based on loyalty points or watch time, depending on the channel's configuration.
+
+## Usage
+
+To get the link to the leaderboard page, simply type the command in chat:
+
+```streamelements
+!leaderboard
+```
+
+## Examples
+
+<ChatExample messages={[
+  { persona: 'user', message: '!leaderboard' },
+  { persona: 'bot', message: 'Check out the channel Leaderboard here: https://streamelements.com/YOUR_CHANNEL_NAME/leaderboard' }
+]} />
+
+## Configuration
+
+*   This command requires the **Loyalty system** to be active. Enable it in your **StreamElements Dashboard** under `Loyalty` -> `Loyalty Settings`.
+*   The leaderboard page displays rankings based on the settings configured in the Loyalty module (points or watch time).
+*   The command itself is typically enabled by default.
+
+## Related Commands
+
+*   [`!points`](points.mdx): Check your current loyalty point balance.
+*   [`!watchtime`](watchtime.mdx): Check your accumulated watch time.
+*   [`!top`](top.mdx): Shows the top users (points or time) directly in chat.
