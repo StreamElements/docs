@@ -1,0 +1,74 @@
+---
+id: removesong
+sidebar_label: "!removesong"
+description: "Use the !removesong command in StreamElements chatbot to remove a specific song (by URL) or all songs requested by a user from the media queue."
+tags:
+  - chatbot
+  - commands
+  - moderation
+  - media request
+  - song request
+  - default
+keywords:
+  - removesong command
+  - remove song
+  - delete song request
+  - song queue management
+  - streamelements chatbot
+---
+
+import PlatformBadges from '@site/src/components/PlatformBadges';
+import ChatExample from '@site/src/components/ChatExample';
+
+# !removesong
+
+<PlatformBadges supported={[ 'Twitch', 'YouTube', 'Trovo', 'Kick' ]} />
+
+## Overview
+
+The `!removesong` command allows streamers and moderators to remove entries from the StreamElements media request queue. It can target either a specific song via its URL or all songs requested by a particular user.
+
+## Usage
+
+To remove a specific song by its URL:
+
+```streamelements
+!removesong <song_url>
+```
+
+To remove all songs requested by a specific user:
+
+```streamelements
+!removesong <username>
+```
+
+**Important:** By default, only users with **Moderator** permission level or higher can use this command.
+
+## Examples
+
+**Removing a specific song by URL:**
+<ChatExample messages={[
+  { persona: 'moderator', message: '!removesong https://youtu.be/dQw4w9WgXcQ' },
+  { persona: 'bot', message: '@Moderator, Rick Astley - Never Gonna Give You Up was removed from the queue.' }
+]} />
+
+**Removing all songs requested by a user:**
+<ChatExample messages={[
+  { persona: 'broadcaster', message: '!removesong SpamRequester' },
+  { persona: 'bot', message: '@Broadcaster, All songs requested by SpamRequester have been removed.' }
+]} />
+
+## Parameters
+
+*   `<song_url>` OR `<username>` (Required): You must provide *either* the direct URL of the song/video to remove *or* the exact username of the person whose requests should be removed.
+
+## Configuration
+
+*   The command's permission level can be adjusted under `Chatbot` -> `Chat Commands` -> `Default Commands`.
+
+## Related Commands
+
+*   [`!songrequest`](songrequest.mdx): Adds a song/video to the queue.
+*   [`!songqueue`](songqueue.mdx): Provides a link to the media queue page.
+*   [`!skip`](skip.mdx): Skips the *currently playing* song.
+*   [`!play`](play.mdx) / [`!pause`](pause.mdx): Controls playback.
