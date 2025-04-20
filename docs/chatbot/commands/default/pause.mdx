@@ -1,0 +1,58 @@
+---
+id: pause
+sidebar_label: "!pause"
+description: "Use the !pause command in StreamElements chatbot to temporarily stop the media request playback without clearing the queue."
+tags:
+  - chatbot
+  - commands
+  - moderation
+  - media request
+  - song request
+  - default
+keywords:
+  - pause command
+  - pause song
+  - pause media request
+  - song request pause
+  - stream elements chatbot
+---
+
+import PlatformBadges from '@site/src/components/PlatformBadges';
+import ChatExample from '@site/src/components/ChatExample';
+
+# !pause
+
+<PlatformBadges supported={[ 'Twitch', 'YouTube', 'Trovo', 'Kick' ]} />
+
+## Overview
+
+The `!pause` command temporarily stops the playback of the current item in the StreamElements media request queue. The queue itself remains intact, and playback can be resumed later.
+
+## Usage
+
+To pause the currently playing media:
+
+```streamelements
+!pause
+```
+
+**Important:** By default, only users with **Moderator** permission level or higher can use this command.
+
+## Examples
+
+<ChatExample messages={[
+  { persona: 'moderator', message: '!pause' },
+  { persona: 'bot', message: '@Moderator, Media request playback paused!' }
+]} />
+
+## Configuration
+
+*   The command's permission level can be adjusted under `Chatbot` -> `Chat Commands` -> `Default Commands`.
+
+## Related Commands
+
+*   [`!play`](play.mdx): Resumes media playback after it has been paused.
+*   [`!skip`](skip.mdx): Skips the currently playing media item.
+*   [`!volume`](volume.mdx): Adjusts the volume of the media player.
+*   [`!songrequest`](songrequest.mdx): Adds a song/video to the queue.
+*   [`!songqueue`](songqueue.mdx): Provides a link to the media queue page.
