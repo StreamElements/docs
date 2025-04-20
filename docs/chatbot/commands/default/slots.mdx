@@ -1,0 +1,79 @@
+---
+id: slots
+sidebar_label: "!slots"
+description: "Use the !slots command in StreamElements chatbot for viewers to play a slot machine game with their loyalty points."
+tags:
+  - chatbot
+  - commands
+  - loyalty
+  - game
+  - fun
+  - default
+keywords:
+  - slots
+  - slot machine
+  - gambling
+  - mini-game
+  - loyalty points
+  - chatbot
+  - StreamElements
+  - Twitch
+---
+
+import PlatformBadges from '@site/src/components/PlatformBadges';
+import ChatExample from '@site/src/components/ChatExample';
+
+# !slots
+
+<PlatformBadges supported={[ 'Twitch' ]} />
+
+## Overview
+
+The `!slots` command allows viewers to play a simple slot machine game in your chat. Users bet a certain amount of loyalty points and have a chance to win a multiple of their bet back based on matching emotes.
+
+## Usage
+
+To play the slot machine:
+
+```streamelements
+!slots <bet>
+```
+
+## Examples
+
+<ChatExample messages={[
+  { persona: 'user', message: '!slots 100' },
+  { persona: 'bot', message: '@User you got Kappa | Kappa | Keepo and lost your 100 points LUL' } // Output varies
+]} />
+
+<ChatExample messages={[
+  { persona: 'user', message: '!slots 500' },
+  { persona: 'bot', message: '@User you got Kappa | Kappa | Kappa and won 1500 points PogChamp' } // Output varies
+]} />
+
+## Parameters
+
+*   `<bet>` (Required): The amount of loyalty points the user wants to bet. This must be a positive integer and within the configured minimum/maximum bet limits.
+
+## Configuration
+
+Streamers can customize the `!slots` game through the **Slots module** settings on the StreamElements dashboard (`Chatbot` -> `Modules`):
+
+*   **Module Toggle:** Enable or disable the entire `!slots` game.
+*   **System Rigging:** Adjust the payout percentage. A value lower than 100% means viewers are statistically likely to lose points over time, while a value higher than 100% means they are likely to gain points. The default is often set to ensure a house edge. *(Example: 200% in the provided image)*
+*   **Minimum Points:** Set the minimum number of loyalty points a viewer must have to play the slot machine. *(Example: 100 points in the image)*
+*   **Emotes:** Choose which emotes will act as the symbols on the slot machine reels. *(Examples from image: Kappa, PogChamp, BibleThump, OpieOP, 4Head)*
+*   **Cooldowns:**
+    *   **User Cooldown:** The minimum time (in seconds) a specific user must wait before playing again. *(Example: 60 seconds in the image)*
+    *   **Global Cooldown:** The minimum time (in seconds) before *anyone* can use the `!slots` command again after it's been used. *(Example: 0 seconds in the image)*
+*   **Win Message:** Customize the message displayed when a viewer wins. Available arguments: `{user}`, `{points}`, `{emotes}`, `{pointsname}`. *(Example from image: `@​{user} you got {emotes} and won {points} ${pointsname} PogChamp //`)*
+*   **Lose Message:** Customize the message displayed when a viewer loses. Available arguments: `{user}`, `{points}`, `{emotes}`, `{pointsname}`. *(Example from image: `@​{user} you got {emotes} and lost your {points} ${pointsname} LUL`)*
+
+:::important
+The **Loyalty system** must also be active for the `!slots` command to function, as it relies on loyalty points.
+:::
+
+## Related Commands
+
+*   [`!points`](points.mdx): Check your current loyalty points balance.
+*   [`!roulette`](roulette.mdx) / [`!duel`](duel.mdx) / [`!bet`](bet.mdx): Other points-based games (if enabled).
