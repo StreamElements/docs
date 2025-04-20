@@ -1,0 +1,114 @@
+---
+id: level
+sidebar_label: "!level"
+description: "Learn how moderators can use the !level command in StreamElements chatbot to view and manually override user permission levels."
+tags:
+  - chatbot
+  - commands
+  - moderation
+  - permissions
+  - utility
+  - default
+keywords:
+  - level command
+  - user levels
+  - permission levels
+  - chat moderation
+  - set user level
+  - streamelements chatbot
+---
+
+import PlatformBadges from '@site/src/components/PlatformBadges';
+import ChatExample from '@site/src/components/ChatExample';
+
+# !level
+
+<PlatformBadges supported={[ 'Twitch', 'YouTube', 'Trovo', 'Kick' ]} />
+
+## Overview
+
+The `!level` command allows streamers and moderators to view or manually set the permission level of a specific user within the StreamElements system. User levels determine access to commands and other features.
+
+While levels like subscriber, VIP, and moderator are often assigned automatically based on platform roles, this command allows manual overrides or assigning custom levels like `Regular` or `Super Moderator`.
+
+**Important:** By default, only users with **Moderator** permission level or higher can use this command.
+
+## Usage
+
+**To check a user's level:**
+
+```streamelements
+!level <username>
+```
+
+**To set a user's level:**
+
+```streamelements
+!level <username> <level_value>
+```
+
+**To reset a user's level to default (based on their platform role):**
+
+```streamelements
+!level <username> reset
+```
+
+## Examples
+
+**Checking a level:**
+<ChatExample messages={[
+  { persona: 'moderator', message: '!level RegularViewer' },
+  { persona: 'bot', message: '@Moderator, The level of RegularViewer is 100.' }
+]} />
+
+**Setting a user to Regular:**
+<ChatExample messages={[
+  { persona: 'moderator', message: '!level RegularViewer 300' },
+  { persona: 'bot', message: '@Moderator, Successfully set RegularViewer\'s level to 300 (Regular).' }
+]} />
+
+**Resetting a user's level:**
+<ChatExample messages={[
+  { persona: 'moderator', message: '!level RegularViewer reset' },
+  { persona: 'bot', message: '@Moderator, Successfully reset RegularViewer\'s level to 100 (Everyone).' }
+]} />
+
+## Parameters
+
+*   `<username>` (Required): The exact username of the target user.
+*   `<level_value> or reset` (Optional): 
+    *   Provide a numeric level value to manually set the user's level.
+    *   Use the keyword `reset` to remove any manual override and revert to the level determined by their platform role (or default 100 if none).
+
+## User Level Values
+
+StreamElements uses the following numeric values for permission levels:
+
+*   `100`: Everyone (Default for non-sub/VIP/mod users)
+*   `250`: Subscriber
+*   `300`: Regular (Manually assigned via Dashboard or `!level`)
+*   `400`: VIP (Twitch only)
+*   `500`: Moderator
+*   `1000`: Super Moderator (Manually assigned via Dashboard or `!level`)
+*   `2000`: Broadcaster
+
+**Note:** Manually setting a level (e.g., setting a non-sub to `250`) grants them the permissions of that level within StreamElements (e.g., access to sub-only commands) but does *not* grant them platform-specific benefits like sub badges or emotes.
+
+## Configuration
+
+*   The command's permission level can be adjusted under `Chatbot` -> `Chat Commands` -> `Default Commands`.
+*   User levels are fundamental to command permissions configured in the **Chat Commands** section of the Dashboard.
+
+## Related Commands
+
+*   [`!permit`](permit.mdx): Temporarily grants link permission to a user, often used for users below a certain level.
+
+## FAQ
+
+> **What happens if I use the command incorrectly?**
+>
+> The bot will guide you. You might see messages like:
+> 
+> `@User, usage !level USER 500/reset`
+> 
+> `@User, valid levels are: 100 (Everyone), 250 (Subscriber), 300 (Regular), 400 (VIP), 500 (Moderator), 1000 (Super Moderator)`
