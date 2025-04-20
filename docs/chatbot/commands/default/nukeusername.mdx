@@ -1,0 +1,79 @@
+---
+id: nukeusername
+sidebar_label: "!nukeusername"
+description: "Use the !nukeusername command in StreamElements chatbot to moderate chat by timing out or banning users whose usernames match specific text or regex."
+tags:
+  - chatbot
+  - commands
+  - moderation
+  - utility
+  - nuke
+  - default
+keywords:
+  - nukeusername command
+  - chat moderation
+  - timeout users
+  - ban users
+  - regex moderation
+  - username nuke
+  - StreamElements chatbot
+---
+
+import PlatformBadges from '@site/src/components/PlatformBadges';
+import ChatExample from '@site/src/components/ChatExample';
+
+# !nukeusername
+
+<PlatformBadges supported={[ 'Twitch', 'YouTube', 'Trovo', 'Kick' ]} />
+
+## Overview
+
+The `!nukeusername` command is a moderation tool allowing moderators to perform bulk actions (timeout or ban) on users whose **usernames** contain specific text or match a regular expression and have chatted within a specified lookback period.
+
+**Warning:** This is a powerful command. Use it with caution, especially with broad match strings or regex, to avoid unintended actions against legitimate users.
+
+**Important:** By default, only users with **Super Moderator** permission level or higher can use this command.
+
+## Usage
+
+```streamelements
+!nukeusername <lookback_seconds> <action> <match_text_or_regex>
+```
+
+## Examples
+
+**Timeout users for 300s whose username contains "bot123" and chatted in the last 60s:**
+<ChatExample messages={[
+  { persona: 'moderator', message: '!nukeusername 60 300 bot123' },
+  { persona: 'bot', message: '@Moderator, Nuked 2 users matching "bot123".' } // Output indicates users found
+]} />
+
+**Ban users whose usernames match a regex pattern (e.g., starts with "troll_") and chatted in the last 5 mins:**
+<ChatExample messages={[
+  { persona: 'broadcaster', message: '!nukeusername 300 ban /^troll_/i' },
+  { persona: 'bot', message: '@Broadcaster, Nuked 1 users matching "/^troll_/i".' }
+]} />
+
+## Parameters
+
+*   `<lookback_seconds>` (Required): The duration (in seconds, max 300) to scan previous chat messages to find users who chatted.
+*   `<action>` (Required): The moderation action:
+    *   Number (e.g., `60`): Timeout duration in seconds.
+    *   `ban`: Permanently ban the users.
+    *   **Note:** Unlike `!nuke`, `delete` is generally not applicable here as it targets message content, not usernames.
+*   `<match_text_or_regex>` (Required): The text or pattern to match against usernames.
+    *   For plain text matching: `badnamepart`
+    *   For regular expression matching: Wrap the pattern in forward slashes, e.g., `/botaccount\d+/i` (the `i` makes it case-insensitive).
+
+## Configuration
+
+*   The command's permission level can be adjusted under `Chatbot` -> `Chat Commands` -> `Default Commands`. It's highly recommended to keep this restricted.
+
+## Related Commands
+
+*   [`!nuke`](nuke.mdx): Performs similar actions but matches against message content instead of usernames.
+*   [`!filesay`](filesay.mdx): Executes commands line-by-line from a text file URL, useful for banning specific lists of users.
+
+## Aliases
+
+There are no default aliases for this command. Custom aliases can be created in the StreamElements dashboard.
