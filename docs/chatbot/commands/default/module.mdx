@@ -1,0 +1,68 @@
+---
+id: module
+sidebar_label: "!module"
+description: "Use the !module command in StreamElements chatbot to enable or disable specific chatbot modules (like games, points, etc.) directly from chat."
+tags:
+  - chatbot
+  - commands
+  - moderation
+  - utility
+  - modules
+  - default
+keywords:
+  - module command
+  - enable module
+  - disable module
+  - chatbot modules
+  - streamelements chatbot
+---
+
+import PlatformBadges from '@site/src/components/PlatformBadges';
+import ChatExample from '@site/src/components/ChatExample';
+
+# !module
+
+<PlatformBadges supported={[ 'Twitch', 'YouTube', 'Trovo', 'Kick' ]} />
+
+## Overview
+
+The `!module` command allows streamers and moderators to enable or disable specific StreamElements chatbot modules directly from the chat. This provides real-time control over features like games, loyalty systems, or other functionalities without needing to access the dashboard.
+
+**Important:** By default, only users with **Moderator** permission level or higher can use this command.
+
+## Usage
+
+To enable or disable a module:
+
+```streamelements
+!module <module_name> <enable | disable>
+```
+
+## Examples
+
+**Disabling the Roulette game module:**
+<ChatExample messages={[
+  { persona: 'moderator', message: '!module roulette disable' },
+  { persona: 'bot', message: '@Moderator, Module Roulette was disabled.' }
+]} />
+
+**Enabling the Quotes module:**
+<ChatExample messages={[
+  { persona: 'broadcaster', message: '!module quotes enable' },
+  { persona: 'bot', message: '@Broadcaster, Module Quotes was enabled.' }
+]} />
+
+## Parameters
+
+*   `<module_name>` (Required): The name of the module to modify (e.g., `roulette`, `duel`, `giveaway`, `quotes`, `loyalty`). Refer to the StreamElements Dashboard (`Chatbot` -> `Modules`) for a list of available module names.
+*   `<enable | disable>` (Required): Specify `enable` to turn the module on or `disable` to turn it off.
+
+## Configuration
+
+*   Available modules and their current status can be viewed in the **StreamElements Dashboard** under `Chatbot` -> `Modules`.
+*   The command's permission level can be adjusted under `Chatbot` -> `Chat Commands` -> `Default Commands`.
+
+## Related Commands
+
+*   [`!bot`](bot.mdx): Controls the bot's overall presence (mute/unmute/part).
+*   [`!commands`](commands.mdx): Provides a link to the list of commands (which are often tied to modules).
