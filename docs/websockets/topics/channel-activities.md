@@ -84,4 +84,5 @@ The possible activity `type`s are:
 - `lilithgames`
 - `x`
 - `StreamElements`
+- `grabtap`
 - `kick`
