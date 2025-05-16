@@ -21,7 +21,9 @@ keywords:
 
 The `$(weather)` variable allows you to display current weather conditions for a specified location in your StreamElements chatbot. It provides comprehensive information including temperature, feels-like temperature, weather description, wind details, humidity, visibility, and air pressure.
 
-:::warning Weather data is provided by third-party sources and may not reflect current geopolitical boundaries. :::
+:::warning
+Weather data is provided by third-party sources and may not reflect current geopolitical boundaries. 
+:::
 
 ## Usage
 
