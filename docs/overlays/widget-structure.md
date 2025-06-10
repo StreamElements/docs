@@ -23,9 +23,17 @@ You can use pure JavaScript or include external libraries/frameworks to ease you
 ## FIELDS
 You can create custom variables, so end user doesn't have to interact with code, those fields will be displayed under “OPEN EDITOR” in left panel.
 
-This data can be also called by `{{variableName}}` or `{variableName}` within HTML/CSS/JS code (however for better readibility we suggest using those calls only in HTML/CSS).
+This data can be also called by `{{variableName}}` or `{variableName}` within HTML/CSS/JS code (however for better readibility we suggest using those calls only in HTML/CSS). To access it via JS, you can do it via `onWidgetLoad` listener:
+```js
+window.addEventListener('onWidgetLoad', (obj) => {
+  fieldData = obj.detail.fieldData;
+  console.log(fieldData) // Show the fields object in the browser console
+})
+```
 
-At this point we support most of HTML5 input types (except of file - use library inputs such as `video-input` instead), as well as a handful of custom inputs: `colorpicker`, `audio-input`, `sound-input`, `video-input`, `googleFont`, `dropdown`, and `slider`.
+At this point we support most of HTML5 input types (except of file - use library inputs such as `video-input` instead), as well as a handful of custom inputs: `colorpicker`, `image-input`, `sound-input`, `video-input`, `googleFont`, `dropdown`, and `slider`.
+
+Adding an invalid type will default it to `"type":"text"`.
 
 There are some reserved field names (all future reserved words will start with `widget`):
 * `widgetName` - Used to set the display name of the widget
@@ -42,7 +50,8 @@ There are some reserved field names (all future reserved words will start with `
   },
   "someCheckbox": {
     "type": "checkbox",
-    "label": "Some checkbox"
+    "label": "Some checkbox",
+    "value": true,
   },
   "someColorPicker": {
     "type": "colorpicker",
