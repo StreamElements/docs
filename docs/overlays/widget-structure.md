@@ -25,7 +25,7 @@ You can create custom variables, so end user doesn't have to interact with code,
 
 This data can be also called by `{{variableName}}` or `{variableName}` within HTML/CSS/JS code (however for better readibility we suggest using those calls only in HTML/CSS). To access it via JS, you can do it via `onWidgetLoad` listener:
 ```js
-window.addEventListener('onWidgetLoad', function (obj) => {
+window.addEventListener('onWidgetLoad', (obj) => {
   fieldData = obj.detail.fieldData;
   console.log(fieldData) // Show the fields object in the browser console
 })
