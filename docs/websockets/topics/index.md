@@ -35,6 +35,7 @@ This section provides documentation for the various topics available for subscri
 | [Channel Stream Status](./channel-stream-status.md)     | Receive notifications about stream status changes                                       |
 | [Channel Tips](./channel-tips.md)                       | Receive notifications about tips                                                        |
 | [Channel Tips Moderation](./channel-tips-moderation.md) | Receive notifications about tip moderation                                              |
+| [Channel Chat Message](./channel-chat-message.md)       | Receive notifications for each chat message sent on channel                             |
 
 ### Chatbot Topics
 
