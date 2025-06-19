@@ -17,11 +17,11 @@ keywords:
 ## Overview
 
 The `channel.chat.message` topic provides real-time updates about the chat messages on a channel. 
-It ships the raw message structure the platform you are connected to. 
+It delivers the raw message structure based on the platform you're connected to. 
 
 ## Usage
 
-Subscribe to this topic to receive updates whenever a chat message is sent.
+Subscribe to this topic to receive updates whenever a new chat message is sent.
 
 ## Examples
 
