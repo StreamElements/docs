@@ -97,6 +97,39 @@ Subscribe to this topic to receive updates whenever a chat message is sent.
 
 ### Youtube
 ```json
+{
+  "id": "01JY4DRAF64P642FF81DM8YRTX",
+  "ts": "2025-06-19T15:43:39Z",
+  "type": "message",
+  "topic": "channel.chat.message",
+  "room": "6769af8b2434ac4220000000",
+  "data": {
+    "authorDetails": {
+      "channelId": "UCp9noRfodywhm2MX0000000",
+      "channelUrl": "http://www.youtube.com/channel/UCp9noRfodywhm2MX0000000",
+      "displayName": "c4ldas",
+      "isChatModerator": true,
+      "isVerified": false,
+      "isChatOwner": false,
+      "isChatSponsor": false,
+      "profileImageUrl": "https://yt3.ggpht.com/abcdefghijklmnopqrstuvwxyz=s88-c-k-c0x00ffffff-no-rj"
+    },
+    "etag": "M4jEyJW51Hr_zgGgruIJW8l2Wnc",
+    "id": "LCC.EhwKGkNJZW0yOTdwX1kwREZYSXUxZ0FkZ1BVdGRn",
+    "kind": "youtube#liveChatMessage",
+    "snippet": {
+      "authorChannelId": "UCp9noRfodywhm2MX0000000",
+      "displayMessage": "Test message with emote :face-blue-smiling:",
+      "hasDisplayContent": true,
+      "liveChatId": "KicKGFVDT2p0eVFPaTNNUjhYT3lzMFdOZmtKZxILbmpoSFRheU9VcXc",
+      "publishedAt": "2025-06-19T15:43:36.563575Z",
+      "textMessageDetails": {
+        "messageText": "Test message with emote :face-blue-smiling:"
+      },
+      "type": "textMessageEvent"
+    }
+  }
+}
 ```
 
 ### Kick
@@ -129,12 +162,4 @@ Subscribe to this topic to receive updates whenever a chat message is sent.
     "emotes": null
   }
 }
-```
-
-### Trovo
-```json
-```
-
-### Twitter / X
-```json
 ```
