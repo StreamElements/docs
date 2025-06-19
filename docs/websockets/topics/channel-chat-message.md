@@ -33,9 +33,9 @@ Subscribe to this topic to receive updates whenever a chat message is sent.
   "ts": "2025-06-19T11:37:58Z",
   "type": "message",
   "topic": "channel.chat.message",
-  "room": "5f2de5dd9a474a2c2dc4d0ab",
+  "room": "5f2de5dd9a474a2c2aaaaaaa",
   "data": {
-    "broadcaster_user_id": "28057703",
+    "broadcaster_user_id": "28050000",
     "broadcaster_user_login": "c4ldas",
     "broadcaster_user_name": "c4ldas",
     "source_broadcaster_user_id": "",
@@ -106,11 +106,11 @@ Subscribe to this topic to receive updates whenever a chat message is sent.
   "ts": "2025-06-19T11:01:00Z",
   "type": "message",
   "topic": "channel.chat.message",
-  "room": "67a36a1f8a2abf0b4eb0f3fb",
+  "room": "67a36a1f8a2abf0b4aaaaaaa",
   "data": {
     "message_id": "e7ff356c-9c59-4eb9-8f9e-9f77255caa9b",
     "broadcaster": {
-      "user_id": 54674047,
+      "user_id": 54670000,
       "username": "c4ldas",
       "is_verified": false,
       "profile_picture": "",
@@ -118,7 +118,7 @@ Subscribe to this topic to receive updates whenever a chat message is sent.
       "channel_slug": "c4ldas"
     },
     "sender": {
-      "user_id": 54674047,
+      "user_id": 54670000,
       "username": "c4ldas",
       "is_verified": false,
       "profile_picture": "",
