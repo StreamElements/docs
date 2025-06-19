@@ -25,8 +25,6 @@ Subscribe to this topic to receive updates whenever a chat message is sent.
 
 ## Examples
 
-
-
 ### Twitch
 
 ```json
@@ -131,4 +129,12 @@ Subscribe to this topic to receive updates whenever a chat message is sent.
     "emotes": null
   }
 }
+```
+
+### Trovo
+```json
+```
+
+### Twitter / X
+```json
 ```
