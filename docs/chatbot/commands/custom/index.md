@@ -115,7 +115,7 @@ Bot: The stream has been live for 2 days 5 hours. We're currently playing Fortni
 
 Variables used:
 
-- [$(uptime)](../../variables/channel.md#uptime) - The time the stream has been live
+- [$(uptime)](../../variables/channel.md#channeluptime) - The time the stream has been live
 - [$(channel.game)](../../variables/channel.md#channelgame) - The game the stream is currently playing
 - [$(channel.viewers)](../../variables/channel.md#channelviewers) - The number of viewers currently watching the stream
 
@@ -136,7 +136,7 @@ Bot: Styler, weather in: Aarhus, Denmark: 🌜 17.7 °C (63.9 °F). Feels like 1
 
 Variables used:
 
-- [$(weather)](../../variables/weather.md#weather) - The current weather in a specified location
+- [$(weather)](../../variables/weather.md) - The current weather in a specified location
 
 ### Shoutout Command
 

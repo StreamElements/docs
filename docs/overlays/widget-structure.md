@@ -38,7 +38,7 @@ Adding an invalid type will default it to `"type":"text"`.
 There are some reserved field names (all future reserved words will start with `widget`):
 * `widgetName` - Used to set the display name of the widget
 * `widgetAuthor` - Set the author name of the widget (adds a "(by Author)" to the widget name)
-* `widgetDuration` - maximum event queue hold time (seconds) - for Custom Widget (as alertboxes have their own timers). Explained in [resumeQueue section](#resumequeue-method-and-widgetduration-property) below
+* `widgetDuration` - maximum event queue hold time (seconds) - for Custom Widget (as alertboxes have their own timers). Explained in [resumeQueue section](custom-widget.md#resumequeue-method-and-widgetduration-property)
 ### Example
 #### JSON
 ```JSON
