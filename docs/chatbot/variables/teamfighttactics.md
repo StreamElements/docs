@@ -17,7 +17,7 @@ keywords:
 
 ## Overview
 
-The `$(teamfighttactics)` variable allows you to retrieve and display the current rank and LP (League Points) of a specified Teamfight Tactics player using the StreamElements Chatbot.
+The `$(teamfighttactics)` variable - or `$(tft)` - allows you to retrieve and display the current rank and LP (League Points) of a specified Teamfight Tactics player using the StreamElements Chatbot.
 
 ## Usage
 
