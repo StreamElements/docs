@@ -1,6 +1,6 @@
 ---
-id: emote-bingo
-sidebar_label: "Emote Bingo"
+id: hadanka
+sidebar_label: "hadanka"
 description: "Boost viewer engagement with StreamElements' Emote Bingo. Create interactive Twitch chat games using emotes from Twitch, BTTV, FFZ, and 7TV."
 keywords:
 - StreamElements Emote Bingo
@@ -33,7 +33,7 @@ The Emote Bingo module is an interactive chat game that generates a bingo card w
 
 ## Usage
 
-To start a Bingo game, a moderator must use the `!bingo` command with specific parameters. The game ends when a user correctly identifies the chosen emote in chat.
+To start a Bingo game, a moderator must use the `!hadanka` command with specific parameters. The game ends when a user correctly identifies the chosen emote in chat.
 
 ## Examples
 
