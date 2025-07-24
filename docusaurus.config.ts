@@ -51,7 +51,22 @@ const config: Config = {
           showLastUpdateAuthor: false,
           showLastUpdateTime: true,
         },
-        blog: false,
+        blog: {
+          showReadingTime: true,
+          showLastUpdateTime: true,
+          feedOptions: {
+            type: 'all',
+            copyright: `Copyright © ${new Date().getFullYear()} StreamElements.`,
+          },
+          editUrl: "https://github.com/Streamelements/docs/tree/master/",
+          routeBasePath: '/patch-notes',
+          blogTitle: 'StreamElements Patch Notes',
+          blogDescription: 'Latest updates and patch notes for StreamElements',
+          blogSidebarTitle: 'Recent updates',
+          blogSidebarCount: 10,
+          postsPerPage: 10,
+          path: './patch-notes',
+        },
         theme: {
           customCss: "./src/css/custom.css",
         },
@@ -63,6 +78,18 @@ const config: Config = {
     image: "img/open_graph_preview.jpg",
     navbar: {
       title: "StreamElements Docs",
+      items: [
+        {
+          to: '/patch-notes',
+          label: 'Patch Notes',
+          position: 'left'
+        },
+        {
+          href: 'https://github.com/StreamElements/docs',
+          label: 'GitHub',
+          position: 'right',
+        },
+      ],
     },
     algolia: {
       appId: 'WL7E3ZBLD0',
@@ -105,6 +132,10 @@ const config: Config = {
             {
               label: "Variables",
               to: "/chatbot/variables",
+            },
+            {
+              label: "Patch Notes",
+              to: "/patch-notes",
             },
           ],
         },
