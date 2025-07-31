@@ -128,4 +128,16 @@ For a complete list of available topics and their detailed descriptions, see the
 
 For implementation examples in different programming languages, see the [Code Examples](./examples/index.md) page.
 
+## FAQ
 
+**Q: Why are the messages not coming through? I received the message `successfully subscribed to topic`!**
+
+A: Make sure you're using the token for the specific platform from which you want to receive activities. If you have multiple accounts linked (Twitch, YouTube, Kick, etc.), switch to the correct account on the StreamElements dashboard (click your avatar in the top-right corner) and copy the token again.
+
+**Q: I'm not receiving YouTube activities, and I'm using the correct token.**
+
+A: If your stream is set to `private` or `unlisted`, StreamElements cannot access it. Only public YouTube livestreams are supported.
+
+**Q: How can I make sure I copied the correct token?**
+
+A: If you are using either a JWT or an Overlay Token (apikey), go to the StreamElements dashboard, click your avatar in the top-right corner > select your channel name, and choose the correct channel. After that, you can copy the correct token.
