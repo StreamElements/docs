@@ -24,6 +24,8 @@ Subscribe to this topic to receive updates whenever a new chat message is sent.
 
 ## Examples
 
+See examples below for [Twitch](#twitch), [Youtube](#youtube), [Kick](#kick), and [Trovo](#trovo):
+
 ### Twitch
 
 ```json
@@ -35,12 +37,12 @@ Subscribe to this topic to receive updates whenever a new chat message is sent.
   "room": "5f2de5dd9a474a2c2aaaaaaa",
   "data": {
     "broadcaster_user_id": "28050000",
-    "broadcaster_user_login": "c4ldas",
-    "broadcaster_user_name": "c4ldas",
+    "broadcaster_user_login": "exampleuser",
+    "broadcaster_user_name": "exampleuser",
     "source_broadcaster_user_id": "",
     "chatter_user_id": "28057703",
-    "chatter_user_login": "c4ldas",
-    "chatter_user_name": "c4ldas",
+    "chatter_user_login": "exampleuser",
+    "chatter_user_name": "exampleuser",
     "message_id": "caf9fb9a-a702-486e-92f1-0c60a3a28f38",
     "color": "#8AE020",
     "message": {
@@ -106,7 +108,7 @@ Subscribe to this topic to receive updates whenever a new chat message is sent.
     "authorDetails": {
       "channelId": "UCp9noRfodywhm2MX0000000",
       "channelUrl": "http://www.youtube.com/channel/UCp9noRfodywhm2MX0000000",
-      "displayName": "c4ldas",
+      "displayName": "exampleuser",
       "isChatModerator": true,
       "isVerified": false,
       "isChatOwner": false,
@@ -143,22 +145,54 @@ Subscribe to this topic to receive updates whenever a new chat message is sent.
     "message_id": "e7ff356c-9c59-4eb9-8f9e-9f77255caa9b",
     "broadcaster": {
       "user_id": 54670000,
-      "username": "c4ldas",
+      "username": "exampleuser",
       "is_verified": false,
       "profile_picture": "",
       "channel_id": 0,
-      "channel_slug": "c4ldas"
+      "channel_slug": "exampleuser"
     },
     "sender": {
       "user_id": 54670000,
-      "username": "c4ldas",
+      "username": "exampleuser",
       "is_verified": false,
       "profile_picture": "",
       "channel_id": 0,
-      "channel_slug": "c4ldas"
+      "channel_slug": "exampleuser"
     },
     "content": "Test message with emote [emote:1579033:emojiAstonished]",
     "emotes": null
+  }
+}
+```
+### Trovo
+```json
+{
+  "id": "01K0K96X4ZRY83DNP9YZJSXVW2",
+  "ts": "2025-07-20T06:44:12Z",
+  "type": "message",
+  "topic": "channel.chat.message",
+  "room": "61fa731243f9b92ffaaaaaaa",
+  "data": {
+    "id": "1752852369100763935_107354849_145407389_2887140591_5",
+    "channel_id": "107380000",
+    "type": 0,
+    "created_at": "2025-07-20T06:44:12.672224046Z",
+    "data": {
+      "avatar": "https://headicon.trovo.live/user/aaaaaaaaaaaaajt4adagzyktda.png?ext=png&t=0",
+      "roles": [
+        "streamer"
+      ],
+      "emotes": [
+        {
+          "id": "firedragon!",
+          "format": 3
+        }
+      ],
+      "display_name": "exampleuser",
+      "username": "exampleuser",
+      "sender_id": "107380000",
+      "text": "Test message with emote :firedragon! "
+    }
   }
 }
 ```
