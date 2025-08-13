@@ -6,7 +6,7 @@
 
 ## Description
 
-This event is triggered when a user sucessfully completes a pyramid in chat.  
+This event is triggered when an emote combo is achieved in chat.
 
 #### Payload
 
