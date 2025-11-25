@@ -1,4 +1,3 @@
-import React from 'react';
 import clsx from 'clsx'; // Optional: for conditional classes if needed
 
 // Map platform names (lowercase) to their CSS classes for styling
