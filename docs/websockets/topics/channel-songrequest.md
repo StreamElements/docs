@@ -1,6 +1,6 @@
 ---
 id: channel-songrequest
-sidebar_label: "Channel Songrequest"
+sidebar_label: "Songrequest"
 description: "Real-time songrequest events published via WebSocket for queue, player, and settings updates"
 tags:
 - websocket
@@ -16,7 +16,7 @@ keywords:
 - real-time
 ---
 
-# Channel Songrequest
+# Songrequest
 
 ## Topic
 

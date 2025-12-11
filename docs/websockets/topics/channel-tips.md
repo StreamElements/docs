@@ -1,6 +1,6 @@
 ---
 id: channel-tips
-sidebar_label: "Channel Tips"
+sidebar_label: "Tips"
 description: "Real-time updates about tips/donations on a channel through WebSocket events"
 tags:
 - websockets
@@ -13,7 +13,7 @@ keywords:
 - websocket events
 ---
 
-# Channel Tips
+# Tips
 
 ## Overview
 

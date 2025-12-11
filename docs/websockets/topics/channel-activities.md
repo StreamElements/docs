@@ -7,7 +7,7 @@ tags:
 - activities
 ---
 
-# Channel Activites
+# Activities
 
 ## Topic
 

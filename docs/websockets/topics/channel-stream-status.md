@@ -1,6 +1,6 @@
 ---
 id: channel-stream-status
-sidebar_label: "Channel Stream Status"
+sidebar_label: "Stream Status"
 description: "Real-time updates about a channel's live streaming status through WebSocket events"
 tags:
 - websockets
@@ -13,7 +13,7 @@ keywords:
 - websocket events
 ---
 
-# Channel Stream Status
+# Stream Status
 
 ## Overview
 The `channel.stream.status` topic provides real-time updates about whether a channel is currently live streaming or offline.

@@ -1,6 +1,6 @@
 ---
 id: channel-session-update
-sidebar_label: "Channel Session Update"
+sidebar_label: "Session Update"
 description: "Real-time updates to your channel session data via the Astro Websocket Gateway"
 tags:
 - api
@@ -15,7 +15,7 @@ keywords:
 - real-time update
 ---
 
-# Channel Session Update
+# Session Update
 
 ## Topic
 

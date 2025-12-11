@@ -1,6 +1,6 @@
 ---
 id: channel-overlay-update
-sidebar_label: "Channel Overlay Update"
+sidebar_label: "Overlay Update"
 description: "Real-time updates when overlay configurations change via WebSocket"
 tags:
 - websocket
@@ -14,7 +14,7 @@ keywords:
 - real-time
 ---
 
-# Channel Overlay Update
+# Overlay Update
 
 ## Topic
 

@@ -1,6 +1,6 @@
 ---
 id: channel-session-reset
-sidebar_label: "Channel Session Reset"
+sidebar_label: "Session Reset"
 description: "Receive full channel session reset notifications via the Astro Websocket Gateway"
 tags:
 - api
@@ -15,7 +15,7 @@ keywords:
 - real-time data
 ---
 
-# Channel Session Reset
+# Session Reset
 
 ## Topic
 

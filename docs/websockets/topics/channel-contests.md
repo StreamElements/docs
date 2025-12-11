@@ -1,6 +1,6 @@
 ---
 id: channel-contests
-sidebar_label: "Channel Contests"
+sidebar_label: "Contests"
 description: "Real-time contest and prediction events published via WebSocket"
 tags:
 - websocket
@@ -16,7 +16,7 @@ keywords:
 - real-time
 ---
 
-# Channel Contests
+# Contests
 
 ## Topic
 

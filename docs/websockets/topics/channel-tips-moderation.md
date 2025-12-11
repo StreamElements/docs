@@ -1,6 +1,6 @@
 ---
 id: channel-tips-moderation
-sidebar_label: "Channel Tips Moderation"
+sidebar_label: "Tips Moderation"
 description: "Real-time updates about tip moderation status changes through WebSocket events"
 tags:
 - websockets
@@ -13,7 +13,7 @@ keywords:
 - websocket events
 ---
 
-# Channel Tips Moderation
+# Tips Moderation
 
 ## Overview
 

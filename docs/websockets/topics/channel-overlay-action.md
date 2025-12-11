@@ -1,6 +1,6 @@
 ---
 id: channel-overlay-action
-sidebar_label: "Channel Overlay Action"
+sidebar_label: "Overlay Action"
 description: "Real-time updates for channel overlay actions via WebSocket"
 tags:
 - websocket
@@ -15,7 +15,7 @@ keywords:
 - real-time data
 ---
 
-# Channel Overlay Action
+# Overlay Action
 
 ## Overview
 

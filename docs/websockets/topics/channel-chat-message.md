@@ -1,6 +1,6 @@
 ---
 id: channel-chat-message
-sidebar_label: "Channel Chat Message"
+sidebar_label: "Chat Message"
 description: "Real-time updates about chat messages on a channel through WebSocket events"
 tags:
 - websockets
@@ -11,7 +11,7 @@ keywords:
 - websocket events
 ---
 
-# Channel Chat Message
+# Chat Message
 
 ## Overview
 

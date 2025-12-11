@@ -1,6 +1,6 @@
 ---
 id: channel-giveaway
-sidebar_label: "Channel Giveaway"
+sidebar_label: "Giveaways"
 description: "Real-time updates for channel giveaways via WebSocket"
 tags:
 - websocket
@@ -14,7 +14,7 @@ keywords:
 - real-time data
 ---
 
-# Channel Giveaway
+# Giveaways
 
 ## Topic
 
