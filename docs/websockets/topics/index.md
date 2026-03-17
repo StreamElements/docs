@@ -29,8 +29,9 @@ This section provides documentation for the various topics available for subscri
 | [Channel Activities](./channel-activities.md)           | Receive notifications for channel activities like follows, subscriptions, and donations |
 | [Channel Contests](./channel-contests.md)               | Receive notifications about contest and prediction events                               |
 | [Channel Giveaway](./channel-giveaway.md)               | Receive notifications about giveaway events                                             |
-| [Channel Overlay Action](./channel-overlay-action.md)   | Receive notifications about overlay actions                                             |
-| [Channel Overlay Update](./channel-overlay-update.md)   | Receive notifications about overlay updates                                             |
+| [Channel Overlay Action](./channel-overlay-action.md)       | Receive notifications about overlay actions                                             |
+| [Channel Overlay Broadcast](./channel-overlay-broadcast.md) | Receive custom broadcast events targeting overlays                                      |
+| [Channel Overlay Update](./channel-overlay-update.md)       | Receive notifications about overlay updates                                             |
 | [Channel Session Update](./channel-session-update.md)   | Receive notifications about individual session data updates                             |
 | [Channel Songrequest](./channel-songrequest.md)         | Receive notifications about songrequest events                                          |
 | [Channel Session Reset](./channel-session-reset.md)     | Receive notifications when the channel session is fully reset                           |
