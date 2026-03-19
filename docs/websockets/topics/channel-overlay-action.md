@@ -45,3 +45,4 @@ The `channel.overlay.action` topic provides real-time updates when actions are p
 - `skip`
 - `playNext`
 - `emptyHypeCup`
+- `reload`
