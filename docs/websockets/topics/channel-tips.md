@@ -32,7 +32,7 @@ Subscribe to this topic to receive updates whenever a tip/donation is completed.
     "id": "01JMFBZF7KSRDDXXV0EH7G8X6G",
     "ts": "2025-02-19T15:07:17Z",
     "type": "message",
-    "topic": "channel.tips.moderation",
+    "topic": "channel.tips",
     "room": "5ad23dcc18fff500d78c5348",
     "data": {
         "donation": {

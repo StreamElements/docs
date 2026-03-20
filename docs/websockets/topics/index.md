@@ -20,32 +20,35 @@ keywords:
 
 This section provides documentation for the various topics available for subscription through the Astro Websocket Gateway.
 
-## Available Topics
+Topics follow a dot-separated naming convention. Topics with no required scope are accessible to any authenticated token. The owner scope `*` grants access to all topics.
 
-### Channel Topics
+## All Topics
 
-| Topic                                                   | Description                                                                             |
-| ------------------------------------------------------- | --------------------------------------------------------------------------------------- |
-| [Channel Activities](./channel-activities.md)           | Receive notifications for channel activities like follows, subscriptions, and donations |
-| [Channel Contests](./channel-contests.md)               | Receive notifications about contest and prediction events                               |
-| [Channel Giveaway](./channel-giveaway.md)               | Receive notifications about giveaway events                                             |
-| [Channel Overlay Action](./channel-overlay-action.md)       | Receive notifications about overlay actions                                             |
-| [Channel Overlay Broadcast](./channel-overlay-broadcast.md) | Receive custom broadcast events targeting overlays                                      |
-| [Channel Overlay Update](./channel-overlay-update.md)       | Receive notifications about overlay updates                                             |
-| [Channel Session Update](./channel-session-update.md)   | Receive notifications about individual session data updates                             |
-| [Channel Songrequest](./channel-songrequest.md)         | Receive notifications about songrequest events                                          |
-| [Channel Session Reset](./channel-session-reset.md)     | Receive notifications when the channel session is fully reset                           |
-| [Channel Stream Status](./channel-stream-status.md)     | Receive notifications about stream status changes                                       |
-| [Channel Tips](./channel-tips.md)                       | Receive notifications about tips                                                        |
-| [Channel Tips Moderation](./channel-tips-moderation.md) | Receive notifications about tip moderation                                              |
-| [Channel Chat Message](./channel-chat-message.md)       | Receive notifications for each chat message sent on channel                             |
-
-### Chatbot Topics
-
-| Topic                                          | Description                                                   |
-| ---------------------------------------------- | ------------------------------------------------------------- |
-| [Chatbot Status](./chatbot/chatbot-status.md)  | Receive notifications about chatbot connection status changes |
-| [Timeout](./chatbot/timeout.md)                | Receive notifications when the chatbot times out a user       |
-| [Emote Combo](./chatbot/modules-emotecombo.md) | Receive notifications when emote combo triggers are activated |
-| [Pyramid](./chatbot/modules-pyramid.md)        | Receive notifications when chat pyramids are detected         |
-| [Counters](./chatbot/counters.md)              | Receive notifications when chatbot counter values change      |
+| Topic | Required Scope | Description |
+| --- | --- | --- |
+| [channel.activities](./channel-activities.md) | `activities:read` | Channel activities like follows, subscriptions, and donations |
+| `channel.announcements` | `channel:read` | Channel announcement events |
+| `channel.chatstats` | *(none)* | Chat statistics updates |
+| [channel.tips](./channel-tips.md) | `tips:read` | Tip/donation events |
+| [channel.tips.moderation](./channel-tips-moderation.md) | `tips:moderation` | Tip moderation events |
+| [channel.chat.message](./channel-chat-message.md) | `overlays:read` | Individual chat messages |
+| [channel.session.update](./channel-session-update.md) | `session:read` | Individual session data updates |
+| [channel.session.reset](./channel-session-reset.md) | `session:read` | Full session reset events |
+| [channel.chatbot.status](./chatbot/chatbot-status.md) | `bot:read` | Chatbot connection status changes |
+| [channel.chatbot.modules.pyramid](./chatbot/modules-pyramid.md) | `bot:read` | Chat pyramid detection events |
+| [channel.chatbot.modules.emotecombo](./chatbot/modules-emotecombo.md) | `bot:read` | Emote combo trigger events |
+| `channel.chatbot.modules` | `bot:read` | General chatbot module updates |
+| `channel.chatbot.commands` | `bot:read` | Chatbot command updates |
+| `channel.chatbot.timers` | `bot:read` | Chatbot timer updates |
+| [channel.chatbot.counters](./chatbot/counters.md) | *(none)* | Chatbot counter value changes |
+| `channel.chatbot.filters` | `bot:read` | Chatbot filter updates |
+| [channel.stream.status](./channel-stream-status.md) | `stream-live:read` | Stream online/offline status changes |
+| [channel.overlay.action](./channel-overlay-action.md) | `overlays:read` | Overlay action events (pause, mute, skip, etc.) |
+| [channel.overlay.broadcast](./channel-overlay-broadcast.md) | `overlays:broadcast` | Custom broadcast events targeting overlays |
+| [channel.overlay.update](./channel-overlay-update.md) | `overlays:read` | Overlay update notifications |
+| `channel.kvstore.update` | `kvstore:read` | Key-value store update events |
+| [channel.songrequest](./channel-songrequest.md) | `overlays:read` | Song request events |
+| [channel.contests](./channel-contests.md) | *(none)* | Contest and prediction events |
+| [channel.giveaways](./channel-giveaway.md) | *(none)* | Giveaway events |
+| `channel.loyalty.redemptions` | `store:read` | Loyalty store redemption events |
+| `channel.loyalty.items` | `store:read` | Loyalty store item updates |
