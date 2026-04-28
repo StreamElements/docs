@@ -44,7 +44,7 @@ const config: Config = {
 
   themes: ['@docusaurus/theme-mermaid'],
 
-  plugins: [],
+  plugins: ['docusaurus-plugin-copy-page-button'],
 
   presets: [
     [
