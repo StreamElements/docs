@@ -1,0 +1,115 @@
+---
+/**
+ * The changelog timeline: date rail on the left, accent dot + connector
+ * line, full entry body inline (Cloudflare developers changelog style).
+ */
+import { render } from 'astro:content';
+import { formatDate, type ChangelogEntry } from '../../data/changelog';
+import ProductPills from './ProductPills.astro';
+
+interface Props {
+  entries: ChangelogEntry[];
+}
+
+const { entries } = Astro.props;
+
+const rendered = await Promise.all(
+  entries.map(async (entry) => ({ entry, Content: (await render(entry)).Content })),
+);
+---
+
+<div class="changelog-list">
+  {
+    rendered.map(({ entry, Content }) => (
+      <article class="changelog-entry">
+        <div class="changelog-date">
+          <time datetime={entry.data.date.toISOString().slice(0, 10)}>{formatDate(entry.data.date)}</time>
+        </div>
+        <div class="changelog-body">
+          <h2 class="changelog-title">
+            <a href={`/changelog/post/${entry.slug}/`}>{entry.data.title}</a>
+          </h2>
+          <ProductPills products={entry.data.products} />
+          <div class="changelog-content sl-markdown-content">
+            <Content />
+          </div>
+        </div>
+      </article>
+    ))
+  }
+</div>
+
+<style>
+  .changelog-list {
+    margin-top: 2rem;
+  }
+  .changelog-entry {
+    display: grid;
+    grid-template-columns: 7.5rem 1fr;
+  }
+  .changelog-date {
+    padding-inline-end: 1.75rem;
+    padding-top: 0.2rem;
+    text-align: right;
+    font-size: var(--sl-text-xs);
+    font-weight: 700;
+    color: var(--sl-color-gray-3);
+    white-space: nowrap;
+  }
+  .changelog-body {
+    position: relative;
+    border-inline-start: 1px solid var(--sl-color-gray-5);
+    padding-inline-start: 2rem;
+    padding-bottom: 3.5rem;
+    min-width: 0;
+  }
+  /* Timeline dot, ringed so the connector line doesn't touch it */
+  .changelog-body::before {
+    content: '';
+    position: absolute;
+    inset-inline-start: -6px;
+    top: 0.45rem;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background-color: var(--sl-color-accent);
+    box-shadow: 0 0 0 3px var(--sl-color-black);
+  }
+  .changelog-entry:last-child .changelog-body {
+    padding-bottom: 1rem;
+  }
+  .changelog-title {
+    margin: 0;
+    font-size: var(--sl-text-2xl);
+    letter-spacing: -0.015em;
+    line-height: var(--sl-line-height-headings);
+  }
+  .changelog-title a {
+    color: var(--sl-color-white);
+    text-decoration: none;
+  }
+  .changelog-title a:hover {
+    text-decoration: underline;
+  }
+  .changelog-content {
+    overflow-x: auto;
+  }
+
+  @media (max-width: 640px) {
+    .changelog-entry {
+      grid-template-columns: 1fr;
+    }
+    .changelog-date {
+      text-align: left;
+      padding-inline-start: 2rem;
+      margin-bottom: 0.4rem;
+    }
+    .changelog-date,
+    .changelog-body {
+      border-inline-start: 1px solid var(--sl-color-gray-5);
+    }
+    .changelog-date {
+      border-inline-start-color: transparent;
+    }
+  }
+</style>

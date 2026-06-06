@@ -1,0 +1,78 @@
+---
+title: Raffle Module
+sidebar:
+  label: Raffle
+description: "Commands, usage, and multi-winner scaling for the StreamElements Raffle module, used for giveaways and selecting participants."
+keywords:
+- StreamElements raffle
+- Twitch giveaway
+- viewer engagement
+- stream interaction
+- chatbot commands
+- multi-winner raffle
+- interactive stream games
+- StreamElements modules
+---
+
+import ChatExample from '@components/ChatExample.astro';
+
+The Raffle module is an interactive chat game that allows streamers to engage their audience. Moderators can initiate a raffle, and viewers can join for a chance to win. This feature is great for giveaways, selecting participants for games, or simply adding fun interaction to your stream.
+
+## How It Works
+
+1. A moderator starts the raffle using `!raffle` or `!sraffle`.
+2. Viewers join the raffle by typing `!join` in chat.
+3. After a set time, the raffle ends, and winner(s) are randomly selected.
+4. The winner(s) are announced in chat.
+
+## Examples
+
+Single-winner raffle:
+
+<ChatExample messages={[
+  { persona: 'moderator', message: '!sraffle' },
+  { persona: 'bot', message: 'A raffle has started! Type !join to enter.' },
+  { persona: 'user', usernameOverride: 'Viewer1', message: '!join' },
+  { persona: 'user', usernameOverride: 'Viewer2', message: '!join' },
+  { persona: 'bot', message: 'The raffle has ended. The winner is Viewer2!' }
+]} />
+
+Multi-winner raffle:
+
+<ChatExample messages={[
+  { persona: 'moderator', message: '!raffle' },
+  { persona: 'bot', message: 'A multi-winner raffle has started! Type !join to enter.' },
+  { persona: 'system', message: 'Multiple viewers join the raffle.' },
+  { persona: 'bot', message: 'The raffle has ended. The winners are Viewer3, Viewer7, and Viewer12!' }
+]} />
+
+## Parameters
+
+- `!raffle [points] [duration]`: Start a multi-winner raffle. Optional points and duration in seconds (default is 5000 points and 60 seconds).
+- `!sraffle [points] [duration]`: Start a single-winner raffle. Optional points and duration in seconds (default is 5000 points and 60 seconds).
+
+## Related Commands
+
+- [`!raffle`](/chatbot/commands/default/raffle/): Starts a multi-winner raffle.
+- [`!sraffle`](/chatbot/commands/default/sraffle/): Starts a single-winner raffle.
+- [`!join`](/chatbot/commands/default/join/): Used by viewers to enter an ongoing raffle.
+- [`!ticket`](/chatbot/commands/default/ticket/): Used by viewers to purchase tickets for giveaways with loyalty points.
+- [`!cancelraffle`](/chatbot/commands/default/cancelraffle/): Cancels the current raffle (moderators only).
+
+## FAQ
+
+**Q: How are winners determined in multi-winner raffles?**
+A: The number of winners scales based on the number of participants:
+
+- Over 200 participants: 1 winner per 20 entrants
+- 51-200 participants: 1 winner per 8 entrants
+- 21-50 participants: 1 winner per 5 entrants
+- 11-20 participants: 1 winner per 4 entrants
+- 2-10 participants: Half the participants win (rounded down)
+- 1 participant: That participant wins
+
+**Q: Can I customize the raffle duration?**
+A: Yes, you can specify the duration in seconds when starting a raffle, e.g., `!raffle 5000 120` for a 5000 point raffle that runs for 2 minutes.
+
+**Q: How do I prevent the same person from winning multiple times?**
+A: The Raffle module automatically ensures that each participant can only win once per raffle.

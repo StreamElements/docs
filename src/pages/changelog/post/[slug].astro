@@ -1,0 +1,137 @@
+---
+import { render } from 'astro:content';
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import { Icon } from '@astrojs/starlight/components';
+import { getChangelog, formatDate, type ChangelogEntry } from '../../../data/changelog';
+import ProductPills from '../../../components/changelog/ProductPills.astro';
+
+export async function getStaticPaths() {
+  const entries = await getChangelog();
+  return entries.map((entry, i) => ({
+    params: { slug: entry.slug },
+    // Entries are sorted newest-first: "newer" is the previous index.
+    props: { entry, newer: entries[i - 1] ?? null, older: entries[i + 1] ?? null },
+  }));
+}
+
+interface Props {
+  entry: ChangelogEntry;
+  newer: ChangelogEntry | null;
+  older: ChangelogEntry | null;
+}
+
+const { entry, newer, older } = Astro.props;
+const { Content } = await render(entry);
+---
+
+<StarlightPage
+  frontmatter={{
+    title: entry.data.title,
+    description: entry.data.description,
+    template: 'splash',
+    tableOfContents: false,
+    editUrl: false,
+    lastUpdated: entry.data.date,
+    head: [
+      {
+        tag: 'link',
+        attrs: {
+          rel: 'alternate',
+          type: 'application/rss+xml',
+          title: 'StreamElements Changelog',
+          href: '/changelog/rss.xml',
+        },
+      },
+    ],
+  }}
+>
+  <div class="changelog-post not-content">
+    <p class="back-link"><a href="/changelog/">&larr; Back to the changelog</a></p>
+    <p class="post-date">
+      <time datetime={entry.data.date.toISOString().slice(0, 10)}>{formatDate(entry.data.date)}</time>
+    </p>
+    <ProductPills products={entry.data.products} />
+    <div class="sl-markdown-content">
+      <Content />
+    </div>
+    {
+      (newer || older) && (
+        <nav class="post-pager" aria-label="Changelog entries">
+          {older ? (
+            <a class="pager-link" href={`/changelog/post/${older.slug}/`} rel="prev">
+              <Icon name="left-arrow" />
+              <span>
+                <small>Older</small>
+                {older.data.title}
+              </span>
+            </a>
+          ) : (
+            <span />
+          )}
+          {newer && (
+            <a class="pager-link pager-next" href={`/changelog/post/${newer.slug}/`} rel="next">
+              <span>
+                <small>Newer</small>
+                {newer.data.title}
+              </span>
+              <Icon name="right-arrow" />
+            </a>
+          )}
+        </nav>
+      )
+    }
+  </div>
+</StarlightPage>
+
+<style>
+  .changelog-post {
+    max-width: 50rem;
+    margin-inline: auto;
+  }
+  .back-link {
+    margin-top: 1rem;
+  }
+  .back-link a {
+    color: var(--sl-color-accent-high);
+    text-decoration: none;
+    font-size: var(--sl-text-sm);
+  }
+  .back-link a:hover {
+    text-decoration: underline;
+  }
+  .post-date {
+    font-size: var(--sl-text-xs);
+    font-weight: 700;
+    color: var(--sl-color-gray-3);
+    margin-bottom: 0.25rem;
+  }
+  .post-pager {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--sl-color-gray-5);
+  }
+  .pager-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    max-width: 48%;
+    color: var(--sl-color-white);
+    text-decoration: none;
+    font-size: var(--sl-text-sm);
+  }
+  .pager-link small {
+    display: block;
+    color: var(--sl-color-gray-3);
+    font-size: var(--sl-text-xs);
+  }
+  .pager-link:hover span {
+    text-decoration: underline;
+  }
+  .pager-next {
+    text-align: right;
+    margin-inline-start: auto;
+  }
+</style>

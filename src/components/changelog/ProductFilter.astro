@@ -1,0 +1,60 @@
+---
+/**
+ * Product filter dropdown. Each option is a statically built filtered
+ * feed page — selecting simply navigates (Cloudflare's approach, minus
+ * the react-select dependency).
+ */
+import { PRODUCTS, getActiveProductIds, type ProductId } from '../../data/changelog';
+
+interface Props {
+  current?: ProductId;
+}
+
+const { current } = Astro.props;
+const activeIds = await getActiveProductIds();
+---
+
+<label class="product-filter">
+  <span>Product:</span>
+  <select data-changelog-filter>
+    <option value="/changelog/" selected={!current}>All products</option>
+    {
+      activeIds.map((id) => (
+        <option value={`/changelog/product/${id}/`} selected={current === id}>
+          {PRODUCTS[id].name}
+        </option>
+      ))
+    }
+  </select>
+</label>
+
+<script>
+  document.querySelectorAll<HTMLSelectElement>('[data-changelog-filter]').forEach((select) => {
+    select.addEventListener('change', () => {
+      window.location.href = select.value;
+    });
+  });
+</script>
+
+<style>
+  .product-filter {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: var(--sl-text-sm);
+    color: var(--sl-color-gray-2);
+  }
+  select {
+    padding: 0.4rem 0.6rem;
+    border: 1px solid var(--sl-color-gray-5);
+    border-radius: 0.5rem;
+    background-color: var(--sl-color-black);
+    color: var(--sl-color-white);
+    font-size: var(--sl-text-sm);
+    cursor: pointer;
+  }
+  select:focus-visible {
+    outline: 2px solid var(--sl-color-accent);
+    outline-offset: 1px;
+  }
+</style>

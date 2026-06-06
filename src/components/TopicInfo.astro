@@ -1,0 +1,62 @@
+---
+/**
+ * Info row for WebSocket topic pages, driven by `topic` / `scope` / `status`
+ * frontmatter. Rendered automatically via the PageTitle override.
+ */
+import { Badge } from '@astrojs/starlight/components';
+
+interface Props {
+  topic: string;
+  scope?: string | undefined;
+  status?: 'stable' | 'in-development' | undefined;
+}
+
+const { topic, scope, status } = Astro.props;
+---
+
+<dl class="topic-info not-content">
+  <div>
+    <dt>Topic</dt>
+    <dd><code>{topic}</code></dd>
+  </div>
+  {
+    scope && (
+      <div>
+        <dt>Scope</dt>
+        <dd>
+          <code>{scope}</code>
+        </dd>
+      </div>
+    )
+  }
+  {status === 'in-development' && <Badge text="In development" variant="caution" />}
+</dl>
+
+<style>
+  .topic-info {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem 1.5rem;
+    margin-top: 0.75rem;
+    padding: 0.6rem 0.9rem;
+    border: 1px solid var(--sl-color-gray-5);
+    border-radius: 0.5rem;
+    background-color: var(--sl-color-gray-6);
+  }
+  .topic-info > div {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+  }
+  dt {
+    font-size: var(--sl-text-xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--sl-color-gray-3);
+  }
+  dd {
+    margin: 0;
+  }
+</style>

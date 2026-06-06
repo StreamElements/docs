@@ -1,0 +1,99 @@
+---
+/**
+ * Shared shell for the main feed and the per-product filtered feeds:
+ * Starlight splash hero (title, tagline, RSS action) + filter + timeline
+ * + pagination, constrained to a readable column.
+ */
+import type { Page } from 'astro';
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import { PRODUCTS, getActiveProductIds, type ChangelogEntry, type ProductId } from '../../data/changelog';
+import ChangelogList from './ChangelogList.astro';
+import ChangelogPagination from './ChangelogPagination.astro';
+import ProductFilter from './ProductFilter.astro';
+
+interface Props {
+  page: Page<ChangelogEntry>;
+  baseUrl: string;
+  product?: ProductId;
+}
+
+const { page, baseUrl, product } = Astro.props;
+
+const title = product ? `${PRODUCTS[product].name} changelog` : 'Changelog';
+const rssHref = product ? `/changelog/rss/${product}.xml` : '/changelog/rss.xml';
+const feedProducts = await getActiveProductIds();
+---
+
+<StarlightPage
+  frontmatter={{
+    title,
+    description: 'New updates and improvements at StreamElements.',
+    template: 'splash',
+    tableOfContents: false,
+    hero: {
+      tagline: 'New updates and improvements at StreamElements.',
+      actions: [
+        { text: 'Subscribe via RSS', link: rssHref, icon: 'rss', variant: 'secondary' },
+      ],
+    },
+    editUrl: false,
+    lastUpdated: false,
+    pagefind: false,
+    head: [
+      {
+        tag: 'link',
+        attrs: {
+          rel: 'alternate',
+          type: 'application/rss+xml',
+          title: `${title} | StreamElements`,
+          href: rssHref,
+        },
+      },
+    ],
+  }}
+>
+  <div class="changelog-page not-content">
+    <div class="changelog-toolbar">
+      <p class="feed-links">
+        Feeds: <a href="/changelog/rss.xml">All</a>
+        {feedProducts.map((id) => (
+          <a href={`/changelog/rss/${id}.xml`}>{PRODUCTS[id].name}</a>
+        ))}
+      </p>
+      <ProductFilter current={product} />
+    </div>
+    <ChangelogList entries={page.data} />
+    <ChangelogPagination page={page} baseUrl={baseUrl} />
+  </div>
+</StarlightPage>
+
+<style>
+  .changelog-page {
+    max-width: 50rem;
+    margin-inline: auto;
+  }
+  .changelog-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-top: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--sl-color-gray-5);
+  }
+  .feed-links {
+    margin: 0;
+    font-size: var(--sl-text-xs);
+    color: var(--sl-color-gray-3);
+  }
+  .feed-links a {
+    color: var(--sl-color-gray-2);
+    text-decoration: none;
+    margin-inline-start: 0.5rem;
+  }
+  .feed-links a:hover {
+    color: var(--sl-color-accent-high);
+    text-decoration: underline;
+  }
+</style>

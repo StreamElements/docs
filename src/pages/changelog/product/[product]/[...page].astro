@@ -1,0 +1,19 @@
+---
+import type { GetStaticPaths } from 'astro';
+import { getChangelog, PRODUCTS, PAGE_SIZE, type ProductId } from '../../../../data/changelog';
+import ChangelogFeedPage from '../../../../components/changelog/ChangelogFeedPage.astro';
+
+export const getStaticPaths = (async ({ paginate }) => {
+  const entries = await getChangelog();
+  return (Object.keys(PRODUCTS) as ProductId[]).flatMap((product) => {
+    const filtered = entries.filter((entry) => entry.data.products.includes(product));
+    if (filtered.length === 0) return [];
+    return paginate(filtered, { params: { product }, pageSize: PAGE_SIZE });
+  });
+}) satisfies GetStaticPaths;
+
+const { page } = Astro.props;
+const product = Astro.params.product as ProductId;
+---
+
+<ChangelogFeedPage page={page} baseUrl={`/changelog/product/${product}/`} product={product} />

@@ -1,0 +1,59 @@
+---
+import { PRODUCTS, type ProductId } from '../../data/changelog';
+
+interface Props {
+  products: ProductId[];
+}
+
+const { products } = Astro.props;
+---
+
+<div class="product-pills">
+  {
+    products.map((id) => (
+      <a href={PRODUCTS[id].url} class:list={['product-pill', id]}>
+        {PRODUCTS[id].name}
+      </a>
+    ))
+  }
+</div>
+
+<style>
+  .product-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin: 0.5rem 0 1rem;
+  }
+  .product-pill {
+    display: inline-block;
+    padding: 0.1em 0.6em;
+    border: 1px solid var(--pill-color, var(--sl-color-accent));
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--pill-color, var(--sl-color-accent)) 14%, transparent);
+    color: var(--sl-color-white);
+    font-size: var(--sl-text-xs);
+    font-weight: 600;
+    line-height: 1.7;
+    text-decoration: none;
+    transition: background 0.15s ease;
+  }
+  .product-pill:hover {
+    background: color-mix(in srgb, var(--pill-color, var(--sl-color-accent)) 28%, transparent);
+  }
+  .product-pill.chatbot {
+    --pill-color: #2b6cff;
+  }
+  .product-pill.overlays {
+    --pill-color: #9146ff;
+  }
+  .product-pill.websockets {
+    --pill-color: #20b2aa;
+  }
+  .product-pill.dashboard {
+    --pill-color: #ff8c00;
+  }
+  .product-pill.docs {
+    --pill-color: #76829b;
+  }
+</style>

@@ -1,0 +1,47 @@
+import { defineCollection } from 'astro:content';
+import { glob } from 'astro/loaders';
+import { z } from 'astro/zod';
+import { docsLoader } from '@astrojs/starlight/loaders';
+import { docsSchema } from '@astrojs/starlight/schema';
+
+export const collections = {
+  docs: defineCollection({
+    loader: docsLoader(),
+    schema: docsSchema({
+      extend: z.object({
+        /**
+         * Streaming platforms a command/feature supports.
+         * Rendered as badges under the page title (see PageTitle override).
+         */
+        platforms: z.array(z.enum(['twitch', 'youtube', 'trovo', 'kick'])).optional(),
+        /** SEO keywords emitted as a <meta name="keywords"> tag (see Head override). */
+        keywords: z.array(z.string()).optional(),
+        /**
+         * WebSocket topic metadata, rendered as an info row under the page
+         * title on topic pages (see PageTitle override / TopicInfo).
+         * Named wsTopic because `topic` is reserved by starlight-sidebar-topics.
+         */
+        wsTopic: z.string().optional(),
+        scope: z.string().optional(),
+        status: z.enum(['stable', 'in-development']).optional(),
+      }),
+    }),
+  }),
+
+  /**
+   * Cloudflare-style changelog. One MDX file per entry at
+   * src/content/changelog/{product}/YYYY-MM-DD-slug.mdx — the folder is the
+   * entry's primary product and is auto-added to `products` at build time.
+   */
+  changelog: defineCollection({
+    loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: './src/content/changelog' }),
+    schema: z.object({
+      title: z.string(),
+      description: z.string(),
+      date: z.coerce.date(),
+      products: z.array(z.enum(['chatbot', 'overlays', 'websockets', 'dashboard', 'docs'])).default([]),
+      /** Hide from the feed and RSS without deleting the file. */
+      hidden: z.boolean().default(false),
+    }),
+  }),
+};

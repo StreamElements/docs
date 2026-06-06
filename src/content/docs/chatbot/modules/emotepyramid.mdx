@@ -1,0 +1,64 @@
+---
+title: Emote Pyramid Module
+sidebar:
+  label: Emote Pyramid
+description: "Rules and examples for the Emote Pyramid chat game, where viewers collaboratively build pyramids of emotes in StreamElements Chatbot."
+keywords:
+- emote pyramid
+- chat game
+- StreamElements chatbot
+- viewer engagement
+- interactive stream challenge
+- Twitch chat game
+- emote-based game
+- community interaction
+---
+
+import ChatExample from '@components/ChatExample.astro';
+
+The Emote Pyramid is an engaging chat game that encourages viewer participation and creates a fun atmosphere in your stream. Players attempt to collaboratively build a pyramid of emotes in the chat, increasing the challenge and excitement as the pyramid grows.
+
+## How It Works
+
+The Emote Pyramid game doesn't require any specific commands to start. It begins organically when viewers participate by following these steps:
+
+1. A viewer initiates the game by sending a single emote in the chat.
+2. Subsequent messages should contain the same emote, with the number of repetitions increasing by one each time.
+3. The game continues until the pyramid is successfully completed or interrupted.
+
+:::note
+The pyramid is considered interrupted if:
+- Another user sends a different message.
+- The same emote is not repeated the correct number of times.
+:::
+
+## Examples
+
+### Successful Emote Pyramid
+
+<ChatExample messages={[
+  { persona: 'user', usernameOverride: 'Viewer1', message: 'PogChamp' },
+  { persona: 'user', usernameOverride: 'Viewer2', message: 'PogChamp PogChamp' },
+  { persona: 'user', usernameOverride: 'Viewer3', message: 'PogChamp PogChamp PogChamp' },
+  { persona: 'user', usernameOverride: 'Viewer4', message: 'PogChamp PogChamp PogChamp PogChamp' },
+  { persona: 'user', usernameOverride: 'Viewer5', message: 'PogChamp PogChamp PogChamp' },
+  { persona: 'user', usernameOverride: 'Viewer6', message: 'PogChamp PogChamp' },
+  { persona: 'user', usernameOverride: 'Viewer7', message: 'PogChamp' },
+  { persona: 'bot', message: 'nice 4-width PogChamp pyramid Viewer7 LUL' }
+]} />
+
+### Interrupted Emote Pyramid
+
+<ChatExample messages={[
+  { persona: 'user', usernameOverride: 'Viewer1', message: 'Kappa' },
+  { persona: 'user', usernameOverride: 'Viewer2', message: 'Kappa Kappa' },
+  { persona: 'user', usernameOverride: 'Viewer3', message: 'Kappa Kappa Kappa' },
+  { persona: 'user', usernameOverride: 'Viewer4', message: 'Nice try!' },
+  { persona: 'user', usernameOverride: 'Viewer5', message: 'Kappa Kappa Kappa Kappa' }
+]} />
+
+In this example, the pyramid was interrupted by Viewer4's message.
+
+## Configuration
+
+The Emote Pyramid feature doesn't require any specific configuration. It's an organic chat game that relies on viewer participation.

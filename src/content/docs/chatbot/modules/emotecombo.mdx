@@ -1,0 +1,58 @@
+---
+title: Emote Combo Module
+sidebar:
+  label: Emote Combo
+description: "Use the StreamElements Emote Combo module to track chains of consecutive identical emotes in stream chat and announce the combo count."
+keywords:
+- emote combo
+- chatbot
+- StreamElements
+- interactive chat
+- emote chains
+- stream interaction
+- chat games
+- Twitch emotes
+- chat features
+- streamer tools
+---
+
+import ChatExample from '@components/ChatExample.astro';
+
+The Emote Combo feature is an interactive chat module that encourages viewers to create chains of consecutive emotes. It adds a fun, engaging element to your stream by challenging viewers to maintain and extend emote streaks.
+
+## How It Works
+
+The Emote Combo feature activates automatically when viewers start sending consecutive emotes in chat:
+
+1. A viewer initiates the combo by sending a message containing a single emote.
+2. Subsequent messages must contain only the same emote to continue the combo.
+3. The combo count increases with each consecutive matching emote.
+4. The combo ends when a different emote or any other message is sent.
+
+## Example
+
+<ChatExample messages={[
+  { persona: 'user', usernameOverride: 'Viewer1', message: 'Kappa' },
+  { persona: 'user', usernameOverride: 'Viewer2', message: 'Kappa' },
+  { persona: 'user', usernameOverride: 'Viewer3', message: 'Kappa' },
+  { persona: 'user', usernameOverride: 'Viewer4', message: 'Kappa' },
+  { persona: 'user', usernameOverride: 'Viewer5', message: 'Nice stream!' },
+  { persona: 'bot', message: '4x Kappa combo' }
+]} />
+
+![Chat screenshot of a viewer sending the same emote ten messages in a row; when a different emote breaks the chain, the StreamElements bot announces a 9x emote combo.](img/emotecombo.png)
+
+## Configuration
+
+The Emote Combo feature is typically enabled by default. Streamers can customize the following settings in the StreamElements dashboard:
+
+- Minimum combo count to display
+- Custom messages for combo milestones
+
+## FAQ
+
+**Q: Can I use custom emotes for the Emote Combo?**
+A: Yes, both Twitch global emotes and channel-specific emotes work with the Emote Combo feature.
+
+**Q: Is there a limit to how long a combo can be?**
+A: No

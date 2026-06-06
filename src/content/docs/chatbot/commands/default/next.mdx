@@ -1,0 +1,59 @@
+---
+title: "!next"
+description: "Use the !next (!nextsong) command in StreamElements chatbot to see details about the next song in the media request queue."
+keywords:
+  - next command
+  - nextsong command
+  - upcoming song
+  - media request queue
+  - song queue
+  - StreamElements chatbot
+platforms: [twitch]
+---
+
+import ChatExample from '@components/ChatExample.astro';
+
+The `!next` command (aliased as `!nextsong`) allows anyone in chat to view details about the upcoming song in the StreamElements media request queue. It typically shows the song title, duration, requester, and a link.
+
+## Usage
+
+To see the next song in the queue:
+
+```streamelements
+!next
+```
+
+Or using the alias:
+
+```streamelements
+!nextsong
+```
+
+## Examples
+
+<ChatExample messages={[
+  { persona: 'user', message: '!next' },
+  { persona: 'bot', message: 'Next song: Epic Sax Guy - 10 Hours [10h0m0s] requested by SaxLover https://youtu.be/kxopViU98Xo' }
+]} />
+
+<ChatExample messages={[
+  { persona: 'user', message: '!nextsong' }, // Using alias
+  { persona: 'bot', message: 'There are no songs currently in the queue.' } // If queue is empty
+]} />
+
+## Configuration
+
+*   This command requires the **Songrequest** module to be enabled and configured in your StreamElements Dashboard (`Chatbot` -> `Modules`).
+*   The information displayed depends on the data available from YouTube for the requested track.
+
+## Aliases
+
+*   `!nextsong`
+
+## Related Commands
+
+*   [`!song`](/chatbot/commands/default/song/): Shows details about the *currently playing* song.
+*   [`!songqueue`](/chatbot/commands/default/songqueue/): Provides a link to the full media request queue.
+*   [`!songrequest`](/chatbot/commands/default/songrequest/): Allows users to request songs to add to the queue.
+*   [`!skip`](/chatbot/commands/default/skip/): (Moderator+) Skips the currently playing song.
+*   [`!removesong`](/chatbot/commands/default/removesong/): (Moderator+) Removes a specific song from the queue.

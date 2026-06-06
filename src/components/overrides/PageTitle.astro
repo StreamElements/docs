@@ -1,0 +1,15 @@
+---
+/**
+ * PageTitle override: renders the default title, then frontmatter-driven
+ * extras — platform badges (`platforms`) and websocket topic info (`topic`).
+ */
+import Default from '@astrojs/starlight/components/PageTitle.astro';
+import PlatformBadges from '../PlatformBadges.astro';
+import TopicInfo from '../TopicInfo.astro';
+
+const { platforms, wsTopic, scope, status } = Astro.locals.starlightRoute.entry.data;
+---
+
+<Default><slot /></Default>
+{platforms && platforms.length > 0 && <PlatformBadges platforms={platforms} />}
+{wsTopic && <TopicInfo topic={wsTopic} scope={scope} status={status} />}

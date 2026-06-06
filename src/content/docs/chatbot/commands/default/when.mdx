@@ -1,0 +1,54 @@
+---
+title: "!when"
+description: "Use the !when command in StreamElements chatbot to check the status and queue position of your most recent song request."
+keywords:
+  - when
+  - song request status
+  - queue position
+  - media request
+  - StreamElements chatbot
+platforms: [twitch]
+---
+
+import ChatExample from '@components/ChatExample.astro';
+
+The `!when` command allows viewers to check the status of **their most recent song request** in the media request queue. It typically provides the song's position in the queue and an estimated time until it plays.
+
+## Usage
+
+To check the status of your last song request:
+
+```streamelements
+!when
+```
+
+## Examples
+
+<ChatExample messages={[
+  { persona: 'user', message: '!when' },
+  { persona: 'bot', message: '@User, your song "The Best Song Ever" is at #4 in the queue and will play in approximately 12 minutes' } // Output varies
+]} />
+
+<ChatExample messages={[
+  { persona: 'user', message: '!when' },
+  { persona: 'bot', message: '@User, your song "Currently Playing" is at #1 in the queue and is playing right now' } // Output varies
+]} />
+
+<ChatExample messages={[
+  { persona: 'user', message: '!when' },
+  { persona: 'bot', message: '@User, you do not have a song in the queue.' } // Output varies
+]} />
+
+## Configuration
+
+*   Requires the **Media Request** module to be enabled.
+*   The command checks the queue for a request made by the user issuing the command.
+*   The response format (including estimated time) might be customizable in the Media Request module settings.
+
+## Related Commands
+
+*   [`!songrequest`](/chatbot/commands/default/songrequest/): Used to request a song.
+*   [`!wrongsong`](/chatbot/commands/default/wrongsong/): Removes your last song request.
+*   [`!songqueue`](/chatbot/commands/default/songqueue/): Provides a link to the full queue.
+*   [`!song`](/chatbot/commands/default/song/): Shows the currently playing song.
+*   [`!next`](/chatbot/commands/default/next/): Shows the next song in the queue.

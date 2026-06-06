@@ -1,0 +1,84 @@
+/* StreamElements Starlight theme */
+
+/* Typography: Inter Variable (loaded via customCss entry in astro.config.mjs). */
+:root {
+  --sl-font: 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Accent: StreamElements blue. Dark mode is the primary experience. */
+:root {
+  --sl-color-accent-low: #102a64;
+  --sl-color-accent: #2b6cff;
+  --sl-color-accent-high: #b3ccff;
+
+  /* Navy-tinted neutral ramp (dark mode) instead of stock gray. */
+  --sl-color-white: #f2f5fc;
+  --sl-color-gray-1: #d5dbe8;
+  --sl-color-gray-2: #aab4c6;
+  --sl-color-gray-3: #76829b;
+  --sl-color-gray-4: #434f66;
+  --sl-color-gray-5: #2b3447;
+  --sl-color-gray-6: #1a2130;
+  --sl-color-black: #11151f;
+}
+:root[data-theme='light'] {
+  --sl-color-accent-low: #cdddff;
+  --sl-color-accent: #1b53e0;
+  --sl-color-accent-high: #122c6e;
+}
+
+/* Inline code may wrap; block code wrapping is handled by Expressive Code
+   (expressiveCode.defaultProps.wrap in astro.config.mjs). */
+:not(pre) > code {
+  white-space: pre-wrap;
+}
+
+/* Hero pages (homepage, changelog) get a soft accent glow. */
+[data-has-hero] .main-pane {
+  background:
+    radial-gradient(ellipse 70% 45% at 50% -5%, var(--sl-color-accent-low), transparent);
+}
+[data-has-hero] .hero {
+  padding-block: 2.5rem 1.5rem;
+}
+
+/* Card polish: subtle lift + accent border on hover. */
+.card,
+.sl-link-card {
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+.card:hover,
+.sl-link-card:hover {
+  border-color: var(--sl-color-accent);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px color-mix(in srgb, var(--sl-color-accent) 12%, transparent);
+}
+
+/* StreamElements command syntax blocks keep their signature orange accent bar. */
+.expressive-code pre[data-language='streamelements'] {
+  border-inline-start: 3px solid #ff8c00;
+}
+:root[data-theme='dark'] .expressive-code pre[data-language='streamelements'] {
+  border-inline-start-color: #ffa500;
+}
+
+/* Keyboard shortcut keys. */
+kbd {
+  display: inline-block;
+  padding: 0.1em 0.45em;
+  border: 1px solid var(--sl-color-gray-4);
+  border-bottom-width: 2px;
+  border-radius: 0.35rem;
+  background-color: var(--sl-color-gray-6);
+  color: var(--sl-color-white);
+  font-family: var(--sl-font-mono, ui-monospace, monospace);
+  font-size: 0.8em;
+  line-height: 1.4;
+}
+:root[data-theme='light'] kbd {
+  background-color: var(--sl-color-gray-7, #f1f4fb);
+  color: var(--sl-color-gray-1);
+}

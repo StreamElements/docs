@@ -1,0 +1,50 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "streamelements",
+  "scopeName": "source.streamelements",
+  "patterns": [
+    {
+      "comment": "Command at line start, with optional subcommand (single rule because Oniguruma forbids the variable-length lookbehind Prism used)",
+      "match": "^(![\\w-]+)(?:\\s+(add|remove|set|enable|disable|list|help|info|start|stop|create|delete|edit|show|hide)\\b)?",
+      "captures": {
+        "1": { "name": "entity.name.function.command.streamelements" },
+        "2": { "name": "keyword.control.subcommand.streamelements" }
+      }
+    },
+    {
+      "comment": "Variable references like $(user) or ${user}",
+      "match": "\\$(?:\\{[^}]+\\}|\\([^)]+\\))",
+      "name": "variable.other.streamelements"
+    },
+    {
+      "comment": "Required parameters like <username> (entity.name.tag gets a distinct color in Starlight's default themes; variable.parameter does not)",
+      "match": "<[\\w\\s._-]+>",
+      "name": "entity.name.tag.required.streamelements"
+    },
+    {
+      "comment": "Optional parameters like [amount]",
+      "match": "\\[[\\w\\s._-]+\\]",
+      "name": "string.interpolated.optional.streamelements"
+    },
+    {
+      "comment": "Flags like --silent or -s",
+      "match": "(?<![\\w-])--?[\\w-]+",
+      "name": "entity.other.attribute-name.flag.streamelements"
+    },
+    {
+      "comment": "Special keywords (case-insensitive)",
+      "match": "(?i)\\b(true|false|all|none|random|first|last)\\b",
+      "name": "constant.language.streamelements"
+    },
+    {
+      "comment": "Numbers",
+      "match": "\\b\\d+\\b",
+      "name": "constant.numeric.streamelements"
+    },
+    {
+      "comment": "Punctuation",
+      "match": "[<>\\[\\]{}()=|,]",
+      "name": "punctuation.separator.streamelements"
+    }
+  ]
+}

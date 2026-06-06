@@ -1,0 +1,51 @@
+---
+title: "!voteskip"
+description: "Use the !voteskip command in StreamElements chatbot to allow viewers to vote for skipping the current media request (song/video)."
+keywords:
+  - voteskip
+  - skip song
+  - skip media
+  - media request
+  - chatbot commands
+  - streamelements
+platforms: [twitch, youtube, trovo, kick]
+---
+
+import ChatExample from '@components/ChatExample.astro';
+
+The `!voteskip` command allows viewers to vote towards skipping the currently playing song or video in the StreamElements media request queue. If enough votes are cast (based on streamer configuration), the current item is skipped.
+
+## Usage
+
+To cast a vote to skip the current media:
+
+```streamelements
+!voteskip
+```
+
+## Examples
+
+<ChatExample messages={[
+  { persona: 'user', message: '!voteskip' },
+  { persona: 'bot', message: '@User Skip requested! Current song will be skipped in 4 more votes!' } // Output varies based on votes needed
+]} />
+
+<ChatExample messages={[
+  { persona: 'user', message: '!voteskip' }, // Assuming this is the final vote needed
+  { persona: 'bot', message: '@User Vote to skip successful! Skipping to the next media request.' }
+]} />
+
+## Configuration
+
+*   Requires the **Media Request** module to be enabled.
+*   The **Vote Skip** feature must be enabled within the Media Request module settings on the StreamElements Dashboard.
+*   Streamers configure the **Number of votes required to skip** in the module settings.
+*   Other related settings might include cooldowns or user level restrictions for voting.
+
+## Related Commands
+
+*   [`!song`](/chatbot/commands/default/song/): Displays information about the currently playing song or media.
+*   [`!next`](/chatbot/commands/default/next/): Displays information about the next song in the queue.
+*   [`!wrongsong`](/chatbot/commands/default/wrongsong/): Allows users to remove their own song request from the queue.
+*   [`!songrequest`](/chatbot/commands/default/songrequest/): Lets viewers request songs or media to be played.
+*   [`!skip`](/chatbot/commands/default/skip/): (Moderator+) Immediately skips the current media.

@@ -1,0 +1,45 @@
+---
+title: "!join"
+description: "Use the !join command in the StreamElements chatbot to enter active raffles or giveaways started with !sraffle or, if configured, !raffle."
+platforms: [twitch, youtube, trovo, kick]
+keywords:
+  - join command
+  - enter raffle
+  - enter giveaway
+  - raffle entry
+  - chatbot commands
+  - StreamElements
+---
+
+import ChatExample from '@components/ChatExample.astro';
+
+The `!join` command allows viewers to enter an **active raffle** in the chat. Viewers use this command to participate in raffles started by moderators using either [`!sraffle`](/chatbot/commands/default/sraffle/) or [`!raffle`](/chatbot/commands/default/raffle/).
+
+## Usage
+
+To enter the currently active raffle, simply type:
+
+```streamelements
+!join
+```
+
+There are **no parameters** for this command.
+
+## Examples
+
+**Entering a raffle (`!sraffle`):**
+<ChatExample messages={[
+  { persona: 'moderator', message: '!sraffle' },
+  { persona: 'bot', message: 'A raffle has begun! Enter by typing "!join". It will end in 60 seconds.' }, // Example bot message
+  { persona: 'user', message: '!join' },
+]} />
+
+## Configuration
+
+*   The **Raffle module** must be enabled in your StreamElements dashboard (`Chatbot` -> `Modules` -> `Raffle`).
+
+## Related Commands
+
+*   [`!sraffle`](/chatbot/commands/default/sraffle/): Starts a standard, single-entry raffle.
+*   [`!raffle`](/chatbot/commands/default/raffle/): Starts a points-based raffle where viewers spend points to enter (entry via `!ticket` or `!join`).
+*   [`!cancelraffle`](/chatbot/commands/default/cancelraffle/): Cancels the active raffle.

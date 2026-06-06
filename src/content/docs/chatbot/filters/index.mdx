@@ -1,0 +1,57 @@
+---
+title: Spam Filters
+sidebar:
+  label: Overview
+  order: 0
+description: "StreamElements Chatbot spam filters automatically remove unwanted chat messages: banned words, excessive caps, emotes, links, long paragraphs, and symbols."
+keywords:
+- chatbot spam filters
+- twitch chat moderation
+- stream security
+- message filtering
+- banned words list
+---
+
+import { CardGrid, LinkCard, Steps } from '@astrojs/starlight/components';
+
+Spam filters are essential tools for maintaining a clean and enjoyable chat environment during your streams. StreamElements Chatbot offers various types of filters to help you automatically moderate messages and protect your chat from unwanted content.
+
+## Usage
+
+To use spam filters, you need to enable and configure them in your StreamElements dashboard. Once set up, the filters will automatically scan incoming messages and take action based on your settings.
+
+## Configuration
+
+To configure spam filters:
+
+<Steps>
+
+1. Log in to your StreamElements dashboard
+2. Navigate to the Chatbot section
+3. Select "Spam Filters" from the menu
+4. Choose the filter type you want to set up
+5. Adjust the settings according to your preferences
+6. Save your changes
+
+</Steps>
+
+## Settings shared by all filters
+
+In addition to its own thresholds, every filter supports these common settings:
+
+| Setting | Description |
+|---------|-------------|
+| Timeout duration | The duration (in seconds) for which a user will be timed out if their message violates the filter's limits. |
+| Custom timeout message | The message that will be displayed when a user is timed out due to a violation. It can be customized to provide specific information about the violation and the timeout. |
+| Excluded user groups | The user groups that are exempt from the filter. Messages from users in these groups will not be checked by the filter. |
+
+## Available Filters
+
+<CardGrid>
+  <LinkCard title="Banned Words" href="/chatbot/filters/bannedwords/" description="Remove messages containing banned phrases and regular expression patterns." />
+  <LinkCard title="Caps" href="/chatbot/filters/caps/" description="Limit excessive use of capital letters in chat messages." />
+  <LinkCard title="Emotes" href="/chatbot/filters/emotes/" description="Limit the number of emotes allowed in a single message." />
+  <LinkCard title="Links" href="/chatbot/filters/links/" description="Control link posting in chat with allowlists and blocklists." />
+  <LinkCard title="Paragraph" href="/chatbot/filters/paragraph/" description="Limit the maximum length of chat messages." />
+  <LinkCard title="Symbol" href="/chatbot/filters/symbol/" description="Limit the number and percentage of symbols in chat messages." />
+</CardGrid>

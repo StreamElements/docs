@@ -1,0 +1,53 @@
+---
+title: "!enablesfx"
+description: "Use the !enablesfx command in StreamElements chatbot to quickly re-enable all sound effect (SFX) items in your loyalty store."
+platforms: [twitch, youtube, trovo, kick]
+keywords:
+  - enablesfx command
+  - enable sound effects
+  - enable sfx
+  - loyalty store
+  - stream store
+  - streamelements chatbot
+  - store management
+---
+
+import ChatExample from '@components/ChatExample.astro';
+
+The `!enablesfx` command allows streamers and moderators to quickly re-enable all **sound effect** (SFX) items in the StreamElements loyalty store that were previously disabled (e.g., using `!disablesfx`).
+
+## Usage
+
+To enable all SFX store items, use the following command in chat:
+
+```streamelements
+!enablesfx
+```
+
+:::caution[Permissions]
+By default, only users with **Moderator** permission level or higher can use this command.
+:::
+
+## Examples
+
+<ChatExample messages={[
+  { persona: 'moderator', message: '!enablesfx' },
+  { persona: 'bot', message: '@Moderator, successfully updated 5 items. (SFX store opened)' } // Assuming 5 SFX items were previously disabled
+]} />
+
+<ChatExample messages={[
+  { persona: 'broadcaster', message: '!enablesfx' },
+  { persona: 'bot', message: '@Broadcaster, No disabled SFX store items found.' } // If no SFX items were disabled
+]} />
+
+## Configuration
+
+*   The `!enablesfx` command requires the **Stream Store** module to be active and configured with SFX items. Manage this in your **StreamElements Dashboard** under `Loyalty` -> `Stream Store`.
+*   The command's permission level can be adjusted under `Chatbot` -> `Chat Commands` -> `Default Commands`.
+
+## Related Commands
+
+*   [`!disablesfx`](/chatbot/commands/default/disablesfx/): Disables all sound effect (SFX) items in the loyalty store.
+*   [`!closestore`](/chatbot/commands/default/closestore/): Disables all *regular* (non-SFX) items in the loyalty store.
+*   [`!openstore`](/chatbot/commands/default/openstore/): Enables all *regular* (non-SFX) items in the loyalty store.
+*   [`!redeem`](/chatbot/commands/default/redeem/): Allows viewers to redeem store items.

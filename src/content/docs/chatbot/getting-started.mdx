@@ -1,0 +1,83 @@
+---
+title: Getting Started
+description: "Get started with the StreamElements Chatbot: create your first custom command and set up your first automated timer."
+keywords:
+  - StreamElements custom commands
+  - Twitch chatbot commands
+  - create chatbot commands
+  - StreamElements bot setup
+  - Twitch stream interaction
+  - custom chat commands
+  - StreamElements tutorial
+  - chatbot configuration
+  - StreamElements timers
+  - Twitch chat automation
+  - automated chat messages
+  - timed announcements
+---
+
+import { Steps } from '@astrojs/starlight/components';
+
+This guide walks you through the two most common ways to put the StreamElements Chatbot to work: creating your first custom command and setting up your first timer.
+
+## Your first command
+
+Commands are the main way users will interact with the bot in your chat. They can be used to trigger actions, or to display information to your users. In this example we will create a command that will display the amount of time that has past since a user was last seen in chat.
+
+<Steps>
+
+1. From the [bot command dashboard](https://streamelements.com/dashboard/bot/commands), navigate to the "Custom Commands" tab.
+
+2. Click the "Add New Command" button to open the command creation tool.
+
+   ![Step 1](img/step_1.png "Step 1")
+
+3. Enter the desired name for your new command. For this example we will name the command "lastseen".
+
+4. Optional: In the "Response Type" dropdown, select the method you would like the bot to use to send the response.
+   - "Say" will send the response as a chat message as it is entered in the basic settings.
+   - "Mention" will send the response as a chat message, but will prefix the message with [`@$(user),`](/chatbot/variables/sender/).
+   - "Reply" will send the response as a native reply to the user who triggered the command.
+     - NOTE: If the platform does not support native replies, the response will be sent as a "Mention" instead.
+   - "Whisper" will send the response as a whisper to the user who triggered the command.
+
+5. Add your desired response. For a list of all available variables, see the [variables documentation](/chatbot/variables/).
+
+   ![Step 2](img/step_2.png "Step 2")
+
+6. Optional: Add one or more command aliases to allow users to trigger the same command using alternate names.
+
+7. Click the "Activate Command" button to save your new command.
+
+   ![Step 3](img/step_3.png "Step 3")
+
+</Steps>
+
+## Your first timer
+
+Timers allow you to automatically post announcements, social links, schedules, or any other messages at regular intervals in your chat.
+
+<Steps>
+
+1. From the [bot timers dashboard](https://streamelements.com/dashboard/bot/timers), click the "ADD NEW TIMER" button in the top right corner.
+
+2. In the expanded timer settings, enter a name for your timer in the "Timer name" field.
+
+3. Enter the message you want the timer to post in the "Enter a message" field.
+
+4. Set the "Online interval" in minutes. This is how often the timer will post when your stream is live.
+
+5. Click the "ACTIVATE TIMER" button at the bottom of the timer settings.
+
+6. The timer will now appear in your list of timers, where you can enable/disable it using the toggle switch.
+
+</Steps>
+
+For the remaining settings — chat lines, multiple messages, and stream title or category conditions — see the [Timers](/chatbot/timers/) reference.
+
+## Next steps
+
+- Learn more about creating and managing [custom commands](/chatbot/commands/custom/).
+- Browse all available [variables](/chatbot/variables/) you can use in responses.
+- Read the [Timers](/chatbot/timers/) reference for a full overview of timer settings.
+- Explore [Modules](/chatbot/modules/) and [Spam Filters](/chatbot/filters/) to take your chatbot further.

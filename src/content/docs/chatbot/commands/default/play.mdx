@@ -1,0 +1,60 @@
+---
+title: "!play"
+description: "Use the !play (!resume, !unpause) command in StreamElements chatbot to resume paused media request playback."
+keywords:
+  - play command
+  - resume command
+  - unpause command
+  - resume song
+  - resume media request
+  - streamelements chatbot
+platforms: [twitch, youtube, trovo, kick]
+---
+
+import ChatExample from '@components/ChatExample.astro';
+
+The `!play` command (aliased as `!resume` and `!unpause`) resumes the playback of the StreamElements media request queue after it has been stopped by the [`!pause`](/chatbot/commands/default/pause/) command.
+
+## Usage
+
+To resume playback:
+
+```streamelements
+!play
+```
+
+Or using aliases:
+
+```streamelements
+!resume
+!unpause
+```
+
+:::caution[Permissions]
+By default, only users with **Moderator** permission level or higher can use this command.
+:::
+
+## Examples
+
+<ChatExample messages={[
+  // Assume playback was paused previously
+  { persona: 'moderator', message: '!play' },
+  { persona: 'bot', message: '@Moderator, Media request playback resumed!' }
+]} />
+
+## Configuration
+
+*   The command's permission level can be adjusted under `Chatbot` -> `Chat Commands` -> `Default Commands`.
+
+## Aliases
+
+*   `!resume`
+*   `!unpause`
+
+## Related Commands
+
+*   [`!pause`](/chatbot/commands/default/pause/): Pauses the current media playback.
+*   [`!skip`](/chatbot/commands/default/skip/): Skips the currently playing media item.
+*   [`!volume`](/chatbot/commands/default/volume/): Adjusts the volume of the media player.
+*   [`!songrequest`](/chatbot/commands/default/songrequest/): Adds a song/video to the queue.
+*   [`!songqueue`](/chatbot/commands/default/songqueue/): Provides a link to the media queue page.

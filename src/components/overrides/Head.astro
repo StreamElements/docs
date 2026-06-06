@@ -1,0 +1,12 @@
+---
+/**
+ * Head override: emits a <meta name="keywords"> tag for pages that
+ * declare `keywords` in their frontmatter (carried over from Docusaurus).
+ */
+import Default from '@astrojs/starlight/components/Head.astro';
+
+const { keywords } = Astro.locals.starlightRoute.entry.data;
+---
+
+<Default><slot /></Default>
+{keywords && keywords.length > 0 && <meta name="keywords" content={keywords.join(', ')} />}
