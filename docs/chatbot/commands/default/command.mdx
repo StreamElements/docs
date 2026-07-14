@@ -105,15 +105,20 @@ Changes the response text of an existing custom command.
 
 ### alias
 
-Shows the aliases associated with a specific command, or adds a new alias to it.
+Shows the aliases associated with a specific command, or adds/removes an alias.
 
 **Syntax:**
 ```streamelements
 !command alias !*command_name*
 !command alias add !*command_name* !*alias_name*
+!command alias remove !*command_name* !*alias_name*
 ```
 
-**Example:**
+:::info Note
+Listing aliases only works with the original command name, not with one of its aliases.
+:::
+
+**Example (listing aliases):**
 <ChatExample messages={[
   { persona: 'moderator', message: '!command alias !socials' },
   { persona: 'bot', message: '@Moderator, Command !socials has aliases: !links, !connect' }
@@ -123,6 +128,12 @@ Shows the aliases associated with a specific command, or adds a new alias to it.
 <ChatExample messages={[
   { persona: 'moderator', message: '!command alias add !socials !links' },
   { persona: 'bot', message: '@Moderator, successfully added alias !links to command !socials.' }
+]} />
+
+**Example (removing an alias):**
+<ChatExample messages={[
+  { persona: 'moderator', message: '!command alias remove !socials !links' },
+  { persona: 'bot', message: '@Moderator, successfully removed alias !links from command !socials.' }
 ]} />
 
 ### show
@@ -199,8 +210,8 @@ When using the `!command options` subcommand, you specify settings using flags f
 *   **Can I make a command respond with a whisper instead of a public message?**
     Yes, use the `options` subcommand with the `-type` parameter: `!command options !<command_name> -type whisper`. Note that whisper functionality depends on the chat platform.
 
-*   **How do I add an alias to a command via chat?**
-    Use the `alias` subcommand with `add`: `!command alias add !<command_name> !<alias_name>`.
+*   **How do I add or remove a command alias via chat?**
+    Use the `alias` subcommand with `add` or `remove`: `!command alias add !<command_name> !<alias_name>` or `!command alias remove !<command_name> !<alias_name>`.
 
 *   **I'm a moderator, but `!command add` isn't working. Why?**
     Double-check that the `!command` default command itself hasn't been disabled or had its permission level changed from the default (Moderator). You can check its settings in the `Default Commands` section of your StreamElements Dashboard.
