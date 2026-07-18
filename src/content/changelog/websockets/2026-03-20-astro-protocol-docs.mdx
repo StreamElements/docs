@@ -1,0 +1,10 @@
+---
+title: WebSocket docs overhauled to match the Astro protocol spec
+description: The WebSocket documentation now covers the full Astro gateway protocol, including connection lifecycle, heartbeat, reconnect tokens, and error codes.
+date: 2026-03-20
+products: [docs]
+---
+
+The [WebSocket documentation](/websockets/) has been overhauled to match the protocol spec of Astro, StreamElements' dedicated pubsub websocket gateway.
+
+The docs now cover the full connection lifecycle — the welcome message on connect, the server-side heartbeat (PING frames every 30 seconds, with a 70-second pong timeout), reconnect tokens for resuming after a graceful shutdown, and the error codes returned when the server is draining or the connection rate limit is exceeded.

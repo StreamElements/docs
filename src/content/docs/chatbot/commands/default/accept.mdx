@@ -1,0 +1,62 @@
+---
+title: "!accept"
+description: "Use the !accept command to accept pending duel challenges initiated with the !duel command in StreamElements chatbot."
+platforms: [twitch]
+keywords:
+  - accept command
+  - duel command
+  - chatbot games
+  - streamelements chatbot
+  - accept challenge
+---
+
+import ChatExample from '@components/ChatExample.astro';
+
+The `!accept` command allows users to accept pending duel requests initiated by the [`!duel`](/chatbot/commands/default/duel/) command. A duel request must be accepted within **2 minutes**, otherwise it expires. Once accepted, the duel resolves immediately: the winner is decided by a 50/50 coin flip, gaining the wagered points while the loser loses them.
+
+## Usage
+
+To use the `!accept` command, simply type it in the chat when you have a pending duel request.
+
+```streamelements
+!accept
+```
+
+## Examples
+
+<ChatExample
+    messages={[
+        {
+            username: "Challenger",
+            message: "!duel TargetUser 100"
+        },
+        {
+            username: 'StreamElements',
+            message: '@TargetUser, @Challenger wants to duel you for 100 points, you can !accept or !deny within 2 minutes',
+            userColor: '#5B99FF',
+            badges: ['partner', 'moderator'],
+            isBot: true
+        },
+        {
+            username: "TargetUser",
+            message: "!accept"
+        },
+        {
+            username: 'StreamElements',
+            message: 'TargetUser won the Duel vs Challenger PogChamp',
+            userColor: '#5B99FF',
+            badges: ['partner', 'moderator'],
+            isBot: true
+        }
+    ]}
+/>
+
+## Configuration
+
+The `!accept` command is part of the **Duel module**. This module must be enabled in your StreamElements chatbot settings under `Chatbot` -> `Modules` for the command to function.
+
+## Related Commands
+
+*   [`!duel`](/chatbot/commands/default/duel/): Initiate a duel with another user.
+*   [`!cancelduel`](/chatbot/commands/default/cancelduel/): Cancel an outgoing duel request.
+*   [`!deny`](/chatbot/commands/default/deny/): Deny an incoming duel request.

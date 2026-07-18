@@ -1,0 +1,157 @@
+---
+title: Variables cheat sheet
+description: "One-page reference of every StreamElements Chatbot variable: syntax, return values, sub-variables, argument tokens, and aliases."
+sidebar:
+  label: Cheat Sheet
+  order: 1
+keywords:
+  - chatbot variables
+  - cheat sheet
+  - variable reference
+  - variable syntax
+  - StreamElements
+---
+
+Every chatbot variable on one page — syntax and what it returns, at a glance. Click a variable for its full page with examples, parameters, and error cases.
+
+## Stream info
+
+| Variable | Syntax | Returns |
+| --- | --- | --- |
+| [`$(channel)`](/chatbot/variables/channel/) | `$(channel.<field> [channel])` | A channel field (see [sub-variables](#channel-sub-variables)); bare `$(channel)` returns the channel name. |
+| [`$(game)`](/chatbot/variables/game/) | `$(game [channel])` | The current category, e.g. `Just Chatting`; `<no game>` when unset. |
+| [`$(title)`](/chatbot/variables/title/) | `$(title [channel])` | The current stream title. Alias: `$(status)`. |
+| [`$(uptime)`](/chatbot/variables/uptime/) | `$(uptime [channel])` | Time live, e.g. `2 hours 30 mins`; `<not live>` when offline. |
+| [`$(provider)`](/chatbot/variables/provider/) | `$(provider)` | The platform slug: `twitch`, `youtube`, `trovo`, or `kick`. |
+
+## Stream management
+
+| Variable | Syntax | Returns |
+| --- | --- | --- |
+| [`$(setgame)`](/chatbot/variables/setgame/) | `$(setgame "<game>")` | Sets the stream category. |
+| [`$(settitle)`](/chatbot/variables/settitle/) | `$(settitle "<title>")` | Sets the stream title. |
+
+## User & chat
+
+| Variable | Syntax | Returns |
+| --- | --- | --- |
+| [`$(user)`](/chatbot/variables/user/) | `$(user.<field> [username])` | A user field (see [sub-variables](#user-and-sender-sub-variables)); bare `$(user)` returns the display name. |
+| [`$(sender)`](/chatbot/variables/sender/) | `$(sender.<field>)` | Same fields as `$(user)`, always for the message author. Alias: `$(source)`. |
+| [`$(touser)`](/chatbot/variables/touser/) | `$(touser)` | The first word after the command, or the sender's display name. |
+| [`$(1)`, `$(1:)`](/chatbot/variables/args/) | `$(N)` `$(N:)` `$(N:M)` | Words of the triggering message (see [argument tokens](#argument-tokens)). |
+| [`$(msgid)`](/chatbot/variables/msgid/) | `$(msgid)` | The platform message ID of the triggering message. |
+| [`$(pointsname)`](/chatbot/variables/pointsname/) | `$(pointsname)` | The channel's loyalty points name; `points` when unset. |
+| [`$(redeem)`](/chatbot/variables/redeem/) | `$(redeem [item] [input])` | Redeems a loyalty store item; the bot replies with the store message. |
+
+## Emotes
+
+| Variable | Syntax | Returns |
+| --- | --- | --- |
+| [`$(twitchemotes)`](/chatbot/variables/twitchemotes/) | `$(twitchemotes)` | The channel's Twitch subscriber emote codes, space-separated. |
+| [`$(bttvemotes)`](/chatbot/variables/bttvemotes/) | `$(bttvemotes)` | The channel's active BetterTTV emote codes. |
+| [`$(ffzemotes)`](/chatbot/variables/ffzemotes/) | `$(ffzemotes)` | The channel's active FrankerFaceZ emote codes. |
+| [`$(7tvemotes)`](/chatbot/variables/7tvemotes/) | `$(7tvemotes)` | The channel's active 7TV emote codes. |
+
+## Counters & data
+
+| Variable | Syntax | Returns |
+| --- | --- | --- |
+| [`$(count)`](/chatbot/variables/count/) | `$(count [name] [modifier])` | Changes a counter and returns the new value; `+N`/`-N` adjusts, a bare number sets. |
+| [`$(getcount)`](/chatbot/variables/getcount/) | `$(getcount <name>)` | The counter's value without changing it. |
+| [`$(quote)`](/chatbot/variables/quote/) | `$(quote [id])` | A saved quote as `#12 <text>`; random when no id; `quote not found` on a bad id. |
+
+## Games
+
+| Variable | Syntax | Returns |
+| --- | --- | --- |
+| [`$(leagueoflegends)`](/chatbot/variables/leagueoflegends/) | `$(leagueoflegends <name#tag> <server>)` | The player's LoL rank, e.g. `Gold IV (81 LP)`. |
+| [`$(teamfighttactics)`](/chatbot/variables/teamfighttactics/) | `$(teamfighttactics <region> <name#tag>)` | The player's TFT rank, e.g. `Gold IV (81 LP)`; `Unranked` on errors. Alias: `$(tft)`. |
+| [`$(pubg)`](/chatbot/variables/pubg/) | `$(pubg <region> <user> <matchType> <stat>)` | A PUBG stat from pubgtracker.com, e.g. `248`. |
+
+## Logic, utility & web
+
+| Variable | Syntax | Returns |
+| --- | --- | --- |
+| [`$(if)`](/chatbot/variables/if/) | `$(if <condition> <then> [else])` | `<then>` when the condition is true, otherwise `[else]`; false with no else suppresses the whole reply. |
+| [`$(math)`](/chatbot/variables/math/) | `$(math <expression>)` | The result of the calculation, e.g. `7.8`. |
+| [`$(time)`](/chatbot/variables/time/) | `$(time [timezone])` | The current time as 24-hour `HH:MM`; UTC when no IANA zone is given. |
+| [`$(time.until)`](/chatbot/variables/time/) | `$(time.until <HH:MM>)` | Time until (or since) the given time, e.g. `2 hours 30 mins` (with ` ago` if past). |
+| [`$(repeat)`](/chatbot/variables/repeat/) | `$(repeat <count> <phrase>)` | The phrase repeated, space-separated (capped at 100 repeats / ~1000 characters). |
+| [`$(random)`](/chatbot/variables/random/) | `$(random)` / `$(random.X-Y)` | A random integer, 1–100 by default (see [random forms](#random-forms)). |
+| [`$(customapi)`](/chatbot/variables/customapi/) | `$(customapi <url>)` | The first 400 bytes of the URL's response. Alias: `$(urlfetch)`. |
+| [`$(queryescape)`](/chatbot/variables/queryescape/) | `$(queryescape <text>)` | The text URL-query-encoded (spaces become `+`). Alias: `$(queryencode)`. |
+| [`$(pathescape)`](/chatbot/variables/pathescape/) | `$(pathescape <text>)` | The text URL-path-encoded (spaces become `%20`). Alias: `$(pathencode)`. |
+| [`$(weather)`](/chatbot/variables/weather/) | `$(weather "<location>")` | Current conditions: temperature, wind, humidity, visibility, pressure. |
+| [`$(stockprice)`](/chatbot/variables/stockprice/) | `$(stockprice <symbol>)` | A real-time stock price line for the symbol. |
+| [`$(ai)`](/chatbot/variables/ai/) | `$(ai <prompt>)` | An AI-generated reply (prompt up to 512 characters). Alias: `$(chatgpt)`. |
+
+## Argument tokens
+
+Words are numbered from the start of the triggering message; **word 0 is the command trigger itself**. See the [argument tokens page](/chatbot/variables/args/) for details.
+
+| Token | Returns |
+| --- | --- |
+| `$(N)` | The Nth word of the message. |
+| `$(N:)` | Words N through the end. |
+| `$(N:M)` | Words N through M, inclusive. |
+| `$(:M)` | Words 0 (the trigger) through M. |
+| `$(N username)` | Word N only if it is a valid username (alias: `word`). |
+| `$(N emote)` | Word N only if it is an emote in the triggering message. |
+
+## User and sender sub-variables
+
+Use as `$(user.<field> [username])` or `$(sender.<field>)` — the fields are identical; `$(user)` accepts an optional username (defaulting to the first word after the command if it looks like a name), while `$(sender)` is always the message author.
+
+| Field | Returns |
+| --- | --- |
+| `name` | The login name, in lowercase. |
+| `twitchid` | The platform user ID. |
+| `points` | The loyalty points balance, e.g. `100`. |
+| `level` | The access level: `100` everyone, `250` subscriber, `400` VIP, `500` moderator, `1500` channel owner. |
+| `lastmessage` | The user's last chat message. |
+| `lastseen` | Time since last seen, e.g. `2 hours 30 mins`; `<not found>` if never recorded. |
+| `lastactive` | Time since the user last typed; `<not found>` if never recorded. |
+| `time_online` | Watchtime while the stream is live, e.g. `2 hours 30 mins`. |
+| `time_offline` | Time accrued while the stream is offline. |
+| `points_rank` | Points rank as `rank/total`, e.g. `5/283`. |
+| `points_alltime_rank` | All-time points rank as `rank/total`. |
+| `time_online_rank` | Watchtime rank as `rank/total`. |
+| `time_offline_rank` | Offline-time rank as `rank/total`. |
+
+## Channel sub-variables
+
+Use as `$(channel.<field>)`. On Twitch and Trovo you can also target another channel: `$(channel.<field> <name>)`.
+
+| Field | Returns |
+| --- | --- |
+| `display_name` | The channel's display name. |
+| `alias` | The channel's alias. |
+| `provider` | The platform slug, e.g. `twitch`. |
+| `provider_id` | The platform channel ID (aliases: `twitchid`, `youtubeid`). |
+| `id` | The StreamElements channel ID. |
+| `title` | The current stream title (alias: `status`). |
+| `game` | The current category; `<no game>` when unset. |
+| `viewers` | The current viewer count; `<not live>` when offline. |
+| `followers` | The follower count. |
+| `chatters` | The current chatter count. |
+| `subs` | The subscriber count — own channel only (aliases: `subcount`, `subscribers`). |
+| `subpoints` | The subscriber points — own channel only. |
+| `uptime` | Time live, e.g. `2 hours 30 mins`; `<not live>` when offline. |
+
+## Random forms
+
+| Form | Returns |
+| --- | --- |
+| `$(random)` | A random integer from 1 to 100. |
+| `$(random.X-Y)` or `$(random.number X-Y)` | A random integer from X to Y, inclusive. |
+| `$(random.pick a b c)` | One of the listed items (quote multi-word items, or pass one comma-separated list). |
+| `$(random.chatter)` | A random active chatter; `<no chatters>` on failure. |
+| `$(random.emote)` | A random emote from the channel's BTTV/FFZ/7TV and global emotes. |
+
+## Syntax rules
+
+- `$()` and `${}` are interchangeable: `$(uptime)` is the same as `${uptime}`.
+- Variables nest freely: `$(weather ${1:})`, `$(if $(random.pick 1,0) Heads Tails)`.
+- Quote multi-word values with single quotes, double quotes, or backticks: `$(random.pick 'option one' 'option two')`.
+- A pipe sets a default for empty values: `$(1|everyone)` outputs `everyone` when no argument was given.
+- Argument tokens `$(N)`, `$(N:)`, `$(N:M)` read words from the triggering message; word 0 is the trigger itself.

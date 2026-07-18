@@ -1,0 +1,78 @@
+---
+title: Viewer Queue Module
+sidebar:
+  label: Viewer Queue
+description: "Create and manage a viewer queue with the StreamElements Viewer Queue module: viewers join with !queue join, and moderators open, close, and pick from the queue."
+keywords:
+- StreamElements viewer queue
+- live stream interaction management
+- viewer engagement tools
+- stream queue system
+- Twitch viewer queue
+- interactive streaming
+- audience participation
+- streamer queue management
+- viewer selection tool
+---
+
+import ChatExample from '@components/ChatExample.astro';
+
+The Viewer Queue module allows streamers to create and manage a queue where viewers can join and be selected. This feature is particularly useful for organizing viewer interactions, such as game participation, Q&A sessions, or giveaways during live streams.
+
+## Usage
+
+Streamers and moderators manage the queue with `!queue` subcommands, while viewers join and check their place with their own set of subcommands. See the [`!queue` command reference](/chatbot/commands/default/queue/) for the full syntax of every subcommand.
+
+## Examples
+
+1. Opening a queue for viewers to join a game:
+
+   <ChatExample messages={[
+     { persona: 'moderator', message: '!queue open Viewer games' },
+     { persona: 'bot', message: 'The Viewer games queue is now open! Viewers can type !queue join to enter.' },
+     { persona: 'user', usernameOverride: 'Viewer1', message: '!queue join' },
+     { persona: 'bot', message: '@Viewer1, you have been added to the queue in position #1.' },
+     { persona: 'user', usernameOverride: 'Viewer2', message: '!queue join' },
+     { persona: 'bot', message: '@Viewer2, you have been added to the queue in position #2.' }
+   ]} />
+
+2. Picking a viewer from the queue:
+
+   <ChatExample messages={[
+     { persona: 'moderator', message: '!queue pick random' },
+     { persona: 'bot', message: '@Viewer1 has been picked from the queue!' }
+   ]} />
+
+## Related Commands
+
+Viewer subcommands:
+
+- [`!queue join`](/chatbot/commands/default/queue/): Enter the open queue.
+- [`!queue position`](/chatbot/commands/default/queue/): Check your current position in the queue.
+- [`!queue list`](/chatbot/commands/default/queue/): List the next viewers waiting in the queue.
+
+Moderator subcommands:
+
+- [`!queue open <title>`](/chatbot/commands/default/queue/): Open a queue with the given title for viewers to join.
+- [`!queue close`](/chatbot/commands/default/queue/): Close the queue, preventing new entries.
+- [`!queue pause`](/chatbot/commands/default/queue/): Temporarily stop viewers from joining.
+- [`!queue unpause`](/chatbot/commands/default/queue/): Resume allowing viewers to join.
+- [`!queue pick <username|random>`](/chatbot/commands/default/queue/): Select a specific user, or a random one, from the queue.
+- [`!queue remove <username>`](/chatbot/commands/default/queue/): Remove a specific user from the queue.
+
+## Configuration
+
+The Viewer Queue module has two settings in the StreamElements dashboard:
+
+- Whether the module is enabled
+- The start message posted in chat when a queue opens
+
+Queue size and eligibility limits (such as who is allowed to join) are managed by the queue service through the dashboard, not by the chatbot module settings.
+
+## FAQ
+
+**Q: Can viewers join the queue multiple times?**
+A: Viewers can only join the queue once.
+
+**Q: How long does a queue last?**
+A: The queue remains active until it's manually closed by a moderator, or until the stream ends.

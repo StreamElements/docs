@@ -1,0 +1,60 @@
+---
+title: "$(pointsname)"
+description: "Display the name of your stream's loyalty currency with the $(pointsname) variable in StreamElements Chatbot messages and commands."
+syntax: "$(pointsname)"
+arguments: none
+keywords:
+  - chatbot
+  - variable
+  - loyalty points
+  - currency name
+  - StreamElements
+---
+
+import ChatExample from '@components/ChatExample.astro';
+
+The `$(pointsname)` variable is a dynamic way to display the current name of your stream's loyalty currency in chat messages or commands. It automatically updates to reflect your custom points system name, providing a flexible solution for referencing your loyalty program.
+
+## Use it
+
+```streamelements
+!command add !points $(sender) has $(sender.points) $(pointsname)!
+```
+
+<ChatExample messages={[
+  { persona: 'user', message: '!points' },
+  { persona: 'bot', message: 'ViewerName has 500 memecoins!' }
+]} />
+
+## Usage
+
+Insert `$(pointsname)` into your chat messages or commands where you want the loyalty currency name to appear. The chatbot will automatically replace it with your actual loyalty points name. If you haven't set a custom name, it displays `points`.
+
+## Examples
+
+Informing viewers about earning points:
+
+```streamelements
+Earn more $(pointsname) by watching the stream!
+```
+
+Output (assuming your currency is named "memecoins"):
+```
+Earn more memecoins by watching the stream!
+```
+
+## Related
+
+- [`$(user.points)`](/chatbot/variables/user/#available-variables): Displays the user's current loyalty points balance
+- [`!addpoints`](/chatbot/commands/default/addpoints/): Adds points to a user's balance (mod/broadcaster only)
+- [`!setpoints`](/chatbot/commands/default/setpoints/): Sets a user's points to a specific value (mod/broadcaster only)
+
+## FAQ
+
+**Q: How do I change my loyalty points name?**
+
+A: You can change your loyalty points name in the StreamElements dashboard under the Loyalty tab. The `$(pointsname)` variable will automatically update to reflect the new name.
+
+**Q: Can I use $(pointsname) in custom commands?**
+
+A: Yes, you can use `$(pointsname)` in any custom command or chat message where you want to display your loyalty points name.

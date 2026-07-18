@@ -1,0 +1,108 @@
+---
+title: "$(pubg)"
+description: "Display PUBG player statistics like K/D, wins, and rating in chat with the $(pubg) variable in StreamElements Chatbot."
+syntax: "$(pubg <region> <username> <matchType> <stat>)"
+arguments: required
+keywords:
+  - pubg
+  - PLAYERUNKNOWN'S BATTLEGROUNDS
+  - player stats
+  - StreamElements
+  - chatbot variable
+---
+
+import ChatExample from '@components/ChatExample.astro';
+
+The `$(pubg)` variable displays a PLAYERUNKNOWN'S BATTLEGROUNDS player statistic in chat — kills, K/D ratio, wins, rating, and more — for a given region and match type.
+
+:::caution[Third-party data]
+Stats are fetched from the third-party service pubgtracker.com, which has not been reliably available for a long time. If the service is down, the variable returns `Failed to get stats` — test your command before relying on it.
+:::
+
+## Use it
+
+```streamelements
+!command add !pubgwins I have won $(pubg na shroud solo wins) solo games this season!
+```
+
+<ChatExample messages={[
+  { persona: 'user', message: '!pubgwins' },
+  { persona: 'bot', message: 'I have won 248 solo games this season!' }
+]} />
+
+## Usage
+
+```streamelements
+$(pubg <region> <username> <matchType> <stat>)
+```
+
+All four parameters are required — with fewer than four, the variable renders as literal text. Inputs are case-insensitive (everything is lowercased before use).
+
+## Parameters
+
+- `<region>` (required): The region the stats are tracked in, matched against the player's data — for example `na`, `eu`, or `agg` (all regions aggregated).
+- `<username>` (required): The player's PUBG (PC) name.
+- `<matchType>` (required): The match type, matched against the player's data — for example `solo`, `duo`, or `squad`.
+- `<stat>` (required): One of the whitelisted stat keys below.
+
+## Available stats
+
+| Stat | Meaning |
+| --- | --- |
+| `kd` | K/D ratio |
+| `winratio`, `winrate` | Win percentage |
+| `wins` | Wins |
+| `losses` | Losses |
+| `roundsplayed` | Rounds played |
+| `rating` | Rating |
+| `bestrating` | Best rating |
+| `bestrank` | Best rank |
+| `top10s` | Top-10 finishes |
+| `top10ratio` | Top-10 rate |
+| `wintop10ratio` | Win/top-10 ratio |
+| `top10spg` | Top 10s per game |
+| `kills` | Kills |
+| `killspg` | Kills per game |
+| `dailykills` | Daily kills |
+| `weeklykills` | Weekly kills |
+| `roundmostkills` | Most kills in a round |
+| `maxkillstreaks` | Max kill streak |
+| `headshotkills` | Headshot kills |
+| `headshotkillspg` | Headshot kills per game |
+| `headshotkillratio` | Headshot kill ratio |
+| `roadkills` | Road kills |
+| `teamkills` | Team kills |
+| `suicides` | Suicides |
+| `assists` | Assists |
+| `damagepg` | Average damage per match |
+| `healspg` | Heals per game |
+| `revivespg` | Revives per game |
+| `timesurvived` | Time survived |
+| `longesttimesurvived` | Longest time survived |
+| `mostsurvivaltime` | Most survival time |
+| `avgsurvivaltime` | Average survival time |
+
+Any other stat key returns an error (see below).
+
+## Errors
+
+| Output | Meaning |
+| --- | --- |
+| `<stat> is not a valid stat` | The stat key isn't in the list above — e.g. `headshots is not a valid stat`. |
+| `No stats found` | No data matched the given region and match type in the player's current season. |
+| `Failed to get stats` | The pubgtracker.com API request failed. |
+
+## Related variables
+
+- [`$(leagueoflegends)`](/chatbot/variables/leagueoflegends/): Get a League of Legends player's rank and LP.
+- [`$(teamfighttactics)`](/chatbot/variables/teamfighttactics/): Get a Teamfight Tactics player's rank and LP.
+
+## FAQ
+
+**Q: Can I use it for console players?**
+
+A: No — the lookup queries PC profiles on pubgtracker.com.
+
+**Q: Why do I always get "Failed to get stats"?**
+
+A: The data comes from the third-party pubgtracker.com service, which has been unreliable or unavailable for a long time. If the service is down, there is nothing to display.

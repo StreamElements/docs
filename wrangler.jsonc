@@ -1,0 +1,20 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  // Must match the Workers Builds-connected service name in the dashboard.
+  "name": "docs",
+  "compatibility_date": "2026-07-18",
+
+  // Run by `wrangler deploy` (locally and in Cloudflare Workers Builds)
+  // before uploading assets.
+  "build": { "command": "pnpm build" },
+
+  // Static site: assets-only Worker, no script. Legacy-URL redirects are
+  // served as real 301s via the dist/_redirects file emitted at build time
+  // from the `redirects` map in astro.config.mjs.
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "404-page"
+  },
+
+  "routes": [{ "pattern": "docs.streamelements.com", "custom_domain": true }]
+}

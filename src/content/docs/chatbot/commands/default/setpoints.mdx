@@ -1,0 +1,61 @@
+---
+title: "!setpoints"
+description: "Use the !setpoints command in StreamElements chatbot to set a user's loyalty points balance to a specific amount."
+keywords:
+  - setpoints command
+  - set user points
+  - loyalty points
+  - twitch chatbot
+  - streamelements
+  - channel points
+platforms: [twitch]
+---
+
+import ChatExample from '@components/ChatExample.astro';
+
+The `!setpoints` command allows streamers and moderators to set a specific number of loyalty points for a user in the chat. This command is useful for managing loyalty programs, rewarding viewers, or correcting point balances.
+
+:::caution
+Using this command will **overwrite** the user's current point balance. Use [`!addpoints`](/chatbot/commands/default/addpoints/) if you want to add to their balance instead.
+:::
+
+:::caution[Permissions]
+By default, only users with **Moderator** permission level or higher can use this command.
+:::
+
+## Usage
+
+To set a user's point balance:
+
+```streamelements
+!setpoints <username> <points>
+```
+
+## Examples
+
+<ChatExample messages={[
+  { persona: 'moderator', message: '!setpoints darkoe 1000' },
+  { persona: 'bot', message: '@Moderator, set darkoe\'s points to 1000!' }
+]} />
+
+<ChatExample messages={[
+  { persona: 'broadcaster', message: '!setpoints viewer123 0' },
+  { persona: 'bot', message: '@Broadcaster, set viewer123\'s points to 0!' }
+]} />
+
+## Parameters
+
+*   `<username>` (Required): The username of the viewer whose points you want to set.
+*   `<points>` (Required): The new amount of points to assign to the user.
+
+## Configuration
+
+*   This command requires the **Loyalty system** to be active (`Loyalty` -> `Loyalty Settings`).
+*   The command's permission level can be adjusted under `Chatbot` -> `Chat Commands` -> `Default Commands`.
+
+## Related Commands
+
+*   [`!addpoints`](/chatbot/commands/default/addpoints/): Adds points to a user's balance without overwriting.
+*   [`!givepoints`](/chatbot/commands/default/givepoints/): Allows users to transfer points.
+*   [`!points`](/chatbot/commands/default/points/): Checks a user's current point balance.
+*   [`!top`](/chatbot/commands/default/top/): View the leaderboard for points.

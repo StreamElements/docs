@@ -1,0 +1,54 @@
+---
+title: "!songqueue"
+description: "Use the !songqueue command in StreamElements chatbot to get a link to the current media request queue page."
+keywords:
+  - StreamElements
+  - chatbot
+  - commands
+  - song request
+  - media request
+  - queue
+  - music
+  - streaming
+platforms: [twitch]
+---
+
+import ChatExample from '@components/ChatExample.astro';
+
+The `!songqueue` command replies with a direct link to the channel's StreamElements Media Request queue page. It does **not** print the queue contents in chat — the linked page shows the upcoming songs or videos.
+
+:::caution[Permissions]
+By default, only users with **Moderator** permission level or higher can use this command.
+:::
+
+## Usage
+
+Type `!songqueue` in the chat to receive a link to the media request queue page:
+
+```streamelements
+!songqueue
+```
+
+## Examples
+
+<ChatExample messages={[
+  { persona: 'moderator', message: '!songqueue' },
+  { persona: 'bot', message: 'You can see the songrequest queue here https://StreamElements.com/YOUR_CHANNEL/mediarequest' }
+]} />
+
+## Configuration
+
+*   The linked page shows requests that are currently in the queue.
+*   The command's permission level can be adjusted under `Chatbot` -> `Chat Commands` -> `Default Commands`.
+*   Default cooldown: 10 seconds global.
+
+## Aliases
+
+*   `!songlist`
+
+## Related Commands
+
+*   [`!songrequest`](/chatbot/commands/default/songrequest/) / `!sr`: Used to request a song or media to be added to the queue.
+*   [`!wrongsong`](/chatbot/commands/default/wrongsong/): Allows users to remove their most recent song request from the queue.
+*   [`!song`](/chatbot/commands/default/song/): Displays information about the currently playing song or media.
+*   [`!next`](/chatbot/commands/default/next/): Displays information about the next song in the queue.

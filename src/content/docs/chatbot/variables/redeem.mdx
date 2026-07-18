@@ -1,0 +1,86 @@
+---
+title: "$(redeem)"
+description: "Let viewers redeem StreamElements loyalty store items straight from a chat command with the $(redeem) variable."
+syntax: "$(redeem [item] [input])"
+arguments: optional
+platforms: [twitch, trovo, kick]
+keywords:
+  - redeem
+  - loyalty store
+  - store item
+  - loyalty points
+  - StreamElements
+  - chatbot variable
+---
+
+import ChatExample from '@components/ChatExample.astro';
+
+The `$(redeem)` variable redeems a **StreamElements loyalty store item** on behalf of the viewer who triggered the command. It lets you turn any store item into its own chat command, instead of viewers going through `!redeem` or the website.
+
+:::note
+This redeems items from your **StreamElements loyalty store** (paid for with loyalty points) — it is not related to Twitch Channel Points rewards.
+:::
+
+## Use it
+
+Create a store item with the identifier `hydrate`, then add a command with the same name:
+
+```streamelements
+!command add !hydrate $(redeem)
+```
+
+<ChatExample messages={[
+  { persona: 'user', message: '!hydrate' },
+  { persona: 'bot', message: '@ViewerName, you successfully redeemed Hydrate for 500 points. elementsOkay' }
+]} />
+
+With no arguments, `$(redeem)` uses the command's own trigger word (without the `!`) as the item identifier — so `!hydrate` redeems the store item `hydrate`.
+
+## Usage
+
+```streamelements
+$(redeem [item] [input])
+```
+
+The redemption happens as a side effect — the variable itself prints nothing. In fact, it **suppresses the command's entire response text**: any other words in the command's message are discarded, and all chat feedback comes from the loyalty store's own redemption messages (the same ones the `!redeem` command uses).
+
+## Parameters
+
+- `[item]` (optional): The identifier of the store item to redeem, matched case-insensitively. Defaults to the command's trigger word with the leading `!` removed.
+- `[input]` (optional): The user input passed along with the redemption (for items that ask for one). Defaults to the second word of the chat message.
+
+## Store rules and bot replies
+
+The redemption follows the same rules as the loyalty store. Depending on the outcome, the bot replies with one of the store messages:
+
+| Situation | Bot reply |
+| --- | --- |
+| Successful redemption | `@ViewerName, you successfully redeemed Hydrate for 500 points.` |
+| Item grants a code | `@ViewerName, you successfully redeemed Hydrate for 500 points. Collect your code here: https://StreamElements.com/dashboard/account/redemptions` |
+| Item not found | `@ViewerName, item not found, you can see all items here https://StreamElements.com/yourchannel/store` |
+| Subscriber-only item, viewer isn't subscribed | `@ViewerName, only subscribers can redeem Hydrate.` |
+| Not enough points | `@ViewerName, Hydrate costs 500 points, you only have 120.` |
+| Item has one or more requirements (multiple inputs or attachments) | `@ViewerName, items that have 1 or more requirements are only redeemable here https://StreamElements.com/yourchannel/store` |
+
+:::note[YouTube]
+`$(redeem)` is not available on YouTube — there, the variable renders as literal text instead of redeeming anything.
+:::
+
+## Related variables
+
+- [`$(pointsname)`](/chatbot/variables/pointsname/): The channel's custom loyalty points name, used in the store replies.
+- [`$(user)`](/chatbot/variables/user/): `$(user.points)` shows a viewer's current points balance.
+
+## FAQ
+
+**Q: Why doesn't my command's own text show up in chat?**
+
+A: That's by design — `$(redeem)` suppresses the command's response entirely so the store's redemption messages are the only feedback. Don't put other response text in a command that uses `$(redeem)`; it will never be sent.
+
+**Q: Can viewers redeem items that require several inputs or a file attachment?**
+
+A: No — items with one or more requirements can only be redeemed on the website, and the bot replies with a link to the store instead.
+
+**Q: Does this work with Twitch Channel Points?**
+
+A: No. `$(redeem)` only works with the StreamElements loyalty store and loyalty points.

@@ -1,0 +1,75 @@
+---
+title: "$(getcount)"
+description: "Retrieve a counter's current value without incrementing it using the $(getcount) variable in StreamElements Chatbot."
+keywords:
+  - StreamElements
+  - chatbot
+  - counter
+  - variable
+  - streaming
+syntax: "$(getcount <counter_name>)"
+arguments: required
+---
+
+import ChatExample from '@components/ChatExample.astro';
+
+The `$(getcount)` variable allows you to retrieve the current value of a counter without incrementing it. This is useful for displaying counter values in chat messages or on stream overlays.
+
+## Use it
+
+```streamelements
+!command add !hugstats The !hug command has been used $(getcount hugs) times so far.
+```
+
+<ChatExample messages={[
+  { persona: 'user', message: '!hugstats' },
+  { persona: 'bot', message: 'The !hug command has been used 42 times so far.' },
+]} />
+
+## Usage
+
+To use the `$(getcount)` variable, you need to provide the name of the counter as a parameter. The syntax is as follows:
+
+```streamelements
+$(getcount <counter_name>)
+```
+
+The variable outputs the counter's current value as a plain number, e.g. `42`.
+
+## Examples
+
+Displaying the current death count without changing it:
+
+```streamelements
+!command add !deathcheck We're at $(getcount deaths) deaths so far. It could be worse!
+```
+
+Output: `We're at 13 deaths so far. It could be worse!`
+
+## Parameters
+
+The `$(getcount)` variable takes one parameter:
+
+- `counter_name`: The name of the counter you want to retrieve the value for. This is a required parameter.
+
+:::note
+Unlike [`$(count)`](/chatbot/variables/count/), `$(getcount)` is read-only and never modifies the counter — and it does not fall back to the invoking command's own counter, so the counter name must always be provided.
+:::
+
+## Related Variables
+
+- [`$(count)`](/chatbot/variables/count/): Increments a counter and returns its new value
+
+## FAQ
+
+**Q: Can I use $(getcount) to create a new counter?**
+
+A: No, `$(getcount)` only retrieves existing counter values. To create a new counter, use the `$(count)` variable first.
+
+**Q: What happens if I try to get the count of a non-existent counter?**
+
+A: If the counter doesn't exist, `$(getcount)` will return `0`.
+
+**Q: Is there a limit to how many counters I can have?**
+
+A: StreamElements doesn't specify a limit, but it's good practice to use counters judiciously to avoid performance issues.

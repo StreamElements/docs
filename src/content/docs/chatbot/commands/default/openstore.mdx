@@ -1,0 +1,52 @@
+---
+title: "!openstore"
+description: "Use the !openstore command in StreamElements chatbot to re-enable all regular (non-SFX) items in your loyalty store."
+keywords:
+  - openstore command
+  - enable store items
+  - loyalty store
+  - stream store
+  - streamelements chatbot
+  - store management
+platforms: [twitch]
+---
+
+import ChatExample from '@components/ChatExample.astro';
+
+The `!openstore` command allows streamers and moderators to quickly re-enable all **regular** (non-sound effect) items in the StreamElements loyalty store that were previously disabled (e.g., using `!closestore`).
+
+## Usage
+
+To enable all regular store items, use the following command in chat:
+
+```streamelements
+!openstore
+```
+
+:::caution[Permissions]
+By default, only users with **Moderator** permission level or higher can use this command.
+:::
+
+## Examples
+
+<ChatExample messages={[
+  { persona: 'moderator', message: '!openstore' },
+  { persona: 'bot', message: '@Moderator, successfully updated 15 items. (Store opened)' } // Assuming 15 items were disabled
+]} />
+
+<ChatExample messages={[
+  { persona: 'broadcaster', message: '!openstore' },
+  { persona: 'bot', message: '@Broadcaster, No disabled regular store items found.' } // If no regular items were disabled
+]} />
+
+## Configuration
+
+*   The command's permission level can be adjusted under `Chatbot` -> `Chat Commands` -> `Default Commands`.
+
+## Related Commands
+
+*   [`!closestore`](/chatbot/commands/default/closestore/): Disables all *regular* (non-SFX) items in the loyalty store.
+*   [`!disablesfx`](/chatbot/commands/default/disablesfx/): Disables only sound effect (SFX) items in the loyalty store.
+*   [`!enablesfx`](/chatbot/commands/default/enablesfx/): Enables only sound effect (SFX) items in the loyalty store.
+*   [`!redeem`](/chatbot/commands/default/redeem/): Allows viewers to redeem store items.
+*   [`!items`](/chatbot/commands/default/items/): Provides a link to the store page.

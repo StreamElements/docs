@@ -1,0 +1,57 @@
+---
+title: "!raffle"
+description: "Use the !raffle command in StreamElements chatbot to start a raffle with multiple winners that splits a points pot among them."
+platforms: [twitch]
+keywords:
+- raffle
+- chat game
+- viewer engagement
+- multiple winners
+- StreamElements command
+---
+
+import ChatExample from '@components/ChatExample.astro';
+
+The `!raffle` command allows streamers and moderators to create interactive raffles with multiple winners. This feature engages viewers by giving them a chance to win prizes or recognition during the stream.
+
+## Usage
+
+```streamelements
+!raffle <amount> <duration>
+```
+* `<amount>`: Required. The total reward (pot) for the raffle, distributed among winners.
+* `<duration>`: Required. The duration of the raffle in seconds.
+
+## Examples
+
+**Start a raffle with a 100 point reward lasting 60 seconds:**
+<ChatExample messages={[
+  { persona: 'moderator', message: '!raffle 100 60' },
+  { persona: 'bot', message: 'The Multi-Raffle for 100 points will end in 60 Seconds. Enter by typing "!join"' }
+]} />
+
+**Create a longer raffle with a larger reward:**
+<ChatExample messages={[
+  { persona: 'moderator', message: '!raffle 500 180' },
+  { persona: 'bot', message: 'The Multi-Raffle for 500 points will end in 180 Seconds. Enter by typing "!join"' }
+]} />
+
+
+## Parameters
+
+- `<amount>` (required): The total reward (pot) for the raffle, which will be distributed among the winners.
+- `<duration>` (required): The duration of the raffle in seconds.
+
+## Configuration
+
+Moderators can configure raffle settings, such as the maximum number of winners or cooldown period between raffles, through the StreamElements dashboard.
+
+## Aliases
+
+- `!mraffle`
+- `!multiraffle`
+
+## Related Commands
+
+- [`!join`](/chatbot/commands/default/join/): Used by viewers to enter an active raffle.
+- [`!cancelraffle`](/chatbot/commands/default/cancelraffle/): Allows moderators to cancel an ongoing raffle.

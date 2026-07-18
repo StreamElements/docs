@@ -1,0 +1,78 @@
+---
+title: "$(touser)"
+description: "Display the first word after a command, or fall back to the sender's name, with the $(touser) variable in StreamElements Chatbot."
+syntax: "$(touser)"
+arguments: none
+keywords:
+  - StreamElements
+  - chatbot
+  - touser
+  - user mention
+  - chat interaction
+---
+
+import ChatExample from '@components/ChatExample.astro';
+
+The `$(touser)` variable is a versatile tool in the StreamElements Chatbot that displays the first word after a command, falling back to the sender's name. It's particularly useful for creating personalized responses or directing messages to specific users.
+
+## Use it
+
+```streamelements
+!command add !hug $(sender) gives $(touser) a big warm hug!
+```
+
+<ChatExample messages={[
+  { persona: 'user', message: '!hug @CoolStreamer' },
+  { persona: 'bot', message: 'ViewerName gives @CoolStreamer a big warm hug!' },
+  { persona: 'user', message: '!hug' },
+  { persona: 'bot', message: 'ViewerName gives ViewerName a big warm hug!' }
+]} />
+
+Note how the `@` prefix is passed through exactly as typed, and how `$(touser)` falls back to the sender's name when no word is given.
+
+## Usage
+
+The `$(touser)` variable can be used in two ways:
+
+1. Without input: It displays the display name of the user who triggered the command.
+2. With input: It displays the first word provided after the command, exactly as typed. Only leading `/` and `.` characters are removed; an `@` prefix is kept as-is.
+
+## Examples
+
+### Mentioning a specific user
+
+Command:
+```streamelements
+!command add !shoutout Hey everyone, check out $(touser)'s channel! They're awesome!
+```
+
+If a moderator types `!shoutout CoolStreamer`, the output will be:
+```
+Hey everyone, check out CoolStreamer's channel! They're awesome!
+```
+
+If they type `!shoutout` with no name, `$(touser)` falls back to the sender's display name:
+```
+Hey everyone, check out ModUser's channel! They're awesome!
+```
+
+## Parameters
+
+The `$(touser)` variable itself takes no parameters — it reads the first word following the command:
+
+- **word**: The first word typed after the command. If provided, this word will be displayed instead of the command user's name.
+
+:::note
+`$(touser)` passes the word through without validating it as a username and without removing an `@` prefix. If you need validation or other-user lookups, use [argument tokens](/chatbot/variables/args/) like `$(1 username)` or the [`$(user)`](/chatbot/variables/user/) variable instead.
+:::
+
+## Related Variables
+
+- [`$(sender)`](/chatbot/variables/sender/): Always displays the name of the user who triggered the command.
+- [Argument tokens](/chatbot/variables/args/) (`$(1)`, `$(1:)`): Access the words after the command directly, with optional fallbacks and validators.
+
+## FAQ
+
+**Q: What happens if I use $(touser) with multiple words after it?**
+
+A: Only the first word after the command will be used. Any additional words will be ignored.

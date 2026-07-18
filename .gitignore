@@ -1,12 +1,12 @@
 # Dependencies
 /node_modules
 
-# Production
-/build
+# Astro build output
+/dist
+/.astro
 
-# Generated files
-.docusaurus
-.cache-loader
+# Wrangler local state
+/.wrangler
 
 # Misc
 .DS_Store
@@ -21,3 +21,6 @@ yarn-error.log*
 yarn.lock
 .cursorrules
 .cursor
+
+# Claude Code session artifacts
+.claude/

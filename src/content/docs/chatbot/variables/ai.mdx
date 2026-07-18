@@ -1,0 +1,150 @@
+---
+title: "$(ai)"
+description: "Generate AI responses in chat with the $(ai) variable in StreamElements Chatbot commands, including rate limits and default context."
+keywords:
+  - streamelements ai
+  - chatbot ai
+  - twitch bot
+  - stream bot
+  - ai variable
+syntax: "$(ai <prompt>)"
+arguments: required
+---
+
+import ChatExample from '@components/ChatExample.astro';
+
+The `$(ai)` variable allows you to integrate AI into your StreamElements chat commands, generating dynamic responses based on user input. This powerful feature can enhance viewer engagement and create unique interactive experiences in your stream.
+
+:::caution
+The `$(ai)` variable is currently in beta and may be subject to changes.
+:::
+
+## Use it
+
+```streamelements
+!command add !askai $(ai $(1:))
+```
+
+<ChatExample messages={[
+  { persona: 'user', message: '!askai what snack should I grab for the next boss fight?' },
+  { persona: 'bot', message: 'Something one-handed, ViewerName — grab some pretzels so you can snack and dodge at the same time. Good luck with the boss!' },
+]} />
+
+## Usage
+
+To use the AI variable, include it in your commands with the following syntax:
+
+```streamelements
+$(ai <prompt>)
+```
+
+Replace `<prompt>` with the text you want the AI to respond to. Everything you pass to the variable is joined together with spaces and sent as a single prompt.
+
+## Examples
+
+1. Contextual response:
+   ```streamelements
+   !command add !aifact ${ai You are a knowledgeable historian. Tell me an interesting fact about ${1:}}
+   ```
+
+2. Roleplaying:
+   ```streamelements
+   !command add !aipirate ${ai You are a friendly pirate. Greet ${user} and tell them about your latest adventure.}
+   ```
+
+3. Combining with other variables:
+   ```streamelements
+   !command add !aiwelcome ${ai Create a warm welcome message for ${1} who was last seen $(user.lastseen ${1}) ago. Their last message was $(user.lastmessage ${1}).}
+   ```
+
+In these examples, `${1}` inserts only the first word the viewer types after the command, while `${1:}` inserts everything from the first word onward — see [Argument tokens](/chatbot/variables/args/) for details.
+
+## Parameters
+
+The `$(ai)` variable accepts a single parameter:
+
+- `prompt`: The input text for the AI to generate a response. This parameter is required and must be less than 512 characters.
+
+## Aliases
+
+- `$(chatgpt)`: Identical to `$(ai)` in every way.
+
+## Default Context
+
+The AI variable comes with some default context that it's always aware of:
+
+1. **Channel Emotes**: The AI knows about the custom emotes available in your channel. It can reference and use these emotes in its responses when appropriate.
+
+2. **Sender's Name**: The AI is aware of the name of the user who triggered the command. This allows for personalized responses without explicitly including the user's name in the query.
+
+3. **Current Date**: The AI knows the current date, allowing it to provide timely responses or reference current events when relevant.
+
+This default context enables the AI to generate more relevant and personalized responses without requiring you to explicitly include this information in every query.
+
+## Configuration
+
+### Rate limits
+
+To prevent abuse, the `$(ai)` variable is rate limited per channel:
+
+| Channel   | Requests per minute |
+|-----------|---------------------|
+| Regular   | 10                  |
+| Affiliate | 20                  |
+| Partner   | 30                  |
+
+When the limit is exceeded, the bot replies `rate limit exceeded`.
+
+## Errors
+
+| Bot reply | Cause |
+|-----------|-------|
+| `rate limit exceeded` | The channel's per-minute request limit was hit |
+| `input should be less than 512 characters` | The prompt is 512 characters or longer |
+| `Something went wrong during prompt execution` | The AI service request failed |
+| `Failed to execute prompt` | The AI response could not be read |
+
+:::note
+AI replies are sanitized before being sent to chat: leading `/` and `.` characters are stripped, and replies starting with `!` are prefixed with an invisible character — so an AI response can never trigger chat commands or other bot commands.
+:::
+
+## Best Practices
+
+1. Provide clear context in your queries to get more relevant responses.
+2. Use command cooldowns to prevent spam.
+3. Combine the `$(ai)` variable with other StreamElements variables for more dynamic interactions.
+4. Test your AI commands thoroughly before using them in live streams.
+
+## Troubleshooting
+
+If you're experiencing issues with the `$(ai)` variable, try the following:
+
+1. Check your rate limit usage and wait for the reset if necessary.
+2. Verify that your command syntax is correct.
+3. Ensure that your StreamElements bot has the necessary permissions in your chat.
+4. If problems persist, reach out to StreamElements support for further assistance.
+
+## FAQ
+
+**Q: Can I customize the AI's personality?**
+
+A: Yes, you can provide context or instructions in your query to shape the AI's response. For example:
+```streamelements
+$(ai You are a friendly pirate. Greet ${user} and share a sea shanty.)
+```
+
+**Q: Can I use the AI variable in combination with other variables?**
+
+A: Yes, you can combine the `$(ai)` variable with other StreamElements variables to create more dynamic and personalized responses. See example 3 in the Examples section.
+
+**Q: Are there any content restrictions for AI-generated responses?**
+
+A: Yes, the AI is programmed to avoid generating inappropriate, offensive, or harmful content. However, it's always a good idea to monitor and moderate AI-generated responses during your stream.
+
+**Q: How long can my prompt be?**
+
+A: The prompt limit is 512 characters — anything longer makes the bot reply `input should be less than 512 characters`. For optimal performance, keep your prompts concise. If you need a more extensive response, consider breaking it down into multiple separate commands.
+
+**Q: How can I report issues or unexpected behavior with the AI variable?**
+
+A: If you encounter any problems or unexpected responses, you can report them to StreamElements support or post in the official StreamElements Discord for assistance.

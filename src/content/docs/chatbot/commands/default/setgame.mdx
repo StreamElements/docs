@@ -1,0 +1,53 @@
+---
+title: "!setgame"
+description: "Use the !setgame command in StreamElements chatbot to update your stream's game category on Twitch."
+keywords:
+  - setgame
+  - Twitch game category
+  - StreamElements bot
+  - update stream game
+  - change game on Twitch
+platforms: [twitch, trovo, kick]
+---
+
+import ChatExample from '@components/ChatExample.astro';
+
+The `!setgame` command allows streamers and moderators to update the current game category of a Twitch stream in real-time. This feature ensures that viewers always have accurate information about the content being streamed.
+
+:::caution[Permissions]
+By default, only users with **Moderator** permission level or higher can use this command.
+:::
+
+## Usage
+
+To set the game category for the stream:
+
+```streamelements
+!setgame <game>
+```
+
+## Examples
+
+<ChatExample messages={[
+  { persona: 'moderator', message: '!setgame Fortnite' },
+  { persona: 'bot', message: '@Moderator changed the game to "Fortnite"!' }
+]} />
+
+<ChatExample messages={[
+  { persona: 'broadcaster', message: '!setgame OSRS' },
+  { persona: 'bot', message: '@Broadcaster changed the game to "Old School RuneScape"!' }
+]} />
+
+## Parameters
+
+*   `<game>` (Required): The title of the game you want to set for your stream. This parameter supports fuzzy searching, allowing for slight misspellings or common abbreviations.
+
+## Configuration
+
+*   This command requires the StreamElements bot to have permission to modify channel information (typically granted during initial bot setup).
+*   The command's permission level can be adjusted under `Chatbot` -> `Chat Commands` -> `Default Commands`.
+
+## Related Commands
+
+*   [`!settitle`](/chatbot/commands/default/settitle/): Updates the stream title.
+*   [`!uptime`](/chatbot/commands/default/uptime/): Displays how long the stream has been live.

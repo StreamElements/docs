@@ -1,0 +1,71 @@
+---
+title: 8ball Module
+sidebar:
+  label: 8ball
+description: "The StreamElements 8ball module answers viewer questions with random, customizable Magic 8 Ball responses via the !8ball command."
+platforms: [twitch, youtube, trovo, kick]
+keywords:
+- Magic 8 Ball Twitch
+- StreamElements 8ball
+- Twitch chat engagement
+- Interactive chat commands
+- Chatbot responses
+- Random answer generator
+- Viewer interaction
+- Twitch chatbot
+- 8ball integration
+- Audience engagement
+---
+
+import ChatExample from '@components/ChatExample.astro';
+
+The 8ball module is an interactive chat feature that simulates the classic Magic 8 Ball toy. It allows viewers to ask questions and receive random, customizable responses, enhancing engagement and entertainment in your chat. The module is available on all platforms.
+
+## Usage
+
+Viewers type `!8ball` followed by their question in the chat. The chatbot then responds with a random answer from the list configured in the dashboard. The question is optional and does not affect the randomized response.
+
+```streamelements
+!8ball [question]
+```
+
+The command can be used by everyone, with a 10-second per-user cooldown and a 3-second global cooldown.
+
+### Aliases
+
+- `!eightball`
+- `!69ball`
+- `!420ball`
+
+## Examples
+
+<ChatExample messages={[
+  { persona: 'user', message: '!8ball Will I win my next game?' },
+  { persona: 'bot', message: 'The 8ball says: It is certain.' }
+]} />
+
+<ChatExample messages={[
+  { persona: 'user', message: '!8ball Should I order pizza tonight?' },
+  { persona: 'bot', message: 'The 8ball says: Ask again later.' }
+]} />
+
+## Configuration
+
+The 8ball responses come entirely from the module settings: you configure the list of possible answers, plus an optional list of emotes — when emotes are configured, a random one is appended to the response. To customize them in the StreamElements dashboard:
+
+1. Navigate to the Chatbot section
+2. Find the 8ball module in the list of available modules
+3. Click on "Edit" to access the module settings
+4. Modify the list of possible responses and emotes
+5. Save your changes
+
+If no responses are configured, the bot falls back to a default message saying the Magic 8-ball is out of order.
+
+## Related Commands
+
+- [`!8ball`](/chatbot/commands/default/8ball/): Asks the Magic 8 Ball a question.
+
+## FAQ
+
+**Q: Can I add my own custom responses to the 8ball?**
+A: Yes, you can customize the list of possible responses in the module settings of your StreamElements dashboard.
