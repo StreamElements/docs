@@ -1,6 +1,8 @@
 ---
-title: Code Editor
-description: The StreamElements custom code editor for widgets, covering the HTML, CSS, JS, and custom field definitions.
+title: Widget Structure & Custom Fields
+sidebar:
+  label: Code Editor
+description: "The structure of a StreamElements custom widget in the Code Editor: the HTML, CSS, and JS tabs, and the JSON that defines custom fields."
 ---
 
 This section describes the StreamElements Custom Code Editor and Widget's Structure.

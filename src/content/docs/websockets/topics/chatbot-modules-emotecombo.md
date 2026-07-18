@@ -1,5 +1,5 @@
 ---
-title: Emote Combo Module
+title: Chatbot Emote Combo
 description: "Real-time notifications when an emote combo is broken in chat."
 wsTopic: 'channel.chatbot.modules.emotecombo'
 scope: 'bot:read'

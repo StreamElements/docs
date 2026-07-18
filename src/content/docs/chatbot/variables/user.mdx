@@ -1,12 +1,13 @@
 ---
 title: "$(user)"
-description: "Reference for the StreamElements Chatbot $(user) variables: display name, points, ranks, and activity data for any user."
+description: "Reference for the StreamElements Chatbot $(user) variables: display name, points, watchtime, ranks, and activity data for any user."
 syntax: "$(user [username])"
 arguments: optional
 keywords:
   - streamelements
   - chatbot
   - user variable
+  - watchtime
   - streamer tools
   - chat commands
 platforms: [twitch, kick]
@@ -58,7 +59,7 @@ Every variable below accepts the same optional username argument, e.g. `$(user.p
 | `$(user.lastmessage)` | User's last typed message in the chat | Outputs a single space if no message is stored |
 | `$(user.lastseen)` | Time since the user was most recently seen in the viewer list or chat | Returned as a duration, e.g. `5 mins 30 secs`; `<not found>` if never recorded |
 | `$(user.lastactive)` | Time since the user most recently typed a message in the chat | Returned as a duration, e.g. `5 mins 30 secs`; `<not found>` if never recorded |
-| `$(user.time_online)` | Total time the user has spent watching the stream | Returned as a duration, e.g. `2 hours 30 mins` |
+| `$(user.time_online)` | The user's total watchtime — time spent watching the stream | Returned as a duration, e.g. `2 hours 30 mins` |
 | `$(user.time_online_rank)` | User's rank on the leaderboard for online time watched | Returned as rank/total, e.g. `5/283`; `<error>` if the lookup fails |
 | `$(user.time_offline)` | Total time the user has spent in chat while the stream is offline | Returned as a duration, e.g. `2 hours 30 mins` |
 | `$(user.time_offline_rank)` | User's rank on the leaderboard for offline time watched | Returned as rank/total, e.g. `5/283`; `<error>` if the lookup fails |

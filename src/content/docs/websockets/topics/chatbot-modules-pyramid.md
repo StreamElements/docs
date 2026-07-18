@@ -1,5 +1,5 @@
 ---
-title: Pyramid Module
+title: Chatbot Pyramid
 description: "Real-time notifications when a user successfully completes a pyramid in chat."
 wsTopic: 'channel.chatbot.modules.pyramid'
 scope: 'bot:read'
