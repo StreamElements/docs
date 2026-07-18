@@ -24,7 +24,7 @@ Command/feature pages can declare `platforms: [twitch, youtube, trovo, kick]` in
 
 ## Deployment
 
-The site deploys to **Cloudflare Workers** (static assets, no worker script) as `streamelements-docs` on `docs.streamelements.com` — see `wrangler.jsonc`.
+The site deploys to **Cloudflare Workers** (static assets, no worker script) as `docs` on `docs.streamelements.com` — see `wrangler.jsonc`.
 
 - **Validation** — GitHub Actions (`.github/workflows/ci.yml`) builds every PR and push to `master`; the build itself validates internal links, content schemas, and redirects. No Cloudflare secrets needed in GitHub.
 - **Deployment** — Cloudflare **Workers Builds** (repo connected in the Cloudflare dashboard: Worker → Settings → Builds). The default deploy command `npx wrangler deploy` is all it needs — `build.command` in `wrangler.jsonc` runs the Astro build first. Pushes to `master` deploy production; other branches get preview URLs.
