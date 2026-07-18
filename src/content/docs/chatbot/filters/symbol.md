@@ -11,14 +11,24 @@ keywords:
 - timeout settings
 ---
 
-The Symbol filter helps manage the use of symbols in chat messages. It checks the number and percentage of symbols in a message and compares them with the set limits. If a message violates these limits, the filter takes action according to the configured settings.
+The Symbol filter flags messages that contain too many symbols — either more than an absolute number, or making up too large a share of the message.
+
+## What counts as a symbol
+
+Any character that is not a letter, a number, or a space. This includes:
+
+- Punctuation: `!` `?` `.` `,` `"` `'` `@` `#` `&` `(` `)`
+- Math and currency signs: `+` `=` `<` `>` `$` `€` `^` `~`
+- Unicode emoji such as 🎉
+
+Letters and digits from any alphabet, spaces, and accents on letters are never counted. Platform emotes (Twitch, YouTube) are sent as ordinary words like `Kappa`, so they don't count either — only Unicode emoji do.
 
 ## Settings
 
 | Setting | Description |
 |---------|-------------|
-| Maximum amount | The maximum number of symbols allowed in a message. If a message contains more symbols than this limit, it will be flagged by the filter. |
-| Minimum amount | The minimum number of symbols a message must have before the filter checks for a violation. If a message contains fewer symbols than this limit, it will not be checked by the filter. |
-| Maximum percent | The maximum percentage of a message that can be symbols. If the percentage of symbols in a message exceeds this limit, it will be flagged by the filter. |
+| Maximum amount | The most symbols a message may contain. A message with more symbols than this is flagged. |
+| Minimum amount | The minimum message length, in characters, before the filter applies. Messages shorter than this are never flagged, whatever they contain. |
+| Maximum percent | The largest share of a message that may be symbols. The percentage is measured against all characters in the message, spaces included. |
 
 The filter also supports the [settings shared by all filters](/chatbot/filters#settings-shared-by-all-filters) — timeout length, custom timeout message, excluded user level — which also determine [what happens on a violation](/chatbot/filters#what-happens-on-a-violation).
