@@ -1,0 +1,43 @@
+---
+title: Fourthwall Giveaways Module
+sidebar:
+  label: Fourthwall Giveaways
+description: "How StreamElements chat giveaways work when someone gifts Fourthwall merch to your chat: the join keyword, entry window, and winner announcement."
+keywords:
+- Fourthwall giveaway
+- StreamElements Fourthwall
+- merch giveaway
+- gifted merch
+- Twitch merch drop
+platforms: [twitch]
+---
+
+import ChatExample from '@components/ChatExample.astro';
+
+When a supporter gifts merch from your connected [Fourthwall](https://fourthwall.com) shop to the chat, the chatbot turns it into an instant giveaway: it announces the gift, viewers type a keyword to enter, and the bot announces the winners when time runs out.
+
+## How It Works
+
+1. A supporter gifts one or more merch items to the chat through your Fourthwall shop. This is what starts the giveaway — there is no chat command to start one.
+2. The bot announces the giveaway with the join keyword and a countdown:
+
+   <ChatExample messages={[
+     { persona: 'bot', message: 'NEW GIVEAWAY - MERCH TO WIN. GenerousViewer gifted 3 Classic Tee(s) to the chat. Type MERCH in the next 300 seconds for a chance to win.' }
+   ]} />
+
+3. Viewers enter by typing the keyword — anywhere in a message, in any casing. Each viewer is entered once, no matter how many times they type it.
+4. When the entry window closes, winners are drawn and announced along with how to redeem the gift. If nobody entered, the bot says so instead.
+
+## Requirements
+
+- A [Fourthwall shop connected to StreamElements](https://streamelements.com/dashboard/merch) — without it, the module has nothing to react to.
+- Twitch only.
+
+:::note
+Fourthwall giveaways don't appear under **Chatbot → Modules** — they're controlled from within the Fourthwall merch integration. The giveaway itself — items, duration, and keyword — comes from the Fourthwall gift.
+:::
+
+## Related
+
+- [Giveaways module](/chatbot/modules/giveaways): StreamElements' own giveaways, where viewers buy tickets with loyalty points.
+- [Chat Alerts module](/chatbot/modules/chatalerts): Posts chat messages for regular (non-gifted) merch purchases.

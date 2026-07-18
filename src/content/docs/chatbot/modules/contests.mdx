@@ -1,0 +1,64 @@
+---
+title: Contests Module
+sidebar:
+  label: Contests
+description: "Run StreamElements betting contests where viewers wager loyalty points on an outcome with !bet, and winners split the losing pool proportionally."
+keywords:
+- StreamElements contests
+- Twitch predictions
+- betting contest
+- loyalty points betting
+- "!bet command"
+platforms: [twitch]
+---
+
+import ChatExample from '@components/ChatExample.astro';
+
+Contests are prediction-style bets: you define an outcome with two or more options, viewers back an option with loyalty points, and when you pick the winning option the losing bets are paid out to the winners.
+
+## How It Works
+
+1. Create the contest in the dashboard under **Loyalty → Contests**: a title, the options (each with a display title and the command viewers type), how many minutes betting stays open, and the minimum and maximum bet.
+2. The bot announces the contest with its options. Viewers bet with [`!bet`](/chatbot/commands/default/bet) — points are deducted immediately, and each viewer can bet once per contest.
+3. When the timer runs out (or you close it early), betting stops and the bot posts a per-option breakdown.
+4. You pick the winning option in the dashboard. Winners get their stake back plus a share of the losing pool; everyone else loses their bet. You can also refund the contest instead, returning every stake.
+
+<ChatExample messages={[
+  { persona: 'user', message: '!bet win 100' },
+  { persona: 'bot', message: '@User, you have bet 100 points on Win.' },
+  { persona: 'user', usernameOverride: 'Cautious', message: '!contest' },
+  { persona: 'bot', message: '@Cautious, the current contest is "Do we win this game?". You can !bet for win, lose. Betting ends in 12 mins' }
+]} />
+
+## Payouts
+
+Payouts are proportional to the bet: a winner receives
+
+```
+payout = (total pool ÷ winning option's pool) × their bet
+```
+
+That's always at least their stake back, plus their share of what the losers put in. A 10-point bet pays exactly twice what a 5-point bet pays. Losing bets are gone — they fund the winners.
+
+## Configuration
+
+| Setting | Description |
+|---------|-------------|
+| Options | Each option has a display title and a chat command (what viewers type after `!bet`). |
+| Duration | How many minutes viewers have to bet. |
+| Minimum / Maximum bet | Bounds for a single bet, in points. |
+| Send confirmation when entering via chat | When on (the default), the bot confirms each bet in chat. |
+
+## Related
+
+- [`!bet`](/chatbot/commands/default/bet): Place a bet on an option.
+- [`!contest`](/chatbot/commands/default/contest): Show the running contest, its options, and the time left.
+- [Contests websocket topic](/websockets/topics/channel-contests): Realtime contest events for developers.
+
+## FAQ
+
+**Q: Can a viewer change or add to their bet?**
+A: No — one bet per viewer per contest. The first `!bet` locks in both the option and the amount.
+
+**Q: What amounts does `!bet` accept?**
+A: Plain numbers, `k`/`m` suffixes (`5k` = 5000), percentages of the viewer's balance (`25%`), and `all` — as long as the result stays within the contest's minimum and maximum bet.

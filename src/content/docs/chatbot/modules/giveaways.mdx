@@ -1,0 +1,62 @@
+---
+title: Giveaways Module
+sidebar:
+  label: Giveaways
+description: "Run StreamElements giveaways where viewers buy tickets with loyalty points via !ticket or the giveaway page, with subscriber luck and free-ticket options."
+keywords:
+- StreamElements giveaways
+- Twitch giveaway
+- loyalty points giveaway
+- ticket giveaway
+- subscriber luck
+platforms: [twitch]
+---
+
+import ChatExample from '@components/ChatExample.astro';
+
+Giveaways let viewers spend loyalty points on tickets for a chance to win a prize you define. The chatbot announces the giveaway, sells tickets in chat, and celebrates the winner; the giveaway itself is created and drawn from the dashboard.
+
+## How It Works
+
+1. Create the giveaway in the dashboard under **Loyalty → Giveaways** — set the title, description, preview image, ticket cost, and limits — and start it.
+2. The bot announces it in chat. Viewers buy tickets with [`!ticket`](/chatbot/commands/default/ticket) (or `!enter`) or on your public giveaway page. Every ticket has an equal chance of winning.
+3. When you're ready, close the giveaway to stop ticket sales and draw a winner from the dashboard. You can draw as many winners as you like, one at a time.
+4. The bot announces each winner in chat, along with the chance they had of winning.
+
+<ChatExample messages={[
+  { persona: 'user', message: '!ticket 5' },
+  { persona: 'user', usernameOverride: 'BigSpender', message: '!ticket max' },
+  { persona: 'bot', message: '@BigSpender won the giveaway with a 32.50% chance to win PogChamp' }
+]} />
+
+`!ticket max` buys as many tickets as the viewer's points allow, up to the per-user maximum.
+
+## Configuration
+
+Settings when creating a giveaway:
+
+| Setting | Description |
+|---------|-------------|
+| Ticket cost | Loyalty points per ticket. A cost of 0 makes entry free. |
+| Give everyone their first ticket for free | Each viewer's first ticket costs nothing, even when a ticket cost is set. |
+| Max Tickets | Caps how many tickets a single viewer can hold. |
+| Subscriber luck | Multiplies subscribers' chances, from 1× (no special treatment) up to 10× — 2× is equivalent to holding twice the tickets. |
+| Only allow subscribers to enter | Non-subscribers who try to enter from chat are turned away. |
+| Send confirmation when buying tickets via chat | When on, the bot confirms each chat entry. Off by default, to keep chat quiet during busy giveaways. |
+
+If something goes wrong, you can refund the giveaway — every entrant gets their points back. Individual entries can also be refunded.
+
+## Related
+
+- [`!ticket`](/chatbot/commands/default/ticket): Buy giveaway tickets from chat.
+- [`!giveaway`](/chatbot/commands/default/giveaway): Check the currently running giveaway and get the entry link.
+- [Giveaways websocket topic](/websockets/topics/channel-giveaway): Realtime giveaway events for developers.
+- Not to be confused with the [Raffle module](/chatbot/modules/raffle), where entry is free via `!join` and the prize is the points themselves.
+
+## FAQ
+
+**Q: What can viewers win?**
+A: Whatever you put up — the prize is the title and description you write. StreamElements picks the winner; delivering the prize is up to you.
+
+**Q: Do viewers get their points back if they don't win?**
+A: No — tickets are spent. Points only come back if you refund the giveaway (or a specific entry).
