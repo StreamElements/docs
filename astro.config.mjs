@@ -50,6 +50,10 @@ function emitRedirectsFile() {
           const variants = from.endsWith('/') ? [from] : [from, `${from}/`];
           return variants.map((path) => `${path} ${to} 301`);
         });
+        // Old Docusaurus sitemap location, still registered with search
+        // engines. Edge-only (not in the Astro redirects map): an HTML
+        // meta-refresh page is useless to XML consumers.
+        lines.push('/sitemap.xml /sitemap-index.xml 301');
         fs.writeFileSync(new URL('_redirects', dir), `${lines.join('\n')}\n`);
       },
     },
