@@ -11,11 +11,11 @@ const streamelementsGrammar = JSON.parse(
   fs.readFileSync('./grammars/streamelements.tmLanguage.json', 'utf-8'),
 );
 
-export default defineConfig({
-  site: 'https://docs.streamelements.com',
-
-  // Preserve old Docusaurus URLs that moved during the revamp.
-  redirects: {
+// Preserve old Docusaurus URLs that moved during the revamp. Astro builds
+// these as meta-refresh pages (works on any host / local preview); the
+// emitRedirectsFile integration below also writes them to dist/_redirects so
+// Cloudflare Workers serves real HTTP 301s, which take precedence there.
+const redirects = {
     '/chatbot/gettingstarted/commands': '/chatbot/getting-started',
     '/chatbot/gettingstarted/timers': '/chatbot/getting-started',
     // Pages whose old URLs came from Docusaurus id: frontmatter, not filenames.
@@ -37,9 +37,32 @@ export default defineConfig({
     '/websockets/topics/chatbot/modules-emotecombo': '/websockets/topics/chatbot-modules-emotecombo',
     '/websockets/topics/chatbot/modules-pyramid': '/websockets/topics/chatbot-modules-pyramid',
     '/websockets/topics/chatbot/timeout': '/websockets/topics/chatbot-timeout',
-  },
+};
+
+/** Writes dist/_redirects (Cloudflare redirects file) from the map above.
+    Each path is emitted with and without a trailing slash so both forms 301. */
+function emitRedirectsFile() {
+  return {
+    name: 'emit-cloudflare-redirects',
+    hooks: {
+      'astro:build:done': ({ dir }) => {
+        const lines = Object.entries(redirects).flatMap(([from, to]) => {
+          const variants = from.endsWith('/') ? [from] : [from, `${from}/`];
+          return variants.map((path) => `${path} ${to} 301`);
+        });
+        fs.writeFileSync(new URL('_redirects', dir), `${lines.join('\n')}\n`);
+      },
+    },
+  };
+}
+
+export default defineConfig({
+  site: 'https://docs.streamelements.com',
+
+  redirects,
 
   integrations: [
+    emitRedirectsFile(),
     mermaid({ autoTheme: true }),
     starlight({
       title: 'StreamElements Docs',
@@ -121,7 +144,7 @@ export default defineConfig({
             {
               label: 'Overlays',
               link: '/overlays/',
-              icon: 'puzzle',
+              icon: 'desktop',
               items: [
                 { label: 'Overview', slug: 'overlays' },
                 { label: 'Getting Started', slug: 'overlays/getting-started' },
@@ -146,7 +169,7 @@ export default defineConfig({
             {
               label: 'WebSockets',
               link: '/websockets/',
-              icon: 'random',
+              icon: 'server',
               items: [
                 { label: 'Introduction', slug: 'websockets' },
                 { label: 'Client Examples', slug: 'websockets/examples' },
@@ -200,6 +223,7 @@ export default defineConfig({
               label: 'API Reference',
               link: 'https://dev.streamelements.com/',
               icon: 'external',
+              attrs: { target: '_blank', rel: 'noopener' },
             },
             {
               label: 'Changelog',

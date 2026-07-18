@@ -25,35 +25,50 @@ const { products } = Astro.props;
     gap: 0.4rem;
     margin: 0.5rem 0 1rem;
   }
+  /* Neutral pill with a small product-colored dot: scannable without
+     competing with content (color codes the product, chrome stays quiet). */
   .product-pill {
-    display: inline-block;
-    padding: 0.1em 0.6em;
-    border: 1px solid var(--pill-color, var(--sl-color-accent));
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45em;
+    padding: 0.1em 0.7em 0.1em 0.55em;
+    border: 1px solid var(--sl-color-gray-5);
     border-radius: 999px;
-    background: color-mix(in srgb, var(--pill-color, var(--sl-color-accent)) 14%, transparent);
-    color: var(--sl-color-white);
+    background: var(--sl-color-gray-6);
+    color: var(--sl-color-gray-2);
     font-size: var(--sl-text-xs);
-    font-weight: 600;
+    font-weight: 500;
     line-height: 1.7;
     text-decoration: none;
-    transition: background 0.15s ease;
+    transition: border-color 0.15s ease, color 0.15s ease;
+  }
+  .product-pill::before {
+    content: '';
+    flex: none;
+    width: 0.45em;
+    height: 0.45em;
+    border-radius: 999px;
+    background: var(--pill-color, var(--sl-color-accent));
   }
   .product-pill:hover {
-    background: color-mix(in srgb, var(--pill-color, var(--sl-color-accent)) 28%, transparent);
+    border-color: var(--sl-color-gray-4);
+    color: var(--sl-color-white);
   }
+  /* Colors come from the @frontend/ui token block in src/styles/custom.css
+     and match the sidebar topic chips. */
   .product-pill.chatbot {
-    --pill-color: #2b6cff;
+    --pill-color: var(--se-primary);
   }
   .product-pill.overlays {
-    --pill-color: #9146ff;
+    --pill-color: var(--se-purple);
   }
   .product-pill.websockets {
-    --pill-color: #20b2aa;
+    --pill-color: var(--se-success);
   }
   .product-pill.dashboard {
-    --pill-color: #ff8c00;
+    --pill-color: var(--se-attention);
   }
   .product-pill.docs {
-    --pill-color: #76829b;
+    --pill-color: var(--se-neutral-400);
   }
 </style>
