@@ -11,11 +11,15 @@ keywords:
 - combining characters
 ---
 
-The Zalgo filter removes "zalgo" text — messages distorted with stacked combining characters that bleed over surrounding lines and make chat hard to read. Messages containing this kind of combining-character abuse are flagged by the filter.
+The Zalgo filter removes "zalgo" text — messages distorted with stacked combining characters that bleed over surrounding lines and make chat hard to read. A message is flagged when it contains more combining characters than the configured maximum.
 
 ## Settings
 
-The filter supports the [settings shared by all filters](/chatbot/filters#settings-shared-by-all-filters), including the timeout length, custom timeout message, and excluded user level.
+| Setting | Description |
+|---------|-------------|
+| Maximum amount | The maximum number of zalgo (combining) characters allowed in a single message. (Default: 1) |
+
+The filter also supports the [settings shared by all filters](/chatbot/filters#settings-shared-by-all-filters), including the timeout length, custom timeout message, and excluded user level.
 
 ## What happens on a violation
 

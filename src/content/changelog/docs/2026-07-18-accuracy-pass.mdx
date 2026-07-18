@@ -1,0 +1,14 @@
+---
+title: Documentation accuracy pass
+description: Docs are now verified against the chatbot and realtime source code — corrected websocket payload shapes, game-module payouts, raffle defaults, and spam filter settings.
+date: 2026-07-18
+---
+
+We ran a full accuracy review of the documentation, checking claims directly against the chatbot and realtime service source code. Highlights:
+
+- **WebSockets:** `channel.session.reset` delivers session data flat under `data` (not `data.session`) — the payload reference and all client examples now agree. Session keys are documented in their real `follower-latest` format, and `channel.session.update`'s full payload is now listed.
+- **Games:** Roulette pays even money and its slider sets the *win* chance; the Slotmachine only pays on three matching emotes, and its exact payout formula is now documented.
+- **Raffles:** `!raffle` and `!sraffle` arguments are optional — defaults, caps, and the automatic winner-count brackets are now spelled out.
+- **Spam filters:** One-Man Spam, Repetition, Zalgo, and Language filters now document their actual settings.
+
+If you spot anything that doesn't match what the product does, the **Edit page** link at the bottom of every page goes straight to the source on GitHub.

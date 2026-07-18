@@ -22,7 +22,7 @@ Every chatbot variable on one page — syntax and what it returns, at a glance. 
 | [`$(game)`](/chatbot/variables/game) | `$(game [channel])` | The current category, e.g. `Just Chatting`; `<no game>` when unset. |
 | [`$(title)`](/chatbot/variables/title) | `$(title [channel])` | The current stream title. Alias: `$(status)`. |
 | [`$(uptime)`](/chatbot/variables/uptime) | `$(uptime [channel])` | Time live, e.g. `2 hours 30 mins`; `<not live>` when offline. |
-| [`$(provider)`](/chatbot/variables/provider) | `$(provider)` | The platform slug: `twitch`, `youtube`, `trovo`, or `kick`. |
+| [`$(provider)`](/chatbot/variables/provider) | `$(provider)` | The platform slug: `twitch`, `youtube`, or `kick`. |
 
 ## Stream management
 
@@ -120,7 +120,7 @@ Use as `$(user.<field> [username])` or `$(sender.<field>)` — the fields are id
 
 ## Channel sub-variables
 
-Use as `$(channel.<field>)`. On Twitch and Trovo you can also target another channel: `$(channel.<field> <name>)`.
+Use as `$(channel.<field>)`. On Twitch you can also target another channel: `$(channel.<field> <name>)`.
 
 | Field | Returns |
 | --- | --- |

@@ -20,7 +20,9 @@ The Slotmachine module is an interactive chat game that allows viewers to wager 
 
 ## Usage
 
-To start a game, viewers use the `!slots` command followed by the number of points they wish to wager. The slot machine then spins and displays a combination of emotes. If three matching emotes appear, the player wins and receives a payout based on their wager.
+To start a game, viewers use the `!slots` command followed by the number of points they wish to wager. The slot machine then spins and displays a combination of three emotes.
+
+Only three matching emotes win — two of a kind pays nothing. A winning spin credits the player with `wager × (number of emotes)² × (Return Amount ÷ 100)` points; a losing spin deducts the full wager. With the default five emotes and a 100% Return Amount, the odds of a win are 1 in 25 and a winning spin pays 25× the wager.
 
 ## Examples
 
@@ -50,8 +52,14 @@ Streamers can customize the following settings for the Slotmachine module:
 
 | Setting | Description |
 |---------|-------------|
-| Emotes | The emotes used in the slot machine. |
-| Minimum wager | The minimum amount of points that can be wagered. |
+| Emotes | The reel symbols. Defaults to `Kappa`, `PogChamp`, `BibleThump`, `OpieOP`, and `4Head`. Fewer emotes mean more frequent (but smaller) wins, since the payout scales with the square of the emote count. |
+| Minimum amount | The minimum (and default) number of points that can be wagered. |
+| Return amount | Payout percentage — the "How rigged should the system be?" slider. At 100% the game pays out fair odds; lower than 100% means players lose points over time. |
+| User cooldown | The minimum time (in seconds) a specific viewer must wait between spins (default: 10). |
+| Global cooldown | The minimum time (in seconds) everyone must wait after any spin. |
+| Win / Lose message | The bot's response messages. Available placeholders: `{emotes}`, `{points}`, `{user}`. |
+
+The command also responds to the aliases `!slotmachine`, `!slot`, `!sm`, and `!smp`.
 
 ## Related Commands
 

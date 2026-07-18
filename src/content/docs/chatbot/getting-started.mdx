@@ -17,12 +17,13 @@ keywords:
 ---
 
 import { Steps } from '@astrojs/starlight/components';
+import ChatExample from '@components/ChatExample.astro';
 
 This guide walks you through the two most common ways to put the StreamElements Chatbot to work: creating your first custom command and setting up your first timer.
 
 ## Your first command
 
-Commands are the main way users will interact with the bot in your chat. They can be used to trigger actions, or to display information to your users. In this example we will create a command that will display the amount of time that has past since a user was last seen in chat.
+Commands are the main way users will interact with the bot in your chat. They can be used to trigger actions, or to display information to your users. In this example we will create a command that shows how long it has been since a user was last seen in chat.
 
 <Steps>
 
@@ -41,7 +42,13 @@ Commands are the main way users will interact with the bot in your chat. They ca
      - NOTE: If the platform does not support native replies, the response will be sent as a "Mention" instead.
    - "Whisper" will send the response as a whisper to the user who triggered the command.
 
-5. Add your desired response. For a list of all available variables, see the [variables documentation](/chatbot/variables).
+5. Add the response. For our example, enter:
+
+   ```streamelements
+   $(user) was last seen $(user.lastseen) ago
+   ```
+
+   [`$(user)`](/chatbot/variables/user) and its sub-variables target the name typed after the command — or the person who used the command, when no name is given. For a list of all available variables, see the [variables documentation](/chatbot/variables).
 
    ![Step 2](img/step_2.png "Step 2")
 
@@ -52,6 +59,13 @@ Commands are the main way users will interact with the bot in your chat. They ca
    ![Step 3](img/step_3.png "Step 3")
 
 </Steps>
+
+That's it — the command is live in your chat:
+
+<ChatExample messages={[
+  { persona: 'user', message: '!lastseen SomeViewer' },
+  { persona: 'bot', message: 'SomeViewer was last seen 5 mins 30 secs ago' }
+]} />
 
 ## Your first timer
 

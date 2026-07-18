@@ -48,7 +48,6 @@ The available event types depend on the platform:
 | Platform | Supported events |
 |----------|------------------|
 | Twitch | Follows, tips, subscriptions, cheers (bits), raids, channel point redemptions, merch purchases, ad breaks, polls, predictions, hype trains, sponsorships |
-| Trovo | Follows, tips, raids, subscriptions, merch purchases |
 | YouTube | Tips, sponsors, subscribers, redemptions, merch purchases |
 | Kick | Follows, subscriptions, tips |
 
@@ -59,7 +58,6 @@ Each event type can have its own customized messages and trigger conditions.
 For events with an amount — tips, subscriptions, cheers, and raids, depending on the platform — you can configure multiple messages, each with its own minimum amount. When the event fires, the bot uses the message with the highest minimum amount that the event reaches:
 
 - **Twitch**: tips, subscriptions, cheers, raids
-- **Trovo**: tips, raids, subscriptions
 - **YouTube**: tips, sponsors
 - **Kick**: tips, subscriptions
 

@@ -38,7 +38,7 @@ Variables work on all platforms unless a page notes otherwise — on YouTube, `$
 | [`$(game)`](/chatbot/variables/game) | Display the current game on a Twitch channel. |
 | [`$(title)`](/chatbot/variables/title) | Display a channel's title. Also available as `$(status)`. |
 | [`$(uptime)`](/chatbot/variables/uptime) | Display stream uptime for any channel. |
-| [`$(provider)`](/chatbot/variables/provider) | Display the platform the channel runs on: `twitch`, `youtube`, `trovo`, or `kick`. |
+| [`$(provider)`](/chatbot/variables/provider) | Display the platform the channel runs on: `twitch`, `youtube`, or `kick`. |
 
 ## Stream Management
 
