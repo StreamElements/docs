@@ -10,7 +10,7 @@ keywords:
   - chatbot
   - commands
   - mediarequest
-platforms: [twitch, youtube, trovo, kick]
+platforms: [twitch]
 ---
 
 import ChatExample from '@components/ChatExample.astro';
@@ -39,12 +39,11 @@ To clear the queue, simply type the command in chat:
 ## Configuration
 
 *   The command's permission level can be adjusted under `Chatbot` -> `Chat Commands` -> `Default Commands`.
+*   Default cooldown: 10 seconds global and 10 seconds per user.
 
 ## Aliases
 
-*   `!clearsr`
-*   `!clearsongs`
-*   `!resetqueue`
+*   `!mrclear`
 
 ## Related Commands
 

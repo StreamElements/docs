@@ -8,12 +8,12 @@ keywords:
   - media request
   - chatbot commands
   - streamelements
-platforms: [twitch, youtube, trovo, kick]
+platforms: [twitch]
 ---
 
 import ChatExample from '@components/ChatExample.astro';
 
-The `!voteskip` command allows viewers to vote towards skipping the currently playing song or video in the StreamElements media request queue. If enough votes are cast (based on streamer configuration), the current item is skipped.
+The `!voteskip` command allows viewers to vote towards skipping the currently playing song or video in the StreamElements media request queue. Each user gets one vote; once the configured number of votes is reached, the current item is skipped.
 
 ## Usage
 
@@ -27,20 +27,21 @@ To cast a vote to skip the current media:
 
 <ChatExample messages={[
   { persona: 'user', message: '!voteskip' },
-  { persona: 'bot', message: '@User Skip requested! Current song will be skipped in 4 more votes!' } // Output varies based on votes needed
+  { persona: 'bot', message: 'Current song will be skipped in 4 more votes!' } // Output varies based on votes needed
 ]} />
 
 <ChatExample messages={[
   { persona: 'user', message: '!voteskip' }, // Assuming this is the final vote needed
-  { persona: 'bot', message: '@User Vote to skip successful! Skipping to the next media request.' }
+  { persona: 'bot', message: 'The people have spoken.. skipping the current song!' }
 ]} />
 
 ## Configuration
 
 *   Requires the **Media Request** module to be enabled.
-*   The **Vote Skip** feature must be enabled within the Media Request module settings on the StreamElements Dashboard.
-*   Streamers configure the **Number of votes required to skip** in the module settings.
-*   Other related settings might include cooldowns or user level restrictions for voting.
+*   The **Vote Skip** feature must be enabled within the Media Request module settings on the StreamElements Dashboard — if it is disabled, the command does nothing.
+*   Streamers configure the **Number of votes required to skip** in the module settings; the song is skipped once the vote count reaches that threshold.
+*   Each user can vote only once per song.
+*   Default cooldown: 10 seconds per user.
 
 ## Related Commands
 

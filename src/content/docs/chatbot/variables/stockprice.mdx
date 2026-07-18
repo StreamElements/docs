@@ -1,0 +1,66 @@
+---
+title: "$(stockprice)"
+description: "Display the current stock price of a company in chat with the $(stockprice) variable in StreamElements Chatbot."
+syntax: "$(stockprice <symbol>)"
+arguments: required
+keywords:
+  - stock price
+  - financial data
+  - stream chat
+  - real-time quotes
+---
+
+import ChatExample from '@components/ChatExample.astro';
+
+The `$(stockprice)` variable allows you to display the current stock price of a specified company directly in your stream chat. This feature is useful for finance-focused streams or for viewers interested in real-time market data.
+
+## Use it
+
+```streamelements
+!command add !stock Apple is currently trading at $(stockprice AAPL)
+```
+
+<ChatExample messages={[
+  { persona: 'user', message: '!stock' },
+  { persona: 'bot', message: 'Apple is currently trading at 173.93' }
+]} />
+
+## Usage
+
+To use the `$(stockprice)` variable, you need to include it in your chat message along with the stock symbol of the company you want to check. The syntax is:
+
+```streamelements
+$(stockprice <symbol>)
+```
+
+Replace `<symbol>` with the actual stock symbol of the company you're interested in.
+
+## Examples
+
+Comparing two tech stocks:
+
+```streamelements
+Current prices: Microsoft $(stockprice MSFT) vs Google $(stockprice GOOGL)
+```
+
+Output: `Current prices: Microsoft 285.76 vs Google 2232.88`
+
+## Parameters
+
+The `$(stockprice)` variable requires one parameter:
+
+- `symbol`: The stock symbol of the company you want to check. This is typically a 1-5 letter code used on stock exchanges.
+
+## FAQ
+
+**Q: How often is the stock price updated?**
+
+A: The stock price is fetched in real-time when the command is used, but may have a slight delay (usually less than a minute) depending on the data provider.
+
+**Q: Can I use this for cryptocurrency prices?**
+
+A: No, this variable is specifically for stock prices.
+
+**Q: What happens if the lookup fails?**
+
+A: If the price service can't be reached or the lookup fails, the variable outputs `Something went wrong during prompt execution` or `failed to get stock price` instead of a price.

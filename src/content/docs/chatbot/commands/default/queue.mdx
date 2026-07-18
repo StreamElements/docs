@@ -9,7 +9,7 @@ keywords:
   - join queue
   - pick user
   - streamelements chatbot
-platforms: [twitch, youtube, trovo, kick]
+platforms: [twitch]
 ---
 
 import ChatExample from '@components/ChatExample.astro';
@@ -24,34 +24,29 @@ The general syntax follows this pattern:
 !queue <subcommand> [arguments...]
 ```
 
+A subcommand is always required — typing `!queue` on its own does nothing.
+
 :::caution[Permissions]
-Most subcommands (`open`, `close`, `pause`, `unpause`, `pick`, `remove`) typically require **Moderator** permission level or higher.
+The management subcommands (`open`, `close`, `pause`, `unpause`, `pick`, `remove`) require **Moderator** permission level or higher. The viewer subcommands (`join`, `position`, `list`) are available to everyone.
 :::
 
 ## Subcommands
 
-Here's a breakdown of common subcommands:
+Here's a breakdown of the available subcommands:
 
 ### `join`
 
 Allows a viewer to enter the open queue.
+
+:::note
+You must type the full `!queue join` to enter the viewer queue. The standalone [`!join`](/chatbot/commands/default/join/) command is unrelated — it enters an active raffle instead.
+:::
 
 *   **Syntax:** `!queue join`
 *   **Example:**
     <ChatExample messages={[
       { persona: 'user', message: '!queue join' },
       { persona: 'bot', message: '@User, you have been added to the queue in position #5.' }
-    ]} />
-
-### `leave`
-
-Allows a viewer to remove themselves from the queue.
-
-*   **Syntax:** `!queue leave`
-*   **Example:**
-    <ChatExample messages={[
-      { persona: 'user', message: '!queue leave' },
-      { persona: 'bot', message: '@User, you have been removed from the queue.' }
     ]} />
 
 ### `position`
@@ -67,24 +62,24 @@ Checks the command user's current position in the queue.
 
 ### `list`
 
-Provides a link to view the full queue.
+Lists who is currently waiting in the queue. The bot posts up to 5 names in chat, followed by a count of how many other viewers are also waiting.
 
 *   **Syntax:** `!queue list`
 *   **Example:**
     <ChatExample messages={[
       { persona: 'user', message: '!queue list' },
-      { persona: 'bot', message: 'View the queue here: https://streamelements.com/YOUR_CHANNEL/queue' }
+      { persona: 'bot', message: 'Currently waiting in the Viewer Games queue: UserOne, UserTwo, UserThree, UserFour, UserFive and 7 others.' }
     ]} />
 
-### `open` (Moderator+)
+### `open <title>` (Moderator+)
 
-Opens the queue, allowing viewers to join.
+Opens the queue, allowing viewers to join. A title for the queue is **required**.
 
-*   **Syntax:** `!queue open`
+*   **Syntax:** `!queue open <title>`
 *   **Example:**
     <ChatExample messages={[
-      { persona: 'moderator', message: '!queue open' },
-      { persona: 'bot', message: '@Moderator, The queue is now open! Viewers can type !queue join to enter.' }
+      { persona: 'moderator', message: '!queue open Viewer Games' },
+      { persona: 'bot', message: '@Moderator, The Viewer Games queue is now open! Viewers can type !queue join to enter.' }
     ]} />
 
 ### `close` (Moderator+)
@@ -120,14 +115,13 @@ Resumes allowing viewers to join the paused queue.
       { persona: 'bot', message: '@Moderator, The queue is no longer paused.' }
     ]} />
 
-### `pick [random | <username>]` (Moderator+)
+### `pick <random | username>` (Moderator+)
 
-Selects the next participant from the queue.
+Selects a participant from the queue. You must specify either a username or the keyword `random` — there is no option to pick the next person in line.
 
 *   **Syntax:** 
     *   `!queue pick random` (Selects randomly)
     *   `!queue pick <username>` (Selects a specific user)
-    *   `!queue pick` (Often defaults to picking the user at position #1)
 *   **Example (random):**
     <ChatExample messages={[
       { persona: 'moderator', message: '!queue pick random' },
@@ -153,7 +147,7 @@ Removes a specific user from the queue.
 ## Configuration
 
 *   The **Queue module** must be enabled in your StreamElements Dashboard under `Chatbot` -> `Modules`.
-*   Queue settings (like max size, subscriber luck, messages) are configured within the module settings on the Dashboard.
+*   Restrictions on the queue, such as the maximum queue size and which viewers are eligible to join (for example followers or subscribers only), are configured in the module settings on the Dashboard.
 *   Permission levels for subcommands can be adjusted under `Chatbot` -> `Chat Commands` -> `Default Commands`.
 
 ## Related

@@ -3,6 +3,7 @@ title: Emote Combo Module
 sidebar:
   label: Emote Combo
 description: "Use the StreamElements Emote Combo module to track chains of consecutive identical emotes in stream chat and announce the combo count."
+platforms: [twitch, trovo, kick]
 keywords:
 - emote combo
 - chatbot
@@ -22,12 +23,12 @@ The Emote Combo feature is an interactive chat module that encourages viewers to
 
 ## How It Works
 
-The Emote Combo feature activates automatically when viewers start sending consecutive emotes in chat:
+The Emote Combo feature activates automatically when viewers start sending consecutive emote messages in chat:
 
-1. A viewer initiates the combo by sending a message containing a single emote.
-2. Subsequent messages must contain only the same emote to continue the combo.
-3. The combo count increases with each consecutive matching emote.
-4. The combo ends when a different emote or any other message is sent.
+1. A viewer initiates the combo by sending a message containing an emote.
+2. Each following message that contains the active emote extends the combo. A message counts once, no matter how many times the emote appears in it.
+3. The combo does not require different viewers — the same viewer can keep a combo going on their own.
+4. The combo ends when a message is sent that does not contain the active emote. If the final count reached the minimum combo count, the bot announces the combo.
 
 ## Example
 
@@ -37,17 +38,27 @@ The Emote Combo feature activates automatically when viewers start sending conse
   { persona: 'user', usernameOverride: 'Viewer3', message: 'Kappa' },
   { persona: 'user', usernameOverride: 'Viewer4', message: 'Kappa' },
   { persona: 'user', usernameOverride: 'Viewer5', message: 'Nice stream!' },
-  { persona: 'bot', message: '4x Kappa combo' }
+  { persona: 'bot', message: 'Viewer5 just disrupted the 4-line Kappa combo DansGame' }
 ]} />
 
 ![Chat screenshot of a viewer sending the same emote ten messages in a row; when a different emote breaks the chain, the StreamElements bot announces a 9x emote combo.](img/emotecombo.png)
 
 ## Configuration
 
-The Emote Combo feature is typically enabled by default. Streamers can customize the following settings in the StreamElements dashboard:
+Streamers can customize the following settings in the StreamElements dashboard:
 
-- Minimum combo count to display
-- Custom messages for combo milestones
+- Whether the module is enabled
+- Minimum combo count before the bot responds (default: 3)
+- Cooldown between bot responses (default: 30 seconds)
+- Tiered messages: a list of messages, each with a minimum count — the message with the highest minimum at or below the final combo count is used
+
+The combo messages support the following placeholders:
+
+| Placeholder | Description |
+|-------------|-------------|
+| `{user}` | The login name of the user who broke the combo |
+| `{count}` | The final combo count |
+| `{emote}` | The combo emote |
 
 ## FAQ
 

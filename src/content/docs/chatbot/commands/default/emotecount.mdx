@@ -1,7 +1,7 @@
 ---
 title: "!emotecount"
 description: "Use the !emotecount command in StreamElements chatbot to display the usage frequency of a specific emote in your chat."
-platforms: [twitch, youtube, trovo, kick]
+platforms: [twitch]
 keywords:
   - emotecount command
   - emote usage
@@ -14,6 +14,10 @@ keywords:
 import ChatExample from '@components/ChatExample.astro';
 
 The `!emotecount` command allows anyone in chat to check how many times a specific emote has been used in the channel's chat history (since tracking began).
+
+:::note
+The `!emotecount` command is **disabled by default**. Enable it under `Chatbot` -> `Chat Commands` -> `Default Commands` before using it.
+:::
 
 ## Usage
 

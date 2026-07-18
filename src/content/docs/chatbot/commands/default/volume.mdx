@@ -9,15 +9,15 @@ keywords:
   - chatbot command
   - audio settings
   - streamelements
-platforms: [twitch, youtube, trovo, kick]
+platforms: [twitch]
 ---
 
 import ChatExample from '@components/ChatExample.astro';
 
-The `!volume` command allows moderators to check or adjust the volume level of the StreamElements media request player.
+The `!volume` command allows users to check or adjust the volume level of the StreamElements media request player.
 
-:::caution[Permissions]
-By default, only users with **Moderator** permission level or higher can use this command.
+:::note[Permissions]
+By default, **everyone** can use this command — both to check and to set the volume. Streamers who want to restrict it can raise the required permission level under `Chatbot` -> `Chat Commands` -> `Default Commands`.
 :::
 
 ## Usage
@@ -28,27 +28,39 @@ By default, only users with **Moderator** permission level or higher can use thi
 !volume
 ```
 
-**To set a new volume level:**
+**To set an absolute volume level:**
 
 ```streamelements
 !volume <level>
 ```
 
+**To adjust the volume relative to its current level:**
+
+```streamelements
+!volume +<amount>
+!volume -<amount>
+```
+
 ## Examples
 
 <ChatExample messages={[
-  { persona: 'moderator', message: '!volume' },
+  { persona: 'user', message: '!volume' },
   { persona: 'bot', message: 'Current volume is 50%' }
 ]} />
 
 <ChatExample messages={[
-  { persona: 'broadcaster', message: '!volume 75' },
-  { persona: 'bot', message: '@Broadcaster set the songrequest volume to 75%' } // Output may vary slightly
+  { persona: 'user', message: '!volume 75' },
+  { persona: 'bot', message: '@User set the songrequest volume to 75%' } // Output may vary slightly
+]} />
+
+<ChatExample messages={[
+  { persona: 'user', message: '!volume +10' },
+  { persona: 'bot', message: '@User set the songrequest volume to 85%' } // Relative adjustment
 ]} />
 
 ## Parameters
 
-*   `<level>` (Optional): A number between `0` and `100` representing the desired volume percentage. If omitted, the command displays the current volume.
+*   `<level>` (Optional): A number between `0` and `100` representing the desired volume percentage, or a relative adjustment prefixed with `+` or `-` (e.g. `!volume +10`, `!volume -10`). The resulting value is always clamped to the `0`–`100` range. If omitted, the command displays the current volume.
 
 ## Configuration
 

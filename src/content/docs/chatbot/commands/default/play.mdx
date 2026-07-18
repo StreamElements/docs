@@ -1,19 +1,18 @@
 ---
 title: "!play"
-description: "Use the !play (!resume, !unpause) command in StreamElements chatbot to resume paused media request playback."
+description: "Use the !play (!resume) command in StreamElements chatbot to resume paused media request playback."
 keywords:
   - play command
   - resume command
-  - unpause command
   - resume song
   - resume media request
   - streamelements chatbot
-platforms: [twitch, youtube, trovo, kick]
+platforms: [twitch]
 ---
 
 import ChatExample from '@components/ChatExample.astro';
 
-The `!play` command (aliased as `!resume` and `!unpause`) resumes the playback of the StreamElements media request queue after it has been stopped by the [`!pause`](/chatbot/commands/default/pause/) command.
+The `!play` command (aliased as `!resume`) resumes the playback of the StreamElements media request queue after it has been stopped by the [`!pause`](/chatbot/commands/default/pause/) command.
 
 ## Usage
 
@@ -23,11 +22,10 @@ To resume playback:
 !play
 ```
 
-Or using aliases:
+Or using the alias:
 
 ```streamelements
 !resume
-!unpause
 ```
 
 :::caution[Permissions]
@@ -49,7 +47,6 @@ By default, only users with **Moderator** permission level or higher can use thi
 ## Aliases
 
 *   `!resume`
-*   `!unpause`
 
 ## Related Commands
 

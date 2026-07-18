@@ -67,7 +67,7 @@ To display a specific quote by its ID:
 
 ### Editing Quotes
 
-To edit an existing quote:
+Quotes can only be edited from the dashboard — there is no chat command for editing. To edit an existing quote:
 
 1. Go to the [Bot Quotes](https://streamelements.com/dashboard/bot/quotes) page
 2. Find the quote you want to edit
@@ -96,14 +96,16 @@ For the full command documentation, see the [!quote command reference](/chatbot/
 | Command | Description | Permission |
 |---------|-------------|------------|
 | `!quote` | Display a random quote | Everyone |
-| `!quote <id>` | Display a specific quote | Everyone |
+| `!quote <id>` | Display a specific quote (also accepts `#<id>`) | Everyone |
 | `!quote add <text>` | Add a new quote | Moderator+ |
-| `!quote remove <id>` | Remove a quote | Moderator+ |
+| `!quote remove <id>` | Remove a quote (also accepts `#<id>`) | Moderator+ |
+
+Editing quotes is dashboard-only; there is no `!quote edit` chat command.
 
 ### Command Aliases
 
 - `!quote add` can also be written as `!quote +`
-- `!quote remove` can also be written as `!quote -`
+- `!quote remove` can also be written as `!quote rem`, `!quote delete`, `!quote del`, or `!quote -`
 
 ## Quote Variables
 

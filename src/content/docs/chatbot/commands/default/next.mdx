@@ -13,7 +13,7 @@ platforms: [twitch]
 
 import ChatExample from '@components/ChatExample.astro';
 
-The `!next` command (aliased as `!nextsong`) allows anyone in chat to view details about the upcoming song in the StreamElements media request queue. It typically shows the song title, duration, requester, and a link.
+The `!next` command (aliased as `!nextsong`) allows anyone in chat to view details about the upcoming song in the StreamElements media request queue. It shows the channel, song title, requester, and a link. It only **displays** the next queued song — it does not skip anything; skipping is done by moderators with [`!skip`](/chatbot/commands/default/skip/).
 
 ## Usage
 
@@ -33,22 +33,25 @@ Or using the alias:
 
 <ChatExample messages={[
   { persona: 'user', message: '!next' },
-  { persona: 'bot', message: 'Next song: Epic Sax Guy - 10 Hours [10h0m0s] requested by SaxLover https://youtu.be/kxopViU98Xo' }
+  { persona: 'bot', message: '@User, next song: SaxChannel - Epic Sax Guy 10 Hours, requested by SaxLover https://youtu.be/kxopViU98Xo' }
 ]} />
 
 <ChatExample messages={[
   { persona: 'user', message: '!nextsong' }, // Using alias
-  { persona: 'bot', message: 'There are no songs currently in the queue.' } // If queue is empty
+  { persona: 'bot', message: '@User, there are no songs in the queue!' } // If queue is empty
 ]} />
 
 ## Configuration
 
 *   This command requires the **Songrequest** module to be enabled and configured in your StreamElements Dashboard (`Chatbot` -> `Modules`).
 *   The information displayed depends on the data available from YouTube for the requested track.
+*   Available to everyone by default.
+*   Default cooldown: 10 seconds per user.
 
 ## Aliases
 
 *   `!nextsong`
+*   `!whatisthenextsonghomie`
 
 ## Related Commands
 

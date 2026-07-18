@@ -1,5 +1,11 @@
 ---
 title: Custom Commands
+prev:
+  link: /chatbot/commands/
+  label: Commands overview
+next:
+  link: /chatbot/commands/default/
+  label: Default commands
 description: "Create and manage custom StreamElements Chatbot commands from the dashboard or directly in chat, with example commands using variables."
 keywords:
   - StreamElements custom commands
@@ -37,7 +43,7 @@ See [Getting Started](/chatbot/getting-started/) for a step-by-step walkthrough 
 | Edit | `!command edit !<name> <new_response>` | `!command edit !socials Check out my links: example.com/links` |
 | Remove | `!command remove !<name>` | `!command remove !socials` |
 | Show | `!command show !<name>` | `!command show !socials` |
-| Options | `!command options !<name> <option> <value>` | `!command options !socials -cd 10 -level moderator` |
+| Options | `!command options !<name> <option> <value>` | `!command options !socials -cd 10 -level 500` |
 
 :::note
 `!command` is aliased as `!cmd`, so `!cmd add !socials ...` works the same way.

@@ -1,6 +1,6 @@
 ---
 title: "!when"
-description: "Use the !when command in StreamElements chatbot to check the status and queue position of your most recent song request."
+description: "Use the !when (!mysong) command in StreamElements chatbot to check the queue position and estimated play time of your song request."
 keywords:
   - when
   - song request status
@@ -12,26 +12,32 @@ platforms: [twitch]
 
 import ChatExample from '@components/ChatExample.astro';
 
-The `!when` command allows viewers to check the status of **their most recent song request** in the media request queue. It typically provides the song's position in the queue and an estimated time until it plays.
+The `!when` command allows viewers to check the status of **their own song request** in the media request queue. It provides the song's position in the queue and an estimated time until it plays. You can also pass a YouTube URL or video ID to check where a specific song sits in the queue.
 
 ## Usage
 
-To check the status of your last song request:
+To check the status of your own song request:
 
 ```streamelements
 !when
+```
+
+To check the queue position of a specific song:
+
+```streamelements
+!when <youtube_url_or_id>
 ```
 
 ## Examples
 
 <ChatExample messages={[
   { persona: 'user', message: '!when' },
-  { persona: 'bot', message: '@User, your song "The Best Song Ever" is at #4 in the queue and will play in approximately 12 minutes' } // Output varies
+  { persona: 'bot', message: '@User, "The Best Song Ever" is at #4 in the queue and is playing in 12 mins' } // Output varies
 ]} />
 
 <ChatExample messages={[
   { persona: 'user', message: '!when' },
-  { persona: 'bot', message: '@User, your song "Currently Playing" is at #1 in the queue and is playing right now' } // Output varies
+  { persona: 'bot', message: '@User, "Currently Playing" is at #1 in the queue and is playing right now' } // Output varies
 ]} />
 
 <ChatExample messages={[
@@ -42,8 +48,12 @@ To check the status of your last song request:
 ## Configuration
 
 *   Requires the **Media Request** module to be enabled.
-*   The command checks the queue for a request made by the user issuing the command.
-*   The response format (including estimated time) might be customizable in the Media Request module settings.
+*   Without an argument, the command checks the queue for a request made by the user issuing the command. With a YouTube URL or video ID, it looks up that song's position instead.
+*   Default cooldown: 15 seconds global.
+
+## Aliases
+
+*   `!mysong`
 
 ## Related Commands
 

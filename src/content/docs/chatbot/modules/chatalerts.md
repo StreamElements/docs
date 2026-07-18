@@ -21,7 +21,7 @@ keywords:
 - Twitch community engagement
 ---
 
-The Chat Alerts module is a powerful feature of the StreamElements chatbot that automatically posts messages in your Twitch chat when specific events occur. This helps streamers acknowledge viewer actions, enhance engagement, and keep the community informed about important stream events.
+The Chat Alerts module is a powerful feature of the StreamElements chatbot that automatically posts messages in your chat when specific events occur. This helps streamers acknowledge viewer actions, enhance engagement, and keep the community informed about important stream events.
 
 ## Usage
 
@@ -43,20 +43,27 @@ Chat Alerts are triggered automatically when configured events happen during you
 
 ## Event Types
 
-Chat Alerts can be configured for various events, including:
+The available event types depend on the platform:
 
-- Followers
-- Tips/Donations
-- Ad Breaks
-- Subscriptions
-- Cheers (Bits)
-- Loyalty Point Redemptions
-- Raids
-- Hype Trains
-- Polls
-- Charity Events
+| Platform | Supported events |
+|----------|------------------|
+| Twitch | Follows, tips, subscriptions, cheers (bits), raids, channel point redemptions, merch purchases, ad breaks, polls, predictions, hype trains, sponsorships |
+| Trovo | Follows, tips, raids, subscriptions, merch purchases |
+| YouTube | Tips, sponsors, subscribers, redemptions, merch purchases |
+| Kick | Follows, subscriptions, tips |
 
-Each event type can have its own customized message and trigger conditions.
+Each event type can have its own customized messages and trigger conditions.
+
+### Tiered Messages
+
+For events with an amount — tips, subscriptions, cheers, and raids, depending on the platform — you can configure multiple messages, each with its own minimum amount. When the event fires, the bot uses the message with the highest minimum amount that the event reaches:
+
+- **Twitch**: tips, subscriptions, cheers, raids
+- **Trovo**: tips, raids, subscriptions
+- **YouTube**: tips, sponsors
+- **Kick**: tips, subscriptions
+
+For follow alerts, the bot picks a random message from your configured list.
 
 ## Configuration
 
@@ -74,4 +81,38 @@ Each alert can be customized with the following settings:
 |---------|-------------|
 | Event Type | The specific action that triggers the alert (e.g., follow, subscription, raid) |
 | Message | The text that appears in chat when the event occurs |
-| Minimum Threshold | Optional minimum value for events like donations or bit cheers |
+| Minimum Amount | Optional minimum value for tiered events like tips or cheers |
+
+The module also has a **Delay** setting, which postpones posting alerts by the configured number of seconds.
+
+## Template Variables
+
+Alert messages for activity events (follows, tips, subscriptions, cheers, raids, redemptions, merch, and sponsorships) support the following placeholders:
+
+| Placeholder | Description |
+|-------------|-------------|
+| `{user}` | The display name of the user who triggered the event |
+| `{amount}` | The event's amount (tip amount, months subscribed, bits, raid viewers, etc.) |
+| `{currency}` | The currency symbol (tips) |
+| `{item}` | The redeemed item or purchased merch item name(s) |
+| `{msg}` | The message attached to the event, if any |
+| `{tier}` | The subscription tier, e.g. "Tier 1" (subscriptions only) |
+
+### Twitch Event Placeholders
+
+The Twitch poll, prediction, ad break, and hype train alerts have their own placeholders:
+
+| Event | Placeholders |
+|-------|--------------|
+| Poll started | `{title}`, `{choices}` |
+| Poll ended | `{title}`, `{choice}`, `{votes}`, `{total_votes}` |
+| Prediction started | `{title}`, `{outcomes}` |
+| Prediction locked | `{title}`, `{highest_voted}`, `{highest_voted_count}`, `{total_votes}` |
+| Prediction resolved | `{title}`, `{winner}`, `{winner_percentage}`, `{winner_votes}`, `{total_votes}` |
+| Prediction canceled | `{title}` |
+| Ad break | `{requester}`, `{automatic}`, `{duration}` |
+| Hype train (started/progress/ended) | `{level}`, `{level_percent}`, `{next_level}` |
+
+:::note
+Poll ended alerts only fire when the poll runs to completion, not when it is dismissed early. Ad break alerts are skipped when the ad break duration is zero.
+:::

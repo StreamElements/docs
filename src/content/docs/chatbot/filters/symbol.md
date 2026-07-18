@@ -20,6 +20,9 @@ The Symbol filter helps manage the use of symbols in chat messages. It checks th
 | Maximum amount | The maximum number of symbols allowed in a message. If a message contains more symbols than this limit, it will be flagged by the filter. |
 | Minimum amount | The minimum number of symbols a message must have before the filter checks for a violation. If a message contains fewer symbols than this limit, it will not be checked by the filter. |
 | Maximum percent | The maximum percentage of a message that can be symbols. If the percentage of symbols in a message exceeds this limit, it will be flagged by the filter. |
-| Timeout duration | The duration (in seconds) for which a user will be timed out if their message violates the symbol limits. |
-| Custom timeout message | The message that will be displayed when a user is timed out due to a violation of the symbol limits. This message can be customized to provide specific information about the violation and the timeout. |
-| Excluded user groups | The user groups that are exempt from the symbol filter. Messages from users in these groups will not be checked by the filter. |
+
+The filter also supports the [settings shared by all filters](/chatbot/filters/#settings-shared-by-all-filters), including the timeout length, custom timeout message, and excluded user level.
+
+## What happens on a violation
+
+The filter's timeout setting determines the action: a timeout for the configured number of seconds, message deletion only (timeout of 0), a permanent ban, or a warning plus deletion (Twitch only). See [What happens on a violation](/chatbot/filters/#what-happens-on-a-violation) for details.

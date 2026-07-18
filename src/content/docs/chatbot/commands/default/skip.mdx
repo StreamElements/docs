@@ -7,7 +7,7 @@ keywords:
   - mediarequest
   - chatbot commands
   - StreamElements
-platforms: [twitch, youtube, trovo, kick]
+platforms: [twitch]
 ---
 
 import ChatExample from '@components/ChatExample.astro';
@@ -16,6 +16,10 @@ The `!skip` command is used to skip the currently playing song in the StreamElem
 
 :::caution[Permissions]
 By default, only users with **Moderator** permission level or higher can use this command.
+:::
+
+:::note[!skip vs !next]
+`!skip` is a moderator action that **skips the currently playing song**. It is different from [`!next`](/chatbot/commands/default/next/), which simply **shows** the next queued song and is available to everyone.
 :::
 
 ## Usage
@@ -41,11 +45,11 @@ To use the `!skip` command, simply type it in the chat:
 ## Configuration
 
 *   The command's permission level can be adjusted under `Chatbot` -> `Chat Commands` -> `Default Commands`.
+*   Default cooldown: 10 seconds global.
 
 ## Aliases
 
-*   `!nextsong`
-*   `!ns`
+*   `!skipsong`
 
 ## Related Commands
 

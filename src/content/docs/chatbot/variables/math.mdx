@@ -1,0 +1,91 @@
+---
+title: "$(math)"
+description: "Perform mathematical calculations in StreamElements Chatbot messages with the $(math) variable and math.js expressions."
+keywords:
+  - StreamElements
+  - chatbot
+  - math
+  - calculations
+  - expressions
+syntax: "$(math <expression>)"
+arguments: required
+---
+
+import ChatExample from '@components/ChatExample.astro';
+
+The `$(math)` variable allows you to perform mathematical calculations and operations directly in your StreamElements Chatbot messages. It utilizes the math.js library, providing a wide range of mathematical functions and capabilities.
+
+## Use it
+
+```streamelements
+!command add !calc Result: $(math $(1:))
+```
+
+<ChatExample messages={[
+  { persona: 'user', message: '!calc 2 + 2' },
+  { persona: 'bot', message: 'Result: 4' },
+]} />
+
+## Usage
+
+To use the `$(math)` variable, include it in your message followed by a valid math.js expression:
+
+```streamelements
+$(math <expression>)
+```
+
+Replace `<expression>` with the mathematical operation you want to perform. Results are plain numbers like `4`, `-1`, or `0.05` — and unit conversions return values like `5 inch`.
+
+## Examples
+
+Here are some practical examples of how to use the `$(math)` variable:
+
+1. Rounding a division result:
+
+   ```streamelements
+   10 divided by 3, rounded to the nearest integer, is $(math "round(10/3)")
+   ```
+
+   Output: `10 divided by 3, rounded to the nearest integer, is 3`
+
+2. Generating a random number:
+
+   ```streamelements
+   Your random number between 1 and 10 is $(math "random(1,10)")
+   ```
+
+   Output: `Your random number between 1 and 10 is 7.525986609745358`
+
+## Parameters
+
+The `$(math)` variable takes a single parameter: a valid math.js expression. This can include:
+
+- Basic arithmetic operations (`+`, `-`, `*`, `/`)
+- Mathematical functions (e.g., `round()`, `floor()`, `ceil()`, `log()`, `sin()`, `cos()`)
+- Constants (e.g., `pi`, `e`)
+- Logical operators (e.g., `>`, `<`, `==`, `!=`)
+
+For a complete list of supported operations and functions, refer to the [math.js documentation](https://mathjs.org/docs/index.html).
+
+## Errors
+
+| Bot reply | Cause |
+|-----------|-------|
+| `Something went wrong while processing equation` | The request to the math service failed |
+| `Failed to evaluate equation` | The result could not be read |
+
+Invalid expressions return the error text produced by the math service itself.
+
+## Related Variables
+
+- [`$(customapi)`](/chatbot/variables/customapi/): Can be used to fetch and process numerical data from external sources
+
+## FAQ
+
+**Q: Can I use variables in my math expressions?**
+
+A: Yes, you can use other StreamElements variables within your `$(math)` expression. For example: `$(math $(user.points) * 2)` would output double the user's points.
+
+**Q: Is there a limit to the complexity of expressions I can use?**
+
+A: While there's no strict limit, very complex expressions may take longer to process, and results are truncated to the first 400 bytes. It's best to keep expressions relatively simple for optimal performance.

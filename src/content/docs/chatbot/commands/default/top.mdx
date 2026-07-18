@@ -25,7 +25,7 @@ To view a specific leaderboard:
 !top [type]
 ```
 
-If `[type]` is omitted, the bot typically lists the available leaderboard types.
+If `[type]` is omitted, the points leaderboard is shown. The command displays the top 5 users for the chosen leaderboard.
 
 ## Examples
 
@@ -40,19 +40,17 @@ If `[type]` is omitted, the bot typically lists the available leaderboard types.
 ]} />
 
 <ChatExample messages={[
-  { persona: 'user', message: '!top' }, // Requesting available types
-  { persona: 'bot', message: 'Available Commands: !top points/alltime/online/offline. You can see the ChannelPoints Leaderboard here: https://streamelements.com/StreamerName/leaderboard' } // Output format may vary
+  { persona: 'user', message: '!top' }, // Defaults to the points leaderboard
+  { persona: 'bot', message: 'Top 5 ChannelPoints: 1. UserA (15000), 2. UserB (12500), 3. UserC (11000), 4. UserD (9800), 5. UserE (9500)' } // Output format may vary
 ]} />
 
 ## Parameters
 
-*   `[type]` (Optional): The type of leaderboard to display. Common valid options are:
-    *   `points`: Shows the top users based on loyalty points.
-    *   `time` / `watchtime` / `alltime`: Displays the leaderboard based on total watch time (exact keyword may vary).
+*   `[type]` (Optional): The type of leaderboard to display. Valid options are:
+    *   `points` (default): Shows the top users based on loyalty points. Used when `[type]` is omitted.
+    *   `alltime`: Displays the leaderboard based on total watch time.
     *   `online`: Shows the top users based on watch time while the stream was live.
-    *   `offline`: Displays the top users based on watch time while the stream was offline (if tracked).
-
-    *(Check the output of `!top` without parameters or your Loyalty settings for the exact available types.)*
+    *   `offline`: Displays the top users based on watch time while the stream was offline.
 
 ## Configuration
 

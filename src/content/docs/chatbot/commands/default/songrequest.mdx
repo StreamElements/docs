@@ -10,7 +10,7 @@ keywords:
   - StreamElements
   - music streaming
   - YouTube integration
-platforms: [twitch, youtube, trovo, kick]
+platforms: [twitch]
 ---
 
 import ChatExample from '@components/ChatExample.astro';
@@ -57,11 +57,16 @@ Or using the alias:
     *   Enable/disable the feature.
     *   Link a Spotify account (optional, for different functionality).
     *   Set request limits (per user, per stream).
-    *   Define user level restrictions for requesting.
+    *   Set a **minimum user level** required to request songs.
     *   Set maximum song/video duration.
     *   Enable/disable playlist requests.
     *   Set up a song blacklist (by keyword or specific URL).
-    *   Configure point costs or subscriber-only access.
+*   Loyalty point costs:
+    *   A **per-song cost** can be set, charged in loyalty points each time a viewer requests a song.
+    *   A **subscriber discount** (percentage) reduces the cost for subscribers.
+    *   Users at or above the configured **exempt level** (Moderators and above by default) pay nothing and bypass request filters.
+*   If **moderation** is enabled, requests from non-exempt users are sent to a pending queue for approval instead of being added directly.
+*   Default cooldown: 15 seconds per user, 3 seconds global.
 
 ## Aliases
 
@@ -74,5 +79,5 @@ Or using the alias:
 *   [`!next`](/chatbot/commands/default/next/): Displays information about the next song in the queue.
 *   [`!wrongsong`](/chatbot/commands/default/wrongsong/): Allows users to remove their most recent song request.
 *   [`!skip`](/chatbot/commands/default/skip/): (Moderator+) Skips the currently playing song.
-*   [`!volume`](/chatbot/commands/default/volume/): (Moderator+) Adjusts the volume of the media player.
+*   [`!volume`](/chatbot/commands/default/volume/): Checks or adjusts the volume of the media player.
 *   [`!removesong`](/chatbot/commands/default/removesong/): (Moderator+) Removes a specific song or all songs by a user.

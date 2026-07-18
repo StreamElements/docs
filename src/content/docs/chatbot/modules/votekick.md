@@ -16,17 +16,19 @@ keywords:
 - temporary user removal
 ---
 
-The Votekick module is a powerful chatbot feature that enables viewers to vote on whether to temporarily remove a user from the chat.
+The Votekick module is a powerful chatbot feature that enables viewers to vote on whether to temporarily remove a user from the chat. If the vote passes, the user is timed out in chat for the configured duration.
 
 ## Usage
 
-To initiate a votekick, use the following command:
+Moderators and above can initiate a votekick with the following command:
 
 ```streamelements
-!votekick <username>
+!votekick <username> [duration]
 ```
 
-Replace `<username>` with the name of the user you want to start a vote against.
+Replace `<username>` with the name of the user you want to start a vote against. The optional duration (in seconds) overrides the configured voting duration for this vote; in both cases the voting duration is clamped between 10 seconds and 30 minutes.
+
+A votekick passes when the total number of votes reaches the required votes setting **and** at least 51% of the votes are "yes". In chat-voting mode, each user gets exactly one vote.
 
 ## Examples
 
@@ -36,7 +38,7 @@ Replace `<username>` with the name of the user you want to start a vote against.
    !votekick TrollUser123
    ```
 
-2. Vote in an active votekick (using default keywords):
+2. Vote in an active votekick (using the keywords configured in the dashboard, for example):
 
    ```
    PogChamp
@@ -50,16 +52,17 @@ Replace `<username>` with the name of the user you want to start a vote against.
 
 ## Configuration
 
-Customize the Votekick module behavior through the following settings:
+The module's values come from the dashboard settings — customize the Votekick behavior with the following:
 
-| Setting | Description | Options/Range |
-|---------|-------------|---------------|
-| Voting Mode | Choose the voting interface | "Twitch Chat" or "Twitch Polls" |
-| Minimum Votes | Set the required votes to kick | Minimum: 1 |
-| Voting Duration | Set the length of the voting period | 10 to 1800 seconds |
-| Kick Duration | Set how long the user is removed from chat | 10 to 1,209,600 seconds |
-| Yea Keyword | Set the keyword for a "yes" vote | Recommended: Twitch emote |
-| Nay Keyword | Set the keyword for a "no" vote | Recommended: Twitch emote |
+| Setting | Description |
+|---------|-------------|
+| Enabled | Whether the module is enabled |
+| Native Twitch Poll | Run the vote as a native Twitch poll instead of counting chat keywords. Only available to Twitch affiliates and partners — otherwise the bot replies that polls are unavailable |
+| Required Votes | The number of votes needed for the votekick to pass |
+| Voting Duration | The length of the voting period, in seconds (clamped between 10 seconds and 30 minutes) |
+| Kick Duration | How long the user is timed out in chat, in seconds |
+| Yea Keyword | The chat keyword for a "yes" vote (chat-voting mode) |
+| Nay Keyword | The chat keyword for a "no" vote (chat-voting mode) |
 
 ## Related Commands
 

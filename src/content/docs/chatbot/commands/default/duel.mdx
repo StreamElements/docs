@@ -13,14 +13,14 @@ keywords:
 
 import ChatExample from '@components/ChatExample.astro';
 
-The `!duel` command allows users to challenge another user in chat to a duel, wagering their loyalty points. The challenged user then has a limited time to respond using [`!accept`](/chatbot/commands/default/accept/) or [`!deny`](/chatbot/commands/default/deny/).
+The `!duel` command allows users to challenge another user in chat to a duel, optionally wagering their loyalty points. The challenged user then has **2 minutes** to respond using [`!accept`](/chatbot/commands/default/accept/) or [`!deny`](/chatbot/commands/default/deny/). If the duel is accepted, the winner is decided by a 50/50 coin flip — the winner gains the wagered points and the loser loses them.
 
 ## Usage
 
 To initiate a duel challenge, use the following syntax:
 
 ```streamelements
-!duel <username> <points>
+!duel <username> [points]
 ```
 
 ## Examples
@@ -54,7 +54,7 @@ To initiate a duel challenge, use the following syntax:
 ## Parameters
 
 *   `<username>` (Required): The exact username of the user you want to challenge.
-*   `<points>` (Required): The number of loyalty points you want to wager. You must have at least this many points.
+*   `[points]` (Optional): The number of loyalty points you want to wager. There is no minimum and no default — if you leave it out, the duel is played for 0 points. Shorthand values are supported: `k` for thousands (`5k`), `m` for millions (`1m`), a percentage of your balance (`50%`), or `all`. The wager cannot exceed either participant's current balance, and wagers above the module's **Maximum amount** setting are automatically capped to that maximum.
 
 ## Configuration
 

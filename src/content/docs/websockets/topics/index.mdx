@@ -21,10 +21,10 @@ This section provides documentation for the various topics available for subscri
 Topics follow a dot-separated naming convention. Topics with no required scope are accessible to any authenticated token. The owner scope `*` grants access to all topics.
 
 :::note
-Unlinked topics are valid for subscription but are not yet documented.
+Unlinked topics are valid for subscription but are not yet documented. Topics marked <Badge text="Not published" variant="caution" /> are not currently published by the chatbot, so their availability is unverified.
 :::
 
-### Session & Stream
+## Session & Stream
 
 | Topic | Required Scope | Description |
 | --- | --- | --- |
@@ -32,7 +32,7 @@ Unlinked topics are valid for subscription but are not yet documented.
 | [channel.session.reset](/websockets/topics/channel-session-reset/) | `session:read` | Full session reset events |
 | [channel.stream.status](/websockets/topics/channel-stream-status/) | `stream-live:read` | Stream online/offline status changes |
 
-### Activity & Engagement
+## Activity & Engagement
 
 | Topic | Required Scope | Description |
 | --- | --- | --- |
@@ -48,7 +48,7 @@ Unlinked topics are valid for subscription but are not yet documented.
 | `channel.loyalty.redemptions` | `store:read` | Loyalty store redemption events |
 | `channel.loyalty.items` | `store:read` | Loyalty store item updates |
 
-### Overlays
+## Overlays
 
 | Topic | Required Scope | Description |
 | --- | --- | --- |
@@ -57,16 +57,16 @@ Unlinked topics are valid for subscription but are not yet documented.
 | [channel.overlay.update](/websockets/topics/channel-overlay-update/) | `overlays:read` | Overlay update notifications |
 | `channel.kvstore.update` | `kvstore:read` | Key-value store update events |
 
-### Chatbot
+## Chatbot
 
 | Topic | Required Scope | Description |
 | --- | --- | --- |
 | [channel.chatbot.status](/websockets/topics/chatbot-status/) | `bot:read` | Chatbot connection status changes |
 | [channel.chatbot.modules.pyramid](/websockets/topics/chatbot-modules-pyramid/) | `bot:read` | Chat pyramid detection events |
 | [channel.chatbot.modules.emotecombo](/websockets/topics/chatbot-modules-emotecombo/) | `bot:read` | Emote combo trigger events |
-| `channel.chatbot.modules` | `bot:read` | General chatbot module updates |
-| `channel.chatbot.commands` | `bot:read` | Chatbot command updates |
-| `channel.chatbot.timers` | `bot:read` | Chatbot timer updates |
+| `channel.chatbot.modules` | `bot:read` | General chatbot module updates <Badge text="Not published" variant="caution" /> |
+| `channel.chatbot.commands` | `bot:read` | Chatbot command updates <Badge text="Not published" variant="caution" /> |
+| `channel.chatbot.timers` | `bot:read` | Chatbot timer updates <Badge text="Not published" variant="caution" /> |
 | [channel.chatbot.counters](/websockets/topics/chatbot-counters/) | *(none)* | Chatbot counter value changes |
-| `channel.chatbot.filters` | `bot:read` | Chatbot filter updates |
+| `channel.chatbot.filters` | `bot:read` | Chatbot filter updates <Badge text="Not published" variant="caution" /> |
 | [channel.chatbot.timeout](/websockets/topics/chatbot-timeout/) | — | User timeout notifications <Badge text="In development" variant="caution" /> |

@@ -1,0 +1,155 @@
+---
+title: "$(time)"
+description: "Display the current time in any IANA timezone and create countdowns with the $(time) and $(time.until) variables in StreamElements Chatbot."
+syntax: "$(time [timezone])"
+arguments: optional
+keywords:
+  - streamelements
+  - chatbot
+  - time variable
+  - timezone
+  - countdown
+---
+
+import ChatExample from '@components/ChatExample.astro';
+
+StreamElements Chatbot offers two time-related variables:
+
+1. `$(time)`: Displays the current time, optionally in a specified timezone
+2. `$(time.until)`: Counts down to a specified time
+
+These variables allow you to enhance your stream chat with real-time clock displays and event countdowns.
+
+## Use it
+
+```streamelements
+!command add !time It's currently $(time America/New_York) for the streamer
+```
+
+<ChatExample messages={[
+  { persona: 'user', message: '!time' },
+  { persona: 'bot', message: "It's currently 21:34 for the streamer" }
+]} />
+
+:::caution[Use IANA Timezones]
+
+When specifying a timezone, always use **IANA Timezone** names. These are standardized identifiers like "America/New_York" or "Europe/London". Do not use abbreviations like EST or GMT, as they can be ambiguous.
+
+Find the correct IANA Timezone name for your location at [https://nodatime.org/TimeZones](https://nodatime.org/TimeZones).
+:::
+
+## $(time)
+
+### Usage
+
+```streamelements
+$(time)
+$(time <timezone>)
+$(time.<timezone>)
+```
+
+If no timezone is provided, the variable returns the current UTC time. The output is always in 24-hour `HH:MM` format, e.g. `21:34` or `09:05`.
+
+### Parameters
+
+- `<timezone>`: (Optional) The desired timezone in IANA format. If omitted, UTC is used. The space form `$(time America/New_York)` and the dot form `$(time.America/New_York)` are equivalent.
+
+A list of valid IANA timezones can be found at [Nodatime Timezones](https://nodatime.org/TimeZones).
+
+### Examples
+
+1. Display time in New York:
+
+   ```streamelements
+   The current time in New York is $(time America/New_York)
+   ```
+
+2. Display UTC time:
+
+   ```streamelements
+   The current UTC time is $(time)
+   ```
+
+## $(time.until)
+
+### Usage
+
+```streamelements
+$(time.until <when>)
+```
+
+### Parameters
+
+- `<when>`: The target time, in one of exactly two accepted formats:
+  - A bare 24-hour time, e.g. `19:00`. This is interpreted as UTC; if that time has already passed today, it rolls over to the next occurrence.
+  - A full [RFC 3339](https://datatracker.ietf.org/doc/html/rfc3339) timestamp, e.g. `2026-09-20T19:00:00-03:00`.
+
+Any other format will make the variable print a parse error in chat.
+
+### Output
+
+The result is a human-readable duration such as `2 hours 30 mins`. If the target time is in the past, ` ago` is appended, e.g. `2 hours 30 mins ago`.
+
+### Examples
+
+1. Countdown to a time of day (UTC):
+
+   ```streamelements
+   Next stream starts in $(time.until 19:00)
+   ```
+
+2. Countdown to a specific date and time:
+
+   ```streamelements
+   Upcoming event in $(time.until 2026-09-20T19:00:00-03:00)
+   ```
+
+## Common Use Cases
+
+1. **Displaying Local Time**: Use `$(time <timezone>)` to show the streamer's local time or the time in different viewers' locations.
+
+2. **Event Countdowns**: Use `$(time.until)` to create excitement for upcoming streams, game releases, or special events.
+
+3. **Multi-Timezone Scheduling**: Display multiple timezones simultaneously for international audiences.
+
+4. **Dynamic Stream Information**: Incorporate time variables into stream titles or chat commands to provide real-time updates.
+
+## Best Practices
+
+1. Always use IANA timezone names with `$(time)` to ensure accuracy and avoid ambiguity.
+2. With `$(time.until)`, stick to the two supported formats — a bare `HH:MM` time or a full RFC 3339 timestamp.
+3. Consider creating custom commands that combine both variables for comprehensive time information.
+
+## Troubleshooting
+
+### Common Errors
+
+1. **Invalid Timezone**:
+   - Error message: `unknown time zone lol`
+   - Solution: Double-check the timezone name against the [Nodatime Timezones](https://nodatime.org/TimeZones) list. Ensure you're using the full IANA name (e.g., "America/Los_Angeles" instead of "PST").
+
+2. **Invalid Timestamp Format**:
+   - Error message: `parsing time "19:00:00-03:00" as "2006-01-02T15:04:05Z07:00": cannot parse "19:00:00-03:00" as "2006"`
+   - Solution: Use either a bare 24-hour time (`19:00`) or a complete RFC 3339 timestamp (`2026-09-20T19:00:00-03:00`) — nothing in between.
+
+## FAQ
+
+**Q: Can I use these variables in custom commands?**
+
+A: Yes, you can incorporate these time variables into your custom chat commands for added functionality.
+
+**Q: How often do the time variables update?**
+
+A: The variables update in real-time with each use, providing current information every time they're called.
+
+**Q: Can I use abbreviations like EST or GMT with $(time)?**
+
+A: No, always use full IANA timezone names like "America/New_York" or "Europe/London" to avoid ambiguity and ensure correct time display.
+
+**Q: What timezone does $(time.until 19:00) use?**
+
+A: Bare times are always interpreted as UTC. To count down to a time in your local timezone, use a full RFC 3339 timestamp with a UTC offset, e.g. `2026-09-20T19:00:00-03:00`.
+
+## Additional Resources
+
+- [IANA Time Zone Database](https://www.iana.org/time-zones)

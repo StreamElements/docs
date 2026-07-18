@@ -2,7 +2,7 @@
 title: Live Announcement Module
 sidebar:
   label: Live Announcement
-description: "Set up the StreamElements Live Announcement module to automatically post a chat message when your stream goes live."
+description: "Set up the StreamElements Live Announcement module to automatically post a chat message when your stream goes live, or when the title or game changes."
 keywords:
 - StreamElements live announcement
 - stream notification
@@ -16,21 +16,25 @@ keywords:
 - StreamElements chatbot features
 ---
 
-The Live Announcement module is a feature of the StreamElements Chatbot that automatically posts a message in the chat when a stream goes live. This helps notify viewers that the stream has started and provides essential information about the stream.
+The Live Announcement module is a feature of the StreamElements Chatbot that automatically posts a message in the chat when a stream goes live, when the stream title changes, or when the game or category changes. This helps notify viewers that the stream has started and keeps them informed about what is being streamed. The module is available on all platforms.
 
 ## Usage
 
-When enabled, the Live Announcement module works automatically without any manual input required. As soon as the stream goes live, the chatbot will post a predefined message in the chat.
+When enabled, the Live Announcement module works automatically without any manual input required. It provides three announcements, each of which can be toggled on or off separately and has its own customizable message:
+
+- **Stream start**: Posted when the stream goes live.
+- **Title change**: Posted when the stream title changes.
+- **Game change**: Posted when the game or category changes.
 
 ## Examples
 
-1. Default announcement:
+1. Default stream start announcement:
 
    ```
    ExampleStreamer is now live! Streaming Fortnite: Late night squad games with friends!
    ```
 
-2. Custom announcement:
+2. Custom stream start announcement:
 
    ```
    🎉 ExampleStreamer just went live! They're playing Minecraft and the stream title is "Building a mega castle - Day 3". Don't miss out!
@@ -38,11 +42,21 @@ When enabled, the Live Announcement module works automatically without any manua
 
 ## Parameters
 
-The Live Announcement message can include the following parameters:
+Each announcement message supports its own set of placeholders:
 
-- `${channel.display_name}`: The display name of the channel
+| Announcement | Placeholders |
+|--------------|--------------|
+| Stream start | `{title}`, `{game}`, `{campaigns}` |
+| Title change | `{title}` |
+| Game change | `{game}` |
+
 - `{title}`: The title of the live stream
 - `{game}`: The game or category being streamed
+- `{campaigns}`: The number of available sponsorships (stream start message only)
+
+Placeholders are only substituted in the announcement they belong to — for example, `{game}` is not replaced in the title change message.
+
+In addition to these placeholders, any standard [chat variable](/chatbot/variables/) also works in the announcement messages, such as `${channel.display_name}` or `${uptime}`.
 
 ## Configuration
 
@@ -51,10 +65,10 @@ To configure the Live Announcement module:
 1. Go to your StreamElements dashboard
 2. Navigate to the Chatbot settings
 3. Find the "Live Announcement" section
-4. Enable the module
-5. Customize the announcement message using the available parameters
+4. Enable the announcements you want to use
+5. Customize each announcement message using the available parameters
 
-Example configuration:
+Example configuration for the stream start message:
 
 ```
 🔴 ${channel.display_name} is now live! 🎮 Playing {game} 📌 {title}
@@ -62,11 +76,11 @@ Example configuration:
 
 ## FAQ
 
-**Q: Can I customize the announcement message?**
-A: Yes, you can customize the message in the StreamElements dashboard using the available parameters.
+**Q: Can I customize the announcement messages?**
+A: Yes, you can customize each of the three messages in the StreamElements dashboard using the available parameters.
 
 **Q: How often does the Live Announcement trigger?**
-A: The announcement triggers once per stream, when the stream initially goes live.
+A: The stream start announcement triggers once per stream, when the stream initially goes live. The title and game change announcements trigger whenever the title or game changes.
 
 **Q: Can I use custom variables in the announcement?**
-A: Currently, only the predefined parameters (`${channel.display_name}`, `{title}`, and `{game}`) are supported.
+A: Yes. Besides the predefined placeholders, any standard chat variable (e.g., `${channel.display_name}`) can be used in the announcement messages.

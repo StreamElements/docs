@@ -24,6 +24,12 @@ export const collections = {
         wsTopic: z.string().optional(),
         scope: z.string().optional(),
         status: z.enum(['stable', 'in-development']).optional(),
+        /**
+         * Chatbot variable metadata, rendered as an info row under the page
+         * title on variable pages (see PageTitle override / VariableInfo).
+         */
+        syntax: z.string().optional(),
+        arguments: z.enum(['required', 'optional', 'none']).optional(),
       }),
     }),
   }),

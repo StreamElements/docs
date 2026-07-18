@@ -6,27 +6,10 @@ status: 'in-development'
 ---
 
 :::caution[In development]
-This topic is currently in development.
+This topic is not yet live. The chatbot does not currently publish any events to it, and the payload format is not final. Do not build integrations against this topic yet.
 :::
 
-This event is triggered when the chatbot times out a user in chat.
-
-## Example
-
-```json
-{
-    "id": "01HNX3Q5CS8D309V6DXJ3ZADEQ",
-    "ts": "2024-02-05T17:05:41Z",
-    "topic": "channel.chatbot.timeout",
-    "type":"message",
-    "data": {
-        "msg_id": "f71ef587-bf91-4f68-ae21-480ff03c0bf8",
-        "user_id": "94055225",
-        "user_name": "Styler",
-        "duration": 300
-    }
-}
-```
+Once released, this event will be triggered when the chatbot times out a user in chat. The payload will be documented when the topic goes live.
 
 ## Related
 

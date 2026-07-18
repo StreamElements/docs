@@ -1,21 +1,25 @@
 ---
 title: Emote Combo Module
-description: "Real-time notifications when an emote combo is achieved in chat."
+description: "Real-time notifications when an emote combo is broken in chat."
 wsTopic: 'channel.chatbot.modules.emotecombo'
 scope: 'bot:read'
 ---
 
-This event is triggered when an emote combo is achieved in chat.
+This event is triggered when an emote combo is broken — that is, when a chat message ends a streak of consecutive messages containing the same emote. It identifies the message and user that broke the combo, not the participants who built it.
+
+:::note
+The event only fires when the combo count has reached the configured minimum (3 by default) and the module's cooldown has elapsed.
+:::
 
 ## Payload
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| `data.msg_id` | `string` | ID of the chat message that triggered the combo |
-| `data.user_id` | `string` | Provider ID of the user who triggered the combo |
-| `data.user_name` | `string` | Username of the user who triggered the combo |
+| `data.msg_id` | `string` | ID of the chat message that broke the combo |
+| `data.user_id` | `string` | Provider ID of the user who broke the combo |
+| `data.user_name` | `string` | Display name of the user who broke the combo |
 | `data.emote` | `string` | The emote used in the combo |
-| `data.count` | `number` | The combo count reached |
+| `data.count` | `number` | The final combo count reached before the combo was broken |
 
 ## Example
 

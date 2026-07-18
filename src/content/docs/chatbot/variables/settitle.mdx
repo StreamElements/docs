@@ -1,0 +1,86 @@
+---
+title: "$(settitle)"
+description: "Change the stream title from chat with the $(settitle) variable in StreamElements Chatbot."
+syntax: '$(settitle "<new title>")'
+arguments: required
+keywords:
+  - StreamElements
+  - stream title
+  - Twitch
+  - chatbot command
+  - broadcast management
+---
+
+import ChatExample from '@components/ChatExample.astro';
+
+The `$(settitle)` variable allows you to change your stream title directly from chat. This powerful feature helps streamers quickly update their broadcast information without leaving the game or interrupting their content. On success, it outputs the new title.
+
+## Use it
+
+```streamelements
+!command add !settitle Title updated to: $(settitle ${1:})
+```
+
+<ChatExample messages={[
+  { persona: 'moderator', message: '!settitle Speedrunning all night!' },
+  { persona: 'bot', message: 'Title updated to: Speedrunning all night!' }
+]} />
+
+:::caution
+Anyone who can run the command can change your title. Restrict the command to moderators in the command's user level settings.
+:::
+
+## Usage
+
+To use the `$(settitle)` variable, include it followed by the new title you want to set.
+
+```streamelements
+$(settitle "<new title>")
+```
+
+:::note
+The title must arrive as a single piece: enclose it in quotation marks, or nest an argument token like `${1:}` (as in the example above) so everything the viewer types is passed along.
+:::
+
+## Examples
+
+1. Setting a simple title:
+
+   ```streamelements
+   $(settitle "Playing Fortnite with viewers!")
+   ```
+
+2. Using a more creative title:
+
+   ```streamelements
+   $(settitle "ＥＬＥＣＴＲＩＣ ＢＯＤＹＢＵＩＬＤＥＲ ＦＲＯＭ ＲＵＳＳＩＡ")
+   ```
+
+## Parameters
+
+The `$(settitle)` variable accepts a single parameter:
+
+- **New Title**: The text you want to set as your new stream title. Enclose it in quotation marks if it contains spaces.
+
+## Output
+
+On success, the variable outputs the new title. If the platform rejects the change, the raw error message is shown instead.
+
+## Related Variables
+
+- [`$(title)`](/chatbot/variables/title/): Retrieves the current stream title
+- [`$(game)`](/chatbot/variables/game/): Retrieves the current game or category of your stream
+
+## FAQ
+
+**Q: Why do I need to use quotation marks?**
+
+A: Quotation marks are required if your title contains spaces. This ensures that the entire title is recognized as a single input.
+
+**Q: What happens if there's an error?**
+
+A: If something goes wrong while setting the title, the variable outputs the platform's error message instead of the new title. Double-check your syntax and try again. If the problem persists, ensure that your StreamElements bot has the necessary permissions to change your stream title.
+
+**Q: Can I use emotes or special characters in my title?**
+
+A: Yes, you can use emotes and special characters in your stream title, as demonstrated in the "ＥＬＥＣＴＲＩＣ ＢＯＤＹＢＵＩＬＤＥＲ" example. However, be mindful of platform-specific limitations on title length or character types.

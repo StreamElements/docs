@@ -5,7 +5,11 @@ wsTopic: 'channel.chatbot.modules.pyramid'
 scope: 'bot:read'
 ---
 
-This event is triggered when a user successfully completes a pyramid in chat.
+This event is triggered when a pyramid is successfully completed in chat. It identifies the user who sent the final message that completed the pyramid.
+
+:::note
+The event only fires for pyramids that reach a peak width of at least 3.
+:::
 
 ## Payload
 
@@ -13,9 +17,9 @@ This event is triggered when a user successfully completes a pyramid in chat.
 | --- | --- | --- |
 | `data.msg_id` | `string` | ID of the chat message that completed the pyramid |
 | `data.user_id` | `string` | Provider ID of the user who completed the pyramid |
-| `data.user_name` | `string` | Username of the user who completed the pyramid |
-| `data.word` | `string` | The word the pyramid was built with |
-| `data.width` | `number` | The width of the completed pyramid |
+| `data.user_name` | `string` | Display name of the user who completed the pyramid |
+| `data.word` | `string` | The emote the pyramid was built with |
+| `data.width` | `number` | The peak width of the completed pyramid |
 
 ## Example
 

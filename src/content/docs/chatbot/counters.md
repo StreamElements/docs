@@ -18,7 +18,7 @@ You can manage your counters in the [StreamElements Dashboard](https://streamele
 ## Variables
 
 - `getcount` - Retrieves the current count of the counter. For more information, refer to the [getcount documentation](/chatbot/variables/getcount/).
-- `count` Increments or decrements the counter. For more information, refer to the [count documentation](/chatbot/variables/count/).
+- `count` - Increments or decrements the counter. For more information, refer to the [count documentation](/chatbot/variables/count/).
 
 ## Examples
 

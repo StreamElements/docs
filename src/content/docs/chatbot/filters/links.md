@@ -18,8 +18,15 @@ The Link filter helps manage the posting of links in chat messages. It checks if
 
 | Setting | Description |
 |---------|-------------|
-| Allowlist | A list of links or link patterns that are allowed in messages. The filter supports wildcard characters in this list, allowing for flexible rules. |
-| Blocklist | A list of links or link patterns that are not allowed in messages. Any link that matches a pattern in this list is treated as harmful and will result in a harsher punishment for the user. |
-| Timeout duration | The duration (in seconds) for which a user will be timed out if their message violates the link rules. Setting to 0 will just delete the message. |
-| Custom timeout message | The message that will be displayed when a user is timed out due to a violation of the link rules. This message can be customized to provide specific information about the violation and the timeout. |
-| Excluded user groups | The user groups that are exempt from the link filter. Messages from users in these groups will not be checked by the filter. |
+| Allowlist | A list of links or link patterns that are allowed in messages. Links matching the allowlist are never flagged by the filter. |
+| Blocklist | A list of links or link patterns that are never allowed in messages. Any link that matches a pattern in this list is treated as harmful and punished more harshly. |
+
+Both lists support the `*` wildcard character for flexible rules, and patterns are matched case-insensitively.
+
+The filter also supports the [settings shared by all filters](/chatbot/filters/#settings-shared-by-all-filters), including the timeout length, custom timeout message, and excluded user level.
+
+## What happens on a violation
+
+The filter's timeout setting determines the action: a timeout for the configured number of seconds, message deletion only (timeout of 0), a permanent ban, or a warning plus deletion (Twitch only). See [What happens on a violation](/chatbot/filters/#what-happens-on-a-violation) for details.
+
+Links matching the blocklist receive a harsher punishment: when the action is a timeout, the user is timed out for **double** the configured duration. With any other action (delete only, ban, or warning), the configured action applies as-is.

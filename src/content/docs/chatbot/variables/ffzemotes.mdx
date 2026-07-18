@@ -1,0 +1,50 @@
+---
+title: "$(ffzemotes)"
+description: "Display the list of active FrankerFaceZ emotes in a Twitch channel with the $(ffzemotes) variable in StreamElements Chatbot commands."
+keywords:
+  - ffz
+  - emotes
+  - frankerfacez
+  - twitch
+  - chat
+syntax: "$(ffzemotes)"
+arguments: none
+---
+
+import ChatExample from '@components/ChatExample.astro';
+
+The `$(ffzemotes)` variable is used to display a list of active FrankerFaceZ (FFZ) emotes in your Twitch channel. This can be helpful for viewers to see which custom emotes are available for use in the chat.
+
+## Use it
+
+```streamelements
+!command add !ffz Our channel's FFZ emotes: $(ffzemotes)
+```
+
+<ChatExample messages={[
+  { persona: 'user', message: '!ffz' },
+  { persona: 'bot', message: "Our channel's FFZ emotes: LULW KEKW 5Head PogU" },
+]} />
+
+## Usage
+
+When the command is triggered, the variable is replaced with a list of the channel's active FFZ emote codes, separated by single spaces. The list is unordered — the same emotes may appear in a different order each time the command runs.
+
+## Related Variables
+
+- [$(bttvemotes)](/chatbot/variables/bttvemotes/): Lists active BetterTTV emotes in the channel
+- [$(7tvemotes)](/chatbot/variables/7tvemotes/): Lists active 7TV emotes in the channel
+
+## FAQ
+
+**Q: How often is the FFZ emote list updated?**
+
+A: The FFZ emote list is cached for 48 hours. To update the list immediately, you can use the command `!emotes reload`.
+
+**Q: Can I filter or limit the number of emotes displayed?**
+
+A: The `$(ffzemotes)` variable doesn't have built-in filtering or limiting options. To manipulate the output, you'll need to use additional StreamElements variables or custom code.
+
+**Q: What if there are no FFZ emotes in the channel?**
+
+A: If there are no active FFZ emotes, the variable will return an empty string.

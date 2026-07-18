@@ -1,0 +1,63 @@
+---
+/**
+ * Info row for chatbot variable pages, driven by `syntax` / `arguments`
+ * frontmatter. Rendered automatically via the PageTitle override.
+ */
+interface Props {
+  syntax: string;
+  args?: 'required' | 'optional' | 'none' | undefined;
+}
+
+const ARG_LABELS = {
+  required: 'Required',
+  optional: 'Optional',
+  none: 'None',
+} as const;
+
+const { syntax, args } = Astro.props;
+---
+
+<dl class="variable-info not-content">
+  <div>
+    <dt>Syntax</dt>
+    <dd><code>{syntax}</code></dd>
+  </div>
+  {
+    args && (
+      <div>
+        <dt>Arguments</dt>
+        <dd>{ARG_LABELS[args]}</dd>
+      </div>
+    )
+  }
+</dl>
+
+<style>
+  .variable-info {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem 1.5rem;
+    margin-top: 0.75rem;
+    padding: 0.6rem 0.9rem;
+    border: 1px solid var(--sl-color-gray-5);
+    border-radius: 0.5rem;
+    background-color: var(--sl-color-gray-6);
+  }
+  .variable-info > div {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+  }
+  dt {
+    font-size: var(--sl-text-xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--sl-color-gray-3);
+  }
+  dd {
+    margin: 0;
+    font-size: var(--sl-text-sm);
+  }
+</style>

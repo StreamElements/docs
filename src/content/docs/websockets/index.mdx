@@ -106,7 +106,7 @@ sequenceDiagram
     Client->>Edge: unsubscribe {topic, room}
     Edge-->>Client: response {success}
 
-    rect rgb(60, 60, 80)
+    rect rgba(43, 108, 255, 0.12)
         Note over Client,Edge: Graceful Shutdown
         Edge-->>Client: reconnect {token}
         Client->>Edge: New connection + reconnect_token

@@ -1,20 +1,27 @@
 ---
 title: Chatbot Status
-description: "Real-time updates whenever the chatbot's status changes, such as its banned, muted, joined, or moderator state."
+description: "Real-time updates whenever the chatbot's status changes, such as its banned or moderator state."
 wsTopic: 'channel.chatbot.status'
 scope: 'bot:read'
 ---
 
-This event is triggered whenever there is a change in the chatbot's status. It sends out a `partial` update highlighting the modified field.
+This event is triggered whenever there is a change in the chatbot's status on the channel. It sends out a `partial` update containing a single modified field:
+
+- `mod` is published when the bot account is granted or removed as a moderator on the channel.
+- `banned` is published when the bot account is banned or unbanned on the channel.
+
+:::note
+These events are currently only published for Twitch channels.
+:::
 
 ## Payload
 
+Each event contains exactly one of the following fields:
+
 | Parameter | Type | Description |
 | --- | --- | --- |
-| `data.banned` | `boolean` | Whether the chatbot is banned or not |
-| `data.muted` | `boolean` | Whether the chatbot is muted or not |
-| `data.joined` | `boolean` | Whether the chatbot is joined or not |
 | `data.mod` | `boolean` | Whether the chatbot is a moderator or not |
+| `data.banned` | `boolean` | Whether the chatbot is banned or not |
 
 ## Example
 

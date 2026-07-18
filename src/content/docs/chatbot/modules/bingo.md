@@ -25,7 +25,7 @@ The Emote Bingo module is an interactive chat game that generates a bingo card w
 
 ## Usage
 
-To start a Bingo game, a moderator must use the `!bingo` command with specific parameters. The game ends when a user correctly identifies the chosen emote in chat.
+To start a Bingo game, a moderator must use the `!bingo` command with specific parameters. The winner is the first chatter to post the secret emote in chat, and they are awarded the prize points.
 
 ## Examples
 
@@ -46,10 +46,21 @@ To start a Bingo game, a moderator must use the `!bingo` command with specific p
 - `<emote_provider>`: Specifies the source of emotes for the game. Options include:
   - `twitch`: Twitch emotes only
   - `bttv`: BetterTTV emotes only
-  - `ffz`: FrankerFaceZ emotes only
-  - `7tv`: 7TV emotes only
+  - `ffz`: FrankerFaceZ emotes only (alias: `frankerz`)
+  - `7tv`: 7TV emotes only (aliases: `seventv`, `thirdpartything`, `yeahbut7tv`)
   - `all`: Includes emotes from all providers
-- `<points>`: The number of points awarded to the winner
+- `[points]`: The number of points awarded to the winner. Optional — if omitted, the prize defaults to half of the configured maximum points. The prize is capped at the configured maximum, and can never exceed 1,000,000 points.
+
+A running game can be cancelled with `!bingo cancel` (aliases: `end`, `stop`, `exit`).
+
+## Configuration
+
+The Emote Bingo module has the following settings in the StreamElements dashboard:
+
+| Setting | Description |
+|---------|-------------|
+| Enabled | Whether the module is enabled |
+| Maximum points | The maximum prize a bingo game can award (default: 4000) |
 
 ## Related Commands
 

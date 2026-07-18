@@ -18,6 +18,9 @@ The Emote filter helps manage the use of emotes in chat messages. It checks the 
 | Setting | Description |
 |---------|-------------|
 | Maximum amount | The maximum number of emotes allowed in a message. If a message contains more emotes than this limit, it will be flagged by the filter. |
-| Timeout duration | The duration (in seconds) for which a user will be timed out if their message violates the emote limit. |
-| Custom timeout message | The message that will be displayed when a user is timed out due to a violation of the emote limit. This message can be customized to provide specific information about the violation and the timeout. |
-| Excluded user groups | The user groups that are exempt from the emote filter. Messages from users in these groups will not be checked by the filter. |
+
+The filter also supports the [settings shared by all filters](/chatbot/filters/#settings-shared-by-all-filters), including the timeout length, custom timeout message, and excluded user level.
+
+## What happens on a violation
+
+The filter's timeout setting determines the action: a timeout for the configured number of seconds, message deletion only (timeout of 0), a permanent ban, or a warning plus deletion (Twitch only). See [What happens on a violation](/chatbot/filters/#what-happens-on-a-violation) for details.

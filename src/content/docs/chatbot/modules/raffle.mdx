@@ -20,10 +20,10 @@ The Raffle module is an interactive chat game that allows streamers to engage th
 
 ## How It Works
 
-1. A moderator starts the raffle using `!raffle` or `!sraffle`.
-2. Viewers join the raffle by typing `!join` in chat.
+1. A moderator starts the raffle using `!raffle` (multiple winners) or `!sraffle` (single winner).
+2. Viewers join the raffle by typing `!join` in chat. Joining is free — the points are the prize, not an entry fee.
 3. After a set time, the raffle ends, and winner(s) are randomly selected.
-4. The winner(s) are announced in chat.
+4. The winner(s) are announced in chat and awarded the prize points.
 
 ## Examples
 
@@ -48,16 +48,25 @@ Multi-winner raffle:
 
 ## Parameters
 
-- `!raffle [points] [duration]`: Start a multi-winner raffle. Optional points and duration in seconds (default is 5000 points and 60 seconds).
-- `!sraffle [points] [duration]`: Start a single-winner raffle. Optional points and duration in seconds (default is 5000 points and 60 seconds).
+- `!raffle [points] [duration]`: Start a multi-winner raffle. The points are the prize pot (default: 5000), which is split evenly among the winners.
+- `!sraffle [points] [duration]`: Start a single-winner raffle. The winner receives the full prize (default: 1000 points).
+
+For both commands, the optional duration is given in seconds. If omitted, the duration configured in the dashboard is used; the minimum duration is 5 seconds. The prize is capped at the maximum amount configured in the dashboard, and can never exceed 1,000,000 points.
+
+## Configuration
+
+The raffle messages can be customized in the StreamElements dashboard. The start and running messages support the `{points}` and `{time}` placeholders, and the end message supports `{winner}` (the winner names) and `{points}` (the amount awarded to each winner).
 
 ## Related Commands
 
 - [`!raffle`](/chatbot/commands/default/raffle/): Starts a multi-winner raffle.
 - [`!sraffle`](/chatbot/commands/default/sraffle/): Starts a single-winner raffle.
-- [`!join`](/chatbot/commands/default/join/): Used by viewers to enter an ongoing raffle.
-- [`!ticket`](/chatbot/commands/default/ticket/): Used by viewers to purchase tickets for giveaways with loyalty points.
+- [`!join`](/chatbot/commands/default/join/): Used by viewers to enter an ongoing raffle for free.
 - [`!cancelraffle`](/chatbot/commands/default/cancelraffle/): Cancels the current raffle (moderators only).
+
+:::note
+[`!ticket`](/chatbot/commands/default/ticket/) is not part of the Raffle module — it is the entry command for [StreamElements Giveaways](/chatbot/commands/default/giveaway/), where tickets can cost loyalty points.
+:::
 
 ## FAQ
 
@@ -70,6 +79,9 @@ A: The number of winners scales based on the number of participants:
 - 11-20 participants: 1 winner per 4 entrants
 - 2-10 participants: Half the participants win (rounded down)
 - 1 participant: That participant wins
+
+**Q: Does it cost points to enter a raffle?**
+A: No. Entering with `!join` is completely free, and each viewer can enter once. The points are awarded to the winner(s) when the raffle ends.
 
 **Q: Can I customize the raffle duration?**
 A: Yes, you can specify the duration in seconds when starting a raffle, e.g., `!raffle 5000 120` for a 5000 point raffle that runs for 2 minutes.

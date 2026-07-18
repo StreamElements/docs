@@ -125,7 +125,7 @@ Displays the full response text and configuration details (level, cost, cooldown
 
 ### options
 
-Configures advanced settings like cooldowns, cost, permission level, response type, enabled status, and usage count for a command. See the [Parameters](#parameters-for-options-subcommand) section below for details on the available options.
+Configures advanced settings like cooldowns, cost, permission level, response type, trigger name, enabled status, and usage count for a command. See the [Parameters](#parameters-for-options-subcommand) section below for details on the available options.
 
 **Syntax:**
 ```streamelements
@@ -138,7 +138,7 @@ Replace `option1`, `value1`, etc., with the specific parameter flags and values 
 
 **Example (setting multiple options):**
 <ChatExample messages={[
-  { persona: 'moderator', message: '!command options !socials -cd 10 -usercd 30 -cost 50 -level moderator' },
+  { persona: 'moderator', message: '!command options !socials -cd 10 -usercd 30 -cost 50 -level 500' },
   { persona: 'bot', message: '@Moderator, successfully updated command !socials.' }
 ]} />
 
@@ -150,9 +150,10 @@ When using the `!command options` subcommand, you specify settings using flags f
 | :--------------- | :-------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------- | :---------------------------------------- |
 | `-cd`            | Sets the **global command cooldown** (minimum time between *any* use of the command).                                                     | `<seconds>` (e.g., `10`)                                                     | `-cd 10`                                  |
 | `-usercd`        | Sets the **user-specific cooldown** (minimum time the *same user* must wait before using the command again).                            | `<seconds>` (e.g., `30`)                                                     | `-usercd 30`                              |
-| `-cost`          | Sets the **loyalty points cost**. Requires the StreamElements [Loyalty System](https://docs.streamelements.com/docs/loyalty/overview) active. | `<points>` (e.g., `50`)                                                      | `-cost 50`                                |
-| `-level`         | Sets the **minimum user permission level** required.                                                                                   | `everyone`, `subscriber`, `regular`, `moderator`, `supermoderator`, `broadcaster` | `-level moderator`                        |
-| `-type`          | Sets **how the bot responds**. Platform support for `reply` and `whisper` may vary.                                                     | `say` (default), `reply`, `whisper`                                        | `-type whisper`                           |
+| `-cost`          | Sets the **loyalty points cost** charged each time the command is used. If a user doesn't have enough points, the command silently does nothing (no error message is sent). Requires the StreamElements [Loyalty System](https://docs.streamelements.com/docs/loyalty/overview) active. | `<points>` (e.g., `50`)                                                      | `-cost 50`                                |
+| `-level`         | Sets the **minimum user permission level** required. Takes a **number**: `100` (Everyone), `250` (Subscriber), `400` (VIP), `500` (Moderator), `1000` (Super Moderator). | `<number>` (e.g., `500`)                                                   | `-level 500`                              |
+| `-type`          | Sets **how the bot responds**. Platform support for `reply`, `mention`, and `whisper` may vary.                                         | `say` (default), `reply`, `mention`, `whisper`                             | `-type whisper`                           |
+| `-trigger`       | **Renames the command**, changing the trigger word used to invoke it.                                                                   | `<new_name>` (e.g., `!links`)                                                | `-trigger !links`                         |
 | `-enable`        | Enables the command.                                                                                                                    | N/A                                                                        | `-enable`                                 |
 | `-disable`       | Disables the command, preventing anyone from using it.                                                                                 | N/A                                                                        | `-disable`                                |
 | `-count`         | **Manually sets the command's usage counter**, useful for resetting or adjusting the value used by [`$(count)`](/chatbot/variables/count/).     | `<number>` (e.g., `0`)                                                       | `-count 0`                                |

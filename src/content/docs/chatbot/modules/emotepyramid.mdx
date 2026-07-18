@@ -3,6 +3,7 @@ title: Emote Pyramid Module
 sidebar:
   label: Emote Pyramid
 description: "Rules and examples for the Emote Pyramid chat game, where viewers collaboratively build pyramids of emotes in StreamElements Chatbot."
+platforms: [twitch, trovo, kick]
 keywords:
 - emote pyramid
 - chat game
@@ -24,12 +25,11 @@ The Emote Pyramid game doesn't require any specific commands to start. It begins
 
 1. A viewer initiates the game by sending a single emote in the chat.
 2. Subsequent messages should contain the same emote, with the number of repetitions increasing by one each time.
-3. The game continues until the pyramid is successfully completed or interrupted.
+3. After reaching its peak, the pyramid shrinks by one repetition per message until it ends back at a single emote.
+4. The viewer who sends the final single-emote message completes the pyramid and gets the credit in the bot's announcement.
 
 :::note
-The pyramid is considered interrupted if:
-- Another user sends a different message.
-- The same emote is not repeated the correct number of times.
+The pyramid must use a single identical emote and grow or shrink by exactly one repetition per message — any message that breaks this pattern interrupts the pyramid. The bot only announces pyramids with a peak width of at least 3.
 :::
 
 ## Examples
@@ -61,4 +61,15 @@ In this example, the pyramid was interrupted by Viewer4's message.
 
 ## Configuration
 
-The Emote Pyramid feature doesn't require any specific configuration. It's an organic chat game that relies on viewer participation.
+The Emote Pyramid module has two settings in the StreamElements dashboard:
+
+- Whether the module is enabled
+- Tiered messages: a list of messages, each with a minimum pyramid width — the message with the highest minimum at or below the pyramid's peak width is used
+
+The pyramid messages support the following placeholders:
+
+| Placeholder | Description |
+|-------------|-------------|
+| `{user}` | The display name of the user who completed the pyramid |
+| `{width}` | The pyramid's peak width |
+| `{emote}` | The emote used to build the pyramid |

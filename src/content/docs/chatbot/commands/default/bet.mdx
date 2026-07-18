@@ -45,11 +45,11 @@ To place a bet while a betting contest is open, viewers use the following syntax
 ## Parameters
 
 *   `<option>` (Required): The specific betting option the viewer wants to choose (defined by the streamer when starting the bet).
-*   `<points>` (Required): The number of loyalty points to wager. This can be a specific number, a percentage (`50%`), or use `k` for thousands (`5k`), `m` for millions (`1m`).
+*   `<points>` (Required): The number of loyalty points to wager. This can be a specific number, a percentage (`50%`), or use `k` for thousands (`5k`), `m` for millions (`1m`). The amount must stay within the minimum and maximum bet configured for the contest.
 
 ## Configuration
 
-*   Betting contests are managed via the **Betting module** in the StreamElements Dashboard. Streamers define the options, duration, and other settings there.
+*   Betting contests can only be **started from the StreamElements Dashboard** — there is no chat command to create one. Streamers define the options, duration, minimum/maximum bet, and other settings there.
 *   Viewers need sufficient loyalty points to place a bet.
 
 ## Related Commands
