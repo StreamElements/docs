@@ -73,7 +73,9 @@ export default defineConfig({
     starlight({
       title: 'StreamElements Docs',
       description: 'The official documentation for StreamElements',
-      favicon: '/favicon.ico',
+      // Brand mark from @streamelements/assets (true vector); the PNG/ICO
+      // fallbacks below mirror the dashboard's favicon set.
+      favicon: '/favicon.svg',
       social: [
         { icon: 'github', label: 'GitHub', href: 'https://github.com/StreamElements/docs' },
         { icon: 'discord', label: 'Discord', href: 'https://discord.gg/se' },
@@ -86,6 +88,11 @@ export default defineConfig({
       lastUpdated: true,
       customCss: ['@fontsource-variable/inter', './src/styles/custom.css'],
       head: [
+        // Favicon fallbacks + touch icons (same set as the dashboard app).
+        { tag: 'link', attrs: { rel: 'icon', type: 'image/png', sizes: '96x96', href: '/favicon-96x96.png' } },
+        { tag: 'link', attrs: { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' } },
+        { tag: 'link', attrs: { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' } },
+        { tag: 'link', attrs: { rel: 'manifest', href: '/site.webmanifest' } },
         {
           tag: 'script',
           attrs: { src: 'https://docs.streamelements.com/z/i.js', referrerpolicy: 'origin', defer: true },
