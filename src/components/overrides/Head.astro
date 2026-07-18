@@ -1,12 +1,50 @@
 ---
 /**
- * Head override: emits a <meta name="keywords"> tag for pages that
- * declare `keywords` in their frontmatter (carried over from Docusaurus).
+ * Head override:
+ * - emits a <meta name="keywords"> tag for pages that declare `keywords`
+ *   in their frontmatter (carried over from Docusaurus)
+ * - emits BreadcrumbList JSON-LD derived from the URL path, so search
+ *   results show a breadcrumb trail instead of a bare URL
  */
 import Default from '@astrojs/starlight/components/Head.astro';
 
-const { keywords } = Astro.locals.starlightRoute.entry.data;
+const { keywords, title } = Astro.locals.starlightRoute.entry.data;
+
+// Labels for path segments that appear between the site root and the page.
+const SECTION_LABELS: Record<string, string> = {
+  chatbot: 'Chatbot',
+  overlays: 'Overlays',
+  websockets: 'WebSockets',
+  commands: 'Commands',
+  default: 'Default Commands',
+  variables: 'Variables',
+  modules: 'Modules',
+  filters: 'Spam Filters',
+  topics: 'Topics',
+};
+
+const site = (Astro.site?.href ?? 'https://docs.streamelements.com/').replace(/\/$/, '');
+const segments = Astro.url.pathname.split('/').filter(Boolean);
+
+let breadcrumbs: object | null = null;
+if (segments.length > 0 && segments[0] !== '404') {
+  const items = [{ '@type': 'ListItem', position: 1, name: 'StreamElements Docs', item: site }];
+  segments.forEach((seg, i) => {
+    const isLast = i === segments.length - 1;
+    const name = isLast
+      ? title
+      : (SECTION_LABELS[seg] ?? seg.split('-').map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(' '));
+    items.push({
+      '@type': 'ListItem',
+      position: i + 2,
+      name,
+      item: `${site}/${segments.slice(0, i + 1).join('/')}`,
+    });
+  });
+  breadcrumbs = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: items };
+}
 ---
 
 <Default><slot /></Default>
 {keywords && keywords.length > 0 && <meta name="keywords" content={keywords.join(', ')} />}
+{breadcrumbs && <script type="application/ld+json" set:html={JSON.stringify(breadcrumbs)} />}

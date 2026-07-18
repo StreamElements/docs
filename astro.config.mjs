@@ -1,6 +1,8 @@
 // @ts-check
 import fs from 'node:fs';
+import { execSync } from 'node:child_process';
 import { defineConfig } from 'astro/config';
+import sitemap from '@astrojs/sitemap';
 import starlight from '@astrojs/starlight';
 import starlightSidebarTopics from 'starlight-sidebar-topics';
 import starlightLinksValidator from 'starlight-links-validator';
@@ -39,6 +41,50 @@ const redirects = {
     '/websockets/topics/chatbot/timeout': '/websockets/topics/chatbot-timeout',
 };
 
+/** Most recent git commit date per content file, for sitemap <lastmod>.
+    One `git log` pass; the first time a file appears is its newest commit. */
+function buildLastmodMap() {
+  const map = new Map();
+  const out = execSync('git log --format=%x00%cI --name-only -- src/content', {
+    encoding: 'utf8',
+    maxBuffer: 64 * 1024 * 1024,
+  });
+  let current = null;
+  for (const raw of out.split('\n')) {
+    if (raw.startsWith('\0')) {
+      current = raw.slice(1).trim();
+    } else {
+      const line = raw.trim();
+      if (line && current && !map.has(line)) map.set(line, current);
+    }
+  }
+  return map;
+}
+const lastmodMap = buildLastmodMap();
+
+/** Maps a built page URL back to its source file's last commit date. */
+function lastmodFor(url) {
+  const path = new URL(url).pathname.replace(/\/$/, '').replace(/^\//, '');
+  const candidates = [];
+  if (path === '') {
+    candidates.push('src/content/docs/index.mdx');
+  } else if (path.startsWith('changelog/post/')) {
+    const slug = path.slice('changelog/post/'.length);
+    for (const key of lastmodMap.keys()) {
+      if (key.startsWith('src/content/changelog/') && key.endsWith(`/${slug}.mdx`)) candidates.push(key);
+    }
+  } else {
+    for (const ext of ['md', 'mdx']) {
+      candidates.push(`src/content/docs/${path}.${ext}`, `src/content/docs/${path}/index.${ext}`);
+    }
+  }
+  for (const c of candidates) {
+    const date = lastmodMap.get(c);
+    if (date) return date;
+  }
+  return undefined;
+}
+
 /** Writes dist/_redirects (Cloudflare redirects file) from the map above.
     Each path is emitted with and without a trailing slash so both forms 301. */
 function emitRedirectsFile() {
@@ -73,6 +119,14 @@ export default defineConfig({
 
   integrations: [
     emitRedirectsFile(),
+    // Starlight skips its own sitemap integration when one is already present.
+    // This one adds <lastmod> from each page's last git commit date.
+    sitemap({
+      serialize(item) {
+        const lastmod = lastmodFor(item.url);
+        return lastmod ? { ...item, lastmod } : item;
+      },
+    }),
     mermaid({ autoTheme: true }),
     starlight({
       title: 'StreamElements Docs',
