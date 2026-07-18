@@ -10,7 +10,7 @@ keywords:
 - bot counter
 ---
 
-This event is triggered whenever a chatbot counter value changes, whether through increment, decrement, or reset operations. Counter changes can originate from counter edits in the dashboard, the [`$(count)`](/chatbot/variables/count/) variable, or the [`!editcounter`](/chatbot/commands/default/editcounter/) command. It provides real-time updates of counter values, enabling immediate synchronization across your applications. Subscribe to this topic to receive real-time notifications about changes to your chatbot counters. This is particularly useful for maintaining accurate counter displays in overlays, applications, or other integrations that need to reflect the current state of your chatbot counters.
+This event is triggered whenever a chatbot counter value changes, whether through increment, decrement, or reset operations. Counter changes can originate from counter edits in the dashboard, the [`$(count)`](/chatbot/variables/count) variable, or the [`!editcounter`](/chatbot/commands/default/editcounter) command. It provides real-time updates of counter values, enabling immediate synchronization across your applications. Subscribe to this topic to receive real-time notifications about changes to your chatbot counters. This is particularly useful for maintaining accurate counter displays in overlays, applications, or other integrations that need to reflect the current state of your chatbot counters.
 
 :::note
 Deleting a counter and resetting a counter both publish an event with a `value` of `0` — subscribers cannot distinguish a deletion from a reset.
@@ -55,6 +55,6 @@ Deleting a counter and resetting a counter both publish an event with a `value` 
 
 ## Related
 
-- [Chatbot Status](/websockets/topics/chatbot-status/) - Chatbot connection status
-- [Chatbot Timeout](/websockets/topics/chatbot-timeout/) - User timeout notifications
-- [Websockets](/websockets/) - General information about the Astro Websocket Gateway
+- [Chatbot Status](/websockets/topics/chatbot-status) - Chatbot connection status
+- [Chatbot Timeout](/websockets/topics/chatbot-timeout) - User timeout notifications
+- [Websockets](/websockets) - General information about the Astro Websocket Gateway

@@ -17,11 +17,11 @@ import ChatExample from '@components/ChatExample.astro';
 The `$(user)` variable in StreamElements Chatbot allows you to access and display various user-related information in your chat messages and commands. These variables provide data such as usernames, loyalty points, ranks, and activity timestamps.
 
 :::note
-`$(user)` and all of its sub-variables are not available on YouTube — there, the variable renders as literal text instead of being replaced. Use [`$(sender)`](/chatbot/variables/sender/) instead, which works on all platforms.
+`$(user)` and all of its sub-variables are not available on YouTube — there, the variable renders as literal text instead of being replaced. Use [`$(sender)`](/chatbot/variables/sender) instead, which works on all platforms.
 :::
 
 :::tip[Key Point]
-`$(user)` can accept an optional username argument to retrieve information about any user, not just the command sender. Without an explicit argument, it targets the first word typed after the command if that word looks like a username (a leading `@` is removed automatically); otherwise it falls back to the command sender, behaving similarly to [`$(sender)`](/chatbot/variables/sender/).
+`$(user)` can accept an optional username argument to retrieve information about any user, not just the command sender. Without an explicit argument, it targets the first word typed after the command if that word looks like a username (a leading `@` is removed automatically); otherwise it falls back to the command sender, behaving similarly to [`$(sender)`](/chatbot/variables/sender).
 :::
 
 ## Use it
@@ -110,8 +110,8 @@ Durations are written out in full words: `secs`, `mins`, `hours`, `days`, `month
 ## Troubleshooting
 
 - If a variable returns unexpected results, ensure you're using the correct syntax and that the user exists in your channel's database. Unknown users produce empty output.
-- Remember that `$(user)` variables can accept arguments. If you only need information about the command sender, consider using [`$(sender)`](/chatbot/variables/sender/) instead.
+- Remember that `$(user)` variables can accept arguments. If you only need information about the command sender, consider using [`$(sender)`](/chatbot/variables/sender) instead.
 
 ## Related Variables
 
-- [`$(sender)`](/chatbot/variables/sender/): Information specifically about the command sender.
+- [`$(sender)`](/chatbot/variables/sender): Information specifically about the command sender.

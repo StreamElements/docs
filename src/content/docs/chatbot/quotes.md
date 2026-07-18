@@ -91,7 +91,7 @@ Quotes can only be edited from the dashboard — there is no chat command for ed
 
 ## Chat Command Reference
 
-For the full command documentation, see the [!quote command reference](/chatbot/commands/default/quote/).
+For the full command documentation, see the [!quote command reference](/chatbot/commands/default/quote).
 
 | Command | Description | Permission |
 |---------|-------------|------------|
@@ -109,7 +109,7 @@ Editing quotes is dashboard-only; there is no `!quote edit` chat command.
 
 ## Quote Variables
 
-You can use quote variables in custom commands and timers. For detailed documentation, see the [$(quote) variable reference](/chatbot/variables/quote/).
+You can use quote variables in custom commands and timers. For detailed documentation, see the [$(quote) variable reference](/chatbot/variables/quote).
 
 - `$(quote)` - Returns a random quote
 - `$(quote <id>)` - Returns a specific quote by ID

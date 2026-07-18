@@ -16,7 +16,7 @@ keywords:
 
 import ChatExample from '@components/ChatExample.astro';
 
-The `$(provider)` variable returns the platform the channel runs on, as a lowercase slug: `twitch`, `youtube`, `trovo`, or `kick`. It is identical to [`$(channel.provider)`](/chatbot/variables/channel/) and works on every platform.
+The `$(provider)` variable returns the platform the channel runs on, as a lowercase slug: `twitch`, `youtube`, `trovo`, or `kick`. It is identical to [`$(channel.provider)`](/chatbot/variables/channel) and works on every platform.
 
 ## Use it
 
@@ -44,7 +44,7 @@ The variable takes no arguments and always refers to the channel the bot is runn
 | Trovo | `trovo` |
 | Kick | `kick` |
 
-Because the output is a stable lowercase slug, it is most useful **nested inside other variables** — for example to build platform-aware responses with [`$(customapi)`](/chatbot/variables/customapi/):
+Because the output is a stable lowercase slug, it is most useful **nested inside other variables** — for example to build platform-aware responses with [`$(customapi)`](/chatbot/variables/customapi):
 
 ```streamelements
 $(customapi https://example.com/messages/$(provider))
@@ -53,14 +53,14 @@ $(customapi https://example.com/messages/$(provider))
 This requests a different URL per platform (`.../messages/twitch` on Twitch, `.../messages/kick` on Kick, and so on), so your API can return a platform-specific response.
 
 :::note
-[`$(if)`](/chatbot/variables/if/) cannot compare text, so `$(if $(provider) ...)` does not branch by platform — a slug like `twitch` always counts as false. Use the `$(customapi)` pattern above for platform-specific responses.
+[`$(if)`](/chatbot/variables/if) cannot compare text, so `$(if $(provider) ...)` does not branch by platform — a slug like `twitch` always counts as false. Use the `$(customapi)` pattern above for platform-specific responses.
 :::
 
 ## Related variables
 
-- [`$(channel)`](/chatbot/variables/channel/): `$(channel.provider)` returns the same value, alongside other channel fields.
-- [`$(customapi)`](/chatbot/variables/customapi/): Fetch a URL — combine with `$(provider)` for platform-aware responses.
-- [`$(if)`](/chatbot/variables/if/): Conditional output based on a true/false condition.
+- [`$(channel)`](/chatbot/variables/channel): `$(channel.provider)` returns the same value, alongside other channel fields.
+- [`$(customapi)`](/chatbot/variables/customapi): Fetch a URL — combine with `$(provider)` for platform-aware responses.
+- [`$(if)`](/chatbot/variables/if): Conditional output based on a true/false condition.
 
 ## FAQ
 

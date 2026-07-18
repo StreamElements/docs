@@ -34,5 +34,5 @@ The `channel.stream.status` topic provides real-time updates about whether a cha
 
 ## Related
 
-- [Session Update](/websockets/topics/channel-session-update/) - Individual session data updates
-- [Websockets](/websockets/) - General information about the Astro Websocket Gateway
+- [Session Update](/websockets/topics/channel-session-update) - Individual session data updates
+- [Websockets](/websockets) - General information about the Astro Websocket Gateway

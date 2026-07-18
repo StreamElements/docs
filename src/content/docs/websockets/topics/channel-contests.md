@@ -154,5 +154,5 @@ stateDiagram-v2
 
 ## Related
 
-- [Activities](/websockets/topics/channel-activities/) - General channel activity events
-- [Websockets](/websockets/) - General information about the Astro WebSocket Gateway
+- [Activities](/websockets/topics/channel-activities) - General channel activity events
+- [Websockets](/websockets) - General information about the Astro WebSocket Gateway

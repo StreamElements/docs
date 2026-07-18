@@ -64,4 +64,4 @@ The Emote Bingo module has the following settings in the StreamElements dashboar
 
 ## Related Commands
 
-- [`!bingo`](/chatbot/commands/default/bingo/): Starts an Emote Bingo game.
+- [`!bingo`](/chatbot/commands/default/bingo): Starts an Emote Bingo game.

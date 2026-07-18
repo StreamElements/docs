@@ -28,23 +28,23 @@ Unlinked topics are valid for subscription but are not yet documented. Topics ma
 
 | Topic | Required Scope | Description |
 | --- | --- | --- |
-| [channel.session.update](/websockets/topics/channel-session-update/) | `session:read` | Individual session data updates |
-| [channel.session.reset](/websockets/topics/channel-session-reset/) | `session:read` | Full session reset events |
-| [channel.stream.status](/websockets/topics/channel-stream-status/) | `stream-live:read` | Stream online/offline status changes |
+| [channel.session.update](/websockets/topics/channel-session-update) | `session:read` | Individual session data updates |
+| [channel.session.reset](/websockets/topics/channel-session-reset) | `session:read` | Full session reset events |
+| [channel.stream.status](/websockets/topics/channel-stream-status) | `stream-live:read` | Stream online/offline status changes |
 
 ## Activity & Engagement
 
 | Topic | Required Scope | Description |
 | --- | --- | --- |
-| [channel.activities](/websockets/topics/channel-activities/) | `activities:read` | Channel activities like follows, subscriptions, and donations |
+| [channel.activities](/websockets/topics/channel-activities) | `activities:read` | Channel activities like follows, subscriptions, and donations |
 | `channel.announcements` | `channel:read` | Channel announcement events |
 | `channel.chatstats` | *(none)* | Chat statistics updates |
-| [channel.chat.message](/websockets/topics/channel-chat-message/) | `overlays:read` | Individual chat messages |
-| [channel.tips](/websockets/topics/channel-tips/) | `tips:read` | Tip/donation events |
-| [channel.tips.moderation](/websockets/topics/channel-tips-moderation/) | `tips:moderation` | Tip moderation events |
-| [channel.contests](/websockets/topics/channel-contests/) | *(none)* | Contest and prediction events |
-| [channel.giveaways](/websockets/topics/channel-giveaway/) | *(none)* | Giveaway events |
-| [channel.songrequest](/websockets/topics/channel-songrequest/) | `overlays:read` | Song request events |
+| [channel.chat.message](/websockets/topics/channel-chat-message) | `overlays:read` | Individual chat messages |
+| [channel.tips](/websockets/topics/channel-tips) | `tips:read` | Tip/donation events |
+| [channel.tips.moderation](/websockets/topics/channel-tips-moderation) | `tips:moderation` | Tip moderation events |
+| [channel.contests](/websockets/topics/channel-contests) | *(none)* | Contest and prediction events |
+| [channel.giveaways](/websockets/topics/channel-giveaway) | *(none)* | Giveaway events |
+| [channel.songrequest](/websockets/topics/channel-songrequest) | `overlays:read` | Song request events |
 | `channel.loyalty.redemptions` | `store:read` | Loyalty store redemption events |
 | `channel.loyalty.items` | `store:read` | Loyalty store item updates |
 
@@ -52,21 +52,21 @@ Unlinked topics are valid for subscription but are not yet documented. Topics ma
 
 | Topic | Required Scope | Description |
 | --- | --- | --- |
-| [channel.overlay.action](/websockets/topics/channel-overlay-action/) | `overlays:read` | Overlay action events (pause, mute, skip, etc.) |
-| [channel.overlay.broadcast](/websockets/topics/channel-overlay-broadcast/) | `overlays:broadcast` | Custom broadcast events targeting overlays |
-| [channel.overlay.update](/websockets/topics/channel-overlay-update/) | `overlays:read` | Overlay update notifications |
+| [channel.overlay.action](/websockets/topics/channel-overlay-action) | `overlays:read` | Overlay action events (pause, mute, skip, etc.) |
+| [channel.overlay.broadcast](/websockets/topics/channel-overlay-broadcast) | `overlays:broadcast` | Custom broadcast events targeting overlays |
+| [channel.overlay.update](/websockets/topics/channel-overlay-update) | `overlays:read` | Overlay update notifications |
 | `channel.kvstore.update` | `kvstore:read` | Key-value store update events |
 
 ## Chatbot
 
 | Topic | Required Scope | Description |
 | --- | --- | --- |
-| [channel.chatbot.status](/websockets/topics/chatbot-status/) | `bot:read` | Chatbot connection status changes |
-| [channel.chatbot.modules.pyramid](/websockets/topics/chatbot-modules-pyramid/) | `bot:read` | Chat pyramid detection events |
-| [channel.chatbot.modules.emotecombo](/websockets/topics/chatbot-modules-emotecombo/) | `bot:read` | Emote combo trigger events |
+| [channel.chatbot.status](/websockets/topics/chatbot-status) | `bot:read` | Chatbot connection status changes |
+| [channel.chatbot.modules.pyramid](/websockets/topics/chatbot-modules-pyramid) | `bot:read` | Chat pyramid detection events |
+| [channel.chatbot.modules.emotecombo](/websockets/topics/chatbot-modules-emotecombo) | `bot:read` | Emote combo trigger events |
 | `channel.chatbot.modules` | `bot:read` | General chatbot module updates <Badge text="Not published" variant="caution" /> |
 | `channel.chatbot.commands` | `bot:read` | Chatbot command updates <Badge text="Not published" variant="caution" /> |
 | `channel.chatbot.timers` | `bot:read` | Chatbot timer updates <Badge text="Not published" variant="caution" /> |
-| [channel.chatbot.counters](/websockets/topics/chatbot-counters/) | *(none)* | Chatbot counter value changes |
+| [channel.chatbot.counters](/websockets/topics/chatbot-counters) | *(none)* | Chatbot counter value changes |
 | `channel.chatbot.filters` | `bot:read` | Chatbot filter updates <Badge text="Not published" variant="caution" /> |
-| [channel.chatbot.timeout](/websockets/topics/chatbot-timeout/) | — | User timeout notifications <Badge text="In development" variant="caution" /> |
+| [channel.chatbot.timeout](/websockets/topics/chatbot-timeout) | — | User timeout notifications <Badge text="In development" variant="caution" /> |

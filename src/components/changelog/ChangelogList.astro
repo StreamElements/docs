@@ -27,7 +27,7 @@ const rendered = await Promise.all(
         </div>
         <div class="changelog-body">
           <h2 class="changelog-title">
-            <a href={`/changelog/post/${entry.slug}/`}>{entry.data.title}</a>
+            <a href={`/changelog/post/${entry.slug}`}>{entry.data.title}</a>
           </h2>
           <ProductPills products={entry.data.products} />
           <div class="changelog-content sl-markdown-content">

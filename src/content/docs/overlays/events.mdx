@@ -56,12 +56,12 @@ window.addEventListener('onWidgetLoad', function (obj) {
 <LinkCard
   title="Session Data Reference"
   description="All session object keys: tips, followers, subscribers, cheers, Super Chats, and more."
-  href="/overlays/session-data/"
+  href="/overlays/session-data"
 />
 
 ### Recents and currency
 
-There is also a list in chronological order of last 25 events (so if you want to make a list of all events - use this one) - variable `recents` initialized one line after variable `data`. It is an array of elements (each of them is an array) with the same elements as in `data["*-recent"]` (see [Recent events](/overlays/session-data/#recent-events)).
+There is also a list in chronological order of last 25 events (so if you want to make a list of all events - use this one) - variable `recents` initialized one line after variable `data`. It is an array of elements (each of them is an array) with the same elements as in `data["*-recent"]` (see [Recent events](/overlays/session-data#recent-events)).
 
 The last element of `obj` is `currency`, which contains:
 
@@ -100,7 +100,7 @@ In the example above you have `obj` forwarded to that function, which has two in
 | `event:skip` | User clicked "skip alert" button in activity feed |
 | `alertService:toggleSound` | User clicked "mute/unmute alerts" button in activity feed |
 | `bot:counter` | Update of [bot counter](#bot-counter) |
-| `kvstore:update` | Update of [SE_API](/overlays/custom-widget/#se_api) store value |
+| `kvstore:update` | Update of [SE_API](/overlays/custom-widget#se_api) store value |
 | `widget-button` | User clicked [custom field button](#button-click) in widget properties |
 
 ### Event details
@@ -340,4 +340,4 @@ window.addEventListener('onSessionUpdate', function (obj) {
 });
 ```
 
-`data` is the same as in `onWidgetLoad`, so every property is listed in the [Session Data Reference](/overlays/session-data/).
+`data` is the same as in `onWidgetLoad`, so every property is listed in the [Session Data Reference](/overlays/session-data).

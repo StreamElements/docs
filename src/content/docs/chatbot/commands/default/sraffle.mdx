@@ -12,7 +12,7 @@ platforms: [twitch]
 
 import ChatExample from '@components/ChatExample.astro';
 
-The `!sraffle` command allows streamers and moderators to start a **single-winner raffle**. The command randomly selects **one winner** from all the viewers who entered using the [`!join`](/chatbot/commands/default/join/) command (entry is free, one entry per viewer), and that winner receives the **full points prize**. For a raffle with multiple winners that split the prize, use [`!raffle`](/chatbot/commands/default/raffle/) instead.
+The `!sraffle` command allows streamers and moderators to start a **single-winner raffle**. The command randomly selects **one winner** from all the viewers who entered using the [`!join`](/chatbot/commands/default/join) command (entry is free, one entry per viewer), and that winner receives the **full points prize**. For a raffle with multiple winners that split the prize, use [`!raffle`](/chatbot/commands/default/raffle) instead.
 
 
 ## Usage
@@ -58,7 +58,7 @@ By default, only users with **Moderator** permission level or higher can use thi
 
 ## Related Commands
 
-*   [`!join`](/chatbot/commands/default/join/): The command viewers use to enter an active `!sraffle`.
-*   [`!raffle`](/chatbot/commands/default/raffle/): (Moderator+) Starts a multi-winner raffle where the points prize is split between the winners.
-*   [`!cancelraffle`](/chatbot/commands/default/cancelraffle/): (Moderator+) Cancels the currently active raffle (`!raffle` or `!sraffle`).
-*   [`!giveaway`](/chatbot/commands/default/giveaway/): Checks the status of the main channel giveaway.
+*   [`!join`](/chatbot/commands/default/join): The command viewers use to enter an active `!sraffle`.
+*   [`!raffle`](/chatbot/commands/default/raffle): (Moderator+) Starts a multi-winner raffle where the points prize is split between the winners.
+*   [`!cancelraffle`](/chatbot/commands/default/cancelraffle): (Moderator+) Cancels the currently active raffle (`!raffle` or `!sraffle`).
+*   [`!giveaway`](/chatbot/commands/default/giveaway): Checks the status of the main channel giveaway.

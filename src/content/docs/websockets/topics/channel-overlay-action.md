@@ -49,6 +49,6 @@ The `channel.overlay.action` topic provides real-time updates when actions are p
 
 ## Related
 
-- [Overlay Broadcast](/websockets/topics/channel-overlay-broadcast/) - Custom broadcast events targeting overlays
-- [Overlay Update](/websockets/topics/channel-overlay-update/) - Overlay update notifications
-- [Websockets](/websockets/) - General information about the Astro Websocket Gateway
+- [Overlay Broadcast](/websockets/topics/channel-overlay-broadcast) - Custom broadcast events targeting overlays
+- [Overlay Update](/websockets/topics/channel-overlay-update) - Overlay update notifications
+- [Websockets](/websockets) - General information about the Astro Websocket Gateway

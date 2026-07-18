@@ -59,6 +59,12 @@ function emitRedirectsFile() {
 export default defineConfig({
   site: 'https://docs.streamelements.com',
 
+  // URLs have no trailing slash (parity with the old Docusaurus site, so
+  // inbound links and search results resolve without a 301 hop). Output stays
+  // in directory format (/path/index.html); Cloudflare serves /path from it
+  // via html_handling: 'drop-trailing-slash' in wrangler.jsonc.
+  trailingSlash: 'never',
+
   redirects,
 
   integrations: [
@@ -108,14 +114,14 @@ export default defineConfig({
         starlightLinksValidator({
           errorOnLocalLinks: false,
           // Changelog routes are custom pages the validator can't see.
-          exclude: ['/changelog/', '/changelog/**'],
+          exclude: ['/changelog', '/changelog/**'],
         }),
         starlightLlmsTxt(),
         starlightSidebarTopics(
           [
             {
               label: 'Chatbot',
-              link: '/chatbot/',
+              link: '/chatbot',
               icon: 'comment',
               items: [
                 { label: 'Overview', slug: 'chatbot' },
@@ -143,7 +149,7 @@ export default defineConfig({
             },
             {
               label: 'Overlays',
-              link: '/overlays/',
+              link: '/overlays',
               icon: 'desktop',
               items: [
                 { label: 'Overview', slug: 'overlays' },
@@ -168,7 +174,7 @@ export default defineConfig({
             },
             {
               label: 'WebSockets',
-              link: '/websockets/',
+              link: '/websockets',
               icon: 'server',
               items: [
                 { label: 'Introduction', slug: 'websockets' },
@@ -227,7 +233,7 @@ export default defineConfig({
             },
             {
               label: 'Changelog',
-              link: '/changelog/',
+              link: '/changelog',
               icon: 'rocket',
             },
           ],

@@ -77,12 +77,12 @@ Streamers can configure the Roulette module in the StreamElements dashboard with
 | All-in Win Message | The message shown when a user bets `all` and wins. |
 | All-in Lose Message | The message shown when a user bets `all` and loses. |
 
-See the [`!roulette` command reference](/chatbot/commands/default/roulette/) for the default message templates and available message variables.
+See the [`!roulette` command reference](/chatbot/commands/default/roulette) for the default message templates and available message variables.
 
 ## Related Commands
 
-- [`!roulette`](/chatbot/commands/default/roulette/): Initiates the roulette game.
-- [`!points`](/chatbot/commands/default/points/): Check your current point balance.
+- [`!roulette`](/chatbot/commands/default/roulette): Initiates the roulette game.
+- [`!points`](/chatbot/commands/default/points): Check your current point balance.
 
 ## FAQ
 

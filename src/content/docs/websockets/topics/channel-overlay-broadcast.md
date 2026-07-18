@@ -42,7 +42,7 @@ The `channel.overlay.broadcast` topic delivers custom events to a channel's over
 
 ## Example: KappaGen
 
-StreamElements itself uses this topic: when a viewer uses the chatbot's [`!kappagen`](/chatbot/commands/default/kappagen/) command, the chatbot broadcasts an `emotesplosion-kappagen` event to all of the channel's overlays, with the chat message that triggered the command as the event payload.
+StreamElements itself uses this topic: when a viewer uses the chatbot's [`!kappagen`](/chatbot/commands/default/kappagen) command, the chatbot broadcasts an `emotesplosion-kappagen` event to all of the channel's overlays, with the chat message that triggered the command as the event payload.
 
 ```json
 {
@@ -63,6 +63,6 @@ StreamElements itself uses this topic: when a viewer uses the chatbot's [`!kappa
 
 ## Related
 
-- [Overlay Action](/websockets/topics/channel-overlay-action/) - Overlay action events
-- [Overlay Update](/websockets/topics/channel-overlay-update/) - Overlay update notifications
-- [Websockets](/websockets/) - General information about the Astro Websocket Gateway
+- [Overlay Action](/websockets/topics/channel-overlay-action) - Overlay action events
+- [Overlay Update](/websockets/topics/channel-overlay-update) - Overlay update notifications
+- [Websockets](/websockets) - General information about the Astro Websocket Gateway

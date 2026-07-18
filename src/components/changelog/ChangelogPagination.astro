@@ -15,7 +15,7 @@ interface Props {
 const { page, baseUrl } = Astro.props;
 
 function pageUrl(n: number): string {
-  return n === 1 ? baseUrl : `${baseUrl}${n}/`;
+  return n === 1 ? baseUrl : `${baseUrl}/${n}`;
 }
 
 const numbers: Array<number | null> = [];

@@ -38,6 +38,6 @@ This event is triggered when your channel session is completely reset. It delive
 
 ## Related
 
-- [Session Update](/websockets/topics/channel-session-update/) - Individual session data updates
-- [Activities](/websockets/topics/channel-activities/) - Channel activity notifications
-- [Websockets](/websockets/) - General information about the Astro Websocket Gateway
+- [Session Update](/websockets/topics/channel-session-update) - Individual session data updates
+- [Activities](/websockets/topics/channel-activities) - Channel activity notifications
+- [Websockets](/websockets) - General information about the Astro Websocket Gateway

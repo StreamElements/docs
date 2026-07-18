@@ -14,7 +14,7 @@ keywords:
 
 Chatbot timers are automated messages or actions that occur at specified intervals during a live stream. They serve to remind viewers about certain aspects of the stream, such as rules or upcoming events, and can also be used to automatically execute commands at regular intervals.
 
-You can manage your timers in the [StreamElements Dashboard](https://streamelements.com/dashboard/bot/timers). For a step-by-step walkthrough of creating your first timer, see [Getting Started](/chatbot/getting-started/).
+You can manage your timers in the [StreamElements Dashboard](https://streamelements.com/dashboard/bot/timers). For a step-by-step walkthrough of creating your first timer, see [Getting Started](/chatbot/getting-started).
 
 ## Settings
 

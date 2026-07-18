@@ -114,5 +114,5 @@ A rejected tip matches the allowed payload, with `approved` set to `"rejected"`.
 
 ## Related
 
-- [Tips](/websockets/topics/channel-tips/) - Tip/donation events
-- [Websockets](/websockets/) - General information about the Astro Websocket Gateway
+- [Tips](/websockets/topics/channel-tips) - Tip/donation events
+- [Websockets](/websockets) - General information about the Astro Websocket Gateway

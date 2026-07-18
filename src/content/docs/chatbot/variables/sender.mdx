@@ -16,7 +16,7 @@ import ChatExample from '@components/ChatExample.astro';
 The `$(sender)` variable in StreamElements Chatbot always refers to the user who triggered the command or message. It provides access to various user-related information such as username, loyalty points, ranks, and activity timestamps.
 
 :::tip[Key Point]
-`$(sender)` always refers to the command trigger and doesn't accept arguments. If you need to query information about other users, use the [`$(user)`](/chatbot/variables/user/) variable instead.
+`$(sender)` always refers to the command trigger and doesn't accept arguments. If you need to query information about other users, use the [`$(user)`](/chatbot/variables/user) variable instead.
 :::
 
 ## Use it
@@ -44,7 +44,7 @@ To use the `$(sender)` variable, include it in your chat message or command resp
 | `$(sender.points)` | Sender's loyalty currency owned | |
 | `$(sender.points_rank)` | Sender's rank on the loyalty currency leaderboard | Returned as rank/total, e.g. `5/283`; `<error>` if the lookup fails |
 | `$(sender.points_alltime_rank)` | Sender's rank on the all-time loyalty currency leaderboard | Returned as rank/total, e.g. `5/283`; `<error>` if the lookup fails |
-| `$(sender.level)` | Sender's access level as a number | See [access levels](/chatbot/variables/user/#access-levels) |
+| `$(sender.level)` | Sender's access level as a number | See [access levels](/chatbot/variables/user#access-levels) |
 | `$(sender.lastmessage)` | Sender's last typed message in the chat | Outputs a single space if no message is stored |
 | `$(sender.lastseen)` | Time since the sender was most recently seen in the viewer list or chat | Returned as a duration, e.g. `13 mins 15 secs`; `<not found>` if never recorded |
 | `$(sender.lastactive)` | Time since the sender most recently typed a message in the chat | Returned as a duration, e.g. `13 mins 15 secs`; `<not found>` if never recorded |
@@ -86,7 +86,7 @@ Durations are written out in full words: `secs`, `mins`, `hours`, `days`, `month
 ## Best Practices
 
 1. Use `$(sender)` when you only need information about the command trigger.
-2. If you need to reference other users or allow flexible user queries, use the [`$(user)`](/chatbot/variables/user/) variable instead.
+2. If you need to reference other users or allow flexible user queries, use the [`$(user)`](/chatbot/variables/user) variable instead.
 
 ## Troubleshooting
 
@@ -95,7 +95,7 @@ Durations are written out in full words: `secs`, `mins`, `hours`, `days`, `month
 
 ## Related Variables
 
-- [`$(user)`](/chatbot/variables/user/): Query information about any user, not just the command sender.
+- [`$(user)`](/chatbot/variables/user): Query information about any user, not just the command sender.
 
 ## FAQ
 
