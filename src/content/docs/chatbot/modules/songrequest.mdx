@@ -1,0 +1,86 @@
+---
+title: Song Request Module
+sidebar:
+  label: Song Request
+description: "Let viewers request YouTube songs and videos with !sr, moderate the queue, and control playback — the StreamElements Song Request (Media Request) module."
+keywords:
+- song request
+- media request
+- StreamElements song request
+- "!sr command"
+- YouTube queue
+- Twitch music requests
+platforms: [twitch]
+---
+
+import ChatExample from '@components/ChatExample.astro';
+
+The Song Request module lets viewers add YouTube songs and videos to a shared queue from chat, while you (and your mods) control playback. In the dashboard it's called **Media Request**.
+
+## How It Works
+
+1. A viewer requests media with [`!songrequest`](/chatbot/commands/default/songrequest) (`!sr`), passing a YouTube URL, video ID, or search terms — searches resolve to the first YouTube result. Viewers can also request from your StreamElements profile page or the tipping page.
+2. The request lands in the queue — or, with **Queue moderation** enabled, in a Pending Approval list until you or a mod with dashboard access approve it.
+3. Songs play through the Media Request player: on your dashboard, on the stream via the overlay widget, and on your public request page at `streamelements.com/<your-channel>/mediarequest`.
+
+<ChatExample messages={[
+  { persona: 'user', message: '!sr epic sax guy' },
+  { persona: 'bot', message: '@User, added Epic Sax Guy - "Epic Sax Guy 10 Hours" to the queue at #2 (playing ~in 3 mins 5 secs) https://youtu.be/kxopViU98Xo' }
+]} />
+
+:::note
+YouTube is the only media source — there is no Spotify or SoundCloud integration. And although StreamElements supports several chat platforms, the song request chat commands are Twitch-only.
+:::
+
+## Commands
+
+Viewer commands (available to everyone):
+
+| Command | What it does |
+|---------|--------------|
+| [`!songrequest` / `!sr`](/chatbot/commands/default/songrequest) | Request a song by URL, video ID, or search |
+| [`!song`](/chatbot/commands/default/song) | Show the currently playing song |
+| [`!next`](/chatbot/commands/default/next) | Show the next song in the queue |
+| [`!when`](/chatbot/commands/default/when) | Show when your requested song will play |
+| [`!wrongsong`](/chatbot/commands/default/wrongsong) | Remove your own most recent request |
+| [`!voteskip`](/chatbot/commands/default/voteskip) | Vote to skip the current song (only when skip voting is enabled) |
+| [`!volume`](/chatbot/commands/default/volume) | Show the player volume |
+
+Moderator commands (permission level 500+):
+
+| Command | What it does |
+|---------|--------------|
+| [`!skip`](/chatbot/commands/default/skip) | Skip the current song |
+| [`!pause`](/chatbot/commands/default/pause) / [`!play`](/chatbot/commands/default/play) | Pause or resume playback |
+| [`!songqueue`](/chatbot/commands/default/songqueue) | Link the public request page with the full queue |
+| [`!removesong`](/chatbot/commands/default/removesong) | Remove a song by requester name or YouTube URL |
+| [`!srclear`](/chatbot/commands/default/srclear) | Clear the entire queue |
+
+## Configuration
+
+Settings live in the dashboard under **Media Request**. The main groups:
+
+| Setting | Description |
+|---------|-------------|
+| Viewer requests | Master toggle for requests via `!sr`, your profile page, and the tipping page. |
+| Queue moderation | Requires each request to be approved from the Pending Approval section before it enters the playlist. |
+| Queue limit / per-user limits | Cap the total queue size and the number of free or paid requests per viewer (0 = unlimited). |
+| Maximum request duration | Reject media longer than the configured length, with separate limits for free and paid requests. |
+| Backup playlist | A YouTube playlist that plays whenever the request queue is empty. |
+| YouTube filters | Limit requests to music, blacklist specific videos or tags, and set an automatic filter based on video rating and view count. |
+| Loyalty cost | Charge loyalty points per request, with an optional subscriber discount. Users at or above the exempt user level (Moderator by default) bypass the cost and other limitations. |
+| Minimum user level | Restrict who may request at all. |
+| Tipped requests | Prioritize requests attached to tips, price them per second of media, and set a minimum tip amount. |
+| Skip voting | Enable `!voteskip` and set how many votes a skip requires. |
+
+## FAQ
+
+**Q: Does requesting a song cost points?**
+A: Only if you set a loyalty cost. If a viewer can't afford it, the bot answers with the cost and their balance, and nothing is queued. Subscribers can get a percentage discount, and anyone at or above the exempt user level requests for free.
+
+**Q: Where do approved requests actually play?**
+A: In the Media Request player — on your dashboard, in the on-stream overlay widget if you've added one, and on your public `mediarequest` page. The chatbot only manages the queue; it doesn't play audio itself.
+
+## Related
+
+- [Loyalty System](https://support.streamelements.com/hc/en-us/articles/10474478470290-Loyalty-System-Overview) — required if you charge points for requests.
