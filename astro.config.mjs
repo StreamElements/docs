@@ -192,6 +192,16 @@ export default defineConfig({
                 { label: 'Overview', slug: 'chatbot' },
                 { label: 'Getting Started', slug: 'chatbot/getting-started' },
                 {
+                  label: 'Guides',
+                  items: [
+                    { label: 'Overview', slug: 'chatbot/guides' },
+                    { label: 'Death Counter', slug: 'chatbot/guides/death-counter' },
+                    { label: 'Lurk Command', slug: 'chatbot/guides/lurk-command' },
+                    { label: 'Countdown Command', slug: 'chatbot/guides/countdown-command' },
+                    { label: 'Viewer Input', slug: 'chatbot/guides/viewer-input' },
+                  ],
+                },
+                {
                   label: 'Commands',
                   items: [
                     { label: 'Overview', slug: 'chatbot/commands' },

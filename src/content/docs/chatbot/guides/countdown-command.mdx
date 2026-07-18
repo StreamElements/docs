@@ -1,0 +1,85 @@
+---
+title: Create a Countdown Command
+sidebar:
+  label: Countdown Command
+description: "Create a StreamElements countdown command for a daily stream time or a one-time event, with UTC and RFC 3339 examples."
+keywords:
+  - StreamElements countdown command
+  - Twitch countdown command
+  - next stream command
+  - event countdown
+  - time until command
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import ChatExample from '@components/ChatExample.astro';
+
+A countdown command tells viewers how long remains until your next stream, tournament, community night, or other event. StreamElements provides two countdown formats: a recurring time of day and a fixed date and time.
+
+## Choose a countdown type
+
+| Countdown | Use it for | Target format |
+| --- | --- | --- |
+| Daily | A stream or event that starts at the same time every day | A 24-hour UTC time, such as `19:00` |
+| One-time | An event on a specific date | A complete RFC 3339 timestamp, such as `2027-09-20T19:00:00-03:00` |
+
+:::caution[Check the timezone]
+A bare time is always interpreted as UTC, not your local timezone. For a one-time event, include its UTC offset in the timestamp. For example, `+02:00` means two hours ahead of UTC and `-03:00` means three hours behind UTC.
+:::
+
+## Create a daily countdown
+
+This example counts down to the next occurrence of 19:00 UTC. If 19:00 has already passed today, the countdown automatically targets 19:00 tomorrow.
+
+<Steps>
+
+1. Open the [bot command dashboard](https://streamelements.com/dashboard/bot/commands), select **Custom commands**, and click **Add new command**.
+
+2. Name the command `nextstream` and enter this reply:
+
+   ```streamelements
+   The next stream starts in $(time.until 19:00)
+   ```
+
+3. Replace `19:00` with your start time converted to UTC.
+
+4. Click **Activate command**.
+
+</Steps>
+
+<ChatExample messages={[
+  { persona: 'user', message: '!nextstream' },
+  { persona: 'bot', message: 'The next stream starts in 2 hours 30 mins' }
+]} />
+
+## Create a one-time event countdown
+
+For an event on a particular date, use a complete RFC 3339 timestamp:
+
+```streamelements
+The community tournament starts in $(time.until 2027-09-20T19:00:00-03:00)
+```
+
+The timestamp has four parts:
+
+```text
+2027-09-20 T 19:00:00 -03:00
+date         time       UTC offset
+```
+
+Replace the example with the event's actual date, local start time, and UTC offset. After the fixed time passes, the output ends in `ago`; update or disable the command when the event is over.
+
+## Troubleshooting
+
+- **The time is several hours wrong:** a daily `HH:MM` target uses UTC. Convert the intended start time to UTC.
+- **The bot prints a parsing error:** use either a bare `HH:MM` time or a complete RFC 3339 timestamp. Formats such as `September 20 at 7 PM` are not accepted.
+- **The response says the event was "ago":** the fixed timestamp is in the past. Update the target or disable the command.
+- **The variable appears as text:** check the spelling and keep the target inside `$(time.until ...)`.
+
+See the [`$(time)` reference](/chatbot/variables/time#timeuntil) for the precise input and output rules.
+
+## Related
+
+- [`$(time)`](/chatbot/variables/time): Current-time and countdown syntax.
+- [Custom Commands](/chatbot/commands/custom): Manage the command from the dashboard or chat.
+- [Timers](/chatbot/timers): Post messages automatically instead of waiting for a viewer command.

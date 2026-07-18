@@ -27,22 +27,22 @@ Commands are the main way users will interact with the bot in your chat. They ca
 
 <Steps>
 
-1. From the [bot command dashboard](https://streamelements.com/dashboard/bot/commands), navigate to the "Custom Commands" tab.
+1. From the [bot command dashboard](https://streamelements.com/dashboard/bot/commands), navigate to the "Custom commands" tab.
 
-2. Click the "Add New Command" button to open the command creation tool.
+2. Click the "Add new command" button to open the command creation tool.
 
-   ![Step 1](img/step_1.png "Step 1")
+   ![The Chat commands page with the Custom commands tab and Add new command button highlighted](img/step_1.png "Add new command")
 
-3. Enter the desired name for your new command. For this example we will name the command "lastseen".
+3. Enter the desired name for your new command in the "Command name" field. For this example we will name the command "lastseen".
 
-4. Optional: In the "Response Type" dropdown, select the method you would like the bot to use to send the response.
+4. Optional: In the "Response type" dropdown, select the method you would like the bot to use to send the response.
    - "Say" will send the response as a chat message as it is entered in the basic settings.
    - "Mention" will send the response as a chat message, but will prefix the message with [`@$(user),`](/chatbot/variables/sender).
    - "Reply" will send the response as a native reply to the user who triggered the command.
      - NOTE: If the platform does not support native replies, the response will be sent as a "Mention" instead.
    - "Whisper" will send the response as a whisper to the user who triggered the command.
 
-5. Add the response. For our example, enter:
+5. Add the response in the "Reply" field. For our example, enter:
 
    ```streamelements
    $(user) was last seen $(user.lastseen) ago
@@ -50,13 +50,15 @@ Commands are the main way users will interact with the bot in your chat. They ca
 
    [`$(user)`](/chatbot/variables/user) and its sub-variables target the name typed after the command — or the person who used the command, when no name is given. For a list of all available variables, see the [variables documentation](/chatbot/variables).
 
-   ![Step 2](img/step_2.png "Step 2")
+   ![The command settings filled in with a name, response type, and reply](img/step_2.png "Command settings")
 
-6. Optional: Add one or more command aliases to allow users to trigger the same command using alternate names.
+6. Optional: Switch to the "Advanced settings" tab to add command aliases (alternate trigger words), cooldowns, a loyalty-point cost, or conditions such as only running while the stream is live.
 
-7. Click the "Activate Command" button to save your new command.
+   ![The Advanced settings tab with the Command aliases field highlighted](img/command-advanced.png "Advanced settings")
 
-   ![Step 3](img/step_3.png "Step 3")
+7. Click the "Activate command" button to save your new command.
+
+   ![The Activate command button](img/step_3.png "Activate command")
 
 </Steps>
 
