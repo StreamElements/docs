@@ -120,7 +120,7 @@ Variables used:
 This command sends a simple shoutout to a specified user.
 
 ```streamelements
-!cmd add !shoutout Check out $(1), they are playing $(game ${1}) at https://twitch.tv/$(1)
+!cmd add !shoutout Check out ${1}, they are playing $(game ${1}) at https://twitch.tv/${1}
 ```
 
 **Output:**

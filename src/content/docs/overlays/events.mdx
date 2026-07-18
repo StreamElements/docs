@@ -27,7 +27,7 @@ window.addEventListener('onWidgetLoad', function (obj) {
 
 ## On Widget Load
 
-Event received upon widget is loaded (or refreshed). Contains information about fieldData (fields values), channel information (including apiKey) and session data.
+Event received upon widget is loaded (or refreshed). Contains information about fieldData (fields values), channel information (including the `apiToken`) and session data.
 
 ```javascript
 window.addEventListener('onWidgetLoad', function (obj) {
@@ -285,8 +285,9 @@ Contains two elements - field name (`field`) and value (`value`). Example below 
 
 ```javascript
 window.addEventListener('onEventReceived', function (obj) {
+  const listener = obj.detail.listener;
   const data = obj.detail.event;
-  if (data.listener === 'widget-button') {
+  if (listener === 'widget-button') {
     if (data.field === 'chat' && data.value === 'First Message') {
       const emulated = new CustomEvent("onEventReceived", {
         detail: {

@@ -52,9 +52,9 @@ Below is the full list of default commands, grouped by what they do. Click on ea
 | --- | --- |
 | [`!cancelraffle`](/chatbot/commands/default/cancelraffle) | Immediately cancel an active raffle. |
 | [`!giveaway`](/chatbot/commands/default/giveaway) | Check the status and link of the active channel giveaway. |
-| [`!join`](/chatbot/commands/default/join) | Enter an active raffle or giveaway started with `!sraffle` or `!raffle`. |
-| [`!raffle`](/chatbot/commands/default/raffle) | Create viewer raffles with multiple winners. |
-| [`!sraffle`](/chatbot/commands/default/sraffle) | Start a single-entry raffle; viewers enter with `!join`. |
+| [`!join`](/chatbot/commands/default/join) | Enter an active raffle started with `!sraffle` or `!raffle`. |
+| [`!raffle`](/chatbot/commands/default/raffle) | Start a multi-winner raffle that splits the pot; viewers enter with `!join`. |
+| [`!sraffle`](/chatbot/commands/default/sraffle) | Start a single-winner raffle; viewers enter with `!join`. |
 | [`!ticket`](/chatbot/commands/default/ticket) | Purchase tickets for giveaways and raffles. |
 
 ## Song Requests

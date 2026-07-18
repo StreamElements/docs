@@ -82,7 +82,8 @@ Variables can be written with double braces (`{{variable}}`) or single braces (`
 #### JS
 
 ```js
-const hideAfter=parseInt("{{widgetDuration}}")-1000;
+// {{widgetDuration}} is in seconds; setTimeout expects milliseconds.
+const hideAfter=parseInt("{{widgetDuration}}")*1000-1000;
 const playHideAnimation=()=>{
   timeline.reverse(); //or any other thing that will make your alert fancy exit
 }

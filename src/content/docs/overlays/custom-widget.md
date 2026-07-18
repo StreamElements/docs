@@ -258,7 +258,7 @@ The best way to explain this is through an example.
 ```javascript
 let skippable=["bot:counter","event","event:test","event:skip","alertService:toggleSound","message","delete-message","delete-messages","kvstore:update"]; //Array of events coming to widget that are not queued so they can come even if queue is on hold
 let playAnimation=(event)=>{
-    $("container").html(`<div id="sender">${event.sender}</div><div class="amount">${event.amount} subs!</div>`)
+    $("#container").html(`<div id="sender">${event.sender}</div><div class="amount">${event.amount} subs!</div>`)
     return Math.floor(Math.random()*8)+7;
 };
 window.addEventListener('onEventReceived', function (obj) {
