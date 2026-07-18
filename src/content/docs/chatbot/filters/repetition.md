@@ -17,8 +17,8 @@ The Repetition filter limits how often the same word may be repeated within a si
 
 | Setting | Description |
 |---------|-------------|
-| Maximum word repetitions | The maximum number of times a word can occur in a single message. |
-| Minimum characters | Words shorter than this are ignored when counting repetitions. |
+| Maximum word repetitions | The maximum number of times a word can occur in a single message. (Default: 15) |
+| Minimum characters | Words shorter than this are ignored when counting repetitions. (Default: 3) |
 
 The filter also supports the [settings shared by all filters](/chatbot/filters#settings-shared-by-all-filters), including the timeout length, custom timeout message, and excluded user level.
 

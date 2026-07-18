@@ -17,7 +17,7 @@ The Zalgo filter removes "zalgo" text — messages distorted with stacked combin
 
 | Setting | Description |
 |---------|-------------|
-| Maximum amount | The maximum number of zalgo (combining) characters allowed in a single message. |
+| Maximum amount | The maximum number of zalgo (combining) characters allowed in a single message. (Default: 1) |
 
 The filter also supports the [settings shared by all filters](/chatbot/filters#settings-shared-by-all-filters), including the timeout length, custom timeout message, and excluded user level.
 

@@ -17,10 +17,10 @@ The One-Man Spam filter targets spam coming from a single user. Instead of judgi
 
 | Setting | Description |
 |---------|-------------|
-| Minimum characters | The number of characters a message must have to count towards the filter. Shorter messages are ignored. |
-| Minimum messages | The number of messages the user must have sent within the lookback window before the filter can trigger. |
-| Lookback | How many seconds of the user's message history are inspected. |
-| Threshold | The message similarity score (0–1, decimals allowed) that causes the user to be timed out. Messages at or above this similarity count as spam. |
+| Minimum characters | The number of characters a message must have to count towards the filter. Shorter messages are ignored. (Default: 4) |
+| Minimum messages | The number of messages the user must have sent within the lookback window before the filter can trigger. (Default: 5) |
+| Lookback | How many seconds of the user's message history are inspected. (Default: 30) |
+| Threshold | The message similarity score (0–100, decimals allowed) that causes the user to be timed out. Messages at or above this similarity count as spam. (Default: 75) |
 
 The filter also supports the [settings shared by all filters](/chatbot/filters#settings-shared-by-all-filters), including the timeout length, custom timeout message, and excluded user level.
 
