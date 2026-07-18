@@ -78,7 +78,8 @@ StreamElements uses the following numeric values for permission levels:
 *   `400`: VIP (Twitch only)
 *   `500`: Moderator
 *   `1000`: Super Moderator (Manually assigned via Dashboard or `!level`)
-*   `2000`: Broadcaster
+
+These six values are the only ones the bot accepts — commands like `!level` and `!command options -level` reject anything else.
 
 :::note
 Manually setting a level (e.g., setting a non-sub to `250`) grants them the permissions of that level within StreamElements (e.g., access to sub-only commands) but does *not* grant them platform-specific benefits like sub badges or emotes.

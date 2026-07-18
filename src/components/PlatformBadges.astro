@@ -5,13 +5,12 @@
  * via the PageTitle override, but can also be used directly in MDX.
  */
 interface Props {
-  platforms: Array<'twitch' | 'youtube' | 'trovo' | 'kick' | string>;
+  platforms: Array<'twitch' | 'youtube' | 'kick' | string>;
 }
 
 const LABELS: Record<string, string> = {
   twitch: 'Twitch',
   youtube: 'YouTube',
-  trovo: 'Trovo',
   kick: 'Kick',
 };
 
@@ -60,10 +59,6 @@ const { platforms = [] } = Astro.props;
   }
   .platform-badge.kick {
     background-color: #53fc18;
-    color: #000;
-  }
-  .platform-badge.trovo {
-    background-color: #64d376;
     color: #000;
   }
   .platform-badge.youtube {

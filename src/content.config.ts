@@ -13,7 +13,7 @@ export const collections = {
          * Streaming platforms a command/feature supports.
          * Rendered as badges under the page title (see PageTitle override).
          */
-        platforms: z.array(z.enum(['twitch', 'youtube', 'trovo', 'kick'])).optional(),
+        platforms: z.array(z.enum(['twitch', 'youtube', 'kick'])).optional(),
         /** SEO keywords emitted as a <meta name="keywords"> tag (see Head override). */
         keywords: z.array(z.string()).optional(),
         /**

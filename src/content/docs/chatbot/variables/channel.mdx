@@ -37,7 +37,7 @@ To use a channel variable, include it in your chatbot command using the `$()` sy
 | `$(channel)` | Name of the channel (login name) | Any unrecognized field, e.g. `$(channel.name)`, also returns the channel name |
 | `$(channel.display_name)` | Channel's display name | May differ in capitalization from `$(channel)` |
 | `$(channel.alias)` | Channel's alias | |
-| `$(channel.provider)` | Channel's streaming platform as a lowercase slug: `twitch`, `youtube`, `trovo`, or `kick` | |
+| `$(channel.provider)` | Channel's streaming platform as a lowercase slug: `twitch`, `youtube`, or `kick` | |
 | `$(channel.provider_id)` | Channel's platform ID (e.g. Twitch or YouTube channel ID) | Aliases: `$(channel.twitchid)`, `$(channel.youtubeid)` |
 | `$(channel.id)` | Channel's internal StreamElements ID | |
 | `$(channel.title)` | Current stream title | Alias: `$(channel.status)`. Returns `<error>` if the lookup fails |
@@ -59,7 +59,7 @@ $(channel.title somestreamer)
 $(channel somestreamer)
 ```
 
-- This cross-channel form works on Twitch (and partially on Trovo). It is not implemented on YouTube, where it falls back to your own channel's data.
+- This cross-channel form works on Twitch. It is not implemented on YouTube, where it falls back to your own channel's data.
 - `$(channel.subs)` and `$(channel.subpoints)` always return `0` for other channels.
 - If the channel doesn't exist, `title` and `game` return `<error not_found>`; other lookup failures return an `<error ...>` code.
 

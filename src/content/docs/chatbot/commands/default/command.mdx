@@ -1,7 +1,7 @@
 ---
 title: "!command"
 description: "Manage StreamElements chatbot custom commands directly from chat using the !command (!cmd) functions: add, remove, edit, alias, show, options."
-platforms: [twitch, youtube, trovo, kick]
+platforms: [twitch, youtube, kick]
 keywords:
   - command command
   - cmd command
@@ -151,7 +151,7 @@ When using the `!command options` subcommand, you specify settings using flags f
 | `-cd`            | Sets the **global command cooldown** (minimum time between *any* use of the command).                                                     | `<seconds>` (e.g., `10`)                                                     | `-cd 10`                                  |
 | `-usercd`        | Sets the **user-specific cooldown** (minimum time the *same user* must wait before using the command again).                            | `<seconds>` (e.g., `30`)                                                     | `-usercd 30`                              |
 | `-cost`          | Sets the **loyalty points cost** charged each time the command is used. If a user doesn't have enough points, the command silently does nothing (no error message is sent). Requires the StreamElements [Loyalty System](https://support.streamelements.com/hc/en-us/articles/10474478470290-Loyalty-System-Overview) (enabled in the dashboard under **Loyalty** → **Loyalty Settings**). | `<points>` (e.g., `50`)                                                      | `-cost 50`                                |
-| `-level`         | Sets the **minimum user permission level** required. Takes a **number**: `100` (Everyone), `250` (Subscriber), `400` (VIP), `500` (Moderator), `1000` (Super Moderator). | `<number>` (e.g., `500`)                                                   | `-level 500`                              |
+| `-level`         | Sets the **minimum user permission level** required. Takes a **number**: `100` (Everyone), `250` (Subscriber), `300` (Regular), `400` (VIP), `500` (Moderator), `1000` (Super Moderator). No other values are accepted. | `<number>` (e.g., `500`)                                                   | `-level 500`                              |
 | `-type`          | Sets **how the bot responds**. Platform support for `reply`, `mention`, and `whisper` may vary.                                         | `say` (default), `reply`, `mention`, `whisper`                             | `-type whisper`                           |
 | `-trigger`       | **Renames the command**, changing the trigger word used to invoke it.                                                                   | `<new_name>` (e.g., `!links`)                                                | `-trigger !links`                         |
 | `-enable`        | Enables the command.                                                                                                                    | N/A                                                                        | `-enable`                                 |

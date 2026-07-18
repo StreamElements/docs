@@ -1,6 +1,6 @@
 ---
 title: "$(provider)"
-description: "Display which streaming platform a channel runs on — twitch, youtube, trovo, or kick — with the $(provider) variable in StreamElements Chatbot."
+description: "Display which streaming platform a channel runs on — twitch, youtube, or kick — with the $(provider) variable in StreamElements Chatbot."
 syntax: "$(provider)"
 arguments: none
 keywords:
@@ -8,7 +8,6 @@ keywords:
   - platform
   - twitch
   - youtube
-  - trovo
   - kick
   - StreamElements
   - chatbot variable
@@ -16,7 +15,7 @@ keywords:
 
 import ChatExample from '@components/ChatExample.astro';
 
-The `$(provider)` variable returns the platform the channel runs on, as a lowercase slug: `twitch`, `youtube`, `trovo`, or `kick`. It is identical to [`$(channel.provider)`](/chatbot/variables/channel) and works on every platform.
+The `$(provider)` variable returns the platform the channel runs on, as a lowercase slug: `twitch`, `youtube`, or `kick`. It is identical to [`$(channel.provider)`](/chatbot/variables/channel) and works on every platform.
 
 ## Use it
 
@@ -41,7 +40,6 @@ The variable takes no arguments and always refers to the channel the bot is runn
 | --- | --- |
 | Twitch | `twitch` |
 | YouTube | `youtube` |
-| Trovo | `trovo` |
 | Kick | `kick` |
 
 Because the output is a stable lowercase slug, it is most useful **nested inside other variables** — for example to build platform-aware responses with [`$(customapi)`](/chatbot/variables/customapi):
@@ -66,7 +64,7 @@ This requests a different URL per platform (`.../messages/twitch` on Twitch, `..
 
 **Q: Does $(provider) work on every platform?**
 
-A: Yes — it is available on Twitch, YouTube, Trovo, and Kick.
+A: Yes — it is available on Twitch, YouTube, and Kick.
 
 **Q: Is the output capitalized?**
 

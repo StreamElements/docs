@@ -70,7 +70,7 @@ Each use changes the counter and outputs the **new** value as a plain number. Wi
   - `n`: Set the counter to a specific value n (e.g., `0`, `100`) — `$(count deaths 0)` resets the counter
 
 :::note
-Modifiers only work in the space-separated form. The dot form `$(count.deaths)` works for naming a counter, but `$(count.deaths +5)` does not — the `+5` would be misread as the counter name. Use `$(count deaths +5)` instead.
+Modifiers only work in the space-separated form. The dot form `$(count.deaths)` works for naming a counter, but in `$(count.deaths +5)` the parser treats `+5` itself as the counter name — so it increments a counter literally named "+5" by 1 and ignores `deaths` entirely. Use `$(count deaths +5)` instead.
 :::
 
 ## Configuration
