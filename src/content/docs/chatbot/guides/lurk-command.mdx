@@ -1,0 +1,68 @@
+---
+title: Set Up a Lurk Command
+sidebar:
+  label: Lurk Command
+description: "Create a !lurk command with the StreamElements Chatbot, personalize its reply, add a cooldown, and test it in Twitch chat."
+platforms: [twitch]
+keywords:
+  - StreamElements lurk command
+  - Twitch lurk command
+  - create lurk command
+  - custom chatbot command
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import ChatExample from '@components/ChatExample.astro';
+
+A lurk command gives viewers a quick way to say they are still watching even when they are stepping away from chat. It posts a friendly reply; it does not change the viewer's Twitch status or how their view is counted.
+
+## Create the command
+
+<Steps>
+
+1. Open the [bot command dashboard](https://streamelements.com/dashboard/bot/commands), select the **Custom commands** tab, and click **Add new command**.
+
+2. Enter `lurk` in the **Command name** field and leave **User level** set to **Everyone**.
+
+3. Enter this in the **Reply** field:
+
+   ```streamelements
+   $(sender) is lurking. Thanks for keeping the stream company! $(random.emote)
+   ```
+
+   [`$(sender)`](/chatbot/variables/sender) is always the viewer who used the command. [`$(random.emote)`](/chatbot/variables/random#randomemote) adds a random emote available in the channel and can be removed if you want a consistent reply.
+
+4. Open **Advanced settings** and set a **User cooldown**. This limits how often the same viewer can trigger the reply without preventing other viewers from using it.
+
+5. Optional: add `brb` or `afk` under **Command aliases** if you want those triggers to use the same response.
+
+6. Click **Activate command**.
+
+</Steps>
+
+## Test it
+
+Use the command from a viewer account or ask someone in chat to try it:
+
+<ChatExample messages={[
+  { persona: 'user', message: '!lurk' },
+  { persona: 'bot', message: 'ViewerName is lurking. Thanks for keeping the stream company! Kappa' }
+]} />
+
+If the bot does not reply, check that it has joined the channel, the command is enabled, and the command is not on cooldown. See [Chatbot troubleshooting](/chatbot/troubleshooting) for the full checklist.
+
+## Customize the reply
+
+You can change all of the text around the variables without changing how the command works. For example:
+
+```streamelements
+Thanks for lurking, $(sender)! Enjoy the stream and come back whenever you're ready. $(random.emote)
+```
+
+Keep `$(sender)` if you want the reply to name the person who used the command. The bot replaces it with their display name each time.
+
+## Related
+
+- [Custom Commands](/chatbot/commands/custom): Manage command replies, permissions, aliases, and cooldowns.
+- [`$(sender)`](/chatbot/variables/sender): Information about the viewer who triggered a command.
+- [`$(random)`](/chatbot/variables/random): Random emotes, numbers, chatters, and list choices.
