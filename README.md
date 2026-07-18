@@ -22,9 +22,15 @@ Requires Node.js >= 22.12.
 
 Command/feature pages can declare `platforms: [twitch, youtube, trovo, kick]` in frontmatter to render platform badges under the title.
 
-## Deployment notes
+## Deployment
 
-The site builds to static output in `dist/`. Old Docusaurus URLs are preserved via redirects in `astro.config.mjs` (emitted as meta-refresh pages); if the host supports real HTTP redirects, prefer configuring them there. The legacy `/patch-notes/rss.xml` and `/patch-notes/atom.xml` feed URLs keep serving the changelog feed directly.
+The site deploys to **Cloudflare Workers** (static assets, no worker script) as `streamelements-docs` on `docs.streamelements.com` — see `wrangler.jsonc`.
+
+- **Validation** — GitHub Actions (`.github/workflows/ci.yml`) builds every PR and push to `master`; the build itself validates internal links, content schemas, and redirects. No Cloudflare secrets needed in GitHub.
+- **Deployment** — Cloudflare **Workers Builds** (repo connected in the Cloudflare dashboard: Worker → Settings → Builds). The default deploy command `npx wrangler deploy` is all it needs — `build.command` in `wrangler.jsonc` runs the Astro build first. Pushes to `master` deploy production; other branches get preview URLs.
+- **Manual deploys** — `pnpm deploy` (requires `wrangler login`).
+
+Old Docusaurus URLs are preserved via the `redirects` map in `astro.config.mjs`, which is emitted two ways at build time: meta-refresh pages (any host, local preview) and a `dist/_redirects` file that Cloudflare serves as real HTTP 301s. The legacy `/patch-notes/rss.xml` and `/patch-notes/atom.xml` feed URLs keep serving the changelog feed directly.
 
 ### Contributing
 

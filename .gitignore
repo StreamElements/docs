@@ -5,6 +5,9 @@
 /dist
 /.astro
 
+# Wrangler local state
+/.wrangler
+
 # Misc
 .DS_Store
 .env.local
