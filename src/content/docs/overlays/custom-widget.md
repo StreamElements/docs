@@ -24,7 +24,7 @@ This article requires you to have an Overlay created with a Custom Widget added 
 
 ### Custom Code Editor
 
-The Custom Code Editor is a powerful tool that allows you to write custom code in the Overlay Editor. For more information about the Custom Code Editor, please refer to the [Code Editor](/overlays/widget-structure) article.
+Custom code is written in the Overlay Editor's Code Editor — see the [Code Editor](/overlays/widget-structure) article for the tabs and structure.
 
 ## SE_API
 

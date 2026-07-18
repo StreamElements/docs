@@ -11,7 +11,7 @@ keywords:
 - real-time
 ---
 
-This topic provides real-time contest and prediction events published to Astro for WebSocket delivery. It covers contest state changes, vote/bet updates, and winner announcements. Subscribe to this topic to receive notifications about contest activities, allowing you to build real-time prediction displays, betting interfaces, or sync contest state across multiple clients.
+This topic carries contest and prediction events: state changes, vote/bet updates, and winner announcements.
 
 ## Payload
 

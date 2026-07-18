@@ -13,7 +13,7 @@ arguments: required
 
 import ChatExample from '@components/ChatExample.astro';
 
-The `$(ai)` variable allows you to integrate AI into your StreamElements chat commands, generating dynamic responses based on user input. This powerful feature can enhance viewer engagement and create unique interactive experiences in your stream.
+The `$(ai)` variable allows you to integrate AI into your StreamElements chat commands, generating dynamic responses based on user input.
 
 :::caution
 The `$(ai)` variable is currently in beta and may be subject to changes.
@@ -107,22 +107,6 @@ When the limit is exceeded, the bot replies `rate limit exceeded`.
 :::note
 AI replies are sanitized before being sent to chat: leading `/` and `.` characters are stripped, and replies starting with `!` are prefixed with an invisible character — so an AI response can never trigger chat commands or other bot commands.
 :::
-
-## Best Practices
-
-1. Provide clear context in your queries to get more relevant responses.
-2. Use command cooldowns to prevent spam.
-3. Combine the `$(ai)` variable with other StreamElements variables for more dynamic interactions.
-4. Test your AI commands thoroughly before using them in live streams.
-
-## Troubleshooting
-
-If you're experiencing issues with the `$(ai)` variable, try the following:
-
-1. Check your rate limit usage and wait for the reset if necessary.
-2. Verify that your command syntax is correct.
-3. Ensure that your StreamElements bot has the necessary permissions in your chat.
-4. If problems persist, reach out to StreamElements support for further assistance.
 
 ## FAQ
 

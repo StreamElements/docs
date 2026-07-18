@@ -14,7 +14,7 @@ keywords:
 
 import ChatExample from '@components/ChatExample.astro';
 
-The `$(weather)` variable allows you to display current weather conditions for a specified location in your StreamElements chatbot. It provides comprehensive information including temperature, feels-like temperature, weather description, wind details, humidity, visibility, and air pressure.
+The `$(weather)` variable displays current weather conditions for a location: temperature, feels-like temperature, conditions, wind, humidity, visibility, and air pressure.
 
 :::caution
 Weather data is provided by third-party sources and may not reflect current geopolitical boundaries.
@@ -30,16 +30,6 @@ Weather data is provided by third-party sources and may not reflect current geop
   { persona: 'user', message: '!weather Berlin' },
   { persona: 'bot', message: 'Berlin, Germany: 🌞 21.0 °C (69.8 °F). Feels like 20.4 °C (68.7 °F). Partly cloudy. Wind is blowing from the Northwest at 10.1 km/h (6.3 mp/h). 50% humidity. Visibility: 10 km (6 miles). Air pressure: 1013 hPa.' }
 ]} />
-
-## Usage
-
-To use the `$(weather)` variable, follow this syntax:
-
-```streamelements
-$(weather "<location>")
-```
-
-Replace `<location>` with the desired city and state/country.
 
 :::note
 `$(weather)` only uses the first word it is given, so multi-word locations must be passed as a single token: wrap the location in quotes, or nest an argument token like `${1:}` (as in the example above) so everything the viewer types arrives as one piece.

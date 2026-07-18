@@ -101,16 +101,9 @@ Durations are written out in full words: `secs`, `mins`, `hours`, `days`, `month
    ModUser has 100 points and is rank 5/283 on the leaderboard
    ```
 
-## Best Practices
-
-1. Use `$(user)` without arguments when you need information about the command trigger.
-2. Use `$(user username)` when you need to reference other users or allow flexible user queries.
-3. Always provide clear examples and explanations when creating custom commands using these variables.
-
-## Troubleshooting
-
-- If a variable returns unexpected results, ensure you're using the correct syntax and that the user exists in your channel's database. Unknown users produce empty output.
-- Remember that `$(user)` variables can accept arguments. If you only need information about the command sender, consider using [`$(sender)`](/chatbot/variables/sender) instead.
+:::note
+Lookups only work for users the bot has seen in your channel — unknown users produce empty output.
+:::
 
 ## Related Variables
 

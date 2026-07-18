@@ -21,7 +21,7 @@ keywords:
 - point system for streams
 ---
 
-The Roulette module is an interactive chat game that allows users to wager their points in a roulette-style gamble. It adds excitement and engagement to your stream by giving viewers a chance to win or lose points based on luck.
+The Roulette module is a chat game where viewers wager loyalty points on a spin: win and you gain your wager, lose and it's gone.
 
 ## Usage
 

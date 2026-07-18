@@ -16,7 +16,7 @@ Chat commands support variables in a dynamic way. Variables are placeholders tha
 
 For example, in the command `$(uptime shroud)`, `shroud` is a variable representing a username. When this command is executed, the `uptime` of the user `shroud` is returned.
 
-Variables make chat commands more flexible and powerful, allowing for a wide range of interactions and functionalities.
+Variables are placeholders you put in a command response; the bot replaces them with live values — the sender's name, the current game, a random number — when the command runs.
 
 :::tip[In a hurry?]
 See the [Variables cheat sheet](/chatbot/variables/cheat-sheet) — every variable with its syntax and return value on a single page.
