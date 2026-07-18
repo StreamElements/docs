@@ -23,7 +23,7 @@ You can manage your timers in the [StreamElements Dashboard](https://streameleme
 | Name | Identifies the timer in the dashboard. |
 | Messages | The message(s) the timer posts. A timer can be configured with multiple messages, which are cycled through each time the timer is activated. |
 | Online interval | How often the timer is activated, in minutes, while the stream is live. |
-| Chat lines | The minimum number of chat messages that must be sent within the interval for the timer to be activated. This prevents timers from spamming the chat when there is less chatroom activity. |
+| Chat lines | The minimum number of chat messages that must have been sent in the last 5 minutes for the timer to fire. This prevents timers from spamming the chat when there is less chatroom activity. |
 | Conditions | Optional conditions that must be fulfilled for the timer to be activated. For instance, a timer can be set to run exclusively when the stream is categorized under "Just Chatting", or if the stream title includes a specific keyword. |
 
 ## Managing timers
