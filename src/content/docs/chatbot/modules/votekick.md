@@ -16,7 +16,7 @@ keywords:
 - temporary user removal
 ---
 
-The Votekick module is a powerful chatbot feature that enables viewers to vote on whether to temporarily remove a user from the chat. If the vote passes, the user is timed out in chat for the configured duration.
+The Votekick module lets viewers vote on whether to temporarily remove a user from the chat. If the vote passes, the user is timed out for the configured duration.
 
 ## Usage
 

@@ -13,7 +13,7 @@ keywords:
 - real-time
 ---
 
-This topic provides real-time songrequest events published to Astro for WebSocket delivery. It covers all songrequest-related actions including player controls, queue management, history tracking, song playback, and settings updates. Subscribe to this topic to receive notifications about songrequest activities, allowing you to build real-time songrequest displays, queue management interfaces, or sync songrequest state across multiple clients.
+This topic carries every songrequest event: player controls, queue changes, history, song playback, and settings updates.
 
 ## Payload
 

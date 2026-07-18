@@ -14,7 +14,7 @@ arguments: optional
 
 import ChatExample from '@components/ChatExample.astro';
 
-The `$(game)` variable is a powerful tool that allows you to display the current game being played on a Twitch channel. This variable is particularly useful for creating dynamic commands or messages that reference the streamer's current activity.
+The `$(game)` variable displays the game category a channel is currently playing.
 
 :::note
 `$(game)` is not available on YouTube — there, it renders as literal text instead of being replaced. On YouTube, use [`$(channel.game)`](/chatbot/variables/channel) instead, which works on every platform.

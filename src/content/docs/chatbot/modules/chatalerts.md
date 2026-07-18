@@ -21,7 +21,7 @@ keywords:
 - Twitch community engagement
 ---
 
-The Chat Alerts module is a powerful feature of the StreamElements chatbot that automatically posts messages in your chat when specific events occur. This helps streamers acknowledge viewer actions, enhance engagement, and keep the community informed about important stream events.
+The Chat Alerts module automatically posts a chat message when something happens on your channel — a follow, a subscription, a raid, and so on — so events get acknowledged even when you're mid-game.
 
 ## Usage
 

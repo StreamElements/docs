@@ -19,8 +19,4 @@ The Zalgo filter removes "zalgo" text — messages distorted with stacked combin
 |---------|-------------|
 | Maximum amount | The maximum number of zalgo (combining) characters allowed in a single message. (Default: 1) |
 
-The filter also supports the [settings shared by all filters](/chatbot/filters#settings-shared-by-all-filters), including the timeout length, custom timeout message, and excluded user level.
-
-## What happens on a violation
-
-The filter's timeout setting determines the action: a timeout for the configured number of seconds, message deletion only (timeout of 0), a permanent ban, or a warning plus deletion (Twitch only). See [What happens on a violation](/chatbot/filters#what-happens-on-a-violation) for details.
+The filter also supports the [settings shared by all filters](/chatbot/filters#settings-shared-by-all-filters) — timeout length, custom timeout message, excluded user level — which also determine [what happens on a violation](/chatbot/filters#what-happens-on-a-violation).

@@ -16,7 +16,7 @@ keywords:
 - chat-based gambling simulator
 ---
 
-The Slotmachine module is an interactive chat game that allows viewers to wager their points on a virtual slot machine. Players can win or lose points based on the outcome of the spin, adding an element of excitement to the stream chat.
+The Slotmachine module is a chat game where viewers wager loyalty points on a spin of a virtual slot machine.
 
 ## Usage
 

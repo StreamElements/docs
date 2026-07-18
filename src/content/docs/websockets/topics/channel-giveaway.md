@@ -10,7 +10,7 @@ keywords:
 - real-time data
 ---
 
-This topic provides real-time updates for giveaway events. It covers the full giveaway lifecycle including starting, entries, winner selection, closing, and refunds. Subscribe to this topic to receive notifications about giveaway activities, allowing you to build real-time giveaway displays or sync giveaway state across multiple clients.
+This topic carries the full giveaway lifecycle: starting, entries, winner selection, closing, and refunds.
 
 ## Payload
 

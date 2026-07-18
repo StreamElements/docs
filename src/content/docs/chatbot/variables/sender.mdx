@@ -83,16 +83,6 @@ Durations are written out in full words: `secs`, `mins`, `hours`, `days`, `month
 
 `$(source)` can also be used as an alias for `$(sender)`.
 
-## Best Practices
-
-1. Use `$(sender)` when you only need information about the command trigger.
-2. If you need to reference other users or allow flexible user queries, use the [`$(user)`](/chatbot/variables/user) variable instead.
-
-## Troubleshooting
-
-- If a variable returns unexpected results, ensure you're using the correct syntax and that the user exists in your channel's database.
-- Remember that `$(sender)` variables don't accept arguments. If you need to query other users, use `$(user)` instead.
-
 ## Related Variables
 
 - [`$(user)`](/chatbot/variables/user): Query information about any user, not just the command sender.
