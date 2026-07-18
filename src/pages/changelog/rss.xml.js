@@ -11,7 +11,7 @@ export async function GET(context) {
       title: `${entry.data.products.map((id) => PRODUCTS[id].name).join(', ')} - ${entry.data.title}`,
       description: entry.data.description,
       pubDate: entry.data.date,
-      link: `/changelog/post/${entry.slug}/`,
+      link: `/changelog/post/${entry.slug}`,
       categories: entry.data.products.map((id) => PRODUCTS[id].name),
     })),
     customData: '<language>en-us</language>',

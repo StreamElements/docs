@@ -46,7 +46,7 @@ const { Content } = await render(entry);
   }}
 >
   <div class="changelog-post not-content">
-    <p class="back-link"><a href="/changelog/">&larr; Back to the changelog</a></p>
+    <p class="back-link"><a href="/changelog">&larr; Back to the changelog</a></p>
     <p class="post-date">
       <time datetime={entry.data.date.toISOString().slice(0, 10)}>{formatDate(entry.data.date)}</time>
     </p>
@@ -58,7 +58,7 @@ const { Content } = await render(entry);
       (newer || older) && (
         <nav class="post-pager" aria-label="Changelog entries">
           {older ? (
-            <a class="pager-link" href={`/changelog/post/${older.slug}/`} rel="prev">
+            <a class="pager-link" href={`/changelog/post/${older.slug}`} rel="prev">
               <Icon name="left-arrow" />
               <span>
                 <small>Older</small>
@@ -69,7 +69,7 @@ const { Content } = await render(entry);
             <span />
           )}
           {newer && (
-            <a class="pager-link pager-next" href={`/changelog/post/${newer.slug}/`} rel="next">
+            <a class="pager-link pager-next" href={`/changelog/post/${newer.slug}`} rel="next">
               <span>
                 <small>Newer</small>
                 {newer.data.title}

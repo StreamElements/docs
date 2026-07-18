@@ -396,6 +396,6 @@ The payload contains the full `SongrequestSettings` object.
 
 ## Related
 
-- [Overlay Action](/websockets/topics/channel-overlay-action/) - Overlay action events
-- [Activities](/websockets/topics/channel-activities/) - General channel activity events
-- [Websockets](/websockets/) - General information about the Astro WebSocket Gateway
+- [Overlay Action](/websockets/topics/channel-overlay-action) - Overlay action events
+- [Activities](/websockets/topics/channel-activities) - General channel activity events
+- [Websockets](/websockets) - General information about the Astro WebSocket Gateway

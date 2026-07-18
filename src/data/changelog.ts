@@ -6,9 +6,9 @@ import { getCollection, type CollectionEntry } from 'astro:content';
  * filtered feeds (/changelog/product/{id}/).
  */
 export const PRODUCTS = {
-  chatbot: { name: 'Chatbot', url: '/chatbot/' },
-  overlays: { name: 'Overlays', url: '/overlays/' },
-  websockets: { name: 'WebSockets', url: '/websockets/' },
+  chatbot: { name: 'Chatbot', url: '/chatbot' },
+  overlays: { name: 'Overlays', url: '/overlays' },
+  websockets: { name: 'WebSockets', url: '/websockets' },
   dashboard: { name: 'Dashboard', url: 'https://streamelements.com/dashboard' },
   docs: { name: 'Docs', url: '/' },
 } as const;
@@ -47,7 +47,7 @@ export async function getChangelog(): Promise<ChangelogEntry[]> {
       const slug = rest.join('/');
       const conflict = seen.get(slug);
       if (conflict) {
-        throw new Error(`Changelog slug collision: "${entry.id}" and "${conflict}" both map to /changelog/post/${slug}/`);
+        throw new Error(`Changelog slug collision: "${entry.id}" and "${conflict}" both map to /changelog/post/${slug}`);
       }
       seen.set(slug, entry.id);
       return { ...entry, slug, data: { ...entry.data, products } };

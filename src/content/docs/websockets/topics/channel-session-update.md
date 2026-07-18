@@ -54,6 +54,6 @@ This event is triggered when specific elements of your channel session are modif
 
 ## Related
 
-- [Session Reset](/websockets/topics/channel-session-reset/) - Full session reset notifications
-- [Activities](/websockets/topics/channel-activities/) - Channel activity notifications
-- [Websockets](/websockets/) - General information about the Astro Websocket Gateway
+- [Session Reset](/websockets/topics/channel-session-reset) - Full session reset notifications
+- [Activities](/websockets/topics/channel-activities) - Channel activity notifications
+- [Websockets](/websockets) - General information about the Astro Websocket Gateway

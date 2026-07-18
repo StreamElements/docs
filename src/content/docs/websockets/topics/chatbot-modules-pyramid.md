@@ -41,5 +41,5 @@ The event only fires for pyramids that reach a peak width of at least 3.
 
 ## Related
 
-- [Emote Combo Module](/websockets/topics/chatbot-modules-emotecombo/) - Emote combo trigger events
-- [Websockets](/websockets/) - General information about the Astro Websocket Gateway
+- [Emote Combo Module](/websockets/topics/chatbot-modules-emotecombo) - Emote combo trigger events
+- [Websockets](/websockets) - General information about the Astro Websocket Gateway

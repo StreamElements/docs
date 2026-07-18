@@ -13,5 +13,5 @@ Once released, this event will be triggered when the chatbot times out a user in
 
 ## Related
 
-- [Chatbot Status](/websockets/topics/chatbot-status/) - Chatbot connection status changes
-- [Websockets](/websockets/) - General information about the Astro Websocket Gateway
+- [Chatbot Status](/websockets/topics/chatbot-status) - Chatbot connection status changes
+- [Websockets](/websockets) - General information about the Astro Websocket Gateway

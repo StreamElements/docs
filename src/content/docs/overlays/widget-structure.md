@@ -65,7 +65,7 @@ Adding an invalid type will default it to `"type":"text"`.
 | `video-input` | Library input for selecting a video. | `"multiple": true` (as above) |
 | `sound-input` | Library input for selecting audio. | `"multiple": true` (as above) |
 | `googleFont` | Google Font picker; `value` is a font name such as `"Roboto"`. | — |
-| `button` | Button in the left panel; clicking it emits a [`widget-button` event](/overlays/events/#button-click). | — |
+| `button` | Button in the left panel; clicking it emits a [`widget-button` event](/overlays/events#button-click). | — |
 | `hidden` | Not displayed in the left panel; used for reserved fields such as `widgetName` and `widgetDuration`. | — |
 
 If you want to group some fields into a collapsible menu in the left panel, you can add to them the same parameter `"group": "Some group name"`.
@@ -78,7 +78,7 @@ There are some reserved field names (all future reserved words will start with `
 |-------|--------|
 | `widgetName` | Used to set the display name of the widget. |
 | `widgetAuthor` | Sets the author name of the widget (adds a "(by Author)" to the widget name). |
-| `widgetDuration` | Maximum event queue hold time (seconds) - for Custom Widget (as alertboxes have their own timers). Explained in [Queue management with widgetDuration](/overlays/custom-widget/#queue-management-with-widgetduration). |
+| `widgetDuration` | Maximum event queue hold time (seconds) - for Custom Widget (as alertboxes have their own timers). Explained in [Queue management with widgetDuration](/overlays/custom-widget#queue-management-with-widgetduration). |
 
 ### Example
 

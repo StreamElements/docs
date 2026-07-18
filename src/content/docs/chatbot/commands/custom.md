@@ -1,10 +1,10 @@
 ---
 title: Custom Commands
 prev:
-  link: /chatbot/commands/
+  link: /chatbot/commands
   label: Commands overview
 next:
-  link: /chatbot/commands/default/
+  link: /chatbot/commands/default
   label: Default commands
 description: "Create and manage custom StreamElements Chatbot commands from the dashboard or directly in chat, with example commands using variables."
 keywords:
@@ -29,11 +29,11 @@ In addition to the default commands, you can also create your own custom command
 There are two ways to manage custom commands:
 
 1. Through the creator dashboard
-2. Directly in chat with the [!command](/chatbot/commands/default/command/) command
+2. Directly in chat with the [!command](/chatbot/commands/default/command) command
 
 ### Using the dashboard
 
-See [Getting Started](/chatbot/getting-started/) for a step-by-step walkthrough of creating a command in the dashboard.
+See [Getting Started](/chatbot/getting-started) for a step-by-step walkthrough of creating a command in the dashboard.
 
 ### Using chat
 
@@ -49,7 +49,7 @@ See [Getting Started](/chatbot/getting-started/) for a step-by-step walkthrough 
 `!command` is aliased as `!cmd`, so `!cmd add !socials ...` works the same way.
 :::
 
-For the full subcommand reference, including all available options, permissions, and aliases, read the documentation for the [!command](/chatbot/commands/default/command/) command.
+For the full subcommand reference, including all available options, permissions, and aliases, read the documentation for the [!command](/chatbot/commands/default/command) command.
 
 ## Examples
 
@@ -70,8 +70,8 @@ Bot: Viewer123, welcome to the stream! You last visited 2 days 5 hours ago.
 
 Variables used:
 
-- [$(user)](/chatbot/variables/user/#available-variables) - The name of the viewer
-- [$(user.lastseen)](/chatbot/variables/user/#available-variables) - The time the viewer last visited the stream
+- [$(user)](/chatbot/variables/user#available-variables) - The name of the viewer
+- [$(user.lastseen)](/chatbot/variables/user#available-variables) - The time the viewer last visited the stream
 
 ### Stream Uptime Command
 
@@ -90,9 +90,9 @@ Bot: The stream has been live for 2 days 5 hours. We're currently playing Fortni
 
 Variables used:
 
-- [$(uptime)](/chatbot/variables/uptime/) - The time the stream has been live
-- [$(channel.game)](/chatbot/variables/channel/#available-variables) - The game the stream is currently playing
-- [$(channel.viewers)](/chatbot/variables/channel/#available-variables) - The number of viewers currently watching the stream
+- [$(uptime)](/chatbot/variables/uptime) - The time the stream has been live
+- [$(channel.game)](/chatbot/variables/channel#available-variables) - The game the stream is currently playing
+- [$(channel.viewers)](/chatbot/variables/channel#available-variables) - The number of viewers currently watching the stream
 
 ### Weather Command
 
@@ -111,9 +111,9 @@ Bot: Viewer123, weather in: Tokyo, Japan: 🌜 17.7 °C (63.9 °F). Feels like 1
 
 Variables used:
 
-- [$(sender)](/chatbot/variables/sender/) - The viewer who triggered the command
-- [${1:}](/chatbot/variables/args/) - The arguments passed to the command, here the location to look up
-- [$(weather)](/chatbot/variables/weather/) - The current weather in a specified location
+- [$(sender)](/chatbot/variables/sender) - The viewer who triggered the command
+- [${1:}](/chatbot/variables/args) - The arguments passed to the command, here the location to look up
+- [$(weather)](/chatbot/variables/weather) - The current weather in a specified location
 
 ### Shoutout Command
 
@@ -132,5 +132,5 @@ Bot: Check out Styler, they are playing Counter-Strike at https://twitch.tv/Styl
 
 Variables used:
 
-- [${1}](/chatbot/variables/args/) - The first argument passed to the command, here the name of the user to shout out
-- [$(game)](/chatbot/variables/game/) - The game the user is currently playing
+- [${1}](/chatbot/variables/args) - The first argument passed to the command, here the name of the user to shout out
+- [$(game)](/chatbot/variables/game) - The game the user is currently playing

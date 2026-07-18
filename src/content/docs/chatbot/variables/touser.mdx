@@ -63,13 +63,13 @@ The `$(touser)` variable itself takes no parameters — it reads the first word 
 - **word**: The first word typed after the command. If provided, this word will be displayed instead of the command user's name.
 
 :::note
-`$(touser)` passes the word through without validating it as a username and without removing an `@` prefix. If you need validation or other-user lookups, use [argument tokens](/chatbot/variables/args/) like `$(1 username)` or the [`$(user)`](/chatbot/variables/user/) variable instead.
+`$(touser)` passes the word through without validating it as a username and without removing an `@` prefix. If you need validation or other-user lookups, use [argument tokens](/chatbot/variables/args) like `$(1 username)` or the [`$(user)`](/chatbot/variables/user) variable instead.
 :::
 
 ## Related Variables
 
-- [`$(sender)`](/chatbot/variables/sender/): Always displays the name of the user who triggered the command.
-- [Argument tokens](/chatbot/variables/args/) (`$(1)`, `$(1:)`): Access the words after the command directly, with optional fallbacks and validators.
+- [`$(sender)`](/chatbot/variables/sender): Always displays the name of the user who triggered the command.
+- [Argument tokens](/chatbot/variables/args) (`$(1)`, `$(1:)`): Access the words after the command directly, with optional fallbacks and validators.
 
 ## FAQ
 

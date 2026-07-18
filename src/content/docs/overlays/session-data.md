@@ -9,7 +9,7 @@ keywords:
   - Stream overlay development
 ---
 
-The session `data` object holds per-feature totals, goals, and latest-event details for your channel — the same values visible in the [Session Dashboard](https://streamelements.com/dashboard/session). Custom widgets receive it through the [onWidgetLoad and onSessionUpdate events](/overlays/events/):
+The session `data` object holds per-feature totals, goals, and latest-event details for your channel — the same values visible in the [Session Dashboard](https://streamelements.com/dashboard/session). Custom widgets receive it through the [onWidgetLoad and onSessionUpdate events](/overlays/events):
 
 - In `onWidgetLoad`, `data` is available at `obj.detail.session.data`
 - In `onSessionUpdate`, `data` is available at `obj.detail.session`

@@ -63,10 +63,10 @@ You can configure the following settings for the Duel module:
 
 ## Related Commands
 
-- [`!duel`](/chatbot/commands/default/duel/): Challenges another user to a duel.
-- [`!accept`](/chatbot/commands/default/accept/): Accepts a duel challenge.
-- [`!deny`](/chatbot/commands/default/deny/): Declines a duel challenge.
-- [`!cancelduel`](/chatbot/commands/default/cancelduel/): Cancels an outgoing duel request before it is accepted or denied.
+- [`!duel`](/chatbot/commands/default/duel): Challenges another user to a duel.
+- [`!accept`](/chatbot/commands/default/accept): Accepts a duel challenge.
+- [`!deny`](/chatbot/commands/default/deny): Declines a duel challenge.
+- [`!cancelduel`](/chatbot/commands/default/cancelduel): Cancels an outgoing duel request before it is accepted or denied.
 
 ## FAQ
 

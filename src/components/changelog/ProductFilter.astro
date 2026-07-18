@@ -17,10 +17,10 @@ const activeIds = await getActiveProductIds();
 <label class="product-filter">
   <span>Product:</span>
   <select data-changelog-filter>
-    <option value="/changelog/" selected={!current}>All products</option>
+    <option value="/changelog" selected={!current}>All products</option>
     {
       activeIds.map((id) => (
-        <option value={`/changelog/product/${id}/`} selected={current === id}>
+        <option value={`/changelog/product/${id}`} selected={current === id}>
           {PRODUCTS[id].name}
         </option>
       ))

@@ -23,7 +23,7 @@ Banned phrases are organized into groups. Click the **Add Group** button to crea
 
 | Setting | Description |
 |---------|-------------|
-| Timeout length | Controls the action taken when a phrase in this group matches — a timeout for the configured number of seconds, message deletion only (timeout of 0), a permanent ban, or a warning plus deletion (Twitch only). This per-group value takes precedence over the filter-wide timeout. See [What happens on a violation](/chatbot/filters/#what-happens-on-a-violation). |
+| Timeout length | Controls the action taken when a phrase in this group matches — a timeout for the configured number of seconds, message deletion only (timeout of 0), a permanent ban, or a warning plus deletion (Twitch only). This per-group value takes precedence over the filter-wide timeout. See [What happens on a violation](/chatbot/filters#what-happens-on-a-violation). |
 | Scan section | Which parts of a chat message the group checks: the message text, the sender's username, or both. |
 | Exclude user group | A user-level threshold. Users at or above the selected level (for example, Moderators and above) are not checked against this group. |
 | Ban reason | The moderation reason attached to the timeout or ban. |

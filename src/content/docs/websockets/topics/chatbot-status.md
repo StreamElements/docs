@@ -39,6 +39,6 @@ Each event contains exactly one of the following fields:
 
 ## Related
 
-- [Chatbot Counters](/websockets/topics/chatbot-counters/) - Chatbot counter value changes
-- [Chatbot Timeout](/websockets/topics/chatbot-timeout/) - User timeout notifications
-- [Websockets](/websockets/) - General information about the Astro Websocket Gateway
+- [Chatbot Counters](/websockets/topics/chatbot-counters) - Chatbot counter value changes
+- [Chatbot Timeout](/websockets/topics/chatbot-timeout) - User timeout notifications
+- [Websockets](/websockets) - General information about the Astro Websocket Gateway

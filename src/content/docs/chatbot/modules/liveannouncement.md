@@ -56,7 +56,7 @@ Each announcement message supports its own set of placeholders:
 
 Placeholders are only substituted in the announcement they belong to — for example, `{game}` is not replaced in the title change message.
 
-In addition to these placeholders, any standard [chat variable](/chatbot/variables/) also works in the announcement messages, such as `${channel.display_name}` or `${uptime}`.
+In addition to these placeholders, any standard [chat variable](/chatbot/variables) also works in the announcement messages, such as `${channel.display_name}` or `${uptime}`.
 
 ## Configuration
 

@@ -95,6 +95,6 @@ The possible activity `type`s are:
 
 ## Related
 
-- [Tips](/websockets/topics/channel-tips/) - Tip/donation events
-- [Session Update](/websockets/topics/channel-session-update/) - Individual session data updates
-- [Websockets](/websockets/) - General information about the Astro Websocket Gateway
+- [Tips](/websockets/topics/channel-tips) - Tip/donation events
+- [Session Update](/websockets/topics/channel-session-update) - Individual session data updates
+- [Websockets](/websockets) - General information about the Astro Websocket Gateway

@@ -13,11 +13,11 @@ keywords:
 
 ### Prerequisites
 
-This article requires you to have an Overlay created with an AlertBox with "Custom CSS" enabled. To do so, follow the steps in the [Getting Started](/overlays/getting-started/) article.
+This article requires you to have an Overlay created with an AlertBox with "Custom CSS" enabled. To do so, follow the steps in the [Getting Started](/overlays/getting-started) article.
 
 ## Custom Code Editor
 
-The Custom Code Editor is a powerful tool that allows you to write custom code in the Overlay Editor. For more information about the Custom Code Editor, please refer to the [Code Editor](/overlays/widget-structure/) article.
+The Custom Code Editor is a powerful tool that allows you to write custom code in the Overlay Editor. For more information about the Custom Code Editor, please refer to the [Code Editor](/overlays/widget-structure) article.
 
 ## Inline Variables available
 

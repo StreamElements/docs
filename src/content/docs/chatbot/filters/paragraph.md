@@ -20,8 +20,8 @@ The Paragraph filter helps manage the length of chat messages. It checks the num
 |---------|-------------|
 | Maximum amount | The maximum number of characters allowed in a message. If a message contains more characters than this limit, it will be flagged by the filter. |
 
-The filter also supports the [settings shared by all filters](/chatbot/filters/#settings-shared-by-all-filters), including the timeout length, custom timeout message, and excluded user level.
+The filter also supports the [settings shared by all filters](/chatbot/filters#settings-shared-by-all-filters), including the timeout length, custom timeout message, and excluded user level.
 
 ## What happens on a violation
 
-The filter's timeout setting determines the action: a timeout for the configured number of seconds, message deletion only (timeout of 0), a permanent ban, or a warning plus deletion (Twitch only). See [What happens on a violation](/chatbot/filters/#what-happens-on-a-violation) for details.
+The filter's timeout setting determines the action: a timeout for the configured number of seconds, message deletion only (timeout of 0), a permanent ban, or a warning plus deletion (Twitch only). See [What happens on a violation](/chatbot/filters#what-happens-on-a-violation) for details.

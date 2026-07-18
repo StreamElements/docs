@@ -20,11 +20,11 @@ You cannot access `document.cookie` nor `IndexedDB` (security reasons), so you n
 
 ### Prerequisites
 
-This article requires you to have an Overlay created with a Custom Widget added there. To do so, follow the steps in the [Getting Started](/overlays/getting-started/) article.
+This article requires you to have an Overlay created with a Custom Widget added there. To do so, follow the steps in the [Getting Started](/overlays/getting-started) article.
 
 ### Custom Code Editor
 
-The Custom Code Editor is a powerful tool that allows you to write custom code in the Overlay Editor. For more information about the Custom Code Editor, please refer to the [Code Editor](/overlays/widget-structure/) article.
+The Custom Code Editor is a powerful tool that allows you to write custom code in the Overlay Editor. For more information about the Custom Code Editor, please refer to the [Code Editor](/overlays/widget-structure) article.
 
 ## SE_API
 
@@ -236,7 +236,7 @@ See [Queue management with widgetDuration](#queue-management-with-widgetduration
 
 ## Queue management with widgetDuration
 
-The `widgetDuration` property defines the maximum event queue hold time (execution time of widget) by widget in seconds (default is 0). For example, if you want to show animations by this widget and don't want them to overlap, instead of building your own queue, you can use this. This property is defined in the widget's fields JSON (see [Custom Fields](/overlays/widget-structure/#custom-fields)). Premature queue resume can be called by `SE_API.resumeQueue();`.
+The `widgetDuration` property defines the maximum event queue hold time (execution time of widget) by widget in seconds (default is 0). For example, if you want to show animations by this widget and don't want them to overlap, instead of building your own queue, you can use this. This property is defined in the widget's fields JSON (see [Custom Fields](/overlays/widget-structure#custom-fields)). Premature queue resume can be called by `SE_API.resumeQueue();`.
 
 The best way to explain this is through an example.
 

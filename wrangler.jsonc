@@ -13,7 +13,9 @@
   // from the `redirects` map in astro.config.mjs.
   "assets": {
     "directory": "./dist",
-    "not_found_handling": "404-page"
+    "not_found_handling": "404-page",
+    // Pages build as /path.html (Astro build.format 'file'); /path/ 301s to /path.
+    "html_handling": "drop-trailing-slash"
   },
 
   "routes": [{ "pattern": "docs.streamelements.com", "custom_domain": true }]

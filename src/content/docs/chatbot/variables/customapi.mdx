@@ -47,7 +47,7 @@ The legacy dot form is also supported: `$(customapi.https://example.com/data)` w
 - You cannot set custom request headers.
 - Responses are truncated to the **first 400 bytes**; anything longer is silently cut off.
 - Query parameters are percent-encoded and re-sorted alphabetically before the request is made.
-- The URL must be a single token without spaces — all inputs are concatenated with no separator, so spaces are dropped. To insert dynamic values like user input into a URL, encode them first with [`$(queryescape)`](/chatbot/variables/queryescape/).
+- The URL must be a single token without spaces — all inputs are concatenated with no separator, so spaces are dropped. To insert dynamic values like user input into a URL, encode them first with [`$(queryescape)`](/chatbot/variables/queryescape).
 - There is no caching: every evaluation makes a fresh request.
 
 ## Examples

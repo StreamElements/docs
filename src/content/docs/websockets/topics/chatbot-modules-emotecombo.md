@@ -41,5 +41,5 @@ The event only fires when the combo count has reached the configured minimum (3 
 
 ## Related
 
-- [Pyramid Module](/websockets/topics/chatbot-modules-pyramid/) - Chat pyramid detection events
-- [Websockets](/websockets/) - General information about the Astro Websocket Gateway
+- [Pyramid Module](/websockets/topics/chatbot-modules-pyramid) - Chat pyramid detection events
+- [Websockets](/websockets) - General information about the Astro Websocket Gateway

@@ -26,7 +26,7 @@ The `channel.tips` topic provides real-time updates about the tips/donations on 
 | `data._id` | `string` | Unique tip identifier |
 | `data.channel` | `string` | Channel ID |
 | `data.provider` | `string` | Payment provider (e.g., `paypal`) |
-| `data.approved` | `string` | Moderation state of the tip (see [Tips Moderation](/websockets/topics/channel-tips-moderation/)) |
+| `data.approved` | `string` | Moderation state of the tip (see [Tips Moderation](/websockets/topics/channel-tips-moderation)) |
 | `data.status` | `string` | Transaction status |
 | `data.createdAt` | `string` | Timestamp of tip creation |
 | `data.updatedAt` | `string` | Timestamp of last status update |
@@ -68,6 +68,6 @@ The `channel.tips` topic provides real-time updates about the tips/donations on 
 
 ## Related
 
-- [Tips Moderation](/websockets/topics/channel-tips-moderation/) - Tip moderation status updates
-- [Activities](/websockets/topics/channel-activities/) - General channel activity events
-- [Websockets](/websockets/) - General information about the Astro Websocket Gateway
+- [Tips Moderation](/websockets/topics/channel-tips-moderation) - Tip moderation status updates
+- [Activities](/websockets/topics/channel-activities) - General channel activity events
+- [Websockets](/websockets) - General information about the Astro Websocket Gateway

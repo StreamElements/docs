@@ -17,8 +17,8 @@ You can manage your counters in the [StreamElements Dashboard](https://streamele
 
 ## Variables
 
-- `getcount` - Retrieves the current count of the counter. For more information, refer to the [getcount documentation](/chatbot/variables/getcount/).
-- `count` - Increments or decrements the counter. For more information, refer to the [count documentation](/chatbot/variables/count/).
+- `getcount` - Retrieves the current count of the counter. For more information, refer to the [getcount documentation](/chatbot/variables/getcount).
+- `count` - Increments or decrements the counter. For more information, refer to the [count documentation](/chatbot/variables/count).
 
 ## Examples
 
@@ -42,6 +42,6 @@ Let's create another command to see how many cannons you've missed (without incr
 
 ## Related
 
-- [!editcounter](/chatbot/commands/default/editcounter/) - Set, increment, or decrement a counter's value from chat
-- [$(count)](/chatbot/variables/count/) - Increments or decrements a counter
-- [$(getcount)](/chatbot/variables/getcount/) - Retrieves the current count without changing it
+- [!editcounter](/chatbot/commands/default/editcounter) - Set, increment, or decrement a counter's value from chat
+- [$(count)](/chatbot/variables/count) - Increments or decrements a counter
+- [$(getcount)](/chatbot/variables/getcount) - Retrieves the current count without changing it

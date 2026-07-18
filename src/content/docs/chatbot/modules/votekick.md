@@ -66,4 +66,4 @@ The module's values come from the dashboard settings — customize the Votekick 
 
 ## Related Commands
 
-- [`!votekick`](/chatbot/commands/default/votekick/): Starts a vote to temporarily remove a user from chat.
+- [`!votekick`](/chatbot/commands/default/votekick): Starts a vote to temporarily remove a user from chat.

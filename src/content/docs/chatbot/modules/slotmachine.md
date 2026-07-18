@@ -55,5 +55,5 @@ Streamers can customize the following settings for the Slotmachine module:
 
 ## Related Commands
 
-- [`!slots`](/chatbot/commands/default/slots/): Initiates the slot machine game.
-- [`!points`](/chatbot/commands/default/points/): Check your current point balance.
+- [`!slots`](/chatbot/commands/default/slots): Initiates the slot machine game.
+- [`!points`](/chatbot/commands/default/points): Check your current point balance.

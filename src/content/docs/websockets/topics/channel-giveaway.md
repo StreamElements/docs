@@ -226,6 +226,6 @@ Single entry refunded.
 
 ## Related
 
-- [Contests](/websockets/topics/channel-contests/) - Contest and prediction events
-- [Activities](/websockets/topics/channel-activities/) - General channel activity events
-- [Websockets](/websockets/) - General information about the Astro WebSocket Gateway
+- [Contests](/websockets/topics/channel-contests) - Contest and prediction events
+- [Activities](/websockets/topics/channel-activities) - General channel activity events
+- [Websockets](/websockets) - General information about the Astro WebSocket Gateway

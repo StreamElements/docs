@@ -135,6 +135,6 @@ This event is triggered when an overlay's configuration is modified, such as whe
 
 ## Related
 
-- [Overlay Action](/websockets/topics/channel-overlay-action/) - Overlay action events
-- [Overlay Broadcast](/websockets/topics/channel-overlay-broadcast/) - Custom broadcast events targeting overlays
-- [Websockets](/websockets/) - General information about the Astro WebSocket Gateway
+- [Overlay Action](/websockets/topics/channel-overlay-action) - Overlay action events
+- [Overlay Broadcast](/websockets/topics/channel-overlay-broadcast) - Custom broadcast events targeting overlays
+- [Websockets](/websockets) - General information about the Astro WebSocket Gateway
