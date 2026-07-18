@@ -192,6 +192,10 @@ export default defineConfig({
                 { label: 'Overview', slug: 'chatbot' },
                 { label: 'Getting Started', slug: 'chatbot/getting-started' },
                 {
+                  label: 'Guides',
+                  items: [{ label: 'Death Counter', slug: 'chatbot/guides/death-counter' }],
+                },
+                {
                   label: 'Commands',
                   items: [
                     { label: 'Overview', slug: 'chatbot/commands' },
