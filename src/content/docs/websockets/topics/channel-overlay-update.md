@@ -17,9 +17,10 @@ This event is triggered when an overlay's configuration is modified, such as whe
 
 | Parameter | Type | Description |
 | --------- | ---- | ----------- |
-| `data.settings` | `object` | Overlay canvas settings (dimensions, preset name) |
+| `data.settings` | `object` | Overlay canvas settings (dimensions, resolution label) |
 | `data.settings.width` | `number` | Canvas width in pixels |
 | `data.settings.height` | `number` | Canvas height in pixels |
+| `data.settings.name` | `string` | Resolution label for the canvas size (e.g., `"1080p"`) — not the overlay's name, which is the top-level `data.name` |
 | `data._id` | `string` | Unique overlay identifier |
 | `data.channel` | `string` | Channel ID the overlay belongs to |
 | `data.type` | `string` | Overlay type (`regular`, `campaign`, etc.) |

@@ -15,10 +15,13 @@ This event is triggered when specific elements of your channel session are modif
 
 ## Payload
 
-| Parameter   | Type     | Description                                                            |
-| ----------- | -------- | ---------------------------------------------------------------------- |
-| `data.key`  | `string` | Identifies which session element was updated (e.g., "latest_follower") |
-| `data.data` | `object` | Contains the updated information relevant to the key                   |
+| Parameter       | Type     | Description                                                                                                          |
+| --------------- | -------- | -------------------------------------------------------------------------------------------------------------------- |
+| `data.key`      | `string` | The session key that was updated (e.g., `"follower-latest"`, `"tip-session"`) — the same key names used in the [Session Data Reference](/overlays/session-data) |
+| `data.name`     | `string` | Same value as `data.key`                                                                                              |
+| `data.data`     | `object` | The updated value for that key, plus the `activityId` of the triggering activity                                      |
+| `data.provider` | `string` | The platform that produced the update (e.g., `"twitch"`)                                                              |
+| `data.channel`  | `string` | The channel ID the update belongs to                                                                                  |
 
 ## Example
 
@@ -29,15 +32,21 @@ This event is triggered when specific elements of your channel session are modif
     "type": "message",
     "topic": "channel.session.update",
     "data": {
-        "key": "latest_follower",
+        "key": "follower-latest",
+        "name": "follower-latest",
         "data": {
-            "name": "Styler"
-        }
+            "name": "Styler",
+            "activityId": "651016c07b356e73c9a3d928"
+        },
+        "provider": "twitch",
+        "channel": "5f2b4c9e8a1d3e001c8b4567"
     }
 }
 ```
 
 ### Subscription Request
+
+`room` is optional and defaults to the authenticated channel if not specified.
 
 ```json
 {
@@ -45,7 +54,7 @@ This event is triggered when specific elements of your channel session are modif
   "nonce": "86ccb2b3-eb8d-4b3c-902d-509c3f5ca88c",
   "data": {
     "topic": "channel.session.update",
-    "room": "channelId123", // Optional: defaults to authenticated channel if not specified
+    "room": "channelId123",
     "token": "YOUR_JWT_TOKEN",
     "token_type": "jwt"
   }

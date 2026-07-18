@@ -108,9 +108,14 @@ Sent when a winner is selected.
 stateDiagram-v2
     created --> running
     running --> closed
+    running --> completed
     closed --> completed
+    created --> refunded
+    running --> refunded
     closed --> refunded
 ```
+
+A winner can be selected while the contest is still `running`, so `completed` can follow `running` directly without passing through `closed`. A refund can be issued from any state.
 
 | State | Description |
 | ----- | ----------- |
@@ -119,6 +124,7 @@ stateDiagram-v2
 | `closed` | Voting stopped, awaiting winner selection |
 | `completed` | Winner selected, rewards distributed |
 | `refunded` | Contest cancelled, bets returned |
+| `ended` | Legacy state — still part of the schema but no longer produced by current systems |
 
 ## Data Types
 

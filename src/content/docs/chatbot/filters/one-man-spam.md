@@ -11,11 +11,18 @@ keywords:
 - spam protection
 ---
 
-The One-Man Spam filter targets spam coming from a single user. Instead of judging each message in isolation, it catches users who repeatedly send the same or similar messages in a short period of time. The detection thresholds are configured on the filter in your StreamElements dashboard.
+The One-Man Spam filter targets spam coming from a single user. Instead of judging each message in isolation, it compares a user's recent messages against each other and triggers when too many of them are the same or nearly the same.
 
 ## Settings
 
-The filter supports the [settings shared by all filters](/chatbot/filters#settings-shared-by-all-filters), including the timeout length, custom timeout message, and excluded user level.
+| Setting | Description |
+|---------|-------------|
+| Minimum characters | The number of characters a message must have to count towards the filter. Shorter messages are ignored. |
+| Minimum messages | The number of messages the user must have sent within the lookback window before the filter can trigger. |
+| Lookback | How many seconds of the user's message history are inspected. |
+| Threshold | The message similarity score (0–1, decimals allowed) that causes the user to be timed out. Messages at or above this similarity count as spam. |
+
+The filter also supports the [settings shared by all filters](/chatbot/filters#settings-shared-by-all-filters), including the timeout length, custom timeout message, and excluded user level.
 
 ## What happens on a violation
 

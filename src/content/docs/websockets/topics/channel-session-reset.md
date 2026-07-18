@@ -11,13 +11,15 @@ keywords:
 - real-time data
 ---
 
-This event is triggered when your channel session is completely reset. It delivers the full reset session data, allowing you to update all session-related information in your applications or overlays at once. Subscribe to this topic to receive a complete snapshot of your channel session data whenever a reset occurs. This is useful for maintaining synchronization with the latest channel state or initializing your application with current session data.
+This event is triggered when your channel session is reset. It delivers the complete new session data in one message, so you can reinitialize every session-related value in your application or overlay at once.
 
 ## Payload
 
-| Parameter      | Type     | Description                                                                                                           |
-| -------------- | -------- | --------------------------------------------------------------------------------------------------------------------- |
-| `data.session` | `object` | Contains the complete reset session data including all counters, latest events, and other session-related information |
+`data` contains the session object itself — a flat map of session keys, with no wrapper property. The keys follow the `<type>-latest`, `<type>-session`, `<type>-week`, `<type>-month`, `<type>-total`, `<type>-count`, and `<type>-goal` naming pattern, the same keys documented in the [Session Data Reference](/overlays/session-data).
+
+| Parameter | Type     | Description                                                                              |
+| --------- | -------- | ---------------------------------------------------------------------------------------- |
+| `data`    | `object` | The complete reset session data: all counters, latest events, and other session values |
 
 ## Example
 
@@ -28,10 +30,15 @@ This event is triggered when your channel session is completely reset. It delive
     "type": "message",
     "topic": "channel.session.reset",
     "data": {
-        "latest-follower": {
+        "follower-latest": {
             "name": "Styler"
         },
-        // ... other session data
+        "follower-session": {
+            "count": 0
+        },
+        "tip-session": {
+            "amount": 0
+        }
     }
 }
 ```

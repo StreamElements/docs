@@ -69,7 +69,7 @@ websocket.addEventListener('message', (event) => {
         console.log('Session update - Key:', message.data.key);
         console.log('Session update - Data:', message.data.data);
       } else if (message.topic === 'channel.session.reset') {
-        console.log('Session reset - Full session data:', message.data.session);
+        console.log('Session reset - Full session data:', message.data);
       }
       break;
 
@@ -177,7 +177,7 @@ ws.on('message', (data) => {
         console.log('Session update - Key:', message.data.key);
         console.log('Session update - Data:', message.data.data);
       } else if (message.topic === 'channel.session.reset') {
-        console.log('Session reset - Full session data:', message.data.session);
+        console.log('Session reset - Full session data:', message.data);
       }
       break;
 
@@ -280,7 +280,7 @@ async def connect_to_streamelements():
                 elif topic == "channel.session.update":
                     print(f"Session update - Key: {message['data']['key']}")
                 elif topic == "channel.session.reset":
-                    print(f"Session reset: {message['data']['session']}")
+                    print(f"Session reset: {message['data']}")
 
             elif msg_type == "reconnect":
                 print("Server is shutting down, reconnecting...")

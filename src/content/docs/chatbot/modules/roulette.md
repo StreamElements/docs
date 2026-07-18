@@ -31,7 +31,7 @@ To start a game of roulette, users type the following command in chat:
 !roulette <points>
 ```
 
-The module then randomly determines the outcome of the roulette spin. If the user wins, they receive a payout based on their wager. If they lose, they forfeit the points they wagered.
+The module then randomly determines the outcome of the roulette spin. The payout is even money: a winner gains exactly the amount they wagered, and a loser forfeits it. The chance of winning is set by the streamer with the win-chance slider (see [Configuration](#configuration)).
 
 ## Examples
 
@@ -68,7 +68,7 @@ Streamers can configure the Roulette module in the StreamElements dashboard with
 
 | Setting | Description |
 |---------|-------------|
-| Rig Percentage | Adjust the win chance using a slider (0% = Never lose, 100% = Always lose). |
+| Win Chance | The "How rigged should the system be?" slider sets the percentage chance that a bet wins: 0% means viewers always lose, 100% means they always win. |
 | Minimum Amount | The minimum number of points required to play (Default: 1). |
 | User Cooldown | The minimum time (in seconds) a specific user must wait before playing again (Default: 60). |
 | Global Cooldown | The minimum time (in seconds) everyone must wait after a roulette spin before anyone can play again (Default: 0). |
@@ -90,7 +90,7 @@ See the [`!roulette` command reference](/chatbot/commands/default/roulette) for 
 A: No, users can only wager points they currently have.
 
 **Q: Is there a limit to how often someone can use the Roulette command?**
-A: Yes, there's typically a cooldown period between uses, which can be configured by the streamer.
+A: Yes — the User Cooldown setting (60 seconds by default) limits how often each viewer can play, and an optional Global Cooldown limits how often anyone can.
 
 **Q: Can moderators disable the Roulette game?**
 A: Yes, moderators with appropriate permissions can enable or disable the Roulette module through the StreamElements dashboard.

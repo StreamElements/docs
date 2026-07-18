@@ -17,10 +17,14 @@ The `!raffle` command allows streamers and moderators to create interactive raff
 ## Usage
 
 ```streamelements
-!raffle <amount> <duration>
+!raffle [amount] [duration]
 ```
-* `<amount>`: Required. The total reward (pot) for the raffle, distributed among winners.
-* `<duration>`: Required. The duration of the raffle in seconds.
+* `[amount]`: Optional. The total reward (pot) for the raffle, distributed among winners. Defaults to 5000 points when omitted.
+* `[duration]`: Optional. The duration of the raffle in whole seconds. Defaults to the Duration configured in the module settings. Because the arguments are positional, you can only set a duration if you also give an amount.
+
+:::caution[Permissions]
+By default, only users with **Moderator** permission level or higher can use this command.
+:::
 
 ## Examples
 
@@ -39,12 +43,12 @@ The `!raffle` command allows streamers and moderators to create interactive raff
 
 ## Parameters
 
-- `<amount>` (required): The total reward (pot) for the raffle, which will be distributed among the winners.
-- `<duration>` (required): The duration of the raffle in seconds.
+- `[amount]` (optional): The total reward (pot) for the raffle, which will be distributed among the winners. Accepts plain numbers and the `k` (thousands) / `m` (millions) suffixes — `5k` starts a 5000-point raffle. Percentages and `all` don't work here. Defaults to 5000 when omitted, and is capped by the module's Max Amount setting (and an absolute 1,000,000-point cap).
+- `[duration]` (optional): The duration of the raffle in whole seconds (minimum 5). Defaults to the module's Duration setting when omitted.
 
 ## Configuration
 
-Moderators can configure raffle settings, such as the maximum number of winners or cooldown period between raffles, through the StreamElements dashboard.
+The default duration and the maximum pot are configured in the raffle module settings in the StreamElements dashboard. The number of winners is not configurable — it scales automatically with the number of entrants (see the [Raffle module](/chatbot/modules/raffle) for the exact brackets).
 
 ## Aliases
 

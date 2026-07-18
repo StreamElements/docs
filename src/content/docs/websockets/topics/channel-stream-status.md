@@ -14,11 +14,15 @@ The `channel.stream.status` topic provides real-time updates about whether a cha
 
 ## Payload
 
+`isLive` is the payload's only field — the message carries no stream ID, title, or game. If the channel streams on several platforms at once, it stays `true` as long as at least one stream is live.
+
 | Parameter | Type | Description |
 | --- | --- | --- |
 | `data.isLive` | `boolean` | Whether the channel is currently live |
 
 ## Example
+
+Going live:
 
 ```json
 {
@@ -28,6 +32,20 @@ The `channel.stream.status` topic provides real-time updates about whether a cha
     "topic": "channel.stream.status",
     "data": {
         "isLive": true
+    }
+}
+```
+
+Going offline:
+
+```json
+{
+    "id": "01HPPM61Y1V0Q4XRQ9E4H0YB7D",
+    "ts": "2024-02-15T18:03:11Z",
+    "type": "message",
+    "topic": "channel.stream.status",
+    "data": {
+        "isLive": false
     }
 }
 ```
