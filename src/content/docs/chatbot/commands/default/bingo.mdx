@@ -2,6 +2,9 @@
 title: "!bingo"
 description: "Engage viewers with an interactive emote bingo game using the !bingo command in StreamElements chatbot. Award loyalty points for guessing emotes."
 platforms: [twitch]
+access: moderator
+requires: Bingo module
+category: games-betting
 keywords:
   - bingo command
   - emote bingo
@@ -26,10 +29,6 @@ Use this command to start a new bingo game.
 ```streamelements
 !bingo <platform> <points>
 ```
-
-:::caution[Permissions]
-By default, only users with **Moderator** permission level or higher can use this command to start a game.
-:::
 
 ## Examples
 
@@ -59,7 +58,6 @@ By default, only users with **Moderator** permission level or higher can use thi
 
 ## Configuration
 
-*   Ensure the **Bingo module** is enabled in your StreamElements dashboard under `Chatbot` -> `Modules`.
 *   A **Loyalty system** must be active. Enable it under `Loyalty` -> `Loyalty Settings`.
 *   The command's permission level can be adjusted under `Chatbot` -> `Chat Commands` -> `Default Commands`.
 *   You can customize the bingo game by adjusting the reward amount and using different emote platforms to vary the game's difficulty.

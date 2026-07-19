@@ -11,15 +11,16 @@ keywords:
   - music
   - streaming
 platforms: [twitch]
+access: moderator
+requires: Song Requests
+category: song-requests
+aliases:
+  - "!songlist"
 ---
 
 import ChatExample from '@components/ChatExample.astro';
 
 The `!songqueue` command replies with a direct link to the channel's StreamElements Media Request queue page. It does **not** print the queue contents in chat — the linked page shows the upcoming songs or videos.
-
-:::caution[Permissions]
-By default, only users with **Moderator** permission level or higher can use this command.
-:::
 
 ## Usage
 
@@ -41,10 +42,6 @@ Type `!songqueue` in the chat to receive a link to the media request queue page:
 *   The linked page shows requests that are currently in the queue.
 *   The command's permission level can be adjusted under `Chatbot` -> `Chat Commands` -> `Default Commands`.
 *   Default cooldown: 10 seconds global.
-
-## Aliases
-
-*   `!songlist`
 
 ## Related Commands
 

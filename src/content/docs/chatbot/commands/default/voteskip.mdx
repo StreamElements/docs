@@ -9,6 +9,9 @@ keywords:
   - chatbot commands
   - streamelements
 platforms: [twitch]
+access: everyone
+requires: Song Requests
+category: song-requests
 ---
 
 import ChatExample from '@components/ChatExample.astro';
@@ -37,7 +40,6 @@ To cast a vote to skip the current media:
 
 ## Configuration
 
-*   Requires the **Media Request** module to be enabled.
 *   The **Vote Skip** feature must be enabled within the Media Request module settings on the StreamElements Dashboard — if it is disabled, the command does nothing.
 *   Streamers configure the **Number of votes required to skip** in the module settings; the song is skipped once the vote count reaches that threshold.
 *   Each user can vote only once per song.

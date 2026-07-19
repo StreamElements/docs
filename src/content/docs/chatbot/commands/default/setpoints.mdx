@@ -9,6 +9,9 @@ keywords:
   - streamelements
   - channel points
 platforms: [twitch]
+access: super-moderator
+requires: Loyalty
+category: points-loyalty
 ---
 
 import ChatExample from '@components/ChatExample.astro';
@@ -17,10 +20,6 @@ The `!setpoints` command allows streamers and moderators to set a specific numbe
 
 :::caution
 Using this command will **overwrite** the user's current point balance. Use [`!addpoints`](/chatbot/commands/default/addpoints) if you want to add to their balance instead.
-:::
-
-:::caution[Permissions]
-By default, only users with **Moderator** permission level or higher can use this command.
 :::
 
 ## Usage
@@ -50,7 +49,7 @@ To set a user's point balance:
 
 ## Configuration
 
-*   This command requires the **Loyalty system** to be active (`Loyalty` -> `Loyalty Settings`).
+*   Enable the **Loyalty system** under `Loyalty` -> `Loyalty Settings`.
 *   The command's permission level can be adjusted under `Chatbot` -> `Chat Commands` -> `Default Commands`.
 
 ## Related Commands

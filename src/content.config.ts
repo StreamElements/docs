@@ -30,6 +30,35 @@ export const collections = {
          */
         syntax: z.string().optional(),
         arguments: z.enum(['required', 'optional', 'none']).optional(),
+        /**
+         * Chatbot command metadata, rendered as an info row under the page
+         * title on command pages (see PageTitle override / CommandInfo) and
+         * consumed by the generated command overview + sidebar.
+         * `access` values mirror bot/levels.go in the chatbot repo (the
+         * user-facing subset; Admin/2000+ are internal). `category` mirrors the
+         * groups in commands/default/index.
+         */
+        aliases: z.array(z.string()).optional(),
+        access: z
+          .enum(['everyone', 'subscriber', 'regular', 'vip', 'moderator', 'super-moderator', 'broadcaster'])
+          .optional(),
+        requires: z.string().optional(),
+        cooldown: z.string().optional(),
+        category: z
+          .enum([
+            'points-loyalty',
+            'games-betting',
+            'giveaways-raffles',
+            'song-requests',
+            'viewer-queue',
+            'store',
+            'stream-management',
+            'moderation',
+            'bot-command-management',
+            'fun-emotes',
+            'stream-info-utility',
+          ])
+          .optional(),
       }),
     }),
   }),

@@ -2,14 +2,15 @@
 /**
  * PageTitle override: renders the default title, then frontmatter-driven
  * extras — platform badges (`platforms`), websocket topic info (`topic`),
- * and chatbot variable info (`syntax`).
+ * chatbot variable info (`syntax`), and chatbot command info (`access` etc.).
  */
 import Default from '@astrojs/starlight/components/PageTitle.astro';
 import PlatformBadges from '../PlatformBadges.astro';
 import TopicInfo from '../TopicInfo.astro';
 import VariableInfo from '../VariableInfo.astro';
+import CommandInfo from '../CommandInfo.astro';
 
-const { platforms, wsTopic, scope, status, syntax, arguments: args } =
+const { platforms, wsTopic, scope, status, syntax, arguments: args, aliases, access, requires, cooldown } =
   Astro.locals.starlightRoute.entry.data;
 ---
 
@@ -17,3 +18,6 @@ const { platforms, wsTopic, scope, status, syntax, arguments: args } =
 {platforms && platforms.length > 0 && <PlatformBadges platforms={platforms} />}
 {wsTopic && <TopicInfo topic={wsTopic} scope={scope} status={status} />}
 {syntax && <VariableInfo syntax={syntax} args={args} />}
+{(access || requires || cooldown || (aliases && aliases.length > 0)) && (
+  <CommandInfo aliases={aliases} access={access} requires={requires} cooldown={cooldown} />
+)}

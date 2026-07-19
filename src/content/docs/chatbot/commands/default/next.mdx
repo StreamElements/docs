@@ -9,6 +9,12 @@ keywords:
   - song queue
   - StreamElements chatbot
 platforms: [twitch]
+access: everyone
+requires: Song Requests
+category: song-requests
+aliases:
+  - "!nextsong"
+  - "!whatisthenextsonghomie"
 ---
 
 import ChatExample from '@components/ChatExample.astro';
@@ -43,15 +49,8 @@ Or using the alias:
 
 ## Configuration
 
-*   This command requires the **Songrequest** module to be enabled and configured in your StreamElements Dashboard (`Chatbot` -> `Modules`).
 *   The information displayed depends on the data available from YouTube for the requested track.
-*   Available to everyone by default.
 *   Default cooldown: 10 seconds per user.
-
-## Aliases
-
-*   `!nextsong`
-*   `!whatisthenextsonghomie`
 
 ## Related Commands
 

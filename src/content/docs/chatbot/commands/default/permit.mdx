@@ -9,6 +9,8 @@ keywords:
   - chat moderation
   - streamelements chatbot
 platforms: [twitch, kick]
+access: moderator
+category: moderation
 ---
 
 import ChatExample from '@components/ChatExample.astro';
@@ -22,10 +24,6 @@ To grant temporary link permission:
 ```streamelements
 !permit <username> [duration_seconds]
 ```
-
-:::caution[Permissions]
-By default, only users with **Moderator** permission level or higher can use this command.
-:::
 
 ## Examples
 

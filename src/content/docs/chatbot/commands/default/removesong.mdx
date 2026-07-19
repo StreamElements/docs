@@ -8,6 +8,11 @@ keywords:
   - song queue management
   - streamelements chatbot
 platforms: [twitch]
+access: moderator
+requires: Song Requests
+category: song-requests
+aliases:
+  - "!songs.pop()"
 ---
 
 import ChatExample from '@components/ChatExample.astro';
@@ -27,10 +32,6 @@ To remove all songs requested by a specific user:
 ```streamelements
 !removesong <username>
 ```
-
-:::caution[Permissions]
-By default, only users with **Moderator** permission level or higher can use this command.
-:::
 
 ## Examples
 
@@ -54,10 +55,6 @@ By default, only users with **Moderator** permission level or higher can use thi
 
 *   The command's permission level can be adjusted under `Chatbot` -> `Chat Commands` -> `Default Commands`.
 *   Default cooldown: 10 seconds global.
-
-## Aliases
-
-*   `!songs.pop()`
 
 ## Related Commands
 

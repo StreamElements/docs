@@ -8,6 +8,11 @@ keywords:
   - resume media request
   - streamelements chatbot
 platforms: [twitch]
+access: moderator
+requires: Song Requests
+category: song-requests
+aliases:
+  - "!resume"
 ---
 
 import ChatExample from '@components/ChatExample.astro';
@@ -28,10 +33,6 @@ Or using the alias:
 !resume
 ```
 
-:::caution[Permissions]
-By default, only users with **Moderator** permission level or higher can use this command.
-:::
-
 ## Examples
 
 <ChatExample messages={[
@@ -43,10 +44,6 @@ By default, only users with **Moderator** permission level or higher can use thi
 ## Configuration
 
 *   The command's permission level can be adjusted under `Chatbot` -> `Chat Commands` -> `Default Commands`.
-
-## Aliases
-
-*   `!resume`
 
 ## Related Commands
 

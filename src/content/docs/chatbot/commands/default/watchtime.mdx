@@ -9,6 +9,11 @@ keywords:
   - loyalty tracking
   - streamelements
 platforms: [twitch]
+access: everyone
+requires: Loyalty
+category: points-loyalty
+aliases:
+  - "!viewtime"
 ---
 
 import ChatExample from '@components/ChatExample.astro';
@@ -41,7 +46,7 @@ To check watch time:
 
 ## Configuration
 
-*   Requires the **Loyalty system** to be active (`Loyalty` -> `Loyalty Settings`).
+*   Enable the **Loyalty system** under `Loyalty` -> `Loyalty Settings`.
 *   **Watch time tracking** must be enabled within the Loyalty Settings.
 *   The command itself (`!watchtime`) is usually enabled by default when Loyalty is active.
 

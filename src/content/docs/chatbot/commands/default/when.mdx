@@ -8,6 +8,11 @@ keywords:
   - media request
   - StreamElements chatbot
 platforms: [twitch]
+access: everyone
+requires: Song Requests
+category: song-requests
+aliases:
+  - "!mysong"
 ---
 
 import ChatExample from '@components/ChatExample.astro';
@@ -47,13 +52,8 @@ To check the queue position of a specific song:
 
 ## Configuration
 
-*   Requires the **Media Request** module to be enabled.
 *   Without an argument, the command checks the queue for a request made by the user issuing the command. With a YouTube URL or video ID, it looks up that song's position instead.
 *   Default cooldown: 15 seconds global.
-
-## Aliases
-
-*   `!mysong`
 
 ## Related Commands
 

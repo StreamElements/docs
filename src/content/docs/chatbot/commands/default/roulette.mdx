@@ -9,6 +9,11 @@ keywords:
   - chatbot games
   - streamelements chatbot
 platforms: [twitch]
+access: everyone
+requires: Roulette module
+category: games-betting
+aliases:
+  - "!gamble"
 ---
 
 import ChatExample from '@components/ChatExample.astro';
@@ -54,7 +59,7 @@ To play roulette:
 
 ## Configuration
 
-*   Requires the **Roulette module** and **Loyalty system** to be active.
+*   Requires the **Loyalty system** (points) to be active, since roulette gambles loyalty points.
 *   Configure settings in the **Roulette module** on the Dashboard (`Chatbot` -> `Modules`). Available options include:
     *   **Enable/Disable Module:** Toggle the roulette game on or off.
     *   **Rig Percentage:** Adjust the win chance using a slider (0% = Never lose, 100% = Always lose).
@@ -73,10 +78,6 @@ To play roulette:
     *   **All-in Lose Message:** Customize the message shown when a user bets `all` and loses.
         *   _Available variables:_ `{user}`, `{bet}`, `{points}`, `{pointsname}`
         *   _Default:_ `/me {user} went all in and lost every single one of their {bet} ${pointsname} LUL`
-
-## Aliases
-
-*   `!gamble`
 
 ## Related Commands
 

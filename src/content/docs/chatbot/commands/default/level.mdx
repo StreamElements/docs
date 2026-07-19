@@ -2,6 +2,8 @@
 title: "!level"
 description: "Moderators can use the !level command in StreamElements chatbot to view and manually override user permission levels."
 platforms: [twitch]
+access: super-moderator
+category: moderation
 keywords:
   - level command
   - user levels
@@ -16,10 +18,6 @@ import ChatExample from '@components/ChatExample.astro';
 The `!level` command allows streamers and moderators to view or manually set the permission level of a specific user within the StreamElements system. User levels determine access to commands and other features.
 
 While levels like subscriber, VIP, and moderator are often assigned automatically based on platform roles, this command allows manual overrides or assigning custom levels like `Regular` or `Super Moderator`.
-
-:::caution[Permissions]
-By default, only users with **Moderator** permission level or higher can use this command.
-:::
 
 ## Usage
 

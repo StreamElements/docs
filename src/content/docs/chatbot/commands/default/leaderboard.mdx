@@ -2,6 +2,11 @@
 title: "!leaderboard"
 description: "Use the !leaderboard command in StreamElements chatbot to get a link to the channel's loyalty points or watch time leaderboard page."
 platforms: [twitch]
+access: everyone
+requires: Loyalty
+category: points-loyalty
+aliases:
+  - "!ranklist"
 keywords:
   - leaderboard command
   - loyalty points leaderboard
@@ -32,7 +37,7 @@ To get the link to the leaderboard page, simply type the command in chat:
 
 ## Configuration
 
-*   This command requires the **Loyalty system** to be active. Enable it in your **StreamElements Dashboard** under `Loyalty` -> `Loyalty Settings`.
+*   Enable the **Loyalty system** in your **StreamElements Dashboard** under `Loyalty` -> `Loyalty Settings`.
 *   The leaderboard page displays rankings based on the settings configured in the Loyalty module (points or watch time).
 *   The command itself is typically enabled by default.
 

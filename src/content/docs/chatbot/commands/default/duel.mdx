@@ -2,6 +2,9 @@
 title: "!duel"
 description: "Use the !duel command in StreamElements chatbot to challenge other users to a points duel in Twitch chat."
 platforms: [twitch]
+access: everyone
+requires: Duel module
+category: games-betting
 keywords:
   - duel command
   - chatbot duel
@@ -57,8 +60,6 @@ To initiate a duel challenge, use the following syntax:
 *   `[points]` (Optional): The number of loyalty points you want to wager. There is no minimum and no default — if you leave it out, the duel is played for 0 points. Shorthand values are supported: `k` for thousands (`5k`), `m` for millions (`1m`), a percentage of your balance (`50%`), or `all`. The wager cannot exceed either participant's current balance, and wagers above the module's **Maximum amount** setting are automatically capped to that maximum.
 
 ## Configuration
-
-The `!duel` command requires the **Duel module** to be active. You can enable and configure it in your **StreamElements Dashboard** under `Chatbot` -> `Modules`.
 
 Within the Duel module settings, you can customize:
 

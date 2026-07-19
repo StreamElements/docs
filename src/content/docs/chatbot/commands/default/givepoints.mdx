@@ -2,6 +2,12 @@
 title: "!givepoints"
 description: "Viewers can use the !givepoints command in StreamElements chatbot to transfer their loyalty points to another user."
 platforms: [twitch]
+access: everyone
+requires: Loyalty
+category: points-loyalty
+aliases:
+  - "!transfer"
+  - "!give"
 keywords:
   - givepoints command
   - give points
@@ -52,14 +58,9 @@ To transfer points to another user:
 
 ## Configuration
 
-*   The `!givepoints` command requires the **Loyalty system** to be active. Enable it in your **StreamElements Dashboard** under `Loyalty` -> `Loyalty Settings`.
+*   Enable the **Loyalty system** in your **StreamElements Dashboard** under `Loyalty` -> `Loyalty Settings`.
 *   The ability for users to give points can be enabled/disabled within the Loyalty Settings.
 *   Streamers can set a minimum user level required to use the command and a cooldown period in the command's settings under `Chatbot` -> `Chat Commands` -> `Default Commands`.
-
-## Aliases
-
-*   `!give`
-*   `!transfer`
 
 ## Related Commands
 

@@ -2,6 +2,12 @@
 title: "!addpoints"
 description: "Moderators can manually add loyalty points to a viewer's balance using the StreamElements !addpoints chatbot command."
 platforms: [twitch]
+access: super-moderator
+requires: Loyalty
+category: points-loyalty
+aliases:
+  - "!editpoints"
+  - "!bonus"
 keywords:
   - addpoints command
   - StreamElements Chatbot
@@ -25,10 +31,6 @@ To add points to a viewer, use the following syntax in your chat:
 !addpoints <username> <amount>
 ```
 
-:::caution[Permissions]
-By default, only users with **Moderator** permission level or higher can use this command.
-:::
-
 ## Examples
 
 <ChatExample messages={[
@@ -48,13 +50,8 @@ By default, only users with **Moderator** permission level or higher can use thi
 
 ## Configuration
 
-*   The `!addpoints` command requires the **Loyalty system** to be active. Enable it in your **StreamElements Dashboard** under **Loyalty** -> **Loyalty Settings**.
+*   Enable the **Loyalty system** in your **StreamElements Dashboard** under **Loyalty** -> **Loyalty Settings**.
 *   The command's permission level can be adjusted under **Chatbot** -> **Chat Commands** -> **Default Commands**.
-
-## Aliases
-
-*   `!editpoints`
-*   `!bonus`
 
 ## Related Commands
 
