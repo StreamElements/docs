@@ -39,6 +39,9 @@ export const collections = {
          * groups in commands/default/index.
          */
         aliases: z.array(z.string()).optional(),
+        /** Short one-line blurb for listing tables (command/variable overviews),
+         *  distinct from the SEO `description`. */
+        summary: z.string().optional(),
         access: z
           .enum(['everyone', 'subscriber', 'regular', 'vip', 'moderator', 'super-moderator', 'broadcaster'])
           .optional(),
