@@ -171,6 +171,13 @@ export default defineConfig({
       },
       expressiveCode: {
         defaultProps: { wrap: true },
+        // Match the code-block frame to the card family (ChatExample, CommandInfo,
+        // VariableInfo): same system radius and hairline border, so an example's
+        // input code block and its output chat card read as siblings.
+        styleOverrides: {
+          borderRadius: 'var(--se-radius)',
+          borderColor: 'var(--sl-color-gray-5)',
+        },
         shiki: {
           langs: [streamelementsGrammar],
         },

@@ -8,6 +8,8 @@
  *   { persona: 'bot', message: 'It is decidedly so.' },
  * ]} />
  */
+import { Icon } from '@astrojs/starlight/components';
+
 interface Message {
   persona?: 'user' | 'moderator' | 'vip' | 'broadcaster' | 'bot' | 'system';
   message: string;
@@ -73,7 +75,11 @@ const resolved = messages.map((msg) => {
 {
   resolved.length > 0 && (
     <figure class="chat-example not-content">
-      <figcaption>Example chat</figcaption>
+      <figcaption class="chat-header">
+        <Icon name="comment" class="chat-header-icon" />
+        <span>Example chat</span>
+      </figcaption>
+      <div class="chat-body">
       {resolved.map((msg) => (
         <div
           class:list={[
@@ -98,68 +104,77 @@ const resolved = messages.map((msg) => {
           <span class="chat-text">{msg.message}</span>
         </div>
       ))}
+      </div>
     </figure>
   )
 }
 
 <style>
   .chat-example {
-    position: relative;
     overflow: hidden;
-    margin: 1rem 0;
-    padding: 1.4rem 0.8rem 0.8rem;
+    margin: 1.25rem 0;
     border: 1px solid var(--sl-color-gray-5);
-    border-radius: 0.5rem;
-    background-color: var(--sl-color-black);
-  }
-  figcaption {
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 0.1rem 0.5rem;
-    border-bottom-left-radius: 0.5rem;
+    border-radius: 0.625rem;
     background-color: var(--sl-color-gray-6);
+    box-shadow: 0 1px 2px rgb(0 0 0 / 0.05);
+  }
+  .chat-header {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.5rem 0.8rem;
+    border-bottom: 1px solid var(--sl-color-gray-5);
     color: var(--sl-color-gray-2);
-    font-size: 0.65rem;
-    font-weight: 700;
-    letter-spacing: 0.5px;
+    font-size: var(--sl-text-xs);
+    font-weight: 600;
+    letter-spacing: 0.05em;
     text-transform: uppercase;
     user-select: none;
+  }
+  .chat-header-icon {
+    font-size: 0.95rem;
+    color: var(--sl-color-gray-3);
+  }
+  .chat-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    padding: 0.5rem;
   }
   .chat-message {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
-    padding: 4px 10px;
-    margin-bottom: 2px;
+    align-items: baseline;
+    gap: 0 0.35rem;
+    padding: 0.3rem 0.5rem;
+    border-radius: 0.35rem;
     font-family: var(--sl-font, ui-sans-serif), sans-serif;
     font-size: 0.9rem;
-    line-height: 1.4;
+    line-height: 1.5;
     overflow-wrap: anywhere;
   }
   .chat-message-bot {
-    background-color: var(--sl-color-gray-6);
-    border-inline-start: 3px solid var(--sl-color-accent);
-    padding-inline-start: 7px;
+    background-color: var(--sl-color-accent-low);
+    box-shadow: inset 2px 0 0 var(--sl-color-accent);
   }
   .chat-message-system {
+    justify-content: center;
     color: var(--sl-color-gray-3);
     font-style: italic;
   }
   .chat-badges {
     display: inline-flex;
     align-items: center;
-    height: 1.1em;
-    margin-inline-end: 3px;
+    gap: 2px;
+    align-self: center;
   }
   .chat-badges img {
-    width: 1.1em;
-    height: 1.1em;
-    margin-inline-end: 3px;
+    width: 1.05em;
+    height: 1.05em;
+    border-radius: 2px;
   }
   .chat-username {
     font-weight: 700;
-    margin-inline-end: 5px;
     white-space: nowrap;
   }
   .chat-text {
