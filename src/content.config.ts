@@ -49,6 +49,7 @@ export const collections = {
         cooldown: z.string().optional(),
         category: z
           .enum([
+            // Command categories (see commands/default overview).
             'points-loyalty',
             'games-betting',
             'giveaways-raffles',
@@ -60,6 +61,16 @@ export const collections = {
             'bot-command-management',
             'fun-emotes',
             'stream-info-utility',
+            // Variable categories (see variables overview). `stream-management`
+            // is shared with commands; the overview tables also filter by path
+            // so there is no cross-contamination.
+            'stream-info',
+            'user-chat',
+            'emotes',
+            'counters-data',
+            'games',
+            'utility-web',
+            'fun',
           ])
           .optional(),
       }),
