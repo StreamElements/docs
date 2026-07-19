@@ -40,11 +40,10 @@ Incorporating the title into a welcome message:
 !command add !welcome Welcome to the stream, $(user)! We're currently $(title). Enjoy your stay!
 ```
 
-When a viewer types `!welcome` in chat, the bot might respond:
-
-```
-Welcome to the stream, ViewerName! We're currently Playing Spyro! Come join the adventure! Enjoy your stay!
-```
+<ChatExample messages={[
+  { persona: 'user', message: '!welcome' },
+  { persona: 'bot', message: "Welcome to the stream, ViewerName! We're currently Playing Spyro! Come join the adventure! Enjoy your stay!" }
+]} />
 
 ## Parameters
 

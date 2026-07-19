@@ -43,20 +43,16 @@ The `$(touser)` variable can be used in two ways:
 
 ### Mentioning a specific user
 
-Command:
 ```streamelements
 !command add !shoutout Hey everyone, check out $(touser)'s channel! They're awesome!
 ```
 
-If a moderator types `!shoutout CoolStreamer`, the output will be:
-```
-Hey everyone, check out CoolStreamer's channel! They're awesome!
-```
-
-If they type `!shoutout` with no name, `$(touser)` falls back to the sender's display name:
-```
-Hey everyone, check out ModUser's channel! They're awesome!
-```
+<ChatExample messages={[
+  { persona: 'moderator', message: '!shoutout CoolStreamer' },
+  { persona: 'bot', message: "Hey everyone, check out CoolStreamer's channel! They're awesome!" },
+  { persona: 'moderator', message: '!shoutout' },
+  { persona: 'bot', message: "Hey everyone, check out ModUser's channel! They're awesome!" }
+]} />
 
 ## Parameters
 

@@ -59,27 +59,27 @@ Durations are written out in full words: `secs`, `mins`, `hours`, `days`, `month
 
 ## Examples
 
-1. A watchtime command combining time watched and online rank:
+**A watchtime command combining time watched and online rank**
 
-   ```streamelements
-   !command add !watchtime $(sender) has been watching the stream for $(sender.time_online) and is rank $(sender.time_online_rank) on the online leaderboard
-   ```
+```streamelements
+!command add !watchtime $(sender) has been watching the stream for $(sender.time_online) and is rank $(sender.time_online_rank) on the online leaderboard
+```
 
-   Output:
-   ```
-   ViewerName has been watching the stream for 2 hours 30 mins and is rank 5/283 on the online leaderboard
-   ```
+<ChatExample messages={[
+  { persona: 'user', message: '!watchtime' },
+  { persona: 'bot', message: 'ViewerName has been watching the stream for 2 hours 30 mins and is rank 5/283 on the online leaderboard' },
+]} />
 
-2. An activity command combining last activity and last message:
+**An activity command combining last activity and last message**
 
-   ```streamelements
-   !command add !activity $(sender) was last active $(sender.lastactive) ago and last typed: $(sender.lastmessage)
-   ```
+```streamelements
+!command add !activity $(sender) was last active $(sender.lastactive) ago and last typed: $(sender.lastmessage)
+```
 
-   Output:
-   ```
-   ViewerName was last active 13 mins 15 secs ago and last typed: !points
-   ```
+<ChatExample messages={[
+  { persona: 'user', message: '!activity' },
+  { persona: 'bot', message: 'ViewerName was last active 13 mins 15 secs ago and last typed: !points' },
+]} />
 
 ## Aliases
 

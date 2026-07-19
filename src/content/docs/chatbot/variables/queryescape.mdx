@@ -49,9 +49,10 @@ A YouTube search command:
 !command add !yt https://www.youtube.com/results?search_query=$(queryescape ${1:})
 ```
 
-**User Input:** `!yt funny cat videos`
-
-**Output:** `https://www.youtube.com/results?search_query=funny+cat+videos`
+<ChatExample messages={[
+  { persona: 'user', message: '!yt funny cat videos' },
+  { persona: 'bot', message: 'https://www.youtube.com/results?search_query=funny+cat+videos' },
+]} />
 
 ## Parameters
 

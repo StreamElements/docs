@@ -82,27 +82,26 @@ Durations are written out in full words: `secs`, `mins`, `hours`, `days`, `month
 
 ## Examples
 
-1. Querying another user by name:
+**Querying another user by name**
 
-   ```streamelements
-   $(user ModUser) was last seen $(user.lastseen ModUser) ago and last typed: $(user.lastmessage ModUser)
-   ```
+```streamelements
+$(user ModUser) was last seen $(user.lastseen ModUser) ago and last typed: $(user.lastmessage ModUser)
+```
 
-   Output:
-   ```
-   ModUser was last seen 5 mins 30 secs ago and last typed: Hello everyone!
-   ```
+<ChatExample messages={[
+  { persona: 'bot', message: 'ModUser was last seen 5 mins 30 secs ago and last typed: Hello everyone!' }
+]} />
 
-2. A points command that lets viewers check anyone's balance:
+**A points command that lets viewers check anyone's balance**
 
-   ```streamelements
-   !command add !points $(user) has $(user.points) points and is rank $(user.points_rank) on the leaderboard
-   ```
+```streamelements
+!command add !points $(user) has $(user.points) points and is rank $(user.points_rank) on the leaderboard
+```
 
-   Output for `!points ModUser`:
-   ```
-   ModUser has 100 points and is rank 5/283 on the leaderboard
-   ```
+<ChatExample messages={[
+  { persona: 'user', message: '!points ModUser' },
+  { persona: 'bot', message: 'ModUser has 100 points and is rank 5/283 on the leaderboard' }
+]} />
 
 :::note
 Lookups only work for users the bot has seen in your channel — unknown users produce empty output.
