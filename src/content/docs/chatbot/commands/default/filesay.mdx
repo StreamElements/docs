@@ -2,6 +2,9 @@
 title: "!filesay"
 description: "Use the !filesay command in StreamElements chatbot to send multiple lines of text from a URL to chat, ideal for bulk commands like bans."
 platforms: [twitch, youtube, kick]
+access: super-moderator
+summary: "Send multiple lines of text from a URL to chat."
+category: moderation
 keywords:
   - filesay command
   - chatbot command
@@ -25,7 +28,6 @@ To execute the commands/messages from a file URL:
 ```
 
 :::caution[Important]
-*   By default, only users with **Super Moderator** permission level or higher can use this command.
 *   The URL must point to a **raw text file** (e.g., a Pastebin raw link, a GitHub raw file link).
 *   Each line in the file will be executed as if typed directly into chat. Ensure the commands are valid (e.g., `!ban username`).
 *   There might be rate limits on how many lines can be processed quickly.

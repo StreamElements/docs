@@ -11,6 +11,12 @@ keywords:
   - music streaming
   - YouTube integration
 platforms: [twitch]
+access: everyone
+summary: "Add YouTube songs or videos to the media request queue."
+requires: Song Requests
+category: song-requests
+aliases:
+  - "!sr"
 ---
 
 import ChatExample from '@components/ChatExample.astro';
@@ -52,7 +58,6 @@ Or using the alias:
 
 ## Configuration
 
-*   Requires the **Media Request** module to be enabled and configured (`Chatbot` -> `Modules`).
 *   Streamers can configure various settings in the Media Request module:
     *   Enable/disable the feature.
     *   Link a Spotify account (optional, for different functionality).
@@ -67,10 +72,6 @@ Or using the alias:
     *   Users at or above the configured **exempt level** (Moderators and above by default) pay nothing and bypass request filters.
 *   If **moderation** is enabled, requests from non-exempt users are sent to a pending queue for approval instead of being added directly.
 *   Default cooldown: 15 seconds per user, 3 seconds global.
-
-## Aliases
-
-*   `!sr`
 
 ## Related Commands
 

@@ -1,6 +1,8 @@
 ---
 title: "$(count)"
 description: "Create, display, and modify custom counters in StreamElements Chatbot with the $(count) variable."
+category: counters-data
+summary: "Create and manage custom counters."
 keywords:
   - count
   - counter
@@ -45,21 +47,27 @@ Each use changes the counter and outputs the **new** value as a plain number. Wi
 
 ## Examples
 
-1. Basic usage (increments the command's own counter by 1 each time):
+**Basic usage** — increments the command's own counter by 1 each time:
 
-   ```streamelements
-   !cmd add !deaths $(count)
-   ```
+```streamelements
+!cmd add !deaths $(count)
+```
 
-   Output: `13`
+<ChatExample messages={[
+  { persona: 'user', message: '!deaths' },
+  { persona: 'bot', message: '13' },
+]} />
 
-2. Named counter with a custom modifier:
+**Named counter with a custom modifier:**
 
-   ```streamelements
-   !cmd add !bossfails $(count bossfails +5)
-   ```
+```streamelements
+!cmd add !bossfails $(count bossfails +5)
+```
 
-   Output: `25`
+<ChatExample messages={[
+  { persona: 'user', message: '!bossfails' },
+  { persona: 'bot', message: '25' },
+]} />
 
 ## Parameters
 

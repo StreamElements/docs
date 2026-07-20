@@ -2,6 +2,9 @@
 title: "!bot"
 description: "Manage your StreamElements chatbot with the !bot command. Control bot behavior, including muting, unmuting, and removing the bot from chat."
 platforms: [twitch, youtube, kick]
+access: super-moderator
+summary: "Mute, unmute, or remove the bot from chat."
+category: bot-command-management
 keywords:
   - bot command
   - streamelements chatbot
@@ -24,10 +27,6 @@ The `!bot` command uses the following general structure:
 ```streamelements
 !bot <subcommand>
 ```
-
-:::caution[Permissions]
-By default, only users with **Moderator** permission level or higher can use the `!bot` command and its subcommands. The command's permission level can be adjusted under `Chatbot` -> `Chat Commands` -> `Default Commands`.
-:::
 
 ## Subcommands
 

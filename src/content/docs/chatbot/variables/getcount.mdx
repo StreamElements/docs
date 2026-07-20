@@ -1,6 +1,8 @@
 ---
 title: "$(getcount)"
 description: "Retrieve a counter's current value without incrementing it using the $(getcount) variable in StreamElements Chatbot."
+category: counters-data
+summary: "Retrieve a counter value without incrementing it."
 keywords:
   - StreamElements
   - chatbot
@@ -44,7 +46,10 @@ Displaying the current death count without changing it:
 !command add !deathcheck We're at $(getcount deaths) deaths so far. It could be worse!
 ```
 
-Output: `We're at 13 deaths so far. It could be worse!`
+<ChatExample messages={[
+  { persona: 'user', message: '!deathcheck' },
+  { persona: 'bot', message: "We're at 13 deaths so far. It could be worse!" },
+]} />
 
 ## Parameters
 

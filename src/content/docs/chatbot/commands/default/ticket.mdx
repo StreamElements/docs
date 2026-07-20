@@ -10,6 +10,12 @@ keywords:
 - raffles
 - loyalty
 platforms: [twitch]
+access: everyone
+summary: "Purchase tickets for giveaways and raffles."
+requires: Giveaway module
+category: giveaways-raffles
+aliases:
+  - "!enter"
 ---
 
 import ChatExample from '@components/ChatExample.astro';
@@ -57,10 +63,6 @@ To purchase tickets, type `!ticket` in the chat, optionally followed by the numb
 ## Configuration
 
 Streamers configure giveaway settings, including ticket cost and the maximum number of tickets a viewer can purchase per giveaway, through the StreamElements dashboard under **Loyalty -> Giveaways**.
-
-## Aliases
-
--   `!enter`
 
 ## Related Commands
 

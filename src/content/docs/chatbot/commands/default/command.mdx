@@ -2,6 +2,11 @@
 title: "!command"
 description: "Manage StreamElements chatbot custom commands directly from chat using the !command (!cmd) functions: add, remove, edit, alias, show, options."
 platforms: [twitch, youtube, kick]
+access: moderator
+summary: "Add, remove, edit, or alias custom commands from chat."
+category: bot-command-management
+aliases:
+  - "!cmd"
 keywords:
   - command command
   - cmd command
@@ -19,10 +24,6 @@ keywords:
 import ChatExample from '@components/ChatExample.astro';
 
 The `!command` (aliased as `!cmd`) command suite allows streamers and moderators with the appropriate permissions to manage custom chat commands directly from the chat interface. It provides subcommands to add, remove, edit, view aliases, show details, and configure advanced options for any custom command.
-
-:::caution[Permissions]
-By default, only users with **Moderator** permission level or higher can use the `!command` subcommands.
-:::
 
 ## Usage
 
@@ -158,9 +159,10 @@ When using the `!command options` subcommand, you specify settings using flags f
 | `-disable`       | Disables the command, preventing anyone from using it.                                                                                 | N/A                                                                        | `-disable`                                |
 | `-count`         | **Manually sets the command's usage counter**, useful for resetting or adjusting the value used by [`$(count)`](/chatbot/variables/count).     | `<number>` (e.g., `0`)                                                       | `-count 0`                                |
 
-## Aliases
+## Subcommand aliases
 
-*   **`!command`:** `!cmd`
+Each subcommand also accepts its own shorthand aliases:
+
 *   **`remove`:** `delete`, `del`, `rem`
 *   **`edit`:** `update`
 *   **`alias`:** `aliases`

@@ -10,6 +10,9 @@ keywords:
   - chat engagement
   - StreamElements chatbot
 platforms: [twitch, youtube, kick]
+access: everyone
+summary: "Display random saved quotes or manage the quote list."
+category: fun-emotes
 ---
 
 import ChatExample from '@components/ChatExample.astro';
@@ -89,7 +92,7 @@ Quotes cannot be **edited** from chat — only added and removed. To edit the te
 *   The permission levels for adding and removing quotes can be adjusted under `Chatbot` -> `Chat Commands` -> `Default Commands`.
 *   Editing the text of existing quotes is only possible from the StreamElements Dashboard.
 
-## Aliases
+## Subcommand aliases
 
 *   `!quote add`: `!quote +`
 *   `!quote remove`: `!quote rem`, `!quote delete`, `!quote del`, `!quote -`

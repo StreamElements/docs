@@ -8,6 +8,13 @@ keywords:
   - media request
   - StreamElements chatbot
 platforms: [twitch]
+access: everyone
+summary: "Remove the last song you added to the queue."
+requires: Song Requests
+category: song-requests
+aliases:
+  - "!ctrl-z"
+  - "!heybuddyithinkyougotthewrongsong"
 ---
 
 import ChatExample from '@components/ChatExample.astro';
@@ -36,15 +43,9 @@ To remove your last song request, simply type the command in chat:
 
 ## Configuration
 
-*   Requires the **Media Request** module to be enabled.
 *   The command affects only the song requested by the user issuing the command.
 *   Streamers can customize the response messages in the StreamElements dashboard under `Chatbot` -> `Chat Commands` -> `Default Commands`.
 *   Default cooldown: 10 seconds per user.
-
-## Aliases
-
-*   `!ctrl-z`
-*   `!heybuddyithinkyougotthewrongsong`
 
 ## Related Commands
 

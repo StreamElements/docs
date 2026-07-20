@@ -8,6 +8,12 @@ keywords:
   - chat game
   - streamelements chatbot
 platforms: [twitch]
+access: moderator
+summary: "Start a single-winner raffle; viewers enter with !join."
+requires: Raffle module
+category: giveaways-raffles
+aliases:
+  - "!singleraffle"
 ---
 
 import ChatExample from '@components/ChatExample.astro';
@@ -22,10 +28,6 @@ To start a single-winner raffle:
 ```streamelements
 !sraffle [win_points] [duration_seconds]
 ```
-
-:::caution[Permissions]
-By default, only users with **Moderator** permission level or higher can use this command.
-:::
 
 ## Examples
 
@@ -51,10 +53,6 @@ By default, only users with **Moderator** permission level or higher can use thi
 *   Requires the **Raffle module** to be active (`Chatbot` -> `Modules`).
 *   The command's permission level can be adjusted under `Chatbot` -> `Chat Commands` -> `Default Commands`.
 *   Other settings like the default duration (in seconds), the maximum points amount, and the raffle messages can be configured in the Raffle module settings on the Dashboard. The entry command is fixed to `!join`.
-
-## Aliases
-
-*   `!singleraffle`
 
 ## Related Commands
 

@@ -10,15 +10,15 @@ keywords:
   - audio settings
   - streamelements
 platforms: [twitch]
+access: everyone
+summary: "Check or set the media request player volume."
+requires: Song Requests
+category: song-requests
 ---
 
 import ChatExample from '@components/ChatExample.astro';
 
 The `!volume` command allows users to check or adjust the volume level of the StreamElements media request player.
-
-:::note[Permissions]
-By default, **everyone** can use this command — both to check and to set the volume. Streamers who want to restrict it can raise the required permission level under `Chatbot` -> `Chat Commands` -> `Default Commands`.
-:::
 
 ## Usage
 
@@ -64,7 +64,6 @@ By default, **everyone** can use this command — both to check and to set the v
 
 ## Configuration
 
-*   Requires the **Media Request** module to be enabled.
 *   The command's permission level can be adjusted under `Chatbot` -> `Chat Commands` -> `Default Commands`.
 
 ## Related Commands

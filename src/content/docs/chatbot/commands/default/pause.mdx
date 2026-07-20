@@ -8,6 +8,10 @@ keywords:
   - song request pause
   - stream elements chatbot
 platforms: [twitch]
+access: moderator
+summary: "Pause media request playback without clearing the queue."
+requires: Song Requests
+category: song-requests
 ---
 
 import ChatExample from '@components/ChatExample.astro';
@@ -21,10 +25,6 @@ To pause the currently playing media:
 ```streamelements
 !pause
 ```
-
-:::caution[Permissions]
-By default, only users with **Moderator** permission level or higher can use this command.
-:::
 
 ## Examples
 

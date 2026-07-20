@@ -30,6 +30,49 @@ export const collections = {
          */
         syntax: z.string().optional(),
         arguments: z.enum(['required', 'optional', 'none']).optional(),
+        /**
+         * Chatbot command metadata, rendered as an info row under the page
+         * title on command pages (see PageTitle override / CommandInfo) and
+         * consumed by the generated command overview + sidebar.
+         * `access` values mirror bot/levels.go in the chatbot repo (the
+         * user-facing subset; Admin/2000+ are internal). `category` mirrors the
+         * groups in commands/default/index.
+         */
+        aliases: z.array(z.string()).optional(),
+        /** Short one-line blurb for listing tables (command/variable overviews),
+         *  distinct from the SEO `description`. */
+        summary: z.string().optional(),
+        access: z
+          .enum(['everyone', 'subscriber', 'regular', 'vip', 'moderator', 'super-moderator', 'broadcaster'])
+          .optional(),
+        requires: z.string().optional(),
+        cooldown: z.string().optional(),
+        category: z
+          .enum([
+            // Command categories (see commands/default overview).
+            'points-loyalty',
+            'games-betting',
+            'giveaways-raffles',
+            'song-requests',
+            'viewer-queue',
+            'store',
+            'stream-management',
+            'moderation',
+            'bot-command-management',
+            'fun-emotes',
+            'stream-info-utility',
+            // Variable categories (see variables overview). `stream-management`
+            // is shared with commands; the overview tables also filter by path
+            // so there is no cross-contamination.
+            'stream-info',
+            'user-chat',
+            'emotes',
+            'counters-data',
+            'games',
+            'utility-web',
+            'fun',
+          ])
+          .optional(),
       }),
     }),
   }),

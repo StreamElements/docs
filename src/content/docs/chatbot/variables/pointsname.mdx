@@ -1,6 +1,8 @@
 ---
 title: "$(pointsname)"
 description: "Display the name of your stream's loyalty currency with the $(pointsname) variable in StreamElements Chatbot messages and commands."
+category: user-chat
+summary: "Display the channel's custom loyalty points name."
 syntax: "$(pointsname)"
 arguments: none
 keywords:
@@ -38,10 +40,9 @@ Informing viewers about earning points:
 Earn more $(pointsname) by watching the stream!
 ```
 
-Output (assuming your currency is named "memecoins"):
-```
-Earn more memecoins by watching the stream!
-```
+<ChatExample messages={[
+  { persona: 'bot', message: 'Earn more memecoins by watching the stream!' },
+]} />
 
 ## Related
 

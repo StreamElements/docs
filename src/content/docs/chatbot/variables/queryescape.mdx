@@ -1,6 +1,8 @@
 ---
 title: "$(queryescape)"
 description: "Encode strings for use in URL query parameters with the $(queryescape) variable in StreamElements Chatbot commands."
+category: utility-web
+summary: "Encode a string for use in a URL query. Also available as $(queryencode)."
 syntax: "$(queryescape <text>)"
 arguments: required
 keywords:
@@ -47,9 +49,10 @@ A YouTube search command:
 !command add !yt https://www.youtube.com/results?search_query=$(queryescape ${1:})
 ```
 
-**User Input:** `!yt funny cat videos`
-
-**Output:** `https://www.youtube.com/results?search_query=funny+cat+videos`
+<ChatExample messages={[
+  { persona: 'user', message: '!yt funny cat videos' },
+  { persona: 'bot', message: 'https://www.youtube.com/results?search_query=funny+cat+videos' },
+]} />
 
 ## Parameters
 

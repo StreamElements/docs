@@ -1,6 +1,8 @@
 ---
 title: "$(twitchemotes)"
 description: "Display a channel's Twitch subscriber emotes with the $(twitchemotes) variable in StreamElements Chatbot commands."
+category: emotes
+summary: "Display available Twitch subscriber emotes."
 syntax: "$(twitchemotes)"
 arguments: none
 keywords:
@@ -41,10 +43,10 @@ Create a dynamic emote celebration:
 !command add !celebration Let's celebrate with our awesome emotes! $(twitchemotes)
 ```
 
-This command will output something like:
-```
-Let's celebrate with our awesome emotes! stylerXD stylerRIP stylerLOL stylerHYPE
-```
+<ChatExample messages={[
+  { persona: 'user', message: '!celebration' },
+  { persona: 'bot', message: "Let's celebrate with our awesome emotes! stylerXD stylerRIP stylerLOL stylerHYPE" }
+]} />
 
 ## Related Variables
 

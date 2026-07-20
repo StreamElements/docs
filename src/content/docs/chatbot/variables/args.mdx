@@ -1,6 +1,8 @@
 ---
 title: "Command Arguments"
 description: "Access the words of a chat message in StreamElements Chatbot commands with the $(1), $(1:), and $(1:3) argument tokens."
+category: user-chat
+summary: "Access the words of the message that triggered the command."
 keywords:
   - command arguments
   - arguments
@@ -50,25 +52,27 @@ Argument tokens strip a leading `/` or `.` from their output. This guards agains
 
 ## Examples
 
-1. Introducing a user:
+**Introducing a user**
 
-   ```streamelements
-   !cmd add !introduce $(1) is $(2) years old
-   ```
+```streamelements
+!cmd add !introduce $(1) is $(2) years old
+```
 
-   User input: `!introduce Alice 25`
+<ChatExample messages={[
+  { persona: 'user', message: '!introduce Alice 25' },
+  { persona: 'bot', message: 'Alice is 25 years old' },
+]} />
 
-   Output: `Alice is 25 years old`
+**Using everything after the command**
 
-2. Using everything after the command:
+```streamelements
+!cmd add !announce Attention everyone: $(1:)
+```
 
-   ```streamelements
-   !cmd add !announce Attention everyone: $(1:)
-   ```
-
-   User input: `!announce the stream starts in 10 minutes`
-
-   Output: `Attention everyone: the stream starts in 10 minutes`
+<ChatExample messages={[
+  { persona: 'user', message: '!announce the stream starts in 10 minutes' },
+  { persona: 'bot', message: 'Attention everyone: the stream starts in 10 minutes' },
+]} />
 
 ## Fallbacks
 
@@ -78,9 +82,10 @@ Use a pipe to provide a default value when an argument is missing:
 !cmd add !hug $(sender) hugs $(1|everyone)!
 ```
 
-User input: `!hug` (no argument)
-
-Output: `StreamFan123 hugs everyone!`
+<ChatExample messages={[
+  { persona: 'user', message: '!hug' },
+  { persona: 'bot', message: 'StreamFan123 hugs everyone!' },
+]} />
 
 ## Quoting
 
@@ -90,25 +95,27 @@ Wherever a variable takes space-separated inputs, quotes group several words int
 
 A token can take an optional validator, which makes it output the word only if it passes a check:
 
-1. `$(1 username)` (alias: `$(1 word)`): Outputs the argument only if it looks like a username — letters, digits, and underscores, optionally prefixed with `@`, up to 30 characters.
+`$(1 username)` (alias: `$(1 word)`) outputs the argument only if it looks like a username — letters, digits, and underscores, optionally prefixed with `@`, up to 30 characters.
 
-   ```streamelements
-   !cmd add !so Check out $(1 username)'s channel!
-   ```
+```streamelements
+!cmd add !so Check out $(1 username)'s channel!
+```
 
-   User input: `!so CoolStreamer`
+<ChatExample messages={[
+  { persona: 'user', message: '!so CoolStreamer' },
+  { persona: 'bot', message: "Check out CoolStreamer's channel!" },
+]} />
 
-   Output: `Check out CoolStreamer's channel!`
+`$(1 emote)` outputs the argument only if it is an emote in the message.
 
-2. `$(1 emote)`: Outputs the argument only if it is an emote in the message.
+```streamelements
+!cmd add !emote $(1 emote)
+```
 
-   ```streamelements
-   !cmd add !emote $(1 emote)
-   ```
-
-   User input: `!emote Kappa`
-
-   Output: `Kappa`
+<ChatExample messages={[
+  { persona: 'user', message: '!emote Kappa' },
+  { persona: 'bot', message: 'Kappa' },
+]} />
 
 The dot form also works for validators, e.g. `$(1.word)` or `$(1.emote)`.
 

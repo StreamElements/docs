@@ -1,6 +1,8 @@
 ---
 title: "$(math)"
 description: "Perform mathematical calculations in StreamElements Chatbot messages with the $(math) variable and math.js expressions."
+category: utility-web
+summary: "Perform mathematical calculations in chat messages."
 keywords:
   - StreamElements
   - chatbot
@@ -38,23 +40,25 @@ Replace `<expression>` with the mathematical operation you want to perform. Resu
 
 ## Examples
 
-Here are some practical examples of how to use the `$(math)` variable:
+**Rounding a division result**
 
-1. Rounding a division result:
+```streamelements
+10 divided by 3, rounded to the nearest integer, is $(math "round(10/3)")
+```
 
-   ```streamelements
-   10 divided by 3, rounded to the nearest integer, is $(math "round(10/3)")
-   ```
+<ChatExample messages={[
+  { persona: 'bot', message: '10 divided by 3, rounded to the nearest integer, is 3' },
+]} />
 
-   Output: `10 divided by 3, rounded to the nearest integer, is 3`
+**Generating a random number**
 
-2. Generating a random number:
+```streamelements
+Your random number between 1 and 10 is $(math "random(1,10)")
+```
 
-   ```streamelements
-   Your random number between 1 and 10 is $(math "random(1,10)")
-   ```
-
-   Output: `Your random number between 1 and 10 is 7.525986609745358`
+<ChatExample messages={[
+  { persona: 'bot', message: 'Your random number between 1 and 10 is 7.525986609745358' },
+]} />
 
 ## Parameters
 

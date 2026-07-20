@@ -2,6 +2,13 @@
 title: "!raffle"
 description: "Use the !raffle command in StreamElements chatbot to start a raffle with multiple winners that splits a points pot among them."
 platforms: [twitch]
+access: moderator
+summary: "Start a multi-winner raffle that splits the pot; viewers enter with !join."
+requires: Raffle module
+category: giveaways-raffles
+aliases:
+  - "!mraffle"
+  - "!multiraffle"
 keywords:
 - raffle
 - chat game
@@ -21,10 +28,6 @@ The `!raffle` command allows streamers and moderators to create interactive raff
 ```
 * `[amount]`: Optional. The total reward (pot) for the raffle, distributed among winners. Defaults to 5000 points when omitted.
 * `[duration]`: Optional. The duration of the raffle in whole seconds. Defaults to the Duration configured in the module settings. Because the arguments are positional, you can only set a duration if you also give an amount.
-
-:::caution[Permissions]
-By default, only users with **Moderator** permission level or higher can use this command.
-:::
 
 ## Examples
 
@@ -49,11 +52,6 @@ By default, only users with **Moderator** permission level or higher can use thi
 ## Configuration
 
 The default duration and the maximum pot are configured in the raffle module settings in the StreamElements dashboard. The number of winners is not configurable — it scales automatically with the number of entrants (see the [Raffle module](/chatbot/modules/raffle) for the exact brackets).
-
-## Aliases
-
-- `!mraffle`
-- `!multiraffle`
 
 ## Related Commands
 

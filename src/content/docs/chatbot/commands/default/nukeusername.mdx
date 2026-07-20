@@ -10,6 +10,11 @@ keywords:
   - username nuke
   - StreamElements chatbot
 platforms: [twitch, youtube, kick]
+access: super-moderator
+summary: "Timeout or ban users whose usernames match text or regex."
+category: moderation
+aliases:
+  - "!nukeuser"
 ---
 
 import ChatExample from '@components/ChatExample.astro';
@@ -18,10 +23,6 @@ The `!nukeusername` command is a moderation tool allowing moderators to perform 
 
 :::caution
 This is a powerful command. Use it with caution, especially with broad match strings or regex, to avoid unintended actions against legitimate users.
-:::
-
-:::caution[Permissions]
-By default, only users with **Super Moderator** permission level or higher can use this command.
 :::
 
 ## Usage

@@ -11,15 +11,17 @@ keywords:
   - commands
   - mediarequest
 platforms: [twitch]
+access: moderator
+summary: "Clear the entire media request queue."
+requires: Song Requests
+category: song-requests
+aliases:
+  - "!mrclear"
 ---
 
 import ChatExample from '@components/ChatExample.astro';
 
 The `!srclear` command is used to clear the **entire** media request queue in your StreamElements chatbot. This command is particularly useful for streamers and moderators who want to reset the list of requested songs or videos during a stream.
-
-:::caution[Permissions]
-By default, only users with **Moderator** permission level or higher can use this command.
-:::
 
 ## Usage
 
@@ -40,10 +42,6 @@ To clear the queue, simply type the command in chat:
 
 *   The command's permission level can be adjusted under `Chatbot` -> `Chat Commands` -> `Default Commands`.
 *   Default cooldown: 10 seconds global and 10 seconds per user.
-
-## Aliases
-
-*   `!mrclear`
 
 ## Related Commands
 

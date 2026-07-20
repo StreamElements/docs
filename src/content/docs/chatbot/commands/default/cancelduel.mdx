@@ -2,6 +2,10 @@
 title: "!cancelduel"
 description: "Use the !cancelduel command in StreamElements chatbot to stop an outgoing duel request you initiated."
 platforms: [twitch]
+access: everyone
+summary: "Cancel an outgoing duel request you initiated."
+requires: Duel module
+category: games-betting
 keywords:
   - cancelduel command
   - cancel duel
@@ -55,10 +59,6 @@ To cancel your pending outgoing duel request, simply type the command in chat:
   { persona: 'user', message: '!cancelduel' },
   { persona: 'bot', message: '@UserName, You do not have any pending outgoing duel requests.' }
 ]} />
-
-## Configuration
-
-The `!cancelduel` command is part of the **Duel module**. This module must be enabled in your StreamElements chatbot settings under `Chatbot` -> `Modules` for the command to function.
 
 ## Related Commands
 

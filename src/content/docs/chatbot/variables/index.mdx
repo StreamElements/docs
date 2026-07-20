@@ -1,0 +1,65 @@
+---
+title: Variables
+description: Reference of all StreamElements Chatbot variables for chat commands, grouped by category, with syntax and usage links.
+keywords:
+  - chatbot variables
+  - StreamElements variables
+  - chat command variables
+  - dynamic chat commands
+  - chatbot placeholders
+sidebar:
+  label: Overview
+  order: 0
+---
+
+import VariableTable from '@components/VariableTable.astro';
+
+Chat commands support variables in a dynamic way. Variables are placeholders that can be used in chat commands to represent a specific value or piece of information. When a command is triggered, these variables are replaced with the actual values they represent.
+
+For example, in the command `$(uptime shroud)`, `shroud` is a variable representing a username. When this command is executed, the `uptime` of the user `shroud` is returned.
+
+Variables are placeholders you put in a command response; the bot replaces them with live values — the sender's name, the current game, a random number — when the command runs.
+
+:::tip[In a hurry?]
+See the [Variables cheat sheet](/chatbot/variables/cheat-sheet) — every variable with its syntax and return value on a single page.
+:::
+
+:::note
+In addition to the `$()` syntax, the `${}` syntax is also supported. Both forms are interchangeable in chat commands: `$(uptime shroud)` can also be written as `${uptime shroud}`.
+:::
+
+:::note
+Variables work on all platforms unless a page notes otherwise — on YouTube, `$(user)` (and its sub-variables), `$(game)`, and `$(redeem)` are not available.
+:::
+
+## Stream Info
+
+<VariableTable category="stream-info" />
+
+## Stream Management
+
+<VariableTable category="stream-management" />
+
+## User & Chat
+
+<VariableTable category="user-chat" />
+
+## Emotes
+
+<VariableTable category="emotes" />
+
+## Counters & Data
+
+<VariableTable category="counters-data" />
+
+## Games
+
+<VariableTable category="games" />
+
+## Utility & Web
+
+<VariableTable category="utility-web" />
+
+## Fun
+
+<VariableTable category="fun" />

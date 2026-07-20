@@ -22,6 +22,8 @@ keywords:
   - Stream Uptime command
 ---
 
+import ChatExample from '@components/ChatExample.astro';
+
 In addition to the default commands, you can also create your own custom commands. Custom commands allow you to create commands that are tailored to your channel and your community. You can use custom commands to create unique interactions and functionalities that are not possible with the default commands.
 
 ## Managing Custom Commands
@@ -61,12 +63,10 @@ This command greets the user and tells them when they last visited the stream.
 !cmd add !hello $(user), welcome to the stream! You last visited $(user.lastseen) ago.
 ```
 
-**Output:**
-
-```
-Viewer123: !hello
-Bot: Viewer123, welcome to the stream! You last visited 2 days 5 hours ago.
-```
+<ChatExample messages={[
+  { persona: 'user', usernameOverride: 'Viewer123', message: '!hello' },
+  { persona: 'bot', message: 'Viewer123, welcome to the stream! You last visited 2 days 5 hours ago.' },
+]} />
 
 Variables used:
 
@@ -81,12 +81,10 @@ This command shows how long the stream has been live, the current game, and view
 !cmd add !stream The stream has been live for $(uptime). We're currently playing $(channel.game) for $(channel.viewers) viewers!
 ```
 
-**Output:**
-
-```
-Viewer123: !stream
-Bot: The stream has been live for 2 days 5 hours. We're currently playing Fortnite for 1234 viewers!
-```
+<ChatExample messages={[
+  { persona: 'user', usernameOverride: 'Viewer123', message: '!stream' },
+  { persona: 'bot', message: "The stream has been live for 2 days 5 hours. We're currently playing Fortnite for 1234 viewers!" },
+]} />
 
 Variables used:
 
@@ -102,17 +100,15 @@ This command checks the weather for a location specified by the viewer.
 !cmd add !weather $(sender), weather in: $(weather ${1:})
 ```
 
-**Output:**
-
-```
-Viewer123: !weather Tokyo
-Bot: Viewer123, weather in: Tokyo, Japan: 🌜 17.7 °C (63.9 °F). Feels like 17.7 °C (63.9 °F). Patchy rain nearby. Wind is blowing from the South at 9.7 km/h (6.0 mp/h). 89% humidity. Visibility: 10 km (6 miles). Air pressure: 1008 hPa.
-```
+<ChatExample messages={[
+  { persona: 'user', usernameOverride: 'Viewer123', message: '!weather Tokyo' },
+  { persona: 'bot', message: 'Viewer123, weather in: Tokyo, Japan: 🌜 17.7 °C (63.9 °F). Feels like 17.7 °C (63.9 °F). Patchy rain nearby. Wind is blowing from the South at 9.7 km/h (6.0 mp/h). 89% humidity. Visibility: 10 km (6 miles). Air pressure: 1008 hPa.' },
+]} />
 
 Variables used:
 
 - [$(sender)](/chatbot/variables/sender) - The viewer who triggered the command
-- [${1:}](/chatbot/variables/args) - The arguments passed to the command, here the location to look up
+- [$\{1:\}](/chatbot/variables/args) - The arguments passed to the command, here the location to look up
 - [$(weather)](/chatbot/variables/weather) - The current weather in a specified location
 
 ### Shoutout Command
@@ -123,14 +119,12 @@ This command sends a simple shoutout to a specified user.
 !cmd add !shoutout Check out ${1}, they are playing $(game ${1}) at https://twitch.tv/${1}
 ```
 
-**Output:**
-
-```
-Viewer123: !shoutout Styler
-Bot: Check out Styler, they are playing Counter-Strike at https://twitch.tv/Styler
-```
+<ChatExample messages={[
+  { persona: 'user', usernameOverride: 'Viewer123', message: '!shoutout Styler' },
+  { persona: 'bot', message: 'Check out Styler, they are playing Counter-Strike at https://twitch.tv/Styler' },
+]} />
 
 Variables used:
 
-- [${1}](/chatbot/variables/args) - The first argument passed to the command, here the name of the user to shout out
+- [$\{1\}](/chatbot/variables/args) - The first argument passed to the command, here the name of the user to shout out
 - [$(game)](/chatbot/variables/game) - The game the user is currently playing

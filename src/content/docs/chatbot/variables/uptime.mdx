@@ -1,6 +1,8 @@
 ---
 title: "$(uptime)"
 description: "Display how long a stream has been live with the $(uptime) variable in StreamElements Chatbot."
+category: stream-info
+summary: "Display stream uptime for any channel."
 syntax: "$(uptime [username])"
 arguments: optional
 keywords:
@@ -45,10 +47,10 @@ Check uptime for a specific streamer:
 !command add !shroud shroud has been live for $(uptime shroud)
 ```
 
-Output:
-```
-shroud has been live for 3 hours 45 mins
-```
+<ChatExample messages={[
+  { persona: 'user', message: '!shroud' },
+  { persona: 'bot', message: 'shroud has been live for 3 hours 45 mins' }
+]} />
 
 ## Parameters
 

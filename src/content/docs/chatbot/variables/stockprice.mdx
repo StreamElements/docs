@@ -1,6 +1,8 @@
 ---
 title: "$(stockprice)"
 description: "Display the current stock price of a company in chat with the $(stockprice) variable in StreamElements Chatbot."
+category: utility-web
+summary: "Display real-time stock prices."
 syntax: "$(stockprice <symbol>)"
 arguments: required
 keywords:
@@ -43,7 +45,9 @@ Comparing two tech stocks:
 Current prices: Microsoft $(stockprice MSFT) vs Google $(stockprice GOOGL)
 ```
 
-Output: `Current prices: Microsoft 285.76 vs Google 2232.88`
+<ChatExample messages={[
+  { persona: 'bot', message: 'Current prices: Microsoft 285.76 vs Google 2232.88' },
+]} />
 
 ## Parameters
 

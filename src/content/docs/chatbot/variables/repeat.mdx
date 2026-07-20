@@ -1,6 +1,8 @@
 ---
 title: "$(repeat)"
 description: "Repeat a phrase a specified number of times with the $(repeat) variable in StreamElements Chatbot messages."
+category: utility-web
+summary: "Repeat a phrase a specified number of times."
 syntax: "$(repeat <count> <phrase>)"
 arguments: required
 keywords:
@@ -45,10 +47,9 @@ You can combine `$(repeat)` with other variables:
 $(repeat 2 "$(user) is awesome!")
 ```
 
-If triggered by user "StreamerPro", the output would be:
-```
-StreamerPro is awesome! StreamerPro is awesome!
-```
+<ChatExample messages={[
+  { persona: 'bot', message: 'StreamerPro is awesome! StreamerPro is awesome!' },
+]} />
 
 ## Parameters
 

@@ -10,6 +10,9 @@ keywords:
   - regex moderation
   - StreamElements chatbot
 platforms: [twitch, youtube, kick]
+access: super-moderator
+summary: "Timeout, ban, or delete recent messages matching text or regex."
+category: moderation
 ---
 
 import ChatExample from '@components/ChatExample.astro';
@@ -18,10 +21,6 @@ The `!nuke` command is a powerful moderation tool allowing moderators to perform
 
 :::caution
 This is a powerful command. Use it with caution, especially with broad match strings or regex.
-:::
-
-:::caution[Permissions]
-By default, only users with **Super Moderator** permission level or higher can use this command.
 :::
 
 ## Usage

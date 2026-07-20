@@ -2,6 +2,10 @@
 title: "!deny"
 description: "Use the !deny command in StreamElements chatbot to reject incoming duel requests initiated with the !duel command."
 platforms: [twitch]
+access: everyone
+summary: "Reject an incoming duel request."
+requires: Duel module
+category: games-betting
 keywords:
   - deny command
   - reject duel
@@ -56,10 +60,6 @@ To reject a pending incoming duel request, type the command in chat:
   { persona: 'user', message: '!deny' },
   { persona: 'bot', message: '@UserName, You do not have any pending incoming duel requests to deny.' }
 ]} />
-
-## Configuration
-
-The `!deny` command is part of the **Duel module**. This module must be enabled in your StreamElements chatbot settings under `Chatbot` -> `Modules` for the command to function.
 
 ## Related Commands
 

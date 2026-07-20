@@ -10,6 +10,12 @@ keywords:
   - chatbot commands
   - streamelements chatbot
 platforms: [twitch]
+access: everyone
+summary: "Redeem loyalty store items using points."
+requires: Loyalty Store
+category: store
+aliases:
+  - "!buy"
 ---
 
 import ChatExample from '@components/ChatExample.astro';
@@ -50,7 +56,7 @@ To redeem an item:
 
 ## Configuration
 
-*   Requires the **Stream Store** and **Loyalty System** to be active and configured (`Chatbot` -> `Modules` and `Loyalty` -> `Loyalty Settings` / `Stream Store`).
+*   Configure the **Stream Store** and **Loyalty System** under `Chatbot` -> `Modules` and `Loyalty` -> `Loyalty Settings` / `Stream Store`.
 *   Items must be created in the Stream Store with names, costs, cooldowns, etc.
 *   Items must be enabled to be redeemable.
 

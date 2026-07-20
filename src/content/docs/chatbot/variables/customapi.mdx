@@ -1,6 +1,8 @@
 ---
 title: "$(customapi)"
 description: "Make GET requests to external APIs and display the response in chat with the $(customapi) variable in StreamElements Chatbot."
+category: utility-web
+summary: "Make an API request and display the response in chat. Also available as $(urlfetch)."
 keywords:
   - StreamElements
   - chatbot
@@ -58,10 +60,9 @@ The legacy dot form is also supported: `$(customapi.https://example.com/data)` w
 $(customapi https://official-joke-api.appspot.com/random_joke)
 ```
 
-Output:
-```json
-{"id":323,"type":"general","setup":"Why did the cookie cry?","punchline":"Because his father was a wafer so long!"}
-```
+<ChatExample messages={[
+  { persona: 'bot', message: '{"id":323,"type":"general","setup":"Why did the cookie cry?","punchline":"Because his father was a wafer so long!"}' },
+]} />
 
 ### Passing user input safely
 

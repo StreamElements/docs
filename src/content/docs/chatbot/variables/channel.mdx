@@ -1,6 +1,8 @@
 ---
 title: "$(channel)"
 description: "Reference for the StreamElements Chatbot $(channel) variables: channel name, viewers, followers, subscribers, game, title, and uptime."
+category: stream-info
+summary: "Channel information such as name, viewer count, followers, and subscribers."
 keywords:
   - streamelements
   - chatbot
@@ -67,27 +69,27 @@ The standalone [`$(game)`](/chatbot/variables/game), [`$(title)`](/chatbot/varia
 
 ## Examples
 
-1. A stream status command combining provider, game, and title:
+**A stream status command combining provider, game, and title**
 
-   ```streamelements
-   !cmd add !status We're live on $(channel.provider) playing $(channel.game) — $(channel.title)
-   ```
+```streamelements
+!cmd add !status We're live on $(channel.provider) playing $(channel.game) — $(channel.title)
+```
 
-   Output:
-   ```
-   We're live on twitch playing Super Mario 64 — Speedrunning Mario 64 - Day 3!
-   ```
+<ChatExample messages={[
+  { persona: 'user', message: '!status' },
+  { persona: 'bot', message: "We're live on twitch playing Super Mario 64 — Speedrunning Mario 64 - Day 3!" },
+]} />
 
-2. A live stats command combining uptime, viewers, and chatters:
+**A live stats command combining uptime, viewers, and chatters**
 
-   ```streamelements
-   !cmd add !live We've been live for $(channel.uptime) with $(channel.viewers) viewers and $(channel.chatters) active chatters!
-   ```
+```streamelements
+!cmd add !live We've been live for $(channel.uptime) with $(channel.viewers) viewers and $(channel.chatters) active chatters!
+```
 
-   Output:
-   ```
-   We've been live for 3 hours 27 mins with 1337 viewers and 850 active chatters!
-   ```
+<ChatExample messages={[
+  { persona: 'user', message: '!live' },
+  { persona: 'bot', message: "We've been live for 3 hours 27 mins with 1337 viewers and 850 active chatters!" },
+]} />
 
 ## Related Variables
 

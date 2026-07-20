@@ -10,6 +10,10 @@ keywords:
   - currently playing
   - music
 platforms: [twitch]
+access: everyone
+summary: "Show the currently playing song."
+requires: Song Requests
+category: song-requests
 ---
 
 import ChatExample from '@components/ChatExample.astro';
@@ -38,7 +42,6 @@ To use the `!song` command, simply type it in the chat:
 
 ## Configuration
 
-*   This command requires the **Media Request** module to be enabled and configured in your StreamElements Dashboard (`Chatbot` -> `Modules`).
 *   The information displayed depends on the media source (e.g., YouTube, Spotify) and the data available for the requested track.
 *   Default cooldown: 15 seconds global.
 
