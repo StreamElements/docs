@@ -1,4 +1,0 @@
-User-agent: *
-Disallow: 
-
-Sitemap: https://docs.streamelements.com/sitemap.xml

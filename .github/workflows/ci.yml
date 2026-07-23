@@ -1,0 +1,26 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [master]
+
+permissions:
+  contents: read
+
+jobs:
+  # The build is the test suite: it validates content schemas, internal links
+  # (starlight-links-validator), changelog slug collisions, and emits
+  # dist/_redirects for Cloudflare. Deployment is handled separately by
+  # Cloudflare Workers Builds on push (see README).
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm build

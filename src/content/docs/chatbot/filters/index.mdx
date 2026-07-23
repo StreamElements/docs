@@ -1,0 +1,82 @@
+---
+title: Spam Filters
+sidebar:
+  label: Overview
+  order: 0
+description: "StreamElements Chatbot spam filters automatically moderate unwanted chat messages: banned words, caps, emotes, links, spam, and more."
+keywords:
+- chatbot spam filters
+- twitch chat moderation
+- stream security
+- message filtering
+- banned words list
+---
+
+import { CardGrid, LinkCard, Steps } from '@astrojs/starlight/components';
+
+Spam filters automatically moderate chat messages so you don't have to catch everything yourself. Each filter targets one kind of unwanted message — caps, links, banned words, spam — and takes a configurable action when a message matches.
+
+## Usage
+
+To use spam filters, you need to enable and configure them in your StreamElements dashboard. Once set up, the filters will automatically scan incoming messages and take action based on your settings.
+
+## Configuration
+
+Filters live in the dashboard under **Chatbot → Spam filters**. The quickest way to start is the protection-level slider at the top of the page — **Filters off**, **Minimum**, **Medium**, or **Maximum** — which applies a preset configuration across the filters. From there, expand any individual filter to toggle it and fine-tune its settings.
+
+<Steps>
+
+1. In the dashboard, go to **Chatbot → Spam filters**
+2. Pick a protection level as your starting point
+3. Expand a filter to adjust its penalty, thresholds, announcements, and probation
+4. Toggle the filter on
+
+</Steps>
+
+## Settings shared by all filters
+
+In addition to its own thresholds, every filter supports these common settings:
+
+| Setting | Description |
+|---------|-------------|
+| Enabled | Turns the filter on or off. |
+| Penalty | The action taken when the filter is triggered: **Timeout user**, **Ban user**, **Delete message**, or **Warn and delete message** — see [What happens on a violation](#what-happens-on-a-violation). |
+| Duration | How long (in seconds) a user is timed out for, when the penalty is a timeout. |
+| Exclude user group | Users in the selected group or above — Regulars, Subscribers, or VIPs — are immune to the filter. Choose "No One" to apply it to everyone. |
+| Custom message | A custom violation message. It doubles as the moderation reason attached to the timeout or ban, and as the announcement text. |
+| Announcement settings | When enabled, the bot also sends a public warning in chat — `@username, <your custom message>` — when the filter is triggered. Each filter has its own announcement cooldown (in seconds) so chat isn't flooded with repeated announcements. |
+| Probation settings | Escalates punishments for repeat offenders: when a user violates the same filter again within the probation window, the timeout becomes the base timeout × the configured multiplier × the user's number of violations. Probation only escalates timeouts — it never applies to deletions, bans, or warnings. |
+
+The moderation reason sent to the platform is your custom message with " - automated by StreamElements" appended; the chat announcement uses the message as-is.
+
+Filters never apply to the channel owner or to platform staff. Moderators can also use the [!permit](/chatbot/commands/default/permit) command to give a user a 30-second pass that bypasses all filters.
+
+## What happens on a violation
+
+The **Penalty** setting controls what the bot does when a message violates a filter:
+
+- **Timeout user** — time the user out for the configured Duration and remove the message.
+- **Delete message** — remove the message without timing the user out.
+- **Ban user** — permanently ban the user.
+- **Warn and delete message** — issue a Twitch Warning and delete the message.
+
+:::note
+Warnings are a Twitch feature. On other platforms the warn action is unavailable, so pick a timeout, deletion, or ban instead.
+:::
+
+When one message violates several filters at once, only the harshest action is taken: a ban outranks a timeout, a timeout outranks a warning, and a warning outranks a plain deletion. If two filters both call for a timeout, the longer one wins.
+
+## Available Filters
+
+<CardGrid>
+  <LinkCard title="Banned Words" href="/chatbot/filters/bannedwords" description="Remove messages containing banned phrases and regular expression patterns." />
+  <LinkCard title="Caps" href="/chatbot/filters/caps" description="Limit excessive use of capital letters in chat messages." />
+  <LinkCard title="Emotes" href="/chatbot/filters/emotes" description="Limit the number of emotes allowed in a single message." />
+  <LinkCard title="Language" href="/chatbot/filters/language" description="Remove messages written in languages you haven't allowed." />
+  <LinkCard title="Links" href="/chatbot/filters/links" description="Control link posting in chat with allowlists and blocklists." />
+  <LinkCard title="One-Man Spam" href="/chatbot/filters/one-man-spam" description="Stop a single user from flooding chat with repeated messages." />
+  <LinkCard title="Paragraph" href="/chatbot/filters/paragraph" description="Limit the maximum length of chat messages." />
+  <LinkCard title="Repetition" href="/chatbot/filters/repetition" description="Limit excessive repetition of characters and sequences." />
+  <LinkCard title="Symbol" href="/chatbot/filters/symbol" description="Limit the number and percentage of symbols in chat messages." />
+  <LinkCard title="Zalgo" href="/chatbot/filters/zalgo" description="Remove zalgo and other combining-character text." />
+</CardGrid>

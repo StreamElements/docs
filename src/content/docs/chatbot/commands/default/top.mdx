@@ -1,0 +1,69 @@
+---
+title: "!top"
+description: "Use the !top command in StreamElements chatbot to display the top users based on loyalty points or watch time directly in chat."
+keywords:
+  - top
+  - StreamElements
+  - chatbot
+  - commands
+  - loyalty
+  - leaderboard
+  - points
+  - watchtime
+platforms: [twitch]
+access: everyone
+summary: "Display the top users by loyalty points or watch time."
+requires: Loyalty
+category: points-loyalty
+---
+
+import ChatExample from '@components/ChatExample.astro';
+
+The `!top` command displays the top users in chat based on either loyalty points or watch time, depending on the parameter provided. It provides a quick glimpse of the leaderboard directly within the chat interface.
+
+## Usage
+
+To view a specific leaderboard:
+
+```streamelements
+!top [type]
+```
+
+If `[type]` is omitted, the points leaderboard is shown. The command displays the top 5 users for the chosen leaderboard.
+
+## Examples
+
+<ChatExample messages={[
+  { persona: 'user', message: '!top points' },
+  { persona: 'bot', message: 'Top 5 ChannelPoints: 1. UserA (15000), 2. UserB (12500), 3. UserC (11000), 4. UserD (9800), 5. UserE (9500)' } // Output format may vary
+]} />
+
+<ChatExample messages={[
+  { persona: 'user', message: '!top online' },
+  { persona: 'bot', message: 'Top 5 Online Watchtime: 1. UserC (50h 10m), 2. UserA (45h 30m), 3. UserE (42h 5m), 4. UserB (40h 15m), 5. UserF (38h 0m)' } // Output format may vary
+]} />
+
+<ChatExample messages={[
+  { persona: 'user', message: '!top' }, // Defaults to the points leaderboard
+  { persona: 'bot', message: 'Top 5 ChannelPoints: 1. UserA (15000), 2. UserB (12500), 3. UserC (11000), 4. UserD (9800), 5. UserE (9500)' } // Output format may vary
+]} />
+
+## Parameters
+
+*   `[type]` (Optional): The type of leaderboard to display. Valid options are:
+    *   `points` (default): Shows the top users based on loyalty points. Used when `[type]` is omitted.
+    *   `alltime`: Displays the leaderboard based on total watch time.
+    *   `online`: Shows the top users based on watch time while the stream was live.
+    *   `offline`: Displays the top users based on watch time while the stream was offline.
+
+## Configuration
+
+*   Enable the **Loyalty system** under `Loyalty` -> `Loyalty Settings`.
+*   The leaderboards displayed depend on the Loyalty module configuration (points tracking, watch time tracking enabled).
+*   The name of the points currency (e.g., "ChannelPoints") is set in Loyalty Settings.
+
+## Related Commands
+
+*   [`!points`](/chatbot/commands/default/points): Checks an individual user's points and rank.
+*   [`!watchtime`](/chatbot/commands/default/watchtime): Checks an individual user's watch time.
+*   [`!leaderboard`](/chatbot/commands/default/leaderboard): Provides a link to the full web-based leaderboard.

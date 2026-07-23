@@ -1,0 +1,65 @@
+---
+title: "!when"
+description: "Use the !when (!mysong) command in StreamElements chatbot to check the queue position and estimated play time of your song request."
+keywords:
+  - when
+  - song request status
+  - queue position
+  - media request
+  - StreamElements chatbot
+platforms: [twitch]
+access: everyone
+summary: "Check the queue position of your latest song request."
+requires: Song Requests
+category: song-requests
+aliases:
+  - "!mysong"
+---
+
+import ChatExample from '@components/ChatExample.astro';
+
+The `!when` command allows viewers to check the status of **their own song request** in the media request queue. It provides the song's position in the queue and an estimated time until it plays. You can also pass a YouTube URL or video ID to check where a specific song sits in the queue.
+
+## Usage
+
+To check the status of your own song request:
+
+```streamelements
+!when
+```
+
+To check the queue position of a specific song:
+
+```streamelements
+!when <youtube_url_or_id>
+```
+
+## Examples
+
+<ChatExample messages={[
+  { persona: 'user', message: '!when' },
+  { persona: 'bot', message: '@User, "The Best Song Ever" is at #4 in the queue and is playing in 12 mins' } // Output varies
+]} />
+
+<ChatExample messages={[
+  { persona: 'user', message: '!when' },
+  { persona: 'bot', message: '@User, "Currently Playing" is at #1 in the queue and is playing right now' } // Output varies
+]} />
+
+<ChatExample messages={[
+  { persona: 'user', message: '!when' },
+  { persona: 'bot', message: '@User, you do not have a song in the queue.' } // Output varies
+]} />
+
+## Configuration
+
+*   Without an argument, the command checks the queue for a request made by the user issuing the command. With a YouTube URL or video ID, it looks up that song's position instead.
+*   Default cooldown: 15 seconds global.
+
+## Related Commands
+
+*   [`!songrequest`](/chatbot/commands/default/songrequest): Used to request a song.
+*   [`!wrongsong`](/chatbot/commands/default/wrongsong): Removes your last song request.
+*   [`!songqueue`](/chatbot/commands/default/songqueue): Provides a link to the full queue.
+*   [`!song`](/chatbot/commands/default/song): Shows the currently playing song.
+*   [`!next`](/chatbot/commands/default/next): Shows the next song in the queue.

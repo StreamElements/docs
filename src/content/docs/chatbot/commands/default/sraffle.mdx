@@ -1,0 +1,62 @@
+---
+title: "!sraffle"
+description: "Use the !sraffle command in StreamElements chatbot to start a single-winner raffle that awards the full points prize to one viewer. Viewers enter using !join."
+keywords:
+  - sraffle command
+  - chat raffle
+  - single entry raffle
+  - chat game
+  - streamelements chatbot
+platforms: [twitch]
+access: moderator
+summary: "Start a single-winner raffle; viewers enter with !join."
+requires: Raffle module
+category: giveaways-raffles
+aliases:
+  - "!singleraffle"
+---
+
+import ChatExample from '@components/ChatExample.astro';
+
+The `!sraffle` command allows streamers and moderators to start a **single-winner raffle**. The command randomly selects **one winner** from all the viewers who entered using the [`!join`](/chatbot/commands/default/join) command (entry is free, one entry per viewer), and that winner receives the **full points prize**. For a raffle with multiple winners that split the prize, use [`!raffle`](/chatbot/commands/default/raffle) instead.
+
+
+## Usage
+
+To start a single-winner raffle:
+
+```streamelements
+!sraffle [win_points] [duration_seconds]
+```
+
+## Examples
+
+**Start a raffle awarding 10 points, lasting 10 seconds:**
+<ChatExample messages={[
+  { persona: 'moderator', message: '!sraffle 10 10' },
+  { persona: 'bot', message: 'a Raffle has begun for 10 points PogChamp it will end in 10 Seconds. Enter by typing "!join" OpieOP' }
+]} />
+
+**Start a raffle using the default prize (1000 points) and the default duration from the module settings:**
+<ChatExample messages={[
+  { persona: 'moderator', message: '!sraffle' },
+  { persona: 'bot', message: 'a Raffle has begun for 1000 points PogChamp it will end in 60 Seconds. Enter by typing "!join" OpieOP' }
+]} />
+
+## Parameters
+
+*   `[win_points]` (Optional): The amount of loyalty points awarded to the winner. Defaults to `1000` if not specified. The amount is capped at the maximum configured in the Raffle module settings. Requires the Loyalty module to be active.
+*   `[duration_seconds]` (Optional): How long the raffle entry period lasts (in **seconds**). If not specified, the default duration from the Raffle module settings on the Dashboard is used. The minimum duration is 5 seconds.
+
+## Configuration
+
+*   Requires the **Raffle module** to be active (`Chatbot` -> `Modules`).
+*   The command's permission level can be adjusted under `Chatbot` -> `Chat Commands` -> `Default Commands`.
+*   Other settings like the default duration (in seconds), the maximum points amount, and the raffle messages can be configured in the Raffle module settings on the Dashboard. The entry command is fixed to `!join`.
+
+## Related Commands
+
+*   [`!join`](/chatbot/commands/default/join): The command viewers use to enter an active `!sraffle`.
+*   [`!raffle`](/chatbot/commands/default/raffle): (Moderator+) Starts a multi-winner raffle where the points prize is split between the winners.
+*   [`!cancelraffle`](/chatbot/commands/default/cancelraffle): (Moderator+) Cancels the currently active raffle (`!raffle` or `!sraffle`).
+*   [`!giveaway`](/chatbot/commands/default/giveaway): Checks the status of the main channel giveaway.

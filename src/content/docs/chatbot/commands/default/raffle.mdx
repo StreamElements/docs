@@ -1,0 +1,59 @@
+---
+title: "!raffle"
+description: "Use the !raffle command in StreamElements chatbot to start a raffle with multiple winners that splits a points pot among them."
+platforms: [twitch]
+access: moderator
+summary: "Start a multi-winner raffle that splits the pot; viewers enter with !join."
+requires: Raffle module
+category: giveaways-raffles
+aliases:
+  - "!mraffle"
+  - "!multiraffle"
+keywords:
+- raffle
+- chat game
+- viewer engagement
+- multiple winners
+- StreamElements command
+---
+
+import ChatExample from '@components/ChatExample.astro';
+
+The `!raffle` command allows streamers and moderators to create interactive raffles with multiple winners. This feature engages viewers by giving them a chance to win prizes or recognition during the stream.
+
+## Usage
+
+```streamelements
+!raffle [amount] [duration]
+```
+* `[amount]`: Optional. The total reward (pot) for the raffle, distributed among winners. Defaults to 5000 points when omitted.
+* `[duration]`: Optional. The duration of the raffle in whole seconds. Defaults to the Duration configured in the module settings. Because the arguments are positional, you can only set a duration if you also give an amount.
+
+## Examples
+
+**Start a raffle with a 100 point reward lasting 60 seconds:**
+<ChatExample messages={[
+  { persona: 'moderator', message: '!raffle 100 60' },
+  { persona: 'bot', message: 'The Multi-Raffle for 100 points will end in 60 Seconds. Enter by typing "!join"' }
+]} />
+
+**Create a longer raffle with a larger reward:**
+<ChatExample messages={[
+  { persona: 'moderator', message: '!raffle 500 180' },
+  { persona: 'bot', message: 'The Multi-Raffle for 500 points will end in 180 Seconds. Enter by typing "!join"' }
+]} />
+
+
+## Parameters
+
+- `[amount]` (optional): The total reward (pot) for the raffle, which will be distributed among the winners. Accepts plain numbers and the `k` (thousands) / `m` (millions) suffixes — `5k` starts a 5000-point raffle. Percentages and `all` don't work here. Defaults to 5000 when omitted, and is capped by the module's Max Amount setting (and an absolute 1,000,000-point cap).
+- `[duration]` (optional): The duration of the raffle in whole seconds (minimum 5). Defaults to the module's Duration setting when omitted.
+
+## Configuration
+
+The default duration and the maximum pot are configured in the raffle module settings in the StreamElements dashboard. The number of winners is not configurable — it scales automatically with the number of entrants (see the [Raffle module](/chatbot/modules/raffle) for the exact brackets).
+
+## Related Commands
+
+- [`!join`](/chatbot/commands/default/join): Used by viewers to enter an active raffle.
+- [`!cancelraffle`](/chatbot/commands/default/cancelraffle): Allows moderators to cancel an ongoing raffle.

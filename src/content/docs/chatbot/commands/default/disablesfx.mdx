@@ -1,0 +1,50 @@
+---
+title: "!disablesfx"
+description: "Use the !disablesfx command in StreamElements chatbot to quickly disable all sound effect (SFX) items in your loyalty store."
+platforms: [twitch]
+access: moderator
+summary: "Disable all sound effect (SFX) items in the loyalty store."
+requires: Loyalty Store
+category: store
+aliases:
+  - "!closesfx"
+keywords:
+  - disablesfx command
+  - disable sound effects
+  - sfx
+  - loyalty store
+  - stream store
+  - streamelements chatbot
+  - store management
+---
+
+import ChatExample from '@components/ChatExample.astro';
+
+The `!disablesfx` command allows streamers and moderators to quickly disable all **sound effect** (SFX) items in the StreamElements loyalty store. This is useful for temporarily preventing viewers from redeeming SFX during specific stream segments or when managing audio.
+
+## Usage
+
+To disable all SFX store items, use the following command in chat:
+
+```streamelements
+!disablesfx
+```
+
+## Examples
+
+<ChatExample messages={[
+  { persona: 'moderator', message: '!disablesfx' },
+  { persona: 'bot', message: '@Moderator, successfully updated 5 items.' }
+]} />
+
+## Configuration
+
+*   Manage your store's SFX items in your **StreamElements Dashboard** under `Loyalty` -> `Stream Store`.
+*   The command's permission level can be adjusted under `Chatbot` -> `Chat Commands` -> `Default Commands`.
+
+## Related Commands
+
+*   [`!enablesfx`](/chatbot/commands/default/enablesfx): Re-enables all sound effect (SFX) items in the loyalty store.
+*   [`!closestore`](/chatbot/commands/default/closestore): Disables all *regular* (non-SFX) items in the loyalty store.
+*   [`!openstore`](/chatbot/commands/default/openstore): Enables all *regular* (non-SFX) items in the loyalty store.
+*   [`!redeem`](/chatbot/commands/default/redeem): Allows viewers to redeem store items.

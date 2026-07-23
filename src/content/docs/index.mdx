@@ -1,0 +1,62 @@
+---
+title: StreamElements Documentation
+description: The official documentation for StreamElements — chatbot, overlays, realtime websockets, and the developer API.
+# The default <title> would double the brand ("StreamElements Documentation | StreamElements Docs").
+head:
+  - tag: title
+    content: StreamElements Documentation
+template: splash
+editUrl: false
+lastUpdated: false
+hero:
+  tagline: Everything you need to set up, customize, and build on StreamElements.
+  actions:
+    - text: Get started with the Chatbot
+      link: /chatbot
+      icon: right-arrow
+    - text: Build a custom widget
+      link: /overlays/first-custom-widget
+      icon: puzzle
+      variant: secondary
+    - text: What's new
+      link: /changelog
+      icon: rocket
+      variant: minimal
+---
+
+import { CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+## Explore the docs
+
+<CardGrid>
+  <LinkCard
+    title="Chatbot"
+    href="/chatbot"
+    description="Commands, variables, timers, spam filters, and interactive modules for your chat."
+  />
+  <LinkCard
+    title="Overlays"
+    href="/overlays"
+    description="Build stream overlays — from your first AlertBox to fully custom-coded widgets."
+  />
+  <LinkCard
+    title="WebSockets"
+    href="/websockets"
+    description="Subscribe to realtime events — tips, activities, chat, and overlay control — over the Astro protocol."
+  />
+  <LinkCard
+    title="API Reference"
+    href="https://dev.streamelements.com/"
+    description="The StreamElements HTTP API for building your own integrations."
+  />
+  <LinkCard
+    title="Changelog"
+    href="/changelog"
+    description="New updates and improvements at StreamElements, with RSS feeds per product."
+  />
+  <LinkCard
+    title="Discord Community"
+    href="https://discord.gg/se"
+    description="Get help from the community and the StreamElements team."
+  />
+</CardGrid>

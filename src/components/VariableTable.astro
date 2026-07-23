@@ -1,0 +1,44 @@
+---
+/**
+ * Renders the variable table for one category, generated from page frontmatter
+ * (see content.config.ts: category / summary). Used by the Variables overview
+ * so the table can't drift from the pages.
+ */
+import { getCollection } from 'astro:content';
+
+interface Props {
+  category: string;
+}
+
+const { category } = Astro.props;
+
+const variables = (
+  await getCollection(
+    'docs',
+    (e) => e.id.startsWith('chatbot/variables/') && e.data.category === category,
+  )
+).sort((a, b) => a.data.title.localeCompare(b.data.title, 'en'));
+---
+
+<table>
+  <thead>
+    <tr>
+      <th>Variable</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    {
+      variables.map((v) => (
+        <tr>
+          <td>
+            <a href={`/${v.id}`}>
+              <code>{v.data.title}</code>
+            </a>
+          </td>
+          <td>{v.data.summary ?? v.data.description}</td>
+        </tr>
+      ))
+    }
+  </tbody>
+</table>

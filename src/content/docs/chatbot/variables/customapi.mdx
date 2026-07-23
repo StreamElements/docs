@@ -1,0 +1,106 @@
+---
+title: "$(customapi)"
+description: "Make GET requests to external APIs and display the response in chat with the $(customapi) variable in StreamElements Chatbot."
+category: utility-web
+summary: "Make an API request and display the response in chat. Also available as $(urlfetch)."
+keywords:
+  - StreamElements
+  - chatbot
+  - customapi
+  - API request
+  - variable
+  - urlfetch
+syntax: "$(customapi <url>)"
+arguments: required
+---
+
+import ChatExample from '@components/ChatExample.astro';
+
+The `$(customapi)` variable makes an HTTP request to an external API and displays the response directly in chat. Use it to pull real-time data — game stats, third-party services, or your own endpoints — into commands.
+
+## Use it
+
+```streamelements
+!command add !latestvideo Check out our latest video: $(customapi https://decapi.me/youtube/latest_video?id=UCjerlCIbLPQwSnYlClkjDXg)
+```
+
+<ChatExample messages={[
+  { persona: 'user', message: '!latestvideo' },
+  { persona: 'bot', message: 'Check out our latest video: STREAMELEMENTS PATCH NOTES - SEPTEMBER 10, 2023 #streamelements #updates #patchnotes - https://youtu.be/-q_q37PoaM8' },
+]} />
+
+## Usage
+
+To use the `$(customapi)` variable, include it in your chat message or command response followed by the URL you want to request:
+
+```streamelements
+$(customapi <url>)
+```
+
+Replace `<url>` with the actual API endpoint you want to call. If the URL doesn't start with `http://` or `https://`, `http://` is automatically prepended.
+
+:::note
+The legacy dot form is also supported: `$(customapi.https://example.com/data)` works the same as `$(customapi https://example.com/data)`. The same applies to `$(urlfetch.<url>)`.
+:::
+
+## How requests work
+
+- Requests are GET only and are routed through a StreamElements proxy with a **15-second timeout** — your API is never called directly from the bot.
+- You cannot set custom request headers.
+- Responses are truncated to the **first 400 bytes**; anything longer is silently cut off.
+- Query parameters are percent-encoded and re-sorted alphabetically before the request is made.
+- The URL must be a single token without spaces — all inputs are concatenated with no separator, so spaces are dropped. To insert dynamic values like user input into a URL, encode them first with [`$(queryescape)`](/chatbot/variables/queryescape).
+- There is no caching: every evaluation makes a fresh request.
+
+## Examples
+
+### Getting a random joke
+
+```streamelements
+$(customapi https://official-joke-api.appspot.com/random_joke)
+```
+
+<ChatExample messages={[
+  { persona: 'bot', message: '{"id":323,"type":"general","setup":"Why did the cookie cry?","punchline":"Because his father was a wafer so long!"}' },
+]} />
+
+### Passing user input safely
+
+```streamelements
+!command add !define $(customapi https://api.example.com/define?word=$(queryescape $(1)))
+```
+
+## Parameters
+
+The `$(customapi)` variable itself doesn't accept parameters. However, you can include query parameters in the URL if the API requires them. For example:
+
+```streamelements
+$(customapi https://api.example.com/data?param1=value1&param2=value2)
+```
+
+## Aliases
+
+- `$(urlfetch)`: Identical to `$(customapi)` in every way — both names run the exact same code.
+
+## Errors
+
+| Bot reply | Cause |
+|-----------|-------|
+| `invalid url <url>` | The URL could not be parsed |
+| `Could not connect to remote server` | The request failed (e.g. timeout, DNS failure) |
+| `The remote server returned status code <status>` | The server responded with status 400 or higher, e.g. `The remote server returned status code 404 Not Found` |
+| `The remote server did not send any data` | The response body could not be read |
+
+## FAQ
+
+**Q: Can I use `$(customapi)` to make POST requests?**
+
+A: No, `$(customapi)` only supports GET requests.
+
+**Q: What happens if the API returns an error status?**
+
+A: Any response with status code 400 or higher renders `The remote server returned status code <status>` in chat. Any status below 400 (including all 2xx and 3xx statuses) returns the response body as-is.
+
+**Q: How can I handle JSON responses?**
+
+A: `$(customapi)` returns the raw response. To parse JSON, you may need to use additional tools or custom integrations.

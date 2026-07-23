@@ -1,0 +1,14 @@
+---
+import type { GetStaticPaths } from 'astro';
+import { getChangelog, PAGE_SIZE } from '../../data/changelog';
+import ChangelogFeedPage from '../../components/changelog/ChangelogFeedPage.astro';
+
+export const getStaticPaths = (async ({ paginate }) => {
+  const entries = await getChangelog();
+  return paginate(entries, { pageSize: PAGE_SIZE });
+}) satisfies GetStaticPaths;
+
+const { page } = Astro.props;
+---
+
+<ChangelogFeedPage page={page} baseUrl="/changelog" />

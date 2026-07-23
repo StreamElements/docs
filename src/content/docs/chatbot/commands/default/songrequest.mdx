@@ -1,0 +1,84 @@
+---
+title: "!songrequest"
+description: "Use the !songrequest (!sr) command in StreamElements chatbot to allow viewers to add YouTube songs/videos to the media request queue."
+keywords:
+  - songrequest
+  - song request
+  - sr command
+  - mediarequest
+  - chatbot commands
+  - StreamElements
+  - music streaming
+  - YouTube integration
+platforms: [twitch]
+access: everyone
+summary: "Add YouTube songs or videos to the media request queue."
+requires: Song Requests
+category: song-requests
+aliases:
+  - "!sr"
+---
+
+import ChatExample from '@components/ChatExample.astro';
+
+The `!songrequest` command (aliased as `!sr`) allows viewers to add songs or videos to the streamer's media request queue. This command primarily integrates with YouTube, enabling users to request media using search terms or direct URLs.
+
+## Usage
+
+To request media:
+
+```streamelements
+!songrequest <search_term_or_url>
+```
+
+Or using the alias:
+
+```streamelements
+!sr <search_term_or_url>
+```
+
+## Examples
+
+<ChatExample messages={[
+  { persona: 'user', message: '!songrequest epic sax guy' },
+  { persona: 'bot', message: '@User, added Epic Sax Guy - "Epic Sax Guy 10 Hours" to the queue at #2 (playing ~in 3 mins 5 secs) https://youtu.be/kxopViU98Xo' } // Output varies; the name before the title is the YouTube channel
+]} />
+
+<ChatExample messages={[
+  { persona: 'user', message: '!sr https://www.youtube.com/watch?v=dQw4w9WgXcQ' },
+  { persona: 'bot', message: '@User, added Rick Astley - "Never Gonna Give You Up" to the queue at #3 (playing ~in 7 mins 15 secs) https://youtu.be/dQw4w9WgXcQ' } // Output varies
+]} />
+
+## Parameters
+
+*   `<search_term_or_url>` (Required): The media to request. This can be:
+    *   A YouTube video URL.
+    *   A YouTube playlist URL (if enabled in settings).
+    *   A search term (the bot will typically pick the first result).
+
+## Configuration
+
+*   Streamers can configure various settings in the Media Request module:
+    *   Enable/disable the feature.
+    *   Link a Spotify account (optional, for different functionality).
+    *   Set request limits (per user, per stream).
+    *   Set a **minimum user level** required to request songs.
+    *   Set maximum song/video duration.
+    *   Enable/disable playlist requests.
+    *   Set up a song blacklist (by keyword or specific URL).
+*   Loyalty point costs:
+    *   A **per-song cost** can be set, charged in loyalty points each time a viewer requests a song.
+    *   A **subscriber discount** (percentage) reduces the cost for subscribers.
+    *   Users at or above the configured **exempt level** (Moderators and above by default) pay nothing and bypass request filters.
+*   If **moderation** is enabled, requests from non-exempt users are sent to a pending queue for approval instead of being added directly.
+*   Default cooldown: 15 seconds per user, 3 seconds global.
+
+## Related Commands
+
+*   [`!songqueue`](/chatbot/commands/default/songqueue): View the current media request queue.
+*   [`!song`](/chatbot/commands/default/song): Displays information about the currently playing song.
+*   [`!next`](/chatbot/commands/default/next): Displays information about the next song in the queue.
+*   [`!wrongsong`](/chatbot/commands/default/wrongsong): Allows users to remove their most recent song request.
+*   [`!skip`](/chatbot/commands/default/skip): (Moderator+) Skips the currently playing song.
+*   [`!volume`](/chatbot/commands/default/volume): Checks or adjusts the volume of the media player.
+*   [`!removesong`](/chatbot/commands/default/removesong): (Moderator+) Removes a specific song or all songs by a user.

@@ -1,0 +1,72 @@
+---
+title: "$(uptime)"
+description: "Display how long a stream has been live with the $(uptime) variable in StreamElements Chatbot."
+category: stream-info
+summary: "Display stream uptime for any channel."
+syntax: "$(uptime [username])"
+arguments: optional
+keywords:
+  - uptime
+  - stream duration
+  - StreamElements
+  - chatbot command
+---
+
+import ChatExample from '@components/ChatExample.astro';
+
+The `$(uptime)` variable displays how long a channel's current stream has been live.
+
+## Use it
+
+```streamelements
+!command add !uptime The stream has been live for $(uptime)
+```
+
+<ChatExample messages={[
+  { persona: 'user', message: '!uptime' },
+  { persona: 'bot', message: 'The stream has been live for 2 hours 15 mins' }
+]} />
+
+## Usage
+
+To use the `$(uptime)` variable, simply include it in a custom command or message. You can optionally specify a username to check the uptime for a particular streamer.
+
+```streamelements
+$(uptime [username])
+```
+
+## Output
+
+The duration is written out in full words: `secs`, `mins`, `hours`, `days` — for example `2 hours 15 mins` or `45 mins`. When the channel is offline, the variable outputs `<not live>` instead.
+
+## Examples
+
+Check uptime for a specific streamer:
+
+```streamelements
+!command add !shroud shroud has been live for $(uptime shroud)
+```
+
+<ChatExample messages={[
+  { persona: 'user', message: '!shroud' },
+  { persona: 'bot', message: 'shroud has been live for 3 hours 45 mins' }
+]} />
+
+## Parameters
+
+- `username` (optional): The name of the streamer whose uptime you want to check. If omitted, the variable will default to the current stream's uptime. Cross-channel lookups are supported on Twitch.
+
+## Related Variables
+
+- [`$(game)`](/chatbot/variables/game): Displays the current game being played on the stream
+- [`$(title)`](/chatbot/variables/title): Shows the current stream title
+
+## FAQ
+
+**Q: Will $(uptime) work for offline channels?**
+
+A: No, the `$(uptime)` variable only works for currently live streams. For offline channels, it outputs `<not live>`.
+
+**Q: Can I customize the uptime format?**
+
+A: The default format spells out the units, e.g. "2 hours 15 mins". While you can't directly change this format within the variable, you can create custom commands that parse and reformat the output as needed.

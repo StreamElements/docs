@@ -1,0 +1,97 @@
+---
+title: "$(pathescape)"
+description: "Escape strings for safe use in URL paths with the $(pathescape) variable in StreamElements Chatbot commands."
+category: utility-web
+summary: "Escape a string for use in a URL path. Also available as $(pathencode)."
+syntax: "$(pathescape <text>)"
+arguments: required
+keywords:
+  - StreamElements
+  - URL encoding
+  - path escape
+  - chatbot variable
+---
+
+import ChatExample from '@components/ChatExample.astro';
+
+The `$(pathescape)` variable is a utility function in the StreamElements Chatbot that escapes a string for safe use in a URL path. It converts spaces and special characters into their percent-encoded equivalents, ensuring that the resulting string can be used as part of a valid URL.
+
+## Use it
+
+```streamelements
+!command add !wiki Read all about it: https://en.wikipedia.org/wiki/$(pathescape ${1:})
+```
+
+<ChatExample messages={[
+  { persona: 'user', message: '!wiki rocket league' },
+  { persona: 'bot', message: 'Read all about it: https://en.wikipedia.org/wiki/rocket%20league' }
+]} />
+
+## Usage
+
+To use `$(pathescape)`, include it in your command or message with the string you want to escape as its parameter:
+
+```streamelements
+$(pathescape <text>)
+```
+
+Replace `<text>` with the text you want to encode for use in a URL path.
+
+:::note
+`$(pathescape)` only escapes the first value it is given, so multi-word text must arrive as a single piece: wrap it in quotes (`$(pathescape "two words")`) or nest an argument token like `${1:}`, as in the example above.
+:::
+
+## Examples
+
+### Basic Usage
+
+Input:
+```streamelements
+$(pathescape "Hello World!")
+```
+
+Output:
+```
+Hello%20World%21
+```
+
+### Using with $(customapi)
+
+Input:
+```streamelements
+$(customapi "https://api.example.com/$(pathescape 'User Input & Symbols?')")
+```
+
+Fetches:
+```
+https://api.example.com/User%20Input%20&%20Symbols%3F
+```
+
+Note that characters which are valid inside a URL path segment (such as `&`, `:`, and `=`) are left as-is — only characters that would break the path (spaces, `?`, `/`, and similar) are encoded.
+
+## Parameters
+
+The `$(pathescape)` variable accepts a single parameter:
+
+- **text**: The text you want to escape for use in a URL path. This parameter is required.
+
+If no text is provided, the variable is not replaced and appears as literal text in the response.
+
+## Aliases
+
+`$(pathencode)` can also be used as an alias for `$(pathescape)`.
+
+## Related Variables
+
+- [`$(queryescape)`](/chatbot/variables/queryescape): Escapes text for use in URL query parameters (encodes spaces as `+`).
+- [`$(customapi)`](/chatbot/variables/customapi): Fetches content from a URL, often combined with `$(pathescape)` for dynamic requests.
+
+## FAQ
+
+**Q: What characters does $(pathescape) encode?**
+
+A: It percent-encodes spaces (as `%20`) and any characters that are not safe inside a URL path segment, such as `?` and `/`. Characters that are valid in a path segment, like `&` and `:`, are left unchanged.
+
+**Q: What's the difference between $(pathescape) and $(queryescape)?**
+
+A: `$(pathescape)` is for the path portion of a URL and encodes spaces as `%20`. `$(queryescape)` is for query parameters (everything after `?`) and encodes spaces as `+`.

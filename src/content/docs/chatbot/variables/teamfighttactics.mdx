@@ -1,0 +1,96 @@
+---
+title: "$(teamfighttactics)"
+description: "Get a Teamfight Tactics player's rank and LP using StreamElements Chatbot. Supports Riot IDs and multiple regions."
+category: games
+summary: "Get a Teamfight Tactics player's rank and LP. Also available as $(tft)."
+syntax: "$(teamfighttactics <region> <name#tag>)"
+arguments: required
+keywords:
+  - streamelements tft rank command
+  - teamfighttactics command
+  - riot id rank lookup
+  - summoner rank checker
+---
+
+import ChatExample from '@components/ChatExample.astro';
+
+The `$(teamfighttactics)` variable - or `$(tft)` - allows you to retrieve and display the current rank and LP (League Points) of a specified Teamfight Tactics player using the StreamElements Chatbot.
+
+## Use it
+
+```streamelements
+!command add !tftrank My current TFT rank: $(tft euw Styler#EUW)
+```
+
+<ChatExample messages={[
+  { persona: 'user', message: '!tftrank' },
+  { persona: 'bot', message: 'My current TFT rank: Gold IV (32 LP)' }
+]} />
+
+## Usage
+
+To use this variable, you need to provide two parameters: the region and the player's Riot ID.
+
+```streamelements
+$(teamfighttactics <region> <Riot ID>)
+```
+
+## Examples
+
+```streamelements
+$(teamfighttactics euw Styler#EUW)
+$(teamfighttactics na Doublelift#NA1)
+```
+
+## Output
+
+The variable outputs the player's rank tier, division, and LP in the format:
+
+```
+Gold IV (32 LP)
+```
+
+If the player is unranked, or the lookup fails for any reason, the output is `Unranked`.
+
+## Parameters
+
+1. **Region**: The server region of the player (e.g., `euw`, `na`). The region comes first.
+2. **Riot ID**: The player's unique identifier in `name#tag` format. Riot IDs containing spaces work as-is — everything after the region is treated as the Riot ID.
+
+## Aliases
+
+`$(tft)` can also be used as an alias for `$(teamfighttactics)`.
+
+## Supported Regions
+
+- `br` (Brazil)
+- `eune` (Europe Nordic & East)
+- `euw` (Europe West)
+- `jp` (Japan)
+- `kr` (Republic of Korea)
+- `lan` (Latin America North)
+- `las` (Latin America South)
+- `na` (North America)
+- `oce` (Oceania)
+- `pbe` (Public Beta Environment)
+- `ph` (Philippines)
+- `ru` (Russia)
+- `sg` (Singapore)
+- `th` (Thailand)
+- `tw` (Taiwan)
+- `tr` (Turkey)
+- `vn` (Vietnam)
+
+## Related Variables
+
+- [`$(leagueoflegends)`](/chatbot/variables/leagueoflegends): Look up a League of Legends player's rank
+
+## FAQ
+
+**Q: Why isn't the rank updating immediately?**
+
+A: Rank data may have a slight delay due to API caching. It typically updates within a few minutes after a player's ranked game.
+
+**Q: Why does the command always say "Unranked"?**
+
+A: `Unranked` is shown both for players without a rank and when the lookup fails — double-check the region and that the Riot ID is spelled exactly as `name#tag`.

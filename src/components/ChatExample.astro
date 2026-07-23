@@ -1,0 +1,183 @@
+---
+/**
+ * Renders a simulated Twitch-style chat exchange for command examples.
+ * Port of the Docusaurus React component — same props API, zero client JS.
+ *
+ * <ChatExample messages={[
+ *   { persona: 'user', message: '!8ball Will I win?' },
+ *   { persona: 'bot', message: 'It is decidedly so.' },
+ * ]} />
+ */
+import { Icon } from '@astrojs/starlight/components';
+
+interface Message {
+  persona?: 'user' | 'moderator' | 'vip' | 'broadcaster' | 'bot' | 'system';
+  message: string;
+  username?: string;
+  usernameOverride?: string;
+  userColor?: string;
+  badges?: string[];
+  isBot?: boolean;
+}
+
+interface Props {
+  messages: Message[];
+}
+
+const PERSONAS = {
+  user: { username: 'ViewerName', userColor: '#DAA520', badges: [], isBot: false },
+  moderator: { username: 'ModUser', userColor: '#00ADFF', badges: ['moderator'], isBot: false },
+  vip: { username: 'VIPViewer', userColor: '#E83DF8', badges: ['vip'], isBot: false },
+  broadcaster: { username: 'BroadcasterName', userColor: '#FF0000', badges: ['broadcaster'], isBot: false },
+  bot: { username: 'StreamElements', userColor: '#5B99FF', badges: ['partner', 'moderator'], isBot: true },
+  /** System notices (e.g. the bot leaving a channel) — no username, muted italic. */
+  system: { username: '', userColor: '', badges: [], isBot: false },
+} as const;
+
+const BADGE_URLS: Record<string, string> = {
+  moderator: 'https://static-cdn.jtvnw.net/badges/v1/3267646d-33f0-4b17-b3df-f923a41db1d0/3',
+  broadcaster: 'https://static-cdn.jtvnw.net/badges/v1/5527c58c-fb7d-422d-b71b-f309dcb85cc1/3',
+  partner: 'https://static-cdn.jtvnw.net/badges/v1/d12a2e27-16f6-41d0-ab77-b780518f00a3/3',
+  vip: 'https://static-cdn.jtvnw.net/badges/v1/b817aba4-fad8-49e2-b88a-7cc744dfa6ec/3',
+};
+
+function badgeSrc(badge: string): string | null {
+  if (BADGE_URLS[badge]) return BADGE_URLS[badge];
+  if (badge.startsWith('http')) return badge;
+  return null;
+}
+
+const { messages = [] } = Astro.props;
+
+const resolved = messages.map((msg) => {
+  const persona = msg.persona ? PERSONAS[msg.persona] : undefined;
+  if (persona) {
+    return {
+      username: msg.usernameOverride || persona.username,
+      message: msg.message,
+      userColor: msg.userColor || persona.userColor,
+      badges: msg.badges || persona.badges,
+      isBot: msg.isBot !== undefined ? msg.isBot : persona.isBot,
+      isSystem: msg.persona === 'system',
+    };
+  }
+  return {
+    username: msg.username || 'UnknownUser',
+    message: msg.message,
+    userColor: msg.userColor || '#8A2BE2',
+    badges: msg.badges || [],
+    isBot: msg.isBot || false,
+    isSystem: false,
+  };
+});
+---
+
+{
+  resolved.length > 0 && (
+    <figure class="chat-example not-content">
+      <figcaption class="chat-header">
+        <Icon name="comment" class="chat-header-icon" />
+        <span>Example chat</span>
+      </figcaption>
+      <div class="chat-body">
+      {resolved.map((msg) => (
+        <div
+          class:list={[
+            'chat-message',
+            { 'chat-message-bot': msg.isBot, 'chat-message-system': msg.isSystem },
+          ]}
+        >
+          {msg.badges.length > 0 && (
+            <span class="chat-badges">
+              {msg.badges.map((badge) => {
+                const src = badgeSrc(badge);
+                const label = BADGE_URLS[badge] ? badge : 'Custom Badge';
+                return src && <img src={src} alt={`${label} badge`} title={label} loading="lazy" />;
+              })}
+            </span>
+          )}
+          {!msg.isSystem && (
+            <span class="chat-username" style={`color: ${msg.userColor}`}>
+              {msg.username}:
+            </span>
+          )}
+          <span class="chat-text">{msg.message}</span>
+        </div>
+      ))}
+      </div>
+    </figure>
+  )
+}
+
+<style>
+  .chat-example {
+    overflow: hidden;
+    margin: 1.25rem 0;
+    border: 1px solid var(--sl-color-gray-5);
+    border-radius: 0.625rem;
+    background-color: var(--sl-color-gray-6);
+    box-shadow: 0 1px 2px rgb(0 0 0 / 0.05);
+  }
+  .chat-header {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.5rem 0.8rem;
+    border-bottom: 1px solid var(--sl-color-gray-5);
+    color: var(--sl-color-gray-2);
+    font-size: var(--sl-text-xs);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    user-select: none;
+  }
+  .chat-header-icon {
+    font-size: 0.95rem;
+    color: var(--sl-color-gray-3);
+  }
+  .chat-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    padding: 0.5rem;
+  }
+  .chat-message {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0 0.35rem;
+    padding: 0.3rem 0.5rem;
+    border-radius: 0.35rem;
+    font-family: var(--sl-font, ui-sans-serif), sans-serif;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+  }
+  .chat-message-bot {
+    background-color: var(--sl-color-accent-low);
+    box-shadow: inset 2px 0 0 var(--sl-color-accent);
+  }
+  .chat-message-system {
+    justify-content: center;
+    color: var(--sl-color-gray-3);
+    font-style: italic;
+  }
+  .chat-badges {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    align-self: center;
+  }
+  .chat-badges img {
+    width: 1.05em;
+    height: 1.05em;
+    border-radius: 2px;
+  }
+  .chat-username {
+    font-weight: 700;
+    white-space: nowrap;
+  }
+  .chat-text {
+    min-width: 0;
+  }
+</style>

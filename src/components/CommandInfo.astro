@@ -1,0 +1,108 @@
+---
+/**
+ * Info row for chatbot command pages, driven by `aliases` / `access` /
+ * `module` / `cooldown` frontmatter. Rendered automatically via the PageTitle
+ * override. Mirrors VariableInfo / TopicInfo — plain label rows, no category
+ * colors (access tiers are state, not brand identity).
+ */
+interface Props {
+  aliases?: string[] | undefined;
+  access?:
+    | 'everyone'
+    | 'subscriber'
+    | 'regular'
+    | 'vip'
+    | 'moderator'
+    | 'super-moderator'
+    | 'broadcaster'
+    | undefined;
+  requires?: string | undefined;
+  cooldown?: string | undefined;
+}
+
+const ACCESS_LABELS = {
+  everyone: 'Everyone',
+  subscriber: 'Subscriber',
+  regular: 'Regular',
+  vip: 'VIP',
+  moderator: 'Moderator',
+  'super-moderator': 'Super Moderator',
+  broadcaster: 'Broadcaster',
+} as const;
+
+const { aliases, access, requires, cooldown } = Astro.props;
+---
+
+<dl class="command-info not-content">
+  {
+    access && (
+      <div>
+        <dt>Access</dt>
+        <dd>{ACCESS_LABELS[access]}</dd>
+      </div>
+    )
+  }
+  {
+    requires && (
+      <div>
+        <dt>Requires</dt>
+        <dd>{requires}</dd>
+      </div>
+    )
+  }
+  {
+    cooldown && (
+      <div>
+        <dt>Cooldown</dt>
+        <dd><code>{cooldown}</code></dd>
+      </div>
+    )
+  }
+  {
+    aliases && aliases.length > 0 && (
+      <div>
+        <dt>Aliases</dt>
+        <dd class="command-aliases">
+          {aliases.map((alias) => (
+            <code>{alias}</code>
+          ))}
+        </dd>
+      </div>
+    )
+  }
+</dl>
+
+<style>
+  .command-info {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem 1.5rem;
+    margin-top: 0.75rem;
+    padding: 0.6rem 0.9rem;
+    border: 1px solid var(--sl-color-gray-5);
+    border-radius: 0.5rem;
+    background-color: var(--sl-color-gray-6);
+  }
+  .command-info > div {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+  }
+  dt {
+    font-size: var(--sl-text-xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--sl-color-gray-3);
+  }
+  dd {
+    margin: 0;
+    font-size: var(--sl-text-sm);
+  }
+  .command-aliases {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+  }
+</style>

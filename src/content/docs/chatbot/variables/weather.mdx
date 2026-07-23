@@ -1,0 +1,88 @@
+---
+title: "$(weather)"
+description: "Display current weather conditions for a location with the $(weather) variable in StreamElements Chatbot."
+category: utility-web
+summary: "Display current weather conditions for a location."
+syntax: '$(weather "<location>")'
+arguments: required
+keywords:
+  - StreamElements
+  - chatbot
+  - weather
+  - temperature
+  - wind
+  - humidity
+---
+
+import ChatExample from '@components/ChatExample.astro';
+
+The `$(weather)` variable displays current weather conditions for a location: temperature, feels-like temperature, conditions, wind, humidity, visibility, and air pressure.
+
+:::caution
+Weather data is provided by third-party sources and may not reflect current geopolitical boundaries.
+:::
+
+## Use it
+
+```streamelements
+!command add !weather $(weather ${1:})
+```
+
+<ChatExample messages={[
+  { persona: 'user', message: '!weather Berlin' },
+  { persona: 'bot', message: 'Berlin, Germany: 🌞 21.0 °C (69.8 °F). Feels like 20.4 °C (68.7 °F). Partly cloudy. Wind is blowing from the Northwest at 10.1 km/h (6.3 mp/h). 50% humidity. Visibility: 10 km (6 miles). Air pressure: 1013 hPa.' }
+]} />
+
+:::note
+`$(weather)` only uses the first word it is given, so multi-word locations must be passed as a single token: wrap the location in quotes, or nest an argument token like `${1:}` (as in the example above) so everything the viewer types arrives as one piece.
+:::
+
+## Output
+
+The output follows this fixed format — a 🌞 (day) or 🌜 (night) symbol, temperatures in both units, the condition, wind, humidity, visibility, and air pressure:
+
+```
+<City>, <Country>: 🌞 21.0 °C (69.8 °F). Feels like 20.4 °C (68.7 °F). Partly cloudy. Wind is blowing from the Northwest at 10.1 km/h (6.3 mp/h). 50% humidity. Visibility: 10 km (6 miles). Air pressure: 1013 hPa.
+```
+
+## Examples
+
+**Getting weather for New York City**
+
+```streamelements
+$(weather "New York, NY")
+```
+
+<ChatExample messages={[
+  { persona: 'bot', message: 'New York, United States of America: 🌞 27.2 °C (81.0 °F). Feels like 29.5 °C (85.2 °F). Partly cloudy. Wind is blowing from the North at 3.6 km/h (2.2 mp/h). 58% humidity. Visibility: 16 km (9 miles). Air pressure: 1016 hPa.' }
+]} />
+
+**Getting weather for London, UK**
+
+```streamelements
+$(weather "London, UK")
+```
+
+<ChatExample messages={[
+  { persona: 'bot', message: 'London, United Kingdom: 🌞 13.1 °C (55.6 °F). Feels like 11.7 °C (53.0 °F). Moderate or heavy rain with thunder. Wind is blowing from the West at 13.0 km/h (8.1 mp/h). 88% humidity. Visibility: 7 km (4 miles). Air pressure: 1009 hPa.' }
+]} />
+
+## Parameters
+
+The `$(weather)` variable accepts one parameter:
+
+- `location`: The location for which you want to retrieve weather information. Format as "City, State" for US locations or "City, Country" for international locations.
+
+## FAQ
+
+**Q: How often is the weather data updated?**
+
+A: The bot requests fresh data from its weather provider every time the variable runs. How current that data is depends on the provider, not on the bot.
+
+**Q: Can I display the temperature in Fahrenheit instead of Celsius?**
+
+A: The variable automatically displays both Celsius and Fahrenheit temperatures.
+
+**Q: What happens if I enter an invalid location?**
+
+A: If the weather service can't find the location or the request fails, the variable outputs `Failed to get weather data`. If the service responds with malformed data, the output is `Failed to decode weather data`.

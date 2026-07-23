@@ -1,0 +1,99 @@
+---
+title: "$(leagueoflegends)"
+description: "Get a League of Legends player's rank and LP using StreamElements Chatbot. Supports Riot IDs and multiple regions."
+category: games
+summary: "Get a League of Legends player's rank and LP."
+keywords:
+  - streamelements lol rank command
+  - league of legends command
+  - riot id rank lookup
+  - summoner rank checker
+syntax: "$(leagueoflegends <name#tag> <region>)"
+arguments: required
+---
+
+import ChatExample from '@components/ChatExample.astro';
+
+The `$(leagueoflegends)` variable allows you to retrieve and display the current rank and LP (League Points) of a specified League of Legends player using the StreamElements Chatbot.
+
+## Use it
+
+```streamelements
+!command add !rank My current rank: $(leagueoflegends styler#euw euw)
+```
+
+<ChatExample messages={[
+  { persona: 'user', message: '!rank' },
+  { persona: 'bot', message: 'My current rank: Gold IV (81 LP)' },
+]} />
+
+## Usage
+
+To use this variable, you need to provide two parameters: the player's Riot ID or Summoner Name, and the region.
+
+```streamelements
+$(leagueoflegends <Riot ID/Summoner Name> <region>)
+```
+
+The name comes first here — the opposite of [`$(teamfighttactics)`](/chatbot/variables/teamfighttactics), where the region comes first.
+
+The output format is `<Tier> <Division> (<LP> LP)`, for example `Gold IV (81 LP)` or `Challenger I (1229 LP)`.
+
+:::note[Riot IDs]
+League of Legends is transitioning to Riot IDs. During the transition, you can use either Riot IDs or Summoner Names. After the transition, only Riot IDs will be supported.
+:::
+
+:::note
+If the Riot ID contains spaces, wrap it in quotes. Both inputs are case-insensitive.
+:::
+
+## Examples
+
+```streamelements
+$(leagueoflegends styler#euw euw)
+$(leagueoflegends "Doublelift#na1" na)
+```
+
+Example output:
+```
+Challenger I (1229 LP)
+```
+
+## Parameters
+
+1. **Riot ID/Summoner Name**: The player's unique identifier, e.g. `styler#euw`
+2. **Region**: The server region of the player (e.g., `euw`, `na`)
+
+## Supported Regions
+
+- `br` (Brazil)
+- `eune` (Europe Nordic & East)
+- `euw` (Europe West)
+- `jp` (Japan)
+- `kr` (Republic of Korea)
+- `lan` (Latin America North)
+- `las` (Latin America South)
+- `na` (North America)
+- `oce` (Oceania)
+- `pbe` (Public Beta Environment)
+- `ph` (Philippines)
+- `ru` (Russia)
+- `sg` (Singapore)
+- `th` (Thailand)
+- `tw` (Taiwan)
+- `tr` (Turkey)
+- `vn` (Vietnam)
+
+## Related Variables
+
+- [`$(teamfighttactics)`](/chatbot/variables/teamfighttactics): The same rank lookup for Teamfight Tactics
+
+## FAQ
+
+**Q: Why isn't the rank updating immediately?**
+
+A: Rank data may have a slight delay due to API caching. It typically updates within a few minutes after a player's ranked game.
+
+**Q: What happens if the lookup fails?**
+
+A: If the player can't be found or the API request fails, the bot replies with the raw error message returned by the API.

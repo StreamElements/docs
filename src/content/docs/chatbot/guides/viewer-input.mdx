@@ -1,0 +1,118 @@
+---
+title: Create Commands That Use Viewer Input
+sidebar:
+  label: Viewer Input
+description: "Use viewer input in StreamElements commands with argument tokens, fallbacks, validation, and URL encoding for dynamic replies."
+keywords:
+  - StreamElements command arguments
+  - viewer input command
+  - dynamic chatbot command
+  - StreamElements custom commands
+  - queryescape
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import ChatExample from '@components/ChatExample.astro';
+
+Argument tokens let a custom command reuse what a viewer types after its trigger. You can capture one word, the rest of the message, or a range of words, then place that input in a reply or encode it for a URL.
+
+## Create a command that captures a message
+
+This command turns `!doing making pasta` into `ViewerName is currently making pasta`.
+
+<Steps>
+
+1. Open the [bot command dashboard](https://streamelements.com/dashboard/bot/commands), select **Custom commands**, and click **Add new command**.
+
+2. Name the command `doing` and enter this reply:
+
+   ```streamelements
+   $(sender) is currently $(1:)
+   ```
+
+3. Click **Activate command**.
+
+4. Test it with several words after the trigger:
+
+</Steps>
+
+<ChatExample messages={[
+  { persona: 'user', message: '!doing making pasta and dancing' },
+  { persona: 'bot', message: 'ViewerName is currently making pasta and dancing' }
+]} />
+
+[`$(sender)`](/chatbot/variables/sender) identifies the viewer who used the command. `$(1:)` means every word from the first argument through the end of the message.
+
+## Choose the input you need
+
+In `!introduce Alice 25 from Copenhagen`, the trigger itself is word 0:
+
+| Token | Output |
+| --- | --- |
+| `$(1)` | `Alice` |
+| `$(2)` | `25` |
+| `$(3:)` | `from Copenhagen` |
+| `$(1:2)` | `Alice 25` |
+
+If a requested word is missing, the token outputs nothing. Add a pipe fallback when a default makes sense:
+
+```streamelements
+$(sender) hugs $(1|everyone)!
+```
+
+That command targets the first word after `!hug`, or `everyone` when no name was provided.
+
+## Validate a username
+
+Use the `username` validator when an input must look like a Twitch-style username:
+
+```streamelements
+Check out $(1 username)'s channel at https://twitch.tv/$(1 username)
+```
+
+The validator accepts letters, digits, and underscores, optionally prefixed by `@`, up to 30 characters. It outputs nothing when the argument does not match that shape. See [Argument tokens](/chatbot/variables/args#validators) for the complete behavior.
+
+## Put viewer input in a URL
+
+Do not insert arbitrary multi-word input directly into a URL. Encode it for the part of the URL where it will be used.
+
+### Query parameters
+
+Use [`$(queryescape)`](/chatbot/variables/queryescape) for values after `?`:
+
+```streamelements
+Search results: https://google.com/search?q=$(queryescape $(1:))
+```
+
+`!google StreamElements chatbot` produces a URL ending in `?q=StreamElements+chatbot`.
+
+### URL paths
+
+Use [`$(pathescape)`](/chatbot/variables/pathescape) for a path segment:
+
+```streamelements
+Read more: https://en.wikipedia.org/wiki/$(pathescape $(1:))
+```
+
+`!wiki rocket league` produces a path ending in `/rocket%20league`.
+
+:::note[Chat-command protection]
+Argument tokens remove a leading `/` or `.` from viewer input. This prevents a viewer from making the bot send a chat command such as `/timeout` through your custom command. URL encoding is still required when the input becomes part of a URL.
+:::
+
+## Use input with a public API
+
+You can pass encoded input to [`$(customapi)`](/chatbot/variables/customapi), which makes a GET request and prints the response. The following is a pattern, not a working endpoint—replace `api.example.com` with a public endpoint you trust:
+
+```streamelements
+$(customapi https://api.example.com/define?word=$(queryescape $(1)))
+```
+
+Use an API designed to return short plain text. `$(customapi)` cannot set headers, truncates responses after 400 bytes, and does not parse JSON. Do not put private API credentials in the command URL.
+
+## Related
+
+- [Argument tokens](/chatbot/variables/args): Complete syntax for words, ranges, fallbacks, and validators.
+- [`$(sender)`](/chatbot/variables/sender): Data about the viewer who triggered the command.
+- [`$(queryescape)`](/chatbot/variables/queryescape) and [`$(pathescape)`](/chatbot/variables/pathescape): Encode dynamic URL values.
+- [`$(customapi)`](/chatbot/variables/customapi): Request limits, errors, and examples.

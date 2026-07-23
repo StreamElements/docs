@@ -1,0 +1,56 @@
+---
+title: "!settitle"
+description: "Use the !settitle command in StreamElements chatbot to change your Twitch or Kick stream title from chat."
+keywords:
+  - settitle
+  - set title
+  - change stream title
+  - update stream title
+  - chatbot commands
+  - StreamElements
+  - Twitch
+platforms: [twitch, kick]
+access: super-moderator
+summary: "Moderators change the Twitch stream title."
+category: stream-management
+aliases:
+  - "!setitle"
+---
+
+import ChatExample from '@components/ChatExample.astro';
+
+The `!settitle` command allows streamers and moderators to change the stream title directly from chat, without switching to the dashboard or streaming software. It works on Twitch and Kick; YouTube is not supported.
+
+## Usage
+
+To set the stream title:
+
+```streamelements
+!settitle <new_title>
+```
+
+## Examples
+
+<ChatExample messages={[
+  { persona: 'moderator', message: '!settitle Playing Overwatch 2 with viewers!' },
+  { persona: 'bot', message: '@Moderator changed the title to "Playing Overwatch 2 with viewers!"' }
+]} />
+
+<ChatExample messages={[
+  { persona: 'broadcaster', message: '!settitle Monday Variety: Minecraft, Fall Guys, and more!' },
+  { persona: 'bot', message: '@Broadcaster changed the title to "Monday Variety: Minecraft, Fall Guys, and more!"' }
+]} />
+
+## Parameters
+
+*   `<new_title>` (Required): The new title for the stream. This can be any text up to Twitch's character limit for stream titles.
+
+## Configuration
+
+*   This command requires the StreamElements bot to have permission to modify channel information (typically granted during initial bot setup).
+*   The command's permission level can be adjusted under `Chatbot` -> `Chat Commands` -> `Default Commands`.
+
+## Related Commands
+
+*   [`!setgame`](/chatbot/commands/default/setgame): Changes the current game/category of the stream.
+*   [`!uptime`](/chatbot/commands/default/uptime): Displays how long the stream has been live.

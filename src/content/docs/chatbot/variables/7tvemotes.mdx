@@ -1,0 +1,52 @@
+---
+title: "$(7tvemotes)"
+description: "Display the list of active 7TV emotes in a Twitch channel with the $(7tvemotes) variable in StreamElements Chatbot commands."
+category: emotes
+summary: "List active 7TV emotes in the channel."
+keywords:
+  - 7tvemotes
+  - 7tv
+  - emotes
+  - twitch
+  - streamelements
+syntax: "$(7tvemotes)"
+arguments: none
+---
+
+import ChatExample from '@components/ChatExample.astro';
+
+The `$(7tvemotes)` variable is used to retrieve and display a list of active 7TV emotes in the current Twitch channel. This can be useful for creating commands that inform viewers about available emotes or for integrating emote information into other chatbot functionalities.
+
+## Use it
+
+```streamelements
+!command add !7tv The active 7TV emotes in this channel are: $(7tvemotes)
+```
+
+<ChatExample messages={[
+  { persona: 'user', message: '!7tv' },
+  { persona: 'bot', message: 'The active 7TV emotes in this channel are: LULW KEKW 5Head DinkDonk PogU' },
+]} />
+
+## Usage
+
+When the command is triggered, the variable is replaced with a list of the channel's active 7TV emote codes, separated by single spaces. The list is unordered — the same emotes may appear in a different order each time the command runs.
+
+## Related Variables
+
+- [$(bttvemotes)](/chatbot/variables/bttvemotes): Lists active BetterTTV emotes in the channel
+- [$(ffzemotes)](/chatbot/variables/ffzemotes): Lists active FrankerFaceZ emotes in the channel
+
+## FAQ
+
+**Q: How often is the 7TV emote list updated?**
+
+A: The 7TV emote list is cached for 48 hours. To update the list immediately, you can use the command `!emotes reload`.
+
+**Q: Can I filter or limit the number of emotes displayed?**
+
+A: The `$(7tvemotes)` variable doesn't have built-in filtering or limiting options. To manipulate the output, you'll need to use additional StreamElements variables or custom code.
+
+**Q: What if there are no 7TV emotes in the channel?**
+
+A: If there are no active 7TV emotes, the variable will return an empty string.

@@ -1,0 +1,79 @@
+---
+title: "!ticket"
+description: "Use the !ticket command in StreamElements chatbot to purchase giveaway tickets with loyalty points."
+keywords:
+- StreamElements
+- chatbot
+- commands
+- ticket
+- giveaways
+- raffles
+- loyalty
+platforms: [twitch]
+access: everyone
+summary: "Purchase tickets for giveaways and raffles."
+requires: Giveaway module
+category: giveaways-raffles
+aliases:
+  - "!enter"
+---
+
+import ChatExample from '@components/ChatExample.astro';
+
+The `!ticket` command allows viewers to purchase tickets for ongoing giveaways using their loyalty points. This command enables participation in raffles hosted through the StreamElements loyalty system.
+
+:::note[Important Note]
+By default, the `!ticket` command does **not** reply to the user to prevent chat spam during active giveaways. Streamers can enable confirmation messages by checking the "Send confirmation when buying tickets in chat" option in the giveaway settings on the StreamElements dashboard.
+:::
+
+## Usage
+
+To purchase tickets, type `!ticket` in the chat, optionally followed by the number of tickets you wish to buy. If no number is specified, it defaults to purchasing one ticket.
+
+**Syntax:**
+```streamelements
+!ticket [number_of_tickets]
+```
+
+## Examples
+
+1.  **Buying a single ticket:**
+    <ChatExample
+        messages={[
+            { persona: 'user', message: '!ticket' },
+            { persona: 'bot', message: '@viewer, you successfully bought 1 ticket!' }
+        ]}
+    />
+
+2.  **Buying multiple tickets:**
+    <ChatExample
+        messages={[
+            { persona: 'user', message: '!ticket 5' },
+            { persona: 'bot', message: '@viewer, you successfully bought 5 tickets!' }
+        ]}
+    />
+    *(Note: The reply is only sent if enabled by the streamer)*
+
+## Parameters
+
+| Parameter             | Type     | Description                                                                                   |
+| :-------------------- | :------- | :-------------------------------------------------------------------------------------------- |
+| `number_of_tickets` | Optional | The number of tickets to purchase. Defaults to `1` if omitted. Must be a positive whole number. |
+
+## Configuration
+
+Streamers configure giveaway settings, including ticket cost and the maximum number of tickets a viewer can purchase per giveaway, through the StreamElements dashboard under **Loyalty -> Giveaways**.
+
+## Related Commands
+
+-   [`!giveaway`](/chatbot/commands/default/giveaway): Checks the status of the currently active giveaway.
+-   [`!points`](/chatbot/commands/default/points): Allows users to check their current loyalty points balance.
+
+## FAQ
+
+-   **What happens if I try to buy more tickets than I have points for?**
+    The command will fail, and you won't purchase any tickets. You might receive an error message depending on the bot's configuration, or the command might silently fail.
+-   **Can I buy tickets if there's no giveaway running?**
+    No, the `!ticket` command only works when a giveaway is active.
+-   **Is there a maximum number of tickets I can buy?**
+    Yes, the streamer sets a maximum number of tickets per user for each giveaway in the StreamElements dashboard.

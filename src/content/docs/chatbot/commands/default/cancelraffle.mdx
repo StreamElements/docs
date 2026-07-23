@@ -1,0 +1,52 @@
+---
+title: "!cancelraffle"
+description: "Immediately cancel an active raffle on your channel using the StreamElements chatbot !cancelraffle command."
+platforms: [twitch]
+access: moderator
+summary: "Immediately cancel an active raffle."
+requires: Raffle module
+category: giveaways-raffles
+aliases:
+  - "!rafflecancel"
+keywords:
+  - cancelraffle command
+  - cancel raffle
+  - stop raffle
+  - end giveaway
+  - halt contest
+  - streamelements chatbot
+---
+
+import ChatExample from '@components/ChatExample.astro';
+
+The `!cancelraffle` command allows streamers and moderators to immediately halt any active raffle or giveaway initiated by [`!raffle`](/chatbot/commands/default/raffle) or [`!sraffle`](/chatbot/commands/default/sraffle) on their channel.
+
+## Usage
+
+To cancel an ongoing raffle, use the following command in chat:
+
+```streamelements
+!cancelraffle
+```
+
+## Examples
+
+<ChatExample messages={[
+  { persona: 'moderator', message: '!cancelraffle' },
+  { persona: 'bot', message: 'The raffle was canceled!' }
+]} />
+
+<ChatExample messages={[
+  { persona: 'broadcaster', message: '!cancelraffle' },
+  { persona: 'bot', message: 'There is no active raffle to cancel.' }
+]} />
+
+## Configuration
+
+*   The `!cancelraffle` command requires the **Raffle module** to be active. Enable it in your **StreamElements Dashboard** under `Chatbot` -> `Modules`.
+*   The command's permission level can be adjusted under `Chatbot` -> `Chat Commands` -> `Default Commands`.
+
+## Related Commands
+
+*   [`!raffle`](/chatbot/commands/default/raffle): Starts a multi-winner raffle that splits the points pot among the winners.
+*   [`!sraffle`](/chatbot/commands/default/sraffle): Starts a single-winner raffle where one winner takes the full pot.

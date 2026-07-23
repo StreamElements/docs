@@ -1,0 +1,130 @@
+---
+title: Custom Commands
+prev:
+  link: /chatbot/commands
+  label: Commands overview
+next:
+  link: /chatbot/commands/default
+  label: Default commands
+description: "Create and manage custom StreamElements Chatbot commands from the dashboard or directly in chat, with example commands using variables."
+keywords:
+  - StreamElements custom commands
+  - Twitch chatbot commands
+  - create custom commands
+  - manage chat commands
+  - personalized stream interactions
+  - chatbot customization
+  - StreamElements bot
+  - Twitch stream engagement
+  - chatbot custom commands
+  - Shoutout command
+  - Weather command
+  - Stream Uptime command
+---
+
+import ChatExample from '@components/ChatExample.astro';
+
+In addition to the default commands, you can also create your own custom commands. Custom commands allow you to create commands that are tailored to your channel and your community. You can use custom commands to create unique interactions and functionalities that are not possible with the default commands.
+
+## Managing Custom Commands
+
+There are two ways to manage custom commands:
+
+1. Through the creator dashboard
+2. Directly in chat with the [!command](/chatbot/commands/default/command) command
+
+### Using the dashboard
+
+See [Getting Started](/chatbot/getting-started) for a step-by-step walkthrough of creating a command in the dashboard.
+
+### Using chat
+
+| Action | Syntax | Example |
+|--------|--------|---------|
+| Add | `!command add !<name> <response>` | `!command add !socials Follow me on Twitter @MyHandle!` |
+| Edit | `!command edit !<name> <new_response>` | `!command edit !socials Check out my links: example.com/links` |
+| Remove | `!command remove !<name>` | `!command remove !socials` |
+| Show | `!command show !<name>` | `!command show !socials` |
+| Options | `!command options !<name> <option> <value>` | `!command options !socials -cd 10 -level 500` |
+
+:::note
+`!command` is aliased as `!cmd`, so `!cmd add !socials ...` works the same way.
+:::
+
+For the full subcommand reference, including all available options, permissions, and aliases, read the documentation for the [!command](/chatbot/commands/default/command) command.
+
+## Examples
+
+### Dynamic Greeting Command
+
+This command greets the user and tells them when they last visited the stream.
+
+```streamelements
+!cmd add !hello $(user), welcome to the stream! You last visited $(user.lastseen) ago.
+```
+
+<ChatExample messages={[
+  { persona: 'user', usernameOverride: 'Viewer123', message: '!hello' },
+  { persona: 'bot', message: 'Viewer123, welcome to the stream! You last visited 2 days 5 hours ago.' },
+]} />
+
+Variables used:
+
+- [$(user)](/chatbot/variables/user#available-variables) - The name of the viewer
+- [$(user.lastseen)](/chatbot/variables/user#available-variables) - The time the viewer last visited the stream
+
+### Stream Uptime Command
+
+This command shows how long the stream has been live, the current game, and viewer count.
+
+```streamelements
+!cmd add !stream The stream has been live for $(uptime). We're currently playing $(channel.game) for $(channel.viewers) viewers!
+```
+
+<ChatExample messages={[
+  { persona: 'user', usernameOverride: 'Viewer123', message: '!stream' },
+  { persona: 'bot', message: "The stream has been live for 2 days 5 hours. We're currently playing Fortnite for 1234 viewers!" },
+]} />
+
+Variables used:
+
+- [$(uptime)](/chatbot/variables/uptime) - The time the stream has been live
+- [$(channel.game)](/chatbot/variables/channel#available-variables) - The game the stream is currently playing
+- [$(channel.viewers)](/chatbot/variables/channel#available-variables) - The number of viewers currently watching the stream
+
+### Weather Command
+
+This command checks the weather for a location specified by the viewer.
+
+```streamelements
+!cmd add !weather $(sender), weather in: $(weather ${1:})
+```
+
+<ChatExample messages={[
+  { persona: 'user', usernameOverride: 'Viewer123', message: '!weather Tokyo' },
+  { persona: 'bot', message: 'Viewer123, weather in: Tokyo, Japan: 🌜 17.7 °C (63.9 °F). Feels like 17.7 °C (63.9 °F). Patchy rain nearby. Wind is blowing from the South at 9.7 km/h (6.0 mp/h). 89% humidity. Visibility: 10 km (6 miles). Air pressure: 1008 hPa.' },
+]} />
+
+Variables used:
+
+- [$(sender)](/chatbot/variables/sender) - The viewer who triggered the command
+- [$\{1:\}](/chatbot/variables/args) - The arguments passed to the command, here the location to look up
+- [$(weather)](/chatbot/variables/weather) - The current weather in a specified location
+
+### Shoutout Command
+
+This command sends a simple shoutout to a specified user.
+
+```streamelements
+!cmd add !shoutout Check out ${1}, they are playing $(game ${1}) at https://twitch.tv/${1}
+```
+
+<ChatExample messages={[
+  { persona: 'user', usernameOverride: 'Viewer123', message: '!shoutout Styler' },
+  { persona: 'bot', message: 'Check out Styler, they are playing Counter-Strike at https://twitch.tv/Styler' },
+]} />
+
+Variables used:
+
+- [$\{1\}](/chatbot/variables/args) - The first argument passed to the command, here the name of the user to shout out
+- [$(game)](/chatbot/variables/game) - The game the user is currently playing

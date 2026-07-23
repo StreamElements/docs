@@ -1,0 +1,69 @@
+---
+title: "$(twitchemotes)"
+description: "Display a channel's Twitch subscriber emotes with the $(twitchemotes) variable in StreamElements Chatbot commands."
+category: emotes
+summary: "Display available Twitch subscriber emotes."
+syntax: "$(twitchemotes)"
+arguments: none
+keywords:
+  - twitchemotes
+  - twitch emotes
+  - twitch subscriber emotes
+  - chatbot variables
+---
+
+import ChatExample from '@components/ChatExample.astro';
+
+The `$(twitchemotes)` variable lists a channel's Twitch subscriber emotes in chat.
+
+## Use it
+
+```streamelements
+!command add !emotes Subscriber emotes: $(twitchemotes)
+```
+
+<ChatExample messages={[
+  { persona: 'user', message: '!emotes' },
+  { persona: 'bot', message: 'Subscriber emotes: stylerXD stylerRIP stylerLOL stylerHYPE' }
+]} />
+
+## Usage
+
+To use the `$(twitchemotes)` variable, simply include it in your chatbot command or message. The variable will be replaced with a list of all available Twitch subscriber emotes for your channel.
+
+## Output
+
+The emote codes are joined by single spaces, e.g. `stylerXD stylerRIP stylerLOL stylerHYPE`. The order is not fixed and can change from one call to the next. If the channel has no subscriber emotes, the output is empty.
+
+## Examples
+
+Create a dynamic emote celebration:
+
+```streamelements
+!command add !celebration Let's celebrate with our awesome emotes! $(twitchemotes)
+```
+
+<ChatExample messages={[
+  { persona: 'user', message: '!celebration' },
+  { persona: 'bot', message: "Let's celebrate with our awesome emotes! stylerXD stylerRIP stylerLOL stylerHYPE" }
+]} />
+
+## Related Variables
+
+- [$(bttvemotes)](/chatbot/variables/bttvemotes): Lists active BetterTTV emotes in the channel
+- [$(ffzemotes)](/chatbot/variables/ffzemotes): Lists active FrankerFaceZ emotes in the channel
+- [$(7tvemotes)](/chatbot/variables/7tvemotes): Lists active 7TV emotes in the channel
+
+## FAQ
+
+**Q: Will this variable show emotes from other channels?**
+
+A: No, `$(twitchemotes)` only displays subscriber emotes for the current channel.
+
+**Q: How often is the emote list updated?**
+
+A: The Twitch emote list is cached for 48 hours. To update the list immediately, you can use the command `!emotes reload`.
+
+**Q: Can I customize the output format of the emotes?**
+
+A: The `$(twitchemotes)` variable outputs emotes as a space-separated list in no particular order. For more advanced formatting, you may need to use custom code.

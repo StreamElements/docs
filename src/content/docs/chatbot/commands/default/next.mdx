@@ -1,0 +1,62 @@
+---
+title: "!next"
+description: "Use the !next (!nextsong) command in StreamElements chatbot to see details about the next song in the media request queue."
+keywords:
+  - next command
+  - nextsong command
+  - upcoming song
+  - media request queue
+  - song queue
+  - StreamElements chatbot
+platforms: [twitch]
+access: everyone
+summary: "Show the next song in the media request queue."
+requires: Song Requests
+category: song-requests
+aliases:
+  - "!nextsong"
+  - "!whatisthenextsonghomie"
+---
+
+import ChatExample from '@components/ChatExample.astro';
+
+The `!next` command (aliased as `!nextsong`) allows anyone in chat to view details about the upcoming song in the StreamElements media request queue. It shows the channel, song title, requester, and a link. It only **displays** the next queued song — it does not skip anything; skipping is done by moderators with [`!skip`](/chatbot/commands/default/skip).
+
+## Usage
+
+To see the next song in the queue:
+
+```streamelements
+!next
+```
+
+Or using the alias:
+
+```streamelements
+!nextsong
+```
+
+## Examples
+
+<ChatExample messages={[
+  { persona: 'user', message: '!next' },
+  { persona: 'bot', message: '@User, next song: SaxChannel - Epic Sax Guy 10 Hours, requested by SaxLover https://youtu.be/kxopViU98Xo' }
+]} />
+
+<ChatExample messages={[
+  { persona: 'user', message: '!nextsong' }, // Using alias
+  { persona: 'bot', message: '@User, there are no songs in the queue!' } // If queue is empty
+]} />
+
+## Configuration
+
+*   The information displayed depends on the data available from YouTube for the requested track.
+*   Default cooldown: 10 seconds per user.
+
+## Related Commands
+
+*   [`!song`](/chatbot/commands/default/song): Shows details about the *currently playing* song.
+*   [`!songqueue`](/chatbot/commands/default/songqueue): Provides a link to the full media request queue.
+*   [`!songrequest`](/chatbot/commands/default/songrequest): Allows users to request songs to add to the queue.
+*   [`!skip`](/chatbot/commands/default/skip): (Moderator+) Skips the currently playing song.
+*   [`!removesong`](/chatbot/commands/default/removesong): (Moderator+) Removes a specific song from the queue.

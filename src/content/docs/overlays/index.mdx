@@ -1,0 +1,70 @@
+---
+title: Overlays
+description: "Build stream overlays with StreamElements: the Overlay Editor, AlertBox, and fully custom-coded widgets for Twitch and YouTube Live."
+keywords:
+  - StreamElements Overlays
+  - Custom stream widgets
+  - Twitch overlays
+  - YouTube Live overlays
+  - Stream alerts
+  - Overlay editor
+  - Stream design tools
+---
+
+import { CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+Overlays are the visuals layered on top of your stream — alerts, labels, goals, chat — composed in the StreamElements Overlay Editor and rendered in your broadcast software via a single browser source. When the built-in widgets aren't enough, you can code your own.
+
+## For streamers
+
+Set up overlays, alerts, and widgets in the Overlay Editor — no coding required to get started.
+
+<CardGrid>
+  <LinkCard
+    title="Getting Started"
+    href="/overlays/getting-started"
+    description="Create your first overlay and add an AlertBox or Custom Widget in the Overlay Editor."
+  />
+  <LinkCard
+    title="Custom Code in Alertboxes"
+    href="/overlays/custom-code-in-alertbox"
+    description="Build fully custom alert designs with inline template variables for names, amounts, and messages."
+  />
+  <LinkCard
+    title="Editor Shortcuts"
+    href="/overlays/overlay-editor-shortcuts"
+    description="Keyboard shortcuts for moving, duplicating, and grouping widgets in the Overlay Editor."
+  />
+</CardGrid>
+
+## For developers
+
+Build your own widgets with HTML, CSS, and JavaScript, react to stream events, and use the SE_API from your code.
+
+<CardGrid>
+  <LinkCard
+    title="Your First Custom Widget"
+    href="/overlays/first-custom-widget"
+    description="Step-by-step tutorial: define fields, write HTML/CSS/JS, and react to a follow event."
+  />
+  <LinkCard
+    title="Code Editor"
+    href="/overlays/widget-structure"
+    description="Write HTML, CSS, JavaScript, and custom field definitions in the Custom Code Editor."
+  />
+  <LinkCard
+    title="SE_API Reference"
+    href="/overlays/custom-widget"
+    description="Use the SE_API store, counters, queue control, and more from your custom widgets."
+  />
+  <LinkCard
+    title="Widget Events"
+    href="/overlays/events"
+    description="Handle onWidgetLoad, onEventReceived, and onSessionUpdate events in your widget code."
+  />
+  <LinkCard
+    title="Session Data Reference"
+    href="/overlays/session-data"
+    description="Session data keys for followers, subscribers, tips, cheers, and more, available to widget code."
+  />
+</CardGrid>

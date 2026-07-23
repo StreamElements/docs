@@ -1,0 +1,136 @@
+---
+title: "Command Arguments"
+description: "Access the words of a chat message in StreamElements Chatbot commands with the $(1), $(1:), and $(1:3) argument tokens."
+category: user-chat
+summary: "Access the words of the message that triggered the command."
+keywords:
+  - command arguments
+  - arguments
+  - argument tokens
+  - chatbot commands
+  - user input
+  - dynamic responses
+sidebar:
+  label: "$(1), $(1:)"
+syntax: "$(1), $(1:), $(1:3)"
+arguments: none
+---
+
+import ChatExample from '@components/ChatExample.astro';
+
+Argument tokens let your custom commands use the words of the message that triggered them. This enables dynamic responses based on user input, enhancing the interactivity of your chatbot.
+
+## Use it
+
+```streamelements
+!command add !greet Hello, $(1)!
+```
+
+<ChatExample messages={[
+  { persona: 'user', message: '!greet World' },
+  { persona: 'bot', message: 'Hello, World!' },
+]} />
+
+## Usage
+
+Words are numbered from the start of the message, and **word 0 is the command trigger itself**, so `$(1)` is the first argument after the command.
+
+| Token | Output |
+| --- | --- |
+| `$(N)` | The Nth word of the message |
+| `$(N:)` | Words N through the end of the message |
+| `$(N:M)` | Words N through M, inclusive |
+| `$(:M)` | Words 0 (the trigger) through M |
+
+Both bracket styles work everywhere and are fully interchangeable: `$(1)` and `${1}` are identical, as are `$(1:)` and `${1:}`. Argument tokens can also be nested freely inside other variables, e.g. `$(weather ${1:})`.
+
+If the requested word doesn't exist in the message, the output is blank.
+
+:::note
+Argument tokens strip a leading `/` or `.` from their output. This guards against chat-command injection — a viewer can't make the bot send chat commands like `/timeout` through your custom commands.
+:::
+
+## Examples
+
+**Introducing a user**
+
+```streamelements
+!cmd add !introduce $(1) is $(2) years old
+```
+
+<ChatExample messages={[
+  { persona: 'user', message: '!introduce Alice 25' },
+  { persona: 'bot', message: 'Alice is 25 years old' },
+]} />
+
+**Using everything after the command**
+
+```streamelements
+!cmd add !announce Attention everyone: $(1:)
+```
+
+<ChatExample messages={[
+  { persona: 'user', message: '!announce the stream starts in 10 minutes' },
+  { persona: 'bot', message: 'Attention everyone: the stream starts in 10 minutes' },
+]} />
+
+## Fallbacks
+
+Use a pipe to provide a default value when an argument is missing:
+
+```streamelements
+!cmd add !hug $(sender) hugs $(1|everyone)!
+```
+
+<ChatExample messages={[
+  { persona: 'user', message: '!hug' },
+  { persona: 'bot', message: 'StreamFan123 hugs everyone!' },
+]} />
+
+## Quoting
+
+Wherever a variable takes space-separated inputs, quotes group several words into a single input. Single quotes `'...'`, double quotes `"..."`, and backticks `` `...` `` all behave identically.
+
+## Validators
+
+A token can take an optional validator, which makes it output the word only if it passes a check:
+
+`$(1 username)` (alias: `$(1 word)`) outputs the argument only if it looks like a username — letters, digits, and underscores, optionally prefixed with `@`, up to 30 characters.
+
+```streamelements
+!cmd add !so Check out $(1 username)'s channel!
+```
+
+<ChatExample messages={[
+  { persona: 'user', message: '!so CoolStreamer' },
+  { persona: 'bot', message: "Check out CoolStreamer's channel!" },
+]} />
+
+`$(1 emote)` outputs the argument only if it is an emote in the message.
+
+```streamelements
+!cmd add !emote $(1 emote)
+```
+
+<ChatExample messages={[
+  { persona: 'user', message: '!emote Kappa' },
+  { persona: 'bot', message: 'Kappa' },
+]} />
+
+The dot form also works for validators, e.g. `$(1.word)` or `$(1.emote)`.
+
+## Related Variables
+
+- [`$(touser)`](/chatbot/variables/touser): The first word after the command, falling back to the sender's name
+- [`$(sender)`](/chatbot/variables/sender): The name of the user who triggered the command
+- [`$(user)`](/chatbot/variables/user): Information about a user, such as points and rank
+
+## FAQ
+
+**Q: What happens if I try to access an argument that wasn't provided?**
+
+A: If you try to access an argument that wasn't provided (e.g., `$(2)` when only one argument was given), the output will be blank. Use a pipe fallback like `$(2|default)` to output something else instead.
+
+**Q: Can I write a range backwards, like $(3:1)?**
+
+A: No. Reversed or negative ranges are not valid and will render as literal text.

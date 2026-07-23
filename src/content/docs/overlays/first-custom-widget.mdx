@@ -1,0 +1,147 @@
+---
+title: Your First Custom Widget
+description: "Step-by-step tutorial for building a first custom widget: field definitions, HTML, CSS, JavaScript, and reacting to follow events."
+keywords:
+  - StreamElements Custom Widget
+  - Custom widget tutorial
+  - Overlay Editor
+  - Widget fields
+  - Stream overlay development
+---
+
+import { Steps, CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+In this tutorial you'll build a small widget that shows a configurable text label and the name of your latest follower, then updates live whenever someone new follows. Along the way you'll touch every part of a custom widget: fields, HTML, CSS, and JavaScript.
+
+<Steps>
+
+1. **Create an overlay and add a Custom Widget**
+
+   Follow [Getting Started](/overlays/getting-started) to create an overlay, then add a **Custom Widget** from the **STATIC/CUSTOM** section of the widget picker.
+
+2. **Open the Custom Code Editor**
+
+   Select the widget and click **OPEN EDITOR** in the left panel. The Custom Code Editor is a simple text editor that allows you to write code, styling, and field definitions, split into tabs:
+
+   - **HTML** — any HTML tags; you can even import external scripts and fonts.
+   - **CSS** — regular CSS syntax, including animations and transitions.
+   - **JS** — pure JavaScript or external libraries; code runs in a protected sandbox.
+   - **FIELDS** — JSON definitions of configurable variables, displayed in the left panel so the end user doesn't have to interact with code.
+
+   See [Code Editor](/overlays/widget-structure) for the full reference.
+
+3. **Define the fields**
+
+   In the **FIELDS** tab, add a text input and a color picker:
+
+   ```json
+   {
+     "someText": {
+       "type": "text",
+       "label": "Some Text",
+       "value": "Default text"
+     },
+     "someColorPicker": {
+       "type": "colorpicker",
+       "label": "Some color",
+       "value": "#0000FF"
+     }
+   }
+   ```
+
+   These two inputs now appear in the left panel of the Overlay Editor. The [Code Editor](/overlays/widget-structure#custom-fields) page lists all supported field types, such as `dropdown`, `slider`, `image-input`, and `googleFont`.
+
+4. **Write the HTML**
+
+   Field values can be called by `{{fieldName}}` directly within your HTML and CSS. In the **HTML** tab:
+
+   ```html
+   <div class="message">
+     {{someText}}
+     <span id="latest-follower"></span>
+   </div>
+   ```
+
+   The `latest-follower` span is empty for now — your JavaScript will fill it in.
+
+5. **Style it with CSS**
+
+   The same `{{fieldName}}` substitution works in the **CSS** tab, so the color picker controls the text color:
+
+   ```css
+   .message {
+     color: {{someColorPicker}};
+   }
+   ```
+
+6. **Read fields and session data on load**
+
+   The `onWidgetLoad` event fires when the widget is loaded or refreshed. It contains the field values (`fieldData`), channel information, and session data — the running totals and "latest" values you see in the [Session Dashboard](https://streamelements.com/dashboard/session). In the **JS** tab:
+
+   ```javascript
+   let fieldData;
+
+   window.addEventListener('onWidgetLoad', function (obj) {
+     fieldData = obj["detail"]["fieldData"];
+     const data = obj["detail"]["session"]["data"];
+
+     // Show the most recent follower as a starting value
+     document.getElementById("latest-follower").innerHTML = data["follower-latest"]["name"];
+   });
+   ```
+
+   :::tip[Explore the event object]
+   The session data structure may change over time. To inspect the most up-to-date values, use `console.log(obj)` and check your browser console. The available keys (followers, subscribers, tips, cheers, and more) are listed in the [Session Data Reference](/overlays/session-data).
+   :::
+
+7. **React to new followers**
+
+   The `onEventReceived` event triggers on every live event — chat messages, tips, follows, subscribers, and more. Two parts of the payload matter here:
+
+   - `obj.detail.listener` — a string identifying the event type, such as `follower-latest`, `subscriber-latest`, `tip-latest`, or `message`.
+   - `obj.detail.event` — the event details; for `-latest` events this includes `.name` (the user who triggered the action) and `.amount`.
+
+   Add this below your `onWidgetLoad` listener:
+
+   ```javascript
+   window.addEventListener('onEventReceived', function (obj) {
+     const listener = obj.detail.listener;
+     const event = obj["detail"]["event"];
+
+     if (listener !== 'follower-latest') {
+       return;
+     }
+
+     document.getElementById("latest-follower").innerHTML = event["name"];
+   });
+   ```
+
+   :::note
+   Some keys contain a `-` character, so bracket access (`event["name"]`) is recommended over dot notation when working with this data.
+   :::
+
+8. **Try it out**
+
+   Change the **Some Text** field and the color picker in the left panel and watch the widget update. The full list of listener values and event payloads is in [Widget Events](/overlays/events).
+
+</Steps>
+
+## Where to go next
+
+<CardGrid>
+  <LinkCard
+    title="SE_API Reference"
+    href="/overlays/custom-widget"
+    description="Persist data with the key-value store, read bot counters, and control the event queue."
+  />
+  <LinkCard
+    title="Widget Events"
+    href="/overlays/events"
+    description="Full reference for onWidgetLoad, onEventReceived, and onSessionUpdate payloads."
+  />
+  <LinkCard
+    title="Session Data Reference"
+    href="/overlays/session-data"
+    description="Every session data key available to your widget, for Twitch and YouTube."
+  />
+</CardGrid>

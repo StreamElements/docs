@@ -1,0 +1,101 @@
+---
+title: "$(if)"
+description: "Add conditional logic to StreamElements Chatbot commands with the $(if) variable — show different responses depending on a true/false condition."
+category: utility-web
+summary: "Show different responses depending on a true/false condition."
+syntax: "$(if <condition> <then> [else])"
+arguments: required
+keywords:
+  - if variable
+  - conditional
+  - condition
+  - chatbot logic
+  - StreamElements
+  - custom commands
+---
+
+import ChatExample from '@components/ChatExample.astro';
+
+The `$(if)` variable adds simple conditional logic to your commands: it checks whether a condition is true and outputs one of two values accordingly. Combined with nested variables like `$(random.pick)`, it powers coin flips, chance-based games, and toggleable responses.
+
+## Use it
+
+```streamelements
+!command add !coinflip $(sender) flips a coin... it lands on $(if $(random.pick 1,0) Heads Tails)!
+```
+
+<ChatExample messages={[
+  { persona: 'user', message: '!coinflip' },
+  { persona: 'bot', message: 'ViewerName flips a coin... it lands on Heads!' }
+]} />
+
+`$(random.pick 1,0)` randomly returns `1` or `0`, which `$(if)` reads as true or false — so the command answers `Heads` half the time and `Tails` the other half.
+
+## Usage
+
+```streamelements
+$(if <condition> <then> [else])
+```
+
+The three parts are separated by spaces. Each part can be a plain word, a quoted string (`'...'`, `"..."`, or backticks), or a nested variable.
+
+- If `<condition>` is true, the variable outputs `<then>`.
+- If `<condition>` is false, it outputs `[else]` — or, when no `[else]` is given, the bot says nothing at all (see the caution below).
+
+Only the branch that is taken gets evaluated — a nested variable in the branch that isn't chosen never runs.
+
+### How conditions work
+
+The condition is a **single value read as a boolean**. There are no comparison operators — you can't write something like `$(if $(sender.points) > 100 ...)`.
+
+| Condition value | Counts as |
+| --- | --- |
+| `1`, `t`, `T`, `true`, `TRUE`, `True` | true |
+| `0`, `f`, `F`, `false`, `FALSE`, `False` | false |
+| Anything else, including arbitrary text or an empty value | false |
+
+:::caution[A false condition with no else silences the bot]
+If the condition is false and you didn't provide an `[else]` value, the bot suppresses the **entire response** — not just the `$(if)` part. For example, `Hello $(if false '4Head')` produces no message at all. Add an else branch (or a pipe default, see below) whenever the bot should always reply.
+:::
+
+## Examples
+
+| Variable | Output |
+| --- | --- |
+| `$(if true '4Head')` | `4Head` |
+| `$(if 1 '4Head' "NaM")` | `4Head` |
+| `$(if xd '4Head' 'Keepo')` | `Keepo` — a non-boolean condition counts as false |
+| `$(if false '4Head')` | Nothing — the whole message is suppressed |
+| `$(if false x\|fallback)` | `fallback` — a pipe default acts as the else branch |
+
+A practical pattern is gating on another variable that produces a boolean-like value, such as `$(random.pick)` with `1`/`0` options:
+
+```streamelements
+!command add !chest You open the chest and find $(if $(random.pick 1,0) 'a legendary sword' 'absolutely nothing')!
+```
+
+## Parameters
+
+- `<condition>` (required): A single value parsed as a boolean. `1`/`t`/`true` (any casing) are true; everything else — including `0`, `false`, and any other text — is false.
+- `<then>` (required): The output when the condition is true.
+- `[else]` (optional): The output when the condition is false. If omitted and the condition is false, the bot sends no message. A pipe default on the then-value (`$(if cond then|else)`) works as an else branch too.
+
+## Related variables
+
+- [`$(random)`](/chatbot/variables/random): `$(random.pick 1,0)` makes a 50/50 condition for `$(if)`.
+- [`$(provider)`](/chatbot/variables/provider): Returns the channel's platform slug.
+- [`$(1)`, `$(1:)`](/chatbot/variables/args): Argument tokens and pipe defaults, useful inside `$(if)` branches.
+
+## FAQ
+
+**Q: Can I compare two values, like checking if a user typed a specific word?**
+
+A: No. The condition is a single token read as a boolean — there are no `==`, `>`, or similar operators. Text that isn't a recognized boolean value simply counts as false.
+
+**Q: Why does my command sometimes not respond at all?**
+
+A: Most likely an `$(if)` with a false condition and no else branch — that suppresses the entire message. Add an `[else]` value or a pipe default.
+
+**Q: Can I nest variables inside $(if)?**
+
+A: Yes — all three slots accept nested variables, and only the branch that is taken is evaluated.

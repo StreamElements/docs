@@ -1,0 +1,100 @@
+---
+title: "$(count)"
+description: "Create, display, and modify custom counters in StreamElements Chatbot with the $(count) variable."
+category: counters-data
+summary: "Create and manage custom counters."
+keywords:
+  - count
+  - counter
+  - death counter
+  - command counter
+  - StreamElements
+  - chatbot
+  - variable
+syntax: "$(count [counter_name] [modifier])"
+arguments: optional
+---
+
+import ChatExample from '@components/ChatExample.astro';
+
+The `$(count)` variable creates, displays, and changes named counters. It's commonly used for tracking deaths in games, counting command usage, or keeping score of any recurring event.
+
+## Use it
+
+```streamelements
+!command add !deaths $(channel.display_name) has died $(count) times this stream!
+```
+
+<ChatExample messages={[
+  { persona: 'user', message: '!deaths' },
+  { persona: 'bot', message: 'CoolStreamer123 has died 13 times this stream!' },
+]} />
+
+## Usage
+
+The basic syntax for using the `$(count)` variable is:
+
+```streamelements
+$(count [counter_name] [modifier])
+```
+
+Where:
+
+- `[counter_name]` is an optional name for your counter (by default, the invoking command's own counter is used)
+- `[modifier]` can be used to set or modify the counter value
+
+Each use changes the counter and outputs the **new** value as a plain number. Without a modifier, the counter is incremented by 1.
+
+## Examples
+
+**Basic usage** — increments the command's own counter by 1 each time:
+
+```streamelements
+!cmd add !deaths $(count)
+```
+
+<ChatExample messages={[
+  { persona: 'user', message: '!deaths' },
+  { persona: 'bot', message: '13' },
+]} />
+
+**Named counter with a custom modifier:**
+
+```streamelements
+!cmd add !bossfails $(count bossfails +5)
+```
+
+<ChatExample messages={[
+  { persona: 'user', message: '!bossfails' },
+  { persona: 'bot', message: '25' },
+]} />
+
+## Parameters
+
+- `[counter_name]`: (Optional) A unique identifier for your counter. If not specified, the invoking command's own counter is used.
+- `[modifier]`: (Optional) The second space-separated token; sets or modifies the counter value:
+  - `+n`: Increment the counter by n (e.g., `+1`, `+5`)
+  - `-n`: Decrement the counter by n (e.g., `-1`, `-3`)
+  - `n`: Set the counter to a specific value n (e.g., `0`, `100`) — `$(count deaths 0)` resets the counter
+
+:::note
+Modifiers only work in the space-separated form. The dot form `$(count.deaths)` works for naming a counter, but in `$(count.deaths +5)` the parser treats `+5` itself as the counter name — so it increments a counter literally named "+5" by 1 and ignores `deaths` entirely. Use `$(count deaths +5)` instead.
+:::
+
+## Configuration
+
+Counters are automatically created when first used and persist across stream sessions. You can manage counters in the StreamElements dashboard under the Chatbot section.
+
+## Related Variables
+
+- [`$(getcount)`](/chatbot/variables/getcount): Display the current value of a counter
+
+## FAQ
+
+**Q: Can I have multiple counters?**
+
+A: Yes, you can create multiple counters by using different names (e.g., `$(count deaths)`, `$(count wins)`).
+
+**Q: How do I reset a counter?**
+
+A: You can reset a counter to zero using `$(count [counter_name] 0)`.

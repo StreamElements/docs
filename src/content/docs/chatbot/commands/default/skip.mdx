@@ -1,0 +1,59 @@
+---
+title: "!skip"
+description: "Use the !skip command in StreamElements chatbot to skip the current song in the media request queue."
+keywords:
+  - skip command
+  - skip song
+  - mediarequest
+  - chatbot commands
+  - StreamElements
+platforms: [twitch]
+access: moderator
+summary: "Moderators skip the current song in the queue."
+requires: Song Requests
+category: song-requests
+aliases:
+  - "!skipsong"
+---
+
+import ChatExample from '@components/ChatExample.astro';
+
+The `!skip` command is used to skip the currently playing song in the StreamElements media request queue. This command is useful for streamers and moderators who want to quickly move to the next song in the queue.
+
+:::note[!skip vs !next]
+`!skip` is a moderator action that **skips the currently playing song**. It is different from [`!next`](/chatbot/commands/default/next), which simply **shows** the next queued song and is available to everyone.
+:::
+
+## Usage
+
+To use the `!skip` command, simply type it in the chat:
+
+```streamelements
+!skip
+```
+
+## Examples
+
+<ChatExample messages={[
+  { persona: 'moderator', message: '!skip' },
+  { persona: 'bot', message: '@Moderator, skipped song: Drake, 21 Savage - Rich Flex (Audio)' }
+]} />
+
+<ChatExample messages={[
+  { persona: 'user', message: '!skip' }, // User tries to skip (assuming default permissions)
+  { persona: 'bot', message: '@User, you do not have permission to use that command.' } // Or "no song is currently playing."
+]} />
+
+## Configuration
+
+*   The command's permission level can be adjusted under `Chatbot` -> `Chat Commands` -> `Default Commands`.
+*   Default cooldown: 10 seconds global.
+
+## Related Commands
+
+*   [`!song`](/chatbot/commands/default/song): Displays information about the currently playing song.
+*   [`!next`](/chatbot/commands/default/next): Displays information about the next song in the queue.
+*   [`!songqueue`](/chatbot/commands/default/songqueue): Shows the current media request queue.
+*   [`!songrequest`](/chatbot/commands/default/songrequest): Adds a song to the media request queue.
+*   [`!removesong`](/chatbot/commands/default/removesong): Removes a song from the queue.
+*   [`!play`](/chatbot/commands/default/play) / [`!pause`](/chatbot/commands/default/pause): Controls playback.

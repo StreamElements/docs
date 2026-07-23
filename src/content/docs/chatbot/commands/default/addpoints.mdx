@@ -1,0 +1,61 @@
+---
+title: "!addpoints"
+description: "Moderators can manually add loyalty points to a viewer's balance using the StreamElements !addpoints chatbot command."
+platforms: [twitch]
+access: super-moderator
+summary: "Add loyalty points to a viewer's balance."
+requires: Loyalty
+category: points-loyalty
+aliases:
+  - "!editpoints"
+  - "!bonus"
+keywords:
+  - addpoints command
+  - StreamElements Chatbot
+  - loyalty program
+  - viewer rewards
+  - stream engagement
+  - moderation tools
+  - loyalty points
+  - manage points
+---
+
+import ChatExample from '@components/ChatExample.astro';
+
+The `!addpoints` command manually adds loyalty points to a viewer's balance — for one-off rewards or for correcting a balance.
+
+## Usage
+
+To add points to a viewer, use the following syntax in your chat:
+
+```streamelements
+!addpoints <username> <amount>
+```
+
+## Examples
+
+<ChatExample messages={[
+  { persona: 'broadcaster', message: '!addpoints StreamFan123 1000' },
+  { persona: 'bot', message: '@BroadcasterName, added 1000 points to StreamFan123. They now have 5961 points.' }
+]} />
+
+<ChatExample messages={[
+  { persona: 'moderator', usernameOverride: 'ModUser99', message: '!addpoints LoyalViewer 50' },
+  { persona: 'bot', message: '@ModUser99, added 50 points to LoyalViewer. They now have 1280 points.' }
+]} />
+
+## Parameters
+
+*   `<username>` (Required): The exact username of the viewer receiving points.
+*   `<amount>` (Required): The number of points (positive integer) to award.
+
+## Configuration
+
+*   Enable the **Loyalty system** in your **StreamElements Dashboard** under **Loyalty** -> **Loyalty Settings**.
+*   The command's permission level can be adjusted under **Chatbot** -> **Chat Commands** -> **Default Commands**.
+
+## Related Commands
+
+*   [`!setpoints`](/chatbot/commands/default/setpoints): Set a user's points to a specific value.
+*   [`!givepoints`](/chatbot/commands/default/givepoints): Allow users to give points to each other.
+*   [`!points`](/chatbot/commands/default/points): Check a user's current point balance.

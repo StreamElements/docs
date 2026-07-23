@@ -1,0 +1,55 @@
+---
+title: "!accountage"
+description: "Check the creation date (age) of any Twitch account using the StreamElements chatbot !accountage command. Useful for moderation and verification."
+platforms: [twitch]
+access: everyone
+summary: "Check the creation date of any Twitch account."
+category: stream-info-utility
+aliases:
+  - "!accage"
+  - "!created"
+keywords:
+  - accountage
+  - account age
+  - Twitch account
+  - user verification
+  - moderation
+  - created date
+  - streamelements chatbot
+---
+
+import ChatExample from '@components/ChatExample.astro';
+
+The `!accountage` command shows how old a Twitch account is — a quick way for moderators to spot freshly created accounts.
+
+## Usage
+
+To use the command, type `!accountage` followed by an optional username. If no username is provided, it checks the account age of the user running the command.
+
+```streamelements
+!accountage [username]
+```
+
+## Examples
+
+<ChatExample messages={[
+  { persona: 'moderator', usernameOverride: 'ModUser', message: '!accountage StreamElements' },
+  { persona: 'bot', message: '@ModUser, StreamElements was created 10 years 2 months 28 days 7 hours ago.' }
+]} />
+
+<ChatExample messages={[
+  { persona: 'user', usernameOverride: 'ViewerBob', message: '!accountage' },
+  { persona: 'bot', message: '@ViewerBob, your account was created 3 years 5 months 12 days 4 hours ago.' }
+]} />
+
+## Parameters
+
+*   `[username]` (Optional): The Twitch username of the account you want to check. If omitted, the command checks the account age of the user who issued the command.
+
+## Configuration
+
+This command requires a connection to Twitch to fetch the account creation date. Ensure your StreamElements bot account is properly linked to Twitch.
+
+## Related Commands
+
+*   [`!followage`](/chatbot/commands/default/followage): Checks how long a user has been following the channel.

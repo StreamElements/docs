@@ -1,0 +1,96 @@
+---
+title: "$(sender)"
+description: "Reference for the StreamElements Chatbot $(sender) variables: display name, points, ranks, and activity data for the command sender."
+category: user-chat
+summary: "Information about the user who triggered the command. Also available as $(source)."
+syntax: "$(sender)"
+arguments: none
+keywords:
+  - streamelements
+  - chatbot
+  - sender variable
+  - streamer tools
+  - chat commands
+---
+
+import ChatExample from '@components/ChatExample.astro';
+
+The `$(sender)` variable in StreamElements Chatbot always refers to the user who triggered the command or message. It provides access to various user-related information such as username, loyalty points, ranks, and activity timestamps.
+
+:::tip[Key Point]
+`$(sender)` always refers to the command trigger and doesn't accept arguments. If you need to query information about other users, use the [`$(user)`](/chatbot/variables/user) variable instead.
+:::
+
+## Use it
+
+```streamelements
+!command add !points $(sender) has $(sender.points) points and is rank $(sender.points_rank) on the leaderboard
+```
+
+<ChatExample messages={[
+  { persona: 'user', message: '!points' },
+  { persona: 'bot', message: 'ViewerName has 100 points and is rank 5/283 on the leaderboard' }
+]} />
+
+## Usage
+
+To use the `$(sender)` variable, include it in your chat message or command response using the `$()` syntax. For example, `$(sender)` will display the command trigger's display name.
+
+## Available variables
+
+| Variable | Description | Notes |
+|----------|-------------|-------|
+| `$(sender)` | Sender's display name | |
+| `$(sender.name)` | Sender's login name in lowercase letters | This is the account's login name, not the display name |
+| `$(sender.twitchid)` | Sender's platform user ID | |
+| `$(sender.points)` | Sender's loyalty currency owned | |
+| `$(sender.points_rank)` | Sender's rank on the loyalty currency leaderboard | Returned as rank/total, e.g. `5/283`; `<error>` if the lookup fails |
+| `$(sender.points_alltime_rank)` | Sender's rank on the all-time loyalty currency leaderboard | Returned as rank/total, e.g. `5/283`; `<error>` if the lookup fails |
+| `$(sender.level)` | Sender's access level as a number | See [access levels](/chatbot/variables/user#access-levels) |
+| `$(sender.lastmessage)` | Sender's last typed message in the chat | Outputs a single space if no message is stored |
+| `$(sender.lastseen)` | Time since the sender was most recently seen in the viewer list or chat | Returned as a duration, e.g. `13 mins 15 secs`; `<not found>` if never recorded |
+| `$(sender.lastactive)` | Time since the sender most recently typed a message in the chat | Returned as a duration, e.g. `13 mins 15 secs`; `<not found>` if never recorded |
+| `$(sender.time_online)` | Total time the sender has spent watching the stream | Returned as a duration, e.g. `2 hours 30 mins` |
+| `$(sender.time_online_rank)` | Sender's rank on the leaderboard for online time watched | Returned as rank/total, e.g. `5/283`; `<error>` if the lookup fails |
+| `$(sender.time_offline)` | Total time the sender has spent in chat while the stream is offline | Returned as a duration, e.g. `2 hours 30 mins` |
+| `$(sender.time_offline_rank)` | Sender's rank on the leaderboard for offline time watched | Returned as rank/total, e.g. `5/283`; `<error>` if the lookup fails |
+
+Durations are written out in full words: `secs`, `mins`, `hours`, `days`, `months`, and `years` — for example `1 day 4 hours` or `27 mins 16 secs`. Smaller units are dropped as larger ones appear.
+
+## Examples
+
+**A watchtime command combining time watched and online rank**
+
+```streamelements
+!command add !watchtime $(sender) has been watching the stream for $(sender.time_online) and is rank $(sender.time_online_rank) on the online leaderboard
+```
+
+<ChatExample messages={[
+  { persona: 'user', message: '!watchtime' },
+  { persona: 'bot', message: 'ViewerName has been watching the stream for 2 hours 30 mins and is rank 5/283 on the online leaderboard' },
+]} />
+
+**An activity command combining last activity and last message**
+
+```streamelements
+!command add !activity $(sender) was last active $(sender.lastactive) ago and last typed: $(sender.lastmessage)
+```
+
+<ChatExample messages={[
+  { persona: 'user', message: '!activity' },
+  { persona: 'bot', message: 'ViewerName was last active 13 mins 15 secs ago and last typed: !points' },
+]} />
+
+## Aliases
+
+`$(source)` can also be used as an alias for `$(sender)`.
+
+## Related Variables
+
+- [`$(user)`](/chatbot/variables/user): Query information about any user, not just the command sender.
+
+## FAQ
+
+**Q: Does $(sender) work on YouTube?**
+
+A: Yes. Unlike `$(user)`, the `$(sender)` variable and its sub-variables work on all platforms, including YouTube.

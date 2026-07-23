@@ -1,0 +1,112 @@
+---
+title: "$(channel)"
+description: "Reference for the StreamElements Chatbot $(channel) variables: channel name, viewers, followers, subscribers, game, title, and uptime."
+category: stream-info
+summary: "Channel information such as name, viewer count, followers, and subscribers."
+keywords:
+  - streamelements
+  - chatbot
+  - channel variable
+  - streamer tools
+  - chat commands
+syntax: "$(channel.<field> [username])"
+arguments: optional
+---
+
+import ChatExample from '@components/ChatExample.astro';
+
+The `$(channel)` variables in StreamElements Chatbot allow you to access and display various channel-related information in your chat messages and commands. These variables provide real-time data such as channel name, viewer count, follower count, and subscriber information.
+
+## Use it
+
+```streamelements
+!command add !stats $(channel.display_name) has $(channel.followers) followers and $(channel.subs) subscribers!
+```
+
+<ChatExample messages={[
+  { persona: 'user', message: '!stats' },
+  { persona: 'bot', message: 'CoolStreamer123 has 50000 followers and 500 subscribers!' },
+]} />
+
+## Usage
+
+To use a channel variable, include it in your chatbot command using the `$()` syntax. The variable will be automatically replaced with the corresponding value when the message is sent.
+
+## Available variables
+
+| Variable | Description | Notes |
+|----------|-------------|-------|
+| `$(channel)` | Name of the channel (login name) | Any unrecognized field, e.g. `$(channel.name)`, also returns the channel name |
+| `$(channel.display_name)` | Channel's display name | May differ in capitalization from `$(channel)` |
+| `$(channel.alias)` | Channel's alias | |
+| `$(channel.provider)` | Channel's streaming platform as a lowercase slug: `twitch`, `youtube`, or `kick` | |
+| `$(channel.provider_id)` | Channel's platform ID (e.g. Twitch or YouTube channel ID) | Aliases: `$(channel.twitchid)`, `$(channel.youtubeid)` |
+| `$(channel.id)` | Channel's internal StreamElements ID | |
+| `$(channel.title)` | Current stream title | Alias: `$(channel.status)`. Returns `<error>` if the lookup fails |
+| `$(channel.game)` | Current game/category | Returns `<no game>` if not set, `<error>` if the lookup fails |
+| `$(channel.viewers)` | Current viewer count, as a plain number | Returns `<not live>` if offline |
+| `$(channel.followers)` | Total follower count, as a plain number | Returns `0` on error |
+| `$(channel.chatters)` | Current number of chatters, as a plain number | Returns `0` on error |
+| `$(channel.subs)` | Total subscriber count, as a plain number | Aliases: `$(channel.subcount)`, `$(channel.subscribers)`. Own channel only — returns `0` on error or for other channels |
+| `$(channel.subpoints)` | Total subscriber points, as a plain number | Own channel only — returns `0` on error or for other channels |
+| `$(channel.uptime)` | Current stream uptime, e.g. `3 hours 27 mins` | Returns `<not live>` if offline |
+
+## Checking another channel
+
+Add a username after the field to look up a different channel:
+
+```streamelements
+$(channel.game somestreamer)
+$(channel.title somestreamer)
+$(channel somestreamer)
+```
+
+- This cross-channel form works on Twitch. It is not implemented on YouTube, where it falls back to your own channel's data.
+- `$(channel.subs)` and `$(channel.subpoints)` always return `0` for other channels.
+- If the channel doesn't exist, `title` and `game` return `<error not_found>`; other lookup failures return an `<error ...>` code.
+
+The standalone [`$(game)`](/chatbot/variables/game), [`$(title)`](/chatbot/variables/title), and [`$(uptime)`](/chatbot/variables/uptime) variables are shortcuts for the matching channel fields and accept a username the same way.
+
+## Examples
+
+**A stream status command combining provider, game, and title**
+
+```streamelements
+!cmd add !status We're live on $(channel.provider) playing $(channel.game) — $(channel.title)
+```
+
+<ChatExample messages={[
+  { persona: 'user', message: '!status' },
+  { persona: 'bot', message: "We're live on twitch playing Super Mario 64 — Speedrunning Mario 64 - Day 3!" },
+]} />
+
+**A live stats command combining uptime, viewers, and chatters**
+
+```streamelements
+!cmd add !live We've been live for $(channel.uptime) with $(channel.viewers) viewers and $(channel.chatters) active chatters!
+```
+
+<ChatExample messages={[
+  { persona: 'user', message: '!live' },
+  { persona: 'bot', message: "We've been live for 3 hours 27 mins with 1337 viewers and 850 active chatters!" },
+]} />
+
+## Related Variables
+
+- [$(user)](/chatbot/variables/user): Displays information about the user who triggered the command
+- [$(touser)](/chatbot/variables/touser): Refers to the target user in commands that mention other users
+- [$(game)](/chatbot/variables/game), [$(title)](/chatbot/variables/title), [$(uptime)](/chatbot/variables/uptime): Standalone shortcuts for the matching channel fields
+
+## FAQ
+
+**Q: How often are these variables updated?**
+
+A: Channel variables are updated in real-time, reflecting the most current information available from the platform.
+
+**Q: What happens if a variable can't retrieve the information?**
+
+A: It depends on the variable:
+- `$(channel.followers)`, `$(channel.chatters)`, `$(channel.subs)`, and `$(channel.subpoints)` return `0` on error
+- `$(channel.title)` and `$(channel.game)` return `<error>` on error
+- `$(channel.viewers)` and `$(channel.uptime)` return `<not live>` if the channel is offline
+- `$(channel.game)` returns `<no game>` if no game is set

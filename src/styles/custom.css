@@ -1,0 +1,152 @@
+/* StreamElements Starlight theme.
+   Color tokens mirror the @frontend/ui design system (frontend monorepo,
+   packages/ui/src/styles/globals.css, OKLCH). To resync with the app,
+   update the --se-* block — everything else derives from it. */
+
+/* Typography: Inter Variable (loaded via customCss entry in astro.config.mjs).
+   @frontend/ui intentionally ships no font family (each app sets its own),
+   so Inter is a docs-local choice, not a divergence. */
+:root {
+  --sl-font: 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
+
+  /* Brand + semantic colors (source token noted per line). */
+  --se-primary: oklch(0.6426 0.1869 265.73); /* --primary / $uiPrimaryMain #5684FD */
+  --se-primary-dark: oklch(0.68 0.16 265.73); /* .dark --primary */
+  --se-success: oklch(0.797 0.1683 156.11); /* --success / $uiSuccessMain #46DC8E */
+  --se-attention: oklch(0.7272 0.177 54.06); /* --attention / $uiAttentionMain #F98215 */
+  --se-destructive: oklch(0.6383 0.2236 17.81); /* --destructive / $uiErrorMain #F53656 */
+  --se-purple: oklch(0.6506 0.2049 293.08); /* --chart-5 */
+
+  /* Neutral ramp (hue 250, shared across modes in the app). */
+  --se-neutral-0: oklch(1 0 250);
+  --se-neutral-50: oklch(0.9861 0 250); /* light --background #f7f7f7 */
+  --se-neutral-100: oklch(0.9683 0.0017 250);
+  --se-neutral-200: oklch(0.9345 0.0032 250); /* light --border */
+  --se-neutral-300: oklch(0.8811 0.0043 250);
+  --se-neutral-400: oklch(0.7107 0.0055 250); /* dark --muted-foreground */
+  --se-neutral-500: oklch(0.5555 0.0057 250);
+  --se-neutral-600: oklch(0.4419 0.0052 250);
+  --se-neutral-700: oklch(0.3715 0.0046 250);
+  --se-neutral-800: oklch(0.2686 0.0076 250);
+  --se-neutral-900: oklch(0.2046 0.006 250);
+  --se-neutral-950: oklch(0.1684 0.005 250); /* dark --background #131315 */
+  --se-card-dark: oklch(0.2146 0.006 250); /* .dark --card #232428 */
+  --se-sidebar-dark: oklch(0.19 0.005 250); /* .dark --sidebar */
+
+  /* Radii (--radius: 0.625rem base). */
+  --se-radius: 0.625rem;
+  --se-radius-sm: 0.375rem;
+}
+
+/* Starlight ramps derived from the tokens above.
+   IMPORTANT: theme ramps MUST be scoped to [data-theme=...] — this stylesheet
+   is unlayered and beats Starlight's layered theme styles regardless of
+   specificity, so an unscoped :root ramp would poison the other mode.
+   Starlight inverts token meaning per mode: `white` = text, `black` = page
+   background. */
+:root[data-theme='dark'] {
+  --sl-color-accent-low: color-mix(in oklch, var(--se-primary) 32%, var(--se-neutral-950));
+  --sl-color-accent: var(--se-primary-dark);
+  --sl-color-accent-high: color-mix(in oklch, var(--se-primary) 45%, white);
+
+  --sl-color-white: var(--se-neutral-100);
+  --sl-color-gray-1: var(--se-neutral-200);
+  --sl-color-gray-2: var(--se-neutral-300);
+  --sl-color-gray-3: var(--se-neutral-400);
+  --sl-color-gray-4: var(--se-neutral-600);
+  --sl-color-gray-5: var(--se-neutral-800); /* hairlines ≈ .dark --border */
+  --sl-color-gray-6: var(--se-card-dark); /* raised surfaces / code blocks */
+  --sl-color-gray-7: var(--se-sidebar-dark);
+  --sl-color-black: var(--se-neutral-950);
+
+  --se-shadow-float: 0 1px 0 rgb(255 255 255 / 0.04) inset, 0 6px 16px rgb(0 0 0 / 0.45); /* .dark --shadow-float */
+}
+:root[data-theme='light'] {
+  --sl-color-accent-low: color-mix(in oklch, var(--se-primary) 16%, white);
+  /* Brand primary darkened for AA text contrast on light surfaces (#5684FD
+     alone is ~3.2:1 on white); tints and dark mode keep the exact brand hue. */
+  --sl-color-accent: oklch(0.52 0.1869 265.73);
+  --sl-color-accent-high: oklch(0.38 0.15 265.73);
+
+  --sl-color-white: var(--se-neutral-900);
+  --sl-color-gray-1: var(--se-neutral-800);
+  --sl-color-gray-2: var(--se-neutral-700);
+  --sl-color-gray-3: var(--se-neutral-500);
+  --sl-color-gray-4: var(--se-neutral-400);
+  --sl-color-gray-5: var(--se-neutral-200); /* hairlines = light --border */
+  --sl-color-gray-6: var(--se-neutral-100); /* inline code bg = light --well */
+  --sl-color-gray-7: var(--se-neutral-50); /* subtle bg = light --background */
+  --sl-color-black: var(--se-neutral-0); /* page bg = light --card */
+
+  --se-shadow-float: 0 4px 12px rgb(0 0 0 / 0.09), 0 1px 3px rgb(0 0 0 / 0.06); /* --shadow-float */
+}
+
+/* Inline code may wrap; block code wrapping is handled by Expressive Code
+   (expressiveCode.defaultProps.wrap in astro.config.mjs). */
+:not(pre) > code {
+  white-space: pre-wrap;
+}
+
+/* Hero pages (homepage, changelog): flat surface, no decorative gradient —
+   the design system carries hierarchy with type and spacing, not washes. */
+[data-has-hero] .hero {
+  padding-block: 2.5rem 1.5rem;
+}
+
+/* Card polish: system radius, subtle lift + accent border on hover with the
+   app's floating-element shadow. */
+.card,
+.sl-link-card {
+  border-radius: var(--se-radius);
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+.card:hover,
+.sl-link-card:hover {
+  border-color: var(--sl-color-accent);
+  transform: translateY(-2px);
+  box-shadow: var(--se-shadow-float);
+}
+
+/* Topic switcher: neutral icon chips at rest (muted icon on a subtly raised
+   surface, like the app sidebar), brand-primary tint only on hover/current —
+   color signals state, not category. */
+.starlight-sidebar-topics .starlight-sidebar-topics-icon {
+  border: none;
+  border-radius: var(--se-radius-sm);
+  padding: 0.3rem;
+  background-color: var(--sl-color-gray-6);
+  color: var(--sl-color-gray-3);
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+.starlight-sidebar-topics svg {
+  font-size: 1.05rem;
+}
+.starlight-sidebar-topics
+  a:is(.starlight-sidebar-topics-current, :hover, :focus-visible)
+  .starlight-sidebar-topics-icon {
+  background-color: color-mix(in srgb, var(--se-primary) 15%, transparent);
+  color: var(--sl-color-accent);
+}
+
+/* StreamElements command syntax blocks keep their signature orange accent bar
+   (system attention orange). */
+.expressive-code pre[data-language='streamelements'] {
+  border-inline-start: 3px solid var(--se-attention);
+}
+
+/* Keyboard shortcut keys. */
+kbd {
+  display: inline-block;
+  padding: 0.1em 0.45em;
+  border: 1px solid var(--sl-color-gray-4);
+  border-bottom-width: 2px;
+  border-radius: var(--se-radius-sm);
+  background-color: var(--sl-color-gray-6);
+  color: var(--sl-color-white);
+  font-family: var(--sl-font-mono, ui-monospace, monospace);
+  font-size: 0.8em;
+  line-height: 1.4;
+}

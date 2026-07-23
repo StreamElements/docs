@@ -1,0 +1,95 @@
+---
+title: "$(setgame)"
+description: "Change the stream's game or category from chat with the $(setgame) variable in StreamElements Chatbot."
+category: stream-management
+summary: "Change the stream's game category."
+syntax: '$(setgame "<game name>")'
+arguments: required
+keywords:
+  - StreamElements
+  - chatbot
+  - game category
+  - stream title
+  - Twitch
+  - setgame
+---
+
+import ChatExample from '@components/ChatExample.astro';
+
+The `$(setgame)` variable allows you to change the current game or category for your stream directly through the StreamElements Chatbot. On success, it outputs the full name of the category that was set.
+
+## Use it
+
+```streamelements
+!command add !setgame Game updated to $(setgame ${1:})
+```
+
+<ChatExample messages={[
+  { persona: 'moderator', message: '!setgame rocket league' },
+  { persona: 'bot', message: 'Game updated to Rocket League' }
+]} />
+
+:::caution
+Anyone who can run the command can change your category. Restrict the command to moderators in the command's user level settings.
+:::
+
+## Usage
+
+To use this variable, include it in a command or message with the desired game name as a parameter.
+
+```streamelements
+$(setgame "<game name>")
+```
+
+:::note
+The game name must arrive as a single piece: enclose it in quotation marks, or nest an argument token like `${1:}` (as in the example above) so everything the viewer types is passed along.
+:::
+
+## Examples
+
+1. Changing the game to World of Warcraft:
+
+   ```streamelements
+   $(setgame "World of Warcraft")
+   ```
+
+2. Updating the stream category to Just Chatting:
+
+   ```streamelements
+   $(setgame "Just Chatting")
+   ```
+
+3. Using an abbreviation:
+
+   ```streamelements
+   $(setgame "OSRS")
+   ```
+
+## Parameters
+
+The `$(setgame)` variable accepts one parameter:
+
+- `"Game Name"`: The title of the game you want to set for your stream. This parameter supports fuzzy searching, allowing for slight misspellings or common abbreviations.
+
+## Output
+
+On success, the variable outputs the resolved category name (for example, setting `"rocket league"` outputs `Rocket League`). If the bot doesn't have the necessary channel authorization, it outputs `invalid channel`. If the platform rejects the change, the raw error message is shown instead.
+
+## Related Variables
+
+- [`$(settitle)`](/chatbot/variables/settitle): Changes the stream title
+- [`$(game)`](/chatbot/variables/game): Retrieves the current game or category
+
+## FAQ
+
+**Q: Can I use this variable in any chat message?**
+
+A: Typically, this variable is used within custom commands or bot responses. Make sure to set appropriate permission levels to prevent misuse.
+
+**Q: Will this work for all streaming platforms?**
+
+A: The `$(setgame)` variable is designed to work with platforms that support game/category changes through the StreamElements API. It's primarily used for Twitch streams.
+
+**Q: Why does the output say "invalid channel"?**
+
+A: The bot is missing authorization for your channel. Reconnect your account on the StreamElements dashboard so the bot can update your category.

@@ -1,0 +1,68 @@
+---
+/**
+ * Pills showing which streaming platforms support a command/feature.
+ * Usually rendered automatically from the `platforms` frontmatter field
+ * via the PageTitle override, but can also be used directly in MDX.
+ */
+interface Props {
+  platforms: Array<'twitch' | 'youtube' | 'kick' | string>;
+}
+
+const LABELS: Record<string, string> = {
+  twitch: 'Twitch',
+  youtube: 'YouTube',
+  kick: 'Kick',
+};
+
+const { platforms = [] } = Astro.props;
+---
+
+{
+  platforms.length > 0 && (
+    <div class="platform-badges" role="list" aria-label="Available on">
+      <span class="platform-badges-label" aria-hidden="true">
+        Available on:
+      </span>
+      {platforms.map((platform) => (
+        <span role="listitem" class:list={['platform-badge', platform.toLowerCase()]}>
+          {LABELS[platform.toLowerCase()] ?? platform}
+        </span>
+      ))}
+    </div>
+  )
+}
+
+<style>
+  .platform-badges {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.4rem;
+    margin-top: 0.75rem;
+  }
+  .platform-badges-label {
+    font-size: var(--sl-text-xs);
+    color: var(--sl-color-gray-3);
+    user-select: none;
+  }
+  .platform-badge {
+    display: inline-block;
+    padding: 0.1em 0.5em;
+    border-radius: 4px;
+    font-size: var(--sl-text-xs);
+    font-weight: 600;
+    line-height: 1.6;
+  }
+  .platform-badge.twitch {
+    background-color: #9146ff;
+    color: #fff;
+  }
+  .platform-badge.kick {
+    background-color: #53fc18;
+    color: #000;
+  }
+  .platform-badge.youtube {
+    background-color: #f00;
+    color: #fff;
+  }
+</style>

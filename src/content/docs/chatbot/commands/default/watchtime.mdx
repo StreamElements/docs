@@ -1,0 +1,59 @@
+---
+title: "!watchtime"
+description: "Use the !watchtime command in StreamElements chatbot to check your own or another user's accumulated watch time for the channel."
+keywords:
+  - watchtime command
+  - Twitch chatbot commands
+  - viewer engagement
+  - stream interaction
+  - loyalty tracking
+  - streamelements
+platforms: [twitch]
+access: everyone
+summary: "Check your own or another user's accumulated watch time."
+requires: Loyalty
+category: points-loyalty
+aliases:
+  - "!viewtime"
+---
+
+import ChatExample from '@components/ChatExample.astro';
+
+The `!watchtime` command allows viewers to check how long they've accumulated watching the current channel. This feature requires the Loyalty system to be active and configured to track watch time.
+
+## Usage
+
+To check watch time:
+
+```streamelements
+!watchtime [username]
+```
+
+## Examples
+
+<ChatExample messages={[
+  { persona: 'user', message: '!watchtime' },
+  { persona: 'bot', message: '@User has spent 2 hours and 15 minutes watching StreamerName!' } // Format may vary
+]} />
+
+<ChatExample messages={[
+  { persona: 'user', message: '!watchtime LoyalViewer' },
+  { persona: 'bot', message: 'LoyalViewer has spent 1 day 5 hours and 30 minutes watching StreamerName!' } // Format may vary
+]} />
+
+## Parameters
+
+*   `[username]` (Optional): The username of the viewer whose watch time you want to check. If omitted, it defaults to the user issuing the command.
+
+## Configuration
+
+*   Enable the **Loyalty system** under `Loyalty` -> `Loyalty Settings`.
+*   **Watch time tracking** must be enabled within the Loyalty Settings.
+*   The command itself (`!watchtime`) is usually enabled by default when Loyalty is active.
+
+## Related Commands
+
+*   [`!points`](/chatbot/commands/default/points): Checks the loyalty points balance.
+*   [`!top`](/chatbot/commands/default/top): Shows the top viewers by watch time or points.
+*   [`!leaderboard`](/chatbot/commands/default/leaderboard): Provides a link to the full leaderboard.
+*   [`!uptime`](/chatbot/commands/default/uptime): Shows the duration of the *current* stream session.

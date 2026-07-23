@@ -1,0 +1,73 @@
+---
+title: "$(provider)"
+description: "Display which streaming platform a channel runs on — twitch, youtube, or kick — with the $(provider) variable in StreamElements Chatbot."
+category: stream-info
+summary: "Display the platform the channel runs on: twitch, youtube, or kick."
+syntax: "$(provider)"
+arguments: none
+keywords:
+  - provider
+  - platform
+  - twitch
+  - youtube
+  - kick
+  - StreamElements
+  - chatbot variable
+---
+
+import ChatExample from '@components/ChatExample.astro';
+
+The `$(provider)` variable returns the platform the channel runs on, as a lowercase slug: `twitch`, `youtube`, or `kick`. It is identical to [`$(channel.provider)`](/chatbot/variables/channel) and works on every platform.
+
+## Use it
+
+```streamelements
+!command add !platform This channel streams on $(provider) — see you in chat!
+```
+
+<ChatExample messages={[
+  { persona: 'user', message: '!platform' },
+  { persona: 'bot', message: 'This channel streams on twitch — see you in chat!' }
+]} />
+
+## Usage
+
+```streamelements
+$(provider)
+```
+
+The variable takes no arguments and always refers to the channel the bot is running in.
+
+| Platform | Output |
+| --- | --- |
+| Twitch | `twitch` |
+| YouTube | `youtube` |
+| Kick | `kick` |
+
+Because the output is a stable lowercase slug, it is most useful **nested inside other variables** — for example to build platform-aware responses with [`$(customapi)`](/chatbot/variables/customapi):
+
+```streamelements
+$(customapi https://example.com/messages/$(provider))
+```
+
+This requests a different URL per platform (`.../messages/twitch` on Twitch, `.../messages/kick` on Kick, and so on), so your API can return a platform-specific response.
+
+:::note
+[`$(if)`](/chatbot/variables/if) cannot compare text, so `$(if $(provider) ...)` does not branch by platform — a slug like `twitch` always counts as false. Use the `$(customapi)` pattern above for platform-specific responses.
+:::
+
+## Related variables
+
+- [`$(channel)`](/chatbot/variables/channel): `$(channel.provider)` returns the same value, alongside other channel fields.
+- [`$(customapi)`](/chatbot/variables/customapi): Fetch a URL — combine with `$(provider)` for platform-aware responses.
+- [`$(if)`](/chatbot/variables/if): Conditional output based on a true/false condition.
+
+## FAQ
+
+**Q: Does $(provider) work on every platform?**
+
+A: Yes — it is available on Twitch, YouTube, and Kick.
+
+**Q: Is the output capitalized?**
+
+A: No, it is always the lowercase slug (`twitch`, not `Twitch`).

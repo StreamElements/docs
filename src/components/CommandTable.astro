@@ -1,0 +1,56 @@
+---
+/**
+ * Renders the default-command table for one category, generated from page
+ * frontmatter (see content.config.ts: category / access / summary). Used by
+ * the Default Commands overview so the table can't drift from the pages.
+ */
+import { getCollection } from 'astro:content';
+
+interface Props {
+  category: string;
+}
+
+const { category } = Astro.props;
+
+const ACCESS_LABELS: Record<string, string> = {
+  everyone: 'Everyone',
+  subscriber: 'Subscriber',
+  regular: 'Regular',
+  vip: 'VIP',
+  moderator: 'Moderator',
+  'super-moderator': 'Super Moderator',
+  broadcaster: 'Broadcaster',
+};
+
+const commands = (
+  await getCollection(
+    'docs',
+    (e) => e.id.startsWith('chatbot/commands/default/') && e.data.category === category,
+  )
+).sort((a, b) => a.data.title.localeCompare(b.data.title, 'en'));
+---
+
+<table>
+  <thead>
+    <tr>
+      <th>Command</th>
+      <th>Access</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    {
+      commands.map((c) => (
+        <tr>
+          <td>
+            <a href={`/${c.id}`}>
+              <code>{c.data.title}</code>
+            </a>
+          </td>
+          <td>{c.data.access ? (ACCESS_LABELS[c.data.access] ?? c.data.access) : '—'}</td>
+          <td>{c.data.summary ?? c.data.description}</td>
+        </tr>
+      ))
+    }
+  </tbody>
+</table>
