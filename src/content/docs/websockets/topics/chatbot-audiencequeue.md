@@ -15,14 +15,14 @@ keywords:
 
 This topic carries every audience queue event: queue lifecycle changes and member changes. The audience queue backs the chatbot's [Viewer Queue](/chatbot/modules/viewerqueue) module and the `!queue` command.
 
-Events keep the same names and payloads as the legacy socket.io room `audience-queue::{channelId}`, so clients can switch transports without changing their event handling.
+Payloads match the legacy socket.io room `audience-queue::{channelId}`, but event names follow Astro's dot-separated convention - see the [migration table](#migrating-from-socketio) below.
 
 ## Payload
 
 | Parameter | Type | Description |
 | --------- | ---- | ----------- |
 | `room` | `string` | Channel ID |
-| `data.event` | `string` | Event type (e.g., `audience-queue:created`) |
+| `data.event` | `string` | Event type (e.g., `queue.created`) |
 | `data.payload` | `object` | Event-specific payload data |
 
 ## Example
@@ -35,7 +35,7 @@ Events keep the same names and payloads as the legacy socket.io room `audience-q
     "topic": "channel.chatbot.audiencequeue",
     "room": "577c0455f9a31ea72a36b2b3",
     "data": {
-        "event": "audience-queue:member-enqueued",
+        "event": "member.enqueued",
         "payload": {}
     }
 }
@@ -47,15 +47,15 @@ Events keep the same names and payloads as the legacy socket.io room `audience-q
 
 | Event | Description |
 | ----- | ----------- |
-| `audience-queue:created` | A queue was opened |
-| `audience-queue:updated` | Queue settings changed, or the queue was paused or resumed |
-| `audience-queue:deleted` | The queue was closed |
+| `queue.created` | A queue was opened |
+| `queue.updated` | Queue settings changed, or the queue was paused or resumed |
+| `queue.deleted` | The queue was closed |
 
-#### audience-queue:created
+#### queue.created
 
 ```json
 {
-    "event": "audience-queue:created",
+    "event": "queue.created",
     "payload": {
         "isSuspended": false,
         "title": "Viewer games",
@@ -75,15 +75,15 @@ Events keep the same names and payloads as the legacy socket.io room `audience-q
 
 The payload is an [AudienceQueue](#audiencequeue) object.
 
-#### audience-queue:updated
+#### queue.updated
 
-Same payload as `audience-queue:created`, with the current queue state. When the queue is paused or resumed, `isSuspended` changes and a new entry appears in `statusChangeLog`.
+Same payload as `queue.created`, with the current queue state. When the queue is paused or resumed, `isSuspended` changes and a new entry appears in `statusChangeLog`.
 
-#### audience-queue:deleted
+#### queue.deleted
 
 ```json
 {
-    "event": "audience-queue:deleted",
+    "event": "queue.deleted",
     "payload": null
 }
 ```
@@ -94,15 +94,15 @@ The payload is always `null`.
 
 | Event | Description |
 | ----- | ----------- |
-| `audience-queue:member-enqueued` | A member joined the queue |
-| `audience-queue:member-selected` | A member was selected, by hand or at random |
-| `audience-queue:member-removed` | A member was removed from the queue or the selection |
+| `member.enqueued` | A member joined the queue |
+| `member.selected` | A member was selected, by hand or at random |
+| `member.removed` | A member was removed from the queue or the selection |
 
 All member events carry an [AudienceQueueMember](#audiencequeuemember) payload:
 
 ```json
 {
-    "event": "audience-queue:member-enqueued",
+    "event": "member.enqueued",
     "payload": {
         "id": "12345678",
         "username": "viewer123",
@@ -138,6 +138,19 @@ All member events carry an [AudienceQueueMember](#audiencequeuemember) payload:
 | `watchTime` | `number` | Watch time in minutes (Twitch only, otherwise 0) |
 | `audienceGroups` | `array` | Groups the member belongs to: `everyone`, `vip`, `subscriber`, `follower` |
 | `position` | `number` | Position in the queue |
+
+## Migrating from socket.io
+
+Payloads are identical across both transports; only the event names change:
+
+| socket.io event | Astro event |
+| --------------- | ----------- |
+| `audience-queue:created` | `queue.created` |
+| `audience-queue:updated` | `queue.updated` |
+| `audience-queue:deleted` | `queue.deleted` |
+| `audience-queue:member-enqueued` | `member.enqueued` |
+| `audience-queue:member-selected` | `member.selected` |
+| `audience-queue:member-removed` | `member.removed` |
 
 ## Related
 
