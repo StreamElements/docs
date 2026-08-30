@@ -297,6 +297,7 @@ export default defineConfig({
                       label: 'Chatbot',
                       items: [
                         'websockets/topics/chatbot-status',
+                        'websockets/topics/chatbot-audiencequeue',
                         'websockets/topics/chatbot-counters',
                         'websockets/topics/chatbot-modules-emotecombo',
                         'websockets/topics/chatbot-modules-pyramid',
