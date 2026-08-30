@@ -15,8 +15,6 @@ keywords:
 
 This topic carries every audience queue event: queue lifecycle changes and member changes. The audience queue backs the chatbot's [Viewer Queue](/chatbot/modules/viewerqueue) module and the `!queue` command.
 
-Payloads match the legacy socket.io room `audience-queue::{channelId}`, but event names follow Astro's dot-separated convention - see the [migration table](#migrating-from-socketio) below.
-
 ## Payload
 
 | Parameter | Type | Description |
@@ -138,19 +136,6 @@ All member events carry an [AudienceQueueMember](#audiencequeuemember) payload:
 | `watchTime` | `number` | Watch time in minutes (Twitch only, otherwise 0) |
 | `audienceGroups` | `array` | Groups the member belongs to: `everyone`, `vip`, `subscriber`, `follower` |
 | `position` | `number` | Position in the queue |
-
-## Migrating from socket.io
-
-Payloads are identical across both transports; only the event names change:
-
-| socket.io event | Astro event |
-| --------------- | ----------- |
-| `audience-queue:created` | `queue.created` |
-| `audience-queue:updated` | `queue.updated` |
-| `audience-queue:deleted` | `queue.deleted` |
-| `audience-queue:member-enqueued` | `member.enqueued` |
-| `audience-queue:member-selected` | `member.selected` |
-| `audience-queue:member-removed` | `member.removed` |
 
 ## Related
 

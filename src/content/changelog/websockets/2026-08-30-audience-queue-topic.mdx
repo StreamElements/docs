@@ -1,9 +1,7 @@
 ---
 title: New channel.chatbot.audiencequeue topic
-description: Audience queue (viewer queue) events are now published over the Astro gateway, with the same payloads as the legacy socket.io room.
+description: Audience queue (viewer queue) events are now published over the Astro gateway.
 date: 2026-08-30
 ---
 
 The new [`channel.chatbot.audiencequeue`](/websockets/topics/chatbot-audiencequeue) topic delivers audience queue events in real time: queue opened, updated, and closed, plus member joins, selections, and removals.
-
-Payloads match the legacy socket.io room `audience-queue::{channelId}`; event names follow Astro's dot-separated convention (`queue.created`, `member.selected`, ...). The topic page has the full mapping.
