@@ -97,7 +97,7 @@ const resolved = messages.map((msg) => {
             </span>
           )}
           {!msg.isSystem && (
-            <span class="chat-username" style={`color: ${msg.userColor}`}>
+            <span class="chat-username" style={`--chat-user-color: ${msg.userColor}`}>
               {msg.username}:
             </span>
           )}
@@ -174,8 +174,16 @@ const resolved = messages.map((msg) => {
     border-radius: 2px;
   }
   .chat-username {
+    color: var(--chat-user-color);
     font-weight: 700;
-    white-space: nowrap;
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+  :global([data-theme='light']) .chat-username {
+    color: color-mix(in srgb, var(--chat-user-color) 60%, black);
+  }
+  :global([data-theme='dark']) .chat-username {
+    color: color-mix(in srgb, var(--chat-user-color) 75%, white);
   }
   .chat-text {
     min-width: 0;

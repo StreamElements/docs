@@ -1,0 +1,116 @@
+---
+import { Icon } from '@astrojs/starlight/components';
+import SidebarSublist from '@astrojs/starlight/components/SidebarSublist.astro';
+import SidebarPersister from '@astrojs/starlight/components/SidebarPersister.astro';
+import MobileMenuFooter from 'virtual:starlight/components/MobileMenuFooter';
+
+const { sidebar } = Astro.locals.starlightRoute;
+const { topics, isPageWithTopic } = Astro.locals.starlightSidebarTopics;
+const current = topics.find((topic) => topic.isCurrent);
+---
+
+<div class="product-sidebar">
+  {isPageWithTopic && (
+    <docs-product-picker>
+      <details class="product-picker">
+        <summary aria-label={`Choose product: ${current?.label ?? 'Documentation'}`}>
+          <span class="product-icon"><Icon name={current?.icon ?? 'open-book'} size="1.25rem" /></span>
+          <span class="product-name"><span class="picker-hint">Documentation</span><strong>{current?.label ?? 'Choose product'}</strong></span>
+          <Icon name="down-caret" size="1rem" />
+        </summary>
+        <ul class="product-options" aria-label="Products">
+          {topics.map((topic) => (
+            <li><a href={topic.link} aria-current={topic.isCurrent ? 'true' : undefined}>
+              {topic.icon && <Icon name={topic.icon} size="1.125rem" />}
+              <span>{topic.label}</span>
+              {topic.isCurrent && <Icon name="approve-check" size="1rem" />}
+            </a></li>
+          ))}
+        </ul>
+      </details>
+    </docs-product-picker>
+  )}
+  <div class="product-pages">
+    <SidebarPersister>
+      <SidebarSublist sublist={sidebar} />
+    </SidebarPersister>
+  </div>
+  <div class="sidebar-resources">
+    <a href="/changelog"><Icon name="rocket" size="1.125rem" />Changelog</a>
+    <a href="https://support.streamelements.com/"><Icon name="open-book" size="1.125rem" />Get help<Icon name="external" size="0.875rem" /></a>
+  </div>
+  <div class="md:sl-hidden"><MobileMenuFooter /></div>
+</div>
+
+<script>
+  class DocsProductPicker extends HTMLElement {
+    connectedCallback() {
+      const details = this.querySelector('details')!;
+      const summary = this.querySelector('summary')!;
+      const controller = new AbortController();
+      this.cleanup = () => controller.abort();
+      document.addEventListener('click', (event) => {
+        if (!this.contains(event.target as Node)) details.open = false;
+      }, { signal: controller.signal });
+      this.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && details.open) {
+          details.open = false;
+          summary.focus();
+          event.stopPropagation();
+        }
+      }, { signal: controller.signal });
+      this.addEventListener('focusout', (event) => {
+        if (!this.contains(event.relatedTarget as Node)) details.open = false;
+      }, { signal: controller.signal });
+    }
+    cleanup?: () => void;
+    disconnectedCallback() { this.cleanup?.(); }
+  }
+  if (!customElements.get('docs-product-picker')) customElements.define('docs-product-picker', DocsProductPicker);
+</script>
+
+<style>
+  .product-sidebar { display: flex; flex-direction: column; gap: 1.25rem; }
+  docs-product-picker {
+    display: block;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background: var(--se-sidebar);
+    padding-bottom: 0.5rem;
+    margin-bottom: -0.5rem;
+  }
+  .product-picker { position: relative; }
+  summary { display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem; border: 1px solid var(--se-border); border-radius: var(--se-radius); background: var(--se-card); cursor: pointer; list-style: none; }
+  summary::-webkit-details-marker { display: none; }
+  .product-icon { display: grid; place-items: center; width: 2rem; height: 2rem; border-radius: var(--se-radius-sm); background: var(--se-sidebar-accent); color: var(--sl-color-text-accent); }
+  .product-name { display: grid; gap: 0.1rem; flex: 1; line-height: 1.4; }
+  .picker-hint { font-size: 0.75rem; color: var(--se-muted-foreground); }
+  strong { font-size: 0.875rem; color: var(--se-foreground); }
+  .product-options { position: absolute; z-index: 10; inset-inline: 0; top: calc(100% + 0.375rem); list-style: none; padding: 0.375rem; margin: 0; background: var(--se-popover); border: 1px solid var(--se-border); border-radius: var(--se-radius); box-shadow: var(--se-shadow-float); }
+  .product-options a, .sidebar-resources a { display: flex; align-items: center; gap: 0.625rem; padding: 0.625rem; border-radius: var(--se-radius-sm); color: var(--se-foreground); text-decoration: none; font-size: 0.875rem; }
+  .product-options a span { flex: 1; }
+  .product-options a:hover, .product-options a[aria-current], .sidebar-resources a:hover { background: var(--se-sidebar-accent); }
+  summary:focus-visible, a:focus-visible { outline: 2px solid var(--se-ring); outline-offset: -2px; }
+  .sidebar-resources { border-top: 1px solid var(--se-border); padding-top: 0.75rem; }
+  .sidebar-resources a { color: var(--se-muted-foreground); }
+  /* One type scale and row rhythm for links and disclosure controls. */
+  .product-pages { --nav-font-size: 0.875rem; --nav-row-height: 2.25rem; }
+  .product-pages :global(a), .product-pages :global(summary) {
+    box-sizing: border-box;
+    font-size: var(--nav-font-size);
+    line-height: 1.5;
+    min-height: var(--nav-row-height);
+    padding: 0.4375rem 0.5rem;
+    border-radius: var(--se-radius-sm);
+  }
+  .product-pages :global(.large) { font-size: var(--nav-font-size); }
+  .product-pages :global(.top-level > li + li) { margin-top: 0.125rem; }
+  @media (max-width: 49.999rem) {
+    .product-pages { --nav-font-size: 1rem; --nav-row-height: 2.75rem; }
+    .product-options a, .sidebar-resources a { font-size: 1rem; min-height: 2.75rem; }
+  }
+  .product-pages :global(a:hover) { background: var(--se-sidebar-accent); }
+  .product-pages :global(a[aria-current='page']) { color: var(--sl-color-text-accent); background: var(--sl-color-accent-low); }
+  .product-pages :global(a:focus-visible), .product-pages :global(summary:focus-visible) { outline: 2px solid var(--se-ring); outline-offset: -2px; }
+</style>

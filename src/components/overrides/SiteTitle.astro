@@ -1,0 +1,22 @@
+---
+const { siteTitleHref } = Astro.locals.starlightRoute;
+---
+
+<a class="docs-brand" href={siteTitleHref} aria-label="StreamElements Docs home">
+  <img class="brand-on-dark" src="/brand/streamelements-light.svg" width="537" height="156" alt="" />
+  <img class="brand-on-light" src="/brand/streamelements-dark.svg" width="537" height="156" alt="" />
+  <span>Docs</span>
+</a>
+
+<style>
+  .docs-brand { display: flex; align-items: center; gap: 0.75rem; color: var(--se-foreground); text-decoration: none; white-space: nowrap; }
+  img { display: block; width: 12.5rem; height: auto; flex-shrink: 0; }
+  span { border-inline-start: 1px solid var(--se-border); padding-inline-start: 0.75rem; font-size: 0.875rem; font-weight: 500; }
+  :global([data-theme='light']) .brand-on-dark,
+  :global([data-theme='dark']) .brand-on-light { display: none; }
+  @media (max-width: 49.999rem) {
+    img { width: clamp(8rem, 40vw, 10rem); }
+    .docs-brand { gap: 0.5rem; }
+    span { padding-inline-start: 0.5rem; }
+  }
+</style>
