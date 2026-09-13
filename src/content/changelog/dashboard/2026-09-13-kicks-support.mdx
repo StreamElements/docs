@@ -1,0 +1,17 @@
+---
+title: KICKs support for Kick channels
+description: KICKs gifts now show up across StreamElements. Alerts, chat alerts, overlay widgets, the activity feed, session data and dashboard stats all understand them.
+date: 2026-09-13
+products: [overlays, chatbot]
+---
+
+Kick channels connected to StreamElements now get the full treatment for **KICKs**, Kick's paid gifts.
+
+- **Activity feed.** KICKs gifts appear as their own event type, with a filter and a minimum amount setting.
+- **Alert box.** A new KICKs alert for Kick channels, with `{name}`, `{amount}` and `{message}` variables and amount-based variations, including "Session top".
+- **Overlay widgets.** A KICKs family under the new **KICKs** category: latest gift, total, recent gifts, top gift, top gifter, top gifters list, session amount and a KICKs goal.
+- **Custom widgets.** New `kicks-*` [session data keys](/overlays/session-data#kicks) and a `kicks-latest` [listener](/overlays/events#listener-types), shaped like the Twitch cheer keys.
+- **Chat alerts.** The chatbot can announce KICKs gifts in chat, with amount-tiered messages.
+- **Dashboard.** KICKs totals on the home page stats and events chart.
+
+Channels that connected before today are being resubscribed to the new Kick event in the background. If your channel does not receive KICKs events, log in to StreamElements again and it will pick them up.
