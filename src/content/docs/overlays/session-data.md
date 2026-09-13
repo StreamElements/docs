@@ -271,6 +271,48 @@ The structure may change over time. To inspect the most up-to-date values, use `
 | `data["cheerPurchase-alltime-top-donator"]["name"]` | Username |
 | `data["cheerPurchase-alltime-top-donator"]["amount"]` | Cheer Donator amount |
 
+## Kick
+
+Kick channels share the [common keys](#common-keys) plus followers and subscribers, which use the same keys as [Twitch](#twitch). KICKs, Kick's paid gifts, have their own keys.
+
+### KICKs
+
+| Key | Description |
+|-----|-------------|
+| `data["kicks-session"]["amount"]` | KICKs since session start |
+| `data["kicks-month"]["amount"]` | KICKs this month |
+| `data["kicks-total"]["amount"]` | Total amount of KICKs |
+| `data["kicks-count"]["count"]` | Number of KICKs gift events |
+| `data["kicks-goal"]["amount"]` | KICKs goal |
+| `data["kicks-latest"]` | Latest KICKs gift event |
+| `data["kicks-latest"]["name"]` | Latest KICKs gifter |
+| `data["kicks-latest"]["amount"]` | Latest KICKs gift amount |
+| `data["kicks-latest"]["message"]` | Latest KICKs gift message |
+| `data["kicks-session-top-donation"]` | Top KICKs gift in the session |
+| `data["kicks-session-top-donation"]["name"]` | Username |
+| `data["kicks-session-top-donation"]["amount"]` | KICKs amount |
+| `data["kicks-weekly-top-donation"]` | Top KICKs gift in the week |
+| `data["kicks-weekly-top-donation"]["name"]` | Username |
+| `data["kicks-weekly-top-donation"]["amount"]` | KICKs amount |
+| `data["kicks-monthly-top-donation"]` | Top KICKs gift in the month |
+| `data["kicks-monthly-top-donation"]["name"]` | Username |
+| `data["kicks-monthly-top-donation"]["amount"]` | KICKs amount |
+| `data["kicks-alltime-top-donation"]` | Top KICKs gift all time |
+| `data["kicks-alltime-top-donation"]["name"]` | Username |
+| `data["kicks-alltime-top-donation"]["amount"]` | KICKs amount |
+| `data["kicks-session-top-donator"]` | Top KICKs gifter in the session |
+| `data["kicks-session-top-donator"]["name"]` | Username |
+| `data["kicks-session-top-donator"]["amount"]` | Sum of the KICKs amounts |
+| `data["kicks-weekly-top-donator"]` | Top KICKs gifter in the week |
+| `data["kicks-weekly-top-donator"]["name"]` | Username |
+| `data["kicks-weekly-top-donator"]["amount"]` | Sum of the KICKs amounts |
+| `data["kicks-monthly-top-donator"]` | Top KICKs gifter in the month |
+| `data["kicks-monthly-top-donator"]["name"]` | Username |
+| `data["kicks-monthly-top-donator"]["amount"]` | Sum of the KICKs amounts |
+| `data["kicks-alltime-top-donator"]` | Top KICKs gifter all time |
+| `data["kicks-alltime-top-donator"]["name"]` | Username |
+| `data["kicks-alltime-top-donator"]["amount"]` | Sum of the KICKs amounts |
+
 ## YouTube
 
 :::note
