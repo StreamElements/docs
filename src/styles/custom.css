@@ -259,8 +259,8 @@
 @media (max-width: 49.999rem) {
   .header .site-title { font-size: clamp(1rem, 4.6vw, 1.125rem); }
   :root[data-theme] { --sl-menu-button-size: 2.5rem; }
-  starlight-menu-button button,
-  starlight-menu-button[aria-expanded='true'] button {
+  .sl-menu-button,
+  .sl-menu-button:has(~ :popover-open) {
     background: var(--se-sidebar-accent);
     color: var(--se-foreground);
     border: 1px solid var(--se-border);
