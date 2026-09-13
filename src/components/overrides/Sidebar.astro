@@ -54,6 +54,7 @@ const current = topics.find((topic) => topic.isCurrent);
       }, { signal: controller.signal });
       this.addEventListener('keydown', (event) => {
         if (event.key === 'Escape' && details.open) {
+          event.preventDefault();
           details.open = false;
           summary.focus();
           event.stopPropagation();
