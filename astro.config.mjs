@@ -167,6 +167,8 @@ export default defineConfig({
       ],
       components: {
         PageTitle: './src/components/overrides/PageTitle.astro',
+        Sidebar: './src/components/overrides/Sidebar.astro',
+        SiteTitle: './src/components/overrides/SiteTitle.astro',
         Head: './src/components/overrides/Head.astro',
       },
       expressiveCode: {
@@ -201,11 +203,11 @@ export default defineConfig({
                 {
                   label: 'Guides',
                   items: [
-                    { label: 'Overview', slug: 'chatbot/guides' },
                     { label: 'Death Counter', slug: 'chatbot/guides/death-counter' },
                     { label: 'Lurk Command', slug: 'chatbot/guides/lurk-command' },
                     { label: 'Countdown Command', slug: 'chatbot/guides/countdown-command' },
                     { label: 'Viewer Input', slug: 'chatbot/guides/viewer-input' },
+                    { label: 'All guides', slug: 'chatbot/guides' },
                   ],
                 },
                 {
@@ -230,16 +232,34 @@ export default defineConfig({
               ],
             },
             {
-              label: 'Overlays',
+              label: 'SE.Live',
+              link: '/selive',
+              icon: 'window',
+              items: [
+                { label: 'Overview', slug: 'selive' },
+                { label: 'Getting started', items: [
+                  { label: 'Install and connect', slug: 'selive/getting-started' },
+                ] },
+                { label: 'Guides', items: [
+                  { label: 'Add overlays and alerts', slug: 'selive/guides/overlays-and-alerts' },
+                  { label: 'All guides', slug: 'selive/guides' },
+                ] },
+                { label: 'Troubleshooting', slug: 'selive/troubleshooting' },
+              ],
+            },
+            {
+              label: 'Overlays & Alerts',
               link: '/overlays',
               icon: 'desktop',
               items: [
                 { label: 'Overview', slug: 'overlays' },
                 { label: 'Getting Started', slug: 'overlays/getting-started' },
                 {
-                  label: 'Your First Custom Widget',
-                  slug: 'overlays/first-custom-widget',
-                  badge: { text: 'Tutorial', variant: 'tip' },
+                  label: 'Guides',
+                  items: [
+                    { label: 'Build your first custom widget', slug: 'overlays/first-custom-widget' },
+                    { label: 'Custom code in AlertBoxes', slug: 'overlays/custom-code-in-alertbox' },
+                  ],
                 },
                 {
                   label: 'Custom Widgets',
@@ -250,23 +270,26 @@ export default defineConfig({
                     { label: 'Session Data Reference', slug: 'overlays/session-data' },
                   ],
                 },
-                { label: 'Custom Code in AlertBoxes', slug: 'overlays/custom-code-in-alertbox' },
                 { label: 'Editor Shortcuts', slug: 'overlays/overlay-editor-shortcuts' },
               ],
             },
             {
-              label: 'WebSockets',
-              link: '/websockets',
+              label: 'Developers',
+              link: '/developers',
               icon: 'server',
               items: [
-                { label: 'Introduction', slug: 'websockets' },
+                { label: 'Overview', slug: 'developers' },
+                { label: 'API Reference', link: 'https://dev.streamelements.com/' },
+                { label: 'Build custom widgets', link: '/overlays/first-custom-widget' },
+                { label: 'WebSockets', slug: 'websockets' },
                 { label: 'Client Examples', slug: 'websockets/examples' },
                 {
-                  label: 'Topics',
+                  label: 'WebSocket topics',
                   items: [
                     { label: 'Overview', slug: 'websockets/topics' },
                     {
                       label: 'Session & Stream',
+                      collapsed: true,
                       items: [
                         'websockets/topics/channel-session-update',
                         'websockets/topics/channel-session-reset',
@@ -275,6 +298,7 @@ export default defineConfig({
                     },
                     {
                       label: 'Activity & Engagement',
+                      collapsed: true,
                       items: [
                         'websockets/topics/channel-activities',
                         'websockets/topics/channel-chat-message',
@@ -287,6 +311,7 @@ export default defineConfig({
                     },
                     {
                       label: 'Overlays',
+                      collapsed: true,
                       items: [
                         'websockets/topics/channel-overlay-action',
                         'websockets/topics/channel-overlay-broadcast',
@@ -295,6 +320,7 @@ export default defineConfig({
                     },
                     {
                       label: 'Chatbot',
+                      collapsed: true,
                       items: [
                         'websockets/topics/chatbot-status',
                         'websockets/topics/chatbot-audiencequeue',
@@ -307,17 +333,6 @@ export default defineConfig({
                   ],
                 },
               ],
-            },
-            {
-              label: 'API Reference',
-              link: 'https://dev.streamelements.com/',
-              icon: 'external',
-              attrs: { target: '_blank', rel: 'noopener' },
-            },
-            {
-              label: 'Changelog',
-              link: '/changelog',
-              icon: 'rocket',
             },
           ],
           {
