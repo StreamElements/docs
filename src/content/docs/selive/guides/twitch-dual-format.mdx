@@ -1,0 +1,39 @@
+---
+title: Stream in dual format on Twitch
+description: Send horizontal and vertical versions of your Twitch stream with SE.Live and Enhanced Broadcasting.
+---
+
+import GuideScreenshot from '../../../../components/GuideScreenshot.astro';
+import twitchSettings from '../img/twitch-enhanced-broadcasting.png';
+
+Dual format sends horizontal and vertical versions of your stream to Twitch together. Desktop and TV viewers see your horizontal layout. Mobile viewers can watch vertically or rotate their phone for the horizontal view.
+
+## Before you begin
+
+- Use OBS Studio 32.0.0 or newer and install SE.Live Public Beta. Close OBS before running the [SE.Live installer](https://streamelements.com/selive).
+- Connect Twitch in **Settings → Stream** in OBS.
+- Check [Twitch's hardware and upload requirements](https://help.twitch.tv/s/article/dual-format-vertical-video). Dual format is available to all Twitch streamers.
+- If you have Aitum Vertical installed, uninstall it before using SE.Live dual format. Running both plugins can cause OBS to crash.
+
+## Prepare your vertical layout
+
+1. [Create a vertical canvas](/selive/guides/canvas) at **1080 × 1920**.
+2. [Add scenes and sources](/selive/guides/scenes-and-sources), then arrange your camera, gameplay, and alerts to fit the portrait frame.
+3. [Link your scenes](/selive/guides/scenes-and-sources#link-scenes) and check both layouts in the preview.
+
+## Enable dual format
+
+1. Open **Settings → Stream** in OBS and select **Twitch**.
+2. Under **Multitrack Video**, check **Enable Enhanced Broadcasting**.
+3. Open **Additional Canvas** and select your SE.Live vertical canvas.
+4. Click **Apply**, then **OK**.
+
+<GuideScreenshot src={twitchSettings} alt="Multitrack Video settings with Enhanced Broadcasting enabled and SE.Live: c1 selected as the additional canvas." caption="Choose the vertical canvas you created from the Additional Canvas dropdown." />
+
+## Go live and check the result
+
+Click **Start Streaming** in OBS. Open your stream on a phone and check it in portrait and landscape. Switch scenes and confirm that the camera, gameplay, and alerts stay in frame.
+
+To return to horizontal-only streaming, set **Additional Canvas** to **None**.
+
+[Get help with dual format setup](https://support.streamelements.com/hc/en-us/requests/new).

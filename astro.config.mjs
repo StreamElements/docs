@@ -242,6 +242,11 @@ export default defineConfig({
                 ] },
                 { label: 'Guides', items: [
                   { label: 'Add overlays and alerts', slug: 'selive/guides/overlays-and-alerts' },
+                  { label: 'Create a vertical canvas', slug: 'selive/guides/canvas' },
+                  { label: 'Manage scenes and sources', slug: 'selive/guides/scenes-and-sources' },
+                  { label: 'Set up multistreaming', slug: 'selive/guides/multistreaming' },
+                  { label: 'Twitch dual format', slug: 'selive/guides/twitch-dual-format' },
+                  { label: 'Save replays with Backtrack', slug: 'selive/guides/backtrack' },
                   { label: 'All guides', slug: 'selive/guides' },
                 ] },
                 { label: 'Troubleshooting', slug: 'selive/troubleshooting' },

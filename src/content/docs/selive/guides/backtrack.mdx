@@ -1,0 +1,34 @@
+---
+title: Save replays with Backtrack
+description: Enable a replay buffer for an SE.Live canvas and save recent moments with a hotkey.
+---
+
+import GuideScreenshot from '../../../../components/GuideScreenshot.astro';
+import backtrack from '../img/backtrack-options.png';
+
+Backtrack keeps a temporary recording of your stream. Press a hotkey to save a moment after it happens.
+
+Use the latest SE.Live version and [create a custom canvas](/selive/guides/canvas) before you begin.
+
+## Enable Backtrack
+
+1. Open your canvas settings with the gear icon.
+2. Scroll to **Backtrack options** and turn on **Enable backtrack (replay buffer) while streaming**.
+3. Click **Save changes**.
+
+<GuideScreenshot src={backtrack} alt="Backtrack options with the Enable backtrack (replay buffer) while streaming switch." caption="Enable Backtrack for each canvas you want to save replays from." />
+
+## Save a replay
+
+1. Start streaming from the canvas.
+2. Open **Settings → Hotkeys** in OBS.
+3. Under **Canvas Backtrack (Replay Buffer): [CANVAS NAME]**, assign a hotkey to **Save Replay**.
+4. Save your settings, then press the hotkey to save a replay. SE.Live remembers it for this canvas.
+
+Canvas Backtrack saves replays only while the canvas is streaming. To save replays offline, use OBS's replay buffer.
+
+## Limit resource use
+
+Keep buffers at 180 seconds or less. Enabled buffers use encoding resources even while the canvas is idle, so turn off Backtrack on canvases you do not need.
+
+[More about Backtrack](https://support.streamelements.com/hc/en-us/articles/26268419155858-Using-Backtrack-on-SE-Live-Canvas-Replay-Buffer-Guide).

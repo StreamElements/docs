@@ -1,0 +1,38 @@
+---
+title: Set up multistreaming
+description: Connect streaming outputs, choose audio tracks, and go live on multiple platforms.
+---
+
+import GuideScreenshot from '../../../../components/GuideScreenshot.astro';
+import outputs from '../img/multistream-outputs.png';
+
+Each output sends your stream to a platform. SE.Live sends these streams from your computer, so your upload connection must handle their combined bitrate. Three outputs at 6,000 Kbps need 18,000 Kbps, plus room for overhead.
+
+## Connect your outputs
+
+1. Open **StreamElements → SE.Live Docks → StreamElements Multi-Streaming**.
+2. Open **Settings** from the panel's gear button or an output's three-dot menu.
+3. Under **Outputs**, connect the accounts you want to stream to. Use **Add output** to add another destination.
+4. Expand **Output settings** and choose the OBS audio track to send to that output. Save your changes.
+
+<GuideScreenshot src={outputs} alt="A Twitch output with a Connect button and Output settings expanded to show the Audio tracks dropdown." caption="Connect the account, then choose its audio track under Output settings." />
+
+## Prepare each broadcast
+
+1. Enable the outputs you want in the Multistreaming panel.
+2. Check each channel name and assigned canvas. Use a [custom canvas](/selive/guides/canvas) for a separate layout.
+3. Under **Broadcast Settings**, set each stream's title, category, and platform options, such as YouTube privacy.
+
+TikTok requires LIVE access before you can stream to it.
+
+## Go live
+
+1. Click **Start Streaming**.
+2. Review the details for each enabled platform, then click **Start Streaming** again.
+3. Check for **Live** beside every output you enabled.
+
+To stop one output while the others keep streaming, turn off its toggle in the Multistreaming panel.
+
+For horizontal and vertical streams on Twitch, use [Twitch dual format](/selive/guides/twitch-dual-format).
+
+[More about multistreaming](https://support.streamelements.com/hc/en-us/articles/18771457842066-SE-Live-The-Complete-Guide-Setup-Features-Multistreaming-Troubleshooting).
