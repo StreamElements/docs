@@ -1,0 +1,43 @@
+---
+title: Manage scenes and sources
+description: Add sources to an SE.Live canvas and link its scenes to your OBS scenes.
+---
+
+import GuideScreenshot from '../../../../components/GuideScreenshot.astro';
+import sceneMenu from '../img/scene-menu.png';
+import sourcePicker from '../img/reuse-source.png';
+
+A scene groups sources such as your camera, gameplay, images, and overlays. Start with a [custom canvas](/selive/guides/canvas).
+
+## Add a scene
+
+1. Click **+** at the bottom left of the canvas dock.
+2. Name the scene, then click **Add Scene**.
+
+## Add sources
+
+1. Open the scene's three-dot menu.
+2. Choose **Add Source**, then select a source type.
+
+<GuideScreenshot src={sceneMenu} alt="A canvas scene's menu with Add Source and Link scene." caption="The three-dot menu contains the source and scene-linking controls." />
+
+3. Choose **Add existing** to reuse a source, or **Create new** to set up another one.
+4. Set **Make source visible** to choose whether it appears immediately, then click **Add Source**.
+
+<GuideScreenshot src={sourcePicker} width={335} alt="Add Video capture dialog with Add existing selected, a camera source selected, and Make source visible checked." caption="Reuse an existing camera source to avoid creating another capture of the same device." />
+
+Reusing a source uses fewer resources than creating another instance. For browser overlays, follow [Add overlays and alerts](/selive/guides/overlays-and-alerts).
+
+## Check canvas settings
+
+Open the canvas settings with the gear icon. Choose the canvas you want to edit, then check its name, resolution, and assigned outputs. Save any changes.
+
+## Link scenes
+
+Link a canvas scene to its matching OBS scene. For example, link a vertical **Just Chatting** scene to your horizontal **Just Chatting** scene.
+
+1. Open the canvas scene's three-dot menu.
+2. Select **Link scene**, then choose the OBS scene.
+3. Switch to the canvas scene and check that the linked OBS scene changes too.
+
+[More about scenes and sources](https://support.streamelements.com/hc/en-us/articles/25445654050450-Creating-and-Managing-Scenes-and-Sources-in-SE-Live).

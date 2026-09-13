@@ -1,17 +1,61 @@
 ---
 title: SE.Live troubleshooting
-description: Find troubleshooting steps and contact support for SE.Live.
+description: Fix missing SE.Live docks, login problems, overlays, alert audio, update loops, and crashes.
 ---
 
-For installation, login, and streaming issues, start with [SE.Live Troubleshooting in the Help Center](https://support.streamelements.com/hc/en-us/articles/10474479415442).
+Start with the steps for your symptom. The [SE.Live troubleshooting article](https://support.streamelements.com/hc/en-us/articles/10474479415442) includes screenshots and further diagnostics.
+
+## Missing docks
+
+Open **StreamElements → SE.Live Docks**. If docks remain missing, use **StreamElements → Logout**, then sign in again. A canvas dock may be behind another panel; select it from the StreamElements menu.
+
+## Login opens a black screen
+
+Retry with Google Chrome. If a VPN or browser extension blocks login, temporarily pause it and retry, then restore it.
+
+## Overlays or alerts do not appear
+
+1. Copy the overlay URL again from **My Overlays → three-dot menu → Copy URL** and paste it into the browser source's **Properties**.
+2. Match the source dimensions to the overlay.
+3. Check that alerts are not paused or muted in the Activity Feed.
+
+For stuttering, try changing **Settings → Advanced → Enable Browser Source Hardware Acceleration**. Restart OBS after changing this setting.
+
+If you hear an alert but cannot see it, move its browser source above sources covering it.
+
+## Alert audio
+
+1. Open the browser source's **Properties** and enable **Control audio via OBS**.
+2. Adjust its volume in the OBS mixer.
+3. To hear it locally, open **Advanced Audio Properties** and set its monitoring to **Monitor and Output**.
+
+Check your audio routing if this produces duplicate sound.
+
+## Update loops
+
+Update OBS to its latest stable release, then reinstall [SE.Live](https://streamelements.com/selive).
+
+## Crashes or hangs
+
+Update OBS and SE.Live, then temporarily disable other plugins and retry. Complete the BugSplat report if it appears. Support can guide you through trace logs or a memory dump if needed.
+
+## Streaming performance
+
+Check the combined bitrate of your [multistreaming outputs](/selive/guides/multistreaming). Also check for [unused Backtrack buffers](/selive/guides/backtrack#limit-resource-use), which consume encoding resources even while idle.
+
+Use the OBS guide that matches the problem:
+
+- [Stream connection troubleshooting](https://obsproject.com/kb/stream-connection-troubleshooting) for disconnects and dropped frames.
+- [Encoding performance troubleshooting](https://obsproject.com/kb/encoding-performance-troubleshooting) for choppy video and encoder overload.
 
 ## Get help with your setup
 
 When asking for help, include:
 
 - Your OBS and SE.Live versions.
+- OBS logs and any crash logs from the **Help** menu.
 - What you were doing when the problem started.
 - The exact error message, if there is one.
 - Whether the problem happens every time.
 
-Use the [Help Center](https://support.streamelements.com/) to contact support. Remove stream keys and private overlay URLs from screenshots before sharing them.
+Use the [support request form](https://support.streamelements.com/hc/en-us/requests/new) to contact support. Remove stream keys and private overlay URLs from screenshots before sharing them.

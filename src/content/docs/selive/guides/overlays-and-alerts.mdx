@@ -3,19 +3,38 @@ title: Add overlays and alerts
 description: Create an overlay and display it in your OBS scene with SE.Live.
 ---
 
+import GuideScreenshot from '../../../../components/GuideScreenshot.astro';
+import alertbox from '../img/alertbox-menu.png';
+
 ## Create your overlay
 
 1. Open [My Overlays](https://streamelements.com/dashboard/overlays) and choose **New overlay**.
 2. Choose a resolution that matches your scene.
 3. In the editor, select **+ → Alerts → AlertBox** to add alerts. Configure the alert types you need, then save.
 
-The [overlay setup guide](/overlays/getting-started) includes screenshots of these steps.
+<GuideScreenshot src={alertbox} alt="The overlay widget menu with Alerts expanded and AlertBox highlighted." caption="Choose Alerts → AlertBox to add stream alerts to your overlay." />
 
 ## Add it to OBS
 
-Copy the overlay URL. In OBS, add a **Browser Source** to your scene and paste the URL into its properties. Match the source dimensions to your overlay. Place it above sources that would cover it.
+1. In **My Overlays**, open the overlay's three-dot menu and select **Copy URL**. You can also use the link icon in the overlay editor.
+2. In OBS, select your scene, then choose **Sources → + → Browser**.
+3. Create and name the source, then paste the overlay URL into its properties.
+4. Set **Width** and **Height** to match the overlay. A 1920 × 1080 overlay needs those same source dimensions; use your overlay's dimensions for a vertical layout.
+5. Save, then place the browser source above sources that would cover it.
 
-Keep the overlay URL private. See the [SE.Live support guide](https://support.streamelements.com/hc/en-us/articles/18771457842066) for more on overlay setup.
+Keep the overlay URL private.
+
+## Customize alerts
+
+In the overlay editor, select the AlertBox and open the gear beside an event type to change its image, sound, text, layout, and duration. Save your changes.
+
+Check enabled variations too: changing a default alert does not change every variation. Customize or disable variations you do not want. See [Setting Up Twitch Alerts](https://support.streamelements.com/hc/en-us/articles/16789217829778-Setting-Up-Twitch-Alerts-with-StreamElements-Overlays) for examples.
+
+## Use alerts across scenes
+
+You can keep the AlertBox in its own overlay and copy its browser source into each scene. Hide or remove duplicate AlertBoxes in your other overlays to avoid playing the same alert twice.
+
+If an alert is missing, check [overlay troubleshooting](/selive/troubleshooting#overlays-or-alerts-do-not-appear). For volume and monitoring, follow [alert audio troubleshooting](/selive/troubleshooting#alert-audio).
 
 ## Customize further
 

@@ -1,0 +1,40 @@
+---
+title: Create a vertical canvas
+description: Create an SE.Live canvas for a vertical stream and arrange its scenes and sources.
+---
+
+import GuideScreenshot from '../../../../components/GuideScreenshot.astro';
+import settings from '../img/canvas-settings.png';
+
+A canvas holds a stream layout. Create a separate canvas to arrange your camera, gameplay, and alerts for vertical viewing.
+
+Before you begin, [install and connect SE.Live](/selive/getting-started).
+
+## Create the canvas
+
+1. In the **Multistreaming** panel, open an output's three-dot menu.
+2. Select **Canvas → Create New Canvas**.
+3. Name the canvas and choose **1080 × 1920** for a vertical layout.
+4. Confirm to create the canvas.
+
+The canvas opens in its own dock, with a preview above its scenes and sources. If you close it, reopen it through **StreamElements → SE.Live Docks**.
+
+## Check the resolution
+
+Open the canvas settings with the gear icon. Under **General**, check that **Resolution** is **1080×1920 (1080p Vertical)**. Save any changes.
+
+<GuideScreenshot src={settings} alt="Canvas General settings with Resolution set to 1080×1920 (1080p Vertical)." caption="A vertical canvas is taller than it is wide: 1080 pixels wide by 1920 pixels high." />
+
+## Arrange the layout
+
+[Add scenes and sources](/selive/guides/scenes-and-sources) to the canvas. Resize and reposition them in the preview so your camera, gameplay, and alerts fit the portrait frame.
+
+[Link each canvas scene](/selive/guides/scenes-and-sources#link-scenes) to its matching OBS scene to keep scene changes in sync.
+
+## Choose where to stream
+
+For [multistreaming](/selive/guides/multistreaming), select the canvas from the output's **Canvas** menu. Check the output's canvas name before going live.
+
+For [Twitch dual format](/selive/guides/twitch-dual-format), select it as **Additional Canvas** in OBS's stream settings.
+
+[More about canvases](https://support.streamelements.com/hc/en-us/articles/23190715979538-Understanding-Canvas-How-to-Decide-What-to-Stream).

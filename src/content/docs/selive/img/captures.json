@@ -1,0 +1,118 @@
+{
+  "captured": "2026-09-13",
+  "source": "Focused crops from local product captures and StreamElements support screenshots.",
+  "images": {
+    "twitch-enhanced-broadcasting.png": {
+      "source": "https://support.streamelements.com/hc/article_attachments/30289137045010",
+      "crop": [
+        210,
+        241,
+        795,
+        247
+      ],
+      "state": "Enhanced Broadcasting enabled; SE.Live: c1 selected as Additional Canvas"
+    },
+    "canvas-settings.png": {
+      "source": "Local SE.Live 26.2.5.549 capture",
+      "crop": [
+        32,
+        264,
+        545,
+        177
+      ],
+      "state": "General settings, 1080x1920 vertical resolution"
+    },
+    "backtrack-options.png": {
+      "source": "https://support.streamelements.com/hc/article_attachments/26376126968594",
+      "crop": [
+        25,
+        493,
+        562,
+        142
+      ]
+    },
+    "scene-menu.png": {
+      "source": "https://support.streamelements.com/hc/article_attachments/25445654048658",
+      "crop": [
+        10,
+        0,
+        568,
+        180
+      ]
+    },
+    "reuse-source.png": {
+      "source": "https://support.streamelements.com/hc/article_attachments/25445639195282",
+      "crop": [
+        17,
+        52,
+        335,
+        439
+      ]
+    },
+    "multistream-outputs.png": {
+      "source": "https://support.streamelements.com/hc/article_attachments/37340759377170",
+      "crop": [
+        0,
+        0,
+        558,
+        352
+      ]
+    },
+    "alertbox-menu.png": {
+      "source": "../../overlays/img/new-widget-alert-box.png",
+      "crop": [
+        667,
+        110,
+        1111,
+        718
+      ]
+    }
+  },
+  "maintenance": "Use focused crops of real product screenshots. Retain control labels and values; do not paint over or recreate UI. Exclude cursors, OS window frames, unrelated panels, credentials, and private overlay URLs. Store real PNG files and serve without lossy recompression or upscaling.",
+  "verifiedArticles": [
+    "https://support.streamelements.com/hc/en-us/articles/18771457842066",
+    "https://support.streamelements.com/hc/en-us/articles/23190715979538",
+    "https://support.streamelements.com/hc/en-us/articles/25445654050450",
+    "https://support.streamelements.com/hc/en-us/articles/26268419155858",
+    "https://support.streamelements.com/hc/en-us/articles/30289137045778",
+    "https://support.streamelements.com/hc/en-us/articles/10474479981074",
+    "https://support.streamelements.com/hc/en-us/articles/16789217829778",
+    "https://support.streamelements.com/hc/en-us/articles/11757482774162",
+    "https://support.streamelements.com/hc/en-us/articles/10474479415442",
+    "https://help.twitch.tv/s/article/dual-format-vertical-video",
+    "https://support.streamelements.com/hc/en-us/articles/22154503415314-Ground-Control",
+    "https://streamelements.com/selive",
+    "https://obsproject.com/kb/stream-connection-troubleshooting",
+    "https://obsproject.com/kb/encoding-performance-troubleshooting"
+  ],
+  "editorialDecisions": [
+    "Twitch's current guide says dual format is available to all streamers; removed the older SE.Live article's Twitch beta-access requirement and OBS 31 rollback advice.",
+    "Retained SE.Live Public Beta as a setup prerequisite and Aitum incompatibility based on the SE.Live dual-format article. The installed build exposes the required controls, but this does not establish stable-channel availability.",
+    "Canvas support prose says OK while its creation screenshot says ADD; use 'Confirm to create the canvas' rather than a mismatched button label.",
+    "Scene-link instructions describe the direction explicitly supported by the article: selecting a canvas scene changes its linked OBS scene.",
+    "Removed source-comparison prose from end-user pages; kept relevant help links.",
+    "Twitch dual format explicitly requires OBS 32.0.0 or newer, as listed by Twitch.",
+    "macOS beta support confirmed by Jacob in this task on 2026-09-13, consistent with the product page. The Windows-only statement in the support article is stale. Installation documents both platforms; OBS 31+ is stated for Windows only."
+  ],
+  "localCaptureEnvironment": {
+    "platform": "macOS",
+    "obsVersion": "32.2.2",
+    "seLiveVersion": "26.2.5.549"
+  },
+  "factCheck": {
+    "checkedOn": "2026-09-13",
+    "coverage": {
+      "index.mdx": "Plugin purpose and linked guide descriptions match the complete SE.Live guide.",
+      "getting-started.mdx": "Windows and macOS beta availability (Mac support confirmed by Jacob), Windows OBS 31+ requirement, closed-OBS installation, login, account connection and docks.",
+      "guides/index.mdx": "Guide descriptions and Ground Control chat, activity feed, and quick-action features.",
+      "guides/overlays-and-alerts.mdx": "AlertBox creation and customization, browser source URL and dimensions, layer order, separate variations, shared alertbox sources.",
+      "guides/multistreaming.mdx": "Local output bandwidth, audio tracks, settings, broadcast details, TikTok LIVE access, two-stage start flow, Live indicators, independent output stop.",
+      "guides/canvas.mdx": "Canvas menu and creation, 1080x1920 orientation, dock recovery, resolution settings, scenes and output assignment.",
+      "guides/scenes-and-sources.mdx": "Scene creation, source type and reuse picker, source visibility, canvas settings, linked scene direction.",
+      "guides/backtrack.mdx": "Custom canvas buffer, streaming-only replay saves, live hotkey setup, per-canvas persistence, idle encoding cost, 180-second recommendation.",
+      "guides/twitch-dual-format.mdx": "Current Twitch access and OBS minimum; SE.Live beta and Aitum restrictions from SE support; Enhanced Broadcasting, Additional Canvas, linked layouts, phone verification and None to opt out.",
+      "troubleshooting.mdx": "Docks, Chrome login, overlay URL/dimensions, acceleration, alert audio routing, update loops, plugin isolation, logs and OBS performance help."
+    },
+    "limits": "Instructions checked against official pages and available UI. No live broadcast or end-to-end replay test was performed. SE.Live stable-channel dual-format availability is not established by the reviewed sources; the guide follows the documented Public Beta setup."
+  }
+}
