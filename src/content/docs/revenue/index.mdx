@@ -1,0 +1,56 @@
+---
+title: Revenue Overview
+description: "Track your StreamElements income with the Revenue History page, understand 1099 tax forms, and set up your Payments Portal account for sponsorships."
+keywords:
+  - StreamElements revenue history
+  - StreamElements tax forms
+  - 1099 form streamer
+  - Payments Portal
+---
+
+import { CardGrid, LinkCard, Steps } from '@astrojs/starlight/components';
+
+<CardGrid>
+  <LinkCard title="Tipping" href="/revenue/tipping" description="Set up PayPal or Stripe tipping, moderate messages, and customize your tip page." />
+  <LinkCard title="Charity Streams" href="/revenue/charity-streams" description="Run a fundraiser with Tiltify or DonorDrive." />
+  <LinkCard title="SE.Pay" href="/revenue/se-pay" description="Status of StreamElements' in-house tipping processor." />
+</CardGrid>
+
+## Revenue History
+
+The [Revenue History page](https://streamelements.com/dashboard/tipping/list) tracks your income across several tabs:
+
+- **Tip List** — every tip, filterable by username, email, or message, with options to edit, delete, or block a tipper. Exports to CSV (date, transaction ID, provider, amount, currency, tipper, email).
+- **Top Tippers** — ranked by total amount tipped, with average tip and total tip count.
+- **Cheers List** — every cheer received, filterable by username and time period.
+- **Top Cheerers** — ranked by total amount cheered.
+- **Income Report** — a monthly report (with your business name, address, and tax number) you can generate and download.
+
+SE.Sponsorships payments are handled through Tipalti; tipping is handled separately (PayPal, or SE.Pay/Stripe — see [SE.Pay](/revenue/se-pay)). If you manage multiple income streams, export your data regularly to keep accurate records.
+
+## Tax forms
+
+StreamElements issues a 1099 form to creators who earn $600 or more in a tax year, split by income type:
+
+| Income type | Threshold | How it's delivered |
+|---|---|---|
+| SE.Pay tips | Over $20,000 | Physical form mailed to the address entered during setup. |
+| Sponsorships (excluding PayPal) | $600 or more | Emailed from `noreply@tax1099.com`. If prompted to log in: email is the first four letters of your name, password is the last four digits of your TIN. |
+| PayPal tips | Handled by PayPal | PayPal provides this directly. |
+
+This is general information, not tax advice — consult a qualified tax professional for guidance specific to your situation.
+
+## Setting up your Payments Portal (for Sponsorships)
+
+Sponsorship earnings are paid out through the StreamElements Payments Portal (powered by Tipalti), separate from tipping.
+
+<Steps>
+
+1. Start setup via [this link](https://strms.net/tipaltisetup) and log in with your StreamElements account.
+2. Authorize StreamElements, if you haven't already.
+3. Enter your personal and payment information.
+4. US creators only: complete the tax form questionnaire and W-9 (fill it in, or upload one you already have).
+
+</Steps>
+
+If you have questions or run into issues, [contact support](https://support.streamelements.com/hc/en-us/requests/new) with your account ID and a description of the issue.

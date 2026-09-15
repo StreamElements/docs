@@ -314,6 +314,17 @@ export default defineConfig({
               ],
             },
             {
+              label: 'Revenue',
+              link: '/revenue',
+              icon: 'seti:license',
+              items: [
+                { label: 'Overview', slug: 'revenue' },
+                { label: 'Tipping', slug: 'revenue/tipping' },
+                { label: 'Charity Streams', slug: 'revenue/charity-streams' },
+                { label: 'SE.Pay', slug: 'revenue/se-pay' },
+              ],
+            },
+            {
               label: 'Loyalty & Stream Store',
               link: '/loyalty',
               icon: 'heart',

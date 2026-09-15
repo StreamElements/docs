@@ -1,0 +1,78 @@
+---
+title: Charity Streams
+description: "Run a charity fundraiser with Tiltify or DonorDrive, and integrate donation alerts and goal widgets into StreamElements."
+keywords:
+  - StreamElements charity stream
+  - Tiltify integration
+  - DonorDrive integration
+  - fundraising stream
+---
+
+import { Steps } from '@astrojs/starlight/components';
+
+StreamElements integrates with two fundraising platforms — Tiltify and DonorDrive — so donations to your campaign can trigger stream alerts and update a goal widget, the same as a regular tip.
+
+## Tiltify
+
+<Steps>
+
+1. Create an account at [Tiltify](https://tiltify.com/): **Sign Up → Fundraiser/Donor → Connect with Twitch → Authorize**, then fill in your details.
+2. Verify your email, then go to your dashboard and select **Become a Fundraiser**.
+3. Go to **Campaigns** and create one — choose your charity, campaign type, name and URL slug, start/end dates, and fundraising goal.
+4. Once everything looks right, click **Publish** to make the campaign live.
+
+</Steps>
+
+:::tip
+If you have a manager or partner who needs campaign access, create your Tiltify account with an email login rather than a social login — it's easier to share access that way.
+:::
+
+**Connect it to StreamElements:** you can use the Tiltify API directly, or integrate with StreamElements to trigger stream notifications from Tiltify donations, or reuse your existing tip alerts for them. See [Tiltify's StreamElements integration docs](https://info.tiltify.com/support/solutions/articles/43000005973-streamelements-integration) for setup.
+
+**Add a donation overlay:** from your Tiltify campaign dashboard, go to **Overlays** and select the overlay URL you want to use for your progress bar.
+
+**Add the Tiltify Twitch extension** so viewers can donate without leaving your channel:
+
+<Steps>
+
+1. Go to your [Twitch Extensions page](https://dashboard.twitch.tv/extensions) and search for **Tiltify**.
+2. Click **Install**, then **Configure**.
+3. Log in to Tiltify and authorize the extension.
+4. Select your campaign from the dropdown, save, and activate the extension.
+
+</Steps>
+
+## DonorDrive
+
+DonorDrive supports peer-to-peer fundraising events (ExtraLife, StackUP, and others) with live streaming and donation tracking built in.
+
+### Set up your campaign
+
+<Steps>
+
+1. Sign up and choose a charity at [DonorDrive's charity streaming page](http://donordrive.com/charity-streaming/), then register for a campaign. You'll get links to your fundraising page and an on-screen donation overlay.
+2. In StreamElements, open your **Channel Settings → Integrations** tab and click **Connect** next to DonorDrive.
+3. Search for and select your charity, then enter your DonorDrive Participant ID (found on your DonorDrive dashboard — you can update it later if needed).
+
+</Steps>
+
+### Add alerts and a donation tracker
+
+<Steps>
+
+1. In [My Overlays](https://streamelements.com/dashboard/overlays), create a new overlay (1080p recommended) or reuse an existing one.
+2. Under **Charity & Seasonal → Charity**, add the **DonorDrive Donation AlertBox**.
+3. Customize its animation, sound, volume, and message — use DonorDrive's variables (`{displayName}`, `{amount}`, `{programName}`, `{message}`) in the message text.
+4. Save the overlay, then preview the alert using the emulator to confirm it looks right.
+5. [Add the overlay to OBS](/overlays/broadcast-software) as usual. If you added the widgets to an existing overlay's browser source, just refresh it if they don't appear right away.
+
+</Steps>
+
+### Update your campaign later
+
+To switch to a different charity or cause: go to **Channel Settings → Integrations → DonorDrive**, click **Update**, select the new charity, update your Participant ID if needed, and save.
+
+## Related
+
+- [Tipping](/revenue/tipping)
+- [AlertBox alert variations](/overlays/alertbox-variations)

@@ -1,0 +1,73 @@
+---
+title: Tipping
+description: "Let viewers tip you via PayPal or SE.Pay, customize your tipping page, moderate tip messages, and set up tip alerts."
+keywords:
+  - StreamElements tipping
+  - PayPal tips setup
+  - tip moderation
+  - tipping page settings
+---
+
+import { Steps } from '@astrojs/starlight/components';
+
+Tipping lets viewers send you money directly during a stream. StreamElements supports two payment methods, and you can enable both at once:
+
+- **PayPal** — one of the most widely used tipping platforms.
+- **SE.Pay** — StreamElements' own payment processor. See [SE.Pay](/revenue/se-pay) for its current status.
+
+StreamElements doesn't take a cut of your tips either way — though PayPal and SE.Pay each have their own processing fees (check the fees page linked from your Tipping Settings).
+
+## Set up PayPal tipping
+
+<Steps>
+
+1. Go to **Revenue → [Tipping Settings](https://streamelements.com/dashboard/tipping-settings)**.
+2. Expand **Payment Providers** and connect **PayPal**.
+3. Enter your PayPal email — log into an existing account, or create a new one.
+4. Click **Go back to StreamElements Inc** once connected.
+
+</Steps>
+
+Make sure your [PayPal account is verified](https://www.paypal.com/us/cshelp/article/how-do-i-verify-my-paypal-account-help434) beforehand. If a viewer's tip doesn't show up in StreamElements, PayPal has likely held it for verification — you'll need to contact PayPal support about that.
+
+With PayPal, tips go straight to your linked account with no extra steps — you manage withdrawals entirely through PayPal's own policies.
+
+## Tipping Settings page
+
+**Revenue → [Tipping Settings](https://streamelements.com/dashboard/tipping-settings)** controls how your tip page looks and behaves:
+
+- **Payment Providers** — connect or disconnect PayPal and SE.Pay. Some methods are restricted by country or other criteria.
+- **Page Settings** — currency (locked to your SE.Pay account currency if SE.Pay is enabled), minimum/maximum tip amount, a suggested default amount, max message length, whether viewers must log in to tip (mandatory for SE.Pay), and your tipping presets.
+- **Design** — your tip page's title, banner, background, and whether to show the tipping leaderboard.
+- **Tip Panel Setup** — copy your tipping page's URL.
+- **Tip Moderation** — see below.
+
+## Tip moderation
+
+Tip Moderation (part of Tipping Settings) filters donation messages before they trigger an alert:
+
+- Disable alerts entirely for filtered tips, or just hide the message.
+- Replace flagged words with something neutral, like emotes or stars.
+- **Standard Profanity Protection** blocks common slurs and curse words automatically; **Custom Profanity Protection** lets you add your own filtered words, with wildcard support.
+- **TTS Anti-Spam** blocks messages designed to spam text-to-speech with repeated words or letters.
+- **Manual Tip Approval** — review tips from your Activity Feed before they go out; approving shows full details, denying masks the tipper's name and removes their message. Channel Editors and Full Control managers can approve tips too.
+
+These filters apply to usernames and messages across every alert type, not just tips. They don't affect the underlying fund transfer — only whether/how the alert displays. Reload your overlays after changing these settings for them to take effect.
+
+## Tip alerts
+
+Customize tip alerts (image/video, sound, and message) from the AlertBox's settings — see [AlertBox alert variations](/overlays/alertbox-variations) for the full walkthrough.
+
+## FAQ
+
+**What shows up on a tipper's bank or card statement?**
+For SE.Pay, `STREAMELEMENTS*<CHANNEL NAME>-tip`. For PayPal, `PAYPAL *<CHANNEL NAME>`.
+
+**A viewer's donation wasn't shown on stream — what now?**
+They should reach out to the streamer or their mods directly, who can replay the alert next time they're live.
+
+**Can a tip be refunded?**
+All tips are final and non-refundable by default, but a streamer can choose to help: for PayPal tips, they can refund directly from PayPal; for SE.Pay, they'd need to contact StreamElements to process it.
+
+**Why is my SE.Pay tip being declined while the streamer is offline?**
+SE.Pay tipping only works while the streamer is live.
