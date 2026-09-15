@@ -23,7 +23,7 @@ Usually the same fixes as above — try toggling hardware acceleration first, th
 
 See the Audio Issues section of [SE.Live Troubleshooting](/selive/troubleshooting) — the same browser-source audio setup applies whether or not you use SE.Live.
 
-## XSplit {#xsplit}
+## XSplit
 
 Overlays require a recent Chromium Embedded Framework (CEF) version. If overlays fail to load in XSplit:
 

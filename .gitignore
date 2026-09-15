@@ -24,3 +24,6 @@ yarn.lock
 
 # Claude Code session artifacts
 .claude/
+node_modules/
+package-lock.json
+dist/
