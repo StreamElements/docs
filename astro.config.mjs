@@ -194,6 +194,21 @@ export default defineConfig({
         starlightSidebarTopics(
           [
             {
+              label: 'Campaigns',
+              link: '/campaigns',
+              icon: 'star',
+              items: [
+                { label: 'Overview', slug: 'campaigns' },
+                { label: 'Add the Sponsorship Overlay', slug: 'campaigns/overlay-setup' },
+                { label: 'Payments', slug: 'campaigns/payments' },
+                { label: 'Staying Compliant', slug: 'campaigns/compliance' },
+                { label: 'Subscription-Based Campaigns', slug: 'campaigns/subscription-campaigns' },
+                { label: 'Optional Bonus Goals', slug: 'campaigns/bonus-goals' },
+                { label: 'In-Game Budget Goal', slug: 'campaigns/in-game-budget' },
+                { label: 'Troubleshooting', slug: 'campaigns/troubleshooting' },
+              ],
+            },
+            {
               label: 'Chatbot',
               link: '/chatbot',
               icon: 'comment',
