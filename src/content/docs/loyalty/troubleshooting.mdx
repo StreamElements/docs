@@ -1,0 +1,47 @@
+---
+title: Loyalty Troubleshooting
+description: "Fix viewers not earning Loyalty points, inaccurate watch time, the points cap, and transferring points after a username change."
+keywords:
+  - StreamElements loyalty troubleshooting
+  - points not earning
+  - watch time inaccurate
+  - points cap
+  - transfer points username change
+---
+
+## Viewers not earning points
+
+Make sure **Hide gambling** is disabled in your [Twitch content preferences](https://www.twitch.tv/settings/content-preferences) — Twitch blocks loyalty/points integrations while that's on. Also remember points are only granted while you're live, and only to viewers currently visible in the viewer list.
+
+## Watch time is inaccurate
+
+Watch time only starts counting from the moment Loyalty is enabled — it can't be backfilled — and it's an estimate rather than an exact measurement. If it still looks wrong after accounting for that, [contact support](https://streamelements.com/contact).
+
+## Points cap
+
+Viewers can accumulate a maximum of **2,147,483,647** points. Going over this can cause points to save incorrectly or display wrong. To avoid it:
+
+- Avoid manually granting very large point amounts.
+- Set limits in your [Loyalty settings](https://streamelements.com/dashboard/loyalty) to cap how much viewers can accumulate.
+
+## Transferring points after a username change
+
+Points and watch time transfer automatically the first time a viewer types in chat under their new username. If they don't, you or a moderator can move them manually. Watch time can only be adjusted from the dashboard; points can be moved from the dashboard or with a chatbot command (dashboard access, or moderator/super moderator permissions, required either way).
+
+### Dashboard method
+
+1. Go to **Loyalty → [Leaderboard](https://streamelements.com/dashboard/leaderboard/current)**, search the old username in the **Current** tab, and note their points.
+2. Click **Give points**, enter the new username with the same amount, and submit.
+3. Repeat in the **All-Time** tab. In the **Watch Time** tab, use **Give minutes** instead.
+4. Optionally, repeat the process for the old username with a negative amount, to remove their points.
+
+### Chatbot command method
+
+1. Enable [`!addpoints`](/chatbot/commands/default/addpoints) with the appropriate [user level](/chatbot/user-management).
+2. Add points to the new username: `!addpoints <newusername> <points>`
+3. Remove them from the old username: `!addpoints <oldusername> -<points>`
+
+## Related
+
+- [Loyalty System](/loyalty)
+- [Stream Store](/loyalty/stream-store)

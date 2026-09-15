@@ -1,0 +1,92 @@
+---
+title: Loyalty System
+description: "Reward viewers with points for watching, subscribing, and tipping. Set up points, watch time, and a community leaderboard."
+keywords:
+  - StreamElements loyalty system
+  - loyalty points
+  - watch time
+  - leaderboard
+---
+
+import { Steps, CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+The Loyalty System lets viewers earn points for watching, subscribing, tipping, and other activities you define. Points can be redeemed in the [Stream Store](/loyalty/stream-store), tracked on a community leaderboard, and spent on giveaways and contests.
+
+<CardGrid>
+  <LinkCard title="Stream Store" href="/loyalty/stream-store" description="Let viewers spend points on sound effects, clips, access codes, and TTS." />
+  <LinkCard title="Troubleshooting" href="/loyalty/troubleshooting" description="Fix points not accumulating, inaccurate watch time, and username transfers." />
+</CardGrid>
+
+## Enable Loyalty
+
+<Steps>
+
+1. Open [Loyalty settings](https://streamelements.com/dashboard/loyalty).
+2. Set the toggle to **Loyalty enabled**.
+
+</Steps>
+
+## Features
+
+- **Points accumulation** — viewers earn points by watching, following, subscribing, or other actions you configure.
+- **Watch time** — with Loyalty enabled, viewers accumulate watch time every 10 minutes while visible in the viewer list. Check it with [`!watchtime`](/chatbot/commands/default/watchtime).
+- **Stream Store** — spend points on rewards you set up, from a TTS message to physical goods. See [Stream Store](/loyalty/stream-store).
+- **Leaderboards** — showcase top viewers by points (see below).
+- **Giveaways and contests** — viewers can buy giveaway tickets or bet on predictions using points.
+- **Chatbot integration** — give any command a points cost, so only viewers who can afford it can use it.
+
+## Settings
+
+The [Loyalty settings page](https://streamelements.com/dashboard/loyalty) lets you set your currency's name, how many points viewers earn from watching, a subscriber multiplier, event bonuses, and exclude specific viewers from earning points.
+
+## Notes and points cap
+
+- Points are granted every 10 minutes, only to viewers currently visible in the viewer list.
+- There's a hard cap of **2,147,483,647** points per viewer. Going over it can cause points to save or display incorrectly — see [Troubleshooting](/loyalty/troubleshooting#points-cap) for how to avoid it. Points must also be positive values.
+
+## Leaderboard
+
+Your [leaderboard](https://streamelements.com/dashboard/leaderboard/current) has three tabs:
+
+- **Current** — points earned from watching and chat mini-games.
+- **All-Time** — points earned exclusively from watch time.
+- **Watch Time** — total minutes viewed per viewer.
+
+From here you can give points to a specific user, edit or delete individual entries, or reset the leaderboard (this doesn't affect watch time).
+
+### Commands for managing points
+
+Set these up as [custom commands](/chatbot/commands/custom):
+
+| Command | Effect |
+|---|---|
+| [`!setpoints`](/chatbot/commands/default/setpoints) | Sets a viewer's total points to a specific amount. |
+| [`!addpoints`](/chatbot/commands/default/addpoints) | Adds an amount to a viewer's existing points. |
+| [`!givepoints`](/chatbot/commands/default/givepoints) | Lets a viewer give points from their own balance to another viewer. |
+
+Set each command's [user level](/chatbot/user-management) appropriately — for example, `!givepoints` for everyone, but `!addpoints`/`!setpoints` for moderators only.
+
+### Leaderboard Twitch Extension
+
+<Steps>
+
+1. On your Twitch Creator Dashboard, go to **Extensions → Discovery** and search for the **StreamElements Leaderboard** extension.
+2. Install and activate it, then assign it a panel.
+3. In your Twitch channel's **About** section, toggle on **Edit panels** if you haven't already, to give the extension somewhere to display.
+4. In the Twitch Extension manager, click the cog icon on the extension to configure which panels, default options, and periods or usernames it filters by.
+5. Optionally, add a schedule (based on your timezone) to automate which panel shows at which times.
+
+</Steps>
+
+The extension only starts collecting data after it's installed, activated, and configured — it won't backfill past activity. If you see **No Data** despite an active account and extension, [contact support](https://streamelements.com/contact).
+
+## Watch time notes
+
+- Watch time only increments while you're live — it doesn't accumulate during reruns, and Twitch doesn't track it retroactively.
+- A viewer needs to be logged into StreamElements and type in chat at least once for the bot to recognize them as active.
+- Collapsing Twitch chat, or watching in full-screen, can remove a viewer from the chat user list — pausing their watch time until they're visible again.
+
+## FAQ
+
+**How do a viewer's points transfer after they change their username?**
+Automatically, the first time they type in chat under their new name. If that doesn't happen, see [Transferring points after a username change](/loyalty/troubleshooting#transferring-points-after-a-username-change).

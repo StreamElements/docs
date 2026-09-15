@@ -291,6 +291,16 @@ export default defineConfig({
               ],
             },
             {
+              label: 'Loyalty & Stream Store',
+              link: '/loyalty',
+              icon: 'heart',
+              items: [
+                { label: 'Overview', slug: 'loyalty' },
+                { label: 'Stream Store', slug: 'loyalty/stream-store' },
+                { label: 'Troubleshooting', slug: 'loyalty/troubleshooting' },
+              ],
+            },
+            {
               label: 'Developers',
               link: '/developers',
               icon: 'server',
