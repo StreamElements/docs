@@ -194,6 +194,22 @@ export default defineConfig({
         starlightSidebarTopics(
           [
             {
+              label: 'Getting Started',
+              link: '/getting-started',
+              icon: 'rocket',
+              items: [
+                { label: 'Overview', slug: 'getting-started' },
+                { label: 'Create Your Account', slug: 'getting-started/account-setup' },
+                { label: 'Dashboard & Activity Feed', slug: 'getting-started/dashboard-overview' },
+                { label: 'Your Public Profile', slug: 'getting-started/public-profile' },
+                { label: 'Account Settings', slug: 'getting-started/account-settings' },
+                { label: 'Granting Mod Dashboard Access', slug: 'getting-started/managing-access' },
+                { label: 'Importing from Other Platforms', slug: 'getting-started/importing' },
+                { label: 'Enable Live Streaming on YouTube', slug: 'getting-started/youtube-live' },
+                { label: 'Troubleshooting', slug: 'getting-started/troubleshooting' },
+              ],
+            },
+            {
               label: 'Campaigns',
               link: '/campaigns',
               icon: 'star',
