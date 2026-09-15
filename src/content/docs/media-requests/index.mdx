@@ -1,0 +1,79 @@
+---
+title: Media Requests
+description: "Let viewers queue YouTube videos and music on your stream with loyalty points or tips, and display the queue with the Media Request widget."
+keywords:
+  - StreamElements media request
+  - song request
+  - loyalty points music
+  - media request widget
+---
+
+import { Steps } from '@astrojs/starlight/components';
+
+Media Request lets viewers queue YouTube videos and music for your stream, using [Loyalty points](/loyalty), tips, or both. Songs play through OBS, not through the Media Request dashboard page itself.
+
+## Set it up
+
+<Steps>
+
+1. Open the [Media Request page](https://streamelements.com/dashboard/mediarequest/general).
+2. Enable **Viewer requests** so viewers can add songs via chat, your profile page, or your tipping page.
+3. Choose your request type: **Free** (viewers spend loyalty points, via chat or your public request page at `streamelements.com/YourUsername/mediarequest`), **Tipped** (viewers tip and attach a request, shown on your tipping page), or **Both**.
+
+</Steps>
+
+:::note["Georestricted location" error]
+This means your **Location** isn't set in Media Request options — add one, since updates can't process without it. Still stuck after adding one? Clear your browser's cookies and cache and try again.
+:::
+
+## Settings
+
+**General:** autoplay the next song or advance manually, limit queue duration and requests per user, set a backup playlist for when the queue's empty, and toggle shuffle.
+
+**Free requests:** cost per request (in points), a subscriber discount, and a minimum user level to use [`!songrequest`](/chatbot/commands/default/songrequest)/[`!sr`](/chatbot/commands/default/song).
+
+**Tipped requests:** prioritize tipped requests over the current song, a cost-per-second cap on request length, and a minimum tip amount.
+
+**YouTube:** limit to music videos only, and manage a blacklist — banned videos are added automatically, or add URLs yourself. Banned tags and an auto-filter level are also configurable.
+
+**Advanced:** skip the current song immediately when a new request comes in, let viewers vote to skip (with a required vote count), set a user level that bypasses point costs and limits, and add a delay between videos.
+
+Which settings appear depends on your chosen request type (Free, Tipped, or Both).
+
+## Managing requests
+
+From the Media Request page (or the SE.Live dock — see below): add your own media, review request **History**, remove entries, or drag the handle on a song to reorder the queue. You can also remove or ban individual entries.
+
+While a song plays, control its volume and scrub through it using the YouTube player controls — the YouTube volume icon itself stays muted, but its slider controls the volume you actually hear in OBS, so adjust it gently. Use the Media Request panel's own controls to skip songs.
+
+To show the widget on stream, use **Show on stream** / **Hide video** — hiding the video leaves just the progress bar visible.
+
+:::caution
+Don't run Media Request from both the website and the SE.Live dock at once — you'll see a warning banner if requests are active in both places. Close one of them to avoid conflicts. The SE.Live dock is recommended for stability, since it removes the need for a separate browser page.
+:::
+
+## Add the widget to your overlay
+
+<Steps>
+
+1. Create a dedicated overlay for Media Request — this makes sizing and positioning easier. Set both the overlay and its browser source to 1920x1080.
+2. Add the Media Request widget and customize its appearance, then save.
+3. [Add the overlay to OBS](/overlays/broadcast-software), play a song with video enabled, and confirm it shows on stream.
+
+</Steps>
+
+## The SE.Live Media Request dock
+
+Open it from **StreamElements → SE.Live Docks → Media Request**. It mirrors every website option — add media, view queue history, delete or reorder requests, adjust volume, and show/hide the widget on stream — and can be popped out and resized. You can also assign hotkeys for quick control.
+
+If the dock appears blank or white, reload it from its top-left icon, or close and reopen it from the StreamElements menu. If problems persist, log out and back into SE.Live.
+
+## Commands
+
+Media Request commands aren't specially tagged in the dashboard, but these are the ones tied to it: [`!songqueue`](/chatbot/commands/default/songqueue), [`!skip`](/chatbot/commands/default/skip), [`!voteskip`](/chatbot/commands/default/voteskip), [`!removesong`](/chatbot/commands/default/removesong), [`!srclear`](/chatbot/commands/default/srclear), [`!play`](/chatbot/commands/default/play), [`!wrongsong`](/chatbot/commands/default/wrongsong).
+
+## Separating Media Request audio
+
+**To mute Media Request for yourself while your stream still hears it:** give it a dedicated overlay and browser source (as above), enable **Control audio via OBS** in that source's properties, then set its audio to **Monitor Off** in **Edit → Advanced Audio Properties**. This routes MR audio through your Desktop Audio — muting Desktop Audio in OBS mutes it for you without affecting the stream.
+
+**To control MR audio independently of the stream entirely:** this needs a virtual audio cable (VAC) — see the [VoiceMeeter Banana guide](https://obsproject.com/forum/resources/397/) — with Media Request running in Chrome (not shown on stream), Chrome's input/output routed through the VAC, and the VAC's output added to OBS as its own audio input. Showing video on stream isn't possible with this method — use Window Capture on the Chrome window instead if you need video too.

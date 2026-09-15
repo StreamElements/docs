@@ -294,6 +294,14 @@ export default defineConfig({
               ],
             },
             {
+              label: 'Ground Control',
+              link: '/ground-control',
+              icon: 'laptop',
+              items: [
+                { label: 'Overview', slug: 'ground-control' },
+              ],
+            },
+            {
               label: 'Loyalty & Stream Store',
               link: '/loyalty',
               icon: 'heart',
@@ -301,6 +309,14 @@ export default defineConfig({
                 { label: 'Overview', slug: 'loyalty' },
                 { label: 'Stream Store', slug: 'loyalty/stream-store' },
                 { label: 'Troubleshooting', slug: 'loyalty/troubleshooting' },
+              ],
+            },
+            {
+              label: 'Media Requests',
+              link: '/media-requests',
+              icon: 'seti:audio',
+              items: [
+                { label: 'Overview', slug: 'media-requests' },
               ],
             },
             {
