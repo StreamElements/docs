@@ -1,0 +1,44 @@
+---
+title: Run Ads via the Chatbot
+sidebar:
+  label: Run Ads via Chatbot
+description: "Run Twitch ads automatically on a timer, or manually with a chat command, using the StreamElements Chatbot."
+platforms: [twitch]
+keywords:
+  - StreamElements run ads
+  - Twitch commercial command
+  - automatic ads Twitch
+---
+
+import { Steps } from '@astrojs/starlight/components';
+
+Both timers and commands can send Twitch's `/commercial` action, letting the chatbot start an ad break for you.
+
+:::note[Prerequisite]
+Add the StreamElements bot as an **Editor** on your [Twitch roles page](https://dashboard.twitch.tv/community/roles) — without Editor access, it can't run ads on your behalf.
+:::
+
+## Automatically, on a timer
+
+<Steps>
+
+1. Create a new [timer](/chatbot/timers) with the response:
+
+   ```
+   /commercial 30
+   ```
+
+   Replace `30` with your preferred ad duration in seconds: `30`, `60`, `90`, `120`, `150`, or `180`.
+
+2. Set the **online interval** to how often you want ads to run. For example, an interval of 10 minutes with a `30`-second duration runs a 30-second ad every 10 minutes you're live.
+
+</Steps>
+
+## Manually, with a command
+
+Create a [custom command](/chatbot/commands/custom) — for example `!ad` — with the response `/commercial 30`. Typing `!ad` (restrict this to moderators) runs a 30-second ad on demand.
+
+## Related
+
+- [Timers](/chatbot/timers): the full timer reference, including offline interval and conditions.
+- [Custom Commands](/chatbot/commands/custom): managing commands from the dashboard or chat.

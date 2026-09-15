@@ -16,6 +16,7 @@ This section helps you quickly resolve common issues you might encounter with th
 - Check that the bot is currently active in your channel. Go to your StreamElements dashboard and ensure the bot is turned on.
 - Ensure the bot is not banned or ignored in your channel. Sometimes the bot might have been accidentally banned, which prevents it from posting messages.
 - Check that the bot has not been muted with [`!bot mute`](/chatbot/commands/default/bot). A muted bot sends no command responses or timer messages; use `!bot unmute` to restore it.
+- If the bot was never added to your channel, or lost moderator status, see [Add the Chatbot to Your Channel](/chatbot/platforms) for per-platform setup, including what to do if the bot is missing from your Activity Feed.
 
 ## Commands not working
 

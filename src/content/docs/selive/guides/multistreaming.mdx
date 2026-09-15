@@ -6,7 +6,11 @@ description: Connect streaming outputs, choose audio tracks, and go live on mult
 import GuideScreenshot from '../../../../components/GuideScreenshot.astro';
 import outputs from '../img/multistream-outputs.png';
 
-Each output sends your stream to a platform. SE.Live sends these streams from your computer, so your upload connection must handle their combined bitrate. Three outputs at 6,000 Kbps need 18,000 Kbps, plus room for overhead.
+Each output sends your stream to a platform. SE.Live sends these streams from your computer, so your upload connection must handle their combined bitrate. Three outputs at 6,000 Kbps need 18,000 Kbps, plus room for overhead. For best performance, use a system built from 2019 onward.
+
+:::note
+X (Twitter) support isn't fully operational yet — StreamElements is prioritizing it, so follow their social channels for updates.
+:::
 
 ## Connect your outputs
 
@@ -23,7 +27,7 @@ Each output sends your stream to a platform. SE.Live sends these streams from yo
 2. Check each channel name and assigned canvas. Use a [custom canvas](/selive/guides/canvas) for a separate layout.
 3. Under **Broadcast Settings**, set each stream's title, category, and platform options, such as YouTube privacy.
 
-TikTok requires LIVE access before you can stream to it.
+A TikTok output always appears by default, even before you have LIVE access — connecting your account here fast-tracks TikTok's review process. Once you're logged in and granted LIVE access, the output switches to **On** automatically.
 
 ## Go live
 
@@ -35,4 +39,19 @@ To stop one output while the others keep streaming, turn off its toggle in the M
 
 For horizontal and vertical streams on Twitch, use [Twitch dual format](/selive/guides/twitch-dual-format).
 
-[More about multistreaming](https://support.streamelements.com/hc/en-us/articles/18771457842066-SE-Live-The-Complete-Guide-Setup-Features-Multistreaming-Troubleshooting).
+## FAQ
+
+**Where are my TikTok chat and events?**
+TikTok hasn't yet opened the APIs needed to support it in the Activity Feed and Multi-Chat. Events currently appear in your chat dock without alerts — open the stand-alone TikTok Chat dock from the StreamElements menu.
+
+**Can I add more than one output for the same platform?**
+Yes — for example, one horizontal and one vertical output for YouTube, which gets two outputs per channel automatically since it supports both simultaneously. For TikTok, add the second stream as a Custom RTMP output.
+
+**Do I need to re-enter my stream key every time I open OBS?**
+No, SE.Live remembers connected accounts and reconnects automatically.
+
+**Can I use custom resolutions, bitrates, or audio channels per platform?**
+Yes to all three — set up a separate canvas per platform for custom resolutions, configure bitrates per platform or canvas, and set audio channels in each output's settings.
+
+**Can I create and link multiple canvases?**
+Yes, and you can link them together. More active canvases and outputs use more system resources.

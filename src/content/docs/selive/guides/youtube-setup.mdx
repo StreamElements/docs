@@ -1,0 +1,36 @@
+---
+title: Set Up SE.Live for YouTube
+sidebar:
+  label: YouTube Setup
+description: "Connect SE.Live to YouTube: add your camera and mic, set your stream key, add an overlay, and add the StreamElements chatbot as a moderator."
+platforms: [youtube]
+keywords:
+  - SE.Live YouTube setup
+  - StreamElements YouTube stream key
+  - YouTube overlay OBS
+---
+
+import { Steps } from '@astrojs/starlight/components';
+
+[Install SE.Live](/selive/getting-started) first, then follow these YouTube-specific steps to finish your setup.
+
+<Steps>
+
+1. **Connect your YouTube account** to SE.Live to integrate it with StreamElements.
+
+2. **Add your audio and video sources:** click **+** in Sources, add an **Audio Input Capture** for your microphone, then add a **Video Input Capture** for your camera.
+
+3. **Add your YouTube stream key:** open **Settings → Stream**, choose **YouTube / YouTube Gaming**, and paste your stream key — find it via **Get stream key**, or under [youtube.com/live_dashboard](https://www.youtube.com/live_dashboard) → **Encoder setup**. Never share your stream key.
+
+4. **Add a YouTube overlay:** in the [Themes Gallery](https://streamelements.com/dashboard/themes), open the **Theme** tab and choose the **YouTube Theme** (the static option gives the best CPU performance). Create and name it, then open it in **My Overlays**. Select the AlertBox, open its settings, and deselect every checkbox except **SuperChat** — YouTube's other event types aren't supported yet (see the FAQ in [Add the Chatbot to Your Channel](/chatbot/platforms#youtube)). Copy the overlay's URL, create a new browser source in SE.Live, paste it in, set the resolution to 1920x1080, and check **Shutdown when source not visible**.
+
+5. **Add the StreamElements chatbot as a moderator:** copy the StreamElements Chatbot URL from onboarding, then paste and approve it under your YouTube dashboard's **Settings → Community**.
+
+</Steps>
+
+You're ready to go live.
+
+## Related
+
+- [Add the Chatbot to Your Channel](/chatbot/platforms): the chatbot side of YouTube setup, including which features aren't available on YouTube.
+- [Add overlays and alerts](/selive/guides/overlays-and-alerts)

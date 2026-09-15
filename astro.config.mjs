@@ -199,7 +199,9 @@ export default defineConfig({
               icon: 'comment',
               items: [
                 { label: 'Overview', slug: 'chatbot' },
+                { label: 'Add to Your Channel', slug: 'chatbot/platforms' },
                 { label: 'Getting Started', slug: 'chatbot/getting-started' },
+                { label: 'User Management', slug: 'chatbot/user-management' },
                 {
                   label: 'Guides',
                   items: [
@@ -207,6 +209,8 @@ export default defineConfig({
                     { label: 'Lurk Command', slug: 'chatbot/guides/lurk-command' },
                     { label: 'Countdown Command', slug: 'chatbot/guides/countdown-command' },
                     { label: 'Viewer Input', slug: 'chatbot/guides/viewer-input' },
+                    { label: 'Bot Detection Command', slug: 'chatbot/guides/bot-detection' },
+                    { label: 'Run Ads via Chatbot', slug: 'chatbot/guides/run-ads' },
                     { label: 'All guides', slug: 'chatbot/guides' },
                   ],
                 },
@@ -247,9 +251,11 @@ export default defineConfig({
                   { label: 'Set up multistreaming', slug: 'selive/guides/multistreaming' },
                   { label: 'Twitch dual format', slug: 'selive/guides/twitch-dual-format' },
                   { label: 'Save replays with Backtrack', slug: 'selive/guides/backtrack' },
+                  { label: 'YouTube setup', slug: 'selive/guides/youtube-setup' },
                   { label: 'All guides', slug: 'selive/guides' },
                 ] },
                 { label: 'Troubleshooting', slug: 'selive/troubleshooting' },
+                { label: 'Uninstalling SE.Live', slug: 'selive/uninstall' },
               ],
             },
             {
@@ -262,19 +268,25 @@ export default defineConfig({
                 {
                   label: 'Guides',
                   items: [
-                    { label: 'Build your first custom widget', slug: 'overlays/first-custom-widget' },
+                    { label: 'Add to your broadcast software', slug: 'overlays/broadcast-software' },
+                    { label: 'AlertBox alert variations', slug: 'overlays/alertbox-variations' },
+                    { label: 'Add a chat overlay', slug: 'overlays/chat-widget' },
+                    { label: 'KappaGen', slug: 'overlays/kappagen' },
+                    { label: 'Widget Data', slug: 'overlays/widget-data' },
                     { label: 'Custom code in AlertBoxes', slug: 'overlays/custom-code-in-alertbox' },
                   ],
                 },
                 {
                   label: 'Custom Widgets',
                   items: [
+                    { label: 'Build your first custom widget', slug: 'overlays/first-custom-widget' },
                     { label: 'Code Editor', slug: 'overlays/widget-structure' },
                     { label: 'SE_API Reference', slug: 'overlays/custom-widget' },
                     { label: 'Widget Events', slug: 'overlays/events' },
                     { label: 'Session Data Reference', slug: 'overlays/session-data' },
                   ],
                 },
+                { label: 'Troubleshooting', slug: 'overlays/troubleshooting' },
                 { label: 'Editor Shortcuts', slug: 'overlays/overlay-editor-shortcuts' },
               ],
             },

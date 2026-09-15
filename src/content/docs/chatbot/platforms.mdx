@@ -1,0 +1,123 @@
+---
+title: Add the Chatbot to Your Channel
+sidebar:
+  label: Add to Your Channel
+description: "Add the StreamElements Chatbot to your Twitch, YouTube, or Kick channel and grant it moderator permissions."
+keywords:
+  - add StreamElements chatbot
+  - StreamElements bot Twitch
+  - StreamElements bot YouTube
+  - StreamElements bot Kick
+  - chatbot moderator permissions
+---
+
+import { Tabs, TabItem, Steps } from '@astrojs/starlight/components';
+
+Before you can create commands or timers, the chatbot needs to join your channel and have moderator permissions — without mod status, Twitch and Kick's AutoMod can silently block parts of its messages (for example, links posting as `***`).
+
+<Tabs syncKey="platform">
+
+<TabItem label="Twitch">
+
+<Steps>
+
+1. Open your [bot settings page](https://streamelements.com/dashboard/bot/settings) and click **Join**.
+
+2. In your Twitch chat, type:
+
+   ```
+   /mod streamelements
+   ```
+
+</Steps>
+
+### FAQ
+
+**Can the bot use my subscriber emotes?**
+Only if it has an active subscription to your channel — you or someone else needs to gift it one.
+
+**The bot isn't responding.**
+Make sure it isn't banned: type `/unban streamelements` in your chat. If events are also missing from your Activity Feed, see [Events missing from the Activity Feed](#events-missing-from-the-activity-feed) below. Otherwise see [Troubleshooting](/chatbot/troubleshooting).
+
+### Events missing from the Activity Feed
+
+Twitch now requires chat access to deliver some events, so a banned or parted bot can cause them to stop appearing in your Activity Feed. If that happens:
+
+<Steps>
+
+1. Unban and mod the bot (`/unban streamelements` then `/mod streamelements`) so other bots can't re-ban it.
+2. Log out of the StreamElements dashboard and log back in with your Twitch account, to refresh the permissions needed to read subscription and other events.
+3. Part and re-join the bot from your channel to confirm it's present. You can disable its timers and commands afterward if you don't want it posting.
+
+</Steps>
+
+</TabItem>
+
+<TabItem label="YouTube">
+
+:::note[Before you start]
+Your stream must be **public** and **live** — the bot can't join a private, unlisted, or offline stream.
+:::
+
+<Steps>
+
+1. Open [YouTube Studio](https://studio.youtube.com/).
+2. Go to **Settings > Community**.
+3. Under moderators, add either of these as a moderator:
+   - `https://youtube.com/c/streamelements`
+   - `https://www.youtube.com/channel/UCjerlCIbLPQwSnYlClkjDXg`
+4. While live, view **Live chat** rather than **Top chat** — Top chat can hide the bot's messages.
+
+</Steps>
+
+### FAQ
+
+**Can I change the bot's display name?**
+No, this isn't possible on YouTube.
+
+**Some chatbot features are missing.**
+Giveaways, the Stream Store, Viewer Queue, and Media Requests all depend on the Loyalty system, which isn't currently available for YouTube accounts.
+
+**Some events don't show up in Chat Alerts or the Activity Feed.**
+Events are only captured while you're live, and tracking doesn't work correctly if you run two streams at the same time.
+
+**The bot didn't join my channel when I went live.**
+Confirm your stream is public, that you're shown as live in the StreamElements dashboard, and that you added the correct StreamElements channel as a moderator.
+
+</TabItem>
+
+<TabItem label="Kick">
+
+<Steps>
+
+1. Open your [bot settings page](https://streamelements.com/dashboard/bot/settings) and click **Join**.
+2. In your Kick chat, type:
+
+   ```
+   /mod @StreamElements
+   ```
+
+</Steps>
+
+### FAQ
+
+**Can the bot use my subscriber emotes?**
+Only if it has an active subscription to your channel — you or someone else needs to gift it one.
+
+**The bot isn't responding.**
+Type `/unban @StreamElements` in your chat, and confirm the bot is still connected to your Kick account under bot settings.
+
+**Why isn't the bot posting alerts or responding to commands?**
+Usually one of: the bot is offline (try reconnecting it), it's missing moderator status in your chat, or there's a typo in the command name.
+
+**Can the bot automatically ban or time out users?**
+Not on its own — but moderators can trigger bulk timeouts or bans with [`!nuke`](/chatbot/commands/default/nuke) and [`!nukeusername`](/chatbot/commands/default/nukeusername).
+
+</TabItem>
+
+</Tabs>
+
+## Next steps
+
+- [Create your first command or timer](/chatbot/getting-started)
+- [Troubleshooting](/chatbot/troubleshooting)

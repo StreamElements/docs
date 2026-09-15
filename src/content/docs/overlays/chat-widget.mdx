@@ -1,0 +1,38 @@
+---
+title: Add a Chat Overlay
+sidebar:
+  label: Chat Overlay
+description: "Add your stream chat to your overlay with the Your Stream's Chat widget, and customize its appearance."
+platforms: [twitch]
+keywords:
+  - Twitch chat overlay
+  - StreamElements chat widget
+  - stream chat on overlay
+---
+
+import { Steps } from '@astrojs/starlight/components';
+
+Add a chat widget to your overlay so viewers watching in fullscreen never lose sight of chat.
+
+<Steps>
+
+1. Create a new overlay and choose your resolution (1080p recommended).
+2. Click **+** to add a widget, then choose **Stream Tools > Your Stream's Chat**.
+3. Customize its appearance:
+   - Resize the chat box to fit your layout.
+   - Set the theme to **Custom** for full control over styling.
+   - Pick a font, and adjust text color and size.
+   - Add a text shadow if the box sits over a bright background.
+4. Save the overlay, name it, and copy its URL from the link icon at the top.
+
+</Steps>
+
+Then [add the overlay to OBS or XSplit](/overlays/broadcast-software) like any other.
+
+## Emote support
+
+The widget renders Twitch emotes, including animated ones, plus third-party emotes from BTTV, FFZ, and 7TV. Unlisted 7TV emotes are the one exception — they won't appear.
+
+## Related
+
+- [Add an overlay to your broadcast software](/overlays/broadcast-software)

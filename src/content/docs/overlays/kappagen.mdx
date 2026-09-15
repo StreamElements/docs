@@ -1,0 +1,61 @@
+---
+title: KappaGen (Emote Explosions)
+sidebar:
+  label: KappaGen
+description: "Set up the KappaGen widget to show chat emotes on stream and trigger emote explosions with the !kappagen command."
+keywords:
+  - KappaGen
+  - emote explosion
+  - StreamElements emotes overlay
+---
+
+import { Steps } from '@astrojs/starlight/components';
+
+KappaGen displays chat emotes on your overlay two ways: **Chat Emotes**, which shows emotes as they're sent, and **Emotesplosions**, which floods the screen with emotes on a trigger — a chat event, or the [`!kappagen`](/chatbot/commands/default/kappagen) command.
+
+## Add the widget
+
+<Steps>
+
+1. Go to [Overlays](https://streamelements.com/dashboard/overlays) and create a new overlay (or open an existing one).
+2. Click **Add widget**, hover **Alerts**, and select **KappaGen**.
+3. Drag the widget's bounding box to cover the whole canvas, so emotes can appear anywhere on screen.
+
+</Steps>
+
+:::tip
+Give KappaGen its own dedicated overlay for easier control over layering and visibility.
+:::
+
+## General settings
+
+- **Enable Seasonal Hats** adds seasonal decorations (like a Santa hat) to emotes.
+- **Emote Size** — keep this moderate. Very large sizes can cause stream delays.
+
+## Chat Emotes
+
+Shows emotes sent in chat, with an animation style you choose from five presets.
+
+- **Combo mode** shows emote combos from the [Emote Combos module](/chatbot/modules/emotecombo) when it's enabled.
+- You can restrict triggering to subscribers only, and set how many emotes per user per second are allowed and how long each stays on screen.
+
+### Custom emotes
+
+Open the cog icon next to **Custom Emotes** to add your own. If the file is an animated GIF, check the corresponding box. You can also trigger a custom emote by a regex pattern instead of exact text, if you're comfortable writing one.
+
+If new or updated emotes aren't showing up, run `!emotes reload` in chat and allow up to 24 hours for KappaGen's cache to catch up.
+
+## Emotesplosions
+
+Triggered by chat events or the `!kappagen` command. Configure:
+
+- **Animation Option** — one of five animation styles.
+- **Alert Types** — which events trigger an explosion.
+- **Emotes to Show** — how many emotes appear per explosion.
+- **Select Emotes** — which emotes are eligible.
+
+## Related
+
+- [`!kappagen`](/chatbot/commands/default/kappagen): the chat command that triggers Emotesplosions.
+- [`!emotes`](/chatbot/commands/default/emotes): reload or list available emotes.
+- [Add an overlay to your broadcast software](/overlays/broadcast-software)
