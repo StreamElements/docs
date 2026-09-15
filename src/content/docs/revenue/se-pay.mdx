@@ -1,0 +1,67 @@
+---
+title: SE.Pay
+description: "SE.Pay is StreamElements' in-house tipping processor. SE.Pay Legacy is being discontinued; its Stripe-based replacement is currently in closed beta."
+keywords:
+  - StreamElements SE.Pay
+  - SE.Pay Stripe
+  - SE.Pay Legacy
+---
+
+import { Steps } from '@astrojs/starlight/components';
+
+:::caution[Currently unavailable for new setup]
+SE.Pay is not currently available to activate — SE.Pay Legacy is being phased out, and its Stripe-based replacement is still in closed beta. This page covers both, so creators already using Legacy and creators in the Stripe beta each have accurate information.
+:::
+
+## SE.Pay Legacy (Adyen)
+
+SE.Pay Legacy is StreamElements' original tipping processor, built on Adyen. It's on hold and being fully discontinued on **December 31, 2026**.
+
+- Legacy can no longer receive new tips.
+- Any balance already in your Legacy account remains available to withdraw until the discontinuation date — make sure to withdraw it before then.
+- Legacy does not automatically transfer to the new Stripe-based SE.Pay — withdraw it separately using the existing withdraw button.
+- If you miss the deadline, contact StreamElements at [support@streamelements.com](mailto:support@streamelements.com) for help recovering your remaining balance.
+
+## SE.Pay (Stripe) — closed beta
+
+The Stripe-based version of SE.Pay is StreamElements' next tipping processor, currently in closed beta while the team finishes testing ahead of a wider rollout. This section describes how it works for creators who currently have beta access, and for reference once it opens more broadly.
+
+### Setting it up
+
+<Steps>
+
+1. In your dashboard, go to **Revenue → Tipping Settings**.
+2. Click **Connect** to link an existing Stripe account, or create a new one.
+3. Complete Stripe's onboarding — basic personal and banking information, usually just a few minutes.
+
+</Steps>
+
+Once connected, manage your account (payout schedule, enabled payment methods) any time from the same Tipping Settings page, which links through to your Stripe Dashboard.
+
+### How it works
+
+- Tips go directly to your Stripe balance — view them under **Balances** in your [Stripe Dashboard](https://dashboard.stripe.com).
+- Payouts follow whatever schedule you set during onboarding (manual or automatic), changeable any time from Stripe.
+- Your first payout can take about 7 days while Stripe verifies your account; it's faster after that.
+- Withdrawals and transaction history are managed entirely in Stripe, not the StreamElements dashboard.
+- Like Legacy, tipping only works while you're live — SE.Pay doesn't support offline tips.
+
+### Customizing what tippers see
+
+From your Stripe Dashboard, under **Settings → Business → Public details**, you can set the **Statement description** shown on a tipper's card statement (StreamElements recommends using your channel name), along with the public business name, address, and phone number tippers may see. Card networks require every merchant — which, with Stripe, means you — to provide these public contact details.
+
+This information is separate from your private Stripe account details (like your date of birth); only what you set under Public details is ever visible to tippers.
+
+### FAQ
+
+**Do I have to move to Stripe?**
+Once it's fully rolled out, yes — to keep receiving card tips through StreamElements. PayPal tipping is unaffected either way; see [Tipping](/revenue/tipping).
+
+**Are fees changing?**
+StreamElements aims to keep fees competitive; exact figures show up during Stripe onboarding.
+
+**Is Stripe available in more countries than Legacy was?**
+Yes — Stripe supports more regions and currencies than SE.Pay Legacy did.
+
+**Is my information secure?**
+Stripe is a PCI Level 1 certified processor with its own fraud protection and identity verification.
