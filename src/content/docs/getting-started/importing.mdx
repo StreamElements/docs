@@ -1,0 +1,51 @@
+---
+title: Importing from Other Platforms
+description: "Import commands, timers, loyalty points, and other data into StreamElements from Streamlabs, Nightbot, Deepbot, Moobot, TipeeeStream, or a CSV file."
+keywords:
+  - StreamElements import
+  - import from Streamlabs
+  - import from Nightbot
+---
+
+Before you start: log in to both your source platform and StreamElements, and install any browser extension the method below asks for.
+
+Open the import menu from **Import** at the top right of your dashboard, your profile menu, or directly at the [import page](https://streamelements.com/dashboard/account/import).
+
+## From Streamlabs
+
+Click **Import Using Extension**, install and add the Chrome extension, then follow its on-screen instructions — you'll need to be logged into both Streamlabs and StreamElements.
+
+## From Nightbot
+
+Click **Import**, approve StreamElements in the authorization popup, make sure both **Commands** and **Timers** are checked, and click **Import**. Afterward, find your commands under Custom Commands and your timers under Timers.
+
+## From a CSV file
+
+Click **Import** and choose the CSV file(s) you want to bring in.
+
+## From Deepbot
+
+Keep Deepbot open and running, go to **Master Settings**, and copy your API secret. Click **Import Now**, paste the secret, and your points will appear in your [Leaderboard](https://streamelements.com/dashboard/leaderboard/current).
+
+## From Moobot
+
+Click **Install Chrome Extension**, add it to Chrome, and follow its on-screen instructions — you'll need to be logged into both Moobot and StreamElements.
+
+## From TipeeeStream
+
+Click **Install Chrome Extension**, add it to Chrome, and follow its on-screen instructions — you'll need to be logged into both TipeeeStream and StreamElements.
+
+## From Ankhbot / Streamlabs Chatbot
+
+<ol>
+<li>In Ankhbot/Streamlabs Chatbot, click <strong>Connections</strong> (bottom left) → <strong>Cloud</strong> → <strong>Pick Folder</strong>, choose a backup location, then <strong>Save</strong> and <strong>Save Settings</strong>.</li>
+<li>Click <strong>Create Split Excel Files</strong> to export your commands and quotes, and <strong>Export Currency CSV</strong> to export your points.</li>
+<li>On the <a href="https://streamelements.com/dashboard/account/import">import page</a>, click <strong>Import Now</strong> under Ankhbot/Streamlabs.</li>
+<li>Under Points, select the <code>Currency.csv</code> file you exported.</li>
+<li>Under Commands/Quotes, select your exported <code>Commands.xlsx</code> and <code>Quotes.xlsx</code> files.</li>
+<li>Click <strong>Import</strong>.</li>
+</ol>
+
+:::caution
+Remove any header row from your points CSV before importing — a header present, or any blank points field, will cause the import to fail.
+:::

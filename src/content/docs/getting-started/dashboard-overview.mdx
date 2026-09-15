@@ -1,0 +1,54 @@
+---
+title: Dashboard & Activity Feed
+description: "Find your way around the StreamElements dashboard, top bar, and Activity Feed, including multiplatform event filtering."
+keywords:
+  - StreamElements dashboard
+  - Activity Feed
+  - multiplatform activity feed
+---
+
+import { Steps } from '@astrojs/starlight/components';
+
+## The dashboard
+
+The top bar of the main dashboard lets you choose a time period; the boxes and graph below reflect event counts for whichever tab you have selected.
+
+The right side shows whether the chatbot is currently in your channel. If it's there, you can **Part** it or **Mute** it (a muted bot shows **Unmute** instead). You can also quick-edit your stream title and category from here.
+
+### The top bar
+
+Available everywhere in your dashboard. Your profile picture sits on the right, with a red ring while you're online; if you have multiple linked accounts, switch between them with the small arrow beside your username. Clicking your profile picture opens a menu with Import, language and theme settings, links to SE.Live and Ground Control, and Log Out.
+
+## Activity Feed
+
+The [Activity Feed](https://streamelements.com/dashboard/activity) is where you monitor events, manage alerts, and adjust settings in real time.
+
+**Filter events:** click **Filter**, choose the platform and event types you want to see, and click **Filter** to apply.
+
+**Other features:**
+
+- Manage alerts, overlays, and ad settings.
+- Monitor chatbot status.
+- Mute or skip individual alerts.
+- Reset session settings.
+- View Widget Data for detailed event stats — see [Widget Data](/overlays/widget-data).
+- Track and interact with Twitch Channel Points.
+- Let moderators adjust ad settings.
+
+If you use [SE.Live](/selive), most of this is available right inside OBS too.
+
+## Multiplatform Activity Feed
+
+If you stream to more than one platform, you can consolidate events from every connected channel into a single feed:
+
+<Steps>
+
+1. Click **Filter** in the Activity Feed.
+2. Choose which platform(s) to show events from.
+3. Select the event types and their rules for each connected platform.
+
+</Steps>
+
+:::caution[Don't show this on Twitch]
+Displaying activity from other platforms violates Twitch's Terms of Service and risks account suspension. Keep the Multiplatform Activity Feed off your Twitch-facing overlays.
+:::

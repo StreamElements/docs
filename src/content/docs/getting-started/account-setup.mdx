@@ -1,0 +1,71 @@
+---
+title: Create Your Account
+description: "Create a StreamElements account and complete initial setup: activate the chatbot, set up tipping, build your first overlay, and install SE.Live."
+keywords:
+  - StreamElements sign up
+  - StreamElements initial setup
+  - StreamElements account creation
+---
+
+import { Steps } from '@astrojs/starlight/components';
+
+:::note
+This covers creating your account and initial setup. For everything else about SE.Live once you get there, see [SE.Live](/selive).
+:::
+
+## Log in and authorize
+
+<Steps>
+
+1. Log in to your Twitch, YouTube, Kick, or TikTok account.
+2. Go to [streamelements.com](https://streamelements.com/) and connect with that account, authorizing access.
+3. You'll land on your new dashboard.
+
+</Steps>
+
+Your dashboard and Activity Feed only populate from events going forward — while your existing totals (followers, subscribers) show up right away, individual past events won't backfill.
+
+## Complete initial setup
+
+The top bar of your dashboard walks you through initial setup. Click **Continue** to start the wizard.
+
+### 1. Activate the chatbot
+
+Clicking **Activate** adds the bot to your channel and grants it moderator permissions. Check your chat's user list to confirm — it can take a few minutes to show up under Moderators.
+
+### 2. Set up tipping
+
+<Steps>
+
+1. Enter your PayPal email and click **Connect** (see [Tipping](/revenue/tipping) for SE.Pay and other options).
+2. Download one of the suggested tipping panels and copy your tipping page link.
+3. On Twitch, toggle on **Edit Panels**, add a text/image panel, upload the panel image, and paste your tipping link.
+4. Toggle **Edit Panels** back off and click the new panel to confirm it opens your tipping page.
+5. Back in the setup wizard, click **Continue** on the Tipping Panel Settings step.
+
+</Steps>
+
+### 3. Set up your overlay
+
+Choose one:
+
+- **Create** — opens the Overlay Editor to build one from scratch.
+- **Pick** — opens the Themes Gallery to start from a preset.
+- **Import** — brings in overlays you already have on another platform.
+
+:::caution[Importing from Streamlabs]
+Assets over 30MB will fail to import. Streamlabs overlays also use a different native resolution — re-adjust imported overlays to 1920x1080 and reposition widgets as needed. For web-based services, keep both the source service and StreamElements open in separate tabs during import.
+:::
+
+For now, pick **Create**, keep the resolution at 1080p, and click **Start**. Save your overlay once you're happy with it, then return to the setup wizard.
+
+### 4. Install SE.Live
+
+The last step downloads and installs [SE.Live](/selive) in OBS. See [Install and connect](/selive/getting-started) for the full walkthrough.
+
+Once you click Download, initial setup is complete.
+
+## FAQ
+
+**Does this work the same on every platform?**
+The wizard is shown for Twitch here, but the same four steps — account, tipping, overlay, SE.Live — apply on YouTube and Kick too, even though which features are available afterward can differ per platform.

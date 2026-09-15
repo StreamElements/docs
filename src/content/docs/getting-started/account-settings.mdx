@@ -1,0 +1,72 @@
+---
+title: Account Settings
+description: "Update your StreamElements account email, find your Account ID and JWT token, unlink a channel, or close your account."
+keywords:
+  - StreamElements account email
+  - StreamElements account ID
+  - JWT token
+  - unlink channel
+  - close StreamElements account
+---
+
+import { Steps } from '@astrojs/starlight/components';
+
+## Updating your email
+
+StreamElements pulls your account email directly from the platform you log in with — there's no way to change it independently yet.
+
+<Steps>
+
+1. Update your email on Twitch or YouTube directly (see [Twitch's guide](https://help.twitch.tv/s/article/twitch-account-access-login-issues-guide?language=en_US#faq) or [YouTube's guide](https://support.google.com/youtube/answer/174100?hl=en)).
+2. Log back into StreamElements to re-fetch the updated email.
+3. Confirm the change in your [account settings](https://streamelements.com/dashboard/account/channels).
+
+</Steps>
+
+**Sponsorship program email:** this can use a different address than your main account email. To change it, [submit a support ticket](https://support.streamelements.com/hc/en-us/requests/new) with the new address — the change is applied once a representative processes your ticket.
+
+## Finding your Account ID and JWT token
+
+Both are on your [channels page](https://streamelements.com/dashboard/account/channels):
+
+- **Account ID** is shown at the top of the page. It's public — safe to share, including in the StreamElements Discord, when asking for help.
+- **JWT token** appears once you toggle on **Show Secrets**. This is private — never share it with anyone except StreamElements support, and only when they ask for it directly.
+
+## Unlinking a channel
+
+Unlinking removes a channel from your account without deleting your data — your overlays, chatbot commands, and settings stay saved, and you can relink the channel later to pick up where you left off. (You can also start a separate account tied to just that channel by signing up with it directly.)
+
+<Steps>
+
+1. Go to your [dashboard](https://streamelements.com/dashboard/account/channels) and select the channel you want to unlink.
+2. Click **Unlink Account**.
+3. Confirm — this specific action can't be undone, but you can manually re-add the channel afterward.
+
+</Steps>
+
+Because closing your whole account (below) deletes everything permanently, unlinking a single channel is usually the better option if you just want to disconnect one platform.
+
+## Closing your account
+
+:::caution
+Closing your account permanently deletes everything tied to it — every linked channel, overlay, chatbot command, and stored setting. This can't be undone.
+:::
+
+<Steps>
+
+1. Click your profile picture → **Channel Settings** → **Security** (or go straight to your [account page](https://streamelements.com/dashboard/account/channels)).
+2. Click **Close My Account**.
+3. Fill out the closure form: your StreamElements username, your account email, your [JWT token](#finding-your-account-id-and-jwt-token), and a brief reason for closing.
+4. Submit. Your account closes automatically, and you'll get a confirmation email shortly after.
+
+</Steps>
+
+If the form itself isn't working, [contact support](https://support.streamelements.com/hc/en-us/requests/new) with the same information instead.
+
+### FAQ
+
+**Can I reopen a closed account?**
+No — closure is permanent. Logging in again afterward creates a brand-new account.
+
+**Can I delete just one platform from my account instead of closing everything?**
+No, but you can [unlink it](#unlinking-a-channel) instead, which is reversible.
