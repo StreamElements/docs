@@ -13,6 +13,14 @@ Open **StreamElements → SE.Live Docks**. If docks remain missing, use **Stream
 
 Retry with Google Chrome. If a VPN or browser extension blocks login, temporarily pause it and retry, then restore it.
 
+## Can't log in with an X (Twitter) account
+
+Remove two-factor authentication from your X account, then log in to SE.Live again.
+
+## Stream Deck plugin not recognized
+
+The [SE.Live Stream Deck plugin](https://marketplace.elgato.com/product/streamelements-selive-61e7874a-5238-4182-9e66-1b78d86795bc) is sensitive to OBS's install path. Install OBS to its default location to avoid the plugin not being recognized.
+
 ## Overlays or alerts do not appear
 
 1. Copy the overlay URL again from **My Overlays → three-dot menu → Copy URL** and paste it into the browser source's **Properties**.
@@ -25,11 +33,15 @@ If you hear an alert but cannot see it, move its browser source above sources co
 
 ## Alert audio
 
+**Not hearing alerts at all?** First confirm your audio device works outside OBS (Discord, Spotify, etc.), then check **Settings → Audio**: set your main output as **Desktop Audio**, and your microphone as **Mic/Auxiliary Audio**. Layer order also matters — an alert overlay's browser source needs to sit above other sources, or you may hear the alert without seeing it.
+
+**Changing the alert volume:**
+
 1. Open the browser source's **Properties** and enable **Control audio via OBS**.
 2. Adjust its volume in the OBS mixer.
 3. To hear it locally, open **Advanced Audio Properties** and set its monitoring to **Monitor and Output**.
 
-Check your audio routing if this produces duplicate sound.
+Check your audio routing if this produces duplicate sound. Still stuck? The [OBS Discord](https://discord.gg/obsproject) covers general OBS audio routing questions.
 
 ## Update loops
 
@@ -37,16 +49,31 @@ Update OBS to its latest stable release, then reinstall [SE.Live](https://stream
 
 ## Crashes or hangs
 
-Update OBS and SE.Live, then temporarily disable other plugins and retry. Complete the BugSplat report if it appears. Support can guide you through trace logs or a memory dump if needed.
+Update OBS and SE.Live, then temporarily disable other plugins and retry. Complete the BugSplat report if it appears — it sends a diagnosis report to StreamElements automatically.
+
+If crashes persist, add `--setrace` to your OBS shortcut's target field (right-click the shortcut → **Properties**) before reproducing the crash, then share both the resulting trace and your regular crash logs when you [contact support](https://support.streamelements.com/hc/en-us/requests/new).
+
+**If OBS hangs without producing a crash log** (Windows, requires OBS 31.x+): reproduce the hang without closing OBS, open Task Manager (**Ctrl+Shift+Esc** → **Details**), right-click `obs64.exe`, and select **Create memory dump file**. If this fails, retry Task Manager as Administrator, and only create one dump at a time.
+
+:::note
+SE.Live isn't supported inside a portable OBS installation — use a regular install for full compatibility.
+:::
+
+## Uninstalling SE.Live
+
+See [Uninstalling SE.Live](/selive/uninstall) for the full removal steps, including how to back up your OBS profile first.
 
 ## Streaming performance
 
 Check the combined bitrate of your [multistreaming outputs](/selive/guides/multistreaming). Also check for [unused Backtrack buffers](/selive/guides/backtrack#limit-resource-use), which consume encoding resources even while idle.
 
+If your stream lags or drops frames when streaming to multiple platforms at once, switch to **GPU encoding** — CPU encoding struggles once you're sending three or more simultaneous outputs.
+
 Use the OBS guide that matches the problem:
 
 - [Stream connection troubleshooting](https://obsproject.com/kb/stream-connection-troubleshooting) for disconnects and dropped frames.
 - [Encoding performance troubleshooting](https://obsproject.com/kb/encoding-performance-troubleshooting) for choppy video and encoder overload.
+- [Laptop troubleshooting](https://obsproject.com/wiki/Laptop-Troubleshooting) if window, game, or display capture sources show a black screen.
 
 ## Get help with your setup
 

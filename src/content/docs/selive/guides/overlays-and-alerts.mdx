@@ -14,6 +14,12 @@ import alertbox from '../img/alertbox-menu.png';
 
 <GuideScreenshot src={alertbox} alt="The overlay widget menu with Alerts expanded and AlertBox highlighted." caption="Choose Alerts → AlertBox to add stream alerts to your overlay." />
 
+## Test it and plan your scenes
+
+Type in your chat to confirm chat and alerts appear correctly once the overlay's in OBS. Most creators set up a handful of scenes — `In Game`, `BRB`, `Stream Starting`, `Just Chatting` — each with its own layout, and use Label widgets to show recent activity (subs, tips) on screen.
+
+The [Themes Gallery](https://streamelements.com/dashboard/themes) has ready-made themes and Super Themes if you'd rather start from a complete look than build one widget at a time.
+
 ## Add it to OBS
 
 1. In **My Overlays**, open the overlay's three-dot menu and select **Copy URL**. You can also use the link icon in the overlay editor.
@@ -22,13 +28,15 @@ import alertbox from '../img/alertbox-menu.png';
 4. Set **Width** and **Height** to match the overlay. A 1920 × 1080 overlay needs those same source dimensions; use your overlay's dimensions for a vertical layout.
 5. Save, then place the browser source above sources that would cover it.
 
-Keep the overlay URL private.
+:::caution[Keep the URL private]
+The overlay URL contains a token tied to your account — don't expose it to viewers or share it publicly, and be careful editing your overlay in the browser, since the URL is visible in the address bar.
+:::
 
 ## Customize alerts
 
 In the overlay editor, select the AlertBox and open the gear beside an event type to change its image, sound, text, layout, and duration. Save your changes.
 
-Check enabled variations too: changing a default alert does not change every variation. Customize or disable variations you do not want. See [Setting Up Twitch Alerts](https://support.streamelements.com/hc/en-us/articles/16789217829778-Setting-Up-Twitch-Alerts-with-StreamElements-Overlays) for examples.
+Check enabled variations too: changing a default alert does not change every variation. Customize or disable variations you do not want — see [AlertBox alert variations](/overlays/alertbox-variations) for the full breakdown of subscriber, tip, cheer, and raid variations, plus text-to-speech setup.
 
 ## Use alerts across scenes
 

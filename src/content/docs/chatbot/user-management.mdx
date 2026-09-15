@@ -1,0 +1,48 @@
+---
+title: User Management
+description: "StreamElements Chatbot permission levels, and how to manually assign a user to a group from the dashboard."
+keywords:
+  - StreamElements user levels
+  - chatbot permission levels
+  - Regular user Twitch bot
+  - Super Moderator StreamElements
+---
+
+Every command has a required **user level** — the minimum permission a viewer needs to use it. Most viewers get a level automatically based on their platform role:
+
+| Group | Level | How it's assigned |
+|---|---|---|
+| Everyone | 100 | Default for every chat user |
+| Subscriber | 250 | Automatic for your platform subs |
+| Regular | 300 | Set manually, see below |
+| VIP | 400 | Automatic for Twitch VIPs |
+| Moderator | 500 | Automatic for your platform mods |
+| Super Moderator | 1000 | Set manually, see below |
+
+The broadcaster always sits above every level and can trigger any command, regardless of its required level.
+
+These are the same six values used throughout the chatbot — in [`!level`](/chatbot/commands/default/level), and in `!command options -level` (see [`!command`](/chatbot/commands/default/command)).
+
+## Setting a command's user level
+
+Set a command's required level from its **Advanced settings** in the dashboard, or with [`!command options`](/chatbot/commands/default/command):
+
+```streamelements
+!command options !socials -level 500
+```
+
+## Adding a user to Regular or Super Moderator
+
+Regular and Super Moderator aren't tied to a platform role, so you assign them yourself:
+
+- **From the dashboard:** go to **Chatbot > User Management**, click **Add new bot user**, enter their username, and assign a group.
+- **From chat:** moderators and the broadcaster can use [`!level`](/chatbot/commands/default/level):
+
+  ```streamelements
+  !level RegularViewer 300
+  ```
+
+## Related
+
+- [`!level`](/chatbot/commands/default/level): check or set a user's level from chat.
+- [Custom Commands](/chatbot/commands/custom): set a command's level when creating or editing it.

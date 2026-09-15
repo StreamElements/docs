@@ -1,0 +1,74 @@
+---
+title: Add an Overlay to Your Broadcast Software
+sidebar:
+  label: Add to OBS / XSplit
+description: "Add a StreamElements overlay to OBS Studio or XSplit as a browser source, and use multiple overlays at once."
+keywords:
+  - add overlay to OBS
+  - StreamElements browser source
+  - XSplit overlay
+  - overlay URL
+---
+
+import { Steps, Tabs, TabItem } from '@astrojs/starlight/components';
+
+Every StreamElements overlay is a web page. To show it on stream, add its URL as a browser source in your broadcast software.
+
+:::caution[Keep the URL private]
+An overlay URL contains a token that identifies your account. Don't share it publicly or show it on stream — anyone with the URL can view (and on some pages, edit) your overlay.
+:::
+
+## Get the overlay URL
+
+<Steps>
+
+1. Go to [My Overlays](https://streamelements.com/dashboard/overlays).
+2. Open the overlay's menu (the three dots) and select **Copy URL**.
+
+   You can also copy it from inside the overlay editor, using the link icon in the top-right corner.
+
+</Steps>
+
+## Add it to your broadcast software
+
+<Tabs syncKey="broadcast-software">
+
+<TabItem label="OBS Studio">
+
+<Steps>
+
+1. In the **Sources** panel, click **+** and select **Browser**.
+2. Choose **Create new**, name it (for example "Stream Overlay"), and click **OK**.
+3. Set these properties, then click **OK**:
+   - **URL:** the overlay URL you copied above.
+   - **Width:** `1920` (unless you changed your overlay's resolution).
+   - **Height:** `1080` (unless you changed your overlay's resolution).
+   - **FPS:** `30` or `60`, depending on your stream settings.
+   - Leave **Custom CSS** as default.
+
+</Steps>
+
+Repeat this for each overlay you want to use — the same steps work on OBS for Mac.
+
+</TabItem>
+
+<TabItem label="XSplit">
+
+Add the overlay as a **Browser Source** using the same URL, width, and height as above.
+
+:::note[Overlays not showing up?]
+XSplit versions older than 4.5.2306.2701 use an outdated Chromium Embedded Framework (CEF) and can't load current StreamElements overlays. Update XSplit to the latest version, or update its CEF package, to fix this — see [Troubleshooting](/overlays/troubleshooting#xsplit) for links.
+:::
+
+</TabItem>
+
+</Tabs>
+
+## Using multiple overlays
+
+You can add as many overlays as you like — repeat the steps above for each one. Give each scene its own overlay (or overlays), or reuse a single overlay across scenes for elements like a unified AlertBox — see [AlertBox alert variations](/overlays/alertbox-variations) for that setup.
+
+## Related
+
+- [Troubleshooting](/overlays/troubleshooting): overlays not appearing, stuttering, or missing sound.
+- [AlertBox alert variations](/overlays/alertbox-variations): customize what plays for follows, subs, tips, and more.

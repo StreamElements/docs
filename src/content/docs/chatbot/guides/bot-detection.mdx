@@ -1,0 +1,46 @@
+---
+title: Check if a User Is a Known Bot
+sidebar:
+  label: Bot Detection Command
+description: "Build a !bot command that checks whether a Twitch username is a known bot, using the $(customapi) variable and a third-party lookup service."
+platforms: [twitch]
+keywords:
+  - StreamElements bot detection
+  - known bot command
+  - Twitch bot check command
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import ChatExample from '@components/ChatExample.astro';
+
+This command checks whether a username is a known bot, using [`$(customapi)`](/chatbot/variables/customapi) to query **Blocklist Buddy**, a community-run lookup service covering CommanderRoot's and TwitchInsights' known-bot lists.
+
+:::note
+Blocklist Buddy is a third-party, community-maintained service — not operated by StreamElements. It could change or become unavailable without notice.
+:::
+
+<Steps>
+
+1. From the [bot command dashboard](https://streamelements.com/dashboard/bot/commands), open the "Custom commands" tab and click "Add new command".
+
+2. Name the command `bot`, and set the reply to:
+
+   ```streamelements
+   $(customapi https://zoeballz.uk/_Blocklist_Buddy/known_bot.php?user=$(sender)&bot=$(1)&channel=$(channel))
+   ```
+
+3. Click "Activate command".
+
+</Steps>
+
+Test it with `!bot <username>`:
+
+<ChatExample messages={[
+  { persona: 'user', message: '!bot some_suspicious_account' },
+  { persona: 'bot', message: 'According to @BlocklistBuddy, some_suspicious_account is listed as a KNOWN BOT on CommanderRoot\'s Known Bot List.' }
+]} />
+
+## Related
+
+- [`$(customapi)`](/chatbot/variables/customapi): the variable this command is built on.
+- [Custom Commands](/chatbot/commands/custom): everything else you can do with custom commands.
