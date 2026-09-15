@@ -1,0 +1,47 @@
+---
+title: Add the Sponsorship Overlay to OBS
+description: "Copy your campaign's sponsorship overlay link and add it to OBS Studio as a browser source."
+keywords:
+  - StreamElements sponsorship overlay
+  - campaign overlay OBS
+---
+
+import { Steps } from '@astrojs/starlight/components';
+
+Most campaigns require a branded overlay on your main OBS scene throughout the sponsored stream.
+
+## Copy the overlay link
+
+<Steps>
+
+1. Open the [Sponsorships page](https://streamelements.com/dashboard/sponsorships/list) and find your campaign.
+2. Under **Set up and prepare**, click **Copy Link**.
+
+</Steps>
+
+## Add it to OBS
+
+<Steps>
+
+1. In OBS, go to **Sources** and click **+**, then choose **Browser**.
+2. Name it (for example "Sponsorship Overlay") and click **OK**.
+3. Paste the copied URL into the **URL** field.
+4. Set the width and height to whatever your campaign brief specifies.
+5. Click **OK** to save.
+
+</Steps>
+
+If your overlay includes a widget with sound, check **Shutdown source when not visible** — this also reduces load on your computer, though it can delay the overlay loading in when you switch to it. To avoid that delay, use OBS's Studio Mode to preload scenes ahead of a transition.
+
+## FAQ
+
+**Can I run the sponsorship overlay alongside my other overlays?**
+Yes — OBS supports multiple overlay browser sources at once; just add each one separately.
+
+**Can I customize the sponsorship overlay?**
+Use the settings specified in your campaign brief rather than customizing it yourself.
+
+## Related
+
+- [Sponsorships Overview](/campaigns)
+- [Troubleshooting](/campaigns/troubleshooting)
