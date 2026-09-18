@@ -1,0 +1,59 @@
+---
+title: "YouTube Quickstart: Build Your Overlay"
+sidebar:
+  label: "3. Build Your Overlay"
+description: "Create a StreamElements overlay for YouTube, choose a YouTube-ready theme, and set up your AlertBox for Super Chats."
+platforms: [youtube]
+keywords:
+  - StreamElements YouTube overlay
+  - StreamElements AlertBox YouTube
+  - YouTube Super Chat alert
+---
+
+import { Steps, CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+Part 3 of the YouTube setup series. Already have an overlay you're happy with? Skip to [4. Connect OBS and Go Live](/guides/youtube-quickstart/connect-obs-and-go-live).
+
+## Start from a theme, or build from scratch
+
+The fastest path is the Themes Gallery:
+
+<Steps>
+
+1. Go to the [Themes Gallery](https://streamelements.com/dashboard/themes) and open the **Theme** tab.
+2. Choose the **YouTube Theme** — pick the static version if CPU performance is a concern on your streaming PC.
+3. Click **Create** and give it a name.
+
+</Steps>
+
+![The Themes Gallery, showing pre-built overlay themes to choose from](/img/youtube-quickstart/overlay-gallery.jpg)
+
+Prefer to design your own? Go to [Overlays](https://streamelements.com/dashboard/overlays), click **New overlay**, choose a resolution matching your stream (1920x1080 for most setups), and click **Start** — see [Getting Started with Overlays](/overlays/getting-started) for the full editor walkthrough.
+
+![The My Overlays list, showing saved overlays](/img/youtube-quickstart/my-overlays.jpg)
+
+## Set up your AlertBox for Super Chats
+
+The AlertBox is the widget that pops up when something happens — a new sub, a tip, a Super Chat. Open the overlay you just created, find the AlertBox, and open its settings.
+
+![The overlay editor with the AlertBox widget selected](/img/youtube-quickstart/overlay-editor.jpg)
+
+:::caution[YouTube only supports Super Chat alerts]
+Deselect every checkbox in the AlertBox settings except **SuperChat**. YouTube's other event types (subs, memberships) aren't supported in the AlertBox yet. Leaving other checkboxes on won't break anything, but they'll never actually trigger.
+:::
+
+Save your overlay once you're happy with it — you'll add its URL to OBS in the next step.
+
+## Next in this series
+
+<CardGrid>
+  <LinkCard title="4. Connect OBS and Go Live" href="/guides/youtube-quickstart/connect-obs-and-go-live" description="Install SE.Live, connect your YouTube account, and add this overlay to your scene." />
+</CardGrid>
+
+## Full reference
+
+<CardGrid>
+  <LinkCard title="Getting Started with Overlays" href="/overlays/getting-started" description="The full Overlay Editor walkthrough: AlertBox, Custom Widgets, and more." />
+  <LinkCard title="Add an Overlay to Your Broadcast Software" href="/overlays/broadcast-software" description="Adding an overlay URL as a browser source manually, if you're not using SE.Live." />
+  <LinkCard title="AlertBox Alert Variations" href="/overlays/alertbox-variations" description="Customize images, sounds, and messages per event." />
+</CardGrid>
