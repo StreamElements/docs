@@ -210,18 +210,6 @@ export default defineConfig({
                     { label: 'Importing from Other Platforms', slug: 'getting-started/importing' },
                     { label: 'Enable Live Streaming on YouTube', slug: 'getting-started/youtube-live' },
                     { label: 'Troubleshooting', slug: 'getting-started/troubleshooting' },
-                    {
-                      label: 'YouTube Quickstart',
-                      collapsed: true,
-                      items: [
-                        { label: 'Overview', slug: 'guides/youtube-quickstart' },
-                        { label: '1. Create Your Account', slug: 'guides/youtube-quickstart/create-your-account' },
-                        { label: '2. Dashboard Tour', slug: 'guides/youtube-quickstart/dashboard-tour' },
-                        { label: '3. Build Your Overlay', slug: 'guides/youtube-quickstart/build-your-overlay' },
-                        { label: '4. Connect OBS & Go Live', slug: 'guides/youtube-quickstart/connect-obs-and-go-live' },
-                        { label: '5. Set Up Your Chatbot', slug: 'guides/youtube-quickstart/set-up-your-chatbot' },
-                      ],
-                    },
                   ],
                 },
                 {
@@ -310,6 +298,18 @@ export default defineConfig({
                 { label: 'Getting started', items: [
                   { label: 'Install and connect', slug: 'selive/getting-started' },
                 ] },
+                {
+                  label: 'YouTube Quickstart',
+                  collapsed: true,
+                  items: [
+                    { label: 'Overview', slug: 'selive/guides/youtube-quickstart' },
+                    { label: '1. Create Your Account', slug: 'selive/guides/youtube-quickstart/create-your-account' },
+                    { label: '2. Dashboard Tour', slug: 'selive/guides/youtube-quickstart/dashboard-tour' },
+                    { label: '3. Build Your Overlay', slug: 'selive/guides/youtube-quickstart/build-your-overlay' },
+                    { label: '4. Connect OBS & Go Live', slug: 'selive/guides/youtube-quickstart/connect-obs-and-go-live' },
+                    { label: '5. Set Up Your Chatbot', slug: 'selive/guides/youtube-quickstart/set-up-your-chatbot' },
+                  ],
+                },
                 { label: 'Guides', items: [
                   { label: 'Add overlays and alerts', slug: 'selive/guides/overlays-and-alerts' },
                   { label: 'Create a vertical canvas', slug: 'selive/guides/canvas' },
