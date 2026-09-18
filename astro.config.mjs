@@ -290,6 +290,7 @@ export default defineConfig({
               ],
             },
             {
+              id: 'selive',
               label: 'SE.Live',
               link: '/selive',
               icon: 'window',
@@ -298,19 +299,8 @@ export default defineConfig({
                 { label: 'Getting started', items: [
                   { label: 'Install and connect', slug: 'selive/getting-started' },
                 ] },
-                {
-                  label: 'YouTube Quickstart',
-                  collapsed: true,
-                  items: [
-                    { label: 'Overview', slug: 'selive/guides/youtube-quickstart' },
-                    { label: '1. Create Your Account', slug: 'selive/guides/youtube-quickstart/create-your-account' },
-                    { label: '2. Dashboard Tour', slug: 'selive/guides/youtube-quickstart/dashboard-tour' },
-                    { label: '3. Build Your Overlay', slug: 'selive/guides/youtube-quickstart/build-your-overlay' },
-                    { label: '4. Connect OBS & Go Live', slug: 'selive/guides/youtube-quickstart/connect-obs-and-go-live' },
-                    { label: '5. Set Up Your Chatbot', slug: 'selive/guides/youtube-quickstart/set-up-your-chatbot' },
-                  ],
-                },
                 { label: 'Guides', items: [
+                  { label: 'YouTube quickstart', slug: 'selive/guides/youtube-quickstart', badge: { text: '5 parts', variant: 'note' } },
                   { label: 'Add overlays and alerts', slug: 'selive/guides/overlays-and-alerts' },
                   { label: 'Create a vertical canvas', slug: 'selive/guides/canvas' },
                   { label: 'Manage scenes and sources', slug: 'selive/guides/scenes-and-sources' },
@@ -420,6 +410,7 @@ export default defineConfig({
           ],
           {
             exclude: ['/', '/404'],
+            topics: { selive: ['/selive/guides/youtube-quickstart/**'] },
           },
         ),
       ],
