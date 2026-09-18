@@ -1,0 +1,58 @@
+---
+title: "YouTube Quickstart: Take the Dashboard Tour"
+sidebar:
+  label: "2. Dashboard Tour"
+description: "A quick tour of the StreamElements dashboard for YouTube streamers: the top bar, stats, and the Activity Feed."
+platforms: [youtube]
+keywords:
+  - StreamElements dashboard
+  - StreamElements Activity Feed
+---
+
+import { Steps, CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+Part 2 of the YouTube setup series. Already comfortable with the dashboard? Skip to [3. Build Your Overlay](/guides/youtube-quickstart/build-your-overlay).
+
+## The main dashboard
+
+When you log in, you land on your dashboard — an overview of stream activity: new subs, super chats, tips, and average viewership, shown as stat boxes and a graph for whichever time period you pick from the top bar.
+
+On the right, you'll see whether the chatbot is currently in your channel, with quick controls to **Part** or **Mute** it, and a shortcut to edit your stream title and category without leaving the page.
+
+![The StreamElements dashboard home screen](/img/youtube-quickstart/dashboard-home.jpg)
+
+## The top bar
+
+Available everywhere in your dashboard. Your profile picture sits on the right — it gets a red ring while you're live. Click it to open Import, language and theme settings, and quick links to SE.Live and Ground Control.
+
+## The Activity Feed
+
+The [Activity Feed](https://streamelements.com/dashboard/activity) is where you monitor events, manage alerts, and adjust settings in real time — separate from the dashboard's summary stats.
+
+![The Activity Feed, showing recent events and quick controls](/img/youtube-quickstart/dashboard-activity-feed.jpg)
+
+<Steps>
+
+1. Click **Filter**.
+2. Choose which event types you want to see.
+3. Click **Filter** to apply.
+
+</Steps>
+
+From here you can also mute or skip individual alerts, monitor chatbot status, reset session settings, and adjust ad settings. If you install SE.Live later in this series, most of this becomes available right inside OBS too — no need to alt-tab out of your broadcast software mid-stream.
+
+:::caution[Streaming to more than one platform?]
+The dashboard can consolidate events from every connected channel into one feed. Don't show this combined feed on a Twitch-facing overlay — it violates Twitch's Terms of Service.
+:::
+
+## Next in this series
+
+<CardGrid>
+  <LinkCard title="3. Build Your Overlay" href="/guides/youtube-quickstart/build-your-overlay" description="Create your first overlay and add a YouTube-ready alert box." />
+</CardGrid>
+
+## Full reference
+
+<CardGrid>
+  <LinkCard title="Dashboard & Activity Feed" href="/getting-started/dashboard-overview" description="The complete dashboard reference, including multiplatform filtering." />
+</CardGrid>
