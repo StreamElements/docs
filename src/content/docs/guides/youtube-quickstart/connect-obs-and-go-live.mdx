@@ -36,16 +36,36 @@ If OBS shows a crash-recovery prompt after installing, choose **Run in Normal Mo
 
 ## Connect your accounts
 
+The first time SE.Live opens in OBS, it asks you to connect a channel.
+
+![The Connect your channel screen in OBS, with Twitch, YouTube, X, and Kick options](/img/youtube-quickstart/connect-channel.webp)
+
 <Steps>
 
-1. Open **StreamElements → Login** in OBS and sign in with your StreamElements account.
-2. Open **Settings → Stream**, choose **YouTube / YouTube Gaming**, and follow the prompts to connect your YouTube account. This is the same Google sign-in flow you used when creating your StreamElements account.
+1. Click **YOUTUBE** and follow the prompts — the same Google sign-in flow you used when creating your StreamElements account.
+2. On the **I'd like to start with...** screen, choose **New setup** (choose **Multi-streaming Setup** instead if you're streaming to more than one platform at once — see [Set up multistreaming](/selive/guides/multistreaming)).
 
 </Steps>
 
-## Add your camera and microphone
+![The Welcome to SE.Live screen, choosing between Multi-streaming Setup and New setup](/img/youtube-quickstart/setup-wizard-start.png)
 
-In the **Sources** panel, click **+** and add an **Audio Input Capture** for your microphone, then a **Video Input Capture** for your camera.
+## Run the setup wizard
+
+New setup walks you through a short wizard that configures your camera, microphone, and capture source automatically — no need to add them by hand in the **Sources** panel.
+
+![The Camera and microphone step of the SE.Live Setup Wizard](/img/youtube-quickstart/wizard-camera-mic.png)
+
+![The Display capture step of the SE.Live Setup Wizard](/img/youtube-quickstart/wizard-display-capture.png)
+
+<Steps>
+
+1. **Camera & microphone.** Pick your microphone and camera (or leave camera as **No camera** if you're not showing your face).
+2. **Display capture.** Choose which display to stream — you can switch this to a game capture later.
+3. Click **Finish setup**.
+
+</Steps>
+
+![The Woo-hoo! finish step of the SE.Live Setup Wizard, with a Finish setup button](/img/youtube-quickstart/wizard-finish.png)
 
 ## Add your YouTube stream key
 
@@ -70,13 +90,36 @@ Never share it or show it on stream — anyone with it can stream to your channe
 
 </Steps>
 
+## Keep track of your stream from inside OBS
+
+Open **StreamElements → SE.Live Docks** to add these as dockable panels in OBS — everything you need to run your stream lives right next to your scenes, so you don't need a companion app, a second monitor, or a browser tab open on the side.
+
+![The StreamElements Canvas dock, showing the vertical canvas preview and scene list](/img/youtube-quickstart/canvas-dock.png)
+
+**Canvas** shows a live preview of your scene and lets you switch scenes without leaving OBS — useful if you're running a separate [vertical canvas](/selive/guides/multistreaming) for Shorts or a mobile-friendly layout.
+
+![The YouTube Chat dock before going live](/img/youtube-quickstart/youtube-chat-dock.png)
+
+**YouTube Chat** shows your live chat once you go live, with a shortcut to Live Video Settings and the full Live Dashboard.
+
+![The StreamElements Multi-Streaming dock, with two YouTube destinations toggled on](/img/youtube-quickstart/multistreaming-dock.png)
+
+**Multi-Streaming** lists every destination you've connected and lets you toggle each on or off before you go live — only relevant if you chose Multi-streaming Setup earlier.
+
+![The Activity Feed dock before any events have come in](/img/youtube-quickstart/activity-feed-dock.png)
+
+**Activity Feed** mirrors the [Activity Feed](/guides/youtube-quickstart/dashboard-tour) from your dashboard — Super Chats, members, and subscribers appear here in real time.
+
+Dock any combination you like around the OBS window — a typical layout keeps Activity Feed and chat on one side and the canvas preview on the other:
+
+![OBS with the Activity Feed, Canvas, Multi-Streaming, and YouTube Chat docks arranged around the main preview](/img/youtube-quickstart/obs-docks-layout.webp)
+
 ## Go live
 
 <Steps>
 
-1. Open **StreamElements → SE.Live Docks** to bring up your chat and activity feed right inside OBS.
-2. Double-check your title, category, and privacy setting are correct for this stream.
-3. Click **Start Streaming**.
+1. Double-check your title, category, and privacy setting are correct for this stream.
+2. Click **Start Streaming**.
 
 </Steps>
 
