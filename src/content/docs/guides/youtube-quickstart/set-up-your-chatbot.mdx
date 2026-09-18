@@ -12,57 +12,59 @@ keywords:
 
 import { Steps, CardGrid, LinkCard } from '@astrojs/starlight/components';
 
-Part 5, the last page in the YouTube setup series. By now you should have an account, an overlay, and a live stream — this step gets the chatbot actually responding in your chat.
+Add StreamElements as a moderator, then create a command, schedule a timer, and choose your spam filters.
 
-![The Chatbot Overview page, with commands, timers, counters, and spam filters organized into cards](/img/youtube-quickstart/chatbot-overview.jpg)
+![Chatbot overview with commands, timers, counters, and spam filters](/img/youtube-quickstart/chatbot-overview.jpg)
 
 ## Add the bot as a moderator
 
 :::note[Before you start]
-Your stream must be **public** and **live** — the bot can't join a private, unlisted, or offline stream.
+The bot only joins **public, live** streams. It can't join a private, unlisted, or offline stream.
 :::
 
 <Steps>
 
 1. Open [YouTube Studio](https://studio.youtube.com/) and go to **Settings → Community**.
-2. Under moderators, add either of these as a moderator:
+2. Add StreamElements as a moderator using either channel URL:
    - `https://youtube.com/c/streamelements`
    - `https://www.youtube.com/channel/UCjerlCIbLPQwSnYlClkjDXg`
-3. While live, view **Live chat** rather than **Top chat** — Top chat can hide the bot's messages.
+3. When you're live, select **Live chat**. **Top chat** can hide the bot's messages.
 
 </Steps>
 
-**Bot didn't join?** Confirm your stream is public, that you're shown as live in the StreamElements dashboard, and that you added the correct channel above as a moderator.
+If the bot doesn't join, check that your stream is public, the StreamElements dashboard shows you as live, and the moderator URL matches one of the URLs above.
 
-:::note[A couple of things work differently on YouTube]
-You can't change the bot's display name on YouTube. And since [Loyalty](/loyalty) isn't available for YouTube accounts, anything built on it — Giveaways, the Stream Store, Viewer Queue, Media Requests — won't work either. Commands, timers, and spam filters are unaffected.
+:::note[YouTube feature limits]
+You can't change the bot's display name on YouTube. The [Loyalty system](/loyalty) and features that depend on it, including Giveaways, the Stream Store, Viewer Queue, and Media Requests, aren't available on YouTube.
 :::
 
 ## Create your first command
 
-![The Chat commands tab in the bot command dashboard, showing the built-in Default commands](/img/youtube-quickstart/chat-commands.jpg)
+This example creates a `!hello` command that replies with the viewer's name.
+
+![Chat commands page showing Default commands](/img/youtube-quickstart/chat-commands.jpg)
 
 <Steps>
 
 1. From the [bot command dashboard](https://streamelements.com/dashboard/bot/commands), open the **Custom commands** tab and click **Add new command**.
-2. Name it — for example `!lastseen`.
-3. Add a reply, using [variables](/chatbot/variables) like `$(user)`:
+2. Choose **Start from scratch** and enter `hello` in **Command name**. Viewers will type `!hello` to use it.
+3. In **Reply**, enter:
 
    ```streamelements
-   $(user) was last seen $(user.lastseen) ago
+   Hello $(sender)!
    ```
 
-4. Click **Activate command**.
+4. Click **Activate command**, then type `!hello` in your live chat to check the reply.
 
 </Steps>
 
-![The Add new command modal](/img/youtube-quickstart/add-command-modal.jpg)
+The [`$(sender)`](/chatbot/variables/sender) variable inserts the name of the person who used the command. Use it for names on YouTube; `$(user)` doesn't work there.
 
-![The command form, with name, reply, and activation options](/img/youtube-quickstart/command-form.jpg)
+![Add a chat command dialog with Start from scratch and command templates](/img/youtube-quickstart/add-command-modal.jpg)
 
 ## Set up your first timer
 
-Timers post automated messages — social links, schedule reminders — at set intervals while you're live.
+Timers post messages at set intervals while you're live. Use them for social links or schedule reminders.
 
 <Steps>
 
@@ -72,29 +74,25 @@ Timers post automated messages — social links, schedule reminders — at set i
 
 </Steps>
 
-![The Timers page before any timers have been created](/img/youtube-quickstart/timers.jpg)
+![Empty Timers page with the Add new timer button](/img/youtube-quickstart/timers.jpg)
 
-![The Add a timer modal, with template options like Socials, Discord, and Hydration break](/img/youtube-quickstart/add-timer-modal.jpg)
+![Add a timer dialog with Socials, Discord, and Hydration break templates](/img/youtube-quickstart/add-timer-modal.jpg)
 
 ## Turn on spam filters
 
-Worth doing before your first real audience shows up. In the dashboard, go to **Chatbot → Spam filters** and pick a protection level — **Minimum**, **Medium**, or **Maximum** — as a starting point, then expand any individual filter (like [Banned Words](/chatbot/filters/bannedwords)) to fine-tune it.
+Open **Chatbot → Spam filters** and choose **Minimum**, **Medium**, or **Maximum** protection. Expand a filter to change its settings. Use [Banned Words](/chatbot/filters/bannedwords) to block specific words or phrases.
 
-![The Spam filters page, with individual protections and a custom protection level](/img/youtube-quickstart/spam-filters.jpg)
+![Spam filters and protection level settings](/img/youtube-quickstart/spam-filters.jpg)
 
-![The Banned words page, where you create phrase groups to filter chat](/img/youtube-quickstart/banned-words.jpg)
+![Banned words page with phrase groups](/img/youtube-quickstart/banned-words.jpg)
 
-![The Create new group form, for setting up a banned-phrase group with its own timeout and exclusions](/img/youtube-quickstart/create-group-modal.jpg)
+![New banned-phrase group with timeout and exclusion settings](/img/youtube-quickstart/create-group-modal.jpg)
 
-## You're set up
-
-That's the full journey: account, dashboard, overlay, OBS, and chatbot. From here, the full docs cover everything in more depth — modules like giveaways and raffles, custom widgets, alert variations, and troubleshooting.
-
-## Full reference
+## Related
 
 <CardGrid>
-  <LinkCard title="Add the Chatbot to Your Channel" href="/chatbot/platforms" description="The complete moderator setup reference, all platforms." />
-  <LinkCard title="Getting Started with the Chatbot" href="/chatbot/getting-started" description="More on commands and timers." />
-  <LinkCard title="Spam Filters" href="/chatbot/filters" description="All available filters and how penalties work." />
-  <LinkCard title="Chatbot" href="/chatbot" description="The full chatbot documentation: modules, variables, quotes, counters." />
+  <LinkCard title="Custom Commands" href="/chatbot/commands/custom" description="Set permissions, cooldowns, and aliases for commands." />
+  <LinkCard title="Timers" href="/chatbot/timers" description="Set intervals, chat-line requirements, and posting conditions." />
+  <LinkCard title="Spam Filters" href="/chatbot/filters" description="Choose filters and set timeout or ban penalties." />
+  <LinkCard title="Chatbot Troubleshooting" href="/chatbot/troubleshooting" description="Fix commands, timers, and bot connection problems." />
 </CardGrid>

@@ -2,7 +2,7 @@
 title: "YouTube Quickstart: Connect OBS and Go Live"
 sidebar:
   label: "4. Connect OBS & Go Live"
-description: "Install SE.Live, connect your YouTube account, add your stream key and overlay, and start streaming."
+description: "Install SE.Live, connect YouTube to OBS, add your camera, microphone, and overlay, and start streaming."
 platforms: [youtube]
 keywords:
   - SE.Live YouTube setup
@@ -12,129 +12,133 @@ keywords:
 
 import { Steps, CardGrid, LinkCard } from '@astrojs/starlight/components';
 
-Part 4 of the YouTube setup series — the step where everything comes together in OBS. Already streaming? Skip to [5. Set Up Your Chatbot](/guides/youtube-quickstart/set-up-your-chatbot).
+Connect OBS to YouTube and add your overlay as a browser source. If you're already streaming with your overlay, continue to [5. Set Up Your Chatbot](/guides/youtube-quickstart/set-up-your-chatbot).
 
 ## Install SE.Live
 
-SE.Live is StreamElements' OBS plugin — it brings your dashboard, chat, and stream controls right into OBS, so you don't need a second monitor just to run your overlay and check chat.
+SE.Live is a StreamElements plugin that adds chat, the Activity Feed, and stream controls to OBS.
 
 **Requirements:** OBS Studio 31.x or newer. SE.Live is available for Windows, with a macOS beta.
 
-![The Desktop Apps page in your dashboard, where SE.Live is downloaded from](/img/youtube-quickstart/desktop-apps.jpg)
+![Desktop Apps page with the SE.Live download](/img/youtube-quickstart/desktop-apps.jpg)
 
 <Steps>
 
-1. Download the installer from the [SE.Live page](https://streamelements.com/selive) — choose the Mac beta if you're on macOS.
+1. Download the installer for your operating system from the [SE.Live page](https://streamelements.com/selive). Choose the Mac beta for macOS.
 2. Close OBS, then run the installer and choose your install folder.
-3. Reopen OBS **as Administrator** and look for the new **StreamElements** menu in the menu bar.
+3. Reopen OBS. On Windows, run it **as Administrator**. Look for the **StreamElements** menu in the menu bar.
 
 </Steps>
 
-:::note[OBS says it didn't shut down properly?]
-If OBS shows a crash-recovery prompt after installing, choose **Run in Normal Mode** — this is routine after installing a plugin, not a sign anything went wrong.
-:::
-
-## Connect your accounts
+## Connect your channel to SE.Live
 
 The first time SE.Live opens in OBS, it asks you to connect a channel.
 
-![The Connect your channel screen in OBS, with Twitch, YouTube, X, and Kick options](/img/youtube-quickstart/connect-channel.webp)
+![SE.Live channel sign-in options in OBS](/img/youtube-quickstart/connect-channel.webp)
 
 <Steps>
 
-1. Click **YOUTUBE** and follow the prompts — the same Google sign-in flow you used when creating your StreamElements account.
-2. On the **I'd like to start with...** screen, choose **New setup** (choose **Multi-streaming Setup** instead if you're streaming to more than one platform at once — see [Set up multistreaming](/selive/guides/multistreaming)).
+1. Click **YOUTUBE**, sign in with Google, and select your channel.
+2. On the **I'd like to start with...** screen, choose **New setup**. To stream to several platforms, choose **Multi-streaming Setup** and follow the [multistreaming guide](/selive/guides/multistreaming).
 
 </Steps>
 
-![The Welcome to SE.Live screen, choosing between Multi-streaming Setup and New setup](/img/youtube-quickstart/setup-wizard-start.png)
+![SE.Live welcome screen with New setup and Multi-streaming Setup options](/img/youtube-quickstart/setup-wizard-start.png)
 
 ## Run the setup wizard
 
-New setup walks you through a short wizard that configures your camera, microphone, and capture source automatically — no need to add them by hand in the **Sources** panel.
-
-![The Camera and microphone step of the SE.Live Setup Wizard](/img/youtube-quickstart/wizard-camera-mic.png)
-
-![The Display capture step of the SE.Live Setup Wizard](/img/youtube-quickstart/wizard-display-capture.png)
+The **New setup** wizard adds your microphone, camera, and display capture to OBS.
 
 <Steps>
 
-1. **Camera & microphone.** Pick your microphone and camera (or leave camera as **No camera** if you're not showing your face).
-2. **Display capture.** Choose which display to stream — you can switch this to a game capture later.
+1. **Camera & microphone.** Select your devices, or choose **No camera**. Click **Next**.
+
+   ![Microphone and camera selection in the setup wizard](/img/youtube-quickstart/wizard-camera-mic.png)
+
+2. **Display capture.** Select the display you want to stream and click **Next**. You can switch to game capture later.
+
+   ![Display selection in the setup wizard](/img/youtube-quickstart/wizard-display-capture.png)
+
 3. Click **Finish setup**.
 
 </Steps>
 
-![The Woo-hoo! finish step of the SE.Live Setup Wizard, with a Finish setup button](/img/youtube-quickstart/wizard-finish.png)
+![Finish setup button on the last wizard screen](/img/youtube-quickstart/wizard-finish.png)
 
-## Add your YouTube stream key
+## Connect OBS to YouTube
+
+In OBS, open **Settings → Stream**, choose **YouTube - RTMPS**, and click **Connect Account**. Follow the Google sign-in prompts and select the channel you want to stream to. If OBS already shows the correct channel, keep that connection.
+
+### Use a stream key instead
+
+If you connected your YouTube account in OBS, skip this step. To connect with a stream key instead:
 
 <Steps>
 
-1. Open **Settings → Stream**, choose **YouTube / YouTube Gaming**.
-2. Click **Get stream key** (or find it under [youtube.com/live_dashboard](https://www.youtube.com/live_dashboard) → **Encoder setup**) and paste it in.
+1. In [YouTube Studio](https://studio.youtube.com/), select **Create → Go Live** and open the **Stream** tab. Create a stream if you don't have one yet, then copy its stream key.
+2. In OBS, open **Settings → Stream**, choose **YouTube - RTMPS**, and select **Use Stream Key**. Paste the key and save your settings.
 
 </Steps>
 
 :::caution[Keep your stream key private]
-Never share it or show it on stream — anyone with it can stream to your channel.
+Anyone with your stream key can stream to your channel. Don't share it or show it on stream.
 :::
 
 ## Add your overlay
 
 <Steps>
 
-1. Copy the URL of the overlay you built in the [previous step](/guides/youtube-quickstart/build-your-overlay) — from **My Overlays**, open its menu and select **Copy URL**.
-2. In OBS Sources, click **+** → **Browser**, name it, and paste the URL.
-3. Set **Width** to `1920` and **Height** to `1080` (or your overlay's resolution), and check **Shutdown when source not visible**.
+1. Open **My Overlays** in StreamElements. Find the [overlay you created earlier](/guides/youtube-quickstart/build-your-overlay), open its menu, and select **Copy URL**.
+2. In OBS **Sources**, click **+ → Browser**, name the source, and paste the URL.
+3. Set **Width** and **Height** to match your overlay (`1920` and `1080` if you used the default resolution). Check **Shutdown when source not visible** and click **OK**.
 
 </Steps>
 
-## Keep track of your stream from inside OBS
+## Open chat and stream controls
 
-Open **StreamElements → SE.Live Docks** to add these as dockable panels in OBS — everything you need to run your stream lives right next to your scenes, so you don't need a companion app, a second monitor, or a browser tab open on the side.
+Open **StreamElements → SE.Live Docks** and choose the panels you want to show.
 
-![The StreamElements Canvas dock, showing the vertical canvas preview and scene list](/img/youtube-quickstart/canvas-dock.png)
+**Canvas** shows a preview and scene list for a [canvas](/selive/guides/canvas), including vertical layouts.
 
-**Canvas** shows a live preview of your scene and lets you switch scenes without leaving OBS — useful if you're running a separate [vertical canvas](/selive/guides/multistreaming) for Shorts or a mobile-friendly layout.
+![Canvas dock with a vertical preview and scene list](/img/youtube-quickstart/canvas-dock.png)
 
-![The YouTube Chat dock before going live](/img/youtube-quickstart/youtube-chat-dock.png)
+**YouTube Chat** shows chat messages while you're live. It also links to **Live Video Settings** and the **Live Dashboard**.
 
-**YouTube Chat** shows your live chat once you go live, with a shortcut to Live Video Settings and the full Live Dashboard.
+![YouTube Chat dock before the stream starts](/img/youtube-quickstart/youtube-chat-dock.png)
 
-![The StreamElements Multi-Streaming dock, with two YouTube destinations toggled on](/img/youtube-quickstart/multistreaming-dock.png)
+**Multi-Streaming** lists your connected destinations. Turn each destination on or off before you go live.
 
-**Multi-Streaming** lists every destination you've connected and lets you toggle each on or off before you go live — only relevant if you chose Multi-streaming Setup earlier.
+![Multi-Streaming dock with two YouTube destinations enabled](/img/youtube-quickstart/multistreaming-dock.png)
 
-![The Activity Feed dock before any events have come in](/img/youtube-quickstart/activity-feed-dock.png)
+**Activity Feed** shows the same events and alert controls as the [dashboard feed](/guides/youtube-quickstart/dashboard-tour#the-activity-feed).
 
-**Activity Feed** mirrors the [Activity Feed](/guides/youtube-quickstart/dashboard-tour) from your dashboard — Super Chats, members, and subscribers appear here in real time.
+![Activity Feed dock with alert controls and no recent events](/img/youtube-quickstart/activity-feed-dock.png)
 
-Dock any combination you like around the OBS window — a typical layout keeps Activity Feed and chat on one side and the canvas preview on the other:
+Drag the panels to arrange them around your OBS preview.
 
-![OBS with the Activity Feed, Canvas, Multi-Streaming, and YouTube Chat docks arranged around the main preview](/img/youtube-quickstart/obs-docks-layout.webp)
+![OBS preview surrounded by Activity Feed, Canvas, Multi-Streaming, and YouTube Chat docks](/img/youtube-quickstart/obs-docks-layout.webp)
 
 ## Go live
 
 <Steps>
 
-1. Double-check your title, category, and privacy setting are correct for this stream.
-2. Click **Start Streaming**.
+1. If you connected your YouTube account, use **Manage Broadcast** to create or select a broadcast. If you used a stream key, open that stream in YouTube Studio. Check the title, category, and privacy setting before starting.
+2. Click **Start Streaming** in OBS. Depending on your broadcast settings, you may also need to click **Go Live** in YouTube Studio. Check YouTube to confirm the stream is live.
 
 </Steps>
 
-That's it — you're live on YouTube. One thing left to do: get the chatbot actually responding in your chat, which is the last step in this series.
+See the [OBS YouTube guide](https://obsproject.com/forum/resources/how-to-stream-to-youtube-with-obs-studio.232/) for account connection options and [YouTube's encoder guide](https://support.google.com/youtube/answer/2907883) for stream key setup.
 
-## Next in this series
+## Next
 
 <CardGrid>
   <LinkCard title="5. Set Up Your Chatbot" href="/guides/youtube-quickstart/set-up-your-chatbot" description="Add the bot as a moderator and create your first command." />
 </CardGrid>
 
-## Full reference
+## Related
 
 <CardGrid>
-  <LinkCard title="Install and connect SE.Live" href="/selive/getting-started" description="The full SE.Live install and connection reference, all platforms." />
-  <LinkCard title="Set Up SE.Live for YouTube" href="/selive/guides/youtube-setup" description="The YouTube-specific setup reference this page is based on." />
-  <LinkCard title="Set up multistreaming" href="/selive/guides/multistreaming" description="Streaming to YouTube and other platforms at the same time." />
+  <LinkCard title="Install and connect SE.Live" href="/selive/getting-started" description="Install SE.Live and use its menus, docks, and backups." />
+  <LinkCard title="SE.Live troubleshooting" href="/selive/troubleshooting" description="Fix missing docks, login problems, and crashes." />
+  <LinkCard title="Set up multistreaming" href="/selive/guides/multistreaming" description="Stream to YouTube and other platforms at the same time." />
 </CardGrid>
