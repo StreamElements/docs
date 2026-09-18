@@ -1,0 +1,98 @@
+---
+title: "YouTube Quickstart: Set Up Your Chatbot"
+sidebar:
+  label: "5. Set Up Your Chatbot"
+description: "Add the StreamElements chatbot as a moderator on YouTube, then create your first command and timer."
+platforms: [youtube]
+keywords:
+  - StreamElements chatbot YouTube
+  - YouTube live chat moderator
+  - StreamElements custom commands
+---
+
+import { Steps, CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+Add StreamElements as a moderator, then create a command, schedule a timer, and choose your spam filters.
+
+![Chatbot overview with commands, timers, counters, and spam filters](/img/youtube-quickstart/chatbot-overview.jpg)
+
+## Add the bot as a moderator
+
+:::note[Before you start]
+The bot only joins **public, live** streams. It can't join a private, unlisted, or offline stream.
+:::
+
+<Steps>
+
+1. Open [YouTube Studio](https://studio.youtube.com/) and go to **Settings → Community**.
+2. Add StreamElements as a moderator using either channel URL:
+   - `https://youtube.com/c/streamelements`
+   - `https://www.youtube.com/channel/UCjerlCIbLPQwSnYlClkjDXg`
+3. When you're live, select **Live chat**. **Top chat** can hide the bot's messages.
+
+</Steps>
+
+If the bot doesn't join, check that your stream is public, the StreamElements dashboard shows you as live, and the moderator URL matches one of the URLs above.
+
+:::note[YouTube feature limits]
+You can't change the bot's display name on YouTube. The [Loyalty system](/loyalty) and features that depend on it, including Giveaways, the Stream Store, Viewer Queue, and Media Requests, aren't available on YouTube.
+:::
+
+## Create your first command
+
+This example creates a `!hello` command that replies with the viewer's name.
+
+![Chat commands page showing Default commands](/img/youtube-quickstart/chat-commands.jpg)
+
+<Steps>
+
+1. From the [bot command dashboard](https://streamelements.com/dashboard/bot/commands), open the **Custom commands** tab and click **Add new command**.
+2. Choose **Start from scratch** and enter `hello` in **Command name**. Viewers will type `!hello` to use it.
+3. In **Reply**, enter:
+
+   ```streamelements
+   Hello $(sender)!
+   ```
+
+4. Click **Activate command**, then type `!hello` in your live chat to check the reply.
+
+</Steps>
+
+The [`$(sender)`](/chatbot/variables/sender) variable inserts the name of the person who used the command. Use it for names on YouTube; `$(user)` doesn't work there.
+
+![Add a chat command dialog with Start from scratch and command templates](/img/youtube-quickstart/add-command-modal.jpg)
+
+## Set up your first timer
+
+Timers post messages at set intervals while you're live. Use them for social links or schedule reminders.
+
+<Steps>
+
+1. From the [bot timers dashboard](https://streamelements.com/dashboard/bot/timers), click **Add new timer**.
+2. Name it, add a message, and set the **Online interval** in minutes.
+3. Click **Activate Timer**.
+
+</Steps>
+
+![Empty Timers page with the Add new timer button](/img/youtube-quickstart/timers.jpg)
+
+![Add a timer dialog with Socials, Discord, and Hydration break templates](/img/youtube-quickstart/add-timer-modal.jpg)
+
+## Turn on spam filters
+
+Open **Chatbot → Spam filters** and choose **Minimum**, **Medium**, or **Maximum** protection. Expand a filter to change its settings. Use [Banned Words](/chatbot/filters/bannedwords) to block specific words or phrases.
+
+![Spam filters and protection level settings](/img/youtube-quickstart/spam-filters.jpg)
+
+![Banned words page with phrase groups](/img/youtube-quickstart/banned-words.jpg)
+
+![New banned-phrase group with timeout and exclusion settings](/img/youtube-quickstart/create-group-modal.jpg)
+
+## Related
+
+<CardGrid>
+  <LinkCard title="Custom Commands" href="/chatbot/commands/custom" description="Set permissions, cooldowns, and aliases for commands." />
+  <LinkCard title="Timers" href="/chatbot/timers" description="Set intervals, chat-line requirements, and posting conditions." />
+  <LinkCard title="Spam Filters" href="/chatbot/filters" description="Choose filters and set timeout or ban penalties." />
+  <LinkCard title="Chatbot Troubleshooting" href="/chatbot/troubleshooting" description="Fix commands, timers, and bot connection problems." />
+</CardGrid>

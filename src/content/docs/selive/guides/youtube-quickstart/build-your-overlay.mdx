@@ -1,0 +1,61 @@
+---
+title: "YouTube Quickstart: Build Your Overlay"
+sidebar:
+  label: "3. Build Your Overlay"
+description: "Create a YouTube overlay from a theme or a blank canvas, then add Super Chat alerts."
+platforms: [youtube]
+keywords:
+  - StreamElements YouTube overlay
+  - StreamElements AlertBox YouTube
+  - YouTube Super Chat alert
+---
+
+import { Steps, CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+An overlay adds graphics and alerts to your stream. If yours is ready, continue to [4. Connect OBS and Go Live](/selive/guides/youtube-quickstart/connect-obs-and-go-live).
+
+## Create an overlay
+
+To use a theme:
+
+<Steps>
+
+1. Go to the [Themes Gallery](https://streamelements.com/dashboard/themes) and open the **Theme** tab.
+2. Choose the **YouTube Theme**. Use the static version to reduce CPU usage.
+3. Click **Create** and give it a name.
+
+</Steps>
+
+![Overlay themes in the Themes Gallery](/img/youtube-quickstart/overlay-gallery.jpg)
+
+To start with a blank overlay, go to [Overlays](https://streamelements.com/dashboard/overlays) and click **New overlay**. Choose a resolution that matches your stream, such as 1920x1080, then click **Start**. If you saved an overlay during account setup, you can open that one instead.
+
+![Empty My Overlays page with the New overlay button](/img/youtube-quickstart/my-overlays.jpg)
+
+## Set up your AlertBox for Super Chats
+
+The AlertBox displays alerts on your stream. Open your overlay and select its AlertBox. If it doesn't have one yet, click **+** in the editor and choose **Alerts → AlertBox**.
+
+![Overlay editor with the widget picker open](/img/youtube-quickstart/overlay-editor.jpg)
+
+Open the AlertBox settings and enable **SuperChat**.
+
+:::note[Subscriber and membership alerts]
+New subscribers and memberships don't trigger AlertBox alerts on YouTube. Leave those alert types unchecked.
+:::
+
+Save the overlay. You'll add its URL to OBS next.
+
+## Next
+
+<CardGrid>
+  <LinkCard title="4. Connect OBS and Go Live" href="/selive/guides/youtube-quickstart/connect-obs-and-go-live" description="Install SE.Live, connect your YouTube account, and add this overlay to your scene." />
+</CardGrid>
+
+## Related
+
+<CardGrid>
+  <LinkCard title="Getting Started with Overlays" href="/overlays/getting-started" description="Add an AlertBox or Custom Widget in the Overlay Editor." />
+  <LinkCard title="Add an Overlay to Your Broadcast Software" href="/overlays/broadcast-software" description="Add an overlay URL as a browser source in OBS or XSplit." />
+  <LinkCard title="AlertBox Alert Variations" href="/overlays/alertbox-variations" description="Change alert images, sounds, and messages for each event." />
+</CardGrid>

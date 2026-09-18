@@ -1,0 +1,144 @@
+---
+title: "YouTube Quickstart: Connect OBS and Go Live"
+sidebar:
+  label: "4. Connect OBS & Go Live"
+description: "Install SE.Live, connect YouTube to OBS, add your camera, microphone, and overlay, and start streaming."
+platforms: [youtube]
+keywords:
+  - SE.Live YouTube setup
+  - StreamElements YouTube stream key
+  - connect OBS to YouTube
+---
+
+import { Steps, CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+Connect OBS to YouTube and add your overlay as a browser source. If you're already streaming with your overlay, continue to [5. Set Up Your Chatbot](/selive/guides/youtube-quickstart/set-up-your-chatbot).
+
+## Install SE.Live
+
+SE.Live is a StreamElements plugin that adds chat, the Activity Feed, and stream controls to OBS.
+
+**Requirements:** OBS Studio 31.x or newer. SE.Live is available for Windows, with a macOS beta.
+
+![Desktop Apps page with the SE.Live download](/img/youtube-quickstart/desktop-apps.jpg)
+
+<Steps>
+
+1. Download the installer for your operating system from the [SE.Live page](https://streamelements.com/selive). Choose the Mac beta for macOS.
+2. Close OBS, then run the installer and choose your install folder.
+3. Reopen OBS. On Windows, run it **as Administrator**. Look for the **StreamElements** menu in the menu bar.
+
+</Steps>
+
+## Connect your channel to SE.Live
+
+The first time SE.Live opens in OBS, it asks you to connect a channel.
+
+![SE.Live channel sign-in options in OBS](/img/youtube-quickstart/connect-channel.webp)
+
+<Steps>
+
+1. Click **YOUTUBE**, sign in with Google, and select your channel.
+2. On the **I'd like to start with...** screen, choose **New setup**. To stream to several platforms, choose **Multi-streaming Setup** and follow the [multistreaming guide](/selive/guides/multistreaming).
+
+</Steps>
+
+![SE.Live welcome screen with New setup and Multi-streaming Setup options](/img/youtube-quickstart/setup-wizard-start.png)
+
+## Run the setup wizard
+
+The **New setup** wizard adds your microphone, camera, and display capture to OBS.
+
+<Steps>
+
+1. **Camera & microphone.** Select your devices, or choose **No camera**. Click **Next**.
+
+   ![Microphone and camera selection in the setup wizard](/img/youtube-quickstart/wizard-camera-mic.png)
+
+2. **Display capture.** Select the display you want to stream and click **Next**. You can switch to game capture later.
+
+   ![Display selection in the setup wizard](/img/youtube-quickstart/wizard-display-capture.png)
+
+3. Click **Finish setup**.
+
+</Steps>
+
+![Finish setup button on the last wizard screen](/img/youtube-quickstart/wizard-finish.png)
+
+## Connect OBS to YouTube
+
+In OBS, open **Settings → Stream**, choose **YouTube - RTMPS**, and click **Connect Account**. Follow the Google sign-in prompts and select the channel you want to stream to. If OBS already shows the correct channel, keep that connection.
+
+### Use a stream key instead
+
+If you connected your YouTube account in OBS, skip this step. To connect with a stream key instead:
+
+<Steps>
+
+1. In [YouTube Studio](https://studio.youtube.com/), select **Create → Go Live** and open the **Stream** tab. Create a stream if you don't have one yet, then copy its stream key.
+2. In OBS, open **Settings → Stream**, choose **YouTube - RTMPS**, and select **Use Stream Key**. Paste the key and save your settings.
+
+</Steps>
+
+:::caution[Keep your stream key private]
+Anyone with your stream key can stream to your channel. Don't share it or show it on stream.
+:::
+
+## Add your overlay
+
+<Steps>
+
+1. Open **My Overlays** in StreamElements. Find the [overlay you created earlier](/selive/guides/youtube-quickstart/build-your-overlay), open its menu, and select **Copy URL**.
+2. In OBS **Sources**, click **+ → Browser**, name the source, and paste the URL.
+3. Set **Width** and **Height** to match your overlay (`1920` and `1080` if you used the default resolution). Check **Shutdown when source not visible** and click **OK**.
+
+</Steps>
+
+## Open chat and stream controls
+
+Open **StreamElements → SE.Live Docks** and choose the panels you want to show.
+
+**Canvas** shows a preview and scene list for a [canvas](/selive/guides/canvas), including vertical layouts.
+
+![Canvas dock with a vertical preview and scene list](/img/youtube-quickstart/canvas-dock.png)
+
+**YouTube Chat** shows chat messages while you're live. It also links to **Live Video Settings** and the **Live Dashboard**.
+
+![YouTube Chat dock before the stream starts](/img/youtube-quickstart/youtube-chat-dock.png)
+
+**Multi-Streaming** lists your connected destinations. Turn each destination on or off before you go live.
+
+![Multi-Streaming dock with two YouTube destinations enabled](/img/youtube-quickstart/multistreaming-dock.png)
+
+**Activity Feed** shows the same events and alert controls as the [dashboard feed](/selive/guides/youtube-quickstart/dashboard-tour#the-activity-feed).
+
+![Activity Feed dock with alert controls and no recent events](/img/youtube-quickstart/activity-feed-dock.png)
+
+Drag the panels to arrange them around your OBS preview.
+
+![OBS preview surrounded by Activity Feed, Canvas, Multi-Streaming, and YouTube Chat docks](/img/youtube-quickstart/obs-docks-layout.webp)
+
+## Go live
+
+<Steps>
+
+1. If you connected your YouTube account, use **Manage Broadcast** to create or select a broadcast. If you used a stream key, open that stream in YouTube Studio. Check the title, category, and privacy setting before starting.
+2. Click **Start Streaming** in OBS. Depending on your broadcast settings, you may also need to click **Go Live** in YouTube Studio. Check YouTube to confirm the stream is live.
+
+</Steps>
+
+See the [OBS YouTube guide](https://obsproject.com/forum/resources/how-to-stream-to-youtube-with-obs-studio.232/) for account connection options and [YouTube's encoder guide](https://support.google.com/youtube/answer/2907883) for stream key setup.
+
+## Next
+
+<CardGrid>
+  <LinkCard title="5. Set Up Your Chatbot" href="/selive/guides/youtube-quickstart/set-up-your-chatbot" description="Add the bot as a moderator and create your first command." />
+</CardGrid>
+
+## Related
+
+<CardGrid>
+  <LinkCard title="Install and connect SE.Live" href="/selive/getting-started" description="Install SE.Live and use its menus, docks, and backups." />
+  <LinkCard title="SE.Live troubleshooting" href="/selive/troubleshooting" description="Fix missing docks, login problems, and crashes." />
+  <LinkCard title="Set up multistreaming" href="/selive/guides/multistreaming" description="Stream to YouTube and other platforms at the same time." />
+</CardGrid>
