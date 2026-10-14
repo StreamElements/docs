@@ -242,7 +242,7 @@ export default defineConfig({
                   { label: 'Install and connect', slug: 'selive/getting-started' },
                 ] },
                 { label: 'Guides', items: [
-                  { label: 'YouTube quickstart', collapsed: true, badge: { text: '5 parts', variant: 'note' }, items: [
+                  { label: 'YouTube quickstart', collapsed: true, items: [
                     { label: 'Overview', slug: 'selive/guides/youtube-quickstart' },
                     { slug: 'selive/guides/youtube-quickstart/create-your-account' },
                     { slug: 'selive/guides/youtube-quickstart/dashboard-tour' },
