@@ -1,0 +1,79 @@
+---
+title: AlertBox Alert Variations
+sidebar:
+  label: Alert Variations
+description: "Customize AlertBox images, sounds, and messages per event, create alert variations for gifted subs and big tips, and set up text-to-speech."
+keywords:
+  - AlertBox variations
+  - StreamElements TTS
+  - subscriber alert variations
+  - tip alert variations
+---
+
+import { Steps } from '@astrojs/starlight/components';
+
+An AlertBox plays a short animation whenever an event happens — a follow, a subscription, a tip. Each event type has its own image, sound, and message, and some support **variations**: different alerts for different situations, like a gifted sub versus a regular resub.
+
+Before you begin, add an AlertBox to an overlay — see [Getting Started](/overlays/getting-started).
+
+## Customize a single event
+
+<Steps>
+
+1. In the overlay editor, select the AlertBox and click the gear icon next to the event you want to customize (for example, **Follow**).
+2. Set the alert image or video: a static image, a GIF, or a video file.
+3. Upload an alert sound.
+4. Choose the layout (text over image, or text alongside it).
+5. Edit the alert message. Each event exposes a small set of variables you can insert — for a follow alert, `{name}` is the new follower's username.
+6. Set how long the alert stays on screen.
+
+</Steps>
+
+## Event-specific settings
+
+**Subscriptions** come with three built-in variations:
+
+- **Resubscriber** — a returning subscriber. First-time subscribers get the default alert instead.
+- **Gifted sub** — someone gifts a subscription to a specific viewer.
+- **Community gift** — someone gifts multiple subs to the channel at once. Without this variation, one alert plays *per recipient* — so a 10-sub community gift would trigger 10 separate alerts.
+
+You can add further variations — for Prime subscriptions, specific tiers, or anything else — with **Add new variation > Start with blank**, then set the variation's condition (for example, **Subscription tier: Prime**).
+
+Optionally show the **subscriber message** viewers can attach when they resub.
+
+**Tips** support variations by amount — useful for a bigger alert on large tips, or a themed alert for a specific range. You'll also need tipping configured; see [SE Pay](https://streamelements.com/dashboard/tipping) or [PayPal](https://support.streamelements.com/hc/en-us/articles/16788907050258).
+
+**Cheers** also ship with extra variations enabled by default. If you only want one cheer alert, disable the variations — otherwise they override your default alert's changes for matching cheer amounts.
+
+**Raids** can be limited to raids above a certain viewer count; leave this blank to trigger on every raid.
+
+## Text-to-speech
+
+<Steps>
+
+1. Open the settings for the event you want to read aloud (commonly subs, tips, and cheers).
+2. Scroll to **TTS settings** and enable **text-to-speech**.
+3. Choose a voice from the dropdown.
+
+</Steps>
+
+**Announce action** also reads the action itself before the message — for example, "sk1ll donated $5" before reading the donation message.
+
+## Using one AlertBox across every scene
+
+If each of your scenes has its own overlay, duplicating the AlertBox into every scene means duplicate sounds unless you manage it carefully. To use a single AlertBox everywhere instead:
+
+<Steps>
+
+1. Create a new overlay (1080p) named something like "alertbox".
+2. Open the overlay containing your existing AlertBox, select it, and duplicate it into the new "alertbox" overlay.
+3. Delete or hide the AlertBox in your other overlays, so it doesn't play twice.
+4. In OBS, copy the "alertbox" browser source and paste it into every scene that needs it.
+
+</Steps>
+
+## Related
+
+- [Add an overlay to your broadcast software](/overlays/broadcast-software)
+- [KappaGen](/overlays/kappagen): trigger an emote explosion alongside your alerts.
+- [Widget Data](/overlays/widget-data): edit or correct the data your alerts and labels pull from.

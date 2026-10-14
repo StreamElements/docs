@@ -1,0 +1,37 @@
+---
+title: Widget Data Dashboard
+sidebar:
+  label: Widget Data
+description: "View and edit the data behind your overlay widgets: recent follower/sub/tip labels, goal progress, session totals, and aggregates."
+keywords:
+  - StreamElements widget data
+  - session dashboard
+  - overlay labels
+  - goal widget data
+---
+
+:::note[Looking for the developer reference?]
+This page covers the dashboard for viewing and correcting your account's widget data. If you're writing custom widget code and need the `session.data` object's keys, see the [Session Data Reference](/overlays/session-data) instead.
+:::
+
+The Widget Data dashboard controls the information your overlay widgets display — Label widgets ("latest follower"), goal widgets, and more. It's useful for correcting a misspelled username or an incorrect amount without waiting for a new event.
+
+## Accessing it
+
+Open the [Widget Data dashboard](https://streamelements.com/dashboard/session) directly, or reach it from the Overlay Editor's **Session Data** tab.
+
+If you use SE.Live, you can add it as a custom dock: **View > Docks > Custom Browser Docks...**, then use the dashboard link above as the URL.
+
+## Sections
+
+- **Labels** — the data behind Latest/Recent widgets. Edit or clear a username and amount under **Latest Data**, or remove individual entries from **Recent Data**.
+- **Goals** — progress for Follower, Subscriber, Tip, and Cheer goal widgets. Values update automatically as events come in, but you can set or clear them manually. Goals don't reset between sessions on their own.
+- **Session Data** — event counts and session "tops" (biggest tip, biggest cheer, etc.) for the current session. Sessions reset automatically 15 minutes after you go offline, or you can reset one manually.
+- **Totals** — read-only totals pulled directly from your connected channel (followers, subscribers, cheers, tips).
+- **Aggregates** — totals across a longer period (the last 7 or 30 days). Not directly editable, but they reflect account-level changes.
+- **Settings** — choose whether aggregates use a rolling window (last 7/30 days) or calendar periods (last week/month), and control session resets.
+
+## Related
+
+- [Session Data Reference](/overlays/session-data): the same data, as keys for custom widget code.
+- [AlertBox alert variations](/overlays/alertbox-variations)

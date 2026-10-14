@@ -1,0 +1,44 @@
+---
+title: Uninstalling SE.Live
+description: "Remove the SE.Live plugin from Windows, and back up your OBS profile first if you plan to reinstall."
+keywords:
+  - uninstall SE.Live
+  - remove SE.Live plugin
+  - OBS profile backup
+---
+
+import { Steps } from '@astrojs/starlight/components';
+
+## Back up your profile first (optional)
+
+If you might reinstall later, save your OBS profile before uninstalling:
+
+<Steps>
+
+1. Open File Explorer and go to `%appdata%\obs-studio\basic`.
+2. Copy both folders inside it to another location.
+
+</Steps>
+
+After reinstalling, paste the folders back into that same directory to restore your setup.
+
+## Uninstall
+
+<Steps>
+
+1. Open the **Start Menu** and search for **Control Panel**.
+2. Open **Programs and Features** (Large Icons view) or **Uninstall a Program** (Category view, under Programs).
+3. Find **StreamElements SE.Live** in the list and select it.
+4. Click **Uninstall** and follow the prompts.
+
+</Steps>
+
+Rebooting your PC afterward is recommended.
+
+### If uninstalling fails
+
+Install OBS over your current installation folder, then try uninstalling SE.Live again. If it still fails, reinstall OBS from the [latest version](https://obsproject.com/download) and retry.
+
+## Related
+
+- [Troubleshooting](/selive/troubleshooting)

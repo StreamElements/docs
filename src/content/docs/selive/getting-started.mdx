@@ -3,13 +3,17 @@ title: Install and connect SE.Live
 description: Download SE.Live, install it in OBS Studio, and connect your StreamElements account.
 ---
 
+## Requirements
+
+- OBS Studio 31.x or newer.
+- SE.Live is available for Windows and in beta for macOS.
+- For Twitch dual format, follow the separate [dual format setup](/selive/guides/twitch-dual-format) requirements.
+
 ## Install
 
-SE.Live is available for Windows and in beta for macOS. On Windows, use OBS Studio 31.x or newer. For Twitch dual format, follow the [dual format setup](/selive/guides/twitch-dual-format) requirements.
-
 1. Download the installer for your operating system from the [SE.Live page](https://streamelements.com/selive). Choose the Mac beta for macOS.
-2. Close OBS, then run the installer.
-3. Reopen OBS and look for the **StreamElements** menu.
+2. Close OBS, then run the installer, choosing your install folder.
+3. Reopen OBS **as Administrator** and look for the **StreamElements** menu.
 
 ## Connect
 
@@ -17,6 +21,39 @@ SE.Live is available for Windows and in beta for macOS. On Windows, use OBS Stud
 2. Open **Settings → Stream**, choose your streaming service, and follow the account connection steps.
 
 Open chat and activity through **StreamElements → SE.Live Docks**. If the docks are missing, follow the [troubleshooting steps](/selive/troubleshooting#missing-docks).
+
+If you're prompted to complete setup again inside SE.Live, choose **Do it later** and **Leave** to dismiss it.
+
+Use OBS's **Profiles** and **Scene Collection** features to save your dock layout and connected accounts. If you switch profiles, log out (**StreamElements → Logout**) and back in with the correct account afterward.
+
+## The StreamElements menu
+
+The StreamElements menu in OBS gives you quick access to:
+
+- **Stream Setup** — configure stream details and settings.
+- **Edit Widgets Data** — manage and customize widgets directly from SE.Live.
+- **Setup Bot & Tipping** — initial setup for the chat bot and tipping.
+- **Browse Overlays** — jump to your overlays in the StreamElements dashboard.
+- **SE.Live Docks** — toggle the Activity Feed, Chat, or Media Request docks.
+- **Import** — bring in settings from another service.
+- **SE.Live Versions** — switch between stable and latest builds.
+- **Cloud Backup / Manage Cloud Backup** — back up or restore your OBS profiles and scene collections to your StreamElements account (see below).
+- **Check for Updates** — verify whether a newer SE.Live version is available.
+- **Help** — report issues or reach the StreamElements Discord via live chat.
+- **Logout** — sign out of SE.Live.
+
+### Cloud Backup
+
+Back up your OBS profiles and scene collections to your StreamElements account:
+
+1. Go to **StreamElements → Cloud Backup → Backup Settings and Content**.
+2. Name the backup, select which profiles and scene collections to include, and click **Backup**.
+
+To restore, go to **StreamElements → Cloud Backup → Manage Cloud Backups**, open the backup you want, select what to restore, and click **Restore** — OBS restarts once it's done.
+
+:::note
+Backups are capped at 100MB total. Keep large files like videos out of the backup and store them locally instead.
+:::
 
 For the full setup walkthrough, see the [SE.Live support guide](https://support.streamelements.com/hc/en-us/articles/18771457842066).
 
