@@ -1,9 +1,16 @@
 ---
 title: SE.Live guides
-description: Guides for SE.Live overlays, multistreaming, canvases, linked scenes, Backtrack, and Twitch dual format.
+description: Guides for SE.Live overlays, multistreaming, canvases, linked scenes, Backtrack, and dual format streaming on Twitch and YouTube.
 ---
 
 import { CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+## Platform setup
+
+<CardGrid>
+  <LinkCard title="YouTube quickstart" href="/selive/guides/youtube-quickstart" description="Set up your YouTube account, overlay, OBS, and chatbot." />
+  <LinkCard title="Set up SE.Live for YouTube" href="/selive/guides/youtube-setup" description="Connect your account, stream key, overlay, and chatbot for YouTube." />
+</CardGrid>
 
 ## Build your scenes
 
@@ -18,6 +25,7 @@ import { CardGrid, LinkCard } from '@astrojs/starlight/components';
 <CardGrid>
   <LinkCard title="Set up multistreaming" href="/selive/guides/multistreaming" description="Configure outputs and confirm each platform is live." />
   <LinkCard title="Stream in dual format on Twitch" href="/selive/guides/twitch-dual-format" description="Send horizontal and vertical layouts to Twitch together." />
+  <LinkCard title="Stream with YouTube dual stream (Beta)" href="/selive/guides/youtube-dual-stream" description="Send horizontal and vertical versions of your YouTube stream together." />
   <LinkCard title="Save replays with Backtrack" href="/selive/guides/backtrack" description="Enable a replay buffer for a custom canvas and set a save hotkey." />
 </CardGrid>
 

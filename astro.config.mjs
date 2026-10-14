@@ -232,6 +232,7 @@ export default defineConfig({
               ],
             },
             {
+              id: 'selive',
               label: 'SE.Live',
               link: '/selive',
               icon: 'window',
@@ -241,12 +242,15 @@ export default defineConfig({
                   { label: 'Install and connect', slug: 'selive/getting-started' },
                 ] },
                 { label: 'Guides', items: [
+                  { label: 'YouTube quickstart', slug: 'selive/guides/youtube-quickstart', badge: { text: '5 parts', variant: 'note' } },
                   { label: 'Add overlays and alerts', slug: 'selive/guides/overlays-and-alerts' },
                   { label: 'Create a vertical canvas', slug: 'selive/guides/canvas' },
                   { label: 'Manage scenes and sources', slug: 'selive/guides/scenes-and-sources' },
                   { label: 'Set up multistreaming', slug: 'selive/guides/multistreaming' },
                   { label: 'Twitch dual format', slug: 'selive/guides/twitch-dual-format' },
+                  { label: 'YouTube dual stream', slug: 'selive/guides/youtube-dual-stream', badge: { text: 'Beta', variant: 'caution' } },
                   { label: 'Save replays with Backtrack', slug: 'selive/guides/backtrack' },
+                  { label: 'YouTube setup', slug: 'selive/guides/youtube-setup' },
                   { label: 'All guides', slug: 'selive/guides' },
                 ] },
                 { label: 'Troubleshooting', slug: 'selive/troubleshooting' },
@@ -342,6 +346,7 @@ export default defineConfig({
           ],
           {
             exclude: ['/', '/404'],
+            topics: { selive: ['/selive/guides/youtube-quickstart/**'] },
           },
         ),
       ],
