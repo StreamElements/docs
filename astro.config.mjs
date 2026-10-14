@@ -248,6 +248,7 @@ export default defineConfig({
                   { label: 'Manage scenes and sources', slug: 'selive/guides/scenes-and-sources' },
                   { label: 'Set up multistreaming', slug: 'selive/guides/multistreaming' },
                   { label: 'Twitch dual format', slug: 'selive/guides/twitch-dual-format' },
+                  { label: 'YouTube dual stream', slug: 'selive/guides/youtube-dual-stream', badge: { text: 'Beta', variant: 'caution' } },
                   { label: 'Save replays with Backtrack', slug: 'selive/guides/backtrack' },
                   { label: 'All guides', slug: 'selive/guides' },
                 ] },

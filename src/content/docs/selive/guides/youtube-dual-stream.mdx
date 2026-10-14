@@ -1,0 +1,99 @@
+---
+title: YouTube dual stream (Beta)
+description: "Send horizontal and vertical versions of your YouTube stream together with SE.Live and YouTube's dual stream feature."
+platforms: [youtube]
+keywords:
+  - YouTube dual stream
+  - YouTube vertical streaming
+  - SE.Live vertical YouTube
+  - YouTube Shorts live stream
+---
+
+import GuideScreenshot from '../../../../components/GuideScreenshot.astro';
+import profileMenu from '../img/youtube-profile-menu.png';
+import contentLive from '../img/youtube-studio-content-live.png';
+import dualStreamToggle from '../img/youtube-dual-stream-toggle.png';
+import verticalEncoderKey from '../img/youtube-vertical-encoder-key.png';
+import multistreamDock from '../img/selive-multistream-dock.png';
+
+With YouTube's dual stream, one broadcast can carry both a horizontal and a vertical version of your stream. YouTube shows each viewer the version that matches the format they're watching in, so you reach desktop and mobile viewers without running two separate streams.
+
+In SE.Live, you send each format from its own output and connect both to the same scheduled stream in YouTube Studio.
+
+:::caution[Beta feature]
+Dual stream isn't fully integrated into SE.Live yet, so some steps below are manual. We're working with YouTube to streamline the experience for both streamers and viewers.
+:::
+
+## Before you begin
+
+- [Install SE.Live](/selive/getting-started) and connect your YouTube channel.
+- [Enable live streaming](/getting-started/youtube-live) on your YouTube channel.
+- [Create a vertical canvas](/selive/guides/canvas) for your vertical layout. YouTube channels get a horizontal and a vertical output in the Multistream dock. See [Set up multistreaming](/selive/guides/multistreaming).
+
+## Set up the stream in YouTube Studio
+
+### 1. Create a scheduled stream
+
+Open **YouTube Studio** from your profile menu.
+
+<GuideScreenshot src={profileMenu} alt="YouTube profile menu with YouTube Studio highlighted." caption="Select YouTube Studio from your profile menu." width={370} />
+
+In the left menu, select **Content**, open the **Live** tab, and click **Get started** to schedule a stream.
+
+<GuideScreenshot src={contentLive} alt="YouTube Studio channel content page with Content in the sidebar, the Live tab, and the Get started button highlighted." caption="Go to Content, open the Live tab, and click Get started." />
+
+### 2. Open the stream settings
+
+Open your scheduled stream and select the **Stream settings** tab. Make sure **Dual stream** is turned on. It lets you connect a vertical stream from your encoder, or have YouTube generate a vertical cropped version for the Shorts feed.
+
+<GuideScreenshot src={dualStreamToggle} alt="YouTube Studio Stream settings tab with the Dual stream toggle turned on." caption="Turn on Dual stream in the stream settings." />
+
+### 3. Set the vertical stream to use an encoder
+
+In the vertical stream panel, change the source to **Encoder** and select your vertical stream key. The horizontal stream keeps using the default stream key.
+
+<GuideScreenshot src={verticalEncoderKey} alt="YouTube Studio live control room with the default stream key for the horizontal stream and the Encoder and vertical stream key selectors for the vertical stream highlighted." caption="Horizontal uses the default stream key. Set the vertical stream to Encoder and pick its key." />
+
+## Go live from SE.Live
+
+### 4. Enable the main output
+
+In the **Multistream** dock in SE.Live, turn on your main YouTube output, the horizontal one with the desktop icon.
+
+<GuideScreenshot src={multistreamDock} alt="SE.Live Multistream dock with the horizontal YouTube output turned on and the vertical YouTube output turned off." caption="Turn on the horizontal output first. The vertical output, with the phone icon, stays off for now." width={339} />
+
+### 5. Start the stream in SE.Live
+
+Start your stream in SE.Live. When prompted, choose the scheduled stream you created in step 1.
+
+### 6. Enable the second output
+
+In the Multistream dock, turn on the vertical output, the one with the phone icon.
+
+### 7. Choose the same scheduled stream
+
+When SE.Live prompts you to start the vertical output, choose the same scheduled stream you picked in step 5. Both outputs must use the same scheduled stream.
+
+### 8. Go live in YouTube Studio
+
+Once both outputs are connected, click **Go Live** in YouTube Studio. Each preview in YouTube Studio shows **No data** until its output connects.
+
+## End the stream
+
+### 9. End the stream in YouTube Studio
+
+End your broadcast in **YouTube Studio** first.
+
+### 10. End the stream in SE.Live
+
+Then end the stream in **SE.Live**.
+
+## Get help
+
+[Get help with dual stream setup](https://support.streamelements.com/hc/en-us/requests/new).
+
+## Related
+
+- [Create a vertical canvas](/selive/guides/canvas)
+- [Set up multistreaming](/selive/guides/multistreaming)
+- [Stream in dual format on Twitch](/selive/guides/twitch-dual-format)

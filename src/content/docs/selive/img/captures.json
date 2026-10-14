@@ -66,6 +66,26 @@
         1111,
         718
       ]
+    },
+    "youtube-profile-menu.png": {
+      "source": "Screenshots supplied by StreamElements support, 2026-10-14; used as supplied, no crop",
+      "state": "YouTube profile menu with YouTube Studio highlighted"
+    },
+    "youtube-studio-content-live.png": {
+      "source": "Screenshots supplied by StreamElements support, 2026-10-14; used as supplied, no crop",
+      "state": "YouTube Studio Content page, Live tab, Get started button"
+    },
+    "youtube-dual-stream-toggle.png": {
+      "source": "Screenshots supplied by StreamElements support, 2026-10-14; used as supplied, no crop",
+      "state": "Stream settings tab with Dual stream turned on"
+    },
+    "youtube-vertical-encoder-key.png": {
+      "source": "Screenshots supplied by StreamElements support, 2026-10-14; used as supplied, no crop",
+      "state": "Live control room with default stream key (horizontal) and Encoder plus vertical stream key (vertical)"
+    },
+    "selive-multistream-dock.png": {
+      "source": "Screenshots supplied by StreamElements support, 2026-10-14; used as supplied, no crop",
+      "state": "SE.Live Multistream dock with horizontal output on and vertical output off"
     }
   },
   "maintenance": "Use focused crops of real product screenshots. Retain control labels and values; do not paint over or recreate UI. Exclude cursors, OS window frames, unrelated panels, credentials, and private overlay URLs. Store real PNG files and serve without lossy recompression or upscaling.",
@@ -92,7 +112,8 @@
     "Scene-link instructions describe the direction explicitly supported by the article: selecting a canvas scene changes its linked OBS scene.",
     "Removed source-comparison prose from end-user pages; kept relevant help links.",
     "Twitch dual format explicitly requires OBS 32.0.0 or newer, as listed by Twitch.",
-    "macOS beta support confirmed by Jacob in this task on 2026-09-13, consistent with the product page. The Windows-only statement in the support article is stale. Installation documents both platforms; OBS 31+ is stated for Windows only."
+    "macOS beta support confirmed by Jacob in this task on 2026-09-13, consistent with the product page. The Windows-only statement in the support article is stale. Installation documents both platforms; OBS 31+ is stated for Windows only.",
+    "YouTube dual stream guide (2026-10-14) written from StreamElements support's own beta steps; the screenshots show a staff test channel. Beta status is stated in the page; not independently re-tested."
   ],
   "localCaptureEnvironment": {
     "platform": "macOS",
