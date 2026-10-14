@@ -293,3 +293,17 @@
   }
   .hero .actions a { justify-content: center; }
 }
+
+/* "Beta" sidebar badge: matches the Beta badge in @frontend/ui (purple
+   translucent pill, 12px/500 text; same values in light and dark). */
+.sidebar-content .sl-badge.default {
+  --se-beta: rgb(123 62 254);
+  background-color: color-mix(in srgb, var(--se-beta) 16%, transparent);
+  border: 0;
+  border-radius: 8px;
+  color: var(--se-beta);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+  padding: 0 6px;
+}
