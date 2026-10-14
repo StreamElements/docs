@@ -242,7 +242,14 @@ export default defineConfig({
                   { label: 'Install and connect', slug: 'selive/getting-started' },
                 ] },
                 { label: 'Guides', items: [
-                  { label: 'YouTube quickstart', slug: 'selive/guides/youtube-quickstart', badge: { text: '5 parts', variant: 'note' } },
+                  { label: 'YouTube quickstart', collapsed: true, badge: { text: '5 parts', variant: 'note' }, items: [
+                    { label: 'Overview', slug: 'selive/guides/youtube-quickstart' },
+                    { slug: 'selive/guides/youtube-quickstart/create-your-account' },
+                    { slug: 'selive/guides/youtube-quickstart/dashboard-tour' },
+                    { slug: 'selive/guides/youtube-quickstart/build-your-overlay' },
+                    { slug: 'selive/guides/youtube-quickstart/connect-obs-and-go-live' },
+                    { slug: 'selive/guides/youtube-quickstart/set-up-your-chatbot' },
+                  ] },
                   { label: 'Add overlays and alerts', slug: 'selive/guides/overlays-and-alerts' },
                   { label: 'Create a vertical canvas', slug: 'selive/guides/canvas' },
                   { label: 'Manage scenes and sources', slug: 'selive/guides/scenes-and-sources' },
