@@ -250,6 +250,7 @@ export default defineConfig({
                   { label: 'Twitch dual format', slug: 'selive/guides/twitch-dual-format' },
                   { label: 'YouTube dual stream', slug: 'selive/guides/youtube-dual-stream', badge: { text: 'Beta', variant: 'caution' } },
                   { label: 'Save replays with Backtrack', slug: 'selive/guides/backtrack' },
+                  { label: 'YouTube setup', slug: 'selive/guides/youtube-setup' },
                   { label: 'All guides', slug: 'selive/guides' },
                 ] },
                 { label: 'Troubleshooting', slug: 'selive/troubleshooting' },
