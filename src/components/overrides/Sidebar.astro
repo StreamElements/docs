@@ -60,8 +60,12 @@ const current = topics.find((topic) => topic.isCurrent);
           event.stopPropagation();
         }
       }, { signal: controller.signal });
+      // Safari never focuses a tapped link, so the summary blurs with no
+      // relatedTarget before the click lands. Closing then would hide the link
+      // under the finger; leave outside taps to the click handler above.
       this.addEventListener('focusout', (event) => {
-        if (!this.contains(event.relatedTarget as Node)) details.open = false;
+        const next = event.relatedTarget as Node | null;
+        if (next && !this.contains(next)) details.open = false;
       }, { signal: controller.signal });
     }
     cleanup?: () => void;
