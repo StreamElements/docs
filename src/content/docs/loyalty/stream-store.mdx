@@ -1,0 +1,108 @@
+---
+title: Stream Store
+description: "Set up Stream Store items — sound effects, stream perks, TTS, and access codes — that viewers redeem with Loyalty points."
+keywords:
+  - StreamElements stream store
+  - loyalty points redemption
+  - sound effects command
+  - stream perks
+  - text to speech
+---
+
+import { Steps } from '@astrojs/starlight/components';
+
+The Stream Store is where viewers spend [Loyalty points](/loyalty) on rewards you set up — sound effects, short clips, access codes, or text-to-speech.
+
+## Access it
+
+Go to **Loyalty → [Stream Store](https://streamelements.com/dashboard/store/items)** in your dashboard. From here you can filter items by type, view and approve/decline **Redemptions** (including up to a year of history), open your public store page, and create new items.
+
+## Item types
+
+- **Stream Perks** — commonly used for short clips played on demand.
+- **Sound Effects** — play a sound, often used to interrupt intense moments.
+- **Access-Code List** — a list of pre-purchased codes viewers redeem one at a time.
+
+## Item settings
+
+Every item has three pages of settings:
+
+1. **Item Information** — name, description, cost (in points), quantity, global/per-user cooldowns, and an optional category cooldown (leave blank if you're not using categories).
+2. **Item Content** — differs by type; see below.
+3. **Requirements** — optionally collect extra information from the viewer before they can redeem, which then appears on your Redemptions page.
+
+### Sound effects
+
+<Steps>
+
+1. On the Item Content page, choose **Sound effects**.
+2. Upload your sound file (MP3 preferred) and set its volume.
+3. Enable redemption and name the item's command.
+
+</Steps>
+
+### Stream perks
+
+<Steps>
+
+1. On the Item Content page, choose **Stream Perk**.
+2. Click **Change Alert Asset** and choose a video from your library.
+
+</Steps>
+
+Notes:
+- If the video preview doesn't show, try re-exporting it — for `.mp4`, H.264 encoding works more reliably than HEVC (H.265).
+- Uploading a sound file overrides any audio already in the video — skip this if the video already has sound.
+- The "preview asset" is only a Stream Store thumbnail; it doesn't affect what plays on screen.
+
+### Text-to-speech
+
+TTS uses a Stream Perk item as its base. Create one as above, then:
+
+- When creating the [redemption command](#create-the-redemption-command), set the response to `${redeem tts ${1:}}` so the viewer's entire message is read out (for example, `!tts Hello my name is Bob`).
+- In the Store Redemption widget's settings, enable text-to-speech and pick a voice.
+
+To let a Stream Perk item read out a message too, include `${1:}` in its redemption command — the same standard tipping moderation rules apply to what gets read.
+
+### Access-code lists
+
+<Steps>
+
+1. Paste your codes, one per line.
+2. Optionally set an alert that plays when a code is redeemed.
+3. Choose whether codes can be redeemed more than once, and whether they're dispensed randomly or in order.
+
+</Steps>
+
+You need at least one code entered before you can continue.
+
+## Create the redemption command
+
+<Steps>
+
+1. Go to [custom commands](https://streamelements.com/dashboard/bot-commands/custom-commands) and create a new command.
+2. Set its response to `${redeem item_name_here}` — or `${redeem item_name${1:}}` if viewers can attach a message, like for TTS or a Stream Perk.
+
+</Steps>
+
+The item name and the command name don't need to match, but using the same name makes it easier to remember — for example, an item named `ez4ence`, redeemed via a command `!ez4ence` with response `${redeem ez4ence}`.
+
+## Add the Store Redemption widget
+
+<Steps>
+
+1. Open [My Overlays](https://streamelements.com/dashboard/overlays) and create or edit an overlay.
+2. Add the **Store Redemption** widget.
+3. Remove its default video, sound, and text — you only want each item's own asset to play.
+4. Save.
+
+</Steps>
+
+## Test and go live
+
+Trigger the command in chat (with a message after it if applicable) while OBS or the Overlay Editor is open, to confirm it plays correctly. Keep the command enabled for both online and offline testing at first, then restrict it to online-only once confirmed. You can also hide an item from your public Stream Store if you don't want it listed there.
+
+## Related
+
+- [Loyalty System](/loyalty): how viewers earn the points spent here.
+- [Troubleshooting](/loyalty/troubleshooting)

@@ -1,0 +1,73 @@
+---
+title: General Troubleshooting
+description: "Fix a StreamElements chatbot that stopped responding, missing events, a wrong goal widget count, tipping page save errors, and more."
+keywords:
+  - StreamElements troubleshooting
+  - chatbot not responding
+  - events not appearing
+---
+
+import { Steps } from '@astrojs/starlight/components';
+
+For SE.Live-specific issues, see [SE.Live Troubleshooting](/selive/troubleshooting) instead.
+
+## Chatbot not responding, or events not appearing
+
+### Twitch / Kick
+
+<Steps>
+
+1. Part the bot from your channel.
+2. [Log out](https://streamelements.com/logout) of the dashboard.
+3. Clear your browser's cache and cookies.
+4. Open your browser's developer console, go to the **Network** tab, and enable **Disable cache**.
+5. Log back in and re-add the bot to your channel.
+
+</Steps>
+
+### YouTube
+
+Start by removing and reconnecting permissions:
+
+<Steps>
+
+1. Go to [Google Account Connections](https://myaccount.google.com/connections) and remove StreamElements' access.
+2. Log back into StreamElements to reconnect it.
+
+</Steps>
+
+Keep in mind the YouTube chatbot and events only work during **live, public** streams — nothing will happen on offline, private, or unlisted streams, and if either you or a viewer has a private account, that viewer's events won't trigger. Events can also take up to 4 hours to appear due to YouTube's own reporting delays.
+
+If the bot still isn't responding once you're live:
+
+<Steps>
+
+1. Wait 20–30 minutes after going live — the bot can take a little while to join automatically.
+2. If it still hasn't joined, log out and back into StreamElements.
+3. Remove and re-add the bot from your [dashboard](https://streamelements.com/dashboard) to restore the connection.
+
+</Steps>
+
+### Tips not appearing
+
+Confirm your viewers are actually using your StreamElements tipping page — tips sent through a different service won't show up in your Activity Feed.
+
+## Goal widget showing wrong numbers
+
+Goal widgets only track increments — they don't automatically adjust down if someone unsubscribes or unfollows. Update your progress manually from your [Goals settings](https://streamelements.com/dashboard/session/goals) if it looks off.
+
+## Alerts not showing, or no sound
+
+First check that alerts aren't paused or muted in your [Activity Feed](https://streamelements.com/dashboard/activity). Then confirm your overlay is properly added to OBS — see [Add an overlay to your broadcast software](/overlays/broadcast-software).
+
+## Scene transitions not working on linked scenes
+
+Give each scene a unique name — if two scenes share the exact same name, the link between them breaks. See [Manage scenes and sources](/selive/guides/scenes-and-sources).
+
+## Can't save tipping page settings
+
+Make sure **Require login** is explicitly set to on or off — leaving it blank causes a save error. Double-check every other field on the page is filled in too; the save fails if any are empty.
+
+## Media Request "Georestricted location" error
+
+This means no **Stream Location** is set in your Media Request options — add one. If you've already set one and still see the error, clear your browser's cookies and cache and try again. See [Media Requests](/media-requests) for the full setup.

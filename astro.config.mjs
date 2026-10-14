@@ -194,6 +194,60 @@ export default defineConfig({
         starlightSidebarTopics(
           [
             {
+              label: 'Dashboard',
+              link: '/getting-started',
+              icon: 'rocket',
+              items: [
+                {
+                  label: 'Getting Started',
+                  items: [
+                    { label: 'Overview', slug: 'getting-started' },
+                    { label: 'Create Your Account', slug: 'getting-started/account-setup' },
+                    { label: 'Dashboard & Activity Feed', slug: 'getting-started/dashboard-overview' },
+                    { label: 'Your Public Profile', slug: 'getting-started/public-profile' },
+                    { label: 'Account Settings', slug: 'getting-started/account-settings' },
+                    { label: 'Granting Mod Dashboard Access', slug: 'getting-started/managing-access' },
+                    { label: 'Importing from Other Platforms', slug: 'getting-started/importing' },
+                    { label: 'Enable Live Streaming on YouTube', slug: 'getting-started/youtube-live' },
+                    { label: 'Troubleshooting', slug: 'getting-started/troubleshooting' },
+                  ],
+                },
+                {
+                  label: 'Revenue',
+                  items: [
+                    { label: 'Overview', slug: 'revenue' },
+                    { label: 'Tipping', slug: 'revenue/tipping' },
+                    { label: 'Charity Streams', slug: 'revenue/charity-streams' },
+                    { label: 'SE.Pay', slug: 'revenue/se-pay' },
+                  ],
+                },
+                {
+                  label: 'Loyalty & Stream Store',
+                  items: [
+                    { label: 'Overview', slug: 'loyalty' },
+                    { label: 'Stream Store', slug: 'loyalty/stream-store' },
+                    { label: 'Troubleshooting', slug: 'loyalty/troubleshooting' },
+                  ],
+                },
+                {
+                  label: 'Campaigns',
+                  collapsed: true,
+                  items: [
+                    { label: 'Overview', slug: 'campaigns' },
+                    { label: 'Add the Sponsorship Overlay', slug: 'campaigns/overlay-setup' },
+                    { label: 'Payments', slug: 'campaigns/payments' },
+                    { label: 'Staying Compliant', slug: 'campaigns/compliance' },
+                    { label: 'Subscription-Based Campaigns', slug: 'campaigns/subscription-campaigns' },
+                    { label: 'Optional Bonus Goals', slug: 'campaigns/bonus-goals' },
+                    { label: 'In-Game Budget Goal', slug: 'campaigns/in-game-budget' },
+                    { label: 'Troubleshooting', slug: 'campaigns/troubleshooting' },
+                  ],
+                },
+                { label: 'Media Requests', slug: 'media-requests' },
+                { label: 'Ground Control', slug: 'ground-control' },
+              ],
+            },
+            {
               label: 'Chatbot',
               link: '/chatbot',
               icon: 'comment',
