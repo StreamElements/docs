@@ -375,6 +375,7 @@ export default defineConfig({
                       collapsed: true,
                       items: [
                         'websockets/topics/channel-activities',
+                        'websockets/topics/channel-chat',
                         'websockets/topics/channel-chat-message',
                         'websockets/topics/channel-tips',
                         'websockets/topics/channel-tips-moderation',

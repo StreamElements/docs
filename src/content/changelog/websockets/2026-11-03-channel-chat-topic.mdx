@@ -1,0 +1,14 @@
+---
+title: One chat format for every platform
+description: The new channel.chat topic sends chat from Twitch, YouTube, Kick and X in one format, with deletes, timeouts and bans.
+date: 2026-11-03
+products: [websockets]
+---
+
+The new [`channel.chat`](/websockets/topics/channel-chat) topic sends a channel's chat in one format, whichever platform it comes from.
+
+- **Messages come in fragments.** Text, emotes, mentions and cheers arrive in order, so a widget can draw chat without knowing the platform.
+- **Moderation events.** Deletes, timeouts, bans and chat clears arrive on the same topic, for the platforms that send them.
+- **Roles.** Authors carry a fixed list of roles, such as `moderator` and `subscriber`, so "moderators only" works the same on every platform.
+
+[`channel.chat.message`](/websockets/topics/channel-chat-message) now sends each platform's `data` exactly as the platform sent it. Fields we used to drop now come through, and fields we used to fill with empty values, such as an empty Kick `created_at`, no longer appear.
