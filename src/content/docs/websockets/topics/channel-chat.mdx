@@ -1,0 +1,201 @@
+---
+title: Chat
+description: "Chat messages and moderation events from every platform, in one format"
+wsTopic: 'channel.chat'
+scope: 'overlays:read'
+keywords:
+- chat
+- chat message
+- chat moderation
+- emotes
+- websocket events
+---
+
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+The `channel.chat` topic carries a channel's chat in one format, whichever platform it comes from: Twitch, YouTube, Kick or X.
+Each message comes split into fragments (text, emotes, mentions, cheers), so you can draw it without knowing the platform.
+The same topic tells you when messages are deleted, when a user is timed out or banned, and when the whole chat is cleared.
+
+:::tip
+Need the platform's own payload instead? [`channel.chat.message`](/websockets/topics/channel-chat-message) sends it unchanged.
+:::
+
+## Events
+
+Every event has an `event` field. A renderer needs these four to draw chat and remove what moderators remove.
+
+| `event` | Meaning | Its own fields |
+| --- | --- | --- |
+| `message` | A chat message | See [Message](#message) |
+| `message_deleted` | One message was removed | `message_id` |
+| `user_cleared` | All of one user's messages were removed, for a timeout or a ban | `user` (`id`, `login`, `name`), `duration_seconds` (left out when the ban is permanent or the length is unknown) |
+| `chat_cleared` | All messages were removed | none |
+
+Every event also has these fields:
+
+| Field | Type | Notes |
+| --- | --- | --- |
+| `v` | number | Format version, `1` |
+| `event` | string | One of the four above |
+| `provider` | string | `twitch`, `youtube`, `kick` or `x` |
+| `channel` | object | `id` (StreamElements channel ID), `provider_id` (the broadcaster's ID on the platform), `login` |
+| `sent_at` | string | When the platform says the event happened, in UTC. When it doesn't say, the time StreamElements received it. |
+
+### Rules for readers
+
+- Ignore fields you don't know, and events you don't know.
+- Draw a fragment of a type you don't know as its `text`.
+- A field we have no value for is left out. It is never `""` or `null`.
+- Events can arrive slightly out of order, so a `message_deleted` can, rarely, come before its message. Keep the last few hundred deleted IDs and drop a message whose `id` is among them.
+
+## Message
+
+| Field | Type | Notes |
+| --- | --- | --- |
+| `id` | string | The platform's message ID. Delete events refer to this ID. |
+| `author` | object | See [Authors](#authors) |
+| `text` | string | The message as shown in chat. Platform emote codes become emote names, and Twitch's `/me` wrapper and invisible padding characters are removed. |
+| `fragments` | array | See [Fragments](#fragments). Joined in order, their `text` equals `text`. |
+| `kind` | string | `text`, `action` (sent with `/me`), `highlighted`, `intro`, `effect` or `gigantified_emote`. Draw a kind you don't know as `text`. |
+| `reply` | object | The message this one answers: `message_id`, `author` (`id`, `login`, `name`), `text` |
+| `shared_from` | object | Twitch shared chat only: `provider_id` of the channel the message was sent in |
+
+### Fragments
+
+Draw a message by walking `fragments` in order. The simplest renderer joins every `text` and is done.
+
+| `type` | Extra field | Notes |
+| --- | --- | --- |
+| `text` | none | Plain text. Escape it before you put it in HTML. |
+| `emote` | `emote`: `id` | The emote's name is the fragment's `text`, and its platform is the event's `provider`. |
+| `mention` | `mention`: `id`, `login`, `name` | `id` is there only when the platform sends it (Twitch). |
+| `cheer` | `cheer`: `prefix`, `bits`, `tier` | Twitch only. A message's total bits is the sum of its cheers. |
+
+### Emote images
+
+Emotes carry an ID, not a URL. To find the image:
+
+1. Fetch `GET https://api.streamelements.com/kappa/v3/emotes/{channel}` once when your widget loads, where `{channel}` is the StreamElements channel ID. It lists the channel's and the global emotes for each platform, with `urls` by size. Look the emote up by platform and `id`.
+2. If it isn't there (another channel's Twitch sub emote, or one added after you loaded), build the URL from the ID:
+
+   | Platform | URL |
+   | --- | --- |
+   | `twitch` | `https://static-cdn.jtvnw.net/emoticons/v2/{id}/default/{dark or light}/{1.0, 2.0 or 3.0}` |
+   | `kick` | `https://files.kick.com/emotes/{id}/fullsize` |
+
+3. If that fails too, draw the fragment's `text`.
+
+YouTube emoji such as `:face-blue-smiling:` arrive as text for now.
+
+## Authors
+
+`author` has `id`, `login`, `name`, `color`, `avatar_url`, `roles` and `badges`.
+Use `roles` to decide what to do (for example, show only moderators) and `badges` to draw.
+
+`roles` uses this fixed list, so you can check them without knowing the platform: `broadcaster`, `moderator`, `vip`, `subscriber` (YouTube members count), `founder`, `verified`, `staff`, `bot`.
+
+Each badge has `id`, `version` and `label` (for example, months subscribed). YouTube and X have no badges, only roles.
+
+## Moderation events by platform
+
+| `event` | Twitch | YouTube | Kick | X |
+| --- | --- | --- | --- | --- |
+| `message_deleted` | Yes | No (YouTube doesn't send live deletes) | No | Yes |
+| `user_cleared` | Yes, with no length | Yes, with the length of a timeout | Yes, with the length of a timeout | No |
+| `chat_cleared` | Yes | No | No | No |
+
+## Examples
+
+<Tabs>
+<TabItem label="Message">
+
+```json
+{
+  "id": "01JY3ZPEVXTM7RZ0X7FXP1STCT",
+  "ts": "2026-11-03T11:37:58Z",
+  "type": "message",
+  "topic": "channel.chat",
+  "room": "5f2de5dd9a474a2c2aaaaaaa",
+  "data": {
+    "v": 1,
+    "event": "message",
+    "provider": "twitch",
+    "channel": { "id": "5f2de5dd9a474a2c2aaaaaaa", "provider_id": "28050000", "login": "examplechannel" },
+    "sent_at": "2026-11-03T11:37:58Z",
+    "id": "caf9fb9a-a702-486e-92f1-0c60a3a28f38",
+    "author": {
+      "id": "28057703",
+      "login": "exampleuser",
+      "name": "ExampleUser",
+      "color": "#8AE020",
+      "roles": ["moderator", "subscriber", "founder"],
+      "badges": [
+        { "id": "moderator", "version": "1" },
+        { "id": "founder", "version": "0", "label": "55" }
+      ]
+    },
+    "text": "@bob nice <3 cheer100",
+    "fragments": [
+      { "type": "mention", "text": "@bob", "mention": { "id": "123", "login": "bob", "name": "Bob" } },
+      { "type": "text", "text": " nice " },
+      { "type": "emote", "text": "<3", "emote": { "id": "555555584" } },
+      { "type": "text", "text": " " },
+      { "type": "cheer", "text": "cheer100", "cheer": { "prefix": "cheer", "bits": 100, "tier": 100 } }
+    ],
+    "kind": "text"
+  }
+}
+```
+
+</TabItem>
+<TabItem label="Message deleted">
+
+```json
+{
+  "v": 1,
+  "event": "message_deleted",
+  "provider": "twitch",
+  "channel": { "id": "5f2de5dd9a474a2c2aaaaaaa", "provider_id": "28050000", "login": "examplechannel" },
+  "sent_at": "2026-11-03T11:38:10Z",
+  "message_id": "caf9fb9a-a702-486e-92f1-0c60a3a28f38"
+}
+```
+
+</TabItem>
+<TabItem label="User cleared">
+
+```json
+{
+  "v": 1,
+  "event": "user_cleared",
+  "provider": "kick",
+  "channel": { "id": "67a36a1f8a2abf0b4aaaaaaa", "provider_id": "54670000", "login": "examplechannel" },
+  "sent_at": "2026-11-03T11:59:00Z",
+  "user": { "id": "54673333", "login": "spammer", "name": "Spammer" },
+  "duration_seconds": 600
+}
+```
+
+</TabItem>
+<TabItem label="Chat cleared">
+
+```json
+{
+  "v": 1,
+  "event": "chat_cleared",
+  "provider": "twitch",
+  "channel": { "id": "5f2de5dd9a474a2c2aaaaaaa", "provider_id": "28050000", "login": "examplechannel" },
+  "sent_at": "2026-11-03T12:00:00Z"
+}
+```
+
+</TabItem>
+</Tabs>
+
+The last three tabs show only the `data` field.
+
+## Related
+
+- [Chat Message](/websockets/topics/channel-chat-message) - The platform's own payload for each chat message
+- [Websockets](/websockets) - General information about the Astro Websocket Gateway

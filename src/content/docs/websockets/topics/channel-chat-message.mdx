@@ -19,6 +19,10 @@ Subscribe to this topic to receive updates whenever a new chat message is sent.
 Payloads are delivered in the raw format of the originating provider, so the structure of the `data` object differs per platform.
 :::
 
+:::tip
+To draw chat without handling each platform, use [`channel.chat`](/websockets/topics/channel-chat). It sends every platform's messages in one format, plus deletes, timeouts and bans.
+:::
+
 ## Examples
 
 <Tabs syncKey="platform">
