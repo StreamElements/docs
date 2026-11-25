@@ -1,0 +1,61 @@
+---
+title: Stripe
+description: "Accept tips through your own Stripe account: eligibility, setup, payouts, and what tippers see on their statement."
+keywords:
+  - StreamElements Stripe
+  - Stripe tipping
+  - Stripe payouts
+---
+
+import { Steps } from '@astrojs/starlight/components';
+
+StreamElements has partnered with Stripe to offer creators additional methods to accept tips, offering creators a hassle-free way to generate revenue during streams. Dive into this comprehensive guide to understand the ins and outs of our payment system.
+
+## Eligibility
+
+To use Stripe, you need to meet all of the following:
+
+- Creators must be at least 18 years old
+- Have a bank account under their name or in their business' name if registering as a business in one of the following countries: Australia, Austria, Belgium, Brazil, Bulgaria, Canada, Côte d'Ivoire, Croatia, Cyprus, Czech Republic, Denmark, Estonia, Finland, France, Germany, Ghana, Gibraltar, Greece, Hong Kong, Hungary, India, Indonesia, Ireland, Italy, Japan, Kenya, Latvia, Liechtenstein, Lithuania, Luxembourg, Malaysia, Malta, Mexico, Netherlands, New Zealand, Nigeria, Norway, Poland, Portugal, Romania, Singapore, Slovakia, Slovenia, South Africa, Spain, Sweden, Switzerland, Thailand, United Arab Emirates, United Kingdom, United States.
+- Consistent streams during the last 3 months
+
+Eligibility is checked automatically as part of connecting your account (see below) — there's no manual application or support ticket needed. If you don't see the option to connect, it means you don't currently meet one or more of these criteria.
+
+## Setting it up
+
+<Steps>
+
+1. **Connect Stripe:** Go to [Tipping Settings](https://streamelements.com/dashboard/tipping-settings) under Revenue and click "Connect" to begin Stripe onboarding, then choose your account type (individual or business).
+2. **Complete Stripe Onboarding:** Complete Stripe-hosted onboarding, providing the identity (KYC) and bank details Stripe requests. Note: If "business" bank account is selected you will need your legal business name, company registration number, and your DBA (doing business as).
+3. **Review and Confirm:** Check that your information is accurate. Once you submit, Stripe verifies your details. You can update them later in your Stripe Dashboard.
+
+</Steps>
+
+Once connected, manage your account (payout schedule, enabled payment methods) any time from the same Tipping Settings page, which links through to your Stripe Dashboard.
+
+## How it works
+
+- Tips go directly to your Stripe balance — view them under **Balances** in your [Stripe Dashboard](https://dashboard.stripe.com).
+- Payouts follow whatever schedule you set during onboarding (manual or automatic), changeable any time from Stripe.
+- Your first payout can take about 7 days while Stripe verifies your account; it's faster after that.
+- Withdrawals and transaction history are managed entirely in Stripe, not the StreamElements dashboard.
+
+## Customizing what tippers see
+
+From your Stripe Dashboard, under **Settings → Business → Public details**, you can set the **Statement description** shown on a tipper's card statement (StreamElements recommends using your channel name), along with the public business name, address, and phone number tippers may see. Card networks require every merchant — which, with Stripe, means you — to provide these public contact details.
+
+This information is separate from your private Stripe account details (like your date of birth); only what you set under Public details is ever visible to tippers.
+
+## FAQ
+
+**Is my information secure?**
+Yes. Stripe is a PCI Level 1 certified payment processor with industry-leading security, fraud protection, and identity verification systems.
+
+**What if Stripe is not available in my country?**
+If your bank account is not in a supported country, you won't see the option to connect Stripe in Tipping Settings.
+
+**What documents does Stripe require?**
+Stripe tells you exactly what it needs during its hosted onboarding. In general, you will provide identity (KYC) and bank details, plus your legal business name, company registration number and DBA (doing business as) if you register as a business. Requirements vary by country and account type, so follow the steps in Stripe's onboarding for the full list. The information provided during the KYC process does not reach StreamElements.
+
+**My Stripe verification was rejected or is still pending. What can I do?**
+Verification is handled directly by Stripe. Check your Stripe Dashboard to see what is still outstanding and contact Stripe support for help. Note that the first payout on a new Stripe account can take about 7 days while Stripe verifies it.
