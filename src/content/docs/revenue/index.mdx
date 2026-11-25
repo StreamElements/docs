@@ -13,7 +13,7 @@ import { CardGrid, LinkCard, Steps } from '@astrojs/starlight/components';
 <CardGrid>
   <LinkCard title="Tipping" href="/revenue/tipping" description="Set up PayPal or Stripe tipping, moderate messages, and customize your tip page." />
   <LinkCard title="Charity Streams" href="/revenue/charity-streams" description="Run a fundraiser with Tiltify or DonorDrive." />
-  <LinkCard title="SE.Pay" href="/revenue/se-pay" description="Status of StreamElements' in-house tipping processor." />
+  <LinkCard title="Stripe" href="/revenue/stripe" description="Card tipping through your own Stripe account: setup, payouts, fees, and refunds." />
 </CardGrid>
 
 ## Revenue History
@@ -26,15 +26,15 @@ The [Revenue History page](https://streamelements.com/dashboard/tipping/list) tr
 - **Top Cheerers** — ranked by total amount cheered.
 - **Income Report** — a monthly report (with your business name, address, and tax number) you can generate and download.
 
-SE.Sponsorships payments are handled through Tipalti; tipping is handled separately (PayPal, or SE.Pay/Stripe — see [SE.Pay](/revenue/se-pay)). If you manage multiple income streams, export your data regularly to keep accurate records.
+SE.Sponsorships payments are handled through Tipalti; tipping is handled separately (PayPal or Stripe — see [Tipping](/revenue/tipping)). If you manage multiple income streams, export your data regularly to keep accurate records.
 
 ## Tax forms
 
-StreamElements issues a 1099 form to creators who earn $600 or more in a tax year, split by income type:
+Who issues your 1099 form depends on the income type:
 
 | Income type | Threshold | How it's delivered |
 |---|---|---|
-| SE.Pay tips | Over $20,000 | Physical form mailed to the address entered during setup. |
+| Stripe tips | Handled by Stripe | See [Stripe's 1099 FAQ](https://support.stripe.com/questions/faq-for-platform-issued-1099s). |
 | Sponsorships (excluding PayPal) | $600 or more | Emailed from `noreply@tax1099.com`. If prompted to log in: email is the first four letters of your name, password is the last four digits of your TIN. |
 | PayPal tips | Handled by PayPal | PayPal provides this directly. |
 
