@@ -218,7 +218,8 @@ export default defineConfig({
                     { label: 'Overview', slug: 'revenue' },
                     { label: 'Tipping', slug: 'revenue/tipping' },
                     { label: 'Charity Streams', slug: 'revenue/charity-streams' },
-                    { label: 'SE.Pay', slug: 'revenue/se-pay' },
+                    { label: 'Stripe', slug: 'revenue/stripe' },
+                    { label: 'SE.Pay (Discontinued)', slug: 'revenue/se-pay' },
                   ],
                 },
                 {
