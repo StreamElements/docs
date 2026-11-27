@@ -43,7 +43,7 @@ With PayPal, tips go straight to your linked account with no extra steps — you
 
 </Steps>
 
-Once connected, you can start receiving tips through Stripe. Balances, transactions, and payouts are managed in your Stripe Dashboard. The first payout on a new Stripe account can take around 7 days while Stripe verifies it.
+Once connected, you can start receiving tips through Stripe. Balances, transactions, and payouts are managed in your Stripe Dashboard. The first payout on a new Stripe account usually takes 7 to 14 days while Stripe verifies it.
 
 With Stripe, tips are paid into your own Stripe account, so your earnings stay in your hands, and are paid out to your bank on the schedule you set in your Stripe Dashboard. Stripe Managed Risk helps screen for fraud.
 
@@ -52,12 +52,20 @@ With Stripe, tips are paid into your own Stripe account, so your earnings stay i
 **Revenue → [Tipping Settings](https://streamelements.com/dashboard/tipping-settings)** controls how your tip page looks and behaves:
 
 - **Payment Providers** — connect or disconnect PayPal and Stripe. Some methods are restricted by country or other criteria.
-- **Page Settings** — currency, minimum/maximum tip amount, a suggested default amount, max message length, whether viewers must log in to tip, and your tipping presets.
+- **Page Settings** — currency, minimum/maximum tip amount, a suggested default amount, max message length, and your tipping presets.
 - **Design** — your tip page's title, banner, background, and whether to show the tipping leaderboard.
 - **Tip Panel Setup** — copy your tipping page's URL.
-- **Tip Moderation** — see below.
+- **Tip Moderation** — word filters, manual approval, and the login requirement; see below.
 
-Currency and login requirements are up to you — StreamElements doesn't set either for Stripe. Accepting tips in a different currency from your Stripe account's may incur Stripe's currency conversion fees; see [Stripe: Supported currencies](https://docs.stripe.com/currencies).
+### Login requirement
+
+For an added layer of protection against fraudulent tips, we recommend requiring viewers to log in before tipping. You can enable this option in your [tipping page settings under Moderation](https://streamelements.com/dashboard/tipping-settings/moderation).
+
+### Currency settings
+
+While Stripe supports receiving payments in multiple currencies, we recommend locking your tipping page to your preferred currency. You can do this in your [tipping page settings](https://streamelements.com/dashboard/tipping-settings).
+
+If you'd prefer to let viewers tip in other supported currencies, please be aware that those funds will be automatically converted to your Stripe account's default currency, and Stripe charges an additional currency conversion (FX) fee for this. For full details, please refer to [Stripe's official fees page](https://stripe.com/pricing).
 
 ## Tip moderation
 
