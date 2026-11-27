@@ -45,10 +45,20 @@ With Stripe, tips are paid into your own Stripe account, so your earnings stay i
 **Revenue → [Tipping Settings](https://streamelements.com/dashboard/tipping-settings)** controls how your tip page looks and behaves:
 
 - **Payment Providers** — connect or disconnect PayPal and Stripe. Some methods are restricted by country or other criteria.
-- **Page Settings** — currency (locked to your Stripe account currency if Stripe is enabled), minimum/maximum tip amount, a suggested default amount, max message length, whether viewers must log in to tip (mandatory for Stripe), and your tipping presets.
+- **Page Settings** — currency, minimum/maximum tip amount, a suggested default amount, max message length, and your tipping presets.
 - **Design** — your tip page's title, banner, background, and whether to show the tipping leaderboard.
 - **Tip Panel Setup** — copy your tipping page's URL.
-- **Tip Moderation** — see below.
+- **Tip Moderation** — word filters, manual approval, and the login requirement; see below.
+
+### Login requirement
+
+For an added layer of protection against fraudulent tips, we recommend requiring viewers to log in before tipping. You can enable this option in your [tipping page settings under Moderation](https://streamelements.com/dashboard/tipping-settings/moderation).
+
+### Currency settings
+
+While Stripe supports receiving payments in multiple currencies, we recommend locking your tipping page to your preferred currency. You can do this in your [tipping page settings](https://streamelements.com/dashboard/tipping-settings).
+
+If you'd prefer to let viewers tip in other supported currencies, please be aware that those funds will be automatically converted to your Stripe account's default currency, and Stripe charges an additional currency conversion (FX) fee for this. For full details, please refer to [Stripe's official fees page](https://stripe.com/pricing).
 
 ## Tip moderation
 
@@ -75,4 +85,4 @@ For Stripe, the statement description the streamer set in their own Stripe accou
 They should reach out to the streamer or their mods directly, who can replay the alert next time they're live.
 
 **Can a tip be refunded?**
-All tips are final and non-refundable by default, but a streamer can choose to help: for PayPal tips, they can refund directly from PayPal; for Stripe, they can refund directly from their own Stripe Dashboard.
+Tips are final, and StreamElements can't refund them. A streamer can choose to refund a tip: PayPal tips from PayPal, Stripe tips from their own Stripe Dashboard. Chargebacks on Stripe tips are handled by the streamer in Stripe — see [Stripe: Refunds and chargebacks](/revenue/stripe#refunds-and-chargebacks).

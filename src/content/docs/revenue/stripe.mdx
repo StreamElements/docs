@@ -1,6 +1,6 @@
 ---
 title: Stripe
-description: "Accept tips through your own Stripe account: eligibility, setup, payouts, and what tippers see on their statement."
+description: "Accept tips through your own Stripe account: eligibility, setup, payouts, fees, refunds, tax forms, and what tippers see on their statement."
 keywords:
   - StreamElements Stripe
   - Stripe tipping
@@ -13,12 +13,12 @@ StreamElements has partnered with Stripe to offer creators additional methods to
 
 ## Eligibility
 
-To use Stripe, you need to meet all of the following:
+Stripe sets the requirements for opening and keeping a Stripe account; StreamElements doesn't add any of its own. In short, you need to:
 
 - Creators must meet the minimum age to open a Stripe account in their country
 - Have a bank account in your own name, or in your business's name if you register as a business, in a [country Stripe supports](https://stripe.com/global).
 
-Eligibility is checked automatically as part of connecting your account (see below) — there's no manual application or support ticket needed. If you don't see the option to connect, it means you don't currently meet one or more of these criteria.
+Stripe checks these requirements during its onboarding — there's no manual application or support ticket needed. For the full terms, see the [Stripe Connected Account Agreement](https://stripe.com/legal/connect-account) and the [Stripe Services Agreement](https://stripe.com/legal/ssa).
 
 ## Setting it up
 
@@ -60,10 +60,23 @@ Once connected, manage your account (payout schedule, enabled payment methods) a
 - Payouts follow whatever schedule you set during onboarding (manual or automatic), changeable any time from Stripe.
 - Your first payout usually takes 7 to 14 days while Stripe verifies your account; it's faster after that.
 - Withdrawals and transaction history are managed entirely in Stripe, not the StreamElements dashboard.
+- When tips become available to pay out depends on your country and the payment method the tipper used. See [Stripe: Receive payouts](https://docs.stripe.com/payouts) for payout schedules and settlement timing.
 
 ## Fees
 
 StreamElements doesn't charge a fee on Stripe tips. Stripe's processing fees depend on your country and the payment method used. See [Stripe's pricing page](https://stripe.com/pricing) for details.
+
+If a tip is made in a different currency from your Stripe account's, Stripe converts it and currency conversion fees apply. See [Stripe: Supported currencies](https://docs.stripe.com/currencies).
+
+We recommend locking your tipping page to your preferred currency; see [Currency settings](/revenue/tipping#currency-settings).
+
+## Refunds and chargebacks
+
+Tips are final, and StreamElements can't refund them. If you choose to refund a tip, you can do it from your Stripe Dashboard — see [Stripe: Refund and cancel payments](https://docs.stripe.com/refunds). If a tipper disputes a tip with their bank (a chargeback), you handle it in your Stripe Dashboard — see [Stripe: Disputes](https://docs.stripe.com/disputes).
+
+## Tax forms
+
+Tax forms for your Stripe account are handled by Stripe. See [Stripe's 1099 FAQ](https://support.stripe.com/questions/faq-for-platform-issued-1099s).
 
 ## Customizing what tippers see
 
@@ -77,7 +90,7 @@ This information is separate from your private Stripe account details (like your
 Yes. Stripe is a PCI Level 1 certified payment processor with industry-leading security, fraud protection, and identity verification systems.
 
 **What if Stripe is not available in my country?**
-If your bank account is not in a supported country, you won't see the option to connect Stripe in Tipping Settings.
+Stripe can only be used with a bank account in a country Stripe supports. See [Stripe's list of supported countries](https://stripe.com/global).
 
 **What documents does Stripe require?**
 Stripe tells you exactly what it needs during its hosted onboarding. In general, you will provide identity (KYC) and bank details, plus your legal business name, company registration number and DBA (doing business as) if you register as a business. Requirements vary by country and account type, so follow the steps in Stripe's onboarding for the full list. Your identity documents and ID numbers stay with Stripe and are not shared with StreamElements.
